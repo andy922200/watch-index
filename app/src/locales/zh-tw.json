@@ -34,6 +34,21 @@
       "explorer-ii": "Explorer II",
       "air-king": "Air-King",
       "1908": "1908"
+    },
+    "watchList": {
+      "heading": "錶款",
+      "loading": "正在載入錶款…",
+      "error": "無法載入錶款。",
+      "empty": "此錶款系列沒有符合的錶款。",
+      "loadMore": "載入更多錶款",
+      "modelReferenceLabel": "型號",
+      "viewDetails": "查看規格",
+      "imageAlt": "{modelName} 腕錶"
+    },
+    "watchDetails": {
+      "caseDescriptionLabel": "錶殼",
+      "dialDescriptionLabel": "面盤",
+      "close": "關閉錶款規格"
     }
   }
 }

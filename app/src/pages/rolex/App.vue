@@ -4,14 +4,36 @@ import { useI18n } from 'vue-i18n'
 
 import AppLayout from '@/components/layout/AppLayout.vue'
 import AppNav from '@/components/layout/AppNav.vue'
+import { Button } from '@/components/ui/button'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog'
 import WatchCollectionCombobox, {
   type WatchCollectionOption,
 } from '@/components/watch-collection/WatchCollectionCombobox.vue'
 import { useWatchCatalog } from '@/composables/useWatchCatalog'
+import type { Watch } from '@/types/watch-data'
+
+const PAGE_SIZE = 12
 
 const { locale, t } = useI18n()
 
 const selectedCollectionId = ref<string | null>(null)
+const selectedWatch = ref<Watch | null>(null)
+const isWatchDetailsOpen = ref(false)
+const visibleWatchCount = ref(PAGE_SIZE)
 const { catalog, error, isLoading, loadCatalog } = useWatchCatalog()
 
 const collectionOptions = computed<WatchCollectionOption[]>(() =>
@@ -22,9 +44,39 @@ const collectionOptions = computed<WatchCollectionOption[]>(() =>
   })),
 )
 
+const filteredWatches = computed<Watch[]>(() => {
+  const watches = Object.values(catalog.value?.watchesByReference ?? {})
+
+  return watches
+    .filter(
+      (watch) =>
+        selectedCollectionId.value === null || watch.collectionId === selectedCollectionId.value,
+    )
+    .sort((left, right) => left.modelReference.localeCompare(right.modelReference))
+})
+
+const visibleWatches = computed<Watch[]>(() =>
+  filteredWatches.value.slice(0, visibleWatchCount.value),
+)
+
+const hasMoreWatches = computed(() => visibleWatchCount.value < filteredWatches.value.length)
+
 const selectCollection = (collectionId: string | null): void => {
   selectedCollectionId.value = collectionId
+  visibleWatchCount.value = PAGE_SIZE
 }
+
+const loadMoreWatches = (): void => {
+  visibleWatchCount.value += PAGE_SIZE
+}
+
+const openWatchDetails = (watch: Watch): void => {
+  selectedWatch.value = watch
+  isWatchDetailsOpen.value = true
+}
+
+const getWatchImageAlt = (watch: Watch): string =>
+  t('site.watchList.imageAlt', { modelName: watch.modelName })
 
 onMounted(loadCatalog)
 </script>
@@ -47,9 +99,91 @@ onMounted(loadCatalog)
           :selected-collection-id="selectedCollectionId"
           @select="selectCollection"
         />
-        <p v-else-if="isLoading" role="status">{{ t('site.watchCollection.loading') }}</p>
-        <p v-else role="alert">{{ t('site.watchCollection.error') }}</p>
+        <p v-else-if="isLoading" role="status">{{ t('site.watchList.loading') }}</p>
+        <p v-else role="alert">{{ t('site.watchList.error') }}</p>
       </div>
     </section>
+    <section v-if="!isLoading && !error" class="mt-12 w-full" aria-labelledby="watch-list-heading">
+      <h2 id="watch-list-heading" class="sr-only">{{ t('site.watchList.heading') }}</h2>
+      <p
+        v-if="filteredWatches.length === 0"
+        class="text-muted-foreground text-center"
+        role="status"
+      >
+        {{ t('site.watchList.empty') }}
+      </p>
+      <div
+        v-else
+        data-testid="watch-grid"
+        class="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6"
+      >
+        <Card
+          v-for="watch in visibleWatches"
+          :key="watch.modelReference"
+          class="h-full gap-0 overflow-hidden py-0"
+        >
+          <CardContent class="p-0">
+            <img
+              class="aspect-square w-full object-contain"
+              :src="watch.imageUrl"
+              :alt="getWatchImageAlt(watch)"
+              loading="lazy"
+            />
+          </CardContent>
+          <CardHeader class="flex-1 px-4 py-4">
+            <CardTitle class="line-clamp-2 h-11 text-base leading-snug">{{
+              watch.modelName
+            }}</CardTitle>
+            <CardDescription class="h-4 truncate font-mono text-xs">
+              {{ watch.modelReference }}
+            </CardDescription>
+            <CardDescription v-if="watch.localNicknames.length > 0" class="line-clamp-2 h-10">
+              {{ watch.localNicknames.join('、') }}
+            </CardDescription>
+            <CardDescription v-else aria-hidden="true" class="invisible h-10" />
+          </CardHeader>
+          <CardFooter class="px-4 pt-0 pb-4">
+            <Button class="w-full" variant="outline" @click="openWatchDetails(watch)">
+              {{ t('site.watchList.viewDetails') }}
+            </Button>
+          </CardFooter>
+        </Card>
+      </div>
+      <div v-if="hasMoreWatches" class="mt-8 flex justify-center">
+        <Button variant="outline" @click="loadMoreWatches">
+          {{ t('site.watchList.loadMore') }}
+        </Button>
+      </div>
+    </section>
+    <Dialog v-model:open="isWatchDetailsOpen">
+      <DialogContent
+        :close-label="t('site.watchDetails.close')"
+        class="max-h-[calc(100dvh-2rem)] overflow-y-auto sm:max-w-2xl"
+      >
+        <template v-if="selectedWatch">
+          <DialogHeader>
+            <DialogTitle>{{ selectedWatch.modelName }}</DialogTitle>
+            <DialogDescription>
+              {{ t('site.watchList.modelReferenceLabel') }}: {{ selectedWatch.modelReference }}
+            </DialogDescription>
+          </DialogHeader>
+          <img
+            class="mx-auto aspect-square w-full max-w-sm object-contain"
+            :src="selectedWatch.imageUrl"
+            :alt="getWatchImageAlt(selectedWatch)"
+          />
+          <dl class="grid gap-4 sm:grid-cols-2">
+            <div class="flex flex-col gap-1">
+              <dt class="text-sm font-medium">{{ t('site.watchDetails.caseDescriptionLabel') }}</dt>
+              <dd class="text-muted-foreground">{{ selectedWatch.caseDescription }}</dd>
+            </div>
+            <div class="flex flex-col gap-1">
+              <dt class="text-sm font-medium">{{ t('site.watchDetails.dialDescriptionLabel') }}</dt>
+              <dd class="text-muted-foreground">{{ selectedWatch.dialDescription }}</dd>
+            </div>
+          </dl>
+        </template>
+      </DialogContent>
+    </Dialog>
   </AppLayout>
 </template>

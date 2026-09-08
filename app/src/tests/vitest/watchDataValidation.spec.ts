@@ -20,4 +20,28 @@ describe('watch data validation', () => {
       }),
     ).toBe(false)
   })
+
+  it('requires the Taiwan market display fields', () => {
+    expect(
+      isWatchCatalog({
+        schemaVersion: 3,
+        collectedAt: '2026-09-04T00:00:00.000Z',
+        watchCount: 1,
+        collections: [{ id: 'datejust', watchCount: 1 }],
+        watchesByReference: {
+          'm126234-0001': {
+            collectionId: 'datejust',
+            modelNumber: 'm126234',
+            configurationCode: '0001',
+            modelReference: 'm126234-0001',
+            imageUrl: 'https://example.com/watch.png',
+            modelName: 'Datejust 36',
+            caseDescription: 'Oyster, 36 mm, Oystersteel',
+            dialDescription: 'Bright blue',
+            localNicknames: ['DJ'],
+          },
+        },
+      }),
+    ).toBe(true)
+  })
 })

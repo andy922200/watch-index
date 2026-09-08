@@ -9,6 +9,10 @@ export interface Watch {
   configurationCode: string
   modelReference: string
   imageUrl: string
+  modelName: string
+  caseDescription: string
+  dialDescription: string
+  localNicknames: string[]
 }
 
 export interface WatchCatalog {

@@ -34,6 +34,21 @@
       "explorer-ii": "Explorer II",
       "air-king": "Air-King",
       "1908": "1908"
+    },
+    "watchList": {
+      "heading": "Watches",
+      "loading": "Loading watches…",
+      "error": "Watches could not be loaded.",
+      "empty": "No watches found in this collection.",
+      "loadMore": "Load more watches",
+      "modelReferenceLabel": "Reference",
+      "viewDetails": "View specifications",
+      "imageAlt": "{modelName} watch"
+    },
+    "watchDetails": {
+      "caseDescriptionLabel": "Case",
+      "dialDescriptionLabel": "Dial",
+      "close": "Close watch specifications"
     }
   }
 }

@@ -22,7 +22,14 @@ export default defineConfig(({ mode }) => {
   const catalogSource = readFileSync(
     fileURLToPath(new URL('../data/catelog/rolex-catalog.json', import.meta.url)),
   )
-  const watchDataVersion = createHash('sha256').update(catalogSource).digest('hex').slice(0, 12)
+  const taiwanMarketSource = readFileSync(
+    fileURLToPath(new URL('../data/markets/rolex-taiwan-market.json', import.meta.url)),
+  )
+  const watchDataVersion = createHash('sha256')
+    .update(catalogSource)
+    .update(taiwanMarketSource)
+    .digest('hex')
+    .slice(0, 12)
 
   const activeBase = isViteEnvProd ? ghPagesBase : base
   const { pages, rewrites } = createMpaConfig({

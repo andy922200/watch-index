@@ -30,7 +30,12 @@ export const isWatch = (value: unknown): value is Watch =>
   typeof value.modelNumber === 'string' &&
   typeof value.configurationCode === 'string' &&
   typeof value.modelReference === 'string' &&
-  typeof value.imageUrl === 'string'
+  typeof value.imageUrl === 'string' &&
+  typeof value.modelName === 'string' &&
+  typeof value.caseDescription === 'string' &&
+  typeof value.dialDescription === 'string' &&
+  Array.isArray(value.localNicknames) &&
+  value.localNicknames.every((nickname) => typeof nickname === 'string')
 
 /**
  * 驗證版本化 watch-data manifest 的格式。

@@ -14,6 +14,7 @@ const scriptDirectory = dirname(fileURLToPath(import.meta.url))
 const appDirectory = resolve(scriptDirectory, '..')
 const projectDirectory = resolve(appDirectory, '..')
 const catalogPath = resolve(projectDirectory, 'data/catelog/rolex-catalog.json')
+const taiwanMarketPath = resolve(projectDirectory, 'data/markets/rolex-taiwan-market.json')
 
 // production build 寫到 dist；dev 與 E2E 則傳入 public/watch-data，讓 Vite 能直接服務。
 const outputDirectoryArgumentIndex = process.argv.indexOf('--output-directory')
@@ -28,21 +29,50 @@ const outputDirectory = resolve(appDirectory, requestedOutputDirectory ?? 'dist/
 
 // 原始 catalog 是資料收集流程的輸出；此處只負責將它轉換為前端讀取最佳化的格式。
 const catalog = JSON.parse(await readFile(catalogPath, 'utf8'))
+const taiwanMarket = JSON.parse(await readFile(taiwanMarketPath, 'utf8'))
+
+const taiwanWatchesByReference = new Map(
+  taiwanMarket.watches.map((watch) => [watch.modelReference, watch]),
+)
+
+const watches = catalog.watches.map((watch) => {
+  const taiwanWatch = taiwanWatchesByReference.get(watch.modelReference)
+
+  if (!taiwanWatch) {
+    throw new Error(`Taiwan market data is missing ${watch.modelReference}`)
+  }
+
+  if (
+    typeof taiwanWatch.modelName !== 'string' ||
+    typeof taiwanWatch.caseDescription !== 'string' ||
+    typeof taiwanWatch.dialDescription !== 'string' ||
+    !Array.isArray(taiwanWatch.localNicknames?.names) ||
+    !taiwanWatch.localNicknames.names.every((nickname) => typeof nickname === 'string')
+  ) {
+    throw new Error(`Taiwan market data is invalid for ${watch.modelReference}`)
+  }
+
+  return {
+    ...watch,
+    modelName: taiwanWatch.modelName,
+    caseDescription: taiwanWatch.caseDescription,
+    dialDescription: taiwanWatch.dialDescription,
+    localNicknames: taiwanWatch.localNicknames.names,
+  }
+})
 
 // 將 watches 陣列轉為以 modelReference 為 key 的物件。
-const watchesByReference = Object.fromEntries(
-  catalog.watches.map((watch) => [watch.modelReference, watch]),
-)
+const watchesByReference = Object.fromEntries(watches.map((watch) => [watch.modelReference, watch]))
 
 // 逐筆累計每個 collectionId 對應的錶款數量。
 const collectionCounts = new Map()
-for (const watch of catalog.watches) {
+for (const watch of watches) {
   collectionCounts.set(watch.collectionId, (collectionCounts.get(watch.collectionId) ?? 0) + 1)
 }
 
 // 輸出格式：schemaVersion、資料收集時間、錶款總數、系列統計陣列與錶款索引物件。
 const watchData = {
-  schemaVersion: 1,
+  schemaVersion: 3,
   collectedAt: catalog.collectedAt,
   watchCount: catalog.watchCount,
   collections: [...collectionCounts]
