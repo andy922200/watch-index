@@ -76,10 +76,16 @@ const hasMatchingOption = (search: string): boolean => {
           />
         </button>
       </PopoverTrigger>
-      <PopoverContent class="w-(--reka-popover-trigger-width) p-0" align="start">
+      <PopoverContent
+        class="max-h-(--reka-popover-content-available-height) w-(--reka-popover-trigger-width) overflow-hidden p-0"
+        align="start"
+        :collision-padding="16"
+      >
         <Command v-slot="{ search }">
           <CommandInput :aria-label="label" :placeholder="placeholder" />
-          <CommandList>
+          <CommandList
+            class="hide-scrollbar max-h-[calc(var(--reka-popover-content-available-height)-2.25rem)]"
+          >
             <CommandEmpty v-if="!hasMatchingOption(search)">{{ emptyMessage }}</CommandEmpty>
             <CommandGroup>
               <CommandItem
