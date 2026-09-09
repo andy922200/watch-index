@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url'
 const scriptDirectory = dirname(fileURLToPath(import.meta.url))
 const appDirectory = resolve(scriptDirectory, '..')
 const projectDirectory = resolve(appDirectory, '..')
-const catalogPath = resolve(projectDirectory, 'data/catelog/rolex-catalog.json')
+const catalogPath = resolve(projectDirectory, 'data/catalog/rolex-catalog.json')
 const marketsDirectory = resolve(projectDirectory, 'data/markets')
 const historyDirectory = resolve(projectDirectory, 'data/history')
 

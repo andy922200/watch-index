@@ -35,7 +35,7 @@ app/
 ## 畫面與資料流程
 
 ```text
-data/catelog + data/markets + data/history
+data/catalog + data/markets + data/history
                     ↓ 建置時轉換
 app/public/watch-data/ 或 app/dist/watch-data/
                     ↓ 瀏覽器先讀取 manifest.json

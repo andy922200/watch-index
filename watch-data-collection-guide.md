@@ -19,18 +19,18 @@
 
 ```text
 data/
-├── catelog/[catalog].json
+├── catalog/[catalog].json
 ├── markets/[market].json
 ├── history/[marketCode]/[price-history].json
 ├── evidence/[marketCode]/[YYYY-MM-DD]/
 └── schemas/
 ```
 
-`catelog` 是專案既有目錄名稱，請勿擅自更名。三份 Schema 位於 `data/schemas/`，是正式資料欄位與型別的唯一依據。
+三份 Schema 位於 `data/schemas/`，是正式資料欄位與型別的唯一依據。
 
 ### 共用配置目錄
 
-`data/catelog/` 中的配置目錄是所有已收集市場的配置聯集。每筆腕錶只存跨市場穩定的欄位：系列 ID、基本型號、配置碼、完整配置碼與官方圖片。它不放價格、當地名稱、稅率或俗稱。
+`data/catalog/` 中的配置目錄是所有已收集市場的配置聯集。每筆腕錶只存跨市場穩定的欄位：系列 ID、基本型號、配置碼、完整配置碼與官方圖片。它不放價格、當地名稱、稅率或俗稱。
 
 ### 市場在地化資料
 

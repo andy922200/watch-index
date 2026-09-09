@@ -17,9 +17,9 @@
 
 1. 本文件、`README.md`、`watch-data-collection-guide.md`。
 2. `data/schemas/` 的三份實際 JSON Schema。
-3. `data/catelog/rolex-catalog.json`，以及目標市場的 `data/markets/`、`data/history/`、`data/evidence/`。
+3. `data/catalog/rolex-catalog.json`，以及目標市場的 `data/markets/`、`data/history/`、`data/evidence/`。
 
-保護使用者既有未提交修改。`data/catelog/` 是既有目錄名稱，不可自行更名。既有筆數與歷史結果只可用於回歸檢查，不能作為本次收集的目標或停止條件。
+保護使用者既有未提交修改。既有筆數與歷史結果只可用於回歸檢查，不能作為本次收集的目標或停止條件。
 
 ## 任務快速決策
 
@@ -33,7 +33,7 @@
 
 | 層級 | 實際位置 | 責任 | 不可放入 |
 | --- | --- | --- | --- |
-| Catalog | `data/catelog/rolex-catalog.json` | 跨市場穩定配置的聯集 | 價格、稅率、在地文字、俗稱 |
+| Catalog | `data/catalog/rolex-catalog.json` | 跨市場穩定配置的聯集 | 價格、稅率、在地文字、俗稱 |
 | Market | `data/markets/rolex-[market]-market.json` | 當地文字、商品網址、別名與新款標示 | 價格、幣別、稅務語意 |
 | History | `data/history/[marketCode]/rolex-price-history.json` | 收集輪次與追加式價格／列出狀態 | 市場文字、圖片、俗稱 |
 | Evidence | `data/evidence/[marketCode]/[YYYY-MM-DD]/` | 原始觀察、收集方法與驗證 | Cookie、token、授權標頭、個資 |
@@ -100,7 +100,7 @@ JSON 或 Schema 通過，只代表結構合法，不代表來源正確或收集�
 
 ## 多市場協作與 Catalog 合併
 
-多市場任務採市場隔離：每個工作單元只處理一個市場的來源、evidence、market 與 history 檔。只有統籌者可以合併 `data/catelog/rolex-catalog.json`，並在所有市場工作完成後執行跨檔驗證。單一市場工作不得覆寫 catalog，也不得因未觀察到既有配置就刪除它。
+多市場任務採市場隔離：每個工作單元只處理一個市場的來源、evidence、market 與 history 檔。只有統籌者可以合併 `data/catalog/rolex-catalog.json`，並在所有市場工作完成後執行跨檔驗證。單一市場工作不得覆寫 catalog，也不得因未觀察到既有配置就刪除它。
 
 令 `C` 為既有 catalog 的完整配置集合，`M` 為本次已驗證的市場集合：
 
@@ -169,7 +169,7 @@ def invalid_constant(value):
 
 paths = sorted(
     path
-    for folder in ("data/catelog", "data/markets", "data/history", "data/schemas")
+    for folder in ("data/catalog", "data/markets", "data/history", "data/schemas")
     for path in Path(folder).rglob("*.json")
 )
 if not paths:
@@ -200,7 +200,7 @@ const refPattern = /^m[0-9a-z]+-[0-9]{4}$/
 const isTime = value => typeof value === 'string' && Number.isFinite(Date.parse(value))
 const unique = values => new Set(values).size === values.length
 
-const catalog = read('data/catelog/rolex-catalog.json')
+const catalog = read('data/catalog/rolex-catalog.json')
 const catalogReferenceList = catalog.watches.map(watch => watch.modelReference)
 const catalogRefs = new Set(catalogReferenceList)
 fail(catalog.watchCount === catalog.watches.length, 'catalog watchCount mismatch')
