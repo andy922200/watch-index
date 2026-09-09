@@ -52,7 +52,7 @@ Vue 頁面、搜尋、清單與詳細視窗
 
 網站以多頁方式輸出兩個獨立 HTML：繁中預設頁在 `/`，英文頁在 `/en-us/`。語言由網址路徑決定，而非單純在瀏覽器內切換，讓不執行 JavaScript 的搜尋與分享服務也能取得相應的標題、描述與 Open Graph 資訊。
 
-正式環境使用 GitHub Pages 的 `/<儲存庫名稱>/app/` 基底路徑；本機開發則使用 `/app/`。這些路徑與語言頁的重寫規則都集中在 `src/lib/mpa-build.ts` 和 `vite.config.ts`，調整儲存庫名稱或部署位置時應一併檢查。
+正式環境使用 GitHub Pages 的 `/<儲存庫名稱>/app/rolex/` 基底路徑；本機開發則使用 `/rolex/`。這些路徑與語言頁的重寫規則都集中在 `src/lib/mpa-build.ts` 和 `vite.config.ts`，調整儲存庫名稱或部署位置時應一併檢查。
 
 ## 開始開發
 

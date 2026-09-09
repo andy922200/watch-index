@@ -5,6 +5,7 @@ interface CreateMpaConfigOptions {
   isProd: boolean
   base: string
   ghPagesRepoName: string
+  ghPagesNamespace: string
   projectName: string
 }
 
@@ -21,11 +22,12 @@ export const createMpaConfig = ({
   isProd,
   base,
   ghPagesRepoName,
+  ghPagesNamespace,
   projectName,
 }: CreateMpaConfigOptions): MpaConfig => {
   const siteUrl = isProd
-    ? `https://andy922200.github.io/${ghPagesRepoName}/${projectName}`
-    : 'http://localhost:5199/app'
+    ? `https://andy922200.github.io/${ghPagesRepoName}/${ghPagesNamespace}/${projectName}`
+    : 'http://localhost:5199'
   const zhTwUrl = `${siteUrl}/`
   const enUrl = `${siteUrl}/en-us/`
 
