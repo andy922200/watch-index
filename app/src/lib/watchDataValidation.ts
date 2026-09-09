@@ -69,7 +69,9 @@ export const isWatchDataManifest = (value: unknown): value is WatchDataManifest 
   isRecord(value) &&
   typeof value.schemaVersion === 'number' &&
   typeof value.catalog === 'string' &&
-  isStringRecord(value.catalogs)
+  isStringRecord(value.catalogs) &&
+  Array.isArray(value.currencies) &&
+  value.currencies.every((currency) => typeof currency === 'string' && /^[A-Z]{3}$/.test(currency))
 
 /**
  * 驗證由建置程序產生的錶款 catalog 索引格式。

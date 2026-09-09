@@ -4,7 +4,10 @@
     "priceUpdatedAt": "Price data updated {date}",
     "languageLabel": "Language",
     "marketLabel": "Market",
+    "displayCurrencyLabel": "Display currency",
     "moreLabel": "More options",
+    "exchangeRateUpdatedAt": "Exchange rate updated {date} (Frankfurter)",
+    "exchangeRateUnavailable": "Converted prices are currently unavailable",
     "market": {
       "austria": "Austria",
       "germany": "Germany",
@@ -61,6 +64,7 @@
       "priceLabelExcludingTax": "Retail price (tax excluded)",
       "priceLabelNoTax": "Retail price (tax-free market)",
       "priceValue": "{currency} {price}",
+      "convertedPriceValue": "Approx. {price}",
       "priceUnavailable": "Price pending confirmation",
       "viewDetails": "View specifications",
       "imageAlt": "{modelName} watch"

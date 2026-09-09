@@ -6,9 +6,10 @@ describe('watch data validation', () => {
   it('accepts the generated manifest format', () => {
     expect(
       isWatchDataManifest({
-        schemaVersion: 2,
+        schemaVersion: 3,
         catalog: 'catalog.abc123.json',
         catalogs: { TW: 'catalog.abc123.json' },
+        currencies: ['TWD'],
       }),
     ).toBe(true)
   })

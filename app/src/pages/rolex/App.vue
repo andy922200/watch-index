@@ -16,7 +16,13 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { useExchangeRates } from '@/composables/useExchangeRates'
 import { useWatchCatalog } from '@/composables/useWatchCatalog'
+import {
+  DEFAULT_DISPLAY_CURRENCY,
+  DISPLAY_CURRENCY_STORAGE_KEY,
+  isCurrencyCode,
+} from '@/lib/displayCurrencies'
 import {
   DEFAULT_MARKET,
   getMarketFromQuery,
@@ -43,12 +49,29 @@ const selectedMarket = useStorage<MarketCode>(MARKET_STORAGE_KEY, DEFAULT_MARKET
     write: (market: MarketCode): string => market,
   },
 })
+const selectedDisplayCurrency = useStorage<string>(
+  DISPLAY_CURRENCY_STORAGE_KEY,
+  DEFAULT_DISPLAY_CURRENCY,
+  undefined,
+  {
+    serializer: {
+      read: (value: string): string => (isCurrencyCode(value) ? value : DEFAULT_DISPLAY_CURRENCY),
+      write: (currency: string): string => currency,
+    },
+  },
+)
 const marketFromQuery = getMarketFromQuery(window.location.search)
 
 if (marketFromQuery !== null) {
   selectedMarket.value = marketFromQuery
 }
-const { catalog, error, isLoading, loadCatalog } = useWatchCatalog()
+const { catalog, displayCurrencies, error, isLoading, loadCatalog } = useWatchCatalog()
+const {
+  convert,
+  error: exchangeRateError,
+  getExchangeRateDate,
+  loadExchangeRates,
+} = useExchangeRates()
 const {
   debouncedSearchQuery,
   filteredWatches,
@@ -67,6 +90,7 @@ const visibleWatches = computed<Watch[]>(() =>
 )
 
 const hasMoreWatches = computed(() => visibleWatchCount.value < filteredWatches.value.length)
+const displayCurrencyRateDate = computed(() => getExchangeRateDate(selectedDisplayCurrency.value))
 
 const loadMoreWatches = (): void => {
   visibleWatchCount.value += PAGE_SIZE
@@ -88,6 +112,31 @@ const formatPrice = (watch: Watch): string => {
   return t('site.watchList.priceValue', {
     currency: catalog.value.priceMarket.currencyCode,
     price: formatNumber(watch.price),
+  })
+}
+
+const formatConvertedPrice = (watch: Watch): string | null => {
+  if (
+    watch.priceStatus !== 'listed' ||
+    watch.price === null ||
+    !catalog.value ||
+    catalog.value.priceMarket.currencyCode === selectedDisplayCurrency.value
+  ) {
+    return null
+  }
+
+  const convertedPrice = convert(watch.price, selectedDisplayCurrency.value)
+
+  if (convertedPrice === null) {
+    return null
+  }
+
+  return t('site.watchList.convertedPriceValue', {
+    price: new Intl.NumberFormat(getDateLocale(), {
+      currency: selectedDisplayCurrency.value,
+      currencyDisplay: 'code',
+      style: 'currency',
+    }).format(convertedPrice),
   })
 }
 
@@ -117,12 +166,43 @@ const formatPriceUpdatedAt = (): string => {
   )
 }
 
+const formatExchangeRateUpdatedAt = (): string => {
+  if (!displayCurrencyRateDate.value) {
+    return ''
+  }
+
+  return new Intl.DateTimeFormat(getDateLocale(), { dateStyle: 'medium' }).format(
+    new Date(displayCurrencyRateDate.value),
+  )
+}
+
 watchSource(
   selectedMarket,
   (market) => {
     void loadCatalog(market)
   },
   { immediate: true },
+)
+
+watchSource(
+  displayCurrencies,
+  (currencies) => {
+    if (currencies.length > 0 && !currencies.includes(selectedDisplayCurrency.value)) {
+      selectedDisplayCurrency.value = currencies.includes(DEFAULT_DISPLAY_CURRENCY)
+        ? DEFAULT_DISPLAY_CURRENCY
+        : currencies[0]
+    }
+  },
+  { immediate: true },
+)
+
+watchSource(
+  [() => catalog.value?.priceMarket.currencyCode, displayCurrencies],
+  ([currencyCode, currencies]) => {
+    if (currencyCode && currencies.length > 0) {
+      void loadExchangeRates({ baseCurrency: currencyCode, targetCurrencies: currencies })
+    }
+  },
 )
 
 watchSource(debouncedSearchQuery, () => {
@@ -132,7 +212,11 @@ watchSource(debouncedSearchQuery, () => {
 
 <template>
   <AppLayout :lang="locale">
-    <AppNav v-model:market="selectedMarket" />
+    <AppNav
+      v-model:display-currency="selectedDisplayCurrency"
+      v-model:market="selectedMarket"
+      :display-currencies="displayCurrencies"
+    />
     <section class="w-full max-w-4xl text-center" aria-labelledby="page-title">
       <h1
         id="page-title"
@@ -142,6 +226,12 @@ watchSource(debouncedSearchQuery, () => {
       </h1>
       <p v-if="catalog" class="text-muted-foreground -mt-2 text-sm sm:-mt-8">
         {{ t('site.priceUpdatedAt', { date: formatPriceUpdatedAt() }) }}
+      </p>
+      <p v-if="displayCurrencyRateDate" class="text-muted-foreground mt-1 text-sm">
+        {{ t('site.exchangeRateUpdatedAt', { date: formatExchangeRateUpdatedAt() }) }}
+      </p>
+      <p v-else-if="exchangeRateError" class="text-muted-foreground mt-1 text-sm" role="status">
+        {{ t('site.exchangeRateUnavailable') }}
       </p>
       <div class="mt-10 flex justify-center">
         <SearchCombobox
@@ -195,6 +285,9 @@ watchSource(debouncedSearchQuery, () => {
             <div class="mt-2 min-h-14">
               <p class="text-muted-foreground text-xs">{{ getPriceLabel() }}</p>
               <p class="font-medium tabular-nums">{{ formatPrice(watch) }}</p>
+              <p v-if="formatConvertedPrice(watch)" class="text-muted-foreground tabular-nums">
+                {{ formatConvertedPrice(watch) }}
+              </p>
             </div>
             <CardDescription v-if="watch.localNicknames.length > 0" class="line-clamp-2 h-10">
               {{ watch.localNicknames.join('、') }}

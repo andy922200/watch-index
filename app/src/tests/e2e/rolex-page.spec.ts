@@ -67,6 +67,24 @@ test('switches the displayed prices to the selected market', async ({ page }) =>
   await expect(page.locator('[data-slot="card"]').first()).toContainText('JPY')
 })
 
+test('shows an approximate price in the selected display currency', async ({ page }) => {
+  await page.route('https://api.frankfurter.dev/v2/rates*', async (route) => {
+    await route.fulfill({
+      json: [
+        { base: 'TWD', date: '2026-08-31', quote: 'JPY', rate: 4.8 },
+        { base: 'TWD', date: '2026-08-31', quote: 'USD', rate: 0.031 },
+      ],
+    })
+  })
+  await page.goto('en-us/')
+
+  await page.getByRole('combobox', { name: 'Display currency' }).click()
+  await page.getByRole('option', { name: 'Japanese yen (JPY)' }).click()
+
+  await expect(page.locator('[data-slot="card"]').first()).toContainText(/Approx\. JPY/)
+  await expect(page.getByText('Exchange rate updated Aug 31, 2026 (Frankfurter)')).toBeVisible()
+})
+
 test('filters watches with a partial model reference', async ({ page }) => {
   await page.goto('en-us/')
 

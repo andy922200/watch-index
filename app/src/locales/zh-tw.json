@@ -4,7 +4,10 @@
     "priceUpdatedAt": "價格資料更新於 {date}",
     "languageLabel": "語言",
     "marketLabel": "市場",
+    "displayCurrencyLabel": "顯示貨幣",
     "moreLabel": "更多選項",
+    "exchangeRateUpdatedAt": "換算匯率更新於 {date}（Frankfurter）",
+    "exchangeRateUnavailable": "目前無法取得換算匯率",
     "market": {
       "austria": "奧地利",
       "germany": "德國",
@@ -61,6 +64,7 @@
       "priceLabelExcludingTax": "建議售價（未含稅）",
       "priceLabelNoTax": "建議售價（免稅市場）",
       "priceValue": "{currency} {price}",
+      "convertedPriceValue": "約 {price}",
       "priceUnavailable": "價格待確認",
       "viewDetails": "查看規格",
       "imageAlt": "{modelName} 腕錶"

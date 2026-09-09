@@ -5,7 +5,12 @@ import { DEFAULT_MARKET, type MarketCode } from '@/lib/markets'
 import { isWatchCatalog, isWatchDataManifest } from '@/lib/watchDataValidation'
 import type { WatchCatalog } from '@/types/watch-data'
 
-const catalogRequests = new Map<MarketCode, Promise<WatchCatalog>>()
+interface CatalogResponse {
+  catalog: WatchCatalog
+  currencies: string[]
+}
+
+const catalogRequests = new Map<MarketCode, Promise<CatalogResponse>>()
 
 const getWatchDataUrl = (fileName: string): string => {
   const versionQuery = fileName === 'manifest.json' ? `?v=${__WATCH_DATA_VERSION__}` : ''
@@ -42,7 +47,7 @@ const getJson = async (url: string): Promise<unknown> => {
   return response.data
 }
 
-const fetchCatalog = async (market: MarketCode): Promise<WatchCatalog> => {
+const fetchCatalog = async (market: MarketCode): Promise<CatalogResponse> => {
   const manifest = await getJson(getWatchDataUrl('manifest.json'))
 
   if (!isWatchDataManifest(manifest)) {
@@ -61,16 +66,18 @@ const fetchCatalog = async (market: MarketCode): Promise<WatchCatalog> => {
     throw new Error('Watch catalog has an invalid format')
   }
 
-  return catalog
+  return { catalog, currencies: manifest.currencies }
 }
 
 export const useWatchCatalog = (): {
   catalog: Readonly<Ref<WatchCatalog | null>>
+  displayCurrencies: Readonly<Ref<readonly string[]>>
   error: Readonly<Ref<unknown>>
   isLoading: Readonly<Ref<boolean>>
   loadCatalog: (market?: MarketCode) => Promise<void>
 } => {
   const catalog = ref<WatchCatalog | null>(null)
+  const displayCurrencies = ref<readonly string[]>([])
   const error = ref<unknown>(null)
   const isLoading = ref(false)
 
@@ -81,7 +88,9 @@ export const useWatchCatalog = (): {
     try {
       const request = catalogRequests.get(market) ?? fetchCatalog(market)
       catalogRequests.set(market, request)
-      catalog.value = await request
+      const response = await request
+      catalog.value = response.catalog
+      displayCurrencies.value = response.currencies
     } catch (requestError) {
       error.value = requestError
       catalogRequests.delete(market)
@@ -90,5 +99,5 @@ export const useWatchCatalog = (): {
     }
   }
 
-  return { catalog, error, isLoading, loadCatalog }
+  return { catalog, displayCurrencies, error, isLoading, loadCatalog }
 }

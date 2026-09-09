@@ -11,6 +11,7 @@ describe('AppNav', () => {
 
   it('shows the current locale in a single-choice language select', () => {
     render(AppNav, {
+      props: { displayCurrencies: ['TWD', 'USD'] },
       global: {
         plugins: [i18n],
       },
@@ -21,6 +22,7 @@ describe('AppNav', () => {
 
   it('defaults the market select to Taiwan', () => {
     render(AppNav, {
+      props: { displayCurrencies: ['TWD', 'USD'] },
       global: {
         plugins: [i18n],
       },
@@ -29,8 +31,20 @@ describe('AppNav', () => {
     expect(screen.getByRole('combobox', { name: 'Market' }).textContent).toContain('Taiwan')
   })
 
+  it('defaults the display currency select to New Taiwan dollar', () => {
+    render(AppNav, {
+      props: { displayCurrencies: ['TWD', 'USD'] },
+      global: {
+        plugins: [i18n],
+      },
+    })
+
+    expect(screen.getByRole('combobox', { name: 'Display currency' }).textContent).toContain('TWD')
+  })
+
   it('opens a more menu containing language and theme controls', async () => {
     render(AppNav, {
+      props: { displayCurrencies: ['TWD', 'USD'] },
       global: {
         plugins: [i18n],
       },
@@ -39,12 +53,15 @@ describe('AppNav', () => {
     await fireEvent.click(screen.getByRole('button', { name: 'More options' }))
 
     expect(screen.getByText('Language')).toBeTruthy()
+    expect(screen.getByText('Display currency')).toBeTruthy()
+    expect(screen.getByRole('menuitemradio', { name: /TWD/ })).toBeTruthy()
     expect(screen.getByRole('menuitemradio', { name: 'English' })).toBeTruthy()
     expect(screen.getByRole('menuitem', { name: 'Switch to dark mode' })).toBeTruthy()
   })
 
   it('toggles the dark class on <html> and persists the preference', async () => {
     render(AppNav, {
+      props: { displayCurrencies: ['TWD', 'USD'] },
       global: {
         plugins: [i18n],
       },

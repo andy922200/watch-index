@@ -158,6 +158,20 @@ const createVersionedCatalog = (market) => {
 
 const marketCatalogs = markets.map(createVersionedCatalog)
 
+const supportedCurrencies = [
+  ...new Set(
+    markets.map((market) => {
+      const priceHistory = historiesByMarketCode.get(market.marketCode)
+
+      if (!priceHistory || typeof priceHistory.currencyCode !== 'string') {
+        throw new Error(`Price history is missing a currency for ${market.marketCode}`)
+      }
+
+      return priceHistory.currencyCode
+    }),
+  ),
+].sort()
+
 const catalogFileNames = Object.fromEntries(
   marketCatalogs.map(({ marketCode, fileName }) => [marketCode, fileName]),
 )
@@ -175,16 +189,18 @@ if (!taiwanCatalog) {
  *
  * @param {Record<string, string>} catalogs - 市場代碼至版本化 catalog 檔名的對照表。
  * @param {string} defaultCatalog - 預設市場的 catalog 檔名。
+ * @param {string[]} currencies - 由各市場價格歷史取得的去重幣別清單。
  * @returns {string} 可寫入 `manifest.json` 的 JSON 字串。
  */
-const createManifest = (catalogs, defaultCatalog) =>
+const createManifest = (catalogs, defaultCatalog, currencies) =>
   JSON.stringify({
-    schemaVersion: 2,
+    schemaVersion: 3,
     catalog: defaultCatalog,
     catalogs,
+    currencies,
   })
 
-const manifest = createManifest(catalogFileNames, taiwanCatalog)
+const manifest = createManifest(catalogFileNames, taiwanCatalog, supportedCurrencies)
 
 // 先移除舊 hash 檔，避免部署產物或 dev public 目錄殘留不再被 manifest 指向的資料。
 await rm(outputDirectory, { force: true, recursive: true })

@@ -38,6 +38,7 @@ interface WatchDataManifest {
   schemaVersion: number
   catalog: string
   catalogs: Record<string, string>
+  currencies: string[]
 }
 
 export type { WatchDataManifest }

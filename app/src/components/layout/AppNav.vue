@@ -24,6 +24,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { useDarkMode } from '@/composables/useDarkMode'
+import { DEFAULT_DISPLAY_CURRENCY } from '@/lib/displayCurrencies'
 import { DEFAULT_MARKET, type MarketCode, marketOptions } from '@/lib/markets'
 import { Locale } from '@/plugins/i18n'
 
@@ -32,8 +33,16 @@ interface LanguageLink {
   href: string
 }
 
+interface Props {
+  displayCurrencies: readonly string[]
+}
+
 const { t, locale } = useI18n()
+const props = defineProps<Props>()
 const market = defineModel<MarketCode>('market', { default: DEFAULT_MARKET })
+const displayCurrency = defineModel<string>('displayCurrency', {
+  default: DEFAULT_DISPLAY_CURRENCY,
+})
 const queryString = window.location.search
 
 const languageLinks = computed<LanguageLink[]>(() => [
@@ -56,6 +65,12 @@ const navigateToLocale = (
 }
 
 const { isDark, toggleDark } = useDarkMode()
+
+const getCurrencyLabel = (currency: string): string => {
+  const currencyName = new Intl.DisplayNames([locale.value], { type: 'currency' }).of(currency)
+
+  return currencyName ? `${currencyName} (${currency})` : currency
+}
 </script>
 
 <template>
@@ -77,6 +92,24 @@ const { isDark, toggleDark } = useDarkMode()
         </SelectGroup>
       </SelectContent>
     </Select>
+    <div class="hidden lg:block">
+      <Select v-model="displayCurrency">
+        <SelectTrigger class="w-56 whitespace-nowrap" :aria-label="t('site.displayCurrencyLabel')">
+          <SelectValue :placeholder="displayCurrency" />
+        </SelectTrigger>
+        <SelectContent class="w-56 whitespace-nowrap">
+          <SelectGroup>
+            <SelectItem
+              v-for="currency in props.displayCurrencies"
+              :key="currency"
+              :value="currency"
+            >
+              {{ getCurrencyLabel(currency) }}
+            </SelectItem>
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+    </div>
     <div class="hidden lg:block">
       <Select :model-value="locale" @update:model-value="navigateToLocale">
         <SelectTrigger class="w-32" :aria-label="t('site.languageLabel')">
@@ -106,7 +139,21 @@ const { isDark, toggleDark } = useDarkMode()
           <Ellipsis aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent class="w-48 lg:hidden" align="end">
+      <DropdownMenuContent class="w-56 lg:hidden" align="end">
+        <DropdownMenuLabel>{{ t('site.displayCurrencyLabel') }}</DropdownMenuLabel>
+        <DropdownMenuGroup>
+          <DropdownMenuRadioGroup v-model="displayCurrency">
+            <DropdownMenuRadioItem
+              v-for="currency in props.displayCurrencies"
+              :key="currency"
+              class="cursor-pointer"
+              :value="currency"
+            >
+              {{ getCurrencyLabel(currency) }}
+            </DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
         <DropdownMenuLabel>{{ t('site.languageLabel') }}</DropdownMenuLabel>
         <DropdownMenuGroup>
           <DropdownMenuRadioGroup :model-value="locale" @update:model-value="navigateToLocale">
