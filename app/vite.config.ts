@@ -9,28 +9,25 @@ import { createMpaPlugin } from 'vite-plugin-virtual-mpa'
 import { defineConfig } from 'vitest/config'
 
 import { useHttpsConfig } from './src/composables/useHttpsConfig.ts'
+import { brands } from './src/lib/brands.ts'
 import { createMpaConfig } from './src/lib/mpa-build.ts'
 
-export const projectName = 'rolex'
 export const ghPagesRepoName = 'watch-index'
 export const ghPagesNamespace = 'app'
-export const base = `/${projectName}/`
-export const ghPagesBase = `/${ghPagesRepoName}/${ghPagesNamespace}/${projectName}/`
+export const base = '/'
+export const ghPagesBase = `/${ghPagesRepoName}/${ghPagesNamespace}/`
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   const isViteEnvProd = env.VITE_BUILD_ENV === 'prod'
-  const catalogSource = readFileSync(
-    fileURLToPath(new URL('../data/catalog/rolex-catalog.json', import.meta.url)),
-  )
-  const taiwanMarketSource = readFileSync(
-    fileURLToPath(new URL('../data/markets/rolex-taiwan-market.json', import.meta.url)),
-  )
-  const watchDataVersion = createHash('sha256')
-    .update(catalogSource)
-    .update(taiwanMarketSource)
-    .digest('hex')
-    .slice(0, 12)
+  // 目前只有一個品牌，故沿用單一雜湊值；新增品牌時應改為逐品牌各算一份。
+  const hashSourceHash = createHash('sha256')
+  for (const relativePath of brands[0].hashSourceFiles) {
+    hashSourceHash.update(
+      readFileSync(fileURLToPath(new URL(`../${relativePath}`, import.meta.url))),
+    )
+  }
+  const watchDataVersion = hashSourceHash.digest('hex').slice(0, 12)
 
   const activeBase = isViteEnvProd ? ghPagesBase : base
   const { pages, rewrites } = createMpaConfig({
@@ -38,7 +35,7 @@ export default defineConfig(({ mode }) => {
     base: activeBase,
     ghPagesRepoName,
     ghPagesNamespace,
-    projectName,
+    brands,
   })
 
   return {
@@ -50,7 +47,7 @@ export default defineConfig(({ mode }) => {
       vue(),
       tailwindcss(),
       createMpaPlugin({
-        template: 'rolex.html',
+        template: 'watch.html',
         pages,
         rewrites,
         previewRewrites: rewrites,
