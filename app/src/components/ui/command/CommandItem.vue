@@ -36,7 +36,7 @@ const select = (): void => {
     data-slot="command-item"
     :class="
       cn(
-        'data-highlighted:bg-accent data-highlighted:text-accent-foreground hover:border-border hover:bg-accent focus-visible:border-ring focus-visible:bg-accent focus-visible:ring-ring relative flex w-full cursor-default items-center gap-2 rounded-sm border border-transparent px-2 py-1.5 text-sm outline-hidden transition-colors select-none hover:cursor-pointer focus-visible:ring-2',
+        'data-highlighted:bg-accent data-highlighted:text-accent-foreground hover:border-border hover:bg-accent focus-visible:border-ring focus-visible:bg-accent focus-visible:ring-ring relative flex w-full items-center gap-2 rounded-sm border border-transparent px-2 py-1.5 text-sm outline-hidden transition-colors select-none hover:cursor-pointer focus-visible:ring-2',
         props.class,
       )
     "

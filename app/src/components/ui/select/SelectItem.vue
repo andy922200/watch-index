@@ -18,7 +18,7 @@ const forwarded = useForwardProps(props)
     v-bind="{ ...$attrs, ...forwarded }"
     :class="
       cn(
-        'focus:bg-accent focus:text-accent-foreground data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+        'focus:bg-accent focus:text-accent-foreground data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground relative flex w-full items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none hover:cursor-pointer data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
         props.class,
       )
     "

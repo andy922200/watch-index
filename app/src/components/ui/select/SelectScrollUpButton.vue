@@ -16,7 +16,7 @@ const forwarded = useForwardProps(props)
   <SelectScrollUpButton
     data-slot="select-scroll-up-button"
     v-bind="{ ...$attrs, ...forwarded }"
-    :class="cn('flex cursor-default items-center justify-center py-1', props.class)"
+    :class="cn('flex items-center justify-center py-1 hover:cursor-pointer', props.class)"
   >
     <ChevronUp aria-hidden="true" />
   </SelectScrollUpButton>

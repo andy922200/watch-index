@@ -198,6 +198,7 @@ const { login } = authStore
 - 只有實作偽元素時才使用 SCSS；一般排版、色彩與元件樣式不得改以 SCSS 堆疊。
 - Dark Mode 與 RWD 是基本驗收條件：新增或修改的介面必須在合理的窄／寬版檢視與明／暗主題下保持可用與可讀。
 - 互動元件與導覽使用正確的語意化元素、可辨識 label、鍵盤操作與焦點狀態；不可用非互動元素模擬按鈕或連結。
+- 所有使用者可點選且可操作的控制項，在 hover 時必須顯示 `cursor-pointer`；不可操作的靜態內容不得顯示手型，已停用的控制項則維持相應的不可操作游標。此為最終 UI 驗收項目，即使樣式或元件由其他 Skill、範本或元件庫產生，也必須在交付前補做此檢查與修正。
 
 ## 程式品質與測試
 
@@ -250,6 +251,7 @@ const { login } = authStore
 - [ ] 路由頁面與合適的大型／選用功能已動態載入
 - [ ] 一般樣式為 Tailwind CSS 4、沒有 `@apply`（包括其他 Skill 範本），SCSS 僅用於偽元素
 - [ ] RWD、Dark Mode 與基本可及性需求已檢查
+- [ ] 已盤點最終 UI 的可點選控制項：可操作項目 hover 顯示 `cursor-pointer`，靜態或停用項目不顯示手型；此檢查包含其他 Skill、範本或元件庫產生的樣式
 - [ ] Imports 經 `simple-import-sort` 排序，相關 formatter、lint、type check 與 Unit Test 已執行
 - [ ] 新建專案已安裝且設定 ESLint flat config、Prettier（含 Tailwind plugin）、Vitest / Vue Test Utils 與 Playwright
 - [ ] 新建專案提供 format、lint、type check、Unit Test、coverage 與 E2E Test scripts，且檢查 scripts 不會改寫原始碼

@@ -58,7 +58,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
         <slot />
 
         <DialogClose
-          class="hover:bg-secondary absolute top-4 right-4 rounded-md p-0.5 transition-colors"
+          class="hover:bg-secondary absolute top-4 right-4 rounded-md p-0.5 transition-colors hover:cursor-pointer"
         >
           <X class="size-4" />
           <span class="sr-only">{{ props.closeLabel }}</span>

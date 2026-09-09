@@ -151,7 +151,7 @@ onClickOutside(searchRoot, closeSuggestions)
           type="button"
           role="option"
           :aria-selected="options.indexOf(option) === activeOptionIndex"
-          class="hover:bg-accent focus-visible:bg-accent flex w-full items-center justify-between rounded-sm px-2 py-2 text-left outline-none"
+          class="hover:bg-accent focus-visible:bg-accent flex w-full items-center justify-between rounded-sm px-2 py-2 text-left outline-none hover:cursor-pointer"
           @mousedown.prevent="selectOption(option.id)"
         >
           <span class="flex min-w-0 flex-col">

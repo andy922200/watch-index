@@ -79,7 +79,7 @@ const { isDark, toggleDark } = useDarkMode()
     </Select>
     <button
       type="button"
-      class="rounded-sm border border-stone-400 bg-white p-2 text-stone-950 shadow-sm transition outline-none focus:ring-2 focus:ring-stone-950 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100 dark:focus:ring-stone-100"
+      class="rounded-sm border border-stone-400 bg-white p-2 text-stone-950 shadow-sm transition outline-none hover:cursor-pointer focus:ring-2 focus:ring-stone-950 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100 dark:focus:ring-stone-100"
       :aria-label="isDark ? t('site.darkMode.switchToLight') : t('site.darkMode.switchToDark')"
       @click="toggleDark()"
     >
