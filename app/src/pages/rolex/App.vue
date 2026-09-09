@@ -156,3 +156,17 @@ onMounted(loadCatalog)
     <WatchDetailsDialog v-model:open="isWatchDetailsOpen" :watch="selectedWatch" />
   </AppLayout>
 </template>
+
+<style lang="scss" scoped>
+.hero-title {
+  &::after {
+    content: '';
+    display: block;
+    width: 3.5rem;
+    height: 2px;
+    margin: 0.75rem auto 0;
+    background: currentColor;
+    opacity: 0.4;
+  }
+}
+</style>
