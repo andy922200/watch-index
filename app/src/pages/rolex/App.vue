@@ -85,7 +85,10 @@ onMounted(loadCatalog)
   <AppLayout :lang="locale">
     <AppNav />
     <section class="w-full max-w-4xl text-center" aria-labelledby="page-title">
-      <h1 id="page-title" class="hero-title text-4xl font-semibold tracking-tight sm:text-6xl">
+      <h1
+        id="page-title"
+        class="hero-title my-6 w-full text-4xl font-semibold tracking-tight sm:mt-8 sm:mb-12 sm:text-6xl"
+      >
         {{ t('site.title') }}
       </h1>
       <div class="mt-10 flex justify-center">

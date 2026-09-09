@@ -44,7 +44,9 @@ const { isDark, toggleDark } = useDarkMode()
 </script>
 
 <template>
-  <nav class="absolute top-6 right-6 flex items-center gap-2">
+  <nav
+    class="sticky top-0 z-50 flex w-full items-center justify-end gap-2 bg-stone-100/95 px-4 py-3 backdrop-blur dark:bg-stone-950/95"
+  >
     <Select :model-value="locale" @update:model-value="navigateToLocale">
       <SelectTrigger class="w-32" :aria-label="t('site.languageLabel')">
         <SelectValue :placeholder="t(`site.language.${locale}`)" />
