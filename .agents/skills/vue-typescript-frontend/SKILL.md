@@ -35,27 +35,20 @@ description: >-
   - 詢問時用具體情境幫使用者判斷，例如：「這個網站的連結會被分享到 LINE、Facebook 這類需要正確預覽標題與縮圖的地方嗎？」使用者回答「否」、「不確定」，或完全沒提到 SEO／社群分享預覽需求時，**一律採用單頁式**，不得自行升級為多頁靜態架構。
   - 使用者一旦選定架構後才可動工；改變既有專案的語系架構（單頁式⇄多頁靜態）視同前述套件管理工具切換等級的重大決策，同樣必須先取得使用者明確同意。
 
-## TypeScript 與命名
+## 共用 TypeScript 規範
 
-### TypeScript
+當工作涉及新增、修改、重構、除錯、測試或審查 TypeScript 程式時，先讀取並遵守 [typescript-standards](../typescript-standards/SKILL.md)。該 Skill 管理跨框架的型別安全、函式介面、可設定值與通用命名規範；本 Skill 僅補充 Vue 專屬要求。
 
-- 一律使用 **TypeScript**，並啟用 strict mode。
-- 禁止顯性與隱性 `any`。外部或不可信任資料先以 `unknown` 接收，再透過 type guard、schema 或明確驗證縮限型別。
+## Vue 專屬型別與命名
+
 - Props、Emits、`defineModel`、Composable 回傳值、Pinia state、API request 與 response 都要有明確型別。
-- 需要使用 `as` 型別斷言前，先告知使用者原因與替代方案；不得為了壓過 lint 或型別錯誤而靜默加入斷言，也不得使用雙重斷言（例如 `as unknown as T`）隱藏問題。
-- 不使用 `.js`、`.jsx` 或 `.cjs`。只有工具鏈確實要求 JavaScript 時才允許 `.mjs`。
-
-### 命名
 
 | 類型 | 規則 | 範例 |
 | --- | --- | --- |
 | Vue 元件 | PascalCase | `BaseMultiSelect.vue` |
 | Composable | `use` + PascalCase | `useFetchData.ts` |
-| Helper / 函式 / 區域變數 | camelCase | `getApiError.ts`、`formatPrice` |
 | Store 檔案 | camelCase 且以 `Store` 結尾 | `authStore.ts` |
 | Store 匯出 | PascalCase | `useAuthStore` |
-| Enum、共用常數物件 | PascalCase | `OrderStatus`、`ApiRoutes` |
-| 不可變純量常數 | UPPER_CASE | `DEFAULT_PAGE_SIZE` |
 
 ## Vue 元件
 
@@ -201,7 +194,7 @@ const { login } = authStore
 
 ## 樣式、RWD 與可及性
 
-- 一般樣式一律使用 **Tailwind CSS 4**，不得使用 `@apply`。
+- 一般樣式一律使用 **Tailwind CSS 4**，不得使用 `@apply`。若其他 Skill 提供的範本含有 `@apply`，必須改以具有相同樣式語意的 Tailwind utility class 或等效寫法實作。
 - 只有實作偽元素時才使用 SCSS；一般排版、色彩與元件樣式不得改以 SCSS 堆疊。
 - Dark Mode 與 RWD 是基本驗收條件：新增或修改的介面必須在合理的窄／寬版檢視與明／暗主題下保持可用與可讀。
 - 互動元件與導覽使用正確的語意化元素、可辨識 label、鍵盤操作與焦點狀態；不可用非互動元素模擬按鈕或連結。
@@ -233,9 +226,8 @@ const { login } = authStore
 ## 避免事項
 
 - 以 Vue Options API 撰寫元件，或以 Pinia Setup Store 取代 Option Store。
-- 使用 `any`、未告知的 `as`、雙重型別斷言，或以斷言掩蓋 API 資料問題。
-- 新增 `.js`、`.jsx`、`.cjs` 檔案。
-- 使用 Tailwind `@apply`，或在非偽元素情境以 SCSS 取代 Tailwind。
+- 違反 `typescript-standards` 中的型別安全、函式介面或可設定值規範。
+- 使用 Tailwind `@apply`（包含直接沿用其他 Skill 範本中的 `@apply`），或在非偽元素情境以 SCSS 取代 Tailwind。
 - 在元件內新建 Axios client 或散落直接 API 呼叫。
 - 將使用者可見文案、placeholder、錯誤訊息或 aria label 硬編為單一語言。
 - 對路由頁面、大型或選用功能使用不必要的靜態匯入。
@@ -247,7 +239,7 @@ const { login } = authStore
 ## 完成前檢查
 
 - [ ] Vue SFC 使用 `<script setup lang="ts">` 與 Composition API
-- [ ] TypeScript strict，且沒有 `any`、未告知的 `as` 或非 `.mjs` JavaScript
+- [ ] 涉及 TypeScript 程式時，已讀取並遵守 `typescript-standards`
 - [ ] 前端相依使用使用者指定的套件管理工具；未指定時使用 `npm`，既有專案沿用 lockfile 或 `packageManager`
 - [ ] Props、Emits、Model、API response、Composable 與 Store State 都有明確型別
 - [ ] 元件、Composable、Helper、常數、Store 檔案與 Store 匯出符合命名規則
@@ -256,7 +248,7 @@ const { login } = authStore
 - [ ] 使用者可見文字已納入 i18n，圖示按需使用 `unplugin-icons`
 - [ ] 若專案新導入多語系或變更既有語系架構，已在動工前跟使用者確認採用單頁式或多頁靜態架構，未自行預設
 - [ ] 路由頁面與合適的大型／選用功能已動態載入
-- [ ] 一般樣式為 Tailwind CSS 4、沒有 `@apply`，SCSS 僅用於偽元素
+- [ ] 一般樣式為 Tailwind CSS 4、沒有 `@apply`（包括其他 Skill 範本），SCSS 僅用於偽元素
 - [ ] RWD、Dark Mode 與基本可及性需求已檢查
 - [ ] Imports 經 `simple-import-sort` 排序，相關 formatter、lint、type check 與 Unit Test 已執行
 - [ ] 新建專案已安裝且設定 ESLint flat config、Prettier（含 Tailwind plugin）、Vitest / Vue Test Utils 與 Playwright
