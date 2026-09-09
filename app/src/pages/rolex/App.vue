@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { formatNumber } from 'parse-localized-number'
 import { computed, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -73,6 +74,41 @@ const openWatchDetails = (watch: Watch): void => {
 const getWatchImageAlt = (watch: Watch): string =>
   t('site.watchList.imageAlt', { modelName: watch.modelName })
 
+const formatPrice = (watch: Watch): string => {
+  if (watch.priceStatus !== 'listed' || watch.price === null || !catalog.value) {
+    return t('site.watchList.priceUnavailable')
+  }
+
+  return t('site.watchList.priceValue', {
+    currency: catalog.value.priceMarket.currencyCode,
+    price: formatNumber(watch.price),
+  })
+}
+
+const getPriceLabel = (): string => {
+  const priceType = catalog.value?.priceMarket.priceType
+
+  if (priceType === 'tax-exclude') {
+    return t('site.watchList.priceLabelExcludingTax')
+  }
+
+  if (priceType === 'no-tax') {
+    return t('site.watchList.priceLabelNoTax')
+  }
+
+  return t('site.watchList.priceLabelIncludingTax')
+}
+
+const formatPriceUpdatedAt = (): string => {
+  if (!catalog.value) {
+    return ''
+  }
+
+  return new Intl.DateTimeFormat(navigator.language, { dateStyle: 'medium' }).format(
+    new Date(catalog.value.priceUpdatedAt),
+  )
+}
+
 onMounted(loadCatalog)
 </script>
 
@@ -86,6 +122,9 @@ onMounted(loadCatalog)
       >
         {{ t('site.title') }}
       </h1>
+      <p v-if="catalog" class="text-muted-foreground -mt-2 text-sm sm:-mt-8">
+        {{ t('site.priceUpdatedAt', { date: formatPriceUpdatedAt() }) }}
+      </p>
       <div class="mt-10 flex justify-center">
         <WatchCollectionCombobox
           v-if="!isLoading && !error"
@@ -135,6 +174,10 @@ onMounted(loadCatalog)
             <CardDescription class="h-4 truncate font-mono text-xs">
               {{ watch.modelReference }}
             </CardDescription>
+            <div class="mt-2 h-10">
+              <p class="text-muted-foreground text-xs">{{ getPriceLabel() }}</p>
+              <p class="font-medium tabular-nums">{{ formatPrice(watch) }}</p>
+            </div>
             <CardDescription v-if="watch.localNicknames.length > 0" class="line-clamp-2 h-10">
               {{ watch.localNicknames.join('、') }}
             </CardDescription>

@@ -1,6 +1,7 @@
 {
   "site": {
     "title": "全球 Rolex 腕錶索引",
+    "priceUpdatedAt": "價格資料更新於 {date}",
     "languageLabel": "語言",
     "language": {
       "en-us": "English",
@@ -42,6 +43,11 @@
       "empty": "此錶款系列沒有符合的錶款。",
       "loadMore": "載入更多錶款",
       "modelReferenceLabel": "型號",
+      "priceLabelIncludingTax": "建議售價（含稅）",
+      "priceLabelExcludingTax": "建議售價（未含稅）",
+      "priceLabelNoTax": "建議售價（免稅市場）",
+      "priceValue": "{currency} {price}",
+      "priceUnavailable": "價格待確認",
       "viewDetails": "查看規格",
       "imageAlt": "{modelName} 腕錶"
     },

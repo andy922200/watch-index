@@ -28,6 +28,13 @@ describe('watch data validation', () => {
         collectedAt: '2026-09-04T00:00:00.000Z',
         watchCount: 1,
         collections: [{ id: 'datejust', watchCount: 1 }],
+        priceMarket: {
+          code: 'TW',
+          currencyCode: 'TWD',
+          priceType: 'tax-include',
+          taxRatePercent: 5,
+        },
+        priceUpdatedAt: '2026-09-04T00:00:00.000Z',
         watchesByReference: {
           'm126234-0001': {
             collectionId: 'datejust',
@@ -39,6 +46,8 @@ describe('watch data validation', () => {
             caseDescription: 'Oyster, 36 mm, Oystersteel',
             dialDescription: 'Bright blue',
             localNicknames: ['DJ'],
+            price: 100000,
+            priceStatus: 'listed',
           },
         },
       }),

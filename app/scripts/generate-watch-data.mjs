@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto'
-import { mkdir, readFile, rm, writeFile } from 'node:fs/promises'
+import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -15,6 +15,8 @@ const appDirectory = resolve(scriptDirectory, '..')
 const projectDirectory = resolve(appDirectory, '..')
 const catalogPath = resolve(projectDirectory, 'data/catelog/rolex-catalog.json')
 const taiwanMarketPath = resolve(projectDirectory, 'data/markets/rolex-taiwan-market.json')
+const taiwanPriceHistoryPath = resolve(projectDirectory, 'data/history/TW/rolex-price-history.json')
+const historyDirectory = resolve(projectDirectory, 'data/history')
 
 // production build 寫到 dist；dev 與 E2E 則傳入 public/watch-data，讓 Vite 能直接服務。
 const outputDirectoryArgumentIndex = process.argv.indexOf('--output-directory')
@@ -30,6 +32,26 @@ const outputDirectory = resolve(appDirectory, requestedOutputDirectory ?? 'dist/
 // 原始 catalog 是資料收集流程的輸出；此處只負責將它轉換為前端讀取最佳化的格式。
 const catalog = JSON.parse(await readFile(catalogPath, 'utf8'))
 const taiwanMarket = JSON.parse(await readFile(taiwanMarketPath, 'utf8'))
+const taiwanPriceHistory = JSON.parse(await readFile(taiwanPriceHistoryPath, 'utf8'))
+
+const historyFiles = await Promise.all(
+  (await readdir(historyDirectory, { withFileTypes: true }))
+    .filter((entry) => entry.isDirectory())
+    .map(async (entry) => {
+      const historyPath = resolve(historyDirectory, entry.name, 'rolex-price-history.json')
+
+      return JSON.parse(await readFile(historyPath, 'utf8'))
+    }),
+)
+
+const latestPriceUpdatedAt = historyFiles
+  .flatMap((history) => history.collectionRuns)
+  .map((run) => run.collectedAt)
+  .sort((left, right) => Date.parse(right) - Date.parse(left))[0]
+
+if (typeof latestPriceUpdatedAt !== 'string') {
+  throw new Error('Price history does not contain a collection run date')
+}
 
 const taiwanWatchesByReference = new Map(
   taiwanMarket.watches.map((watch) => [watch.modelReference, watch]),
@@ -58,6 +80,8 @@ const watches = catalog.watches.map((watch) => {
     caseDescription: taiwanWatch.caseDescription,
     dialDescription: taiwanWatch.dialDescription,
     localNicknames: taiwanWatch.localNicknames.names,
+    price: taiwanPriceHistory.priceSeries[watch.modelReference].at(-1).price,
+    priceStatus: taiwanPriceHistory.priceSeries[watch.modelReference].at(-1).listingStatus,
   }
 })
 
@@ -78,6 +102,13 @@ const watchData = {
   collections: [...collectionCounts]
     .map(([id, watchCount]) => ({ id, watchCount }))
     .sort((left, right) => left.id.localeCompare(right.id)),
+  priceMarket: {
+    code: taiwanPriceHistory.marketCode,
+    currencyCode: taiwanPriceHistory.currencyCode,
+    priceType: taiwanPriceHistory.priceType,
+    taxRatePercent: taiwanPriceHistory.taxRatePercent,
+  },
+  priceUpdatedAt: latestPriceUpdatedAt,
   watchesByReference,
 }
 

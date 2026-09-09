@@ -13,6 +13,15 @@ export interface Watch {
   caseDescription: string
   dialDescription: string
   localNicknames: string[]
+  price: number | null
+  priceStatus: 'listed' | 'price-unavailable' | 'not-listed'
+}
+
+export interface PriceMarket {
+  code: string
+  currencyCode: string
+  priceType: 'tax-include' | 'tax-exclude' | 'no-tax'
+  taxRatePercent: number | null
 }
 
 export interface WatchCatalog {
@@ -20,6 +29,8 @@ export interface WatchCatalog {
   collectedAt: string
   watchCount: number
   collections: WatchCollection[]
+  priceMarket: PriceMarket
+  priceUpdatedAt: string
   watchesByReference: Record<string, Watch>
 }
 

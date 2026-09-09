@@ -1,4 +1,10 @@
-import type { Watch, WatchCatalog, WatchCollection, WatchDataManifest } from '@/types/watch-data'
+import type {
+  PriceMarket,
+  Watch,
+  WatchCatalog,
+  WatchCollection,
+  WatchDataManifest,
+} from '@/types/watch-data'
 
 /**
  * 判斷值是否為非陣列的物件，供其他資料驗證函式安全讀取欄位。
@@ -35,7 +41,20 @@ export const isWatch = (value: unknown): value is Watch =>
   typeof value.caseDescription === 'string' &&
   typeof value.dialDescription === 'string' &&
   Array.isArray(value.localNicknames) &&
-  value.localNicknames.every((nickname) => typeof nickname === 'string')
+  value.localNicknames.every((nickname) => typeof nickname === 'string') &&
+  (typeof value.price === 'number' || value.price === null) &&
+  (value.priceStatus === 'listed' ||
+    value.priceStatus === 'price-unavailable' ||
+    value.priceStatus === 'not-listed')
+
+export const isPriceMarket = (value: unknown): value is PriceMarket =>
+  isRecord(value) &&
+  typeof value.code === 'string' &&
+  typeof value.currencyCode === 'string' &&
+  (value.priceType === 'tax-include' ||
+    value.priceType === 'tax-exclude' ||
+    value.priceType === 'no-tax') &&
+  (typeof value.taxRatePercent === 'number' || value.taxRatePercent === null)
 
 /**
  * 驗證版本化 watch-data manifest 的格式。
@@ -59,5 +78,7 @@ export const isWatchCatalog = (value: unknown): value is WatchCatalog =>
   typeof value.watchCount === 'number' &&
   Array.isArray(value.collections) &&
   value.collections.every(isWatchCollection) &&
+  isPriceMarket(value.priceMarket) &&
+  typeof value.priceUpdatedAt === 'string' &&
   isRecord(value.watchesByReference) &&
   Object.values(value.watchesByReference).every(isWatch)
