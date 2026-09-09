@@ -10,6 +10,7 @@
     "exchangeRateUnavailable": "Converted prices are currently unavailable",
     "market": {
       "austria": "Austria",
+      "france": "France",
       "germany": "Germany",
       "hongKong": "Hong Kong",
       "japan": "Japan",

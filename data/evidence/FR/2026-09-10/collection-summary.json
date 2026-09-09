@@ -1,0 +1,88 @@
+{
+  "market": "France",
+  "marketCode": "FR",
+  "locale": "fr-FR",
+  "officialEntryUrl": "https://www.rolex.com/fr-fr/watches/find-rolex?group=0",
+  "startedAt": "2026-09-10T01:34:25+08:00",
+  "completedAt": "2026-09-10T01:55:41+08:00",
+  "status": "completed-with-limitations",
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "available",
+    "chromeDevtoolsMcpConfigured": true,
+    "chromeDevtoolsMcpAttempted": true,
+    "chromeDevtoolsMcpResult": "PASS",
+    "fallbackTool": null,
+    "notes": "Chrome DevTools was used with a clean isolated browser context. The official fr-fr product page confirmed the browser-loaded catalog and price endpoints. The /fr language route was discarded because its prior browser market context returned TW pricing; no price from that route was retained."
+  },
+  "primaryCollectionPath": {
+    "type": "official structured endpoint",
+    "endpoint": "https://www.rolex.com/api/catalog/watchgrid?language=fr&firstResult=0&numberOfResults=1872&grid=all&countryCode=FR&group=%280%29",
+    "responseFile": "data/evidence/FR/2026-09-10/watchgrid-primary-source.network-response",
+    "responseSha256": "df7d1190b76a2a4f6799137fbdb912220ed57ac08c97ab6fc597eee46c8fd70c",
+    "responseFields": {
+      "modelReference": "rmc",
+      "collection": "family and familyCode",
+      "modelName": "title",
+      "caseDescription": "facet_case_title",
+      "dialAlt": "alt",
+      "newModel": "newmodelselection",
+      "rawPrice": "formattedPrice",
+      "parsedPrice": "price"
+    },
+    "pagination": "A successful request with firstResult=0 and numberOfResults=1872 returned totalCount=1465 and 1465 results. A successful subsequent request with firstResult=1465 and numberOfResults=144 returned the same totalCount and an empty results array.",
+    "structuredResultCount": 1465,
+    "structuredUniqueModelReferenceCount": 1465,
+    "terminalPage": {
+      "endpoint": "https://www.rolex.com/api/catalog/watchgrid?language=fr&firstResult=1465&numberOfResults=144&grid=all&countryCode=FR&group=%280%29",
+      "httpStatus": 200,
+      "totalCount": 1465,
+      "resultCount": 0
+    }
+  },
+  "renderedCrossCheck": {
+    "view": "Official France model view; no collection, size, material, or new-model filters",
+    "initialRenderedConfigurationCount": 56,
+    "notes": "The official rendered France page exposed product links and French text. Completion is established by the structured endpoint and an independent product-page sample is recorded in validation-summary.json."
+  },
+  "counts": {
+    "rawConfigurationCount": 1465,
+    "uniqueModelReferenceCount": 1465,
+    "duplicateCount": 0,
+    "conflictCount": 0,
+    "listedWithPublicPriceCount": 1465,
+    "priceUnavailableCount": 0,
+    "confirmedNotListedCount": 0,
+    "parseFailureCount": 0
+  },
+  "errors": [],
+  "taxVerification": {
+    "priceType": "tax-include",
+    "officialRolexProductPage": {
+      "status": "PASS",
+      "sourceUrl": "https://www.rolex.com/fr-fr/watches/land-dweller/m127334-0001",
+      "observedAt": "2026-09-09T17:52:25.443Z",
+      "priceNotice": "Prix de vente au détail suggéré comprenant la TVA."
+    },
+    "userProvidedRateConfirmation": {
+      "status": "PASS",
+      "receivedAt": "2026-09-10T02:03:30+08:00",
+      "taxRatePercent": 20,
+      "source": "User-provided confirmation; no external URL was supplied."
+    },
+    "priorGovernmentLookup": {
+      "status": "FAIL",
+      "sourceUrl": "https://entreprendre.service-public.gouv.fr/vosdroits/F23566",
+      "finding": "The official Service Public page confirms that sales are subject to TVA, but it does not establish a rate for this watch collection.",
+      "blockedAttempt": {
+        "sourceUrl": "https://www.economie.gouv.fr/cedef/tva-taux",
+        "result": "Cloudflare human-verification page; no rate was retained."
+      }
+    },
+    "storedTaxRatePercent": 20,
+    "notes": "The tax rate was updated from the user-provided confirmation; no tax rate was inferred or set to zero."
+  },
+  "limitations": [
+    "French nickname research could not be completed in this environment. Empty nickname fields do not assert that no French nickname exists."
+  ]
+}

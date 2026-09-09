@@ -1,0 +1,498 @@
+{
+  "marketCode": "FR",
+  "validationCompletedAt": "2026-09-10T02:04:31+08:00",
+  "evidencePath": "data/evidence/FR/2026-09-10",
+  "overallValidationStatus": "FAIL",
+  "fiveLayerValidation": {
+    "syntaxAndSchema": {
+      "status": "NOT RUN",
+      "strictJson": {
+        "status": "PASS",
+        "filesChecked": 26,
+        "method": "Python json.loads with duplicate-key and invalid-constant rejection across formal data, schemas, and France JSON evidence"
+      },
+      "manualSchemaConformance": {
+        "status": "PASS",
+        "method": "Read and enforced the actual Rolex catalog, market, and price-history schema constraints relevant to the France additions, including required keys, additional-property rejection, types, references, URI shapes, and status/price combinations."
+      },
+      "jsonSchema": {
+        "status": "NOT RUN",
+        "reason": "No installed Draft 2020-12 JSON Schema validator was available; no dependency was installed without authorization."
+      }
+    },
+    "crossFileConsistency": {
+      "status": "PASS",
+      "catalogWatchCount": 1465,
+      "franceMarketWatchCount": 1465,
+      "francePriceSeriesCount": 1465,
+      "franceUniqueModelReferenceCount": 1465,
+      "marketHistoryReferenceMismatchCount": 0,
+      "catalogOrphanCount": 0,
+      "runIds": [
+        1
+      ]
+    },
+    "sourceReconciliation": {
+      "status": "PASS",
+      "evidenceObservationCount": 1465,
+      "marketAndHistoryReconciliationMismatchCount": 0,
+      "priceParseFailureCount": 0,
+      "priceStatistics": {
+        "currencyCode": "EUR",
+        "listedWithPublicPriceCount": 1465,
+        "priceUnavailableCount": 0,
+        "confirmedNotListedCount": 0,
+        "minimum": 6000,
+        "maximum": 181000
+      }
+    },
+    "websiteCompleteness": {
+      "status": "PASS",
+      "endpointTotalCount": 1465,
+      "endpointUniqueConfigurationCount": 1465,
+      "terminalPageHttpStatus": 200,
+      "terminalPageFirstResult": 1465,
+      "terminalPageResultCount": 0,
+      "unresolvedConflictCount": 0,
+      "notes": "The 1,872-result primary response included all 1,465 reported configurations. The subsequent firstResult=1465 response was empty."
+    },
+    "changeSafety": {
+      "status": "PASS",
+      "catalogChanged": false,
+      "catalogSha256": "ff9ee8298b05a0b9cf6445978532a832730cde850bad6c20abc128b4cece1c09",
+      "schemasChanged": false,
+      "existingMarketAndHistoryFilesChanged": false,
+      "historyPreservation": "FR is a new market with a single initial run; no prior FR run or price point existed to overwrite.",
+      "catalogReconciliation": {
+        "catalogReferenceCount": 1465,
+        "franceObservedReferenceCount": 1465,
+        "intersectionCount": 1465,
+        "franceReferencesNotInCatalogCount": 0,
+        "catalogReferencesNotObservedInFranceCount": 0,
+        "notes": "The France market data is entirely within the existing catalog union. Per the single-market rule, the catalog was not rewritten."
+      },
+      "nonTargetWorktreePathUntouched": "app/public/apple-touch-icon.png"
+    }
+  },
+  "evidenceTraceability": {
+    "status": "PASS",
+    "acceptedObservations": 1465,
+    "observationsWithMatchingMarketTextAndInitialPrice": 1465,
+    "sensitiveDataScan": {
+      "status": "PASS",
+      "matchedSensitiveValueCount": 0,
+      "patterns": [
+        "Authorization header",
+        "Bearer token",
+        "JWT-like value",
+        "cookie assignment"
+      ]
+    }
+  },
+  "taxRateVerification": {
+    "status": "PASS",
+    "priceType": "tax-include",
+    "taxRatePercent": 20,
+    "verificationSource": "User-provided confirmation at 2026-09-10T02:03:30+08:00; no external URL was supplied.",
+    "formalHistoryValue": "PASS"
+  },
+  "nicknameResearch": {
+    "status": "FAIL",
+    "scope": "new-market",
+    "languages": [
+      "fr"
+    ],
+    "queries": [
+      "Rolex France surnoms Pepsi Batman Kermit montre",
+      "Rolex France surnom Root Beer Panda Daytona",
+      "Rolex France surnom Land-Dweller 2026"
+    ],
+    "sourcesReviewed": 0,
+    "candidateCount": 0,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [],
+    "notes": "The Google attempt returned a CAPTCHA. The available Bing result page was localized to Taiwan and did not yield a French publisher source suitable for exact-configuration verification; a French-region follow-up was unavailable in this environment after a browser-policy denial. This is not a conclusion that French nicknames do not exist. No nickname or alias was added."
+  },
+  "independentSpotChecks": {
+    "status": "PASS",
+    "method": "Chrome DevTools fetched 19 distinct official France product-page HTTP responses. Their product JSON-LD and rendered product payload were compared to the structured endpoint for reference, URL, French model text, raw price, parsed price, and EUR currency.",
+    "collectionRepresentativeCount": 17,
+    "sameBaseModelPairs": [
+      [
+        "m228236-0018",
+        "m228236-0002"
+      ],
+      [
+        "m336935-0008",
+        "m336935-0006"
+      ]
+    ],
+    "coverage": {
+      "lowestPriceReference": "m276200-0009",
+      "highestPriceReference": "m279459rbr-0001",
+      "newModelReference": "m126334-0033",
+      "priceUnavailableCoverage": "NOT APPLICABLE: all 1,465 structured records included a public price.",
+      "anomalyCoverage": "NOT APPLICABLE: no duplicate, conflict, parse failure, or price-unavailable source record was observed."
+    },
+    "totalChecks": 19,
+    "failureCount": 0,
+    "checks": [
+      {
+        "modelReference": "m127334-0001",
+        "collection": "land-dweller",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/land-dweller/m127334-0001",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "15 950 €",
+        "observedPrice": 15950,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m228236-0018",
+        "collection": "day-date",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/day-date/m228236-0018",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "66 900 €",
+        "observedPrice": 66900,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m336935-0008",
+        "collection": "sky-dweller",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/sky-dweller/m336935-0008",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "63 100 €",
+        "observedPrice": 63100,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m279459rbr-0001",
+        "collection": "lady-datejust",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/lady-datejust/m279459rbr-0001",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "181 000 €",
+        "observedPrice": 181000,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m126334-0033",
+        "collection": "datejust",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/datejust/m126334-0033",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "11 350 €",
+        "observedPrice": 11350,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m276200-0009",
+        "collection": "oyster-perpetual",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/oyster-perpetual/m276200-0009",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "6 000 €",
+        "observedPrice": 6000,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m126506-0001",
+        "collection": "cosmograph-daytona",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/cosmograph-daytona/m126506-0001",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "82 100 €",
+        "observedPrice": 82100,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m126613lb-0002",
+        "collection": "submariner",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/submariner/m126613lb-0002",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "18 850 €",
+        "observedPrice": 18850,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m126603-0001",
+        "collection": "sea-dweller",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/sea-dweller/m126603-0001",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "21 850 €",
+        "observedPrice": 21850,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m136660-0005",
+        "collection": "deepsea",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/deepsea/m136660-0005",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "15 370 €",
+        "observedPrice": 15370,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m126710blnr-0003",
+        "collection": "gmt-master-ii",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/gmt-master-ii/m126710blnr-0003",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "11 450 €",
+        "observedPrice": 11450,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m226658-0001",
+        "collection": "yacht-master",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/yacht-master/m226658-0001",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "37 100 €",
+        "observedPrice": 37100,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m126680-0001",
+        "collection": "yacht-master-ii",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/yacht-master-ii/m126680-0001",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "19 750 €",
+        "observedPrice": 19750,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m224270-0001",
+        "collection": "explorer",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/explorer/m224270-0001",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "8 100 €",
+        "observedPrice": 8100,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m226570-0001",
+        "collection": "explorer-ii",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/explorer-ii/m226570-0001",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "10 300 €",
+        "observedPrice": 10300,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m126900-0001",
+        "collection": "air-king",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/air-king/m126900-0001",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "7 900 €",
+        "observedPrice": 7900,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m52508-0008",
+        "collection": "1908",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/1908/m52508-0008",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "39 800 €",
+        "observedPrice": 39800,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m228236-0002",
+        "collection": "day-date",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/day-date/m228236-0002",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "71 500 €",
+        "observedPrice": 71500,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m336935-0006",
+        "collection": "sky-dweller",
+        "sourceUrl": "https://www.rolex.com/fr-fr/watches/sky-dweller/m336935-0006",
+        "observedAt": "2026-09-09T17:52:25.443Z",
+        "comparedFields": [
+          "modelReference",
+          "productUrl",
+          "modelName",
+          "rawPrice",
+          "parsedPrice",
+          "currencyCode"
+        ],
+        "observedRawPrice": "63 100 €",
+        "observedPrice": 63100,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      }
+    ]
+  },
+  "readmeUpdate": {
+    "status": "PASS",
+    "updated": true,
+    "sections": [
+      "README Data scope",
+      "watch-data-collection-guide Current markets"
+    ],
+    "reason": "France increases covered markets from nine to ten and its tax-rate verification limitation is material to the market table."
+  },
+  "limitations": [
+    "No Draft 2020-12 JSON Schema validator was installed, so generic JSON Schema validation is NOT RUN; strict JSON parsing and a direct implementation of the relevant schema constraints passed.",
+    "French nickname research failed because qualified French sources could not be reviewed in this environment. No false negative conclusion or nickname data was stored."
+  ]
+}

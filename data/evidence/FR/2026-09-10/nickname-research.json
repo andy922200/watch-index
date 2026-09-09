@@ -1,0 +1,20 @@
+{
+  "nicknameResearch": {
+    "status": "FAIL",
+    "scope": "new-market",
+    "languages": [
+      "fr"
+    ],
+    "queries": [
+      "Rolex France surnoms Pepsi Batman Kermit montre",
+      "Rolex France surnom Root Beer Panda Daytona",
+      "Rolex France surnom Land-Dweller 2026"
+    ],
+    "sourcesReviewed": 0,
+    "candidateCount": 0,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [],
+    "notes": "The Google attempt returned a CAPTCHA. The available Bing result page was localized to Taiwan and did not yield a French publisher source suitable for exact-configuration verification; a French-region follow-up was unavailable in this environment after a browser-policy denial. This is not a conclusion that French nicknames do not exist. No nickname or alias was added."
+  }
+}
