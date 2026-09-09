@@ -22,10 +22,11 @@ interface LanguageLink {
 
 const { t, locale } = useI18n()
 const market = defineModel<MarketCode>('market', { default: DEFAULT_MARKET })
+const queryString = window.location.search
 
 const languageLinks = computed<LanguageLink[]>(() => [
-  { code: Locale.zhTw, href: import.meta.env.BASE_URL },
-  { code: Locale.enUs, href: `${import.meta.env.BASE_URL}en-us/` },
+  { code: Locale.zhTw, href: `${import.meta.env.BASE_URL}${queryString}` },
+  { code: Locale.enUs, href: `${import.meta.env.BASE_URL}en-us/${queryString}` },
 ])
 
 const navigateToLocale = (

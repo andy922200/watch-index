@@ -25,6 +25,23 @@ test('keeps the selected market when changing the page language', async ({ page 
   await expect(page.getByRole('combobox', { name: '市場' })).toContainText('日本')
 })
 
+test('uses market_code over the saved market and preserves it across language pages', async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    localStorage.setItem('rolex-selected-market', 'TW')
+  })
+  await page.goto('en-us/?market_code=JP')
+
+  await expect(page.getByRole('combobox', { name: 'Market' })).toContainText('Japan')
+
+  await page.getByRole('combobox', { name: 'Language' }).click()
+  await page.getByRole('option', { name: '繁體中文' }).click()
+
+  await expect(page).toHaveURL(/\?market_code=JP$/)
+  await expect(page.getByRole('combobox', { name: '市場' })).toContainText('日本')
+})
+
 test('switches the displayed prices to the selected market', async ({ page }) => {
   await page.goto('en-us/')
 

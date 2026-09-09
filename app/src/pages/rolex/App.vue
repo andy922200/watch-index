@@ -19,7 +19,13 @@ import WatchCollectionCombobox, {
   type WatchCollectionOption,
 } from '@/components/watch-collection/WatchCollectionCombobox.vue'
 import { useWatchCatalog } from '@/composables/useWatchCatalog'
-import { DEFAULT_MARKET, isMarketCode, MARKET_STORAGE_KEY, type MarketCode } from '@/lib/markets'
+import {
+  DEFAULT_MARKET,
+  getMarketFromQuery,
+  isMarketCode,
+  MARKET_STORAGE_KEY,
+  type MarketCode,
+} from '@/lib/markets'
 import { Locale } from '@/plugins/i18n'
 import type { Watch } from '@/types/watch-data'
 
@@ -39,6 +45,11 @@ const selectedMarket = useStorage<MarketCode>(MARKET_STORAGE_KEY, DEFAULT_MARKET
     write: (market: MarketCode): string => market,
   },
 })
+const marketFromQuery = getMarketFromQuery(window.location.search)
+
+if (marketFromQuery !== null) {
+  selectedMarket.value = marketFromQuery
+}
 const { catalog, error, isLoading, loadCatalog } = useWatchCatalog()
 
 const collectionOptions = computed<WatchCollectionOption[]>(() =>
