@@ -13,18 +13,13 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog'
 import WatchCollectionCombobox, {
   type WatchCollectionOption,
 } from '@/components/watch-collection/WatchCollectionCombobox.vue'
 import { useWatchCatalog } from '@/composables/useWatchCatalog'
 import type { Watch } from '@/types/watch-data'
+
+import WatchDetailsDialog from './components/WatchDetailsDialog.vue'
 
 const PAGE_SIZE = 12
 
@@ -158,35 +153,6 @@ onMounted(loadCatalog)
         </Button>
       </div>
     </section>
-    <Dialog v-model:open="isWatchDetailsOpen">
-      <DialogContent
-        :close-label="t('site.watchDetails.close')"
-        class="max-h-[calc(100dvh-2rem)] overflow-y-auto sm:max-w-2xl"
-      >
-        <template v-if="selectedWatch">
-          <DialogHeader>
-            <DialogTitle>{{ selectedWatch.modelName }}</DialogTitle>
-            <DialogDescription>
-              {{ t('site.watchList.modelReferenceLabel') }}: {{ selectedWatch.modelReference }}
-            </DialogDescription>
-          </DialogHeader>
-          <img
-            class="mx-auto aspect-square w-full max-w-sm object-contain"
-            :src="selectedWatch.imageUrl"
-            :alt="getWatchImageAlt(selectedWatch)"
-          />
-          <dl class="grid gap-4 sm:grid-cols-2">
-            <div class="flex flex-col gap-1">
-              <dt class="text-sm font-medium">{{ t('site.watchDetails.caseDescriptionLabel') }}</dt>
-              <dd class="text-muted-foreground">{{ selectedWatch.caseDescription }}</dd>
-            </div>
-            <div class="flex flex-col gap-1">
-              <dt class="text-sm font-medium">{{ t('site.watchDetails.dialDescriptionLabel') }}</dt>
-              <dd class="text-muted-foreground">{{ selectedWatch.dialDescription }}</dd>
-            </div>
-          </dl>
-        </template>
-      </DialogContent>
-    </Dialog>
+    <WatchDetailsDialog v-model:open="isWatchDetailsOpen" :watch="selectedWatch" />
   </AppLayout>
 </template>
