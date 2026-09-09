@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { useStorage } from '@vueuse/core'
 import { formatNumber } from 'parse-localized-number'
-import { computed, onMounted, ref } from 'vue'
+import { computed, ref, watch as watchSelectedMarket } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import AppLayout from '@/components/layout/AppLayout.vue'
@@ -18,6 +19,8 @@ import WatchCollectionCombobox, {
   type WatchCollectionOption,
 } from '@/components/watch-collection/WatchCollectionCombobox.vue'
 import { useWatchCatalog } from '@/composables/useWatchCatalog'
+import { DEFAULT_MARKET, isMarketCode, MARKET_STORAGE_KEY, type MarketCode } from '@/lib/markets'
+import { Locale } from '@/plugins/i18n'
 import type { Watch } from '@/types/watch-data'
 
 import WatchDetailsDialog from './components/WatchDetailsDialog.vue'
@@ -30,6 +33,12 @@ const selectedCollectionId = ref<string | null>(null)
 const selectedWatch = ref<Watch | null>(null)
 const isWatchDetailsOpen = ref(false)
 const visibleWatchCount = ref(PAGE_SIZE)
+const selectedMarket = useStorage<MarketCode>(MARKET_STORAGE_KEY, DEFAULT_MARKET, undefined, {
+  serializer: {
+    read: (value: string): MarketCode => (isMarketCode(value) ? value : DEFAULT_MARKET),
+    write: (market: MarketCode): string => market,
+  },
+})
 const { catalog, error, isLoading, loadCatalog } = useWatchCatalog()
 
 const collectionOptions = computed<WatchCollectionOption[]>(() =>
@@ -99,22 +108,30 @@ const getPriceLabel = (): string => {
   return t('site.watchList.priceLabelIncludingTax')
 }
 
+const getDateLocale = (): string => (locale.value === Locale.zhTw ? 'zh-TW' : 'en-US')
+
 const formatPriceUpdatedAt = (): string => {
   if (!catalog.value) {
     return ''
   }
 
-  return new Intl.DateTimeFormat(navigator.language, { dateStyle: 'medium' }).format(
+  return new Intl.DateTimeFormat(getDateLocale(), { dateStyle: 'medium' }).format(
     new Date(catalog.value.priceUpdatedAt),
   )
 }
 
-onMounted(loadCatalog)
+watchSelectedMarket(
+  selectedMarket,
+  (market) => {
+    void loadCatalog(market)
+  },
+  { immediate: true },
+)
 </script>
 
 <template>
   <AppLayout :lang="locale">
-    <AppNav />
+    <AppNav v-model:market="selectedMarket" />
     <section class="w-full max-w-4xl text-center" aria-labelledby="page-title">
       <h1
         id="page-title"
@@ -174,7 +191,7 @@ onMounted(loadCatalog)
             <CardDescription class="h-4 truncate font-mono text-xs">
               {{ watch.modelReference }}
             </CardDescription>
-            <div class="mt-2 h-10">
+            <div class="mt-2 min-h-14">
               <p class="text-muted-foreground text-xs">{{ getPriceLabel() }}</p>
               <p class="font-medium tabular-nums">{{ formatPrice(watch) }}</p>
             </div>

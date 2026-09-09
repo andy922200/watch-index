@@ -4,7 +4,13 @@ import { isWatchCatalog, isWatchDataManifest } from '@/lib/watchDataValidation'
 
 describe('watch data validation', () => {
   it('accepts the generated manifest format', () => {
-    expect(isWatchDataManifest({ schemaVersion: 1, catalog: 'catalog.abc123.json' })).toBe(true)
+    expect(
+      isWatchDataManifest({
+        schemaVersion: 2,
+        catalog: 'catalog.abc123.json',
+        catalogs: { TW: 'catalog.abc123.json' },
+      }),
+    ).toBe(true)
   })
 
   it('rejects catalogs containing invalid watch records', () => {

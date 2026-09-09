@@ -3,6 +3,18 @@
     "title": "全球 Rolex 腕錶索引",
     "priceUpdatedAt": "價格資料更新於 {date}",
     "languageLabel": "語言",
+    "marketLabel": "市場",
+    "market": {
+      "austria": "奧地利",
+      "germany": "德國",
+      "hongKong": "香港",
+      "japan": "日本",
+      "singapore": "新加坡",
+      "switzerland": "瑞士",
+      "taiwan": "台灣",
+      "unitedKingdom": "英國",
+      "unitedStates": "美國"
+    },
     "language": {
       "en-us": "English",
       "zh-tw": "繁體中文"

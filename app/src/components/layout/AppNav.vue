@@ -12,6 +12,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { useDarkMode } from '@/composables/useDarkMode'
+import { DEFAULT_MARKET, type MarketCode, marketOptions } from '@/lib/markets'
 import { Locale } from '@/plugins/i18n'
 
 interface LanguageLink {
@@ -20,6 +21,7 @@ interface LanguageLink {
 }
 
 const { t, locale } = useI18n()
+const market = defineModel<MarketCode>('market', { default: DEFAULT_MARKET })
 
 const languageLinks = computed<LanguageLink[]>(() => [
   { code: Locale.zhTw, href: import.meta.env.BASE_URL },
@@ -47,6 +49,21 @@ const { isDark, toggleDark } = useDarkMode()
   <nav
     class="sticky top-0 z-50 flex w-full items-center justify-end gap-2 bg-stone-100/95 px-4 py-3 backdrop-blur dark:bg-stone-950/95"
   >
+    <Select v-model="market">
+      <SelectTrigger class="w-36" :aria-label="t('site.marketLabel')">
+        <SelectValue :placeholder="t('site.market.taiwan')" />
+      </SelectTrigger>
+      <SelectContent class="max-h-56">
+        <SelectGroup>
+          <SelectItem v-for="option in marketOptions" :key="option.code" :value="option.code">
+            <span class="flex items-center gap-2">
+              <span aria-hidden="true">{{ option.flag }}</span>
+              {{ t(option.labelKey) }}
+            </span>
+          </SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
     <Select :model-value="locale" @update:model-value="navigateToLocale">
       <SelectTrigger class="w-32" :aria-label="t('site.languageLabel')">
         <SelectValue :placeholder="t(`site.language.${locale}`)" />

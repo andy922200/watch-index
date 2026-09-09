@@ -3,6 +3,18 @@
     "title": "Global Rolex Watches Index",
     "priceUpdatedAt": "Price data updated {date}",
     "languageLabel": "Language",
+    "marketLabel": "Market",
+    "market": {
+      "austria": "Austria",
+      "germany": "Germany",
+      "hongKong": "Hong Kong",
+      "japan": "Japan",
+      "singapore": "Singapore",
+      "switzerland": "Switzerland",
+      "taiwan": "Taiwan",
+      "unitedKingdom": "United Kingdom",
+      "unitedStates": "United States"
+    },
     "language": {
       "en-us": "English",
       "zh-tw": "繁體中文"

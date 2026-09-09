@@ -37,6 +37,7 @@ export interface WatchCatalog {
 interface WatchDataManifest {
   schemaVersion: number
   catalog: string
+  catalogs: Record<string, string>
 }
 
 export type { WatchDataManifest }

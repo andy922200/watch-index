@@ -4,11 +4,38 @@ test('changes the Rolex index page language', async ({ page }) => {
   await page.goto('en-us/')
 
   await expect(page.getByRole('heading', { name: 'Global Rolex Watches Index' })).toBeVisible()
+  await expect(page.getByText('Price data updated Aug 31, 2026')).toBeVisible()
 
   await page.getByRole('combobox', { name: 'Language' }).click()
   await page.getByRole('option', { name: '繁體中文' }).click()
 
   await expect(page.getByRole('heading', { name: '全球 Rolex 腕錶索引' })).toBeVisible()
+  await expect(page.getByText('價格資料更新於 2026年8月31日')).toBeVisible()
+})
+
+test('keeps the selected market when changing the page language', async ({ page }) => {
+  await page.goto('en-us/')
+
+  await page.getByRole('combobox', { name: 'Market' }).click()
+  await page.getByRole('option', { name: 'Japan' }).click()
+  await page.getByRole('combobox', { name: 'Language' }).click()
+  await page.getByRole('option', { name: '繁體中文' }).click()
+
+  await expect(page.getByRole('heading', { name: '全球 Rolex 腕錶索引' })).toBeVisible()
+  await expect(page.getByRole('combobox', { name: '市場' })).toContainText('日本')
+})
+
+test('switches the displayed prices to the selected market', async ({ page }) => {
+  await page.goto('en-us/')
+
+  const marketSelect = page.getByRole('combobox', { name: 'Market' })
+  await expect(marketSelect).toContainText('Taiwan')
+
+  await marketSelect.click()
+  await page.getByRole('option', { name: 'Japan' }).click()
+
+  await expect(marketSelect).toContainText('Japan')
+  await expect(page.locator('[data-slot="card"]').first()).toContainText('JPY')
 })
 
 test('selects a watch collection from the combobox listbox', async ({ page }) => {

@@ -19,6 +19,16 @@ describe('AppNav', () => {
     expect(screen.getByRole('combobox', { name: 'Language' }).textContent).toContain('English')
   })
 
+  it('defaults the market select to Taiwan', () => {
+    render(AppNav, {
+      global: {
+        plugins: [i18n],
+      },
+    })
+
+    expect(screen.getByRole('combobox', { name: 'Market' }).textContent).toContain('Taiwan')
+  })
+
   it('toggles the dark class on <html> and persists the preference', async () => {
     render(AppNav, {
       global: {

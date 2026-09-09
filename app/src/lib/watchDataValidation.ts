@@ -15,6 +15,9 @@ import type {
 const isRecord = (value: unknown): value is Record<string, unknown> =>
   typeof value === 'object' && value !== null && !Array.isArray(value)
 
+const isStringRecord = (value: unknown): value is Record<string, string> =>
+  isRecord(value) && Object.values(value).every((entry) => typeof entry === 'string')
+
 /**
  * 驗證未知值是否符合單一錶款系列統計資料的格式。
  *
@@ -63,7 +66,10 @@ export const isPriceMarket = (value: unknown): value is PriceMarket =>
  * @returns 值符合 {@link WatchDataManifest} 時為 `true`，並將型別縮限為 `WatchDataManifest`。
  */
 export const isWatchDataManifest = (value: unknown): value is WatchDataManifest =>
-  isRecord(value) && typeof value.schemaVersion === 'number' && typeof value.catalog === 'string'
+  isRecord(value) &&
+  typeof value.schemaVersion === 'number' &&
+  typeof value.catalog === 'string' &&
+  isStringRecord(value.catalogs)
 
 /**
  * 驗證由建置程序產生的錶款 catalog 索引格式。

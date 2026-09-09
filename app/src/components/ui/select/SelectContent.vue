@@ -6,6 +6,9 @@ import type { HTMLAttributes } from 'vue'
 
 import { cn } from '@/lib/utils'
 
+import SelectScrollDownButton from './SelectScrollDownButton.vue'
+import SelectScrollUpButton from './SelectScrollUpButton.vue'
+
 defineOptions({ inheritAttrs: false })
 
 const props = withDefaults(
@@ -28,9 +31,11 @@ const forwarded = useForwardPropsEmits(reactiveOmit(props, 'class'), emits)
         )
       "
     >
+      <SelectScrollUpButton />
       <SelectViewport class="p-1">
         <slot />
       </SelectViewport>
+      <SelectScrollDownButton />
     </SelectContent>
   </SelectPortal>
 </template>

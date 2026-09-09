@@ -1,10 +1,11 @@
 import { type Ref, ref } from 'vue'
 
 import { Method, useFetchData } from '@/composables/useFetchData'
+import { DEFAULT_MARKET, type MarketCode } from '@/lib/markets'
 import { isWatchCatalog, isWatchDataManifest } from '@/lib/watchDataValidation'
 import type { WatchCatalog } from '@/types/watch-data'
 
-let catalogRequest: Promise<WatchCatalog> | null = null
+const catalogRequests = new Map<MarketCode, Promise<WatchCatalog>>()
 
 const getWatchDataUrl = (fileName: string): string => {
   const versionQuery = fileName === 'manifest.json' ? `?v=${__WATCH_DATA_VERSION__}` : ''
@@ -41,14 +42,20 @@ const getJson = async (url: string): Promise<unknown> => {
   return response.data
 }
 
-const fetchCatalog = async (): Promise<WatchCatalog> => {
+const fetchCatalog = async (market: MarketCode): Promise<WatchCatalog> => {
   const manifest = await getJson(getWatchDataUrl('manifest.json'))
 
   if (!isWatchDataManifest(manifest)) {
     throw new Error('Watch data manifest has an invalid format')
   }
 
-  const catalog = await getJson(getWatchDataUrl(manifest.catalog))
+  const catalogFileName = manifest.catalogs[market]
+
+  if (!catalogFileName) {
+    throw new Error(`Watch data manifest does not contain the ${market} market`)
+  }
+
+  const catalog = await getJson(getWatchDataUrl(catalogFileName))
 
   if (!isWatchCatalog(catalog)) {
     throw new Error('Watch catalog has an invalid format')
@@ -61,22 +68,23 @@ export const useWatchCatalog = (): {
   catalog: Readonly<Ref<WatchCatalog | null>>
   error: Readonly<Ref<unknown>>
   isLoading: Readonly<Ref<boolean>>
-  loadCatalog: () => Promise<void>
+  loadCatalog: (market?: MarketCode) => Promise<void>
 } => {
   const catalog = ref<WatchCatalog | null>(null)
   const error = ref<unknown>(null)
   const isLoading = ref(false)
 
-  const loadCatalog = async (): Promise<void> => {
+  const loadCatalog = async (market: MarketCode = DEFAULT_MARKET): Promise<void> => {
     isLoading.value = true
     error.value = null
 
     try {
-      catalogRequest ??= fetchCatalog()
-      catalog.value = await catalogRequest
+      const request = catalogRequests.get(market) ?? fetchCatalog(market)
+      catalogRequests.set(market, request)
+      catalog.value = await request
     } catch (requestError) {
       error.value = requestError
-      catalogRequest = null
+      catalogRequests.delete(market)
     } finally {
       isLoading.value = false
     }
