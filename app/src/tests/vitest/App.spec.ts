@@ -1,8 +1,8 @@
 import { render, screen, waitFor } from '@testing-library/vue'
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import App from '@/pages/rolex/App.vue'
 import { MARKET_STORAGE_KEY, MarketCode } from '@/lib/markets'
+import App from '@/pages/rolex/App.vue'
 import { i18n, Locale } from '@/plugins/i18n'
 
 describe('Rolex index page', () => {

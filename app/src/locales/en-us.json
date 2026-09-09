@@ -24,12 +24,6 @@
       "switchToLight": "Switch to light mode"
     },
     "watchCollection": {
-      "label": "Watch collection",
-      "placeholder": "Search collections",
-      "all": "All collections",
-      "empty": "No collections found",
-      "loading": "Loading watch collections…",
-      "error": "Watch collections could not be loaded.",
       "land-dweller": "Land-Dweller",
       "day-date": "Day-Date",
       "sky-dweller": "Sky-Dweller",
@@ -48,11 +42,18 @@
       "air-king": "Air-King",
       "1908": "1908"
     },
+    "watchSearch": {
+      "label": "Search watches",
+      "placeholder": "Search reference, collection, or nickname",
+      "empty": "No matching watches found",
+      "collectionsHeading": "Collections",
+      "watchesHeading": "Watches"
+    },
     "watchList": {
       "heading": "Watches",
       "loading": "Loading watches…",
       "error": "Watches could not be loaded.",
-      "empty": "No watches found in this collection.",
+      "empty": "No matching watches found.",
       "loadMore": "Load more watches",
       "modelReferenceLabel": "Reference",
       "priceLabelIncludingTax": "Retail price (tax included)",

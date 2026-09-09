@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { useStorage } from '@vueuse/core'
 import { formatNumber } from 'parse-localized-number'
-import { computed, ref, watch as watchSelectedMarket } from 'vue'
+import { computed, ref, watch as watchSource } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import AppLayout from '@/components/layout/AppLayout.vue'
 import AppNav from '@/components/layout/AppNav.vue'
+import SearchCombobox from '@/components/search-combobox/SearchCombobox.vue'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -15,9 +16,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import WatchCollectionCombobox, {
-  type WatchCollectionOption,
-} from '@/components/watch-collection/WatchCollectionCombobox.vue'
 import { useWatchCatalog } from '@/composables/useWatchCatalog'
 import {
   DEFAULT_MARKET,
@@ -30,12 +28,12 @@ import { Locale } from '@/plugins/i18n'
 import type { Watch } from '@/types/watch-data'
 
 import WatchDetailsDialog from './components/WatchDetailsDialog.vue'
+import { useWatchSearch } from './composables/useWatchSearch'
 
 const PAGE_SIZE = 12
 
 const { locale, t } = useI18n()
 
-const selectedCollectionId = ref<string | null>(null)
 const selectedWatch = ref<Watch | null>(null)
 const isWatchDetailsOpen = ref(false)
 const visibleWatchCount = ref(PAGE_SIZE)
@@ -51,24 +49,17 @@ if (marketFromQuery !== null) {
   selectedMarket.value = marketFromQuery
 }
 const { catalog, error, isLoading, loadCatalog } = useWatchCatalog()
-
-const collectionOptions = computed<WatchCollectionOption[]>(() =>
-  (catalog.value?.collections ?? []).map((collection) => ({
-    id: collection.id,
-    label: t(`site.watchCollection.${collection.id}`),
-    watchCount: collection.watchCount,
-  })),
-)
-
-const filteredWatches = computed<Watch[]>(() => {
-  const watches = Object.values(catalog.value?.watchesByReference ?? {})
-
-  return watches
-    .filter(
-      (watch) =>
-        selectedCollectionId.value === null || watch.collectionId === selectedCollectionId.value,
-    )
-    .sort((left, right) => left.modelReference.localeCompare(right.modelReference))
+const {
+  debouncedSearchQuery,
+  filteredWatches,
+  isSearchPending,
+  searchComboboxGroups,
+  searchQuery,
+  selectSearchSuggestion,
+} = useWatchSearch({
+  catalog,
+  getCollectionLabel: (collectionId) => t(`site.watchCollection.${collectionId}`),
+  getSearchGroupLabel: (groupId) => t(`site.watchSearch.${groupId}Heading`),
 })
 
 const visibleWatches = computed<Watch[]>(() =>
@@ -76,11 +67,6 @@ const visibleWatches = computed<Watch[]>(() =>
 )
 
 const hasMoreWatches = computed(() => visibleWatchCount.value < filteredWatches.value.length)
-
-const selectCollection = (collectionId: string | null): void => {
-  selectedCollectionId.value = collectionId
-  visibleWatchCount.value = PAGE_SIZE
-}
 
 const loadMoreWatches = (): void => {
   visibleWatchCount.value += PAGE_SIZE
@@ -131,13 +117,17 @@ const formatPriceUpdatedAt = (): string => {
   )
 }
 
-watchSelectedMarket(
+watchSource(
   selectedMarket,
   (market) => {
     void loadCatalog(market)
   },
   { immediate: true },
 )
+
+watchSource(debouncedSearchQuery, () => {
+  visibleWatchCount.value = PAGE_SIZE
+})
 </script>
 
 <template>
@@ -154,15 +144,15 @@ watchSelectedMarket(
         {{ t('site.priceUpdatedAt', { date: formatPriceUpdatedAt() }) }}
       </p>
       <div class="mt-10 flex justify-center">
-        <WatchCollectionCombobox
+        <SearchCombobox
           v-if="!isLoading && !error"
-          :all-option-label="t('site.watchCollection.all')"
-          :empty-message="t('site.watchCollection.empty')"
-          :label="t('site.watchCollection.label')"
-          :options="collectionOptions"
-          :placeholder="t('site.watchCollection.placeholder')"
-          :selected-collection-id="selectedCollectionId"
-          @select="selectCollection"
+          v-model:query="searchQuery"
+          :empty-message="t('site.watchSearch.empty')"
+          :groups="searchComboboxGroups"
+          :is-pending="isSearchPending"
+          :label="t('site.watchSearch.label')"
+          :placeholder="t('site.watchSearch.placeholder')"
+          @select="selectSearchSuggestion"
         />
         <p v-else-if="isLoading" role="status">{{ t('site.watchList.loading') }}</p>
         <p v-else role="alert">{{ t('site.watchList.error') }}</p>
@@ -175,7 +165,7 @@ watchSelectedMarket(
         class="text-muted-foreground text-center"
         role="status"
       >
-        {{ t('site.watchList.empty') }}
+        {{ t('site.watchSearch.empty') }}
       </p>
       <div
         v-else

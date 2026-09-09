@@ -55,15 +55,31 @@ test('switches the displayed prices to the selected market', async ({ page }) =>
   await expect(page.locator('[data-slot="card"]').first()).toContainText('JPY')
 })
 
-test('selects a watch collection from the combobox listbox', async ({ page }) => {
+test('filters watches with a partial model reference', async ({ page }) => {
   await page.goto('en-us/')
 
-  const combobox = page.getByRole('combobox', { name: 'Watch collection' })
-  await expect(combobox).toBeVisible()
-  await combobox.click()
-  await page.getByRole('option', { name: /^Datejust \d+$/ }).click()
+  const search = page.getByRole('combobox', { name: 'Search watches' })
+  await search.fill('m12406')
 
-  await expect(combobox).toContainText('Datejust')
+  await expect(page.getByTestId('watch-grid')).toContainText('m124060')
+  await expect(page.locator('[data-slot="card"]')).toHaveCount(1)
+})
+
+test('closes search suggestions after selection and clicking outside', async ({ page }) => {
+  await page.goto('en-us/')
+
+  const search = page.getByRole('combobox', { name: 'Search watches' })
+  await search.fill('m12406')
+  const watchSuggestion = page.getByRole('option', { name: /m124060/ })
+  await expect(watchSuggestion).toBeVisible()
+
+  await watchSuggestion.click()
+  await expect(page.getByRole('listbox')).not.toBeVisible()
+
+  await search.fill('m12406')
+  await expect(watchSuggestion).toBeVisible()
+  await page.getByRole('heading', { name: 'Global Rolex Watches Index' }).click()
+  await expect(page.getByRole('listbox')).not.toBeVisible()
 })
 
 test('shows twelve watches at first and loads more on demand', async ({ page }) => {
@@ -114,14 +130,13 @@ test('shows a selected watch’s complete specifications in a dialog', async ({ 
   await expect(dialog).not.toBeVisible()
 })
 
-test('resets the visible watches when filtering by collection', async ({ page }) => {
+test('resets the visible watches when searching', async ({ page }) => {
   await page.goto('en-us/')
 
   await page.getByRole('button', { name: 'Load more watches' }).click()
   await expect(page.locator('[data-slot="card"]')).toHaveCount(24)
 
-  await page.getByRole('combobox', { name: 'Watch collection' }).click()
-  await page.getByRole('option', { name: /^Datejust \d+$/ }).click()
+  await page.getByRole('combobox', { name: 'Search watches' }).fill('m126')
 
   await expect(page.locator('[data-slot="card"]')).toHaveCount(12)
 })

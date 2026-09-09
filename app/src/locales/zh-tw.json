@@ -24,12 +24,6 @@
       "switchToLight": "切換為淺色模式"
     },
     "watchCollection": {
-      "label": "錶款系列",
-      "placeholder": "搜尋錶款系列",
-      "all": "所有錶款系列",
-      "empty": "找不到符合的錶款系列",
-      "loading": "正在載入錶款系列…",
-      "error": "無法載入錶款系列。",
       "land-dweller": "Land-Dweller",
       "day-date": "Day-Date",
       "sky-dweller": "Sky-Dweller",
@@ -48,11 +42,18 @@
       "air-king": "Air-King",
       "1908": "1908"
     },
+    "watchSearch": {
+      "label": "搜尋腕錶",
+      "placeholder": "搜尋型號、系列或暱稱",
+      "empty": "找不到符合條件的腕錶",
+      "collectionsHeading": "系列",
+      "watchesHeading": "腕錶"
+    },
     "watchList": {
       "heading": "錶款",
       "loading": "正在載入錶款…",
       "error": "無法載入錶款。",
-      "empty": "此錶款系列沒有符合的錶款。",
+      "empty": "找不到符合條件的腕錶。",
       "loadMore": "載入更多錶款",
       "modelReferenceLabel": "型號",
       "priceLabelIncludingTax": "建議售價（含稅）",
