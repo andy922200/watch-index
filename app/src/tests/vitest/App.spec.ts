@@ -16,6 +16,6 @@ describe('Rolex index page', () => {
       },
     })
 
-    screen.getByRole('heading', { name: 'Your Global Rolex Watches Index' })
+    screen.getByRole('heading', { name: 'Global Rolex Watches Index' })
   })
 })
