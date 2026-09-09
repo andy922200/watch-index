@@ -27,7 +27,7 @@ export const createMpaConfig = ({
 }: CreateMpaConfigOptions): MpaConfig => {
   const siteUrl = isProd
     ? `https://andy922200.github.io/${ghPagesRepoName}/${ghPagesNamespace}/${projectName}`
-    : 'http://localhost:5199'
+    : 'http://localhost:5199/rolex'
   const zhTwUrl = `${siteUrl}/`
   const enUrl = `${siteUrl}/en-us/`
 
