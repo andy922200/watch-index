@@ -4,6 +4,7 @@
     "priceUpdatedAt": "Price data updated {date}",
     "languageLabel": "Language",
     "marketLabel": "Market",
+    "moreLabel": "More options",
     "market": {
       "austria": "Austria",
       "germany": "Germany",

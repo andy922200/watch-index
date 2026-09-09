@@ -29,6 +29,20 @@ describe('AppNav', () => {
     expect(screen.getByRole('combobox', { name: 'Market' }).textContent).toContain('Taiwan')
   })
 
+  it('opens a more menu containing language and theme controls', async () => {
+    render(AppNav, {
+      global: {
+        plugins: [i18n],
+      },
+    })
+
+    await fireEvent.click(screen.getByRole('button', { name: 'More options' }))
+
+    expect(screen.getByText('Language')).toBeTruthy()
+    expect(screen.getByRole('menuitemradio', { name: 'English' })).toBeTruthy()
+    expect(screen.getByRole('menuitem', { name: 'Switch to dark mode' })).toBeTruthy()
+  })
+
   it('toggles the dark class on <html> and persists the preference', async () => {
     render(AppNav, {
       global: {

@@ -1,8 +1,20 @@
 <script setup lang="ts">
-import { Moon, Sun } from '@lucide/vue'
+import { Ellipsis, Moon, Sun } from '@lucide/vue'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
+import { Button } from '@/components/ui/button'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
 import {
   Select,
   SelectContent,
@@ -65,26 +77,58 @@ const { isDark, toggleDark } = useDarkMode()
         </SelectGroup>
       </SelectContent>
     </Select>
-    <Select :model-value="locale" @update:model-value="navigateToLocale">
-      <SelectTrigger class="w-32" :aria-label="t('site.languageLabel')">
-        <SelectValue :placeholder="t(`site.language.${locale}`)" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectItem v-for="option in languageLinks" :key="option.code" :value="option.code">
-            {{ t(`site.language.${option.code}`) }}
-          </SelectItem>
-        </SelectGroup>
-      </SelectContent>
-    </Select>
+    <div class="hidden lg:block">
+      <Select :model-value="locale" @update:model-value="navigateToLocale">
+        <SelectTrigger class="w-32" :aria-label="t('site.languageLabel')">
+          <SelectValue :placeholder="t(`site.language.${locale}`)" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            <SelectItem v-for="option in languageLinks" :key="option.code" :value="option.code">
+              {{ t(`site.language.${option.code}`) }}
+            </SelectItem>
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+    </div>
     <button
       type="button"
-      class="rounded-sm border border-stone-400 bg-white p-2 text-stone-950 shadow-sm transition outline-none hover:cursor-pointer focus:ring-2 focus:ring-stone-950 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100 dark:focus:ring-stone-100"
+      class="hidden rounded-sm border border-stone-400 bg-white p-2 text-stone-950 shadow-sm transition outline-none hover:cursor-pointer focus:ring-2 focus:ring-stone-950 lg:inline-flex dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100 dark:focus:ring-stone-100"
       :aria-label="isDark ? t('site.darkMode.switchToLight') : t('site.darkMode.switchToDark')"
       @click="toggleDark()"
     >
       <Sun v-if="isDark" class="size-4" aria-hidden="true" />
       <Moon v-else class="size-4" aria-hidden="true" />
     </button>
+    <DropdownMenu>
+      <DropdownMenuTrigger as-child>
+        <Button class="lg:hidden" size="icon" variant="outline" :aria-label="t('site.moreLabel')">
+          <Ellipsis aria-hidden="true" />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent class="w-48 lg:hidden" align="end">
+        <DropdownMenuLabel>{{ t('site.languageLabel') }}</DropdownMenuLabel>
+        <DropdownMenuGroup>
+          <DropdownMenuRadioGroup :model-value="locale" @update:model-value="navigateToLocale">
+            <DropdownMenuRadioItem
+              v-for="option in languageLinks"
+              :key="option.code"
+              class="cursor-pointer"
+              :value="option.code"
+            >
+              {{ t(`site.language.${option.code}`) }}
+            </DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          <DropdownMenuItem class="cursor-pointer" @select="toggleDark()">
+            <Sun v-if="isDark" aria-hidden="true" />
+            <Moon v-else aria-hidden="true" />
+            {{ isDark ? t('site.darkMode.switchToLight') : t('site.darkMode.switchToDark') }}
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   </nav>
 </template>

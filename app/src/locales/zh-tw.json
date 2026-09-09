@@ -4,6 +4,7 @@
     "priceUpdatedAt": "價格資料更新於 {date}",
     "languageLabel": "語言",
     "marketLabel": "市場",
+    "moreLabel": "更多選項",
     "market": {
       "austria": "奧地利",
       "germany": "德國",

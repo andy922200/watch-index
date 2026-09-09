@@ -13,6 +13,18 @@ test('changes the Rolex index page language', async ({ page }) => {
   await expect(page.getByText('價格資料更新於 2026年8月31日')).toBeVisible()
 })
 
+test('uses the more menu for language and theme controls below the desktop breakpoint', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1023, height: 900 })
+  await page.goto('en-us/')
+
+  await expect(page.getByRole('combobox', { name: 'Language' })).not.toBeVisible()
+  await page.getByRole('button', { name: 'More options' }).click()
+  await expect(page.getByRole('menuitemradio', { name: '繁體中文' })).toBeVisible()
+  await expect(page.getByRole('menuitem', { name: 'Switch to dark mode' })).toBeVisible()
+})
+
 test('keeps the selected market when changing the page language', async ({ page }) => {
   await page.goto('en-us/')
 
