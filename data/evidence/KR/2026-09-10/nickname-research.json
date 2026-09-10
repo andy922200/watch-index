@@ -1,0 +1,25 @@
+{
+  "nicknameResearch": {
+    "status": "PASS",
+    "scope": "new-market",
+    "languages": [
+      "ko"
+    ],
+    "queries": [
+      "롤렉스 별명 펩시 배트맨 루트비어 모델 번호 m126710blro m126710blnr",
+      "롤렉스 별명 판다 데이토나 m126500ln 한국"
+    ],
+    "sourcesReviewed": 1,
+    "candidateCount": 1,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [
+      {
+        "candidate": "펩시",
+        "source": "https://www.youtube.com/watch?v=gtQFFjCZtb0",
+        "reason": "來源僅能對應基本 reference 126710BLRO，未能證實完整 configurationCode，故不採用。"
+      }
+    ],
+    "notes": "研究已完成；因所有候選來源未精確對應本資料契約所需的完整四位 configurationCode，沒有加入 collectionAliases 或 localNicknames。這不表示市場不存在俗稱。"
+  }
+}

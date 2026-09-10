@@ -1,0 +1,384 @@
+{
+  "marketCode": "IT",
+  "validationCompletedAt": "2026-09-10T15:55:00+08:00",
+  "evidencePath": "data/evidence/IT/2026-09-10",
+  "overallValidationStatus": "completed-with-limitations",
+  "fiveLayerValidation": {
+    "syntaxAndSchema": {
+      "status": "NOT RUN",
+      "strictJson": {
+        "status": "PASS",
+        "filesChecked": 40,
+        "method": "Python json.loads with duplicate-key and invalid-constant rejection across formal data, schemas, and the KR/IT JSON evidence."
+      },
+      "manualSchemaConformance": {
+        "status": "PASS",
+        "method": "The generator enforced required keys, no additional properties in formal objects, URI construction, complete Rolex references, safe integer prices, and listingStatus/price combinations against the actual schemas."
+      },
+      "jsonSchema": {
+        "status": "NOT RUN",
+        "reason": "No installed Draft 2020-12 JSON Schema validator was available; no dependency was installed without authorization."
+      }
+    },
+    "crossFileConsistency": {
+      "status": "PASS",
+      "catalogWatchCount": 1465,
+      "marketWatchCount": 1465,
+      "priceSeriesCount": 1465,
+      "uniqueModelReferenceCount": 1465,
+      "marketHistoryReferenceMismatchCount": 0,
+      "catalogOrphanCount": 0,
+      "runIds": [
+        1
+      ]
+    },
+    "sourceReconciliation": {
+      "status": "PASS",
+      "evidenceObservationCount": 1465,
+      "marketAndHistoryReconciliationMismatchCount": 0,
+      "priceParseFailureCount": 0,
+      "priceStatistics": {
+        "currencyCode": "EUR",
+        "listedWithPublicPriceCount": 1465,
+        "priceUnavailableCount": 0,
+        "confirmedNotListedCount": 0,
+        "minimum": 6050,
+        "maximum": 184000
+      }
+    },
+    "websiteCompleteness": {
+      "status": "PASS",
+      "endpointTotalCount": 1465,
+      "endpointUniqueConfigurationCount": 1465,
+      "terminalPageHttpStatus": 200,
+      "terminalPageFirstResult": 1465,
+      "terminalPageResultCount": 0,
+      "unresolvedConflictCount": 0,
+      "notes": "The primary response contained every configuration reported by totalCount. The saved subsequent terminal response was empty with the same totalCount."
+    },
+    "changeSafety": {
+      "status": "PASS",
+      "catalogChanged": false,
+      "catalogSha256": "002ed1a3790f644dee72d4d376a8eb1ac396ade22260c4750e3161a52537befc",
+      "schemasChanged": false,
+      "existingMarketAndHistoryFilesChanged": false,
+      "historyPreservation": "IT is a new market with a single initial run; no prior IT run or price point existed to overwrite.",
+      "catalogReconciliation": {
+        "catalogReferenceCount": 1465,
+        "observedReferenceCount": 1465,
+        "intersectionCount": 1465,
+        "observedReferencesNotInCatalogCount": 0,
+        "catalogReferencesNotObservedCount": 0,
+        "notes": "The observed market set is exactly the existing catalog union. Per the market-isolation rule, the catalog was not rewritten."
+      },
+      "protectedUserModification": "watch-data-collection-guide.md was already modified before this task and was not overwritten by the market generator."
+    }
+  },
+  "evidenceTraceability": {
+    "status": "PASS",
+    "acceptedObservations": 1465,
+    "observationsWithMatchingMarketTextAndInitialPrice": 1465,
+    "independentPriceSampleCount": 19,
+    "independentPriceSampleMismatchCount": 0,
+    "sensitiveDataScan": {
+      "status": "PASS",
+      "matchedSensitiveValueCount": 0,
+      "patterns": [
+        "Authorization header",
+        "Bearer token",
+        "JWT-like value",
+        "cookie assignment"
+      ]
+    }
+  },
+  "taxRateVerification": {
+    "status": "PASS",
+    "priceType": "tax-include",
+    "taxRatePercent": 22,
+    "verificationSource": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_it.htm",
+    "officialPriceNotice": "Prezzo al dettaglio suggerito, IVA inclusa.",
+    "formalHistoryValue": "PASS"
+  },
+  "nicknameResearch": {
+    "status": "PASS",
+    "scope": "new-market",
+    "languages": [
+      "it"
+    ],
+    "queries": [
+      "Rolex soprannomi Pepsi Batman Root Beer referenza m126710blro m126710blnr Italia",
+      "Rolex soprannome Panda Daytona m126500ln Italia"
+    ],
+    "sourcesReviewed": 4,
+    "candidateCount": 7,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [
+      {
+        "candidate": "Pepsi / Batman / Root Beer / Panda",
+        "source": "https://www.recensioniorologi.it/soprannomi-rolex.html",
+        "reason": "文章以基本 reference 或系列稱呼候選俗稱，沒有可驗證的完整 configurationCode 對應。"
+      },
+      {
+        "candidate": "Pepsi / Batman",
+        "source": "https://www.chrono24.it/magazine/batman-e-pepsi-storia-di-due-rolex-leggendari-p_48125/",
+        "reason": "文章沒有可驗證的完整 configurationCode 對應。"
+      },
+      {
+        "candidate": "Panda",
+        "source": "https://www.valutazione-rolex.it/rolex-daytona-panda/",
+        "reason": "文章以 126500LN 基本 reference 對應，沒有完整 configurationCode。"
+      },
+      {
+        "candidate": "Pepsi / Batman / Rootbeer",
+        "source": "https://italianwatchspotter.com/soprannomi-rolex/",
+        "reason": "文章以基本 reference 對應，沒有完整 configurationCode。"
+      }
+    ],
+    "notes": "研究已完成；因所有候選來源未精確對應本資料契約所需的完整四位 configurationCode，沒有加入 collectionAliases 或 localNicknames。這不表示市場不存在俗稱。"
+  },
+  "independentSpotChecks": {
+    "status": "PASS",
+    "method": "Chrome DevTools first loaded official product pages, which exposed the per-model official price endpoint in the network log. Nineteen distinct official per-model price responses (one per collection plus two same-base-model configuration pairs) were then compared to the separate primary watchgrid response for complete reference, product URL, raw price, parsed price, and currency.",
+    "collectionRepresentativeCount": 17,
+    "sameBaseModelPairs": [
+      [
+        "m228236-0018",
+        "m228236-0002"
+      ],
+      [
+        "m336935-0008",
+        "m336935-0006"
+      ]
+    ],
+    "coverage": {
+      "lowestPriceReference": "m276200-0001",
+      "highestPriceReference": "m279459rbr-0001",
+      "newModelReference": "m126334-0033",
+      "priceUnavailableCoverage": "NOT APPLICABLE: all structured records included a public price.",
+      "anomalyCoverage": "NOT APPLICABLE: no duplicate, conflict, parse failure, or price-unavailable source record was observed."
+    },
+    "totalChecks": 19,
+    "failureCount": 0,
+    "checks": [
+      {
+        "collection": "1908",
+        "modelReference": "m52508-0008",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/1908/m52508-0008",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m52508-0008?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 40.500",
+        "observedPrice": 40500,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "air-king",
+        "modelReference": "m126900-0001",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/air-king/m126900-0001",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m126900-0001?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 8.050",
+        "observedPrice": 8050,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "cosmograph-daytona",
+        "modelReference": "m126506-0001",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/cosmograph-daytona/m126506-0001",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m126506-0001?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 83.500",
+        "observedPrice": 83500,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "datejust",
+        "modelReference": "m126334-0033",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/datejust/m126334-0033",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m126334-0033?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 11.500",
+        "observedPrice": 11500,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "day-date",
+        "modelReference": "m228236-0018",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/day-date/m228236-0018",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m228236-0018?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 68.000",
+        "observedPrice": 68000,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "deepsea",
+        "modelReference": "m136660-0005",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/deepsea/m136660-0005",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m136660-0005?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 15.630",
+        "observedPrice": 15630,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "explorer",
+        "modelReference": "m224270-0001",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/explorer/m224270-0001",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m224270-0001?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 8.300",
+        "observedPrice": 8300,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "explorer-ii",
+        "modelReference": "m226570-0001",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/explorer-ii/m226570-0001",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m226570-0001?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 10.500",
+        "observedPrice": 10500,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "gmt-master-ii",
+        "modelReference": "m126710blnr-0003",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/gmt-master-ii/m126710blnr-0003",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m126710blnr-0003?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 11.650",
+        "observedPrice": 11650,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "lady-datejust",
+        "modelReference": "m279173-0007",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/lady-datejust/m279173-0007",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m279173-0007?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 14.900",
+        "observedPrice": 14900,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "land-dweller",
+        "modelReference": "m127334-0001",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/land-dweller/m127334-0001",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m127334-0001?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 16.200",
+        "observedPrice": 16200,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "oyster-perpetual",
+        "modelReference": "m134303-0001",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/oyster-perpetual/m134303-0001",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m134303-0001?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 9.500",
+        "observedPrice": 9500,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "sea-dweller",
+        "modelReference": "m126603-0001",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/sea-dweller/m126603-0001",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m126603-0001?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 22.150",
+        "observedPrice": 22150,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "sky-dweller",
+        "modelReference": "m336935-0008",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/sky-dweller/m336935-0008",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m336935-0008?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 64.200",
+        "observedPrice": 64200,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "submariner",
+        "modelReference": "m126613lb-0002",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/submariner/m126613lb-0002",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m126613lb-0002?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 19.200",
+        "observedPrice": 19200,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "yacht-master",
+        "modelReference": "m226658-0001",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/yacht-master/m226658-0001",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m226658-0001?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 37.700",
+        "observedPrice": 37700,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "yacht-master-ii",
+        "modelReference": "m126680-0001",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/yacht-master-ii/m126680-0001",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m126680-0001?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 20.050",
+        "observedPrice": 20050,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "day-date",
+        "modelReference": "m228236-0002",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/day-date/m228236-0002",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m228236-0002?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 72.700",
+        "observedPrice": 72700,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      },
+      {
+        "collection": "sky-dweller",
+        "modelReference": "m336935-0006",
+        "sourceUrl": "https://www.rolex.com/it-it/watches/sky-dweller/m336935-0006",
+        "sourceApiUrl": "https://www.rolex.com/api/prices/m336935-0006?countryCode=IT&lang=it",
+        "httpStatus": 200,
+        "observedRawPrice": "€ 64.200",
+        "observedPrice": 64200,
+        "observedCurrency": "EUR",
+        "status": "PASS"
+      }
+    ]
+  },
+  "readmeUpdate": {
+    "status": "PASS",
+    "updated": true,
+    "sections": [
+      "README.md：涵蓋市場數與市場清單",
+      "watch-data-collection-guide.md：現況市場數與市場表"
+    ],
+    "reason": null
+  }
+}

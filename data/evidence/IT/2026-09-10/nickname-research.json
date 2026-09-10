@@ -1,0 +1,40 @@
+{
+  "nicknameResearch": {
+    "status": "PASS",
+    "scope": "new-market",
+    "languages": [
+      "it"
+    ],
+    "queries": [
+      "Rolex soprannomi Pepsi Batman Root Beer referenza m126710blro m126710blnr Italia",
+      "Rolex soprannome Panda Daytona m126500ln Italia"
+    ],
+    "sourcesReviewed": 4,
+    "candidateCount": 7,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [
+      {
+        "candidate": "Pepsi / Batman / Root Beer / Panda",
+        "source": "https://www.recensioniorologi.it/soprannomi-rolex.html",
+        "reason": "文章以基本 reference 或系列稱呼候選俗稱，沒有可驗證的完整 configurationCode 對應。"
+      },
+      {
+        "candidate": "Pepsi / Batman",
+        "source": "https://www.chrono24.it/magazine/batman-e-pepsi-storia-di-due-rolex-leggendari-p_48125/",
+        "reason": "文章沒有可驗證的完整 configurationCode 對應。"
+      },
+      {
+        "candidate": "Panda",
+        "source": "https://www.valutazione-rolex.it/rolex-daytona-panda/",
+        "reason": "文章以 126500LN 基本 reference 對應，沒有完整 configurationCode。"
+      },
+      {
+        "candidate": "Pepsi / Batman / Rootbeer",
+        "source": "https://italianwatchspotter.com/soprannomi-rolex/",
+        "reason": "文章以基本 reference 對應，沒有完整 configurationCode。"
+      }
+    ],
+    "notes": "研究已完成；因所有候選來源未精確對應本資料契約所需的完整四位 configurationCode，沒有加入 collectionAliases 或 localNicknames。這不表示市場不存在俗稱。"
+  }
+}

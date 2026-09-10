@@ -1,0 +1,211 @@
+[
+  {
+    "collection": "1908",
+    "modelReference": "m52508-0008",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/1908/m52508-0008",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m52508-0008?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "63,180,000 ₩",
+    "observedPrice": 63180000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "air-king",
+    "modelReference": "m126900-0001",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/air-king/m126900-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m126900-0001?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "12,570,000 ₩",
+    "observedPrice": 12570000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "cosmograph-daytona",
+    "modelReference": "m126506-0001",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/cosmograph-daytona/m126506-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m126506-0001?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "130,430,000 ₩",
+    "observedPrice": 130430000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "datejust",
+    "modelReference": "m126334-0033",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/datejust/m126334-0033",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m126334-0033?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "18,000,000 ₩",
+    "observedPrice": 18000000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "day-date",
+    "modelReference": "m228236-0018",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/day-date/m228236-0018",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m228236-0018?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "106,140,000 ₩",
+    "observedPrice": 106140000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "deepsea",
+    "modelReference": "m136660-0005",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/deepsea/m136660-0005",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m136660-0005?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "24,450,000 ₩",
+    "observedPrice": 24450000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "explorer",
+    "modelReference": "m224270-0001",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/explorer/m224270-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m224270-0001?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "12,910,000 ₩",
+    "observedPrice": 12910000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "explorer-ii",
+    "modelReference": "m226570-0001",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/explorer-ii/m226570-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m226570-0001?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "16,390,000 ₩",
+    "observedPrice": 16390000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "gmt-master-ii",
+    "modelReference": "m126710blnr-0003",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/gmt-master-ii/m126710blnr-0003",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m126710blnr-0003?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "18,170,000 ₩",
+    "observedPrice": 18170000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "lady-datejust",
+    "modelReference": "m279173-0007",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/lady-datejust/m279173-0007",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m279173-0007?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "23,270,000 ₩",
+    "observedPrice": 23270000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "land-dweller",
+    "modelReference": "m127334-0001",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/land-dweller/m127334-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m127334-0001?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "25,310,000 ₩",
+    "observedPrice": 25310000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "oyster-perpetual",
+    "modelReference": "m134303-0001",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/oyster-perpetual/m134303-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m134303-0001?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "14,860,000 ₩",
+    "observedPrice": 14860000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "sea-dweller",
+    "modelReference": "m126603-0001",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/sea-dweller/m126603-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m126603-0001?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "34,650,000 ₩",
+    "observedPrice": 34650000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "sky-dweller",
+    "modelReference": "m336935-0008",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/sky-dweller/m336935-0008",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m336935-0008?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "100,190,000 ₩",
+    "observedPrice": 100190000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "submariner",
+    "modelReference": "m126613lb-0002",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/submariner/m126613lb-0002",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m126613lb-0002?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "29,970,000 ₩",
+    "observedPrice": 29970000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "yacht-master",
+    "modelReference": "m226658-0001",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/yacht-master/m226658-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m226658-0001?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "58,850,000 ₩",
+    "observedPrice": 58850000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "yacht-master-ii",
+    "modelReference": "m126680-0001",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/yacht-master-ii/m126680-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m126680-0001?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "31,250,000 ₩",
+    "observedPrice": 31250000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "day-date",
+    "modelReference": "m228236-0002",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/day-date/m228236-0002",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m228236-0002?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "113,440,000 ₩",
+    "observedPrice": 113440000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  },
+  {
+    "collection": "sky-dweller",
+    "modelReference": "m336935-0006",
+    "sourceUrl": "https://www.rolex.com/ko-kr/watches/sky-dweller/m336935-0006",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m336935-0006?countryCode=KR&lang=ko",
+    "httpStatus": 200,
+    "observedRawPrice": "100,190,000 ₩",
+    "observedPrice": 100190000,
+    "observedCurrency": "KRW",
+    "status": "PASS"
+  }
+]

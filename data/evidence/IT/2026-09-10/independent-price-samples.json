@@ -1,0 +1,211 @@
+[
+  {
+    "collection": "1908",
+    "modelReference": "m52508-0008",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/1908/m52508-0008",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m52508-0008?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 40.500",
+    "observedPrice": 40500,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "air-king",
+    "modelReference": "m126900-0001",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/air-king/m126900-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m126900-0001?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 8.050",
+    "observedPrice": 8050,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "cosmograph-daytona",
+    "modelReference": "m126506-0001",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/cosmograph-daytona/m126506-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m126506-0001?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 83.500",
+    "observedPrice": 83500,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "datejust",
+    "modelReference": "m126334-0033",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/datejust/m126334-0033",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m126334-0033?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 11.500",
+    "observedPrice": 11500,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "day-date",
+    "modelReference": "m228236-0018",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/day-date/m228236-0018",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m228236-0018?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 68.000",
+    "observedPrice": 68000,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "deepsea",
+    "modelReference": "m136660-0005",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/deepsea/m136660-0005",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m136660-0005?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 15.630",
+    "observedPrice": 15630,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "explorer",
+    "modelReference": "m224270-0001",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/explorer/m224270-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m224270-0001?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 8.300",
+    "observedPrice": 8300,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "explorer-ii",
+    "modelReference": "m226570-0001",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/explorer-ii/m226570-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m226570-0001?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 10.500",
+    "observedPrice": 10500,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "gmt-master-ii",
+    "modelReference": "m126710blnr-0003",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/gmt-master-ii/m126710blnr-0003",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m126710blnr-0003?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 11.650",
+    "observedPrice": 11650,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "lady-datejust",
+    "modelReference": "m279173-0007",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/lady-datejust/m279173-0007",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m279173-0007?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 14.900",
+    "observedPrice": 14900,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "land-dweller",
+    "modelReference": "m127334-0001",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/land-dweller/m127334-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m127334-0001?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 16.200",
+    "observedPrice": 16200,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "oyster-perpetual",
+    "modelReference": "m134303-0001",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/oyster-perpetual/m134303-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m134303-0001?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 9.500",
+    "observedPrice": 9500,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "sea-dweller",
+    "modelReference": "m126603-0001",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/sea-dweller/m126603-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m126603-0001?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 22.150",
+    "observedPrice": 22150,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "sky-dweller",
+    "modelReference": "m336935-0008",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/sky-dweller/m336935-0008",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m336935-0008?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 64.200",
+    "observedPrice": 64200,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "submariner",
+    "modelReference": "m126613lb-0002",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/submariner/m126613lb-0002",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m126613lb-0002?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 19.200",
+    "observedPrice": 19200,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "yacht-master",
+    "modelReference": "m226658-0001",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/yacht-master/m226658-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m226658-0001?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 37.700",
+    "observedPrice": 37700,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "yacht-master-ii",
+    "modelReference": "m126680-0001",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/yacht-master-ii/m126680-0001",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m126680-0001?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 20.050",
+    "observedPrice": 20050,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "day-date",
+    "modelReference": "m228236-0002",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/day-date/m228236-0002",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m228236-0002?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 72.700",
+    "observedPrice": 72700,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  },
+  {
+    "collection": "sky-dweller",
+    "modelReference": "m336935-0006",
+    "sourceUrl": "https://www.rolex.com/it-it/watches/sky-dweller/m336935-0006",
+    "sourceApiUrl": "https://www.rolex.com/api/prices/m336935-0006?countryCode=IT&lang=it",
+    "httpStatus": 200,
+    "observedRawPrice": "€ 64.200",
+    "observedPrice": 64200,
+    "observedCurrency": "EUR",
+    "status": "PASS"
+  }
+]
