@@ -4,8 +4,10 @@ export const DEFAULT_MAX_COLLECTION_SUGGESTIONS = 3
 export const DEFAULT_MAX_WATCH_SUGGESTIONS = 5
 
 export interface WatchSearchCollection {
+  aliases?: readonly string[]
   id: string
   label: string
+  localizedLabel?: string
   watchCount: number
 }
 
@@ -14,6 +16,7 @@ export type WatchSearchSuggestion =
       type: 'collection'
       id: string
       label: string
+      description?: string
       watchCount: number
       searchTerm: string
     }
@@ -97,13 +100,20 @@ export const getWatchSearchSuggestions = ({
   }
 
   const collectionSuggestions: WatchSearchSuggestion[] = collections
-    .filter(
-      (collection) =>
-        includesSearchText(collection.id, normalizedQuery) ||
-        includesSearchText(collection.label, normalizedQuery),
+    .filter((collection) =>
+      [collection.id, collection.label, ...(collection.aliases ?? [])].some((value) =>
+        includesSearchText(value, normalizedQuery),
+      ),
     )
     .slice(0, maxCollectionSuggestions)
-    .map((collection) => ({ ...collection, type: 'collection', searchTerm: collection.label }))
+    .map(({ id, label, localizedLabel, watchCount }) => ({
+      type: 'collection',
+      id,
+      label: localizedLabel ?? label,
+      ...(localizedLabel && localizedLabel !== label ? { description: label } : {}),
+      watchCount,
+      searchTerm: label,
+    }))
   const collectionLabels = new Map(
     collections.map((collection) => [collection.id, collection.label]),
   )

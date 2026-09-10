@@ -20,6 +20,15 @@ export const DEFAULT_SEARCH_DEBOUNCE_MS = 200
 type CollectionLabelResolver = (collectionId: string) => string
 type SearchGroupLabelResolver = (groupId: 'collections' | 'watches') => string
 
+/**
+ * Converts a localized model name into a concise collection label by removing
+ * a trailing case-size number, while preserving names such as "1908".
+ */
+const getLocalizedCollectionLabel = (modelNames: readonly string[], fallback: string): string =>
+  [...modelNames]
+    .map((modelName) => modelName.replace(/\s(?:2[6-9]|3[0-9]|4[0-9])$/, ''))
+    .sort((left, right) => left.length - right.length)[0] ?? fallback
+
 interface UseWatchSearchResult {
   debouncedSearchQuery: Readonly<Ref<string>>
   filteredWatches: Readonly<ComputedRef<Watch[]>>
@@ -56,13 +65,28 @@ export const useWatchSearch = ({
   const searchQuery = ref('')
   const debouncedSearchQuery = refDebounced(searchQuery, debounceMs)
   const isSearchPending = computed(() => searchQuery.value !== debouncedSearchQuery.value)
-  const collectionOptions = computed<WatchSearchCollection[]>(() =>
-    (catalog.value?.collections ?? []).map((collection) => ({
-      id: collection.id,
-      label: getCollectionLabel(collection.id),
-      watchCount: collection.watchCount,
-    })),
-  )
+  const collectionOptions = computed<WatchSearchCollection[]>(() => {
+    const modelNamesByCollectionId = new Map<string, string[]>()
+
+    for (const watch of Object.values(catalog.value?.watchesByReference ?? {})) {
+      const modelNames = modelNamesByCollectionId.get(watch.collectionId) ?? []
+      modelNames.push(watch.modelName)
+      modelNamesByCollectionId.set(watch.collectionId, modelNames)
+    }
+
+    return (catalog.value?.collections ?? []).map((collection) => {
+      const aliases = modelNamesByCollectionId.get(collection.id) ?? []
+      const label = getCollectionLabel(collection.id)
+
+      return {
+        aliases,
+        id: collection.id,
+        label,
+        localizedLabel: getLocalizedCollectionLabel(aliases, label),
+        watchCount: collection.watchCount,
+      }
+    })
+  })
   const searchSuggestions = computed<WatchSearchSuggestion[]>(() =>
     getWatchSearchSuggestions({
       watches: Object.values(catalog.value?.watchesByReference ?? {}),
@@ -93,6 +117,7 @@ export const useWatchSearch = ({
         collectionOptions.push({
           id: getSearchOptionId(suggestion),
           label: suggestion.label,
+          ...(suggestion.description ? { description: suggestion.description } : {}),
           trailing: String(suggestion.watchCount),
         })
       } else {

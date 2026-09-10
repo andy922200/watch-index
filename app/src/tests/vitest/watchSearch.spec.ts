@@ -53,6 +53,33 @@ describe('watch search', () => {
     ])
   })
 
+  it('matches collection aliases from a market-localized catalog', () => {
+    expect(
+      getWatchSearchSuggestions({
+        watches: [submariner],
+        collections: [
+          {
+            aliases: ['デイトジャスト 41'],
+            id: 'datejust',
+            label: 'Datejust',
+            localizedLabel: 'デイトジャスト',
+            watchCount: 1,
+          },
+        ],
+        query: 'デイトジャスト',
+      }),
+    ).toEqual([
+      {
+        type: 'collection',
+        id: 'datejust',
+        label: 'デイトジャスト',
+        description: 'Datejust',
+        watchCount: 1,
+        searchTerm: 'Datejust',
+      },
+    ])
+  })
+
   it('honors caller-provided suggestion limits', () => {
     expect(
       getWatchSearchSuggestions({

@@ -109,4 +109,37 @@ describe('useWatchSearch', () => {
     selectSearchSuggestion('collection-submariner')
     expect(searchQuery.value).toBe('Submariner')
   })
+
+  it('uses localized model names as collection search aliases', async () => {
+    vi.useFakeTimers()
+    const japanCatalog: WatchCatalog = {
+      ...catalog,
+      watchesByReference: {
+        ...catalog.watchesByReference,
+        'm126234-0001': {
+          ...catalog.watchesByReference['m126234-0001'],
+          modelName: 'デイトジャスト 36',
+        },
+      },
+    }
+    const { searchComboboxGroups, searchQuery } = useWatchSearch({
+      catalog: ref(japanCatalog),
+      getCollectionLabel: (collectionId) =>
+        collectionId === 'submariner' ? 'Submariner' : 'Datejust',
+      getSearchGroupLabel: (groupId) => (groupId === 'collections' ? 'Collections' : 'Watches'),
+    })
+
+    searchQuery.value = 'デイトジャスト'
+    await nextTick()
+    vi.advanceTimersByTime(200)
+    await nextTick()
+
+    expect(searchComboboxGroups.value[0]?.id).toBe('collections')
+    expect(searchComboboxGroups.value[0]?.options[0]).toEqual({
+      id: 'collection-datejust',
+      label: 'デイトジャスト',
+      description: 'Datejust',
+      trailing: '1',
+    })
+  })
 })
