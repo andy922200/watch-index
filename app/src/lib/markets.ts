@@ -1,5 +1,6 @@
 export const MarketCode = {
   Austria: 'AT',
+  China: 'CN',
   Switzerland: 'CH',
   Germany: 'DE',
   France: 'FR',
@@ -25,6 +26,7 @@ export const MARKET_QUERY_KEY = 'market_code'
 
 export const marketOptions: readonly MarketOption[] = [
   { code: MarketCode.Taiwan, flag: '🇹🇼', labelKey: 'site.market.taiwan' },
+  { code: MarketCode.China, flag: '🇨🇳', labelKey: 'site.market.china' },
   { code: MarketCode.HongKong, flag: '🇭🇰', labelKey: 'site.market.hongKong' },
   { code: MarketCode.Singapore, flag: '🇸🇬', labelKey: 'site.market.singapore' },
   { code: MarketCode.Japan, flag: '🇯🇵', labelKey: 'site.market.japan' },
