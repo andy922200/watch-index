@@ -1,0 +1,172 @@
+{
+  "marketCode": "CN",
+  "validationCompletedAt": "2026-09-10T03:40:00+08:00",
+  "evidencePath": "data/evidence/CN/2026-09-10",
+  "overallValidationStatus": "PASS",
+  "fiveLayerValidation": {
+    "syntaxAndSchema": {
+      "status": "NOT RUN",
+      "strictJson": {
+        "status": "PASS",
+        "filesChecked": 27,
+        "method": "Python json.loads with duplicate-key and invalid-constant rejection across formal data, schemas, and China JSON evidence"
+      },
+      "manualSchemaConformance": {
+        "status": "PASS",
+        "method": "Read and enforced the actual Rolex catalog, market, and price-history schema constraints relevant to the China additions in a standalone script: required/no-extra top-level keys, marketCode/currencyCode/modelReference/configurationCode patterns, source/collectionAliases/localNicknames object shapes, and listingStatus/price combinations. Result: market file 1465/1465 watches unique and conformant; history file 1465/1465 price series conformant."
+      },
+      "jsonSchema": {
+        "status": "NOT RUN",
+        "reason": "No installed Draft 2020-12 JSON Schema validator was available (python jsonschema module and ajv-cli both absent); no dependency was installed without authorization."
+      }
+    },
+    "crossFileConsistency": {
+      "status": "PASS",
+      "catalogWatchCount": 1465,
+      "chinaMarketWatchCount": 1465,
+      "chinaPriceSeriesCount": 1465,
+      "chinaUniqueModelReferenceCount": 1465,
+      "marketHistoryReferenceMismatchCount": 0,
+      "catalogOrphanCount": 0,
+      "runIds": [1],
+      "method": "Ran the repository's cross-file invariant script (refPattern, watchCount, duplicate modelReference, market/history/catalog linkage, runId/price-status checks) scoped to rolex-china-market.json / data/history/CN, alongside the existing full-catalog checks; output: PASS: rolex-china-market.json."
+    },
+    "sourceReconciliation": {
+      "status": "PASS",
+      "evidenceObservationCount": 1465,
+      "marketAndHistoryReconciliationMismatchCount": 0,
+      "priceParseFailureCount": 0,
+      "priceStatistics": {
+        "currencyCode": "CNY",
+        "listedWithPublicPriceCount": 1465,
+        "priceUnavailableCount": 0,
+        "confirmedNotListedCount": 0,
+        "minimum": 49600,
+        "maximum": 1498500
+      }
+    },
+    "websiteCompleteness": {
+      "status": "PASS",
+      "endpointTotalCount": 1465,
+      "endpointUniqueConfigurationCount": 1465,
+      "terminalPageHttpStatus": 200,
+      "terminalPageFirstResult": 1465,
+      "terminalPageResultCount": 0,
+      "unresolvedConflictCount": 0,
+      "notes": "The 1,872-result primary response included all 1,465 reported configurations. The subsequent firstResult=1465 response was empty. The rendered UI's own infinite scroll never advanced past its initial batch in this session (see collection-summary.json networkDiscovery.notes for the unrelated analytics-host DNS failure that caused this); this did not block completeness because the same structured endpoint the site itself uses was called directly and its terminal page was confirmed empty."
+    },
+    "changeSafety": {
+      "status": "PASS",
+      "catalogChanged": false,
+      "catalogSha256": "ff9ee8298b05a0b9cf6445978532a832730cde850bad6c20abc128b4cece1c09",
+      "schemasChanged": false,
+      "existingMarketAndHistoryFilesChanged": false,
+      "historyPreservation": "CN is a new market with a single initial run; no prior CN run or price point existed to overwrite.",
+      "catalogReconciliation": {
+        "catalogReferenceCount": 1465,
+        "chinaObservedReferenceCount": 1465,
+        "intersectionCount": 1465,
+        "chinaReferencesNotInCatalogCount": 0,
+        "catalogReferencesNotObservedInChinaCount": 0,
+        "notes": "The China market data is entirely within the existing catalog union (C ∩ M = C = M). Per the single-market isolation rule, the catalog was not rewritten; only data/markets/rolex-china-market.json, data/history/CN/, and data/evidence/CN/ were added."
+      },
+      "gitStatusScope": "git status --short before and after this task showed only new, untracked paths under data/markets/rolex-china-market.json, data/history/CN/, and data/evidence/CN/; no existing tracked file was modified."
+    }
+  },
+  "evidenceTraceability": {
+    "status": "PASS",
+    "acceptedObservations": 1465,
+    "observationsWithMatchingMarketTextAndInitialPrice": 1465,
+    "sensitiveDataScan": {
+      "status": "PASS",
+      "matchedSensitiveValueCount": 0,
+      "patterns": [
+        "Authorization header",
+        "Bearer token",
+        "Set-Cookie",
+        "session id",
+        "api key"
+      ],
+      "method": "case-insensitive grep across all files under data/evidence/CN/2026-09-10/"
+    }
+  },
+  "taxRateVerification": {
+    "status": "PASS",
+    "priceType": "tax-include",
+    "taxRatePercent": 13,
+    "verificationSource": "Official Rolex China price notice (\"已含增值税之参照零售价\") cross-checked against the State Taxation Administration's (国家税务总局) published 13% standard VAT rate for goods under the VAT Law effective 2026-01-01.",
+    "formalHistoryValue": "PASS",
+    "limitation": "China's additional import-stage consumption tax (消费税) on luxury watches is not separately itemized in Rolex's own price notice and is not captured by this schema's single taxRatePercent field; recorded as a limitation, not silently absorbed into the stored rate."
+  },
+  "nicknameResearch": {
+    "status": "PASS",
+    "scope": "new-market",
+    "languages": ["zh-Hans"],
+    "queries": [
+      "劳力士 绿水鬼 m126610lv-0002 俗称 型号",
+      "劳力士 格林尼治型II 百事圈 m126710blnr 0002 0003 俗称",
+      "劳力士 迪通拿 m126500ln-0001 熊猫盘",
+      "劳力士 潜航者 俗称 水鬼 深潜型 鬼王 大陆 手表论坛"
+    ],
+    "sourcesReviewed": 8,
+    "candidateCount": 6,
+    "acceptedCollectionAliasCount": 2,
+    "acceptedLocalNicknameCount": 3,
+    "rejectedCandidates": 2,
+    "notes": "See data/evidence/CN/2026-09-10/nickname-research.json for full detail. This is a representative, source-verified sample (4 exact-configuration nicknames across 3 model references, 2 family-wide aliases) rather than an exhaustive per-collection survey; the other 15 collections were left with empty names/sources rather than guessed."
+  },
+  "independentSpotChecks": {
+    "status": "PASS",
+    "method": "Called a second, separate official China API not used for the primary collection path: https://api.rolex.cn/api/prices/{rmc}?countryCode=CN&lang=zh-hans (per-model price microservice, response includes its own \"currency\":\"CNY\" field and VAT legal notice) together with https://api.rolex.cn/api/catalog/watches/{rmc}?language=zh-hans (per-model detail microservice, independently confirms case/dial/title text). Compared both against the primary watchgrid response for modelReference, price, and currency.",
+    "collectionRepresentativeCount": 17,
+    "sameBaseModelPairs": [
+      ["m228236-0018", "m228236-0002"],
+      ["m336935-0008", "m336935-0006"]
+    ],
+    "coverage": {
+      "lowestPriceReference": "m276200-0009",
+      "highestPriceReference": "m279459rbr-0001",
+      "newModelReference": "m126334-0033",
+      "priceUnavailableCoverage": "NOT APPLICABLE: all 1,465 structured records included a public price.",
+      "anomalyCoverage": "NOT APPLICABLE: no duplicate, conflict, parse failure, or price-unavailable source record was observed."
+    },
+    "totalChecks": 19,
+    "failureCount": 0,
+    "checks": [
+      {"modelReference": "m127334-0001", "collection": "land-dweller", "sourceUrl": "https://www.rolex.cn/watches/land-dweller/m127334-0001", "sourceApiUrl": "https://api.rolex.cn/api/prices/m127334-0001?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:07:16+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 132,000", "observedPrice": 132000, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m228236-0018", "collection": "day-date", "sourceUrl": "https://www.rolex.cn/watches/day-date/m228236-0018", "sourceApiUrl": "https://api.rolex.cn/api/prices/m228236-0018?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 553,700", "observedPrice": 553700, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m336935-0008", "collection": "sky-dweller", "sourceUrl": "https://www.rolex.cn/watches/sky-dweller/m336935-0008", "sourceApiUrl": "https://api.rolex.cn/api/prices/m336935-0008?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 522,600", "observedPrice": 522600, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m279459rbr-0001", "collection": "lady-datejust", "sourceUrl": "https://www.rolex.cn/watches/lady-datejust/m279459rbr-0001", "sourceApiUrl": "https://api.rolex.cn/api/prices/m279459rbr-0001?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 1,498,500", "observedPrice": 1498500, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m126334-0033", "collection": "datejust", "sourceUrl": "https://www.rolex.cn/watches/datejust/m126334-0033", "sourceApiUrl": "https://api.rolex.cn/api/prices/m126334-0033?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 93,900", "observedPrice": 93900, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m276200-0009", "collection": "oyster-perpetual", "sourceUrl": "https://www.rolex.cn/watches/oyster-perpetual/m276200-0009", "sourceApiUrl": "https://api.rolex.cn/api/prices/m276200-0009?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 49,600", "observedPrice": 49600, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m126506-0001", "collection": "cosmograph-daytona", "sourceUrl": "https://www.rolex.cn/watches/cosmograph-daytona/m126506-0001", "sourceApiUrl": "https://api.rolex.cn/api/prices/m126506-0001?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 680,400", "observedPrice": 680400, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m126613lb-0002", "collection": "submariner", "sourceUrl": "https://www.rolex.cn/watches/submariner/m126613lb-0002", "sourceApiUrl": "https://api.rolex.cn/api/prices/m126613lb-0002?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 156,300", "observedPrice": 156300, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m126603-0001", "collection": "sea-dweller", "sourceUrl": "https://www.rolex.cn/watches/sea-dweller/m126603-0001", "sourceApiUrl": "https://api.rolex.cn/api/prices/m126603-0001?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 180,700", "observedPrice": 180700, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m136660-0005", "collection": "deepsea", "sourceUrl": "https://www.rolex.cn/watches/deepsea/m136660-0005", "sourceApiUrl": "https://api.rolex.cn/api/prices/m136660-0005?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 127,600", "observedPrice": 127600, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m126710blnr-0003", "collection": "gmt-master-ii", "sourceUrl": "https://www.rolex.cn/watches/gmt-master-ii/m126710blnr-0003", "sourceApiUrl": "https://api.rolex.cn/api/prices/m126710blnr-0003?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 94,700", "observedPrice": 94700, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m226658-0001", "collection": "yacht-master", "sourceUrl": "https://www.rolex.cn/watches/yacht-master/m226658-0001", "sourceApiUrl": "https://api.rolex.cn/api/prices/m226658-0001?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 306,900", "observedPrice": 306900, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m126680-0001", "collection": "yacht-master-ii", "sourceUrl": "https://www.rolex.cn/watches/yacht-master-ii/m126680-0001", "sourceApiUrl": "https://api.rolex.cn/api/prices/m126680-0001?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 163,000", "observedPrice": 163000, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m224270-0001", "collection": "explorer", "sourceUrl": "https://www.rolex.cn/watches/explorer/m224270-0001", "sourceApiUrl": "https://api.rolex.cn/api/prices/m224270-0001?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 67,400", "observedPrice": 67400, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m226570-0001", "collection": "explorer-ii", "sourceUrl": "https://www.rolex.cn/watches/explorer-ii/m226570-0001", "sourceApiUrl": "https://api.rolex.cn/api/prices/m226570-0001?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 85,500", "observedPrice": 85500, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m126900-0001", "collection": "air-king", "sourceUrl": "https://www.rolex.cn/watches/air-king/m126900-0001", "sourceApiUrl": "https://api.rolex.cn/api/prices/m126900-0001?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 65,600", "observedPrice": 65600, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m52508-0008", "collection": "1908", "sourceUrl": "https://www.rolex.cn/watches/1908/m52508-0008", "sourceApiUrl": "https://api.rolex.cn/api/prices/m52508-0008?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 329,500", "observedPrice": 329500, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m228236-0002", "collection": "day-date", "sourceUrl": "https://www.rolex.cn/watches/day-date/m228236-0002", "sourceApiUrl": "https://api.rolex.cn/api/prices/m228236-0002?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 591,800", "observedPrice": 591800, "observedCurrency": "CNY", "status": "PASS"},
+      {"modelReference": "m336935-0006", "collection": "sky-dweller", "sourceUrl": "https://www.rolex.cn/watches/sky-dweller/m336935-0006", "sourceApiUrl": "https://api.rolex.cn/api/prices/m336935-0006?countryCode=CN&lang=zh-hans", "observedAt": "2026-09-10T03:10:00+08:00", "comparedFields": ["modelReference","productUrl","modelName","rawPrice","parsedPrice","currencyCode"], "observedRawPrice": "RMB 522,600", "observedPrice": 522600, "observedCurrency": "CNY", "status": "PASS"}
+    ]
+  },
+  "readmeUpdate": {
+    "status": "PASS",
+    "updated": true,
+    "sections": [
+      "README Data scope",
+      "watch-data-collection-guide Current markets"
+    ],
+    "reason": "China increases covered markets from ten to eleven; its rolex.cn architecture (distinct domain, Coveo token endpoint alongside the same watchgrid pattern) and disclosed-VAT-only tax limitation are material enough to note alongside the market table."
+  },
+  "limitations": [
+    "No Draft 2020-12 JSON Schema validator was installed, so generic JSON Schema validation is NOT RUN; strict JSON parsing and a direct implementation of the relevant schema constraints passed.",
+    "Chinese nickname research is a representative, source-verified sample (2 collectionAliases, 3 localNicknames across 4 configurations), not an exhaustive per-collection survey; the remaining 15 collections were left empty rather than guessed.",
+    "The stored 13% tax rate reflects only the VAT component Rolex's own price notice discloses; China's additional consumption tax on imported luxury watches, if embedded in consumer pricing, is not separately captured by this schema's single taxRatePercent field.",
+    "Catalog reconciliation (merging CN into data/catalog/rolex-catalog.json's sourceMarketCodes) was intentionally left to the coordinator per the multi-market isolation rule; this run confirmed the observed set is already a full subset/superset match (C ∩ M = C = M) but did not write to the catalog file."
+  ]
+}

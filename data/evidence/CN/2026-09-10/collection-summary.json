@@ -1,0 +1,85 @@
+{
+  "market": "China",
+  "marketCode": "CN",
+  "locale": "zh-Hans-CN",
+  "officialEntryUrl": "https://www.rolex.cn/watches/find-rolex?group=0",
+  "startedAt": "2026-09-10T03:00:00+08:00",
+  "completedAt": "2026-09-10T03:35:00+08:00",
+  "status": "completed-with-limitations",
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "available",
+    "chromeDevtoolsMcpConfigured": true,
+    "chromeDevtoolsMcpAttempted": true,
+    "chromeDevtoolsMcpResult": "PASS",
+    "fallbackTool": null,
+    "notes": "Official rolex.cn domain identified via web search (distinct from rolex.com, used by AT/CH/DE/FR/GB/HK/SG/US). Root path (no locale prefix) served zh-Hans content. An initial network-tab pass surfaced only an obfuscated token endpoint (/api/catalog/euihOp/7hhe0) issuing Coveo search-hub JWTs; the on-page WatchGrid component's own pagination call never fired in this session because a client-side analytics call to a malformed host (rolexsaproductionh21l80g7.analytics.org.coveo.com) threw an uncaught promise rejection (WatchGrid.js) before the grid's own data fetch executed, so infinite-scroll in the rendered UI never advanced past the initial ~57-item batch. That analytics host does not resolve in DNS at all (confirmed independently via a direct `nslookup`, not just blocked in-browser); it is unrelated to the actual catalog data path and CN network access was not otherwise restricted (the base Coveo search domain used for on-site search, org.coveo.com, resolved and responded normally). The site's own bundled JS (static/js/2829.be448c83.chunk.js) was read directly to recover the real pagination call shape: `/api/catalog/watchgrid` on the api.rolex.cn host with `firstResult`, `numberOfResults`, `grid`, `countryCode` query params — architecturally identical to the rolex.com endpoint used for AT/CH/DE/FR/GB/US, just proxied through a China-specific domain. `language=zh-hans` was required; `zh`, `zh-cn`, `zh-CN`, `zh_CN`, `cn`, `zh-Hans-CN` were all rejected by the catalog service with an explicit 400 error before `zh-hans` succeeded."
+  },
+  "primaryCollectionPath": {
+    "type": "official structured endpoint",
+    "endpoint": "https://api.rolex.cn/api/catalog/watchgrid?language=zh-hans&firstResult=0&numberOfResults=1872&grid=all&countryCode=CN&group=%280%29",
+    "responseFile": "data/evidence/CN/2026-09-10/watchgrid-primary-source.network-response",
+    "responseSha256": "5f0ecef76de7b343920ee7a17f905ee44978f649b14230c94b83a6da74efb062",
+    "responseFields": {
+      "modelReference": "rmc",
+      "collection": "family and familyCode",
+      "modelName": "title",
+      "caseDescription": "facet_case_title",
+      "dialAlt": "alt",
+      "newModel": "newmodelselection",
+      "rawPrice": "formattedPrice",
+      "parsedPrice": "price"
+    },
+    "pagination": "A successful request with firstResult=0 and numberOfResults=1872 returned totalCount=1465 and 1465 results. A successful subsequent request with firstResult=1465 and numberOfResults=144 returned the same totalCount and an empty results array.",
+    "structuredResultCount": 1465,
+    "structuredUniqueModelReferenceCount": 1465,
+    "terminalPage": {
+      "endpoint": "https://api.rolex.cn/api/catalog/watchgrid?language=zh-hans&firstResult=1465&numberOfResults=144&grid=all&countryCode=CN&group=%280%29",
+      "httpStatus": 200,
+      "totalCount": 1465,
+      "resultCount": 0
+    }
+  },
+  "renderedCrossCheck": {
+    "view": "Official China (rolex.cn) find-rolex model view; no collection, size, material, or new-model filters",
+    "initialRenderedConfigurationCount": 57,
+    "notes": "The rendered China page exposed product links, simplified-Chinese text, and RMB prices for the initial batch consistent with the structured endpoint. Completion is established by the structured endpoint's terminal page (see above); the independent per-model spot check used a second, separate official API (see independentSpotChecks in validation-summary.json), not just the rendered UI, since the rendered UI's own infinite-scroll never advanced in this session (see networkDiscovery.notes)."
+  },
+  "counts": {
+    "rawConfigurationCount": 1465,
+    "uniqueModelReferenceCount": 1465,
+    "duplicateCount": 0,
+    "conflictCount": 0,
+    "listedWithPublicPriceCount": 1465,
+    "priceUnavailableCount": 0,
+    "confirmedNotListedCount": 0,
+    "parseFailureCount": 0
+  },
+  "errors": [
+    "Client-side rendered pagination (infinite scroll) on https://www.rolex.cn/watches/find-rolex never advanced past its initial batch in this session because of an uncaught promise rejection in WatchGrid.js triggered by a DNS failure on an unrelated Coveo analytics host. Worked around by calling the structured /api/catalog/watchgrid endpoint directly (recovered from the site's own bundled JS) with the same-origin fetch already permitted by the page's CORS policy. This did not reduce collection completeness: the primary source is the same endpoint the site itself uses, called with its own documented terminal-page stop condition."
+  ],
+  "taxVerification": {
+    "priceType": "tax-include",
+    "officialRolexProductPage": {
+      "status": "PASS",
+      "sourceUrl": "https://www.rolex.cn/watches/land-dweller/m127334-0001",
+      "sourceApiUrl": "https://api.rolex.cn/api/prices/m127334-0001?countryCode=CN&lang=zh-hans",
+      "observedAt": "2026-09-10T03:07:16+08:00",
+      "priceNotice": "已含增值税之参照零售价。参照价格或会随时修改，而不作另行通知。",
+      "currencyField": "CNY (confirmed by the /api/prices response's own \"currency\" field, not inferred from the \"RMB\" display prefix)"
+    },
+    "governmentLookup": {
+      "status": "PASS",
+      "sourceUrl": "https://fgk.chinatax.gov.cn/zcfgk/c100012/c5247426/content.html",
+      "publisher": "国家税务总局 (State Taxation Administration)",
+      "finding": "Under the VAT Law effective 2026-01-01, the standard VAT rate for goods sales by general taxpayers is 13%; this is the top standard rate tier (transport/construction services 9%, other services/intangibles 6%, small-scale taxpayers 3%).",
+      "additionalReference": "https://hainan.chinatax.gov.cn/xxgk_6_8/16164097.html"
+    },
+    "storedTaxRatePercent": 13,
+    "notes": "The official Rolex China price notice confirms the reference retail price is VAT-inclusive but does not itself state a percentage; 13% is the State Taxation Administration's published standard VAT rate for goods, which the price notice's wording is consistent with. China separately levies an additional consumption tax (消费税) on imported luxury watches at the import/wholesale stage; that component is not separately itemized in Rolex's own consumer-facing price notice and is not captured by this schema's single taxRatePercent field, matching how other markets in this dataset record only the disclosed VAT/GST component. This is recorded as a limitation."
+  },
+  "limitations": [
+    "Chinese nickname research covered a representative sample (one family-wide alias per two families, four exact-configuration nicknames) rather than an exhaustive survey of all 17 collections; see nickname-research.json.",
+    "The stored 13% tax rate reflects only the VAT component disclosed in Rolex's own price notice; China's additional import-stage consumption tax on luxury watches is not separately captured by this schema's single taxRatePercent field."
+  ]
+}

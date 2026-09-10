@@ -1,0 +1,89 @@
+{
+  "nicknameResearch": {
+    "status": "PASS",
+    "scope": "new-market",
+    "languages": [
+      "zh-Hans"
+    ],
+    "queries": [
+      "劳力士 绿水鬼 m126610lv-0002 俗称 型号",
+      "劳力士 格林尼治型II 百事圈 m126710blnr 0002 0003 俗称",
+      "劳力士 迪通拿 m126500ln-0001 熊猫盘",
+      "劳力士 潜航者 俗称 水鬼 深潜型 鬼王 大陆 手表论坛"
+    ],
+    "sourcesReviewed": 8,
+    "candidateCount": 6,
+    "acceptedCollectionAliasCount": 2,
+    "acceptedLocalNicknameCount": 3,
+    "acceptedDetails": [
+      {
+        "level": "localNickname",
+        "modelReference": "m126610lv-0002",
+        "names": ["绿水鬼"],
+        "verification": "Configuration confirmed: familyCode submariner, dial black, bezel/case code LV (green Cerachrom). Term used specifically for this reference on both a product-price listing page and a first-person ownership article.",
+        "sources": [
+          "https://www.xbiao.com/rolex/76408/",
+          "https://www.xbiao.com/rolex/z_1176049.html"
+        ]
+      },
+      {
+        "level": "localNickname",
+        "modelReference": "m126710blnr-0002",
+        "names": ["蝙蝠侠", "国米圈"],
+        "verification": "Page fetched directly (not just search snippet). Confirmed forum/article usage of both '国米圈' and '蝙蝠侠' tied to this exact reference (five-bead Jubilee bracelet, black/blue Cerachrom bezel).",
+        "sources": [
+          "https://www.xbiao.com/rolex/69501/"
+        ]
+      },
+      {
+        "level": "localNickname",
+        "modelReference": "m126710blnr-0003",
+        "names": ["蝙蝠侠", "国米圈"],
+        "verification": "Page fetched directly. Page title itself is '...m126710blnr-0003腕表(国米圈)'; '蝙蝠侠' appears in a cross-referenced user comment for the same bezel/dial combination on the Oyster-bracelet variant.",
+        "sources": [
+          "https://www.xbiao.com/rolex/81358/"
+        ]
+      },
+      {
+        "level": "localNickname",
+        "modelReference": "m126500ln-0001",
+        "names": ["熊猫迪", "白熊猫"],
+        "verification": "Page fetched directly; reference number matches exactly, dial confirmed white with black subdials (Panda). Both terms found in article/user-post titles about this exact reference.",
+        "sources": [
+          "https://www.xbiao.com/rolex/96361/",
+          "https://www.xbiao.com/rolex/z_1137674.html"
+        ]
+      },
+      {
+        "level": "collectionAlias",
+        "familyCode": "submariner",
+        "names": ["水鬼"],
+        "verification": "Family-wide alias (applies to the whole Submariner line, not one colorway), already present in this dataset's HK and TW market files from separate HK/TW sources; confirmed here from Mainland-published sources (Sina, Zhihu) explicitly equating '水鬼' with the Submariner (潜航者型) series.",
+        "sources": [
+          "https://www.sina.cn/gc/article/nipiync0246249.html",
+          "https://zhuanlan.zhihu.com/p/399545275"
+        ]
+      },
+      {
+        "level": "collectionAlias",
+        "familyCode": "deepsea",
+        "names": ["鬼王"],
+        "verification": "Family-wide alias for Deepsea (深潜型), already present in this dataset's HK and TW market files from separate HK/TW sources; a Mainland article (xbiao.com) uses '鬼王' interchangeably with Deepsea/深潜型 throughout a dedicated piece about the current-generation model.",
+        "sources": [
+          "https://www.xbiao.com/rolex/z_1135521.html"
+        ]
+      }
+    ],
+    "rejectedCandidates": [
+      {
+        "candidate": "百事圈 as the primary name for m126710blnr",
+        "reason": "A forum section title used '百事圈' alongside '国米圈' for the same blue/black (not blue/red 'Pepsi') bezel, which is inconsistent with the standard color-based naming convention (Pepsi = blue/red BLRO). Treated as unverified community cross-talk and not added; '国米圈' and '蝙蝠侠' were kept because they were independently corroborated across both m126710blnr-0002 and -0003 pages."
+      },
+      {
+        "candidate": "Additional collectionAliases for the remaining 15 families (day-date, datejust, etc.)",
+        "reason": "Not researched in this pass; left as empty names/sources arrays rather than guessed. This is a representative sample, not an exhaustive survey — see collection-summary.json limitations."
+      }
+    ],
+    "notes": "This pass targeted specific, independently verifiable candidates (fetched source pages directly, not only search-engine synthesis) rather than an exhaustive per-collection sweep, given time budget. All accepted names were checked against the exact modelReference/configuration they were sourced for; no nickname was inferred by translating another market's terms."
+  }
+}
