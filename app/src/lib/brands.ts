@@ -15,6 +15,13 @@ export const brands: BrandConfig[] = [
     siteName: 'Rolex Watch Index',
     title: { zhTw: 'Rolex 腕錶索引', enUs: 'Rolex Watch Index' },
     description: { zhTw: '您的全球 Rolex 腕錶索引', enUs: 'Your Global Rolex Watches Index' },
-    hashSourceFiles: ['data/catalog/rolex-catalog.json', 'data/markets/rolex-taiwan-market.json'],
+    hashSourceFiles: [
+      'data/catalog/rolex-catalog.json',
+      'data/markets/rolex-taiwan-market.json',
+      'data/markets/rolex-italy-market.json',
+      'data/markets/rolex-south-korea-market.json',
+      'data/history/IT/rolex-price-history.json',
+      'data/history/KR/rolex-price-history.json',
+    ],
   },
 ]

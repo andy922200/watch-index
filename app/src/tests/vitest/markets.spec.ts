@@ -15,6 +15,13 @@ describe('market query', () => {
     expect(getMarketFromQuery('?market_code=CN')).toBe(MarketCode.China)
   })
 
+  it.each([
+    ['Italy', 'IT', MarketCode.Italy],
+    ['South Korea', 'KR', MarketCode.SouthKorea],
+  ])('supports the %s market query', (_marketName, marketCode, expectedMarket) => {
+    expect(getMarketFromQuery(`?market_code=${marketCode}`)).toBe(expectedMarket)
+  })
+
   it('falls back to Taiwan when market_code is unsupported', () => {
     expect(getMarketFromQuery('?market_code=XX')).toBe(DEFAULT_MARKET)
   })

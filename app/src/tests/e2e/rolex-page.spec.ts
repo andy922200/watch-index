@@ -78,6 +78,23 @@ test('switches the displayed prices to the China market', async ({ page }) => {
   await expect(page.locator('[data-slot="card"]').first()).toContainText('CNY')
 })
 
+test('switches the displayed prices to the Korea and Italy markets', async ({ page }) => {
+  await page.goto('en-us/')
+
+  const marketSelect = page.getByRole('combobox', { name: 'Market' })
+  await marketSelect.click()
+  await page.getByRole('option', { name: 'South Korea' }).click()
+
+  await expect(marketSelect).toContainText('South Korea')
+  await expect(page.locator('[data-slot="card"]').first()).toContainText('KRW')
+
+  await marketSelect.click()
+  await page.getByRole('option', { name: 'Italy' }).click()
+
+  await expect(marketSelect).toContainText('Italy')
+  await expect(page.locator('[data-slot="card"]').first()).toContainText('EUR')
+})
+
 test('shows an approximate price in the selected display currency', async ({ page }) => {
   await page.route('https://api.frankfurter.dev/v2/rates*', async (route) => {
     await route.fulfill({
