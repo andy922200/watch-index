@@ -47,7 +47,9 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-:root {
+/* 預設 fallback 與 Rolex 主題共用目前色票；新增品牌時僅覆寫相同語意 token。 */
+:root,
+:root[data-brand='rolex'] {
   color-scheme: light dark;
   font-family:
     Inter,
@@ -58,71 +60,72 @@
     'Segoe UI',
     sans-serif;
   --radius: 0.625rem;
-  --background: var(--color-mist-50);
-  --foreground: var(--color-mist-950);
-  --card: var(--color-mist-50);
-  --card-foreground: var(--color-mist-950);
-  --popover: var(--color-mist-50);
-  --popover-foreground: var(--color-mist-950);
-  --primary: var(--color-emerald-600);
-  --primary-foreground: var(--color-emerald-50);
-  --secondary: var(--color-mist-100);
-  --secondary-foreground: var(--color-mist-900);
-  --muted: var(--color-mist-100);
-  --muted-foreground: var(--color-mist-600);
-  --accent: var(--color-mist-100);
-  --accent-foreground: var(--color-mist-900);
+  --background: #f5f4ef;
+  --foreground: #10261c;
+  --card: #fffdf8;
+  --card-foreground: #10261c;
+  --popover: #fffdf8;
+  --popover-foreground: #10261c;
+  --primary: #006039;
+  --primary-foreground: #f5f4ef;
+  --secondary: #ebe9df;
+  --secondary-foreground: #263b30;
+  --muted: #ebe9df;
+  --muted-foreground: #617066;
+  --accent: #dde8df;
+  --accent-foreground: #10261c;
   --destructive: var(--color-red-600);
-  --border: var(--color-mist-200);
-  --input: var(--color-mist-200);
-  --ring: var(--color-emerald-500);
-  --chart-1: var(--color-amber-300);
-  --chart-2: var(--color-amber-500);
-  --chart-3: var(--color-amber-600);
-  --chart-4: var(--color-amber-700);
-  --chart-5: var(--color-amber-800);
-  --sidebar: var(--color-mist-100);
-  --sidebar-foreground: var(--color-mist-950);
-  --sidebar-primary: var(--color-emerald-600);
-  --sidebar-primary-foreground: var(--color-emerald-50);
-  --sidebar-accent: var(--color-mist-200);
-  --sidebar-accent-foreground: var(--color-mist-900);
-  --sidebar-border: var(--color-mist-200);
-  --sidebar-ring: var(--color-emerald-500);
+  --border: #d8d5c7;
+  --input: #d8d5c7;
+  --ring: #006039;
+  --chart-1: #006039;
+  --chart-2: #b08d57;
+  --chart-3: #6e8471;
+  --chart-4: #80653e;
+  --chart-5: #344d3e;
+  --sidebar: #ebe9df;
+  --sidebar-foreground: #10261c;
+  --sidebar-primary: #006039;
+  --sidebar-primary-foreground: #f5f4ef;
+  --sidebar-accent: #dde8df;
+  --sidebar-accent-foreground: #10261c;
+  --sidebar-border: #d8d5c7;
+  --sidebar-ring: #006039;
 }
 
-.dark {
-  --background: var(--color-mist-950);
-  --foreground: var(--color-mist-50);
-  --card: var(--color-mist-900);
-  --card-foreground: var(--color-mist-50);
-  --popover: var(--color-mist-900);
-  --popover-foreground: var(--color-mist-50);
-  --primary: var(--color-emerald-500);
-  --primary-foreground: var(--color-emerald-950);
-  --secondary: var(--color-mist-800);
-  --secondary-foreground: var(--color-mist-50);
-  --muted: var(--color-mist-800);
-  --muted-foreground: var(--color-mist-400);
-  --accent: var(--color-mist-800);
-  --accent-foreground: var(--color-mist-50);
+:root.dark,
+:root.dark[data-brand='rolex'] {
+  --background: #0b1712;
+  --foreground: #f5f4ef;
+  --card: #102018;
+  --card-foreground: #f5f4ef;
+  --popover: #102018;
+  --popover-foreground: #f5f4ef;
+  --primary: #3ba66b;
+  --primary-foreground: #07110c;
+  --secondary: #1b2b22;
+  --secondary-foreground: #f5f4ef;
+  --muted: #1b2b22;
+  --muted-foreground: #adbaaf;
+  --accent: #24392c;
+  --accent-foreground: #f5f4ef;
   --destructive: var(--color-red-500);
-  --border: color-mix(in oklab, var(--color-mist-50) 12%, transparent);
-  --input: color-mix(in oklab, var(--color-mist-50) 16%, transparent);
-  --ring: var(--color-emerald-400);
-  --chart-1: var(--color-amber-300);
-  --chart-2: var(--color-amber-400);
-  --chart-3: var(--color-amber-500);
-  --chart-4: var(--color-amber-600);
-  --chart-5: var(--color-amber-700);
-  --sidebar: var(--color-mist-900);
-  --sidebar-foreground: var(--color-mist-50);
-  --sidebar-primary: var(--color-emerald-500);
-  --sidebar-primary-foreground: var(--color-emerald-950);
-  --sidebar-accent: var(--color-mist-800);
-  --sidebar-accent-foreground: var(--color-mist-50);
-  --sidebar-border: color-mix(in oklab, var(--color-mist-50) 12%, transparent);
-  --sidebar-ring: var(--color-emerald-400);
+  --border: color-mix(in oklab, #f5f4ef 14%, transparent);
+  --input: color-mix(in oklab, #f5f4ef 18%, transparent);
+  --ring: #69b982;
+  --chart-1: #69b982;
+  --chart-2: #c8a96a;
+  --chart-3: #9ab39e;
+  --chart-4: #a78550;
+  --chart-5: #52745c;
+  --sidebar: #102018;
+  --sidebar-foreground: #f5f4ef;
+  --sidebar-primary: #3ba66b;
+  --sidebar-primary-foreground: #07110c;
+  --sidebar-accent: #24392c;
+  --sidebar-accent-foreground: #f5f4ef;
+  --sidebar-border: color-mix(in oklab, #f5f4ef 14%, transparent);
+  --sidebar-ring: #69b982;
 }
 
 body {

@@ -44,10 +44,11 @@ const displayCurrency = defineModel<string>('displayCurrency', {
   default: DEFAULT_DISPLAY_CURRENCY,
 })
 const queryString = window.location.search
+const brandPath = window.location.pathname.replace(/\/en-us\/?$/, '/').replace(/\/?$/, '/')
 
 const languageLinks = computed<LanguageLink[]>(() => [
-  { code: Locale.zhTw, href: `${import.meta.env.BASE_URL}${queryString}` },
-  { code: Locale.enUs, href: `${import.meta.env.BASE_URL}en-us/${queryString}` },
+  { code: Locale.zhTw, href: `${brandPath}${queryString}` },
+  { code: Locale.enUs, href: `${brandPath}en-us/${queryString}` },
 ])
 
 const navigateToLocale = (
@@ -75,13 +76,13 @@ const getCurrencyLabel = (currency: string): string => {
 
 <template>
   <nav
-    class="sticky top-0 z-50 flex w-full items-center justify-end gap-2 bg-stone-100/95 px-4 py-3 backdrop-blur dark:bg-stone-950/95"
+    class="bg-background lg:ring-background sticky top-0 z-50 flex w-full items-center justify-end gap-2 px-4 py-3 lg:ring-2"
   >
     <Select v-model="market">
       <SelectTrigger class="w-36" :aria-label="t('site.marketLabel')">
         <SelectValue :placeholder="t('site.market.taiwan')" />
       </SelectTrigger>
-      <SelectContent class="max-h-56">
+      <SelectContent class="max-h-56 w-(--reka-select-trigger-width)" :side-offset="4">
         <SelectGroup>
           <SelectItem v-for="option in marketOptions" :key="option.code" :value="option.code">
             <span class="flex items-center gap-2">
@@ -97,7 +98,7 @@ const getCurrencyLabel = (currency: string): string => {
         <SelectTrigger class="w-56 whitespace-nowrap" :aria-label="t('site.displayCurrencyLabel')">
           <SelectValue :placeholder="displayCurrency" />
         </SelectTrigger>
-        <SelectContent class="w-56 whitespace-nowrap">
+        <SelectContent class="w-(--reka-select-trigger-width) whitespace-nowrap" :side-offset="4">
           <SelectGroup>
             <SelectItem
               v-for="currency in props.displayCurrencies"
@@ -115,7 +116,7 @@ const getCurrencyLabel = (currency: string): string => {
         <SelectTrigger class="w-32" :aria-label="t('site.languageLabel')">
           <SelectValue :placeholder="t(`site.language.${locale}`)" />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent class="w-(--reka-select-trigger-width)" :side-offset="4">
           <SelectGroup>
             <SelectItem v-for="option in languageLinks" :key="option.code" :value="option.code">
               {{ t(`site.language.${option.code}`) }}
@@ -126,7 +127,7 @@ const getCurrencyLabel = (currency: string): string => {
     </div>
     <button
       type="button"
-      class="hidden rounded-sm border border-stone-400 bg-white p-2 text-stone-950 shadow-sm transition outline-none hover:cursor-pointer focus:ring-2 focus:ring-stone-950 lg:inline-flex dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100 dark:focus:ring-stone-100"
+      class="border-input bg-card text-foreground focus:ring-ring hidden rounded-sm border p-2 shadow-sm transition outline-none hover:cursor-pointer focus:ring-2 lg:inline-flex"
       :aria-label="isDark ? t('site.darkMode.switchToLight') : t('site.darkMode.switchToDark')"
       @click="toggleDark()"
     >

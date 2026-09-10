@@ -1,16 +1,26 @@
 <script setup lang="ts">
+import { onMounted, onUnmounted } from 'vue'
+
 interface Props {
+  brand: string
   lang: string
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
+
+onMounted(() => {
+  document.documentElement.dataset.brand = props.brand
+})
+
+onUnmounted(() => {
+  if (document.documentElement.dataset.brand === props.brand) {
+    delete document.documentElement.dataset.brand
+  }
+})
 </script>
 
 <template>
-  <main
-    class="min-h-dvh bg-stone-100 p-4 text-stone-950 dark:bg-stone-950 dark:text-stone-100"
-    :lang="lang"
-  >
+  <main class="bg-background text-foreground min-h-dvh p-4" :lang="lang">
     <div class="mx-auto flex w-full max-w-300 flex-col items-center">
       <slot />
     </div>

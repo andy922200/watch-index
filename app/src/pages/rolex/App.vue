@@ -211,7 +211,7 @@ watchSource(debouncedSearchQuery, () => {
 </script>
 
 <template>
-  <AppLayout :lang="locale">
+  <AppLayout brand="rolex" :lang="locale">
     <AppNav
       v-model:display-currency="selectedDisplayCurrency"
       v-model:market="selectedMarket"
