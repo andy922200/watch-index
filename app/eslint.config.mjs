@@ -1,12 +1,13 @@
 // eslint.config.mjs
 import eslint from '@eslint/js'
+import { defineConfig } from 'eslint/config'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import eslintPluginSimpleImportSort from 'eslint-plugin-simple-import-sort'
 import eslintPluginVue from 'eslint-plugin-vue'
 import globals from 'globals'
 import tsEslint from 'typescript-eslint'
 
-const eslintConfig = tsEslint.config(
+const eslintConfig = defineConfig(
   /* Global Ignore */
   {
     ignores: ['node_modules', 'dist', 'public'],
