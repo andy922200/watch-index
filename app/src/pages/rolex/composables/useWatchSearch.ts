@@ -68,7 +68,7 @@ export const useWatchSearch = ({
   const collectionOptions = computed<WatchSearchCollection[]>(() => {
     const modelNamesByCollectionId = new Map<string, string[]>()
 
-    for (const watch of Object.values(catalog.value?.watchesByReference ?? {})) {
+    for (const watch of Object.values(catalog.value?.watchesById ?? {})) {
       const modelNames = modelNamesByCollectionId.get(watch.collectionId) ?? []
       modelNames.push(watch.modelName)
       modelNamesByCollectionId.set(watch.collectionId, modelNames)
@@ -89,7 +89,7 @@ export const useWatchSearch = ({
   })
   const searchSuggestions = computed<WatchSearchSuggestion[]>(() =>
     getWatchSearchSuggestions({
-      watches: Object.values(catalog.value?.watchesByReference ?? {}),
+      watches: Object.values(catalog.value?.watchesById ?? {}),
       collections: collectionOptions.value,
       maxCollectionSuggestions,
       maxWatchSuggestions,
@@ -106,7 +106,7 @@ export const useWatchSearch = ({
   const getSearchOptionId = (suggestion: WatchSearchSuggestion): string =>
     suggestion.type === 'collection'
       ? `collection-${suggestion.id}`
-      : `watch-${suggestion.watch.modelReference}`
+      : `watch-${suggestion.watch.watchId}`
 
   const searchComboboxGroups = computed<SearchComboboxGroup[]>(() => {
     const collectionOptions: SearchComboboxOption[] = []
@@ -151,7 +151,7 @@ export const useWatchSearch = ({
       ),
   )
   const filteredWatches = computed<Watch[]>(() => {
-    const watches = Object.values(catalog.value?.watchesByReference ?? {})
+    const watches = Object.values(catalog.value?.watchesById ?? {})
     const collectionLabels = new Map(
       collectionOptions.value.map((collection) => [collection.id, collection.label]),
     )

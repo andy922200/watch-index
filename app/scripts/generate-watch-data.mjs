@@ -56,6 +56,10 @@ const [markets, histories] = await Promise.all([
 
 const historiesByMarketCode = new Map(histories.map((history) => [history.marketCode, history]))
 
+if (catalog.brandId !== 'rolex') {
+  throw new Error('Rolex catalog does not declare brandId "rolex"')
+}
+
 /**
  * 將全市場共用的產品 catalog，與指定市場的在地文案及最新價格合併成前端資料。
  *
@@ -76,6 +80,10 @@ const createCatalog = (market) => {
     throw new Error(`Price history is missing ${market.marketCode}`)
   }
 
+  if (market.brandId !== catalog.brandId || priceHistory.brandId !== catalog.brandId) {
+    throw new Error(`${market.marketCode} market data has an inconsistent brandId`)
+  }
+
   const priceUpdatedAt = priceHistory.collectionRuns
     .map((run) => run.collectedAt)
     .sort((left, right) => Date.parse(right) - Date.parse(left))[0]
@@ -84,16 +92,16 @@ const createCatalog = (market) => {
     throw new Error(`${market.marketCode} price history does not contain a collection run date`)
   }
 
-  const marketWatchesByReference = new Map(
-    market.watches.map((watch) => [watch.modelReference, watch]),
+  const marketWatchesById = new Map(
+    market.watches.map((watch) => [watch.watchId, watch]),
   )
 
   const watches = catalog.watches.map((watch) => {
-    const marketWatch = marketWatchesByReference.get(watch.modelReference)
-    const priceRecord = priceHistory.priceSeries[watch.modelReference]?.at(-1)
+    const marketWatch = marketWatchesById.get(watch.watchId)
+    const priceRecord = priceHistory.priceSeries[watch.watchId]?.at(-1)
 
     if (!marketWatch || !priceRecord) {
-      throw new Error(`${market.marketCode} market data is missing ${watch.modelReference}`)
+      throw new Error(`${market.marketCode} market data is missing ${watch.watchId}`)
     }
 
     if (
@@ -103,7 +111,7 @@ const createCatalog = (market) => {
       !Array.isArray(marketWatch.localNicknames?.names) ||
       !marketWatch.localNicknames.names.every((nickname) => typeof nickname === 'string')
     ) {
-      throw new Error(`${market.marketCode} market data is invalid for ${watch.modelReference}`)
+      throw new Error(`${market.marketCode} market data is invalid for ${watch.watchId}`)
     }
 
     return {
@@ -123,7 +131,8 @@ const createCatalog = (market) => {
   }
 
   return {
-    schemaVersion: 3,
+    schemaVersion: 4,
+    brandId: catalog.brandId,
     collectedAt: catalog.collectedAt,
     watchCount: catalog.watchCount,
     collections: [...collectionCounts]
@@ -136,7 +145,7 @@ const createCatalog = (market) => {
       taxRatePercent: priceHistory.taxRatePercent,
     },
     priceUpdatedAt,
-    watchesByReference: Object.fromEntries(watches.map((watch) => [watch.modelReference, watch])),
+    watchesById: Object.fromEntries(watches.map((watch) => [watch.watchId, watch])),
   }
 }
 
@@ -194,7 +203,7 @@ if (!taiwanCatalog) {
  */
 const createManifest = (catalogs, defaultCatalog, currencies) =>
   JSON.stringify({
-    schemaVersion: 3,
+    schemaVersion: 4,
     catalog: defaultCatalog,
     catalogs,
     currencies,

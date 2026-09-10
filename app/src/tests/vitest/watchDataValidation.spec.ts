@@ -18,10 +18,11 @@ describe('watch data validation', () => {
     expect(
       isWatchCatalog({
         schemaVersion: 1,
+        brandId: 'rolex',
         collectedAt: '2026-09-04T00:00:00.000Z',
         watchCount: 1,
         collections: [{ id: 'datejust', watchCount: 1 }],
-        watchesByReference: {
+        watchesById: {
           'm126234-0001': { collectionId: 'datejust' },
         },
       }),
@@ -32,6 +33,7 @@ describe('watch data validation', () => {
     expect(
       isWatchCatalog({
         schemaVersion: 3,
+        brandId: 'rolex',
         collectedAt: '2026-09-04T00:00:00.000Z',
         watchCount: 1,
         collections: [{ id: 'datejust', watchCount: 1 }],
@@ -42,8 +44,9 @@ describe('watch data validation', () => {
           taxRatePercent: 5,
         },
         priceUpdatedAt: '2026-09-04T00:00:00.000Z',
-        watchesByReference: {
-          'm126234-0001': {
+        watchesById: {
+          'rolex:m126234-0001': {
+            watchId: 'rolex:m126234-0001',
             collectionId: 'datejust',
             modelNumber: 'm126234',
             configurationCode: '0001',

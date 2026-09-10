@@ -264,7 +264,7 @@ watchSource(debouncedSearchQuery, () => {
       >
         <Card
           v-for="watch in visibleWatches"
-          :key="watch.modelReference"
+          :key="watch.watchId"
           class="h-full gap-0 overflow-hidden py-0"
         >
           <CardContent class="p-0">

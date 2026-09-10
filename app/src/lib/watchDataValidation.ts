@@ -35,6 +35,7 @@ export const isWatchCollection = (value: unknown): value is WatchCollection =>
  */
 export const isWatch = (value: unknown): value is Watch =>
   isRecord(value) &&
+  typeof value.watchId === 'string' &&
   typeof value.collectionId === 'string' &&
   typeof value.modelNumber === 'string' &&
   typeof value.configurationCode === 'string' &&
@@ -59,6 +60,10 @@ export const isPriceMarket = (value: unknown): value is PriceMarket =>
     value.priceType === 'no-tax') &&
   (typeof value.taxRatePercent === 'number' || value.taxRatePercent === null)
 
+const isWatchesById = (value: unknown): value is Record<string, Watch> =>
+  isRecord(value) &&
+  Object.entries(value).every(([watchId, watch]) => isWatch(watch) && watch.watchId === watchId)
+
 /**
  * 驗證版本化 watch-data manifest 的格式。
  *
@@ -82,11 +87,11 @@ export const isWatchDataManifest = (value: unknown): value is WatchDataManifest 
 export const isWatchCatalog = (value: unknown): value is WatchCatalog =>
   isRecord(value) &&
   typeof value.schemaVersion === 'number' &&
+  typeof value.brandId === 'string' &&
   typeof value.collectedAt === 'string' &&
   typeof value.watchCount === 'number' &&
   Array.isArray(value.collections) &&
   value.collections.every(isWatchCollection) &&
   isPriceMarket(value.priceMarket) &&
   typeof value.priceUpdatedAt === 'string' &&
-  isRecord(value.watchesByReference) &&
-  Object.values(value.watchesByReference).every(isWatch)
+  isWatchesById(value.watchesById)

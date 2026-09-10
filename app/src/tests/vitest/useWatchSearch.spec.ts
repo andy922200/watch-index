@@ -6,6 +6,7 @@ import type { WatchCatalog } from '@/types/watch-data'
 
 const catalog: WatchCatalog = {
   schemaVersion: 1,
+  brandId: 'rolex',
   collectedAt: '2026-09-09T00:00:00.000Z',
   watchCount: 2,
   collections: [
@@ -19,8 +20,9 @@ const catalog: WatchCatalog = {
     taxRatePercent: 5,
   },
   priceUpdatedAt: '2026-09-09T00:00:00.000Z',
-  watchesByReference: {
-    'm124060-0001': {
+  watchesById: {
+    'rolex:m124060-0001': {
+      watchId: 'rolex:m124060-0001',
       collectionId: 'submariner',
       modelNumber: 'm124060',
       configurationCode: '0001',
@@ -33,7 +35,8 @@ const catalog: WatchCatalog = {
       price: 100,
       priceStatus: 'listed',
     },
-    'm126234-0001': {
+    'rolex:m126234-0001': {
+      watchId: 'rolex:m126234-0001',
       collectionId: 'datejust',
       modelNumber: 'm126234',
       configurationCode: '0001',
@@ -83,7 +86,7 @@ describe('useWatchSearch', () => {
         label: 'Watches',
         options: [
           {
-            id: 'watch-m124060-0001',
+            id: 'watch-rolex:m124060-0001',
             label: 'Submariner',
             description: 'm124060-0001',
           },
@@ -110,14 +113,32 @@ describe('useWatchSearch', () => {
     expect(searchQuery.value).toBe('Submariner')
   })
 
+  it('uses the model reference after selecting a watch identified by watchId', async () => {
+    vi.useFakeTimers()
+    const { searchQuery, selectSearchSuggestion } = useWatchSearch({
+      catalog: ref(catalog),
+      getCollectionLabel: (collectionId) =>
+        collectionId === 'submariner' ? 'Submariner' : 'Datejust',
+      getSearchGroupLabel: (groupId) => (groupId === 'collections' ? 'Collections' : 'Watches'),
+    })
+
+    searchQuery.value = 'm124060'
+    await nextTick()
+    vi.advanceTimersByTime(200)
+    await nextTick()
+
+    selectSearchSuggestion('watch-rolex:m124060-0001')
+    expect(searchQuery.value).toBe('m124060-0001')
+  })
+
   it('uses localized model names as collection search aliases', async () => {
     vi.useFakeTimers()
     const japanCatalog: WatchCatalog = {
       ...catalog,
-      watchesByReference: {
-        ...catalog.watchesByReference,
-        'm126234-0001': {
-          ...catalog.watchesByReference['m126234-0001'],
+      watchesById: {
+        ...catalog.watchesById,
+        'rolex:m126234-0001': {
+          ...catalog.watchesById['rolex:m126234-0001'],
           modelName: 'デイトジャスト 36',
         },
       },

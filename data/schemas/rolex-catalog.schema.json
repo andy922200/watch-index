@@ -1,13 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Rolex Catalog",
-  "description": "Market-independent union of observed Rolex watch configurations across contributing markets, deduplicated by full modelReference. Historical configurations are retained.",
+  "description": "Market-independent union of observed Rolex watch configurations across contributing markets. Schema version 2 adds globally unique watchId values while retaining modelReference as Rolex's source reference.",
   "type": "object",
   "additionalProperties": false,
   "required": ["$schema", "schemaVersion", "collectedAt", "sourceMarketCodes", "watchCount", "watches"],
   "properties": {
     "$schema": { "const": "../schemas/rolex-catalog.schema.json" },
-    "schemaVersion": { "const": 1 },
+    "schemaVersion": { "enum": [1, 2] },
+    "brandId": { "const": "rolex" },
     "collectedAt": { "type": "string", "format": "date-time" },
     "sourceMarketCodes": {
       "description": "Market codes whose collected data have been reconciled with this catalog; this does not assert complete market coverage or availability of every configuration in every market.",
@@ -24,12 +25,26 @@
       "items": { "$ref": "#/$defs/watch" }
     }
   },
+  "allOf": [
+    {
+      "if": { "properties": { "schemaVersion": { "const": 2 } } },
+      "then": {
+        "required": ["brandId"],
+        "properties": {
+          "watches": {
+            "items": { "required": ["watchId"] }
+          }
+        }
+      }
+    }
+  ],
   "$defs": {
     "watch": {
       "type": "object",
       "additionalProperties": false,
       "required": ["collectionId", "modelNumber", "configurationCode", "modelReference", "imageUrl"],
       "properties": {
+        "watchId": { "type": "string", "pattern": "^rolex:m[0-9a-z]+-[0-9]{4}$" },
         "collectionId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
         "modelNumber": { "type": "string", "pattern": "^m[0-9a-z]+$" },
         "configurationCode": { "type": "string", "pattern": "^[0-9]{4}$" },

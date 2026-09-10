@@ -4,6 +4,7 @@ export interface WatchCollection {
 }
 
 export interface Watch {
+  watchId: string
   collectionId: string
   modelNumber: string
   configurationCode: string
@@ -26,12 +27,13 @@ export interface PriceMarket {
 
 export interface WatchCatalog {
   schemaVersion: number
+  brandId: string
   collectedAt: string
   watchCount: number
   collections: WatchCollection[]
   priceMarket: PriceMarket
   priceUpdatedAt: string
-  watchesByReference: Record<string, Watch>
+  watchesById: Record<string, Watch>
 }
 
 interface WatchDataManifest {

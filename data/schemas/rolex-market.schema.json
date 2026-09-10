@@ -1,13 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Rolex Market",
-  "description": "Market-specific Rolex display text, URLs, aliases, and nicknames without price data.",
+  "description": "Market-specific Rolex display text, URLs, aliases, and nicknames without price data. Schema version 2 adds globally unique watchId values.",
   "type": "object",
   "additionalProperties": false,
   "required": ["$schema", "schemaVersion", "collectedAt", "salesRegion", "marketCode", "locale", "watchCount", "source", "collectionAliases", "watches"],
   "properties": {
     "$schema": { "const": "../schemas/rolex-market.schema.json" },
-    "schemaVersion": { "const": 1 },
+    "schemaVersion": { "enum": [1, 2] },
+    "brandId": { "const": "rolex" },
     "collectedAt": { "type": "string", "format": "date-time" },
     "salesRegion": { "type": "string", "minLength": 1 },
     "marketCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
@@ -22,6 +23,19 @@
     },
     "watches": { "type": "array", "items": { "$ref": "#/$defs/marketWatch" } }
   },
+  "allOf": [
+    {
+      "if": { "properties": { "schemaVersion": { "const": 2 } } },
+      "then": {
+        "required": ["brandId"],
+        "properties": {
+          "watches": {
+            "items": { "required": ["watchId"] }
+          }
+        }
+      }
+    }
+  ],
   "$defs": {
     "source": {
       "type": "object",
@@ -55,6 +69,7 @@
       "additionalProperties": false,
       "required": ["modelReference", "collectionName", "modelName", "caseDescription", "dialDescription", "isNewModel", "productUrl", "localNicknames"],
       "properties": {
+        "watchId": { "type": "string", "pattern": "^rolex:m[0-9a-z]+-[0-9]{4}$" },
         "modelReference": { "type": "string", "pattern": "^m[0-9a-z]+-[0-9]{4}$" },
         "collectionName": { "type": "string", "minLength": 1 },
         "modelName": { "type": "string", "minLength": 1 },

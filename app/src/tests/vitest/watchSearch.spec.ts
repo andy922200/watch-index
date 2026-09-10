@@ -8,6 +8,7 @@ import {
 import type { Watch } from '@/types/watch-data'
 
 const submariner: Watch = {
+  watchId: 'rolex:m124060-0001',
   collectionId: 'submariner',
   modelNumber: 'm124060',
   configurationCode: '0001',

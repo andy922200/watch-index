@@ -6,7 +6,7 @@
 
 ## 適用範圍與硬性限制
 
-- 目前正式資料只涵蓋勞力士，包含 AT、CH、DE、GB、HK、JP、SG、TW、US 九個市場。
+- 目前正式資料只涵蓋勞力士，包含 AT、CH、CN、DE、FR、GB、HK、JP、SG、TW、US 共 11 個市場。
 - 專案日後會支援其他品牌；不得假定現有的型號格式、檔名、`modelReference` 規則或前端欄位仍適用。
 - 未經明確授權，不得修改 Schema、另建正式格式、安裝依賴、推送遠端或繞過網站存取限制。
 - 面向人類的文件一律使用繁體中文。
@@ -38,13 +38,14 @@
 | History | `data/history/[marketCode]/rolex-price-history.json` | 收集輪次與追加式價格／列出狀態 | 市場文字、圖片、俗稱 |
 | Evidence | `data/evidence/[marketCode]/[YYYY-MM-DD]/` | 原始觀察、收集方法與驗證 | Cookie、token、授權標頭、個資 |
 
-一筆現有腕錶資料代表完整配置，且必須滿足：
+一筆現有 Rolex 腕錶資料代表完整配置，且必須滿足：
 
 ```text
 modelReference === modelNumber + "-" + configurationCode
+watchId === "rolex:" + modelReference
 ```
 
-`configurationCode` 是四位字串，前導零不可移除；同基本型號但不同配置碼是不同資料。若新增品牌不能無損符合此規則，停止寫入並請求資料契約決策。
+`configurationCode` 是四位字串，前導零不可移除；同基本型號但不同配置碼是不同資料。新增品牌必須使用自己的 schema 與原始型號規則，但仍應定義品牌範圍內穩定、可組成全域 `watchId` 的識別方式。
 
 | `listingStatus` | `price` | 使用時機 |
 | --- | --- | --- |
@@ -90,7 +91,7 @@ Browser、CDP 或 network 工具不可用，不代表官方沒有結構化來源
 寫入後至少完成以下驗證：
 
 1. 嚴格 JSON 與 Schema，包含重複 key、時間、URI 與額外欄位。
-2. `watchCount`、唯一 `modelReference`、catalog／market／history 關聯及 marketCode 一致。
+2. `watchCount`、唯一 `watchId`、catalog／market／history 關聯及 marketCode 一致。
 3. 價格與 `listingStatus` 的組合正確。
 4. 新增或更新的正式事實可回對本次 evidence，且價格解析一致。
 5. 全量來源有停止證據，並完成獨立官方抽查。
@@ -201,12 +202,14 @@ const isTime = value => typeof value === 'string' && Number.isFinite(Date.parse(
 const unique = values => new Set(values).size === values.length
 
 const catalog = read('data/catalog/rolex-catalog.json')
-const catalogReferenceList = catalog.watches.map(watch => watch.modelReference)
-const catalogRefs = new Set(catalogReferenceList)
+const catalogWatchIdList = catalog.watches.map(watch => watch.watchId)
+const catalogWatchIds = new Set(catalogWatchIdList)
+fail(catalog.brandId === 'rolex', 'catalog brandId mismatch')
 fail(catalog.watchCount === catalog.watches.length, 'catalog watchCount mismatch')
-fail(unique(catalogReferenceList), 'catalog duplicate modelReference')
+fail(unique(catalogWatchIdList), 'catalog duplicate watchId')
 
 for (const watch of catalog.watches) {
+  fail(watch.watchId === `rolex:${watch.modelReference}`, `invalid watchId: ${watch.watchId}`)
   fail(refPattern.test(watch.modelReference), `invalid reference: ${watch.modelReference}`)
   fail(watch.modelReference === `${watch.modelNumber}-${watch.configurationCode}`,
     `reference parts mismatch: ${watch.modelReference}`)
@@ -216,10 +219,16 @@ for (const watch of catalog.watches) {
 for (const file of fs.readdirSync('data/markets').filter(name => name.endsWith('.json'))) {
   const market = read(path.join('data/markets', file))
   const history = read(path.join('data/history', market.marketCode, 'rolex-price-history.json'))
-  const marketRefs = market.watches.map(watch => watch.modelReference)
-  fail(market.watchCount === marketRefs.length, `${file}: watchCount mismatch`)
-  fail(unique(marketRefs), `${file}: duplicate modelReference`)
+  const marketWatchIds = market.watches.map(watch => watch.watchId)
+  fail(market.brandId === catalog.brandId, `${file}: market brandId mismatch`)
+  fail(history.brandId === catalog.brandId, `${file}: history brandId mismatch`)
+  fail(market.watchCount === marketWatchIds.length, `${file}: watchCount mismatch`)
+  fail(unique(marketWatchIds), `${file}: duplicate watchId`)
   fail(history.marketCode === market.marketCode, `${file}: marketCode mismatch`)
+
+  for (const watch of market.watches) {
+    fail(watch.watchId === `rolex:${watch.modelReference}`, `${file}: invalid watchId ${watch.watchId}`)
+  }
 
   const runIds = new Set()
   let previousRunId = 0
@@ -231,25 +240,25 @@ for (const file of fs.readdirSync('data/markets').filter(name => name.endsWith('
     previousRunId = run.runId
   }
 
-  for (const reference of marketRefs) {
-    fail(catalogRefs.has(reference), `${file}: market orphan ${reference}`)
-    fail(Object.hasOwn(history.priceSeries, reference), `${file}: missing price series ${reference}`)
+  for (const watchId of marketWatchIds) {
+    fail(catalogWatchIds.has(watchId), `${file}: market orphan ${watchId}`)
+    fail(Object.hasOwn(history.priceSeries, watchId), `${file}: missing price series ${watchId}`)
   }
-  for (const [reference, points] of Object.entries(history.priceSeries)) {
-    fail(catalogRefs.has(reference), `${file}: history orphan ${reference}`)
-    fail(Array.isArray(points) && points.length > 0, `${file}: empty price series ${reference}`)
+  for (const [watchId, points] of Object.entries(history.priceSeries)) {
+    fail(catalogWatchIds.has(watchId), `${file}: history orphan ${watchId}`)
+    fail(Array.isArray(points) && points.length > 0, `${file}: empty price series ${watchId}`)
     let previous
     for (const point of points) {
-      fail(runIds.has(point.runId), `${file}: unknown runId ${reference}`)
+      fail(runIds.has(point.runId), `${file}: unknown runId ${watchId}`)
       fail(['listed', 'price-unavailable', 'not-listed'].includes(point.listingStatus),
-        `${file}: invalid status ${reference}`)
+        `${file}: invalid status ${watchId}`)
       fail(point.listingStatus === 'listed'
         ? Number.isSafeInteger(point.price) && point.price >= 0
-        : point.price === null, `${file}: price/status mismatch ${reference}`)
+        : point.price === null, `${file}: price/status mismatch ${watchId}`)
       if (previous) {
-        fail(point.runId > previous.runId, `${file}: unordered series ${reference}`)
+        fail(point.runId > previous.runId, `${file}: unordered series ${watchId}`)
         fail(point.price !== previous.price || point.listingStatus !== previous.listingStatus,
-          `${file}: redundant price point ${reference}`)
+          `${file}: redundant price point ${watchId}`)
       }
       previous = point
     }
