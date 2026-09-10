@@ -128,7 +128,7 @@ data/
 
 ### 單一市場維護員
 
-> 你負責 Watch Index 的 [市場名稱] 資料。完整閱讀 `AGENTS.md`、`ai-data-maintenance-guide.md`、實際 Schema、目標市場資料與 evidence。模式為：[純價格更新／全市場重新考證／新增市場]，marketCode 為：[代碼]，官方入口為：[URL]。優先發現官方結構化資料及停止條件，先保存 evidence，再更新市場資料與追加式價格歷史。不得覆寫舊價格點、修改 Schema 或猜測缺漏資料；回報資料差異、驗證、evidence 與限制。
+> 你負責腕錶 [品牌名稱] 的 [市場名稱] 資料。完整閱讀 `AGENTS.md`、`ai-data-maintenance-guide.md`、實際 Schema、目標市場資料與 evidence。模式為：[純價格更新／全市場重新考證／新增市場]，marketCode 為：[代碼]。優先發現官方結構化資料及停止條件，先保存 evidence，再更新市場資料與追加式價格歷史。不得覆寫舊價格點、修改 Schema 或猜測缺漏資料；回報資料差異、驗證、evidence 與限制。
 
 ## 與網站的關係
 
