@@ -1,3 +1,14 @@
+/**
+ * 單錶跨市場比價的計算。
+ *
+ * 放在 `lib/` 而非某個品牌頁底下：這裡只相依 `types/watch-data` 的通用型別，
+ * 沒有任何品牌專屬欄位，而 `price-compare` 依 `lib/pageRoutes.ts` 的定義是
+ * 每個品牌都會有的頁面種類，計算方式也一致。
+ *
+ * 因此新增品牌時請直接沿用這支，不要複製一份改成品牌專屬版本——
+ * 一旦分家，退稅估算與差價基準這類規則就會在各品牌之間悄悄長歪。
+ */
+
 import type {
   ComparisonMarket,
   ComparisonPrice,
@@ -24,6 +35,21 @@ export type PriceComparisonLabel =
   | 'no-tax-price'
   | 'tax-rate-unavailable'
   | 'price-unavailable'
+
+/**
+ * 各價格標示對應的 i18n key。刻意與 {@link PriceComparisonLabel} 放在同一支：
+ * 新增標示時型別與對應表在同一個畫面內，不會只補了其中一邊。
+ */
+export const PriceComparisonLabelKeys: Record<PriceComparisonLabel, string> = {
+  'official-price': 'site.watchPriceComparison.officialPriceLabel',
+  'refund-policy-reference': 'site.watchPriceComparison.refundPolicyReference',
+  'tax-exclusive-reference': 'site.watchPriceComparison.taxExclusiveReference',
+  'traveler-refund-unavailable': 'site.watchPriceComparison.travelerRefundUnavailable',
+  'tax-exclusive-price': 'site.watchPriceComparison.taxExclusivePrice',
+  'no-tax-price': 'site.watchPriceComparison.noTaxPrice',
+  'tax-rate-unavailable': 'site.watchPriceComparison.taxRateUnavailable',
+  'price-unavailable': 'site.watchPriceComparison.priceUnavailable',
+}
 
 export interface MarketComparisonRow {
   market: ComparisonMarket

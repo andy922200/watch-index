@@ -1,9 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import {
-  createMarketComparisonRows,
-  PriceComparisonMode,
-} from '@/pages/rolex/price-compare/utils/watchPriceComparison'
+import { createMarketComparisonRows, PriceComparisonMode } from '@/lib/watchPriceComparison'
 import type { WatchPriceComparisonPayload } from '@/types/watch-data'
 
 const createPayload = (): WatchPriceComparisonPayload => ({
