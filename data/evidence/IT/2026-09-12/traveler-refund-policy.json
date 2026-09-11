@@ -1,0 +1,23 @@
+{
+  "marketCode": "IT",
+  "observedAt": "2026-09-11T17:00:00Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level traveler consumption-tax policy only; this does not establish Rolex retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "sources": [
+    {
+      "publisher": "Agenzia delle Dogane e dei Monopoli",
+      "title": "OTELLO - The procedure",
+      "url": "https://www.adm.gov.it/portale/-/the-procedure",
+      "accessedAt": "2026-09-11T17:00:00Z"
+    }
+  ],
+  "observedFacts": [
+    "VAT direct relief or refund is available for qualifying personal or family-use goods when each invoice exceeds EUR 70 and the traveler resides or is domiciled outside the EU.",
+    "The goods must leave the EU within the third month after the invoice date, with customs endorsement of the tax-free invoice.",
+    "The refund is made by the Italian seller or a tax-free company acting for that seller; a service fee may be deducted."
+  ],
+  "limitations": [
+    "The source does not establish that every retailer participates in the tax-free process.",
+    "Rolex retailer participation and any transaction-specific refund amount are not established by this evidence."
+  ]
+}

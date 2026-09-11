@@ -1,0 +1,23 @@
+{
+  "marketCode": "FR",
+  "observedAt": "2026-09-11T17:00:00Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level traveler consumption-tax policy only; this does not establish Rolex retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "sources": [
+    {
+      "publisher": "Direction générale des douanes et droits indirects",
+      "title": "La détaxe en France pour les touristes - PABLO",
+      "url": "https://www.douane.gouv.fr/fiche/la-detaxe-en-france-pour-les-touristes-pablo",
+      "accessedAt": "2026-09-11T17:00:00Z"
+    }
+  ],
+  "observedFacts": [
+    "Visitors habitually resident outside the EU may have VAT deducted from goods bought in France under the tax-free procedure.",
+    "The customs export validation at the EU exit gives the seller the definitive VAT exemption.",
+    "French Customs states that the administration does not refund the VAT; the merchant is the party that can reimburse it."
+  ],
+  "limitations": [
+    "The source does not establish that every retailer issues a tax-free sales slip or refunds VAT.",
+    "Rolex retailer participation and any processing fee are not established by this evidence."
+  ]
+}

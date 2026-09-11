@@ -1,0 +1,22 @@
+{
+  "marketCode": "HK",
+  "observedAt": "2026-09-11T17:00:00Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level traveler consumption-tax policy only; this does not establish Rolex retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "sources": [
+    {
+      "publisher": "Financial Services and the Treasury Bureau, Hong Kong SAR Government",
+      "title": "Prevailing Tax Policy",
+      "url": "https://www.fstb.gov.hk/en/treasury/general/prevailing-tax-policy.htm",
+      "accessedAt": "2026-09-11T17:00:00Z"
+    }
+  ],
+  "observedFacts": [
+    "Hong Kong's prevailing tax policy states that there is no value-added or sales tax.",
+    "Accordingly, no jurisdiction-level traveler VAT or sales-tax refund scheme is identified for this market."
+  ],
+  "limitations": [
+    "This finding does not address customs duty, retailer promotions, or taxes payable after import into another jurisdiction.",
+    "It does not establish any retailer-specific pricing or benefit."
+  ]
+}

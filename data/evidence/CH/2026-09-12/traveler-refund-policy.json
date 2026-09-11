@@ -1,0 +1,23 @@
+{
+  "marketCode": "CH",
+  "observedAt": "2026-09-11T17:00:00Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level traveler consumption-tax policy only; this does not establish Rolex retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "sources": [
+    {
+      "publisher": "Swiss Federal Tax Administration",
+      "title": "Tax free for tourists",
+      "url": "https://www.estv.admin.ch/en/tax-free-for-tourists",
+      "accessedAt": "2026-09-11T17:00:00Z"
+    }
+  ],
+  "observedFacts": [
+    "Tax exemption for tourist purchases applies only when all stated conditions are met, including a buyer domiciled outside Switzerland and a retail price of at least CHF 300 including VAT.",
+    "The traveler must present the goods and completed export document to Swiss customs when leaving Swiss territory.",
+    "The buyer cannot claim Swiss VAT from the authorities; any reimbursement is handled by the supplier under the sales relationship."
+  ],
+  "limitations": [
+    "The source does not establish that every retailer offers a refund after export confirmation.",
+    "Rolex retailer participation and any processing fee are not established by this evidence."
+  ]
+}
