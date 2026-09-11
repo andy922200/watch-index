@@ -6,6 +6,7 @@
     "marketLabel": "市場",
     "displayCurrencyLabel": "顯示貨幣",
     "moreLabel": "更多選項",
+    "scrollToTop": "回到頂端",
     "exchangeRateUpdatedAt": "換算匯率更新於 {date}（Frankfurter）",
     "exchangeRateUnavailable": "目前無法取得換算匯率",
     "market": {

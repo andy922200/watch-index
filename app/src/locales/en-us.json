@@ -6,6 +6,7 @@
     "marketLabel": "Market",
     "displayCurrencyLabel": "Display currency",
     "moreLabel": "More options",
+    "scrollToTop": "Back to top",
     "exchangeRateUpdatedAt": "Exchange rate updated {date} (Frankfurter)",
     "exchangeRateUnavailable": "Converted prices are currently unavailable",
     "market": {

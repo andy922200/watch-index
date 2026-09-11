@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue'
 
+import ScrollToTopButton from '@/components/layout/ScrollToTopButton.vue'
+
 interface Props {
   brand: string
   lang: string
@@ -24,5 +26,6 @@ onUnmounted(() => {
     <div class="mx-auto flex w-full max-w-300 flex-col items-center">
       <slot />
     </div>
+    <ScrollToTopButton />
   </main>
 </template>
