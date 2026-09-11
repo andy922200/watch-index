@@ -1,27 +1,31 @@
-export interface BrandConfig {
-  id: string
+interface BrandPageConfig {
   entry: `/${string}`
-  siteName: string
   title: { zhTw: string; enUs: string }
   description: { zhTw: string; enUs: string }
-  /** 相對於 repo 根目錄，變動時會讓 watch-data 版本雜湊改變。 */
-  hashSourceFiles: string[]
 }
 
-export const brands: BrandConfig[] = [
+export interface BrandConfig extends BrandPageConfig {
+  id: string
+  siteName: string
+  priceComparePage: BrandPageConfig
+}
+
+export const brands = [
   {
     id: 'rolex',
     entry: '/src/pages/rolex/main.ts',
     siteName: 'Rolex Watch Index',
     title: { zhTw: 'Rolex 腕錶索引', enUs: 'Rolex Watch Index' },
     description: { zhTw: '您的全球 Rolex 腕錶索引', enUs: 'Your Global Rolex Watches Index' },
-    hashSourceFiles: [
-      'data/catalog/rolex-catalog.json',
-      'data/markets/rolex-taiwan-market.json',
-      'data/markets/rolex-italy-market.json',
-      'data/markets/rolex-south-korea-market.json',
-      'data/history/IT/rolex-price-history.json',
-      'data/history/KR/rolex-price-history.json',
-    ],
+    priceComparePage: {
+      entry: '/src/pages/rolex/price-compare/main.ts',
+      title: { zhTw: 'Rolex 腕錶行情比較', enUs: 'Rolex Watch Price Comparison' },
+      description: {
+        zhTw: '比較同一支 Rolex 腕錶在各市場的官方定價與退稅估算參考。',
+        enUs: 'Compare official Rolex prices and tax-refund estimate references across markets.',
+      },
+    },
   },
-]
+] as const satisfies readonly BrandConfig[]
+
+export type BrandId = (typeof brands)[number]['id']

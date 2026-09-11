@@ -8,7 +8,7 @@ interface CreateMpaConfigOptions {
   base: string
   ghPagesRepoName: string
   ghPagesNamespace: string
-  brands: BrandConfig[]
+  brands: readonly BrandConfig[]
 }
 
 interface MpaConfig {
