@@ -26,15 +26,22 @@ import {
 import { useDarkMode } from '@/composables/useDarkMode'
 import { DEFAULT_DISPLAY_CURRENCY } from '@/lib/displayCurrencies'
 import { DEFAULT_MARKET, type MarketCode, marketOptions } from '@/lib/markets'
-import { Locale } from '@/plugins/i18n'
+import { toLanguagePathname } from '@/lib/pageRoutes'
+import { Locale, type LocaleCode } from '@/plugins/i18n'
 
 interface LanguageLink {
-  code: (typeof Locale)[keyof typeof Locale]
+  code: LocaleCode
   href: string
+}
+
+interface LanguagePaths {
+  enUs: string
+  zhTw: string
 }
 
 interface Props {
   displayCurrencies: readonly string[]
+  languagePaths?: LanguagePaths
 }
 
 const { t, locale } = useI18n()
@@ -43,12 +50,24 @@ const market = defineModel<MarketCode>('market', { default: DEFAULT_MARKET })
 const displayCurrency = defineModel<string>('displayCurrency', {
   default: DEFAULT_DISPLAY_CURRENCY,
 })
-const queryString = window.location.search
-const brandPath = window.location.pathname.replace(/\/en-us\/?$/, '/').replace(/\/?$/, '/')
+/**
+ * 語言切換連結的路徑。頁面通常會透過 `languagePaths` 明確傳入（由 `pageUrls.ts` 依
+ * 品牌與頁面種類組出）；未傳入時才退回以目前網址推導，兩條路徑都以 `pageRoutes.ts`
+ * 的語言路徑段規則為準。
+ */
+const getLanguagePath = (language: LocaleCode): string => {
+  const providedPath =
+    language === Locale.enUs ? props.languagePaths?.enUs : props.languagePaths?.zhTw
+
+  return providedPath ?? toLanguagePathname({ pathname: window.location.pathname, language })
+}
+
+const getLanguageHref = (language: LocaleCode): string =>
+  `${getLanguagePath(language)}${window.location.search}`
 
 const languageLinks = computed<LanguageLink[]>(() => [
-  { code: Locale.zhTw, href: `${brandPath}${queryString}` },
-  { code: Locale.enUs, href: `${brandPath}en-us/${queryString}` },
+  { code: Locale.zhTw, href: getLanguageHref(Locale.zhTw) },
+  { code: Locale.enUs, href: getLanguageHref(Locale.enUs) },
 ])
 
 const navigateToLocale = (
@@ -61,7 +80,7 @@ const navigateToLocale = (
   const option = languageLinks.value.find((language) => language.code === value)
 
   if (option && option.code !== locale.value) {
-    window.location.assign(option.href)
+    window.location.assign(getLanguageHref(option.code))
   }
 }
 

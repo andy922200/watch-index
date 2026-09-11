@@ -30,14 +30,18 @@ import {
   MARKET_STORAGE_KEY,
   type MarketCode,
 } from '@/lib/markets'
+import { getBrandPageLanguagePaths, getPriceCompareUrl } from '@/lib/pageUrls'
 import { isRolexWatchCatalog } from '@/lib/validation/rolexWatch'
 import { Locale } from '@/plugins/i18n'
 import type { RolexWatch } from '@/types/rolex-watch'
 
+import { BRAND_ID } from './brand'
 import WatchDetailsDialog from './components/WatchDetailsDialog.vue'
 import { useWatchSearch } from './composables/useWatchSearch'
 
 const PAGE_SIZE = 12
+
+const languagePaths = getBrandPageLanguagePaths({ brandId: BRAND_ID, page: 'index' })
 
 const { locale, t } = useI18n()
 
@@ -104,6 +108,14 @@ const openWatchDetails = (watch: RolexWatch): void => {
   selectedWatch.value = watch
   isWatchDetailsOpen.value = true
 }
+
+const getWatchPriceCompareUrl = (watch: RolexWatch): string =>
+  getPriceCompareUrl({
+    brandId: BRAND_ID,
+    language: locale.value === Locale.enUs ? Locale.enUs : Locale.zhTw,
+    market: selectedMarket.value,
+    watchId: watch.watchId,
+  })
 
 const getWatchImageAlt = (watch: RolexWatch): string =>
   t('site.watchList.imageAlt', { modelName: watch.modelName })
@@ -209,6 +221,7 @@ watchSource(debouncedSearchQuery, () => {
       v-model:display-currency="selectedDisplayCurrency"
       v-model:market="selectedMarket"
       :display-currencies="displayCurrencies"
+      :language-paths="languagePaths"
     />
     <section class="w-full max-w-4xl text-center" aria-labelledby="page-title">
       <h1
@@ -287,9 +300,14 @@ watchSource(debouncedSearchQuery, () => {
             </CardDescription>
             <CardDescription v-else aria-hidden="true" class="invisible h-10" />
           </CardHeader>
-          <CardFooter class="px-4 pt-0 pb-4">
+          <CardFooter class="flex-col gap-2 px-4 pt-0 pb-4">
             <Button class="w-full" variant="outline" @click="openWatchDetails(watch)">
               {{ t('site.watchList.viewDetails') }}
+            </Button>
+            <Button as-child class="w-full" variant="outline">
+              <a :href="getWatchPriceCompareUrl(watch)">
+                {{ t('site.watchList.compareMarkets') }}
+              </a>
             </Button>
           </CardFooter>
         </Card>
