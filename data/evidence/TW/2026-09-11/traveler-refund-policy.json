@@ -1,0 +1,23 @@
+{
+  "marketCode": "TW",
+  "observedAt": "2026-09-10T16:29:36Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level VAT refund guidance for foreign travelers only; this does not establish Rolex designated-store participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "sources": [
+    {
+      "publisher": "Tourism Administration, Republic of China (Taiwan)",
+      "title": "VAT Refund Guidelines for Foreign Travelers",
+      "url": "https://eng.taiwan.net.tw/m1.aspx?sNo=0024567",
+      "accessedAt": "2026-09-10T16:29:36Z"
+    }
+  ],
+  "observedFacts": [
+    "The guidance sets foreign-traveler entry-document and stay-duration conditions.",
+    "Purchases must reach the stated same-day threshold at the same designated store displaying the Taiwan Tax Refund label.",
+    "The traveler must apply within the stated period, take the goods out, and receive Customs approval before departure."
+  ],
+  "limitations": [
+    "Rolex designated-store participation is not established by this evidence.",
+    "No exact transaction-specific refund amount is represented in the comparison."
+  ]
+}

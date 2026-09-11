@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Traveler Refund Policies",
+  "description": "Source-traceable, jurisdiction-level traveler consumption-tax refund policies. These are separate from any brand's price history and do not establish merchant participation or a guaranteed refund amount.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schemaVersion", "policies"],
+  "properties": {
+    "$schema": { "const": "./schemas/traveler-refund-policy.schema.json" },
+    "schemaVersion": { "const": 1 },
+    "policies": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/policy" }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["publisher", "title", "url", "accessedAt"],
+      "properties": {
+        "publisher": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri" },
+        "accessedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "localizedSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["zhTw", "enUs"],
+      "properties": {
+        "zhTw": { "type": "string", "minLength": 1 },
+        "enUs": { "type": "string", "minLength": 1 }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "marketCode",
+        "effectiveFrom",
+        "effectiveTo",
+        "assessedAt",
+        "availability",
+        "eligibilitySummary",
+        "merchantParticipationRequired",
+        "exportValidationRequired",
+        "evidencePath",
+        "sources"
+      ],
+      "properties": {
+        "marketCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "effectiveFrom": { "type": ["string", "null"], "format": "date" },
+        "effectiveTo": { "type": ["string", "null"], "format": "date" },
+        "assessedAt": { "type": "string", "format": "date-time" },
+        "availability": { "enum": ["available", "unavailable"] },
+        "eligibilitySummary": { "$ref": "#/$defs/localizedSummary" },
+        "merchantParticipationRequired": { "type": ["boolean", "null"] },
+        "exportValidationRequired": { "type": ["boolean", "null"] },
+        "evidencePath": { "type": "string", "pattern": "^data/evidence/[A-Z]{2}/[0-9]{4}-[0-9]{2}-[0-9]{2}/[^/]+\\.json$" },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/source" }
+        }
+      }
+    }
+  }
+}

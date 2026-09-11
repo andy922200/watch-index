@@ -1,0 +1,28 @@
+{
+  "marketCode": "KR",
+  "observedAt": "2026-09-10T16:29:36Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level departure tax-refund procedure only; this does not establish Rolex authorized-dealer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "sources": [
+    {
+      "publisher": "Korea Tourism Organization",
+      "title": "Duty Free & Tax Refunds",
+      "url": "https://english.visitkorea.or.kr/svc/contents/infoBscView.do?vcontsId=140736",
+      "accessedAt": "2026-09-10T16:29:36Z"
+    },
+    {
+      "publisher": "Korea Customs Service",
+      "title": "Tax Refund",
+      "url": "https://www.customs.go.kr/english/cm/cntnts/cntntsView.do?mi=10803&cntntsId=5504",
+      "accessedAt": "2026-09-10T16:29:36Z"
+    }
+  ],
+  "observedFacts": [
+    "The Customs Service describes a tax-refund drawback process for eligible non-Korean residents buying goods at duty-free shops.",
+    "The goods, certificate of sale, and passport are inspected for Customs confirmation at departure, and the goods must be unused and leave the country within three months of purchase."
+  ],
+  "limitations": [
+    "The source applies to goods bought at duty-free shops and does not show that every retailer participates.",
+    "Rolex retailer participation and any exact refund amount are not established by this evidence."
+  ]
+}

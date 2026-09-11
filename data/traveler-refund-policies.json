@@ -1,0 +1,106 @@
+{
+  "$schema": "./schemas/traveler-refund-policy.schema.json",
+  "schemaVersion": 1,
+  "policies": [
+    {
+      "marketCode": "JP",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-10T16:29:36Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "適用於個別取得許可的免稅店；非居住者與個人使用等資格條件依官方規定，商品須帶離日本。",
+        "enUs": "Available through individually authorized tax-free shops, subject to non-resident and personal-use conditions; goods must leave Japan."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/JP/2026-09-11/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "Japan Tourism Agency",
+          "title": "免税店とは｜消費税免税店サイト",
+          "url": "https://www.mlit.go.jp/kankocho/tax-free/about.html",
+          "accessedAt": "2026-09-10T16:29:36Z"
+        },
+        {
+          "publisher": "Japan Tourism Agency",
+          "title": "免税店になったら｜消費税免税店サイト",
+          "url": "https://www.mlit.go.jp/kankocho/tax-free/after.html",
+          "accessedAt": "2026-09-10T16:29:36Z"
+        }
+      ]
+    },
+    {
+      "marketCode": "KR",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-10T16:29:36Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "韓國海關說明的退稅程序適用於免稅店購入商品；非韓國居民須攜帶未使用商品、銷售證明與護照，在離境時接受確認。",
+        "enUs": "The Korea Customs Service procedure applies to goods bought at duty-free shops; non-Korean residents present unused goods, a certificate of sale, and a passport for departure confirmation."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/KR/2026-09-11/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "Korea Tourism Organization",
+          "title": "Duty Free & Tax Refunds",
+          "url": "https://english.visitkorea.or.kr/svc/contents/infoBscView.do?vcontsId=140736",
+          "accessedAt": "2026-09-10T16:29:36Z"
+        },
+        {
+          "publisher": "Korea Customs Service",
+          "title": "Tax Refund",
+          "url": "https://www.customs.go.kr/english/cm/cntnts/cntntsView.do?mi=10803&cntntsId=5504",
+          "accessedAt": "2026-09-10T16:29:36Z"
+        }
+      ]
+    },
+    {
+      "marketCode": "SG",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-10T16:29:36Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "僅適用於參與 eTRS 的零售商；旅客須符合非居民、消費門檻、護照與航空離境等條件，實際退款會扣除處理費。",
+        "enUs": "Available only at retailers participating in eTRS, subject to non-resident, purchase-threshold, passport, and air-departure conditions; the actual refund is reduced by a handling fee."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/SG/2026-09-11/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "Inland Revenue Authority of Singapore",
+          "title": "IRAS | Tourist Refund Scheme",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/consumers/tourist-refund-scheme",
+          "accessedAt": "2026-09-10T16:29:36Z"
+        }
+      ]
+    },
+    {
+      "marketCode": "TW",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-10T16:29:36Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "外籍旅客須在顯示 Taiwan Tax Refund 標誌的指定商店達到同日同店消費門檻，並在期限內攜帶商品離境及完成海關核准。",
+        "enUs": "Foreign travelers must meet the same-day, same-designated-store threshold at a retailer displaying the Taiwan Tax Refund label, then take the goods out and obtain Customs approval in time."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/TW/2026-09-11/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "Tourism Administration, Republic of China (Taiwan)",
+          "title": "VAT Refund Guidelines for Foreign Travelers",
+          "url": "https://eng.taiwan.net.tw/m1.aspx?sNo=0024567",
+          "accessedAt": "2026-09-10T16:29:36Z"
+        }
+      ]
+    }
+  ]
+}

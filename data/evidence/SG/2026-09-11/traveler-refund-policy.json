@@ -1,0 +1,23 @@
+{
+  "marketCode": "SG",
+  "observedAt": "2026-09-10T16:29:36Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level Tourist Refund Scheme only; this does not establish Rolex retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "sources": [
+    {
+      "publisher": "Inland Revenue Authority of Singapore",
+      "title": "IRAS | Tourist Refund Scheme",
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/consumers/tourist-refund-scheme",
+      "accessedAt": "2026-09-10T16:29:36Z"
+    }
+  ],
+  "observedFacts": [
+    "The eTRS is available only at participating retailers and has non-resident, age, receipt, purchase-threshold, passport, and departure requirements.",
+    "Goods must be taken out by air within the stated purchase and refund-approval windows.",
+    "IRAS says the actual refund is less than the GST paid because a handling fee is deducted."
+  ],
+  "limitations": [
+    "Rolex retailer participation is not established by this evidence.",
+    "No exact transaction-specific refund amount is represented in the comparison."
+  ]
+}

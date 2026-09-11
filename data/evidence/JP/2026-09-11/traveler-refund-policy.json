@@ -1,0 +1,29 @@
+{
+  "marketCode": "JP",
+  "observedAt": "2026-09-10T16:29:36Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level foreign-visitor consumption-tax exemption only; this does not establish Rolex authorized-dealer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "sources": [
+    {
+      "publisher": "Japan Tourism Agency",
+      "title": "免税店とは｜消費税免税店サイト",
+      "url": "https://www.mlit.go.jp/kankocho/tax-free/about.html",
+      "accessedAt": "2026-09-10T16:29:36Z"
+    },
+    {
+      "publisher": "Japan Tourism Agency",
+      "title": "免税店になったら｜消費税免税店サイト",
+      "url": "https://www.mlit.go.jp/kankocho/tax-free/after.html",
+      "accessedAt": "2026-09-10T16:29:36Z"
+    }
+  ],
+  "observedFacts": [
+    "Tax-free shops are authorized export-goods sales places under the Consumption Tax Act, and authorization is granted store by store.",
+    "The programme describes non-resident eligibility and personal-use conditions, with purchase thresholds and restrictions on use in Japan.",
+    "Goods must be taken out of Japan."
+  ],
+  "limitations": [
+    "The source supports a point-of-sale tax-free programme, not a current refund-method amount.",
+    "Rolex retailer participation and any operator fee are not established by this evidence."
+  ]
+}

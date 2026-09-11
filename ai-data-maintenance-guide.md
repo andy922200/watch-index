@@ -6,7 +6,7 @@
 
 ## 適用範圍與硬性限制
 
-- 目前正式資料只涵蓋勞力士，包含 AT、CH、CN、DE、FR、GB、HK、JP、SG、TW、US 共 11 個市場。
+- 目前正式資料只涵蓋勞力士，包含 AT、CH、CN、DE、FR、GB、HK、IT、JP、KR、SG、TW、US 共 13 個市場。
 - 專案日後會支援其他品牌；不得假定現有的型號格式、檔名、`modelReference` 規則或前端欄位仍適用。
 - 未經明確授權，不得修改 Schema、另建正式格式、安裝依賴、推送遠端或繞過網站存取限制。
 - 面向人類的文件一律使用繁體中文。
@@ -16,8 +16,8 @@
 在任何寫入前，讀取下列內容並檢查 `git status --short`：
 
 1. 本文件、`README.md`、`watch-data-collection-guide.md`。
-2. `data/schemas/` 的三份實際 JSON Schema。
-3. `data/catalog/rolex-catalog.json`，以及目標市場的 `data/markets/`、`data/history/`、`data/evidence/`。
+2. `data/schemas/` 的實際 JSON Schema，包含旅客退稅政策 Schema。
+3. `data/catalog/rolex-catalog.json`，以及目標市場的 `data/markets/`、`data/history/`、`data/evidence/`；維護退稅政策時另讀取 `data/traveler-refund-policies.json`。
 
 保護使用者既有未提交修改。既有筆數與歷史結果只可用於回歸檢查，不能作為本次收集的目標或停止條件。
 
@@ -27,6 +27,7 @@
 | --- | --- | --- |
 | 純價格更新 | 重新取得列出狀態與價格、建立 evidence、追加新 run、驗證變動 | 覆寫舊價格點、清空既有俗稱 |
 | 全市場重新考證／新增市場 | 完整收集市場文字、商品網址、新款標示、價格與俗稱研究 | 以舊筆數宣稱完整、跳過停止證據 |
+| 旅客退稅政策更新 | 以政府、海關、官方退稅作業者或可驗證經銷商來源先建立 evidence，再更新獨立政策檔 | 用名目稅率推測可退資格、店家參與或實際退款金額 |
 | 新增品牌 | 先確認識別碼、Schema、檔案布局、前端型別與產生流程 | 把新品牌硬套進既有勞力士契約 |
 
 ## 正式資料契約
@@ -35,7 +36,8 @@
 | --- | --- | --- | --- |
 | Catalog | `data/catalog/rolex-catalog.json` | 跨市場穩定配置的聯集 | 價格、稅率、在地文字、俗稱 |
 | Market | `data/markets/rolex-[market]-market.json` | 當地文字、商品網址、別名與新款標示 | 價格、幣別、稅務語意 |
-| History | `data/history/[marketCode]/rolex-price-history.json` | 收集輪次與追加式價格／列出狀態 | 市場文字、圖片、俗稱 |
+| History | `data/history/[marketCode]/rolex-price-history.json` | 收集輪次與追加式價格／列出狀態 | 市場文字、圖片、俗稱、旅客退稅制度 |
+| Traveler refund policy | `data/traveler-refund-policies.json` | 已驗證的市場級旅客退稅制度、資格摘要、來源與 evidence 關聯 | 官方價格、零售商參與推測、交易退款保證 |
 | Evidence | `data/evidence/[marketCode]/[YYYY-MM-DD]/` | 原始觀察、收集方法與驗證 | Cookie、token、授權標頭、個資 |
 
 一筆現有 Rolex 腕錶資料代表完整配置，且必須滿足：
@@ -82,6 +84,14 @@ Browser、CDP 或 network 工具不可用，不代表官方沒有結構化來源
 
 若有俗稱研究，建立 `nickname-research.json`，記錄查詢、已檢閱來源及採用／拒絕理由。不得保存秘密，亦不得以舊正式資料生成假觀察。
 
+Evidence 一旦寫入即不可變更，執行時必須遵守：
+
+- 不得因為本輪結果與先前不同，就修改、刪除或「訂正」既有 evidence。不同輪次觀察到不同價格是合法且必要的差異。
+- 不得為了配合新 Schema、新欄位或新品牌結構回溯改寫舊 evidence；`data/schemas/` 不驗證 evidence，舊格式維持原狀即可。
+- 發現既有 evidence 的解析有誤時，在新的 run 目錄補一份更正記錄並指回原 `runId`，不得改寫原檔。
+- 僅在誤存機敏資料或檔案損毀無法解析時可移除既有 evidence，並在該 run 記錄移除項目與原因。
+- 不得刪除、壓縮或合併既有 evidence 以節省空間，也不得設定保存期限。
+
 ## 寫入、歷史與俗稱
 
 價格歷史是 append-only：保留所有既有 `collectionRuns` 和價格點；每個價格點的 `runId` 必須存在且遞增，相鄰且狀態、價格完全相同的點不可重複加入。
@@ -117,6 +127,12 @@ JSON 或 Schema 通過，只代表結構合法，不代表來源正確或收集�
 先確認目標市場的貨幣與數字格式，再解析原始價格。例如日圓或台幣的逗號可能是千分位；德語格式中的點可能是千分位，而具有非零小數的價格無法無損寫入目前的整數契約。不可直接移除所有非數字字元，也不可自行乘以 100、四捨五入或截斷。
 
 稅制依下列順序確認：官方價格說明、政府／稅務機關、可信補充資料。`tax-include` 是含適用消費稅、`tax-exclude` 是未稅、`no-tax` 是確定不課徵該類稅；未知稅率不可填 `0`。頂層的幣別、價格語意與稅率會影響歷史檔全部舊資料，若需改變解釋，必須先提出資料遷移與 Schema 決策，不能直接覆寫。
+
+## 旅客退稅政策
+
+旅客退稅制度是獨立、可變動的法律與零售作業事實，不是價格歷史的一部分。只在有一手來源與對應 evidence 時新增或更新 `data/traveler-refund-policies.json` 的市場記錄；來源應說明制度適用範圍、資格、零售商參與與出口核驗要求，並保存查核時間與原始 URL。
+
+「市場有消費稅」不等於「腕錶購買者可以退稅」。名目稅率只能讓前端在沒有已驗證政策時以 `含稅價 ÷ (1 + 稅率)` 顯示未稅參考價，不能被寫成旅客資格、零售商參與或保證退款。沒有可靠政策時保持市場記錄缺席；不得為了讓比較頁完整而補造 unavailable／available 結論、費率、門檻或來源。
 
 ## 完整性停止條件與抽查
 
@@ -335,5 +351,6 @@ for (const file of fs.readdirSync('data/markets').filter(name => name.endsWith('
 - [ ] 沒有把解析失敗當成無公開價格，也沒有把缺漏或逾時當成 `not-listed`。
 - [ ] 沒有將價格放入 market、將在地文字放入 catalog，或無故清空俗稱。
 - [ ] 已保留舊 run、舊價格點、非目標市場與使用者既有修改。
+- [ ] 未修改、刪除或壓縮既有 evidence；本次結果與先前不一致時保留原記錄，必要時另建更正記錄。
 - [ ] 已完成 Schema、跨檔、來源回對、完整性與變更安全驗證；未執行項目已標記 `NOT RUN`。
 - [ ] 已完成獨立官方抽查，並檢查 README／人類指南是否需要同步。
