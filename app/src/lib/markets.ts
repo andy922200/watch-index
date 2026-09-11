@@ -26,6 +26,9 @@ export const DEFAULT_MARKET = MarketCode.Taiwan
 export const MARKET_STORAGE_KEY = 'rolex-selected-market'
 export const MARKET_QUERY_KEY = 'market_code'
 
+/** 未登錄市場代碼時的退路圖示。 */
+export const FALLBACK_MARKET_FLAG = '🌐'
+
 export const marketOptions: readonly MarketOption[] = [
   { code: MarketCode.Taiwan, flag: '🇹🇼', labelKey: 'site.market.taiwan' },
   { code: MarketCode.China, flag: '🇨🇳', labelKey: 'site.market.china' },
@@ -57,4 +60,38 @@ export const getMarketFromQuery = (search: string): MarketCode | null => {
   }
 
   return isMarketCode(marketCode) ? marketCode : DEFAULT_MARKET
+}
+
+/**
+ * 查出市場選項。未登錄的市場代碼回傳 `null`，讓呼叫端自行決定退路。
+ */
+export const getMarketOption = (marketCode: string): MarketOption | null =>
+  marketOptions.find((option) => option.code === marketCode) ?? null
+
+/**
+ * 查出市場名稱的 i18n key。刻意不在這裡呼叫 `t()`——這支要能被建置期與測試直接使用，
+ * 不該相依 Vue i18n 的執行期 context；翻譯由元件端完成。
+ *
+ * @returns 未登錄的市場代碼回傳 `null`，呼叫端通常直接顯示原始代碼。
+ */
+export const getMarketLabelKey = (marketCode: string): MarketOption['labelKey'] | null =>
+  getMarketOption(marketCode)?.labelKey ?? null
+
+/**
+ * 查出市場國旗；未登錄的市場代碼回退為地球圖示。
+ */
+export const getMarketFlag = (marketCode: string): string =>
+  getMarketOption(marketCode)?.flag ?? FALLBACK_MARKET_FLAG
+
+/**
+ * 把目前選擇的市場寫回網址，與 {@link getMarketFromQuery} 成對使用，
+ * 讓使用者複製出去的連結會帶著當下的市場。
+ *
+ * 用 `replaceState` 而非 `pushState`：切換市場是同一個頁面的檢視調整，
+ * 不該在瀏覽器歷史裡堆出一連串需要逐一按上一頁才能離開的紀錄。
+ */
+export const replaceMarketQuery = (market: MarketCode): void => {
+  const query = new URLSearchParams(window.location.search)
+  query.set(MARKET_QUERY_KEY, market)
+  window.history.replaceState(null, '', `${window.location.pathname}?${query.toString()}`)
 }
