@@ -85,7 +85,7 @@ pnpm test:e2e        # 執行 Playwright 端對端測試
 
 - 新增或調整市場時，同步更新 `src/lib/markets.ts`、介面翻譯與資料層；市場代碼必須也存在於建置後的 manifest。
 - 新增品牌前，確認其專屬 schema 與產生流程能產出 `brandId`、`watchId`，再擴充前端資料型別、搜尋索引與頁面文案；不得把現有勞力士的型號規則或顯示文字套用到其他品牌。
-- 修改前端資料欄位時，同步調整 `src/types/watch-data.ts`、`src/lib/watchDataValidation.ts` 與產生腳本，並補上測試。
+- 修改前端資料欄位時，同步調整 `src/types/` 的資料型別、`src/lib/validation/` 的對應 guard 與產生腳本，並補上測試。跨品牌共用的欄位放在 `watch-data.ts` 與 `validation/watch.ts`，品牌專屬欄位則放在該品牌的型別與 guard（如 `rolex-watch.ts` 與 `validation/rolexWatch.ts`）。
 - 搜尋功能的規則與頁面狀態位於 `src/pages/` 的產品頁目錄；修改搜尋行為時請測試鍵盤操作與無結果狀態。
 - 首頁顯示的是每個市場價格歷史中的最後一個狀態；比較頁會以頁面載入時的 Frankfurter 匯率將各市場值換算成使用者所選幣別，並逐列標示官方價格與匯率日期。退稅估算只能作為未稅／制度條件參考，不是可保證退款。資料語意有變更時，先依資料指南更新正式資料與證據。
 - 正式建置前至少執行 `pnpm build`；變更互動、導覽、語言或市場切換時，也應執行相應的 Vitest 與 Playwright 測試。
