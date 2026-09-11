@@ -1,10 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import {
-  getWatchSearchSuggestions,
-  matchesWatchSearch,
-  normalizeWatchSearchText,
-} from '@/pages/rolex/utils/watchSearch'
+import { getWatchSearchSuggestions, matchesWatchSearch } from '@/pages/rolex/utils/watchSearch'
 import type { RolexWatch } from '@/types/rolex-watch'
 
 const submariner: RolexWatch = {
@@ -24,7 +20,6 @@ const submariner: RolexWatch = {
 
 describe('watch search', () => {
   it('normalizes case, whitespace, and hyphens in model queries', () => {
-    expect(normalizeWatchSearchText(' M12406-0 ')).toBe('m124060')
     expect(matchesWatchSearch(submariner, 'M12406', 'Submariner')).toBe(true)
     expect(matchesWatchSearch(submariner, 'm12406 0-0001', 'Submariner')).toBe(true)
   })

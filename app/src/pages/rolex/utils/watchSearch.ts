@@ -1,3 +1,4 @@
+import { includesSearchText, normalizeSearchText } from '@/lib/searchText'
 import type { RolexWatch } from '@/types/rolex-watch'
 
 export const DEFAULT_MAX_COLLECTION_SUGGESTIONS = 3
@@ -35,25 +36,6 @@ export interface GetWatchSearchSuggestionsOptions {
 }
 
 /**
- * Normalizes user-entered watch search text for comparison.
- *
- * @param value - Raw text entered by the user or stored in watch data.
- * @returns Lower-cased text without whitespace or hyphens.
- */
-export const normalizeWatchSearchText = (value: string): string =>
-  value.normalize('NFKC').trim().toLocaleLowerCase().replace(/[\s-]/g, '')
-
-/**
- * Checks whether a normalized query is included in a searchable value.
- *
- * @param value - The watch field to compare.
- * @param normalizedQuery - A query already normalized with normalizeWatchSearchText.
- * @returns Whether the value contains the query.
- */
-const includesSearchText = (value: string, normalizedQuery: string): boolean =>
-  normalizeWatchSearchText(value).includes(normalizedQuery)
-
-/**
  * Determines whether a watch matches a model, collection, name, or nickname query.
  *
  * @param watch - The watch to evaluate.
@@ -66,7 +48,7 @@ export const matchesWatchSearch = (
   query: string,
   collectionLabel: string,
 ): boolean => {
-  const normalizedQuery = normalizeWatchSearchText(query)
+  const normalizedQuery = normalizeSearchText(query)
 
   return (
     !normalizedQuery ||
@@ -93,7 +75,7 @@ export const getWatchSearchSuggestions = ({
   query,
   watches,
 }: GetWatchSearchSuggestionsOptions): WatchSearchSuggestion[] => {
-  const normalizedQuery = normalizeWatchSearchText(query)
+  const normalizedQuery = normalizeSearchText(query)
 
   if (!normalizedQuery) {
     return []
