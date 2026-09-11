@@ -23,6 +23,7 @@ app/
 │   ├── pages/                       # 主頁、搜尋邏輯與詳細資料視窗
 │   ├── components/                  # 導覽、搜尋框與共用 UI 元件
 │   ├── composables/                 # 資料載入、深色模式與共用請求邏輯
+│   ├── api/                         # watch-data 靜態檔存取與請求快取
 │   ├── locales/                     # 繁中、英文介面字串
 │   ├── lib/                         # 市場、資料驗證與多頁輸出設定
 │   └── types/                       # 前端資料型別
@@ -35,22 +36,22 @@ app/
 ## 畫面與資料流程
 
 ```text
-data/catalog + data/markets + data/history
+data/catalog + data/markets + data/history + data/traveler-refund-policies.json
                     ↓ 建置時轉換
 app/public/watch-data/ 或 app/dist/watch-data/
                     ↓ 瀏覽器先讀取 manifest.json
-市場專用 catalog.<hash>.json
+市場專用 catalog.<hash>.json + comparison.<hash>.json
                     ↓ 驗證格式後
-Vue 頁面、搜尋、清單與詳細視窗
+Vue 頁面、搜尋、清單、詳細視窗與單錶跨市場比較
 ```
 
-`scripts/generate-watch-data.mjs` 會以 `watchId` 將共用配置、單一市場的在地文字與該市場最後一個價格狀態合併成前端資料。輸出以 `watchesById` 索引腕錶，畫面仍顯示品牌原始的 `modelReference`。輸出檔以內容雜湊命名，`manifest.json` 負責指向各市場目前版本；資料更新時網址隨內容改變，可安全使用快取。
+`scripts/generate-watch-data.mjs` 會以 `watchId` 將共用配置、單一市場的在地文字與該市場最後一個價格狀態合併成前端資料。輸出以 `watchesById` 索引腕錶，畫面仍顯示品牌原始的 `modelReference`。另會產生只含最新市場價格、稅別、更新時間與可選旅客政策摘要的 `comparison.<hash>.json`，供單錶比較頁一次取得完整矩陣，而不下載所有在地化 catalog。輸出檔以內容雜湊命名，`manifest.json` 負責指向各市場目前版本與 comparison payload；資料更新時網址隨內容改變，可安全使用快取。
 
 資料載入前會檢查 manifest 與 catalog 的必要欄位。若市場資料缺少任一配置、價格歷史或必要文字，產生流程會失敗，而不是發布部分資料。
 
 ## 語言、網址與部署
 
-網站以多頁方式輸出兩個獨立 HTML：繁中預設頁在 `/`，英文頁在 `/en-us/`。語言由網址路徑決定，而非單純在瀏覽器內切換，讓不執行 JavaScript 的搜尋與分享服務也能取得相應的標題、描述與 Open Graph 資訊。
+網站以多頁方式輸出獨立 HTML：首頁的繁中預設頁在 `/`、英文頁在 `/en-us/`；單錶行情比較頁則是 `/watch-price-compare.html` 與 `/en-us/watch-price-compare.html`，以 `watch_id` query 指定跨市場唯一配置。語言由網址路徑決定，而非單純在瀏覽器內切換，讓不執行 JavaScript 的搜尋與分享服務也能取得相應的標題、描述與 Open Graph 資訊。
 
 正式環境使用 GitHub Pages 的 `/<儲存庫名稱>/app/rolex/` 基底路徑；本機開發則使用 `/rolex/`。這些路徑與語言頁的重寫規則都集中在 `src/lib/mpa-build.ts` 和 `vite.config.ts`，調整儲存庫名稱或部署位置時應一併檢查。
 
@@ -86,5 +87,5 @@ pnpm test:e2e        # 執行 Playwright 端對端測試
 - 新增品牌前，確認其專屬 schema 與產生流程能產出 `brandId`、`watchId`，再擴充前端資料型別、搜尋索引與頁面文案；不得把現有勞力士的型號規則或顯示文字套用到其他品牌。
 - 修改前端資料欄位時，同步調整 `src/types/watch-data.ts`、`src/lib/watchDataValidation.ts` 與產生腳本，並補上測試。
 - 搜尋功能的規則與頁面狀態位於 `src/pages/` 的產品頁目錄；修改搜尋行為時請測試鍵盤操作與無結果狀態。
-- 網站顯示的是每個市場價格歷史中的最後一個狀態，而非自行計算或換匯後的價格。資料語意有變更時，先依資料指南更新正式資料與證據。
+- 首頁顯示的是每個市場價格歷史中的最後一個狀態；比較頁會以頁面載入時的 Frankfurter 匯率將各市場值換算成使用者所選幣別，並逐列標示官方價格與匯率日期。退稅估算只能作為未稅／制度條件參考，不是可保證退款。資料語意有變更時，先依資料指南更新正式資料與證據。
 - 正式建置前至少執行 `pnpm build`；變更互動、導覽、語言或市場切換時，也應執行相應的 Vitest 與 Playwright 測試。
