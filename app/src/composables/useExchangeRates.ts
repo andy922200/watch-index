@@ -1,21 +1,7 @@
 import { type Ref, ref } from 'vue'
 
-import { Method, useFetchData } from '@/composables/useFetchData'
+import { type ExchangeRateSet, getExchangeRates } from '@/api/exchangeRatesApi'
 import { isCurrencyCode } from '@/lib/displayCurrencies'
-
-const EXCHANGE_RATES_URL = 'https://api.frankfurter.dev/v2/rates'
-
-interface FrankfurterRate {
-  base: string
-  date: string
-  quote: string
-  rate: number
-}
-
-interface ExchangeRateSet {
-  baseCurrency: string
-  rates: ReadonlyMap<string, FrankfurterRate>
-}
 
 interface LoadExchangeRatesOptions {
   baseCurrency: string
@@ -30,76 +16,17 @@ interface ExchangeRateResult {
   loadExchangeRates: (options: LoadExchangeRatesOptions) => Promise<void>
 }
 
-const rateRequests = new Map<string, Promise<ExchangeRateSet>>()
+interface LoadComparisonExchangeRatesOptions {
+  displayCurrency: string
+  sourceCurrencies: readonly string[]
+}
 
-const isRecord = (value: unknown): value is Record<string, unknown> =>
-  typeof value === 'object' && value !== null
-
-const isFrankfurterRate = (value: unknown): value is FrankfurterRate =>
-  isRecord(value) &&
-  typeof value.base === 'string' &&
-  typeof value.date === 'string' &&
-  typeof value.quote === 'string' &&
-  typeof value.rate === 'number' &&
-  Number.isFinite(value.rate) &&
-  value.rate > 0
-
-const getExchangeRates = async ({
-  baseCurrency,
-  targetCurrencies,
-}: LoadExchangeRatesOptions): Promise<ExchangeRateSet> => {
-  if (!isCurrencyCode(baseCurrency)) {
-    throw new Error('Exchange rate base currency is invalid')
-  }
-
-  const supportedCurrencies = [...new Set(targetCurrencies.filter(isCurrencyCode))].sort()
-
-  if (supportedCurrencies.length === 0) {
-    throw new Error('Exchange rate request does not include supported currencies')
-  }
-
-  const { result } = await useFetchData<unknown, { base: string; quotes: string }>({
-    url: EXCHANGE_RATES_URL,
-    method: Method.GET,
-    params: {
-      base: baseCurrency,
-      quotes: supportedCurrencies.join(','),
-    },
-    isAbsolutePath: true,
-  })
-  const [response, requestError] = result
-
-  if (requestError) {
-    throw requestError
-  }
-
-  if (!response) {
-    throw new Error('Exchange rate request returned no response')
-  }
-
-  if (!Array.isArray(response.data)) {
-    throw new Error('Exchange rate response has an invalid format')
-  }
-
-  const rates = new Map<string, FrankfurterRate>()
-
-  for (const value of response.data) {
-    if (
-      !isFrankfurterRate(value) ||
-      value.base !== baseCurrency ||
-      !supportedCurrencies.includes(value.quote)
-    ) {
-      continue
-    }
-
-    rates.set(value.quote, value)
-  }
-
-  if (rates.size === 0) {
-    throw new Error('Exchange rate response does not include supported currencies')
-  }
-
-  return { baseCurrency, rates }
+interface ComparisonExchangeRateResult {
+  convertToDisplayCurrency: (amount: number, sourceCurrency: string) => number | null
+  error: Readonly<Ref<unknown>>
+  getExchangeRateDate: (sourceCurrency: string) => string | null
+  isLoading: Readonly<Ref<boolean>>
+  loadExchangeRates: (options: LoadComparisonExchangeRatesOptions) => Promise<void>
 }
 
 export const useExchangeRates = (): ExchangeRateResult => {
@@ -114,19 +41,12 @@ export const useExchangeRates = (): ExchangeRateResult => {
     error.value = null
 
     try {
-      const requestKey = `${options.baseCurrency}:${[...options.targetCurrencies].sort().join(',')}`
-      const request = rateRequests.get(requestKey) ?? getExchangeRates(options)
-      rateRequests.set(requestKey, request)
-      const result = await request
+      const result = await getExchangeRates(options)
 
       if (requestId === latestRequestId) {
         exchangeRateSet.value = result
       }
     } catch (requestError) {
-      rateRequests.delete(
-        `${options.baseCurrency}:${[...options.targetCurrencies].sort().join(',')}`,
-      )
-
       if (requestId === latestRequestId) {
         exchangeRateSet.value = null
         error.value = requestError
@@ -154,4 +74,93 @@ export const useExchangeRates = (): ExchangeRateResult => {
     exchangeRateSet.value?.rates.get(targetCurrency)?.date ?? null
 
   return { convert, error, getExchangeRateDate, isLoading, loadExchangeRates }
+}
+
+/**
+ * 將多個市場幣別轉換為同一個顯示幣別。Frankfurter 請求以顯示幣別為 base，
+ * 因此每個來源金額都以 quote rate 的倒數換算，避免同時維護多組 base rate state。
+ */
+export const useComparisonExchangeRates = (): ComparisonExchangeRateResult => {
+  const activeDisplayCurrency = ref<string | null>(null)
+  const exchangeRateSet = ref<ExchangeRateSet | null>(null)
+  const error = ref<unknown>(null)
+  const isLoading = ref(false)
+  let latestRequestId = 0
+
+  const loadExchangeRates = async ({
+    displayCurrency,
+    sourceCurrencies,
+  }: LoadComparisonExchangeRatesOptions): Promise<void> => {
+    const requestId = ++latestRequestId
+    isLoading.value = true
+    error.value = null
+
+    try {
+      if (!isCurrencyCode(displayCurrency)) {
+        throw new Error('Comparison display currency is invalid')
+      }
+
+      activeDisplayCurrency.value = displayCurrency
+      const quoteCurrencies = sourceCurrencies.filter((currency) => currency !== displayCurrency)
+
+      // 只有顯示幣別本身時不需要任何匯率，直接給一組空的 rate set 讓換算走等值路徑。
+      if (quoteCurrencies.filter(isCurrencyCode).length === 0) {
+        if (requestId === latestRequestId) {
+          exchangeRateSet.value = { baseCurrency: displayCurrency, rates: new Map() }
+        }
+
+        return
+      }
+
+      const result = await getExchangeRates({
+        baseCurrency: displayCurrency,
+        targetCurrencies: quoteCurrencies,
+      })
+
+      if (requestId === latestRequestId) {
+        exchangeRateSet.value = result
+      }
+    } catch (requestError) {
+      if (requestId === latestRequestId) {
+        exchangeRateSet.value = null
+        error.value = requestError
+      }
+    } finally {
+      if (requestId === latestRequestId) {
+        isLoading.value = false
+      }
+    }
+  }
+
+  const convertToDisplayCurrency = (amount: number, sourceCurrency: string): number | null => {
+    const rateSet = exchangeRateSet.value
+
+    if (!isCurrencyCode(sourceCurrency)) {
+      return null
+    }
+
+    if (activeDisplayCurrency.value === sourceCurrency) {
+      return amount
+    }
+
+    if (!rateSet) {
+      return null
+    }
+
+    const rate = rateSet.rates.get(sourceCurrency)
+
+    return rate === undefined ? null : amount / rate.rate
+  }
+
+  const getExchangeRateDate = (sourceCurrency: string): string | null => {
+    const rateSet = exchangeRateSet.value
+
+    if (!rateSet || activeDisplayCurrency.value === sourceCurrency) {
+      return null
+    }
+
+    return rateSet.rates.get(sourceCurrency)?.date ?? null
+  }
+
+  return { convertToDisplayCurrency, error, getExchangeRateDate, isLoading, loadExchangeRates }
 }

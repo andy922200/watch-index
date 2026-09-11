@@ -9,7 +9,7 @@ vi.mock('@/composables/useFetchData', () => ({
   useFetchData: useFetchDataMock,
 }))
 
-import { useExchangeRates } from '@/composables/useExchangeRates'
+import { useComparisonExchangeRates, useExchangeRates } from '@/composables/useExchangeRates'
 
 describe('useExchangeRates', () => {
   beforeEach(() => {
@@ -46,5 +46,25 @@ describe('useExchangeRates', () => {
     await loadExchangeRates({ baseCurrency: 'CAD', targetCurrencies: ['USD'] })
 
     expect(error.value).toBeInstanceOf(Error)
+  })
+
+  it('inverts display-currency rates for multi-market conversion', async () => {
+    useFetchDataMock.mockResolvedValue({
+      result: [
+        {
+          data: [{ base: 'TWD', date: '2026-09-10', quote: 'JPY', rate: 4.8 }],
+        },
+        null,
+      ],
+    })
+    const { convertToDisplayCurrency, getExchangeRateDate, loadExchangeRates } =
+      useComparisonExchangeRates()
+
+    await loadExchangeRates({ displayCurrency: 'TWD', sourceCurrencies: ['JPY', 'TWD'] })
+
+    expect(convertToDisplayCurrency(480, 'JPY')).toBe(100)
+    expect(convertToDisplayCurrency(100, 'TWD')).toBe(100)
+    expect(getExchangeRateDate('JPY')).toBe('2026-09-10')
+    expect(getExchangeRateDate('TWD')).toBeNull()
   })
 })
