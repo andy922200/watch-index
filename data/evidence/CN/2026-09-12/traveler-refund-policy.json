@@ -1,0 +1,23 @@
+{
+  "marketCode": "CN",
+  "observedAt": "2026-09-11T17:00:00Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level traveler consumption-tax policy only; this does not establish Rolex retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "sources": [
+    {
+      "publisher": "State Taxation Administration of the People's Republic of China",
+      "title": "What is the Departure Tax Refund Policy?",
+      "url": "https://www.chinatax.gov.cn/eng/c101276/c102444/c5240901/content.html",
+      "accessedAt": "2026-09-11T17:00:00Z"
+    }
+  ],
+  "observedFacts": [
+    "Overseas visitors can obtain a VAT refund for tax-refundable goods purchased at tax-free stores when leaving China through eligible departure ports.",
+    "Overseas visitors include foreign nationals and Hong Kong, Macao, and Taiwan residents who meet the stated mainland-residency condition.",
+    "Refund-upon-purchase stores require an agreement and credit-card pre-authorisation, while departure and designated-port conditions still apply."
+  ],
+  "limitations": [
+    "The source applies to tax-free stores and eligible departure ports; it does not establish participation by every retailer.",
+    "Rolex retailer participation and any transaction-specific refund amount are not established by this evidence."
+  ]
+}
