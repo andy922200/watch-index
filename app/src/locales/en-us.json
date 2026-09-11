@@ -68,7 +68,6 @@
       "priceLabelIncludingTax": "Retail price (tax included)",
       "priceLabelExcludingTax": "Retail price (tax excluded)",
       "priceLabelNoTax": "Retail price (tax-free market)",
-      "priceValue": "{currency} {price}",
       "convertedPriceValue": "Approx. {price}",
       "priceUnavailable": "Price pending confirmation",
       "viewDetails": "View specifications",

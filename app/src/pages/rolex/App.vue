@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useStorage } from '@vueuse/core'
-import { formatNumber } from 'parse-localized-number'
 import { computed, ref, watch as watchSource } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -23,6 +22,7 @@ import {
   DISPLAY_CURRENCY_STORAGE_KEY,
   isCurrencyCode,
 } from '@/lib/displayCurrencies'
+import { formatCurrency, formatMediumDate, getIntlLocale } from '@/lib/formatters'
 import {
   DEFAULT_MARKET,
   getMarketFromQuery,
@@ -94,6 +94,7 @@ const visibleWatches = computed<RolexWatch[]>(() =>
 
 const hasMoreWatches = computed(() => visibleWatchCount.value < filteredWatches.value.length)
 const displayCurrencyRateDate = computed(() => getExchangeRateDate(selectedDisplayCurrency.value))
+const intlLocale = computed(() => getIntlLocale(locale.value))
 
 const loadMoreWatches = (): void => {
   visibleWatchCount.value += PAGE_SIZE
@@ -112,9 +113,12 @@ const formatPrice = (watch: RolexWatch): string => {
     return t('site.watchList.priceUnavailable')
   }
 
-  return t('site.watchList.priceValue', {
+  return formatCurrency({
+    amount: watch.price,
     currency: catalog.value.priceMarket.currencyCode,
-    price: formatNumber(watch.price),
+    locale: intlLocale.value,
+    // 官方定價在各市場都是整數，補成 .00 只是雜訊。
+    minimumFractionDigits: 0,
   })
 }
 
@@ -135,11 +139,11 @@ const formatConvertedPrice = (watch: RolexWatch): string | null => {
   }
 
   return t('site.watchList.convertedPriceValue', {
-    price: new Intl.NumberFormat(getDateLocale(), {
+    price: formatCurrency({
+      amount: convertedPrice,
       currency: selectedDisplayCurrency.value,
-      currencyDisplay: 'code',
-      style: 'currency',
-    }).format(convertedPrice),
+      locale: intlLocale.value,
+    }),
   })
 }
 
@@ -157,27 +161,13 @@ const getPriceLabel = (): string => {
   return t('site.watchList.priceLabelIncludingTax')
 }
 
-const getDateLocale = (): string => (locale.value === Locale.zhTw ? 'zh-TW' : 'en-US')
+const formatPriceUpdatedAt = (): string =>
+  catalog.value ? formatMediumDate(catalog.value.priceUpdatedAt, intlLocale.value) : ''
 
-const formatPriceUpdatedAt = (): string => {
-  if (!catalog.value) {
-    return ''
-  }
-
-  return new Intl.DateTimeFormat(getDateLocale(), { dateStyle: 'medium' }).format(
-    new Date(catalog.value.priceUpdatedAt),
-  )
-}
-
-const formatExchangeRateUpdatedAt = (): string => {
-  if (!displayCurrencyRateDate.value) {
-    return ''
-  }
-
-  return new Intl.DateTimeFormat(getDateLocale(), { dateStyle: 'medium' }).format(
-    new Date(displayCurrencyRateDate.value),
-  )
-}
+const formatExchangeRateUpdatedAt = (): string =>
+  displayCurrencyRateDate.value
+    ? formatMediumDate(displayCurrencyRateDate.value, intlLocale.value)
+    : ''
 
 watchSource(
   selectedMarket,

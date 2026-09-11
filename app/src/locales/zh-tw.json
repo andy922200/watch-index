@@ -68,7 +68,6 @@
       "priceLabelIncludingTax": "建議售價（含稅）",
       "priceLabelExcludingTax": "建議售價（未含稅）",
       "priceLabelNoTax": "建議售價（免稅市場）",
-      "priceValue": "{currency} {price}",
       "convertedPriceValue": "約 {price}",
       "priceUnavailable": "價格待確認",
       "viewDetails": "查看規格",
