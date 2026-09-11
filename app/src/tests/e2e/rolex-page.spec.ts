@@ -28,8 +28,11 @@ test('uses the more menu for language and theme controls below the desktop break
 test('keeps the selected market when changing the page language', async ({ page }) => {
   await page.goto('en-us/')
 
-  await page.getByRole('combobox', { name: 'Market' }).click()
+  const marketSelect = page.getByRole('combobox', { name: 'Market' })
+
+  await marketSelect.click()
   await page.getByRole('option', { name: 'Japan' }).click()
+  await expect(marketSelect).toContainText('Japan')
   await page.getByRole('combobox', { name: 'Language' }).click()
   await page.getByRole('option', { name: '繁體中文' }).click()
 
