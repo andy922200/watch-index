@@ -58,6 +58,10 @@ description: >-
 - Template 中所有使用者可見文字，包括按鈕文字、placeholder、空狀態、錯誤訊息與可及性標籤，都必須使用 i18n translation key，不硬編單一語言文字。
 - 建立頁面層級路由時使用動態 `import`。大型、低頻或選用功能也應以動態 `import` 分割；不要為了形式而延遲載入小型且必定渲染的基礎元件。
 - 圖示採按需載入的 `unplugin-icons`。既有品牌資產或使用者明確提供的圖像例外。
+- **Template 負責呈現，不負責判斷要呈現哪一種結果**。同一個位置出現三段以上的 `v-if` / `v-else-if` / `v-else` 鏈或巢狀三元時，把判斷收斂成 script 的 computed 或具名函式，template 只印出已經決定好的值。
+- 多個分支只差文字、ARIA role 或少數旗標而結構相同時，改成回傳一份具型別的狀態物件（例如 `{ messageKey, role, showBackToIndex }`），template 以單一 `v-if` 渲染。這樣分支的優先順序寫在 script 裡讀得出來，而不是隱含在標記的排列順序。
+- `v-for` 列表內需要格式化或條件文字時，先用 computed 把資料映射成「欄位已是字串」的 view model 再渲染。否則同一個格式化函式會在條件判斷與插值各算一次，且每次 re-render 都重算。
+- 單一條件的 `v-if`（有值才顯示）與單一三元保留即可。要收斂的是「同一個位置有三種以上結果」，不是所有條件；把每個二選一都搬進 script，反而讓人從 template 讀不出畫面長什麼樣。
 
 ```vue
 <script setup lang="ts">
@@ -90,6 +94,39 @@ const submit = (): void => {
 ```
 
 > 元件中的 `label` 預設值若供使用者可見，應由呼叫端傳入已翻譯文字或以元件內 i18n key 取得；不得把範例中的 key 當作直接顯示的文案。
+
+條件鏈的收斂方式：
+
+```vue
+<script setup lang="ts">
+interface PageStatus {
+  messageKey: string
+  role: 'alert' | 'status'
+  showRetry: boolean
+}
+
+// 優先順序集中在這裡，且可被單元測試直接驗證。
+const pageStatus = computed<PageStatus | null>(() => {
+  if (isLoading.value) return { messageKey: 'page.loading', role: 'status', showRetry: false }
+  if (error.value) return { messageKey: 'page.error', role: 'alert', showRetry: true }
+
+  return null
+})
+</script>
+
+<template>
+  <!-- 收斂前：三段結構相同、只差文字的分支 -->
+  <Card v-if="isLoading">…</Card>
+  <Card v-else-if="error">…</Card>
+  <Card v-else-if="isUnavailable">…</Card>
+
+  <!-- 收斂後：單一 v-if，template 不再決定要顯示哪一種 -->
+  <Card v-if="pageStatus">
+    <p :role="pageStatus.role">{{ t(pageStatus.messageKey) }}</p>
+    <Button v-if="pageStatus.showRetry" @click="retry">{{ t('page.retry') }}</Button>
+  </Card>
+</template>
+```
 
 ## Composable、API 與資料存取
 
@@ -131,6 +168,32 @@ export const useProfile = (): UseProfileResult => {
 
   return { profile, isLoading, loadProfile }
 }
+```
+
+## 共用程式碼的放置位置
+
+- 純函式（不依賴 Vue 響應式、生命週期或 i18n context）放 `src/lib/`，並**依領域命名檔案**（`markets.ts`、`formatters.ts`、`pageUrls.ts`）。不得建立 `helpers.ts`、`common.ts`、`misc.ts` 這類沒有邊界的雜物櫃檔名。
+- 需要 `ref`、`computed`、生命週期或 `useI18n()` 的邏輯放 `src/composables/`。同一件事若同時有純計算與響應式包裝，純計算留在 `lib/`，`composables/` 只負責綁定響應式來源。
+- 只有單一頁面用得到的邏輯放該頁底下的 `src/pages/<page>/utils/`；等到**第二個頁面真的要用**時才上移到 `src/lib/`，不為了預測共用性提前搬家。
+- 上移時，目的地是「能涵蓋所有使用者的最小共用層」，不是一律 `lib/`。若第二個使用者是同一個品牌或同一個功能群組底下的另一個頁面，就搬到該群組的共用層（例如 `src/pages/<brand>/utils/`）；`lib/` 留給真正跨群組共用的模組。判斷依據是「這些使用者共同隸屬的最小範圍是什麼」，不是「有沒有第二個使用者」。
+- **不另開 `src/utils/`**：`src/lib/` 已經是這一層。兩者並存會讓每次新增檔案都要先判斷「這算 lib 還是 utils」，而這條界線無法明確定義，結果一定是兩邊各放一半。既有專案若已用 `src/utils/` 則沿用它，不要在同一個專案裡再補一個 `src/lib/`。
+- 使用 shadcn-vue 的專案，`src/lib/utils.ts` 是 `components.json` 的 `utils` alias，屬於元件庫的檔案，只放 `cn()`。不得把專案自己的 helper 加進去：該檔會被每個 UI 元件 import，且後續 `shadcn-vue add` 可能覆寫它。
+- `lib/` 的函式不得在內部呼叫 `useI18n()`、讀取 Store，或在 module top-level 觸碰 `window`。語系、翻譯後字串等一律由呼叫端以參數傳入，函式才能在沒有 Vue context 的單元測試中直接使用；需要瀏覽器 API 時，只在函式內部存取。
+- i18n key 的對應表（例如 `Record<SomeStatus, string>`）放在定義該聯集型別的模組，`t()` 由元件端呼叫。型別與對應表分家時，新增成員很容易只補到其中一邊。
+- 抽到 `lib/` 或頁面 `utils/` 的純函式，依「程式品質與測試」一節補 Unit Test；可測試性正是把它們搬出元件的主要理由之一。
+
+```text
+src/
+  lib/                  # 跨頁共用的純函式，依領域命名
+    formatters.ts
+    markets.ts
+    utils.ts            # shadcn-vue 專用，只放 cn()
+  composables/          # 需要 Vue 響應式或 i18n context
+    useWatchCatalog.ts
+  pages/
+    rolex/
+      utils/            # 只有這個頁面用得到
+        watchSearch.ts
 ```
 
 ## Pinia State Management
@@ -216,7 +279,7 @@ const { login } = authStore
 
 ## 實作流程
 
-1. 先閱讀既有前端結構、共用元件、Composable、Axios instance、i18n、Store、lockfile 與工具設定，沿用既有模式，不平行造輪子。
+1. 先閱讀既有前端結構、共用元件、Composable、Axios instance、i18n、Store、lockfile 與工具設定，沿用既有模式，不平行造輪子；需要新增共用程式碼時，先依「共用程式碼的放置位置」決定它屬於 `lib/`、`composables/` 還是頁面自己的 `utils/`。
 2. 建立前端專案或首次安裝相依前，先詢問使用者要用 `pnpm`、`bun`、`npm` 或其他工具；使用者未指定時才使用 `npm`。既有專案則沿用其 lockfile 或 `packageManager` 指定的工具。
 3. 專案第一次需要多語系（i18n）時，先詢問使用者是否有 SEO 或 LINE／Facebook 等社群分享預覽需求；沒有就採用單頁式架構，有才採用多頁靜態架構（見「技術線與相依套件」）。既有專案已有 i18n 架構時直接沿用，不自行更換。
 4. 新建專案時安裝並設定 ESLint、Prettier、Vitest Unit Test 與 Playwright E2E Test，建立對應 scripts、最小可執行測試與必要的 ignore 規則；預設選用最新穩定版本。既有專案僅判斷是否需要補齊使用者要求的相依或設定。
@@ -230,7 +293,11 @@ const { login } = authStore
 - 違反 `typescript-standards` 中的型別安全、函式介面或可設定值規範。
 - 使用 Tailwind `@apply`（包含直接沿用其他 Skill 範本中的 `@apply`），或在非偽元素情境以 SCSS 取代 Tailwind。
 - 在元件內新建 Axios client 或散落直接 API 呼叫。
+- 在已有 `src/lib/` 的專案再開一個 `src/utils/`，或把專案自己的 helper 塞進 shadcn-vue 的 `src/lib/utils.ts`。
+- 以 `helpers.ts`、`common.ts`、`misc.ts` 這類無邊界的檔名收納共用函式，或在 `lib/` 的純函式內呼叫 `useI18n()`、讀取 Store。
 - 將使用者可見文案、placeholder、錯誤訊息或 aria label 硬編為單一語言。
+- 在 template 堆疊三段以上的 `v-if` / `v-else-if` / `v-else` 鏈或巢狀三元，把「要顯示什麼」的判斷留在標記裡。
+- 在 template 的條件判斷與插值重複呼叫同一個格式化函式（例如 `v-else-if="formatPrice(x)"` 之後又在插值再呼叫一次）。
 - 對路由頁面、大型或選用功能使用不必要的靜態匯入。
 - 解構 Pinia State / Getters 時跳過 `storeToRefs()` 而破壞響應性。
 - 在新建專案時省略 ESLint、Prettier、Unit Test 或 E2E Test 的相依、設定、scripts、可執行範例或驗證。
@@ -246,7 +313,9 @@ const { login } = authStore
 - [ ] 元件、Composable、Helper、常數、Store 檔案與 Store 匯出符合命名規則
 - [ ] Pinia 使用 Option Store；解構 State / Getters 時使用 `storeToRefs()`
 - [ ] API 經由既有共用 Axios instance 或 API composable
+- [ ] 共用程式碼依「純函式→`lib/`、需要響應式或 i18n→`composables/`、單一頁面→該頁 `utils/`」放置，上移時選擇能涵蓋所有使用者的最小共用層；沒有新增 `src/utils/`，也沒有動到 shadcn-vue 的 `lib/utils.ts`
 - [ ] 使用者可見文字已納入 i18n，圖示按需使用 `unplugin-icons`
+- [ ] Template 沒有三段以上的條件鏈：同一位置的多重結果已收斂成 computed 或 view model，且格式化函式不在 template 重複呼叫
 - [ ] 若專案新導入多語系或變更既有語系架構，已在動工前跟使用者確認採用單頁式或多頁靜態架構，未自行預設
 - [ ] 路由頁面與合適的大型／選用功能已動態載入
 - [ ] 一般樣式為 Tailwind CSS 4、沒有 `@apply`（包括其他 Skill 範本），SCSS 僅用於偽元素
