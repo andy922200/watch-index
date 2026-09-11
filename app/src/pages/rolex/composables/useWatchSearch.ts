@@ -13,7 +13,8 @@ import {
   type WatchSearchCollection,
   type WatchSearchSuggestion,
 } from '@/pages/rolex/utils/watchSearch'
-import type { Watch, WatchCatalog } from '@/types/watch-data'
+import type { RolexWatch } from '@/types/rolex-watch'
+import type { WatchCatalog } from '@/types/watch-data'
 
 export const DEFAULT_SEARCH_DEBOUNCE_MS = 200
 
@@ -31,7 +32,7 @@ const getLocalizedCollectionLabel = (modelNames: readonly string[], fallback: st
 
 interface UseWatchSearchResult {
   debouncedSearchQuery: Readonly<Ref<string>>
-  filteredWatches: Readonly<ComputedRef<Watch[]>>
+  filteredWatches: Readonly<ComputedRef<RolexWatch[]>>
   isSearchPending: Readonly<ComputedRef<boolean>>
   searchComboboxGroups: Readonly<ComputedRef<SearchComboboxGroup[]>>
   searchQuery: Ref<string>
@@ -39,7 +40,7 @@ interface UseWatchSearchResult {
 }
 
 export interface UseWatchSearchOptions {
-  catalog: Readonly<Ref<WatchCatalog | null>>
+  catalog: Readonly<Ref<WatchCatalog<RolexWatch> | null>>
   debounceMs?: number
   getCollectionLabel: CollectionLabelResolver
   getSearchGroupLabel: SearchGroupLabelResolver
@@ -150,7 +151,7 @@ export const useWatchSearch = ({
         searchSuggestions.value.map((suggestion) => [getSearchOptionId(suggestion), suggestion]),
       ),
   )
-  const filteredWatches = computed<Watch[]>(() => {
+  const filteredWatches = computed<RolexWatch[]>(() => {
     const watches = Object.values(catalog.value?.watchesById ?? {})
     const collectionLabels = new Map(
       collectionOptions.value.map((collection) => [collection.id, collection.label]),

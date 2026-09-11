@@ -1,4 +1,4 @@
-import type { Watch } from '@/types/watch-data'
+import type { RolexWatch } from '@/types/rolex-watch'
 
 export const DEFAULT_MAX_COLLECTION_SUGGESTIONS = 3
 export const DEFAULT_MAX_WATCH_SUGGESTIONS = 5
@@ -22,7 +22,7 @@ export type WatchSearchSuggestion =
     }
   | {
       type: 'watch'
-      watch: Watch
+      watch: RolexWatch
       searchTerm: string
     }
 
@@ -31,7 +31,7 @@ export interface GetWatchSearchSuggestionsOptions {
   maxCollectionSuggestions?: number
   maxWatchSuggestions?: number
   query: string
-  watches: readonly Watch[]
+  watches: readonly RolexWatch[]
 }
 
 /**
@@ -62,7 +62,7 @@ const includesSearchText = (value: string, normalizedQuery: string): boolean =>
  * @returns Whether the watch should be included in the search results.
  */
 export const matchesWatchSearch = (
-  watch: Watch,
+  watch: RolexWatch,
   query: string,
   collectionLabel: string,
 ): boolean => {

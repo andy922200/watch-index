@@ -2,9 +2,10 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { nextTick, ref } from 'vue'
 
 import { useWatchSearch } from '@/pages/rolex/composables/useWatchSearch'
+import type { RolexWatch } from '@/types/rolex-watch'
 import type { WatchCatalog } from '@/types/watch-data'
 
-const catalog: WatchCatalog = {
+const catalog: WatchCatalog<RolexWatch> = {
   schemaVersion: 1,
   brandId: 'rolex',
   collectedAt: '2026-09-09T00:00:00.000Z',
@@ -133,7 +134,7 @@ describe('useWatchSearch', () => {
 
   it('uses localized model names as collection search aliases', async () => {
     vi.useFakeTimers()
-    const japanCatalog: WatchCatalog = {
+    const japanCatalog: WatchCatalog<RolexWatch> = {
       ...catalog,
       watchesById: {
         ...catalog.watchesById,

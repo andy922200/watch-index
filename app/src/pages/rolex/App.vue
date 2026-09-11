@@ -30,8 +30,9 @@ import {
   MARKET_STORAGE_KEY,
   type MarketCode,
 } from '@/lib/markets'
+import { isRolexWatchCatalog } from '@/lib/validation/rolexWatch'
 import { Locale } from '@/plugins/i18n'
-import type { Watch } from '@/types/watch-data'
+import type { RolexWatch } from '@/types/rolex-watch'
 
 import WatchDetailsDialog from './components/WatchDetailsDialog.vue'
 import { useWatchSearch } from './composables/useWatchSearch'
@@ -40,7 +41,7 @@ const PAGE_SIZE = 12
 
 const { locale, t } = useI18n()
 
-const selectedWatch = ref<Watch | null>(null)
+const selectedWatch = ref<RolexWatch | null>(null)
 const isWatchDetailsOpen = ref(false)
 const visibleWatchCount = ref(PAGE_SIZE)
 const selectedMarket = useStorage<MarketCode>(MARKET_STORAGE_KEY, DEFAULT_MARKET, undefined, {
@@ -65,7 +66,9 @@ const marketFromQuery = getMarketFromQuery(window.location.search)
 if (marketFromQuery !== null) {
   selectedMarket.value = marketFromQuery
 }
-const { catalog, displayCurrencies, error, isLoading, loadCatalog } = useWatchCatalog()
+const { catalog, displayCurrencies, error, isLoading, loadCatalog } = useWatchCatalog({
+  isCatalog: isRolexWatchCatalog,
+})
 const {
   convert,
   error: exchangeRateError,
@@ -85,7 +88,7 @@ const {
   getSearchGroupLabel: (groupId) => t(`site.watchSearch.${groupId}Heading`),
 })
 
-const visibleWatches = computed<Watch[]>(() =>
+const visibleWatches = computed<RolexWatch[]>(() =>
   filteredWatches.value.slice(0, visibleWatchCount.value),
 )
 
@@ -96,15 +99,15 @@ const loadMoreWatches = (): void => {
   visibleWatchCount.value += PAGE_SIZE
 }
 
-const openWatchDetails = (watch: Watch): void => {
+const openWatchDetails = (watch: RolexWatch): void => {
   selectedWatch.value = watch
   isWatchDetailsOpen.value = true
 }
 
-const getWatchImageAlt = (watch: Watch): string =>
+const getWatchImageAlt = (watch: RolexWatch): string =>
   t('site.watchList.imageAlt', { modelName: watch.modelName })
 
-const formatPrice = (watch: Watch): string => {
+const formatPrice = (watch: RolexWatch): string => {
   if (watch.priceStatus !== 'listed' || watch.price === null || !catalog.value) {
     return t('site.watchList.priceUnavailable')
   }
@@ -115,7 +118,7 @@ const formatPrice = (watch: Watch): string => {
   })
 }
 
-const formatConvertedPrice = (watch: Watch): string | null => {
+const formatConvertedPrice = (watch: RolexWatch): string | null => {
   if (
     watch.priceStatus !== 'listed' ||
     watch.price === null ||

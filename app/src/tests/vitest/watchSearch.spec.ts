@@ -5,9 +5,9 @@ import {
   matchesWatchSearch,
   normalizeWatchSearchText,
 } from '@/pages/rolex/utils/watchSearch'
-import type { Watch } from '@/types/watch-data'
+import type { RolexWatch } from '@/types/rolex-watch'
 
-const submariner: Watch = {
+const submariner: RolexWatch = {
   watchId: 'rolex:m124060-0001',
   collectionId: 'submariner',
   modelNumber: 'm124060',

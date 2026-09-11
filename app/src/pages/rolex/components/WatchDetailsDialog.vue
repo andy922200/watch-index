@@ -8,10 +8,10 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
-import type { Watch } from '@/types/watch-data'
+import type { RolexWatch } from '@/types/rolex-watch'
 
 interface Props {
-  watch: Watch | null
+  watch: RolexWatch | null
 }
 
 defineProps<Props>()
@@ -19,7 +19,7 @@ defineProps<Props>()
 const isOpen = defineModel<boolean>('open', { default: false })
 const { t } = useI18n()
 
-const getWatchImageAlt = (watch: Watch): string =>
+const getWatchImageAlt = (watch: RolexWatch): string =>
   t('site.watchList.imageAlt', { modelName: watch.modelName })
 </script>
 

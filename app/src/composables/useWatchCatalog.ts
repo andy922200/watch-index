@@ -1,82 +1,52 @@
 import { type Ref, ref } from 'vue'
 
-import { Method, useFetchData } from '@/composables/useFetchData'
+import { getWatchDataFile, getWatchDataManifest } from '@/api/watchDataApi'
 import { DEFAULT_MARKET, type MarketCode } from '@/lib/markets'
-import { isWatchCatalog, isWatchDataManifest } from '@/lib/watchDataValidation'
-import type { WatchCatalog } from '@/types/watch-data'
+import type { BaseWatch, WatchCatalog } from '@/types/watch-data'
 
-interface CatalogResponse {
-  catalog: WatchCatalog
+interface RawCatalogResponse {
+  catalog: unknown
   currencies: string[]
 }
 
-const catalogRequests = new Map<MarketCode, Promise<CatalogResponse>>()
-
-const getWatchDataUrl = (fileName: string): string => {
-  const versionQuery = fileName === 'manifest.json' ? `?v=${__WATCH_DATA_VERSION__}` : ''
-  const baseUrl = import.meta.env.BASE_URL.endsWith('/')
-    ? import.meta.env.BASE_URL
-    : `${import.meta.env.BASE_URL}/`
-
-  return `${baseUrl}watch-data/${fileName}${versionQuery}`
+interface UseWatchCatalogOptions<TWatch extends BaseWatch> {
+  /** 該品牌 catalog 的 type guard，例如 `isRolexWatchCatalog`。 */
+  isCatalog: (value: unknown) => value is WatchCatalog<TWatch>
 }
 
-/**
- * 透過共用資料請求 composable 取得 JSON 回應內容。
- *
- * @param url - watch-data 靜態 JSON 的完整應用程式路徑。
- * @returns 未經格式驗證的 JSON 回應資料。
- * @throws 當請求失敗或未包含回應內容時拋出錯誤。
- */
-const getJson = async (url: string): Promise<unknown> => {
-  const { result } = await useFetchData<unknown>({
-    url,
-    method: Method.GET,
-    isAbsolutePath: true,
-  })
-  const [response, error] = result
-
-  if (error) {
-    throw error
-  }
-
-  if (!response) {
-    throw new Error('Watch data request returned no response')
-  }
-
-  return response.data
+interface UseWatchCatalogResult<TWatch extends BaseWatch> {
+  catalog: Readonly<Ref<WatchCatalog<TWatch> | null>>
+  displayCurrencies: Readonly<Ref<readonly string[]>>
+  error: Readonly<Ref<unknown>>
+  isLoading: Readonly<Ref<boolean>>
+  loadCatalog: (market?: MarketCode) => Promise<void>
 }
 
-const fetchCatalog = async (market: MarketCode): Promise<CatalogResponse> => {
-  const manifest = await getJson(getWatchDataUrl('manifest.json'))
-
-  if (!isWatchDataManifest(manifest)) {
-    throw new Error('Watch data manifest has an invalid format')
-  }
-
+const fetchCatalog = async (market: MarketCode): Promise<RawCatalogResponse> => {
+  const manifest = await getWatchDataManifest()
   const catalogFileName = manifest.catalogs[market]
 
   if (!catalogFileName) {
     throw new Error(`Watch data manifest does not contain the ${market} market`)
   }
 
-  const catalog = await getJson(getWatchDataUrl(catalogFileName))
-
-  if (!isWatchCatalog(catalog)) {
-    throw new Error('Watch catalog has an invalid format')
-  }
+  const catalog = await getWatchDataFile(catalogFileName)
 
   return { catalog, currencies: manifest.currencies }
 }
 
-export const useWatchCatalog = (): {
-  catalog: Readonly<Ref<WatchCatalog | null>>
-  displayCurrencies: Readonly<Ref<readonly string[]>>
-  error: Readonly<Ref<unknown>>
-  isLoading: Readonly<Ref<boolean>>
-  loadCatalog: (market?: MarketCode) => Promise<void>
-} => {
-  const catalog = ref<WatchCatalog | null>(null)
+/**
+ * 載入指定市場的錶款 catalog，並以品牌自己的 guard 驗證格式。
+ *
+ * 請求本身由 {@link getWatchDataFile} 依檔名共用，因此同一份資料不會重複下載。
+ *
+ * @param options - 需包含該品牌的 catalog type guard。
+ * @returns catalog 狀態與載入函式。
+ */
+export const useWatchCatalog = <TWatch extends BaseWatch>({
+  isCatalog,
+}: UseWatchCatalogOptions<TWatch>): UseWatchCatalogResult<TWatch> => {
+  const catalog = ref<WatchCatalog<TWatch> | null>(null)
   const displayCurrencies = ref<readonly string[]>([])
   const error = ref<unknown>(null)
   const isLoading = ref(false)
@@ -86,14 +56,16 @@ export const useWatchCatalog = (): {
     error.value = null
 
     try {
-      const request = catalogRequests.get(market) ?? fetchCatalog(market)
-      catalogRequests.set(market, request)
-      const response = await request
+      const response = await fetchCatalog(market)
+
+      if (!isCatalog(response.catalog)) {
+        throw new Error('Watch catalog has an invalid format')
+      }
+
       catalog.value = response.catalog
       displayCurrencies.value = response.currencies
     } catch (requestError) {
       error.value = requestError
-      catalogRequests.delete(market)
     } finally {
       isLoading.value = false
     }
