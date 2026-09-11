@@ -1,0 +1,23 @@
+{
+  "marketCode": "GB",
+  "observedAt": "2026-09-11T17:00:00Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level traveler consumption-tax policy only; this does not establish Rolex retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "sources": [
+    {
+      "publisher": "GOV.UK",
+      "title": "Tax on shopping and services: Tax-free shopping",
+      "url": "https://www.gov.uk/tax-on-shopping/taxfree-shopping",
+      "accessedAt": "2026-09-11T17:00:00Z"
+    }
+  ],
+  "observedFacts": [
+    "In Great Britain, tax-free goods from shops must be delivered directly to an address outside the UK; the source does not provide a luggage-carried visitor VAT refund there.",
+    "Northern Ireland has a limited VAT-refund route for eligible visitors who live outside Northern Ireland and the EU, take goods out within three months, and use a retailer's VAT 407(NI) form.",
+    "Customs approval of the form and retailer participation are required for the Northern Ireland route."
+  ],
+  "limitations": [
+    "This UK market record is geographically mixed: the available refund route applies to Northern Ireland, not to goods carried home from Great Britain.",
+    "Rolex retailer participation, the buyer's eligibility, and any transaction-specific refund amount are not established by this evidence."
+  ]
+}

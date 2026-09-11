@@ -1,0 +1,22 @@
+{
+  "marketCode": "US",
+  "observedAt": "2026-09-11T17:00:00Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level traveler consumption-tax policy only; this does not establish Rolex retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "sources": [
+    {
+      "publisher": "USAGov",
+      "title": "How to pay and get help with state and local taxes",
+      "url": "https://www.usa.gov/state-taxes",
+      "accessedAt": "2026-09-11T17:00:00Z"
+    }
+  ],
+  "observedFacts": [
+    "USAGov states that sales tax is imposed by most states and municipalities, with rates and taxable goods varying by jurisdiction.",
+    "No nationwide traveler consumption-tax refund policy can be established from this federal guidance because sales-tax rules are state and local."
+  ],
+  "limitations": [
+    "This national-market finding does not determine whether a particular state, city, retailer, or airport has a separate programme.",
+    "It does not establish retailer-specific pricing, sales-tax treatment, or any refund."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "marketCode": "DE",
+  "observedAt": "2026-09-11T17:00:00Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level traveler consumption-tax policy only; this does not establish Rolex retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "sources": [
+    {
+      "publisher": "German Federal Foreign Office",
+      "title": "Mehrwertsteuer-Rückerstattung",
+      "url": "https://www.germany.info/us-de/service/steuern/mwst-rueckerstattung-1217014",
+      "accessedAt": "2026-09-11T17:00:00Z"
+    }
+  ],
+  "observedFacts": [
+    "Goods purchased in Germany by customers resident outside the EU and exported can qualify for a refund of German VAT.",
+    "The customer must notify the seller at purchase so an export and purchaser certificate can be issued.",
+    "The state tax relief is granted to the seller and most, but not all, shops pass it on to the customer."
+  ],
+  "limitations": [
+    "The source does not establish that every retailer offers or passes through a VAT refund.",
+    "Rolex retailer participation and any processing fee are not established by this evidence."
+  ]
+}

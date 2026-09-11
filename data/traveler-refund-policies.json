@@ -3,6 +3,182 @@
   "schemaVersion": 1,
   "policies": [
     {
+      "marketCode": "AT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-11T17:00:00Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "適用於居住地在歐盟以外的旅客；發票金額須超過 75 歐元，商品須於購買後第三個曆月結束前隨身出口，並將出口證明交回賣方。",
+        "enUs": "Available to travelers domiciled outside the EU; the invoice must exceed EUR 75, goods must be exported in personal luggage by the end of the third calendar month after purchase, and export proof must be returned to the seller."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/AT/2026-09-12/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "Austrian Federal Ministry of Finance",
+          "title": "VAT Refund",
+          "url": "https://www.bmf.gv.at/en/topics/customs/travellers/vat-refund.html",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ]
+    },
+    {
+      "marketCode": "CH",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-11T17:00:00Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "適用於居住在瑞士境外的旅客；含稅零售價須至少 CHF 300，離境時須向瑞士海關出示商品與出口文件。退款由賣方依交易關係處理。",
+        "enUs": "Available to travelers domiciled outside Switzerland when the VAT-inclusive retail price is at least CHF 300; goods and the export document must be presented to Swiss Customs on exit. Any reimbursement is handled by the seller under the sales relationship."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/CH/2026-09-12/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "Swiss Federal Tax Administration",
+          "title": "Tax free for tourists",
+          "url": "https://www.estv.admin.ch/en/tax-free-for-tourists",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ]
+    },
+    {
+      "marketCode": "CN",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-11T17:00:00Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "適用於在退稅商店購買可退稅商品並自合資格離境口岸出境的境外旅客；即買即退另須完成協議與信用卡預授權，實際資格依官方規定。",
+        "enUs": "Available to overseas visitors buying tax-refundable goods at tax-free stores and leaving through eligible departure ports; refund-upon-purchase also requires an agreement and credit-card pre-authorisation, subject to official conditions."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/CN/2026-09-12/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "State Taxation Administration of the People's Republic of China",
+          "title": "What is the Departure Tax Refund Policy?",
+          "url": "https://www.chinatax.gov.cn/eng/c101276/c102444/c5240901/content.html",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ]
+    },
+    {
+      "marketCode": "DE",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-11T17:00:00Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "適用於居住地在歐盟以外、購買後將商品出口的旅客；購買時須向賣方取得出口及買方證明。退稅是否轉付給旅客由賣方決定，並非所有商店都提供。",
+        "enUs": "Available when customers resident outside the EU export goods bought in Germany and obtain the seller's export and purchaser certificate at purchase. Passing the VAT relief to the traveler is the seller's decision and not all shops offer it."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/DE/2026-09-12/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "German Federal Foreign Office",
+          "title": "Mehrwertsteuer-Rückerstattung",
+          "url": "https://www.germany.info/us-de/service/steuern/mwst-rueckerstattung-1217014",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ]
+    },
+    {
+      "marketCode": "FR",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-11T17:00:00Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "適用於通常居住在歐盟以外的旅客；須由商店開立退稅文件並在離開歐盟時完成海關出口驗證。退款由商家處理，海關不直接退款。",
+        "enUs": "Available to travelers habitually resident outside the EU when the shop issues a tax-free sales slip and Customs validates export on leaving the EU. The merchant, not Customs, handles any refund."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/FR/2026-09-12/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "Direction générale des douanes et droits indirects",
+          "title": "La détaxe en France pour les touristes - PABLO",
+          "url": "https://www.douane.gouv.fr/fiche/la-detaxe-en-france-pour-les-touristes-pablo",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ]
+    },
+    {
+      "marketCode": "GB",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-11T17:00:00Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "英國制度須分區理解：大不列顛的隨身攜帶商品沒有旅客 VAT 退稅；北愛爾蘭則僅對符合居住地、商家 VAT 407(NI) 表單與三個月內攜出等條件的旅客提供有限退稅。",
+        "enUs": "The UK policy is geographically split: Great Britain has no visitor VAT refund for goods carried home, while Northern Ireland has a limited refund route for travelers meeting residence, retailer VAT 407(NI) form, and three-month export conditions."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/GB/2026-09-12/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "GOV.UK",
+          "title": "Tax on shopping and services: Tax-free shopping",
+          "url": "https://www.gov.uk/tax-on-shopping/taxfree-shopping",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ]
+    },
+    {
+      "marketCode": "HK",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-11T17:00:00Z",
+      "availability": "unavailable",
+      "eligibilitySummary": {
+        "zhTw": "香港沒有增值稅或銷售稅，因此沒有可適用於本市場的旅客 VAT／銷售稅退稅制度。",
+        "enUs": "Hong Kong has no value-added or sales tax, so no traveler VAT or sales-tax refund scheme applies to this market."
+      },
+      "merchantParticipationRequired": null,
+      "exportValidationRequired": null,
+      "evidencePath": "data/evidence/HK/2026-09-12/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "Financial Services and the Treasury Bureau, Hong Kong SAR Government",
+          "title": "Prevailing Tax Policy",
+          "url": "https://www.fstb.gov.hk/en/treasury/general/prevailing-tax-policy.htm",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ]
+    },
+    {
+      "marketCode": "IT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-11T17:00:00Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "適用於居住或住所位於歐盟以外、每張發票金額超過 70 歐元的旅客；商品須於發票開立後第三個月內離開歐盟並完成海關驗證。退款由賣方或其退稅服務商處理，可能扣除費用。",
+        "enUs": "Available to travelers resident or domiciled outside the EU when each invoice exceeds EUR 70; goods must leave the EU within the third month after invoicing and receive customs endorsement. The seller or its tax-free provider handles the refund and may deduct a fee."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/IT/2026-09-12/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "Agenzia delle Dogane e dei Monopoli",
+          "title": "OTELLO - The procedure",
+          "url": "https://www.adm.gov.it/portale/-/the-procedure",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ]
+    },
+    {
       "marketCode": "JP",
       "effectiveFrom": null,
       "effectiveTo": null,
@@ -99,6 +275,28 @@
           "title": "VAT Refund Guidelines for Foreign Travelers",
           "url": "https://eng.taiwan.net.tw/m1.aspx?sNo=0024567",
           "accessedAt": "2026-09-10T16:29:36Z"
+        }
+      ]
+    },
+    {
+      "marketCode": "US",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-11T17:00:00Z",
+      "availability": "unavailable",
+      "eligibilitySummary": {
+        "zhTw": "美國的銷售稅由州與地方政府分別課徵，稅率及課稅品項皆可能不同；沒有可作為全國市場政策的統一旅客消費稅退稅制度。",
+        "enUs": "Sales taxes in the United States are imposed separately by state and local governments, with varying rates and taxable goods; there is no unified traveler consumption-tax refund scheme that can serve as a nationwide market policy."
+      },
+      "merchantParticipationRequired": null,
+      "exportValidationRequired": null,
+      "evidencePath": "data/evidence/US/2026-09-12/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "USAGov",
+          "title": "How to pay and get help with state and local taxes",
+          "url": "https://www.usa.gov/state-taxes",
+          "accessedAt": "2026-09-11T17:00:00Z"
         }
       ]
     }
