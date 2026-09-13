@@ -15,6 +15,14 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 import { useExchangeRates } from '@/composables/useExchangeRates'
 import { useWatchCatalog } from '@/composables/useWatchCatalog'
 import {
@@ -41,6 +49,10 @@ import { useWatchSearch } from './composables/useWatchSearch'
 
 const PAGE_SIZE = 12
 
+type PriceSort = 'default' | 'price-ascending' | 'price-descending'
+
+const DEFAULT_PRICE_SORT: PriceSort = 'default'
+
 const languagePaths = getBrandPageLanguagePaths({ brandId: BRAND_ID, page: 'index' })
 
 const { locale, t } = useI18n()
@@ -48,6 +60,7 @@ const { locale, t } = useI18n()
 const selectedWatch = ref<RolexWatch | null>(null)
 const isWatchDetailsOpen = ref(false)
 const visibleWatchCount = ref(PAGE_SIZE)
+const selectedPriceSort = ref<PriceSort>(DEFAULT_PRICE_SORT)
 const selectedMarket = useStorage<MarketCode>(MARKET_STORAGE_KEY, DEFAULT_MARKET, undefined, {
   serializer: {
     read: (value: string): MarketCode => (isMarketCode(value) ? value : DEFAULT_MARKET),
@@ -92,11 +105,43 @@ const {
   getSearchGroupLabel: (groupId) => t(`site.watchSearch.${groupId}Heading`),
 })
 
+const getListedPrice = (watch: RolexWatch): number | null =>
+  watch.priceStatus === 'listed' ? watch.price : null
+
+const sortedWatches = computed<RolexWatch[]>(() => {
+  if (selectedPriceSort.value === DEFAULT_PRICE_SORT) {
+    return filteredWatches.value
+  }
+
+  const priceDirection = selectedPriceSort.value === 'price-ascending' ? 1 : -1
+
+  return [...filteredWatches.value].sort((left, right) => {
+    const leftPrice = getListedPrice(left)
+    const rightPrice = getListedPrice(right)
+
+    if (leftPrice === null && rightPrice === null) {
+      return left.modelReference.localeCompare(right.modelReference)
+    }
+
+    if (leftPrice === null) {
+      return 1
+    }
+
+    if (rightPrice === null) {
+      return -1
+    }
+
+    const priceDifference = (leftPrice - rightPrice) * priceDirection
+
+    return priceDifference || left.modelReference.localeCompare(right.modelReference)
+  })
+})
+
 const visibleWatches = computed<RolexWatch[]>(() =>
-  filteredWatches.value.slice(0, visibleWatchCount.value),
+  sortedWatches.value.slice(0, visibleWatchCount.value),
 )
 
-const hasMoreWatches = computed(() => visibleWatchCount.value < filteredWatches.value.length)
+const hasMoreWatches = computed(() => visibleWatchCount.value < sortedWatches.value.length)
 const displayCurrencyRateDate = computed(() => getExchangeRateDate(selectedDisplayCurrency.value))
 const intlLocale = computed(() => getIntlLocale(locale.value))
 
@@ -213,6 +258,10 @@ watchSource(
 watchSource(debouncedSearchQuery, () => {
   visibleWatchCount.value = PAGE_SIZE
 })
+
+watchSource(selectedPriceSort, () => {
+  visibleWatchCount.value = PAGE_SIZE
+})
 </script>
 
 <template>
@@ -256,6 +305,26 @@ watchSource(debouncedSearchQuery, () => {
     </section>
     <section v-if="!isLoading && !error" class="mt-12 w-full" aria-labelledby="watch-list-heading">
       <h2 id="watch-list-heading" class="sr-only">{{ t('site.watchList.heading') }}</h2>
+      <div class="mb-6 flex justify-end">
+        <Select v-model="selectedPriceSort">
+          <SelectTrigger class="w-52 cursor-pointer" :aria-label="t('site.watchList.sortLabel')">
+            <SelectValue :placeholder="t('site.watchList.sortDefault')" />
+          </SelectTrigger>
+          <SelectContent class="w-(--reka-select-trigger-width)" :side-offset="4">
+            <SelectGroup>
+              <SelectItem class="cursor-pointer" :value="DEFAULT_PRICE_SORT">
+                {{ t('site.watchList.sortDefault') }}
+              </SelectItem>
+              <SelectItem class="cursor-pointer" value="price-ascending">
+                {{ t('site.watchList.sortPriceLowToHigh') }}
+              </SelectItem>
+              <SelectItem class="cursor-pointer" value="price-descending">
+                {{ t('site.watchList.sortPriceHighToLow') }}
+              </SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      </div>
       <p
         v-if="filteredWatches.length === 0"
         class="text-muted-foreground text-center"

@@ -1,4 +1,78 @@
-import { expect, test } from '@playwright/test'
+import { expect, type Page, test } from '@playwright/test'
+
+interface PriceSortWatchInput {
+  modelReference: string
+  price: number | null
+  priceStatus: 'listed' | 'price-unavailable'
+}
+
+const createPriceSortWatch = ({ modelReference, price, priceStatus }: PriceSortWatchInput) => ({
+  watchId: `rolex:${modelReference}`,
+  collectionId: 'submariner',
+  modelNumber: modelReference.slice(0, 7),
+  configurationCode: modelReference.slice(8),
+  modelReference,
+  imageUrl: `https://example.com/${modelReference}.jpg`,
+  modelName: `Test ${modelReference}`,
+  caseDescription: 'Test case',
+  dialDescription: 'Test dial',
+  localNicknames: [],
+  price,
+  priceStatus,
+})
+
+const priceSortWatches = [
+  ...Array.from({ length: 12 }, (_, index) =>
+    createPriceSortWatch({
+      modelReference: `m100${String(index).padStart(3, '0')}-0001`,
+      price: 100 + Math.max(index - 1, 0) * 10,
+      priceStatus: 'listed',
+    }),
+  ),
+  createPriceSortWatch({
+    modelReference: 'm999999-0001',
+    price: 300,
+    priceStatus: 'listed',
+  }),
+  createPriceSortWatch({
+    modelReference: 'm500000-0001',
+    price: null,
+    priceStatus: 'price-unavailable',
+  }),
+]
+
+const usePriceSortFixture = async (page: Page): Promise<void> => {
+  await page.route(/\/watch-data\/manifest\.json(?:\?.*)?$/, async (route) => {
+    await route.fulfill({
+      json: {
+        schemaVersion: 1,
+        catalog: 'catalog.price-sort.json',
+        catalogs: { TW: 'catalog.price-sort.json' },
+        comparison: 'comparison.test.json',
+        currencies: ['TWD'],
+      },
+    })
+  })
+  await page.route('**/watch-data/catalog.price-sort.json', async (route) => {
+    await route.fulfill({
+      json: {
+        schemaVersion: 1,
+        brandId: 'rolex',
+        collectedAt: '2026-09-09T00:00:00.000Z',
+        watchCount: priceSortWatches.length,
+        collections: [{ id: 'submariner', watchCount: priceSortWatches.length }],
+        priceMarket: {
+          code: 'TW',
+          currencyCode: 'TWD',
+          priceType: 'tax-include',
+          taxRatePercent: 5,
+        },
+        priceUpdatedAt: '2026-09-09T00:00:00.000Z',
+        watchesById: Object.fromEntries(priceSortWatches.map((watch) => [watch.watchId, watch])),
+      },
+    })
+  })
+}
 
 test('changes the Rolex index page language', async ({ page }) => {
   await page.goto('en-us/')
@@ -11,6 +85,36 @@ test('changes the Rolex index page language', async ({ page }) => {
 
   await expect(page.getByRole('heading', { name: '全球 Rolex 腕錶索引' })).toBeVisible()
   await expect(page.getByText('價格資料更新於 2026年8月31日')).toBeVisible()
+  await expect(page.getByRole('combobox', { name: '排序' })).toContainText('預設排序')
+})
+
+test('sorts all matching watches by price before applying pagination', async ({ page }) => {
+  await usePriceSortFixture(page)
+  await page.goto('en-us/')
+
+  const sortSelect = page.getByRole('combobox', { name: 'Sort watches' })
+  const watchCards = page.locator('[data-slot="card"]')
+
+  await expect(watchCards).toHaveCount(12)
+  await page.getByRole('button', { name: 'Load more watches' }).click()
+  await expect(watchCards).toHaveCount(14)
+
+  await sortSelect.click()
+  await page.getByRole('option', { name: 'Price: low to high' }).click()
+
+  await expect(watchCards).toHaveCount(12)
+  await expect(watchCards.nth(0)).toContainText('m100000-0001')
+  await expect(watchCards.nth(1)).toContainText('m100001-0001')
+
+  await page.getByRole('button', { name: 'Load more watches' }).click()
+  await expect(watchCards).toHaveCount(14)
+  await expect(watchCards.last()).toContainText('Price pending confirmation')
+
+  await sortSelect.click()
+  await page.getByRole('option', { name: 'Price: high to low' }).click()
+
+  await expect(watchCards).toHaveCount(12)
+  await expect(watchCards.nth(0)).toContainText('m999999-0001')
 })
 
 test('uses the more menu for language and theme controls below the desktop breakpoint', async ({
