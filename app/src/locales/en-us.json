@@ -86,7 +86,7 @@
       "modelReference": "Reference: {reference}",
       "officialPrice": "Official price",
       "refundEstimate": "Refund estimate",
-      "modeDescription": "Refund estimates use each market's tax treatment and verified policy when available. They do not guarantee a refund.",
+      "modeDescription": "Refund estimates use each market's tax treatment, verified policy when available, and your declared tax residency to show either a pre-tax estimate or the tax-inclusive price. They do not guarantee a refund.",
       "dataBasis": "Display currency: {currency}. Official-price and FX dates appear on each market row.",
       "loading": "Loading market comparison…",
       "error": "Market comparison data could not be loaded.",
@@ -109,12 +109,19 @@
       "noTaxPrice": "No consumption-tax component",
       "taxRateUnavailable": "Tax rate pending confirmation; estimate unavailable",
       "priceUnavailable": "Price is unavailable or not listed",
+      "taxResidentOriginalPrice": "Not eligible for a traveler refund here based on your declared tax residency",
       "policySources": "Traveler refund policy sources",
       "policySourcesTrigger": "View {marketName} traveler refund policy sources",
       "estimateAndLimitations": "Refund estimates and comparison limitations",
-      "estimateExplanation": "A pre-tax reference for a tax-inclusive price is calculated as “tax-inclusive price ÷ (1 + nominal tax rate)”. Even where a refund program exists, eligibility, retailer participation, and export validation determine whether a refund can be received.",
-      "excludedCosts": "This excludes travel, insurance, retailer or refund-operator fees, residency and purchase eligibility, export validation, destination import taxes, local sales taxes, payment-card and FX costs, delivery, availability, and allocation. This compares official prices, not secondary-market prices or guaranteed purchase costs.",
-      "rowDetails": "Show {marketName} comparison details"
+      "estimateExplanation": "A pre-tax reference for a tax-inclusive price is calculated as “tax-inclusive price ÷ (1 + nominal tax rate)”. Even where a refund program exists, eligibility, retailer participation, and export validation determine whether a refund can be received. If you declare tax residency in any EU market, all EU markets will show the tax-inclusive price instead.",
+      "excludedCosts": "This excludes travel, insurance, retailer or refund-operator fees, purchase eligibility and other residency details such as length of stay or visa status, export validation, destination import taxes, local sales taxes, payment-card and FX costs, delivery, availability, and allocation. This compares official prices, not secondary-market prices or guaranteed purchase costs.",
+      "rowDetails": "Show {marketName} comparison details",
+      "taxResidencySectionTitle": "Tax residency",
+      "taxResidencySectionUnsetSummary": "Not set: showing refund estimates for all markets",
+      "taxResidencySectionSetSummary": "Set: {markets}",
+      "taxResidencySectionDescription": "Select the market(s) where you hold tax residency (multiple allowed). Tax residents of a market typically cannot claim the traveler VAT refund there, so that market will show the tax-inclusive (official) price instead.",
+      "taxResidencyEuHelperText": "EU traveler refund schemes generally require residency outside the EU. Selecting tax residency in any EU market (Austria, Germany, France, Italy) will switch all EU markets — not just that one — to the tax-inclusive price.",
+      "taxResidencyEuBadge": "EU"
     }
   }
 }

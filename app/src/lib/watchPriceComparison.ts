@@ -9,6 +9,7 @@
  * 一旦分家，退稅估算與差價基準這類規則就會在各品牌之間悄悄長歪。
  */
 
+import { isEuMember } from '@/lib/markets'
 import type {
   ComparisonMarket,
   ComparisonPrice,
@@ -35,6 +36,7 @@ export type PriceComparisonLabel =
   | 'no-tax-price'
   | 'tax-rate-unavailable'
   | 'price-unavailable'
+  | 'tax-resident-original-price'
 
 /**
  * 各價格標示對應的 i18n key。刻意與 {@link PriceComparisonLabel} 放在同一支：
@@ -49,6 +51,7 @@ export const PriceComparisonLabelKeys: Record<PriceComparisonLabel, string> = {
   'no-tax-price': 'site.watchPriceComparison.noTaxPrice',
   'tax-rate-unavailable': 'site.watchPriceComparison.taxRateUnavailable',
   'price-unavailable': 'site.watchPriceComparison.priceUnavailable',
+  'tax-resident-original-price': 'site.watchPriceComparison.taxResidentOriginalPrice',
 }
 
 export interface MarketComparisonRow {
@@ -72,6 +75,7 @@ interface CreateMarketComparisonRowsOptions {
   marketCodes: readonly string[]
   mode: PriceComparisonModeId
   selectedMarketCode: string
+  taxResidencyMarketCodes: readonly string[]
   watchId: string
 }
 
@@ -87,12 +91,34 @@ const getUnavailablePrice = (priceStatus: PriceStatus): ResolvedPrice => ({
   priceStatus,
 })
 
+/**
+ * 稅務居民身分是否讓這個市場失去退稅資格：本人是該市場的稅務居民，
+ * 或者該市場是歐盟成員國且本人在任一歐盟市場具稅務居民身分——
+ * 歐盟旅客退稅制度通常要求申請人「非歐盟居民」，因此喪失資格會擴及整個歐盟，
+ * 不只是本人實際居住的那一國。
+ */
+const isRefundIneligibleForResidency = ({
+  market,
+  taxResidencyMarketCodes,
+}: {
+  market: ComparisonMarket
+  taxResidencyMarketCodes: readonly string[]
+}): boolean => {
+  const isExactResidencyMatch = taxResidencyMarketCodes.includes(market.code)
+  const isEuWideDisqualification =
+    isEuMember(market.code) && taxResidencyMarketCodes.some(isEuMember)
+
+  return isExactResidencyMatch || isEuWideDisqualification
+}
+
 const resolveRefundEstimate = ({
   market,
   price,
+  taxResidencyMarketCodes,
 }: {
   market: ComparisonMarket
   price: ComparisonPrice
+  taxResidencyMarketCodes: readonly string[]
 }): ResolvedPrice => {
   if (price.priceStatus !== 'listed' || price.price === null) {
     return getUnavailablePrice(price.priceStatus)
@@ -104,6 +130,15 @@ const resolveRefundEstimate = ({
 
   if (market.priceType === 'no-tax') {
     return { amount: price.price, label: 'no-tax-price', priceStatus: price.priceStatus }
+  }
+
+  // 這裡是「本來有得退，但你是當地（或歐盟）居民所以不能退」，語意不同。
+  if (isRefundIneligibleForResidency({ market, taxResidencyMarketCodes })) {
+    return {
+      amount: price.price,
+      label: 'tax-resident-original-price',
+      priceStatus: price.priceStatus,
+    }
   }
 
   if (market.travelerRefundPolicy?.availability === 'unavailable') {
@@ -132,13 +167,15 @@ const resolvePrice = ({
   market,
   mode,
   price,
+  taxResidencyMarketCodes,
 }: {
   market: ComparisonMarket
   mode: PriceComparisonModeId
   price: ComparisonPrice
+  taxResidencyMarketCodes: readonly string[]
 }): ResolvedPrice => {
   if (mode === PriceComparisonMode.RefundEstimate) {
-    return resolveRefundEstimate({ market, price })
+    return resolveRefundEstimate({ market, price, taxResidencyMarketCodes })
   }
 
   if (price.priceStatus !== 'listed' || price.price === null) {
@@ -174,6 +211,7 @@ export const createMarketComparisonRows = ({
   marketCodes,
   mode,
   selectedMarketCode,
+  taxResidencyMarketCodes,
   watchId,
 }: CreateMarketComparisonRowsOptions): MarketComparisonRow[] => {
   const pricesByMarket = comparison.pricesByWatchId[watchId]
@@ -190,7 +228,7 @@ export const createMarketComparisonRows = ({
       return []
     }
 
-    const resolvedPrice = resolvePrice({ market, mode, price })
+    const resolvedPrice = resolvePrice({ market, mode, price, taxResidencyMarketCodes })
     const convertedAmount =
       resolvedPrice.amount === null
         ? null

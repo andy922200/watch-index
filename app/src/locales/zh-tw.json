@@ -86,7 +86,7 @@
       "modelReference": "型號：{reference}",
       "officialPrice": "官方定價",
       "refundEstimate": "退稅估算",
-      "modeDescription": "退稅估算會依市場稅別與可驗證政策顯示未稅參考價；不代表一定能取得退款。",
+      "modeDescription": "退稅估算會依市場稅別、可驗證政策，以及您設定的稅務居住地顯示未稅參考價或含稅價格；不代表一定能取得退款。",
       "dataBasis": "顯示貨幣：{currency}；官方價格與匯率日期依市場列標示。",
       "loading": "正在載入行情比較…",
       "error": "無法載入行情比較資料。",
@@ -109,12 +109,19 @@
       "noTaxPrice": "無消費稅市場價格",
       "taxRateUnavailable": "稅率待確認，無法估算",
       "priceUnavailable": "未公開或未列出價格",
+      "taxResidentOriginalPrice": "依居住地稅務身分，此市場不適用旅客退稅",
       "policySources": "退稅制度來源",
       "policySourcesTrigger": "查看 {marketName} 退稅制度來源",
       "estimateAndLimitations": "退稅估算與比較限制",
-      "estimateExplanation": "含稅價格的未稅參考價以「含稅價 ÷（1＋名目稅率）」計算。即使市場有退稅制度，實際是否可退仍須由購買者資格、零售商參與及出口驗證決定。",
-      "excludedCosts": "未納入交通、保險、零售商或退稅作業費、居住／購買資格、出口驗證、返國進口稅、地方銷售稅、信用卡與匯差、運送、庫存或配額；本站比較的是官方定價，不是二級市場行情或保證成交成本。",
-      "rowDetails": "查看 {marketName} 比較細節"
+      "estimateExplanation": "含稅價格的未稅參考價以「含稅價 ÷（1＋名目稅率）」計算。即使市場有退稅制度，實際是否可退仍須由購買者資格、零售商參與及出口驗證決定。若您於任一歐盟市場設有稅務居住地，所有歐盟市場皆會改顯示含稅價格。",
+      "excludedCosts": "未納入交通、保險、零售商或退稅作業費、購買資格與其他居住地細節（如停留天數、簽證身分）、出口驗證、返國進口稅、地方銷售稅、信用卡與匯差、運送、庫存或配額；本站比較的是官方定價，不是二級市場行情或保證成交成本。",
+      "rowDetails": "查看 {marketName} 比較細節",
+      "taxResidencySectionTitle": "稅務居住地設定",
+      "taxResidencySectionUnsetSummary": "尚未設定：顯示所有地區退稅金額",
+      "taxResidencySectionSetSummary": "已設定：{markets}",
+      "taxResidencySectionDescription": "選擇您具有稅務居住身分的市場（可複選）。若您是某市場的稅務居民，該市場通常無法申請旅客退稅，將改為顯示含稅（官方）價格。",
+      "taxResidencyEuHelperText": "歐盟（奧地利／德國／法國／義大利）的旅客退稅制度通常要求申請人「非歐盟居民」；只要您在任一歐盟市場設有稅務居住地，所有歐盟市場都會改顯示含稅價格，而不只是您選擇的那一個。",
+      "taxResidencyEuBadge": "歐盟"
     }
   }
 }

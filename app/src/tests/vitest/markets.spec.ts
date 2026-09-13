@@ -6,6 +6,7 @@ import {
   getMarketFlag,
   getMarketFromQuery,
   getMarketLabelKey,
+  isEuMember,
   MarketCode,
   replaceMarketQuery,
 } from '@/lib/markets'
@@ -45,6 +46,22 @@ describe('market lookup', () => {
     expect(getMarketFlag('XX')).toBe(FALLBACK_MARKET_FLAG)
     expect(getMarketLabelKey('XX')).toBeNull()
   })
+})
+
+describe('isEuMember', () => {
+  it.each([MarketCode.Austria, MarketCode.Germany, MarketCode.France, MarketCode.Italy])(
+    'treats %s as an EU market',
+    (marketCode) => {
+      expect(isEuMember(marketCode)).toBe(true)
+    },
+  )
+
+  it.each([MarketCode.Switzerland, MarketCode.UnitedKingdom, MarketCode.Taiwan, 'XX'])(
+    'does not treat %s as an EU market',
+    (marketCode) => {
+      expect(isEuMember(marketCode)).toBe(false)
+    },
+  )
 })
 
 describe('replaceMarketQuery', () => {

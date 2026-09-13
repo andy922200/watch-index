@@ -78,6 +78,15 @@ export const formatMediumDate = (date: string, locale: string): string =>
  * @param maximumFractionDigits - 小數位數上限，預設 1 位。
  * @returns 已格式化的百分比字串。
  */
+/**
+ * 把字串陣列串成自然語言列表，例如 `日本、德國`／`Japan and Germany`。
+ *
+ * @param items - 已翻譯好的字串陣列。
+ * @param locale - {@link getIntlLocale} 的回傳值。
+ */
+export const formatList = (items: readonly string[], locale: string): string =>
+  new Intl.ListFormat(locale, { style: 'long', type: 'conjunction' }).format(items)
+
 export const formatSignedPercent = (
   percent: number,
   locale: string,

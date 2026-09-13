@@ -44,6 +44,7 @@ import {
 import { BRAND_ID } from '../brand'
 import BackToIndexButton from './components/BackToIndexButton.vue'
 import MarketPriceRow, { type MarketPriceRowView } from './components/MarketPriceRow.vue'
+import TaxResidencySelector from './components/TaxResidencySelector.vue'
 
 const languagePaths = getBrandPageLanguagePaths({ brandId: BRAND_ID, page: 'price-compare' })
 
@@ -96,6 +97,25 @@ const selectedMode = useStorage<PriceComparisonModeId>(
     },
   },
 )
+/**
+ * 使用者具稅務居民身分的市場，僅用於「退稅估算」模式判斷各市場是否還適用退稅。
+ * 只存 localStorage 較不容易隨分享出去的網址外流。
+ */
+const TAX_RESIDENCY_STORAGE_KEY = 'tax-residency-markets'
+const taxResidencyMarketCodes = useStorage<MarketCode[]>(TAX_RESIDENCY_STORAGE_KEY, [], undefined, {
+  serializer: {
+    read: (value: string): MarketCode[] => {
+      try {
+        const parsed: unknown = JSON.parse(value)
+
+        return Array.isArray(parsed) ? parsed.filter(isMarketCode) : []
+      } catch {
+        return []
+      }
+    },
+    write: (codes: MarketCode[]): string => JSON.stringify(codes),
+  },
+})
 const { catalog, comparison, displayCurrencies, error, isLoading, loadComparison } =
   useWatchComparison({ isCatalog: isRolexWatchCatalog })
 const {
@@ -152,6 +172,7 @@ const comparisonRows = computed(() => {
     marketCodes: marketOptions.map((market) => market.code),
     mode: selectedMode.value,
     selectedMarketCode: selectedMarket.value,
+    taxResidencyMarketCodes: taxResidencyMarketCodes.value,
     watchId,
   })
 })
@@ -339,6 +360,11 @@ watchSource(
         <p class="text-muted-foreground mx-auto mt-2 max-w-2xl text-center text-xs">
           {{ t('site.watchPriceComparison.dataBasis', { currency: selectedDisplayCurrency }) }}
         </p>
+        <TaxResidencySelector
+          v-if="selectedMode === PriceComparisonMode.RefundEstimate"
+          v-model="taxResidencyMarketCodes"
+          class="mx-auto mt-4 w-full max-w-2xl"
+        />
         <p
           v-if="exchangeRateError"
           class="text-muted-foreground mt-2 text-center text-xs"
