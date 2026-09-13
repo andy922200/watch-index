@@ -165,7 +165,7 @@ const comparisonRows = computed(() => {
     return []
   }
 
-  return createMarketComparisonRows({
+  const rows = createMarketComparisonRows({
     comparison: comparison.value,
     convertToDisplayCurrency,
     displayCurrency: selectedDisplayCurrency.value,
@@ -175,6 +175,15 @@ const comparisonRows = computed(() => {
     taxResidencyMarketCodes: taxResidencyMarketCodes.value,
     watchId,
   })
+  const baselineIndex = rows.findIndex((row) => row.isBaseline)
+
+  if (baselineIndex <= 0) {
+    return rows
+  }
+
+  const [baselineRow] = rows.splice(baselineIndex, 1)
+
+  return [baselineRow, ...rows]
 })
 const intlLocale = computed(() => getIntlLocale(locale.value))
 
