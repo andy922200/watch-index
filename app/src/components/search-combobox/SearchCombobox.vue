@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Search } from '@lucide/vue'
 import { onClickOutside } from '@vueuse/core'
-import { computed, ref, watch } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 
 export interface SearchComboboxOption {
   description?: string
@@ -61,6 +61,10 @@ const selectOption = (optionId: string): void => {
   isSelectingOption.value = true
   emit('select', optionId)
   closeSuggestions()
+
+  void nextTick(() => {
+    isSelectingOption.value = false
+  })
 }
 
 const moveActiveOption = (offset: number): void => {

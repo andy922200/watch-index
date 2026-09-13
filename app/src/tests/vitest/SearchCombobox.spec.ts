@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/vue'
 import { describe, expect, it } from 'vitest'
-import { defineComponent, ref } from 'vue'
+import { defineComponent, nextTick, ref } from 'vue'
 
 import SearchCombobox, {
   type SearchComboboxGroup,
@@ -59,6 +59,18 @@ describe('SearchCombobox', () => {
     await fireEvent.mouseDown(screen.getByRole('option', { name: /m124060-0001/ }))
     expect(screen.getByRole('status').textContent).toBe('m124060-0001')
     expect(screen.queryByRole('listbox')).toBeNull()
+  })
+
+  it('opens suggestions after selecting an option that preserves the query', async () => {
+    renderCombobox()
+
+    const input = screen.getByRole('combobox', { name: 'Search' })
+    await fireEvent.focus(input)
+    await fireEvent.mouseDown(screen.getByRole('option', { name: /m124060-0001/ }))
+    await nextTick()
+    await fireEvent.update(input, 'm124060')
+
+    expect(screen.getByRole('listbox')).toBeDefined()
   })
 
   it('selects the active option with the keyboard', async () => {

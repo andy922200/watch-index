@@ -56,6 +56,7 @@
       "placeholder": "Search reference, collection, or nickname",
       "empty": "No matching watches found",
       "collectionsHeading": "Collections",
+      "modelNamesHeading": "Model names",
       "watchesHeading": "Watches"
     },
     "watchList": {

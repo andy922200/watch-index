@@ -126,6 +126,48 @@ test('filters watches with a partial model reference', async ({ page }) => {
   await expect(page.locator('[data-slot="card"]')).toHaveCount(1)
 })
 
+test('offers a model-name option for a complete model name', async ({ page }) => {
+  await page.goto('en-us/?market_code=TW')
+
+  const search = page.getByRole('combobox', { name: 'Search watches' })
+  await search.fill('Oyster Perpetual 34')
+
+  await expect(page.getByRole('group', { name: 'Collections' })).not.toBeVisible()
+  await expect(
+    page.getByRole('group', { name: 'Model names' }).getByRole('option', {
+      name: /Oyster Perpetual 34/,
+    }),
+  ).toBeVisible()
+
+  await search.press('Enter')
+
+  await expect(page.getByRole('listbox')).not.toBeVisible()
+  await expect(search).toHaveValue('Oyster Perpetual 34')
+  await expect(page.getByTestId('watch-grid')).toContainText('Oyster Perpetual 34')
+})
+
+test('offers partial model-name candidates without a broader collection', async ({ page }) => {
+  await page.goto('en-us/?market_code=TW')
+
+  const search = page.getByRole('combobox', { name: 'Search watches' })
+  await search.fill('Oyster Perpetual 3')
+
+  const modelNames = page.getByRole('group', { name: 'Model names' })
+  await expect(modelNames.getByRole('option', { name: /Oyster Perpetual 31/ })).toBeVisible()
+  await expect(modelNames.getByRole('option', { name: /Oyster Perpetual 34/ })).toBeVisible()
+  await expect(modelNames.getByRole('option', { name: /Oyster Perpetual 36/ })).toBeVisible()
+  await expect(page.getByRole('group', { name: 'Collections' })).not.toBeVisible()
+
+  await modelNames.getByRole('option', { name: /Oyster Perpetual 36/ }).click()
+
+  await expect(page.getByRole('listbox')).not.toBeVisible()
+  await expect(search).toHaveValue('Oyster Perpetual 36')
+  await expect(page.getByTestId('watch-grid')).toContainText('Oyster Perpetual 36')
+
+  await search.focus()
+  await expect(page.getByRole('group', { name: 'Collections' })).not.toBeVisible()
+})
+
 test('closes search suggestions after selection and clicking outside', async ({ page }) => {
   await page.goto('en-us/')
 

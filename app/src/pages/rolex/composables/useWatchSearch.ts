@@ -7,6 +7,7 @@ import type {
 } from '@/components/search-combobox/SearchCombobox.vue'
 import {
   DEFAULT_MAX_COLLECTION_SUGGESTIONS,
+  DEFAULT_MAX_MODEL_NAME_SUGGESTIONS,
   DEFAULT_MAX_WATCH_SUGGESTIONS,
   getWatchSearchSuggestions,
   matchesWatchSearch,
@@ -19,7 +20,7 @@ import type { WatchCatalog } from '@/types/watch-data'
 export const DEFAULT_SEARCH_DEBOUNCE_MS = 200
 
 type CollectionLabelResolver = (collectionId: string) => string
-type SearchGroupLabelResolver = (groupId: 'collections' | 'watches') => string
+type SearchGroupLabelResolver = (groupId: 'collections' | 'modelNames' | 'watches') => string
 
 /**
  * Converts a localized model name into a concise collection label by removing
@@ -45,6 +46,7 @@ export interface UseWatchSearchOptions {
   getCollectionLabel: CollectionLabelResolver
   getSearchGroupLabel: SearchGroupLabelResolver
   maxCollectionSuggestions?: number
+  maxModelNameSuggestions?: number
   maxWatchSuggestions?: number
 }
 
@@ -61,6 +63,7 @@ export const useWatchSearch = ({
   getCollectionLabel,
   getSearchGroupLabel,
   maxCollectionSuggestions = DEFAULT_MAX_COLLECTION_SUGGESTIONS,
+  maxModelNameSuggestions = DEFAULT_MAX_MODEL_NAME_SUGGESTIONS,
   maxWatchSuggestions = DEFAULT_MAX_WATCH_SUGGESTIONS,
 }: UseWatchSearchOptions): UseWatchSearchResult => {
   const searchQuery = ref('')
@@ -93,6 +96,7 @@ export const useWatchSearch = ({
       watches: Object.values(catalog.value?.watchesById ?? {}),
       collections: collectionOptions.value,
       maxCollectionSuggestions,
+      maxModelNameSuggestions,
       maxWatchSuggestions,
       query: debouncedSearchQuery.value,
     }),
@@ -101,16 +105,24 @@ export const useWatchSearch = ({
   /**
    * Creates a stable generic-combobox id for a Rolex search suggestion.
    *
-   * @param suggestion - A collection or watch suggestion.
+   * @param suggestion - A collection, model-name, or watch suggestion.
    * @returns A namespaced option id that cannot collide across suggestion types.
    */
-  const getSearchOptionId = (suggestion: WatchSearchSuggestion): string =>
-    suggestion.type === 'collection'
-      ? `collection-${suggestion.id}`
-      : `watch-${suggestion.watch.watchId}`
+  const getSearchOptionId = (suggestion: WatchSearchSuggestion): string => {
+    if (suggestion.type === 'collection') {
+      return `collection-${suggestion.id}`
+    }
+
+    if (suggestion.type === 'modelName') {
+      return `model-name-${suggestion.modelName}`
+    }
+
+    return `watch-${suggestion.watch.watchId}`
+  }
 
   const searchComboboxGroups = computed<SearchComboboxGroup[]>(() => {
     const collectionOptions: SearchComboboxOption[] = []
+    const modelNameOptions: SearchComboboxOption[] = []
     const watchOptions: SearchComboboxOption[] = []
 
     for (const suggestion of searchSuggestions.value) {
@@ -120,6 +132,12 @@ export const useWatchSearch = ({
           label: suggestion.label,
           ...(suggestion.description ? { description: suggestion.description } : {}),
           trailing: String(suggestion.watchCount),
+        })
+      } else if (suggestion.type === 'modelName') {
+        modelNameOptions.push({
+          id: getSearchOptionId(suggestion),
+          label: suggestion.modelName,
+          trailing: String(suggestion.configurationCount),
         })
       } else {
         watchOptions.push({
@@ -131,6 +149,15 @@ export const useWatchSearch = ({
     }
 
     return [
+      ...(modelNameOptions.length > 0
+        ? [
+            {
+              id: 'modelNames',
+              label: getSearchGroupLabel('modelNames'),
+              options: modelNameOptions,
+            },
+          ]
+        : []),
       ...(collectionOptions.length > 0
         ? [
             {

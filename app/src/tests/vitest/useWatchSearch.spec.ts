@@ -5,6 +5,111 @@ import { useWatchSearch } from '@/pages/rolex/composables/useWatchSearch'
 import type { RolexWatch } from '@/types/rolex-watch'
 import type { WatchCatalog } from '@/types/watch-data'
 
+const createOysterPerpetual34Catalog = (): WatchCatalog<RolexWatch> => {
+  const watchesById: Record<string, RolexWatch> = {}
+
+  for (let index = 1; index <= 15; index += 1) {
+    const configurationCode = String(index).padStart(4, '0')
+    const modelReference = `m124200-${configurationCode}`
+
+    watchesById[`rolex:${modelReference}`] = {
+      watchId: `rolex:${modelReference}`,
+      collectionId: 'oyster-perpetual',
+      modelNumber: 'm124200',
+      configurationCode,
+      modelReference,
+      imageUrl: `https://example.com/${modelReference}`,
+      modelName: 'Oyster Perpetual 34',
+      caseDescription: 'Oystersteel',
+      dialDescription: 'Blue',
+      localNicknames: [],
+      price: 100,
+      priceStatus: 'listed',
+    }
+  }
+
+  return {
+    schemaVersion: 1,
+    brandId: 'rolex',
+    collectedAt: '2026-09-09T00:00:00.000Z',
+    watchCount: 15,
+    collections: [{ id: 'oyster-perpetual', watchCount: 62 }],
+    priceMarket: {
+      code: 'TW',
+      currencyCode: 'TWD',
+      priceType: 'tax-include',
+      taxRatePercent: 5,
+    },
+    priceUpdatedAt: '2026-09-09T00:00:00.000Z',
+    watchesById,
+  }
+}
+
+const createOysterPerpetualWatch = (
+  modelName: string,
+  modelNumber: string,
+  configurationCode: string,
+): RolexWatch => {
+  const modelReference = `${modelNumber}-${configurationCode}`
+
+  return {
+    watchId: `rolex:${modelReference}`,
+    collectionId: 'oyster-perpetual',
+    modelNumber,
+    configurationCode,
+    modelReference,
+    imageUrl: `https://example.com/${modelReference}`,
+    modelName,
+    caseDescription: 'Oystersteel',
+    dialDescription: 'Blue',
+    localNicknames: [],
+    price: 100,
+    priceStatus: 'listed',
+  }
+}
+
+const createOysterPerpetualModelNameCatalog = (): WatchCatalog<RolexWatch> => {
+  const baseCatalog = createOysterPerpetual34Catalog()
+  const oysterPerpetual31First = createOysterPerpetualWatch(
+    'Oyster Perpetual 31',
+    'm277200',
+    '0001',
+  )
+  const oysterPerpetual31Second = createOysterPerpetualWatch(
+    'Oyster Perpetual 31',
+    'm277200',
+    '0002',
+  )
+  const oysterPerpetual36First = createOysterPerpetualWatch(
+    'Oyster Perpetual 36',
+    'm126000',
+    '0001',
+  )
+  const oysterPerpetual36Second = createOysterPerpetualWatch(
+    'Oyster Perpetual 36',
+    'm126000',
+    '0002',
+  )
+  const oysterPerpetual36Third = createOysterPerpetualWatch(
+    'Oyster Perpetual 36',
+    'm126000',
+    '0003',
+  )
+
+  return {
+    ...baseCatalog,
+    watchCount: 20,
+    watchesById: {
+      ...baseCatalog.watchesById,
+      [oysterPerpetual31First.watchId]: oysterPerpetual31First,
+      [oysterPerpetual31Second.watchId]: oysterPerpetual31Second,
+      [oysterPerpetual36First.watchId]: oysterPerpetual36First,
+      [oysterPerpetual36Second.watchId]: oysterPerpetual36Second,
+      [oysterPerpetual36Third.watchId]: oysterPerpetual36Third,
+    },
+  }
+}
+
 const catalog: WatchCatalog<RolexWatch> = {
   schemaVersion: 1,
   brandId: 'rolex',
@@ -94,6 +199,145 @@ describe('useWatchSearch', () => {
         ],
       },
     ])
+  })
+
+  it('offers exact model-name configurations without a broader collection option', async () => {
+    vi.useFakeTimers()
+    const {
+      filteredWatches,
+      isSearchPending,
+      searchComboboxGroups,
+      searchQuery,
+      selectSearchSuggestion,
+    } = useWatchSearch({
+      catalog: ref(createOysterPerpetual34Catalog()),
+      getCollectionLabel: () => 'Oyster Perpetual',
+      getSearchGroupLabel: (groupId) => {
+        if (groupId === 'collections') {
+          return 'Collections'
+        }
+
+        return groupId === 'modelNames' ? 'Model names' : 'Watches'
+      },
+    })
+
+    searchQuery.value = 'Oyster Perpetual 34'
+    expect(isSearchPending.value).toBe(true)
+    expect(searchComboboxGroups.value).toEqual([])
+
+    await nextTick()
+    vi.advanceTimersByTime(200)
+    await nextTick()
+
+    expect(isSearchPending.value).toBe(false)
+    expect(filteredWatches.value).toHaveLength(15)
+    expect(searchComboboxGroups.value).toEqual([
+      {
+        id: 'modelNames',
+        label: 'Model names',
+        options: [
+          {
+            id: 'model-name-Oyster Perpetual 34',
+            label: 'Oyster Perpetual 34',
+            trailing: '15',
+          },
+        ],
+      },
+      {
+        id: 'watches',
+        label: 'Watches',
+        options: [
+          {
+            id: 'watch-rolex:m124200-0001',
+            label: 'Oyster Perpetual 34',
+            description: 'm124200-0001',
+          },
+          {
+            id: 'watch-rolex:m124200-0002',
+            label: 'Oyster Perpetual 34',
+            description: 'm124200-0002',
+          },
+          {
+            id: 'watch-rolex:m124200-0003',
+            label: 'Oyster Perpetual 34',
+            description: 'm124200-0003',
+          },
+          {
+            id: 'watch-rolex:m124200-0004',
+            label: 'Oyster Perpetual 34',
+            description: 'm124200-0004',
+          },
+          {
+            id: 'watch-rolex:m124200-0005',
+            label: 'Oyster Perpetual 34',
+            description: 'm124200-0005',
+          },
+        ],
+      },
+    ])
+
+    selectSearchSuggestion('model-name-Oyster Perpetual 34')
+    expect(searchQuery.value).toBe('Oyster Perpetual 34')
+    expect(searchComboboxGroups.value.some((group) => group.id === 'collections')).toBe(false)
+  })
+
+  it('offers partial model-name candidates and filters their configurations after selection', async () => {
+    vi.useFakeTimers()
+    const { filteredWatches, searchComboboxGroups, searchQuery, selectSearchSuggestion } =
+      useWatchSearch({
+        catalog: ref(createOysterPerpetualModelNameCatalog()),
+        getCollectionLabel: () => 'Oyster Perpetual',
+        getSearchGroupLabel: (groupId) => {
+          if (groupId === 'collections') {
+            return 'Collections'
+          }
+
+          return groupId === 'modelNames' ? 'Model names' : 'Watches'
+        },
+      })
+
+    searchQuery.value = 'Oyster Perpetual 3'
+    await nextTick()
+    vi.advanceTimersByTime(200)
+    await nextTick()
+
+    expect(searchComboboxGroups.value[0]).toEqual({
+      id: 'modelNames',
+      label: 'Model names',
+      options: [
+        {
+          id: 'model-name-Oyster Perpetual 31',
+          label: 'Oyster Perpetual 31',
+          trailing: '2',
+        },
+        {
+          id: 'model-name-Oyster Perpetual 34',
+          label: 'Oyster Perpetual 34',
+          trailing: '15',
+        },
+        {
+          id: 'model-name-Oyster Perpetual 36',
+          label: 'Oyster Perpetual 36',
+          trailing: '3',
+        },
+      ],
+    })
+    expect(searchComboboxGroups.value.some((group) => group.id === 'collections')).toBe(false)
+
+    selectSearchSuggestion('model-name-Oyster Perpetual 36')
+    expect(searchQuery.value).toBe('Oyster Perpetual 36')
+
+    await nextTick()
+    vi.advanceTimersByTime(200)
+    await nextTick()
+
+    expect(filteredWatches.value).toHaveLength(3)
+    expect(filteredWatches.value.map((watch) => watch.modelName)).toEqual([
+      'Oyster Perpetual 36',
+      'Oyster Perpetual 36',
+      'Oyster Perpetual 36',
+    ])
+    expect(searchComboboxGroups.value.some((group) => group.id === 'collections')).toBe(false)
   })
 
   it('applies the search term associated with a selected generic option id', async () => {
