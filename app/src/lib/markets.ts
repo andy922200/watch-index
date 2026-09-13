@@ -23,7 +23,7 @@ export interface MarketOption {
 }
 
 export const DEFAULT_MARKET = MarketCode.Taiwan
-export const MARKET_STORAGE_KEY = 'rolex-selected-market'
+export const MARKET_STORAGE_KEY = 'selected-market'
 export const MARKET_QUERY_KEY = 'market_code'
 
 /** 未登錄市場代碼時的退路圖示。 */

@@ -44,7 +44,7 @@ test('uses market_code over the saved market and preserves it across language pa
   page,
 }) => {
   await page.addInitScript(() => {
-    localStorage.setItem('rolex-selected-market', 'TW')
+    localStorage.setItem('selected-market', 'TW')
   })
   await page.goto('en-us/?market_code=JP')
 

@@ -84,7 +84,7 @@ const selectedDisplayCurrency = useStorage<string>(
   },
 )
 const selectedMode = useStorage<PriceComparisonModeId>(
-  'rolex-price-comparison-mode',
+  'price-comparison-mode',
   PriceComparisonMode.Official,
   undefined,
   {
