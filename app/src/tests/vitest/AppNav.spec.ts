@@ -42,6 +42,28 @@ describe('AppNav', () => {
     expect(screen.getByRole('combobox', { name: 'Display currency' }).textContent).toContain('TWD')
   })
 
+  it('keeps readable Donate and icon-only GitHub links in the navbar', () => {
+    render(AppNav, {
+      props: { displayCurrencies: ['TWD', 'USD'] },
+      global: {
+        plugins: [i18n],
+      },
+    })
+
+    const donateLink = screen.getByRole('link', { name: '♡ Donate' })
+    expect(donateLink.getAttribute('href')).toBe('https://ko-fi.com/smlpoints')
+    expect(donateLink.getAttribute('target')).toBe('_blank')
+    expect(donateLink.classList.contains('h-11')).toBe(true)
+
+    const githubLinks = screen.getAllByRole('link', { name: 'GitHub Repo' })
+    expect(githubLinks).toHaveLength(2)
+    for (const githubLink of githubLinks) {
+      expect(githubLink.getAttribute('href')).toBe('https://github.com/andy922200/watch-index')
+      expect(githubLink.getAttribute('target')).toBe('_blank')
+      expect(githubLink.classList.contains('size-11')).toBe(true)
+    }
+  })
+
   it('opens a more menu containing language and theme controls', async () => {
     render(AppNav, {
       props: { displayCurrencies: ['TWD', 'USD'] },
@@ -54,7 +76,8 @@ describe('AppNav', () => {
 
     expect(screen.getByText('Language')).toBeTruthy()
     expect(screen.getByText('Display currency')).toBeTruthy()
-    expect(screen.getByRole('menuitemradio', { name: /TWD/ })).toBeTruthy()
+    expect(screen.getByRole('combobox', { name: 'Market' })).toBeTruthy()
+    expect(screen.getByRole('combobox', { name: 'Display currency' })).toBeTruthy()
     expect(screen.getByRole('menuitemradio', { name: 'English' })).toBeTruthy()
     expect(screen.getByRole('menuitem', { name: 'Switch to dark mode' })).toBeTruthy()
   })

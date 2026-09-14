@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Ellipsis, Moon, Sun } from '@lucide/vue'
+import { GitFork, Menu, Moon, Sun } from '@lucide/vue'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -43,6 +43,9 @@ interface Props {
   displayCurrencies: readonly string[]
   languagePaths?: LanguagePaths
 }
+
+const REPOSITORY_URL = 'https://github.com/andy922200/watch-index'
+const DONATE_URL = 'https://ko-fi.com/smlpoints'
 
 const { t, locale } = useI18n()
 const props = defineProps<Props>()
@@ -95,24 +98,42 @@ const getCurrencyLabel = (currency: string): string => {
 
 <template>
   <nav
-    class="bg-background lg:ring-background sticky top-0 z-50 flex w-full items-center justify-end gap-2 px-4 py-3 lg:ring-2"
+    class="bg-background lg:ring-background sticky top-0 z-50 flex w-full min-w-0 items-center gap-2 px-3 py-3 sm:px-4 lg:ring-2"
   >
-    <Select v-model="market">
-      <SelectTrigger class="w-36" :aria-label="t('site.marketLabel')">
-        <SelectValue :placeholder="t('site.market.taiwan')" />
-      </SelectTrigger>
-      <SelectContent class="max-h-56 w-(--reka-select-trigger-width)" :side-offset="4">
-        <SelectGroup>
-          <SelectItem v-for="option in marketOptions" :key="option.code" :value="option.code">
-            <span class="flex items-center gap-2">
-              <span aria-hidden="true">{{ option.flag }}</span>
-              {{ t(option.labelKey) }}
-            </span>
-          </SelectItem>
-        </SelectGroup>
-      </SelectContent>
-    </Select>
-    <div class="hidden lg:block">
+    <div class="flex min-w-0 flex-1 items-center gap-2">
+      <Button
+        as-child
+        class="bg-foreground text-background hover:bg-foreground/90 size-11 shrink-0 rounded-sm lg:hidden"
+      >
+        <a
+          :href="REPOSITORY_URL"
+          target="_blank"
+          rel="noreferrer"
+          :aria-label="t('site.githubRepo')"
+        >
+          <GitFork aria-hidden="true" />
+        </a>
+      </Button>
+      <span class="min-w-0 truncate text-sm font-semibold sm:text-base">
+        {{ t('site.navBrand') }}
+      </span>
+    </div>
+    <div class="hidden items-center gap-2 lg:flex">
+      <Select v-model="market">
+        <SelectTrigger class="w-36" :aria-label="t('site.marketLabel')">
+          <SelectValue :placeholder="t('site.market.taiwan')" />
+        </SelectTrigger>
+        <SelectContent class="max-h-56 w-(--reka-select-trigger-width)" :side-offset="4">
+          <SelectGroup>
+            <SelectItem v-for="option in marketOptions" :key="option.code" :value="option.code">
+              <span class="flex items-center gap-2">
+                <span aria-hidden="true">{{ option.flag }}</span>
+                {{ t(option.labelKey) }}
+              </span>
+            </SelectItem>
+          </SelectGroup>
+        </SelectContent>
+      </Select>
       <Select v-model="displayCurrency">
         <SelectTrigger class="w-56 whitespace-nowrap" :aria-label="t('site.displayCurrencyLabel')">
           <SelectValue :placeholder="displayCurrency" />
@@ -129,8 +150,6 @@ const getCurrencyLabel = (currency: string): string => {
           </SelectGroup>
         </SelectContent>
       </Select>
-    </div>
-    <div class="hidden lg:block">
       <Select :model-value="locale" @update:model-value="navigateToLocale">
         <SelectTrigger class="w-32" :aria-label="t('site.languageLabel')">
           <SelectValue :placeholder="t(`site.language.${locale}`)" />
@@ -143,36 +162,78 @@ const getCurrencyLabel = (currency: string): string => {
           </SelectGroup>
         </SelectContent>
       </Select>
+      <button
+        type="button"
+        class="border-input bg-card text-foreground focus:ring-ring inline-flex size-11 items-center justify-center rounded-sm border shadow-sm transition outline-none hover:cursor-pointer focus:ring-2"
+        :aria-label="isDark ? t('site.darkMode.switchToLight') : t('site.darkMode.switchToDark')"
+        @click="toggleDark()"
+      >
+        <Sun v-if="isDark" class="size-4" aria-hidden="true" />
+        <Moon v-else class="size-4" aria-hidden="true" />
+      </button>
     </div>
-    <button
-      type="button"
-      class="border-input bg-card text-foreground focus:ring-ring hidden rounded-sm border p-2 shadow-sm transition outline-none hover:cursor-pointer focus:ring-2 lg:inline-flex"
-      :aria-label="isDark ? t('site.darkMode.switchToLight') : t('site.darkMode.switchToDark')"
-      @click="toggleDark()"
+    <Button as-child class="h-11 shrink-0 px-3">
+      <a :href="DONATE_URL" target="_blank" rel="noreferrer">
+        {{ t('site.donate') }}
+      </a>
+    </Button>
+    <Button
+      as-child
+      class="bg-foreground text-background hover:bg-foreground/90 hidden size-11 shrink-0 rounded-sm lg:inline-flex"
     >
-      <Sun v-if="isDark" class="size-4" aria-hidden="true" />
-      <Moon v-else class="size-4" aria-hidden="true" />
-    </button>
+      <a :href="REPOSITORY_URL" target="_blank" rel="noreferrer" :aria-label="t('site.githubRepo')">
+        <GitFork aria-hidden="true" />
+      </a>
+    </Button>
     <DropdownMenu>
       <DropdownMenuTrigger as-child>
-        <Button class="lg:hidden" size="icon" variant="outline" :aria-label="t('site.moreLabel')">
-          <Ellipsis aria-hidden="true" />
+        <Button
+          class="size-11 lg:hidden"
+          size="icon"
+          variant="outline"
+          :aria-label="t('site.moreLabel')"
+        >
+          <Menu aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent class="w-56 lg:hidden" align="end">
+      <DropdownMenuContent class="w-56 max-w-[calc(100vw-1.5rem)] lg:hidden" align="end">
+        <DropdownMenuLabel>{{ t('site.marketLabel') }}</DropdownMenuLabel>
+        <Select v-model="market">
+          <SelectTrigger class="h-11 w-full" :aria-label="t('site.marketLabel')">
+            <SelectValue :placeholder="t('site.market.taiwan')" />
+          </SelectTrigger>
+          <SelectContent class="max-h-56 w-(--reka-select-trigger-width)" :side-offset="4">
+            <SelectGroup>
+              <SelectItem v-for="option in marketOptions" :key="option.code" :value="option.code">
+                <span class="flex items-center gap-2">
+                  <span aria-hidden="true">{{ option.flag }}</span>
+                  {{ t(option.labelKey) }}
+                </span>
+              </SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+        <DropdownMenuSeparator />
         <DropdownMenuLabel>{{ t('site.displayCurrencyLabel') }}</DropdownMenuLabel>
-        <DropdownMenuGroup>
-          <DropdownMenuRadioGroup v-model="displayCurrency">
-            <DropdownMenuRadioItem
-              v-for="currency in props.displayCurrencies"
-              :key="currency"
-              class="cursor-pointer"
-              :value="currency"
-            >
-              {{ getCurrencyLabel(currency) }}
-            </DropdownMenuRadioItem>
-          </DropdownMenuRadioGroup>
-        </DropdownMenuGroup>
+        <Select v-model="displayCurrency">
+          <SelectTrigger
+            class="h-11 w-full whitespace-nowrap"
+            :aria-label="t('site.displayCurrencyLabel')"
+          >
+            <SelectValue :placeholder="displayCurrency" />
+          </SelectTrigger>
+          <SelectContent class="w-(--reka-select-trigger-width) whitespace-nowrap" :side-offset="4">
+            <SelectGroup>
+              <SelectItem
+                v-for="currency in props.displayCurrencies"
+                :key="currency"
+                :value="currency"
+              >
+                {{ getCurrencyLabel(currency) }}
+              </SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
         <DropdownMenuSeparator />
         <DropdownMenuLabel>{{ t('site.languageLabel') }}</DropdownMenuLabel>
         <DropdownMenuGroup>
