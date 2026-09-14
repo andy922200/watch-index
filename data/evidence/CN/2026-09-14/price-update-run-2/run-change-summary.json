@@ -1,0 +1,11 @@
+{
+  "marketCode": "CN",
+  "runId": 2,
+  "collectedAt": "2026-09-14T15:13:08.785Z",
+  "priorHistorySha256": "3fb2eb566f19b7b5c921a1b86b5dbfa5b6d4e495ccf4090234fbe83bf98f9510",
+  "recordCount": 1465,
+  "changedPriceOrStatusCount": 0,
+  "changedWatchIds": [],
+  "unchangedPriceOrStatusCount": 1465,
+  "notes": "新增 collectionRun 以保留本輪官方觀察；相鄰且價格／狀態完全相同的點未重複追加。"
+}

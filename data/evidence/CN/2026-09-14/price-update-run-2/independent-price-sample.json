@@ -1,0 +1,20 @@
+{
+  "marketCode": "CN",
+  "observedAt": "2026-09-14T15:18:11.472Z",
+  "method": "同一真實瀏覽器 session 以官方逐款價格端點取得；此端點與主要 watchgrid 清單端點不同。",
+  "sourceUrl": "https://api.rolex.cn/api/prices/m127334-0001?countryCode=CN&lang=zh-hans",
+  "sample": {
+    "watchId": "rolex:m127334-0001",
+    "modelReference": "m127334-0001",
+    "httpStatus": 200,
+    "rawPrice": "RMB 132,000",
+    "parsedPrice": 132000,
+    "currencyCode": "CNY",
+    "priceNotice": "<p>已含增值税之参照零售价。<br>\n参照价格或会随时修改，而不作另行通知。</p><p>高于参照零售价的劳力士配饰销售，以及任何捆绑销售均不获允許。然而，全球各地的劳力士配饰分销皆由独立特约零售商管理，劳力士无权干预他们与最终客户的关系。</p>",
+    "matchesPrimaryObservation": true
+  },
+  "expandedRepresentativeSample": {
+    "status": "NOT RUN",
+    "reason": "純價格更新；主要端點已完整收集並具終止頁證據。本輪逐市場執行一筆獨立官方價格端點抽查；17 系列代表款與同基本型號雙配置的完整抽查未執行。"
+  }
+}

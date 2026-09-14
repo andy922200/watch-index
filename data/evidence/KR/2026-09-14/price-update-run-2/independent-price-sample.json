@@ -1,0 +1,20 @@
+{
+  "marketCode": "KR",
+  "observedAt": "2026-09-14T15:17:50.533Z",
+  "method": "同一真實瀏覽器 session 以官方逐款價格端點取得；此端點與主要 watchgrid 清單端點不同。",
+  "sourceUrl": "https://www.rolex.com/api/prices/m127334-0001?countryCode=KR&lang=ko",
+  "sample": {
+    "watchId": "rolex:m127334-0001",
+    "modelReference": "m127334-0001",
+    "httpStatus": 200,
+    "rawPrice": "25,310,000 ₩",
+    "parsedPrice": 25310000,
+    "currencyCode": "KRW",
+    "priceNotice": "<p>부가가치세가 포함된 소비자 권장 가격입니다.<br>\n권장 가격은 사전 고지 없이 언제든지 수정∙변경될 수 있습니다.</p><p>롤렉스 액세서리를 판매할 때, 판매 금액이 제시된 권장 가격을 초과하거나 끼워팔기를 하는 것은 허용되지 않습니다. 그러나 롤렉스 액세서리의 유통은 전 세계에 위치한 공식 판매점에 위임되며, 롤렉스는 판매점과 고객 간의 관계에 개입할 권한이 없습니다.</p>",
+    "matchesPrimaryObservation": true
+  },
+  "expandedRepresentativeSample": {
+    "status": "NOT RUN",
+    "reason": "純價格更新；主要端點已完整收集並具終止頁證據。本輪逐市場執行一筆獨立官方價格端點抽查；17 系列代表款與同基本型號雙配置的完整抽查未執行。"
+  }
+}

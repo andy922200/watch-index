@@ -1,0 +1,11 @@
+{
+  "marketCode": "SG",
+  "runId": 2,
+  "collectedAt": "2026-09-14T15:12:29.684Z",
+  "priorHistorySha256": "67ff44a7674ba19975a2fc782c39feaa2f7d59553d40b80c079ded96e5c58804",
+  "recordCount": 1465,
+  "changedPriceOrStatusCount": 0,
+  "changedWatchIds": [],
+  "unchangedPriceOrStatusCount": 1465,
+  "notes": "新增 collectionRun 以保留本輪官方觀察；相鄰且價格／狀態完全相同的點未重複追加。"
+}

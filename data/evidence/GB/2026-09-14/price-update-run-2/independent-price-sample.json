@@ -1,0 +1,20 @@
+{
+  "marketCode": "GB",
+  "observedAt": "2026-09-14T15:17:29.672Z",
+  "method": "同一真實瀏覽器 session 以官方逐款價格端點取得；此端點與主要 watchgrid 清單端點不同。",
+  "sourceUrl": "https://www.rolex.com/api/prices/m127334-0001?countryCode=GB&lang=en",
+  "sample": {
+    "watchId": "rolex:m127334-0001",
+    "modelReference": "m127334-0001",
+    "httpStatus": 200,
+    "rawPrice": "£13,700",
+    "parsedPrice": 13700,
+    "currencyCode": "GBP",
+    "priceNotice": "<p>Suggested retail price inclusive of V.A.T.<br>\nThe suggested price can be modified at any time without notice.</p>\n<p>The sale of Rolex accessories above the suggested retail price, as well as any tie-in sale, is not permitted. However, the distribution of Rolex accessories worldwide is entrusted to independent Official Retailers and Rolex is not authorized to intervene in the relationship between them and the end customer.</p>",
+    "matchesPrimaryObservation": true
+  },
+  "expandedRepresentativeSample": {
+    "status": "NOT RUN",
+    "reason": "純價格更新；主要端點已完整收集並具終止頁證據。本輪逐市場執行一筆獨立官方價格端點抽查；17 系列代表款與同基本型號雙配置的完整抽查未執行。"
+  }
+}

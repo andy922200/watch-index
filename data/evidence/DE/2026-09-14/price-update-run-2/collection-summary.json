@@ -1,0 +1,73 @@
+{
+  "evidenceFormatVersion": 2,
+  "marketCode": "DE",
+  "locale": "de-DE",
+  "salesRegion": "Germany",
+  "mode": "price-only",
+  "officialEntryUrl": "https://www.rolex.com/de-de/watches/find-rolex?group=0",
+  "startedAt": "2026-09-14T15:11:18.769Z",
+  "completedAt": "2026-09-14T15:11:18.769Z",
+  "status": "completed",
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "available",
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "PASS",
+    "fallbackTool": "curl",
+    "fallbackResult": "FAIL: direct request received Akamai HTTP 403; this is recorded as an access limitation and was not treated as a catalog result.",
+    "notes": "以真實瀏覽器頁面同源 fetch() 取得官方結構化來源；未保存 cookie、token、授權標頭或個資。"
+  },
+  "primaryCollectionPath": {
+    "type": "official structured endpoint",
+    "endpoint": "/api/catalog/watchgrid?language=de&firstResult=0&numberOfResults=2000&grid=all&countryCode=DE&group=%280%29",
+    "responseFields": {
+      "modelReference": "rmc",
+      "rawPrice": "formattedPrice",
+      "parsedPrice": "price",
+      "listingStatus": "official endpoint result with public price"
+    },
+    "pagination": "以 firstResult offset 分頁；主請求 numberOfResults=2000 回傳全部結果，並以 firstResult=totalCount 的後續請求驗證終止。",
+    "httpStatus": 200,
+    "totalCount": 1465,
+    "resultCount": 1465,
+    "terminalPage": {
+      "endpoint": "/api/catalog/watchgrid?language=de&firstResult=1465&numberOfResults=2000&grid=all&countryCode=DE&group=%280%29",
+      "httpStatus": 200,
+      "totalCount": 1465,
+      "resultCount": 0
+    },
+    "structuredUniqueModelReferenceCount": 1465
+  },
+  "counts": {
+    "rawConfigurationCount": 1465,
+    "uniqueModelReferenceCount": 1465,
+    "duplicateCount": 0,
+    "conflictCount": 0,
+    "listedWithPublicPriceCount": 1465,
+    "priceUnavailableCount": 0,
+    "confirmedNotListedCount": 0,
+    "parseFailureCount": 0
+  },
+  "catalogReconciliation": {
+    "priorCatalogUniqueCount": 1465,
+    "marketUniqueConfigurationCount": 1465,
+    "intersectionCount": 1465,
+    "newConfigurationsCount": 0,
+    "catalogOnlyCount": 0,
+    "resultingCatalogCount": 1465,
+    "action": "No catalog write: pure-price source set exactly matches the existing catalog."
+  },
+  "nicknameResearch": {
+    "status": "NOT RUN",
+    "scope": "price-only",
+    "languages": [],
+    "queries": [],
+    "sourcesReviewed": 0,
+    "candidateCount": 0,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [],
+    "notes": "純價格更新範圍外；既有市場俗稱未變更。"
+  }
+}

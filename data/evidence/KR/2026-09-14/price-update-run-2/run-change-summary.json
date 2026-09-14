@@ -1,0 +1,11 @@
+{
+  "marketCode": "KR",
+  "runId": 2,
+  "collectedAt": "2026-09-14T15:12:24.929Z",
+  "priorHistorySha256": "f4003df013bbbe779e3ff305cf33405139dbfbb02fd84760e7c6e8752e6d03cb",
+  "recordCount": 1465,
+  "changedPriceOrStatusCount": 0,
+  "changedWatchIds": [],
+  "unchangedPriceOrStatusCount": 1465,
+  "notes": "新增 collectionRun 以保留本輪官方觀察；相鄰且價格／狀態完全相同的點未重複追加。"
+}

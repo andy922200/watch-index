@@ -1,0 +1,11 @@
+{
+  "marketCode": "GB",
+  "runId": 2,
+  "collectedAt": "2026-09-14T15:11:52.145Z",
+  "priorHistorySha256": "5356cc517309ae6d4ebb9ec0ef4b2dc73d0fc3b8107af1dc08923004bef20f3e",
+  "recordCount": 1465,
+  "changedPriceOrStatusCount": 0,
+  "changedWatchIds": [],
+  "unchangedPriceOrStatusCount": 1465,
+  "notes": "新增 collectionRun 以保留本輪官方觀察；相鄰且價格／狀態完全相同的點未重複追加。"
+}

@@ -1,0 +1,20 @@
+{
+  "marketCode": "JP",
+  "observedAt": "2026-09-14T15:17:48.119Z",
+  "method": "同一真實瀏覽器 session 以官方逐款價格端點取得；此端點與主要 watchgrid 清單端點不同。",
+  "sourceUrl": "https://www.rolex.com/api/prices/m127334-0001?countryCode=JP&lang=ja",
+  "sample": {
+    "watchId": "rolex:m127334-0001",
+    "modelReference": "m127334-0001",
+    "httpStatus": 200,
+    "rawPrice": "¥ 2,433,200",
+    "parsedPrice": 2433200,
+    "currencyCode": "JPY",
+    "priceNotice": "<p>希望小売価格（税込）。<br>\n価格は予告なく変更することがあります。</p><p>ロレックスのアクセサリーのメーカー希望小売価格以上での販売、および抱き合わせ販売は禁止しています。しかしながら、ロレックスのアクセサリーの販売は正規品販売店に委ねられており、ロレックスは正規品販売店とお客様との間に介入する権限はありません。</p>",
+    "matchesPrimaryObservation": true
+  },
+  "expandedRepresentativeSample": {
+    "status": "NOT RUN",
+    "reason": "純價格更新；主要端點已完整收集並具終止頁證據。本輪逐市場執行一筆獨立官方價格端點抽查；17 系列代表款與同基本型號雙配置的完整抽查未執行。"
+  }
+}

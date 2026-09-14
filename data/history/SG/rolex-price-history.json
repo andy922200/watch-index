@@ -11,6 +11,11 @@
       "runId": 1,
       "collectedAt": "2026-09-01T22:29:49+08:00",
       "recordCount": 1465
+    },
+    {
+      "runId": 2,
+      "collectedAt": "2026-09-14T15:12:29.684Z",
+      "recordCount": 1465
     }
   ],
   "priceSeries": {

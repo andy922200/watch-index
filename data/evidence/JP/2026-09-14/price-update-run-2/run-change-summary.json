@@ -1,0 +1,11 @@
+{
+  "marketCode": "JP",
+  "runId": 2,
+  "collectedAt": "2026-09-14T15:12:06.042Z",
+  "priorHistorySha256": "6f0edfa21713b46dba5f8c4155c93fa56dd2d2b32bf1c09e8d054ed759de1bbc",
+  "recordCount": 1465,
+  "changedPriceOrStatusCount": 0,
+  "changedWatchIds": [],
+  "unchangedPriceOrStatusCount": 1465,
+  "notes": "新增 collectionRun 以保留本輪官方觀察；相鄰且價格／狀態完全相同的點未重複追加。"
+}

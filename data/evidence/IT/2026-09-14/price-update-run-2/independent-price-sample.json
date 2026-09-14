@@ -1,0 +1,20 @@
+{
+  "marketCode": "IT",
+  "observedAt": "2026-09-14T15:17:45.775Z",
+  "method": "同一真實瀏覽器 session 以官方逐款價格端點取得；此端點與主要 watchgrid 清單端點不同。",
+  "sourceUrl": "https://www.rolex.com/api/prices/m127334-0001?countryCode=IT&lang=it",
+  "sample": {
+    "watchId": "rolex:m127334-0001",
+    "modelReference": "m127334-0001",
+    "httpStatus": 200,
+    "rawPrice": "€ 16.200",
+    "parsedPrice": 16200,
+    "currencyCode": "EUR",
+    "priceNotice": "<p>Prezzo al dettaglio suggerito, IVA inclusa.<br>\nIl prezzo suggerito può essere modificato in qualsiasi momento e senza preavviso.</p><p>La vendita di accessori Rolex a un prezzo al dettaglio superiore a quello suggerito, così come qualsiasi altra vendita correlata, non è consentita. Tuttavia, la distribuzione degli accessori Rolex in tutto il mondo è affidata a rivenditori autorizzati indipendenti, e Rolex non ha la facoltà di intervenire nella relazione fra questi e il cliente finale.</p>",
+    "matchesPrimaryObservation": true
+  },
+  "expandedRepresentativeSample": {
+    "status": "NOT RUN",
+    "reason": "純價格更新；主要端點已完整收集並具終止頁證據。本輪逐市場執行一筆獨立官方價格端點抽查；17 系列代表款與同基本型號雙配置的完整抽查未執行。"
+  }
+}

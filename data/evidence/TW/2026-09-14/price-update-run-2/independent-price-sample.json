@@ -1,0 +1,20 @@
+{
+  "marketCode": "TW",
+  "observedAt": "2026-09-14T15:17:55.066Z",
+  "method": "同一真實瀏覽器 session 以官方逐款價格端點取得；此端點與主要 watchgrid 清單端點不同。",
+  "sourceUrl": "https://www.rolex.com/api/prices/m127334-0001?countryCode=TW&lang=zh-hant",
+  "sample": {
+    "watchId": "rolex:m127334-0001",
+    "modelReference": "m127334-0001",
+    "httpStatus": 200,
+    "rawPrice": "NTD 556,000",
+    "parsedPrice": 556000,
+    "currencyCode": "TWD",
+    "priceNotice": "<p>已含增值税之參照零售價。<br>\n參照價格或會隨時修改，而不作另行通知。</p><p>高於參照零售價的勞力士配飾銷售，以及任何綑綁銷售均不獲允許。然而，全球各地的勞力士配飾分銷皆由獨立特約零售商管理，勞力士無權干預他們與顧客的關係。</p>",
+    "matchesPrimaryObservation": true
+  },
+  "expandedRepresentativeSample": {
+    "status": "NOT RUN",
+    "reason": "純價格更新；主要端點已完整收集並具終止頁證據。本輪逐市場執行一筆獨立官方價格端點抽查；17 系列代表款與同基本型號雙配置的完整抽查未執行。"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "evidenceFormatVersion": 2,
+  "marketCode": "FR",
+  "validationCompletedAt": "2026-09-14T15:20:53.608Z",
+  "evidencePath": "data/evidence/FR/2026-09-14/price-update-run-2",
+  "fiveLayerValidation": {
+    "syntaxAndSchema": {
+      "status": "NOT RUN",
+      "strictJson": {
+        "status": "PASS",
+        "method": "Python json.loads with duplicate-key and invalid-constant rejection",
+        "scope": "正式資料、Schema 與本輪 evidence；全域檢查於統籌階段執行。"
+      },
+      "jsonSchema": {
+        "status": "NOT RUN",
+        "reason": "環境沒有已安裝的 Draft 2020-12 JSON Schema validator；未經授權未安裝依賴。"
+      }
+    },
+    "crossFileConsistency": {
+      "status": "PASS",
+      "catalogWatchCount": 1465,
+      "marketWatchCount": 1465,
+      "historyPriceSeriesCount": 1465,
+      "evidenceObservationCount": 1465,
+      "catalogMarketDifferenceCount": 0,
+      "marketHistoryDifferenceCount": 0,
+      "runId": 2,
+      "runRecordCount": 1465
+    },
+    "sourceReconciliation": {
+      "status": "PASS",
+      "primaryObservationCount": 1465,
+      "primarySourceMismatchCount": 0,
+      "priceParseFailureCount": 0,
+      "independentPriceEndpointSample": {
+        "status": "PASS",
+        "modelReference": "m127334-0001",
+        "sourceUrl": "https://www.rolex.com/api/prices/m127334-0001?countryCode=FR&lang=fr",
+        "primaryPrice": 15950,
+        "independentPrice": 15950,
+        "rawPriceMatch": true
+      }
+    },
+    "websiteCompleteness": {
+      "status": "PASS",
+      "primaryHttpStatus": 200,
+      "endpointTotalCount": 1465,
+      "endpointUniqueConfigurationCount": 1465,
+      "terminalPage": {
+        "status": "PASS",
+        "endpoint": "/api/catalog/watchgrid?language=fr&firstResult=1465&numberOfResults=2000&grid=all&countryCode=FR&group=%280%29",
+        "httpStatus": 200,
+        "totalCount": 1465,
+        "resultCount": 0
+      },
+      "renderedUiFullEnumeration": {
+        "status": "NOT RUN",
+        "reason": "主要完整性由官方結構化端點的 totalCount、全量結果與 terminal empty page 建立；未逐次操作 rendered UI 的載入更多。"
+      }
+    },
+    "changeSafety": {
+      "status": "PASS",
+      "oldHistoryCapturedSha256": "d969466e789222927decbdcbda0594ac5e97fe3393e7d87ef3dec3310750036f",
+      "oldPricePointsPreserved": true,
+      "collectionRunAppended": true,
+      "appendedPriceOrStatusPointCount": 0,
+      "unchangedPriceOrStatusCount": 1465,
+      "catalogChanged": false,
+      "marketFileChanged": false,
+      "schemaChanged": false,
+      "humanDocumentation": {
+        "status": "PASS",
+        "action": "README.md 與 watch-data-collection-guide.md 的長期範圍、13 市場與資料結構描述仍正確；本輪為單次價格觀察且無價格變動，因此不改寫人類文件。"
+      }
+    }
+  },
+  "evidenceTraceability": {
+    "status": "PASS",
+    "observationsSha256": "ade06d95ee9ea67c936e397ba3d030dc1904fa0596a94de36c443a2cd9958acf",
+    "acceptedObservations": 1465,
+    "observationsWithMatchingLatestPrice": 1465,
+    "sensitiveDataScan": {
+      "status": "PASS",
+      "matchedSensitiveValueCount": 0,
+      "notes": "本輪 evidence 未保存 cookie、token、authorization header、session 值或個資。"
+    }
+  },
+  "nicknameResearch": {
+    "status": "NOT RUN",
+    "scope": "price-only",
+    "notes": "純價格更新範圍外；未將未研究誤述為查無結果。"
+  }
+}
