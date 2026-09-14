@@ -23,6 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { useCloseOnResize } from '@/composables/useCloseOnResize'
 import { useDarkMode } from '@/composables/useDarkMode'
 import { DEFAULT_DISPLAY_CURRENCY } from '@/lib/displayCurrencies'
 import { DEFAULT_MARKET, type MarketCode, marketOptions } from '@/lib/markets'
@@ -88,6 +89,12 @@ const navigateToLocale = (
 }
 
 const { isDark, toggleDark } = useDarkMode()
+const { isOpen: isMoreMenuOpen } = useCloseOnResize()
+const { isOpen: isDesktopMarketSelectOpen } = useCloseOnResize()
+const { isOpen: isDesktopDisplayCurrencySelectOpen } = useCloseOnResize()
+const { isOpen: isDesktopLanguageSelectOpen } = useCloseOnResize()
+const { isOpen: isMobileMarketSelectOpen } = useCloseOnResize()
+const { isOpen: isMobileDisplayCurrencySelectOpen } = useCloseOnResize()
 
 const getCurrencyLabel = (currency: string): string => {
   const currencyName = new Intl.DisplayNames([locale.value], { type: 'currency' }).of(currency)
@@ -114,12 +121,9 @@ const getCurrencyLabel = (currency: string): string => {
           <GitFork aria-hidden="true" />
         </a>
       </Button>
-      <span class="min-w-0 truncate text-sm font-semibold sm:text-base">
-        {{ t('site.navBrand') }}
-      </span>
     </div>
     <div class="hidden items-center gap-2 lg:flex">
-      <Select v-model="market">
+      <Select v-model:open="isDesktopMarketSelectOpen" v-model="market">
         <SelectTrigger class="w-36" :aria-label="t('site.marketLabel')">
           <SelectValue :placeholder="t('site.market.taiwan')" />
         </SelectTrigger>
@@ -134,7 +138,7 @@ const getCurrencyLabel = (currency: string): string => {
           </SelectGroup>
         </SelectContent>
       </Select>
-      <Select v-model="displayCurrency">
+      <Select v-model:open="isDesktopDisplayCurrencySelectOpen" v-model="displayCurrency">
         <SelectTrigger class="w-56 whitespace-nowrap" :aria-label="t('site.displayCurrencyLabel')">
           <SelectValue :placeholder="displayCurrency" />
         </SelectTrigger>
@@ -150,7 +154,11 @@ const getCurrencyLabel = (currency: string): string => {
           </SelectGroup>
         </SelectContent>
       </Select>
-      <Select :model-value="locale" @update:model-value="navigateToLocale">
+      <Select
+        v-model:open="isDesktopLanguageSelectOpen"
+        :model-value="locale"
+        @update:model-value="navigateToLocale"
+      >
         <SelectTrigger class="w-32" :aria-label="t('site.languageLabel')">
           <SelectValue :placeholder="t(`site.language.${locale}`)" />
         </SelectTrigger>
@@ -185,7 +193,7 @@ const getCurrencyLabel = (currency: string): string => {
         <GitFork aria-hidden="true" />
       </a>
     </Button>
-    <DropdownMenu>
+    <DropdownMenu v-model:open="isMoreMenuOpen">
       <DropdownMenuTrigger as-child>
         <Button
           class="size-11 lg:hidden"
@@ -198,7 +206,7 @@ const getCurrencyLabel = (currency: string): string => {
       </DropdownMenuTrigger>
       <DropdownMenuContent class="w-56 max-w-[calc(100vw-1.5rem)] lg:hidden" align="end">
         <DropdownMenuLabel>{{ t('site.marketLabel') }}</DropdownMenuLabel>
-        <Select v-model="market">
+        <Select v-model:open="isMobileMarketSelectOpen" v-model="market">
           <SelectTrigger class="h-11 w-full" :aria-label="t('site.marketLabel')">
             <SelectValue :placeholder="t('site.market.taiwan')" />
           </SelectTrigger>
@@ -215,7 +223,7 @@ const getCurrencyLabel = (currency: string): string => {
         </Select>
         <DropdownMenuSeparator />
         <DropdownMenuLabel>{{ t('site.displayCurrencyLabel') }}</DropdownMenuLabel>
-        <Select v-model="displayCurrency">
+        <Select v-model:open="isMobileDisplayCurrencySelectOpen" v-model="displayCurrency">
           <SelectTrigger
             class="h-11 w-full whitespace-nowrap"
             :aria-label="t('site.displayCurrencyLabel')"

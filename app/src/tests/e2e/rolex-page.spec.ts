@@ -129,6 +129,25 @@ test('uses the more menu for language and theme controls below the desktop break
   await expect(page.getByRole('menuitem', { name: 'Switch to dark mode' })).toBeVisible()
 })
 
+test('closes navigation popovers when the viewport is resized', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 })
+  await page.goto('en-us/')
+
+  const marketSelect = page.getByRole('combobox', { name: 'Market' })
+  await marketSelect.click()
+  await expect(page.getByRole('option', { name: 'Japan' })).toBeVisible()
+
+  await page.setViewportSize({ width: 1279, height: 900 })
+  await expect(page.getByRole('option', { name: 'Japan' })).not.toBeVisible()
+
+  const displayCurrencySelect = page.getByRole('combobox', { name: 'Display currency' })
+  await displayCurrencySelect.click()
+  await expect(page.getByRole('option', { name: 'Japanese yen (JPY)' })).toBeVisible()
+
+  await page.setViewportSize({ width: 1278, height: 900 })
+  await expect(page.getByRole('option', { name: 'Japanese yen (JPY)' })).not.toBeVisible()
+})
+
 test('keeps the selected market when changing the page language', async ({ page }) => {
   await page.goto('en-us/')
 

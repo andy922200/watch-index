@@ -82,6 +82,23 @@ describe('AppNav', () => {
     expect(screen.getByRole('menuitem', { name: 'Switch to dark mode' })).toBeTruthy()
   })
 
+  it('closes the more menu when the viewport is resized', async () => {
+    render(AppNav, {
+      props: { displayCurrencies: ['TWD', 'USD'] },
+      global: {
+        plugins: [i18n],
+      },
+    })
+
+    const moreButton = screen.getByRole('button', { name: 'More options' })
+    await fireEvent.click(moreButton)
+    expect(screen.getByText('Language')).toBeTruthy()
+
+    await fireEvent(window, new Event('resize'))
+
+    expect(moreButton.getAttribute('aria-expanded')).toBe('false')
+  })
+
   it('toggles the dark class on <html> and persists the preference', async () => {
     render(AppNav, {
       props: { displayCurrencies: ['TWD', 'USD'] },
