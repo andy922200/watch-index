@@ -1,6 +1,6 @@
-import { defineComponent } from 'vue'
 import { fireEvent, render, screen } from '@testing-library/vue'
 import { describe, expect, it } from 'vitest'
+import { defineComponent } from 'vue'
 
 import { useCloseOnResize } from '@/composables/useCloseOnResize'
 

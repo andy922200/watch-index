@@ -133,7 +133,7 @@ onClickOutside(searchRoot, closeSuggestions)
         :aria-expanded="isOpen && !isPending"
         :placeholder="placeholder"
         autocomplete="off"
-        class="bg-background focus-visible:ring-ring h-10 w-full rounded-md border py-2 pr-10 pl-9 text-sm shadow-sm outline-none focus-visible:ring-2"
+        class="bg-background focus-visible:ring-ring h-10 w-full rounded-md border py-2 pr-10 pl-9 text-base shadow-sm outline-none focus-visible:ring-2 sm:text-sm"
         @focus="openSuggestions"
         @keydown="handleKeydown"
       />
