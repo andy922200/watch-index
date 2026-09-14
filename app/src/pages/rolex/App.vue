@@ -343,12 +343,19 @@ watchSource(selectedPriceSort, () => {
           class="h-full gap-0 overflow-hidden py-0"
         >
           <CardContent class="p-0">
-            <img
-              class="aspect-square w-full object-contain"
-              :src="watch.imageUrl"
-              :alt="getWatchImageAlt(watch)"
-              loading="lazy"
-            />
+            <button
+              type="button"
+              class="block aspect-square w-full cursor-pointer"
+              :aria-label="t('site.watchList.viewDetails')"
+              @click="openWatchDetails(watch)"
+            >
+              <img
+                class="aspect-square w-full object-contain"
+                :src="watch.imageUrl"
+                :alt="getWatchImageAlt(watch)"
+                loading="lazy"
+              />
+            </button>
           </CardContent>
           <CardHeader class="flex-1 px-4 py-4">
             <CardTitle class="line-clamp-2 h-11 text-base leading-snug">{{
