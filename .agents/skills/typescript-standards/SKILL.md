@@ -24,6 +24,11 @@ description: >-
 - 函式需要傳遞超過 3 個值時，改用具明確型別的 options 物件傳參，讓呼叫端能辨識各值的語意；3 個以下的位置參數可依可讀性使用。
 - `MAX_COLLECTION_SUGGESTIONS`、`MAX_WATCH_SUGGESTIONS` 等可由使用者調整的數值，不得只寫成不可覆寫的內部常數；應由外部透過 Props、options 或設定介面傳入，並在元件、函式或 Composable 內提供合理預設值。
 
+## Composable 狀態與操作
+
+- 多個互動元件若僅共享同一個事件（例如 `resize`），但各自的開啟／關閉狀態彼此獨立，Composable 的每次呼叫應只管理一個元件狀態；不要將多個元件 state 陣列傳入單一 instance 集中管理。
+- Composable 應以具型別的物件同時公開狀態與可操作方法（例如 `{ isOpen, close }`），讓呼叫端能綁定狀態，並在事件以外的情境明確執行操作；不要只回傳裸 `Ref`。
+
 ## 命名
 
 | 類型 | 規則 | 範例 |
