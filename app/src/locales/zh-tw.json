@@ -93,7 +93,7 @@
       "pageTitle": "腕錶行情比較",
       "title": "{modelName} 行情比較",
       "heading": "以 {marketName} 為基準的跨市場官方價格比較",
-      "modelReference": "型號：{reference}",
+      "watchReference": "型號：{reference}",
       "officialPrice": "官方定價",
       "refundEstimate": "退稅估算",
       "modeDescription": "退稅估算會依市場稅別、可驗證政策，以及您設定的稅務居住地顯示未稅參考價或含稅價格；不代表一定能取得退款。",

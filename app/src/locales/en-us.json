@@ -93,7 +93,7 @@
       "pageTitle": "Watch market comparison",
       "title": "{modelName} market comparison",
       "heading": "Official price comparison using {marketName} as the baseline",
-      "modelReference": "Reference: {reference}",
+      "watchReference": "Reference: {reference}",
       "officialPrice": "Official price",
       "refundEstimate": "Refund estimate",
       "modeDescription": "Refund estimates use each market's tax treatment, verified policy when available, and your declared tax residency to show either a pre-tax estimate or the tax-inclusive price. They do not guarantee a refund.",

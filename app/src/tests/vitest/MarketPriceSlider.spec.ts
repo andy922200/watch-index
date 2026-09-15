@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/vue'
 import { describe, expect, it } from 'vitest'
 
-import MarketPriceSlider from '@/pages/rolex/price-compare/components/MarketPriceSlider.vue'
+import MarketPriceSlider from '@/features/price-compare/components/MarketPriceSlider.vue'
 
 describe('MarketPriceSlider', () => {
   it('renders a left-side green fill for a negative difference', () => {

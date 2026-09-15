@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 
 import MarketPriceRow, {
   type MarketPriceRowView,
-} from '@/pages/rolex/price-compare/components/MarketPriceRow.vue'
+} from '@/features/price-compare/components/MarketPriceRow.vue'
 import { i18n, Locale } from '@/plugins/i18n'
 
 const baseRow: MarketPriceRowView = {
