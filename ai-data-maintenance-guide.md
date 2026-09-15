@@ -6,7 +6,7 @@
 
 ## 適用範圍與硬性限制
 
-- 目前正式資料只涵蓋勞力士，包含 AT、CH、CN、DE、FR、GB、HK、IT、JP、KR、SG、TW、US 共 13 個市場。
+- 目前正式資料只涵蓋勞力士，包含 AT、CH、CN、DE、ES、FR、GB、HK、IT、JP、KR、SG、TH、TW、US 共 15 個市場。
 - 專案日後會支援其他品牌；不得假定現有的型號格式、檔名、`modelReference` 規則或前端欄位仍適用。
 - 未經明確授權，不得修改 Schema、另建正式格式、安裝依賴、推送遠端或繞過網站存取限制。
 - 面向人類的文件一律使用繁體中文。
@@ -17,7 +17,7 @@
 
 1. 本文件、`README.md`、`watch-data-collection-guide.md`。
 2. `data/schemas/` 的實際 JSON Schema，包含旅客退稅政策 Schema。
-3. `data/catalog/rolex-catalog.json`，以及目標市場的 `data/markets/`、`data/history/`、`data/evidence/`；維護退稅政策時另讀取 `data/traveler-refund-policies.json`。
+3. `data/catalog/rolex-catalog.json`，以及目標市場的 `data/markets/`、`data/history/`、`data/evidence/`；維護退稅政策，或執行新增市場／全市場重新考證任務時，另讀取 `data/traveler-refund-policies.json` 與 `data/schemas/traveler-refund-policy.schema.json`。
 
 保護使用者既有未提交修改。既有筆數與歷史結果只可用於回歸檢查，不能作為本次收集的目標或停止條件。
 
@@ -26,7 +26,7 @@
 | 任務 | 必做項目 | 不可做的事 |
 | --- | --- | --- |
 | 純價格更新 | 重新取得列出狀態與價格、建立 evidence、追加新 run、驗證變動 | 覆寫舊價格點、清空既有俗稱 |
-| 全市場重新考證／新增市場 | 完整收集市場文字、商品網址、新款標示、價格與俗稱研究 | 以舊筆數宣稱完整、跳過停止證據 |
+| 全市場重新考證／新增市場 | 完整收集市場文字、商品網址、新款標示、價格與俗稱研究；並依「旅客退稅政策」章節的來源與 evidence 規則，為該市場建立或明確標示缺席 `data/traveler-refund-policies.json` 記錄 | 以舊筆數宣稱完整、跳過停止證據、略過該市場的旅客退稅政策查核 |
 | 旅客退稅政策更新 | 以政府、海關、官方退稅作業者或可驗證經銷商來源先建立 evidence，再更新獨立政策檔 | 用名目稅率推測可退資格、店家參與或實際退款金額 |
 | 新增品牌 | 先確認識別碼、Schema、檔案布局、前端型別與產生流程 | 把新品牌硬套進既有勞力士契約 |
 
@@ -113,6 +113,8 @@ JSON 或 Schema 通過，只代表結構合法，不代表來源正確或收集�
 
 多市場任務採市場隔離：每個工作單元只處理一個市場的來源、evidence、market 與 history 檔。只有統籌者可以合併 `data/catalog/rolex-catalog.json`，並在所有市場工作完成後執行跨檔驗證。單一市場工作不得覆寫 catalog，也不得因未觀察到既有配置就刪除它。
 
+單一市場工作單元不得讀寫任何非自己負責市場的 `data/markets/`、`data/history/[marketCode]/`、`data/evidence/[marketCode]/` 檔案，也不得代替其他工作單元完成其任務——即使透過 `git status` 或其他方式觀察到其他工作單元尚未完成、已失敗、或已產出可用結果，也不得基於這個觀察去讀取、重建、覆寫其他市場的檔案，或代為合併 catalog。發現其他工作單元異常時，只能在自己的 evidence 或回報中如實記錄觀察到的狀況，並交由統籌者處理，不得自行介入代勞。單一市場工作單元也不得再自行派生其他工作單元（例如巢狀 fork／subagent）來處理原本不屬於自己範圍的市場；若任務要求多市場，應由統籌者逐一派工，而非由某個工作單元自行擴張範圍。違反市場隔離即視為交付失敗，即使代勞產出的資料內容本身正確也一樣，因為這會破壞「每個市場一個可信作者」的可追溯性。
+
 令 `C` 為既有 catalog 的完整配置集合，`M` 為本次已驗證的市場集合：
 
 - `C ∩ M`：核對既有配置，不重複加入。
@@ -134,6 +136,8 @@ JSON 或 Schema 通過，只代表結構合法，不代表來源正確或收集�
 
 「市場有消費稅」不等於「腕錶購買者可以退稅」。名目稅率只能讓前端在沒有已驗證政策時以 `含稅價 ÷ (1 + 稅率)` 顯示未稅參考價，不能被寫成旅客資格、零售商參與或保證退款。沒有可靠政策時保持市場記錄缺席；不得為了讓比較頁完整而補造 unavailable／available 結論、費率、門檻或來源。
 
+新增市場或對某市場執行全市場重新考證時，必須同時完成該市場的旅客退稅政策查核，並依查核結果在 `data/traveler-refund-policies.json` 新增或更新該市場的記錄（`policies` 陣列以 `marketCode` 字母序排列，插入新市場時比照既有順序，不做無關的整檔重排）：查到可信一手來源就記錄 `availability: "available"` 或 `"unavailable"` 並附上 `sources`／`evidencePath`；找不到可信一手來源時，不得補造結論，維持該市場記錄缺席即可，並在回報中說明未完成原因。查核與其 evidence（`data/evidence/[marketCode]/[YYYY-MM-DD]/traveler-refund-policy.json`）比照既有市場（如 `data/evidence/AT/2026-09-12/traveler-refund-policy.json`）的格式與查核標準辦理，不可與該市場的價格／目錄收集混為同一份 evidence 檔。純價格更新任務不需要重跑此查核。
+
 ## 完整性停止條件與抽查
 
 以結構化來源收集時，必須同時具備最後一頁／空下一頁／null cursor／`hasNextPage: false` 等已驗證終止訊號、最後批次成功、沒有未解決的下一頁、唯一配置不再增加，並釐清官方 UI 總數的統計口徑。
@@ -146,7 +150,7 @@ JSON 或 Schema 通過，只代表結構合法，不代表來源正確或收集�
 
 交付前確認正式 JSON、evidence 與必要的人類文件都已實際保存。摘要必須包含：市場／語系與官方 URL、觀察開始與完成時間、收集路徑與停止證據、原始與唯一配置數、差集、價格狀態、runId 與變動點、稅制、五層驗證、抽查、evidence 位置、俗稱研究、保護範圍及限制。
 
-以下任一情況均不得宣稱完整完成或整體 PASS：README 的長期描述已受影響卻未同步；需要 network discovery 卻未留下實際嘗試與限制；尚有下一頁；價格解析失敗；證據無法回對；未執行的俗稱研究被說成「查無結果」；或舊歷史被覆寫。
+以下任一情況均不得宣稱完整完成或整體 PASS：README 的長期描述已受影響卻未同步；需要 network discovery 卻未留下實際嘗試與限制；尚有下一頁；價格解析失敗；證據無法回對；未執行的俗稱研究被說成「查無結果」；舊歷史被覆寫；或新增市場／全市場重新考證任務略過旅客退稅政策查核，且未在回報中說明原因。
 
 驗證必須能攔下重複完整配置、孤兒 market／history 型號、不存在的 runId、`listed` 搭配 `null` 或字串價格、冗餘相鄰價格點、非零小數價格、未完成分頁、重複 JSON key、非法 JSON 常數與未經驗證的跨市場價格推算。驗證腳本是檢查工具，不能用來生成或修飾資料以通過檢查。
 
@@ -354,3 +358,5 @@ for (const file of fs.readdirSync('data/markets').filter(name => name.endsWith('
 - [ ] 未修改、刪除或壓縮既有 evidence；本次結果與先前不一致時保留原記錄，必要時另建更正記錄。
 - [ ] 已完成 Schema、跨檔、來源回對、完整性與變更安全驗證；未執行項目已標記 `NOT RUN`。
 - [ ] 已完成獨立官方抽查，並檢查 README／人類指南是否需要同步。
+- [ ] 新增市場或全市場重新考證時，已查核該市場的旅客退稅政策並更新 `data/traveler-refund-policies.json`（或在查無可信來源時，明確記錄缺席原因，未補造結論）。
+- [ ] 多市場任務中，未讀寫任何非自己負責市場的 market／history／evidence 檔案，未代替其他工作單元完成任務或合併 catalog，也未自行派生其他工作單元處理範圍外的市場。

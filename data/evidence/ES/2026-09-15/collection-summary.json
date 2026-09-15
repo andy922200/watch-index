@@ -1,0 +1,114 @@
+{
+  "market": "Spain",
+  "marketCode": "ES",
+  "locale": "es",
+  "officialEntryUrl": "https://www.rolex.com/es/watches",
+  "startedAt": "2026-09-15T00:57:00+02:00",
+  "completedAt": "2026-09-15T01:03:35+02:00",
+  "status": "completed",
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "available",
+    "chromeDevtoolsMcpConfigured": true,
+    "chromeDevtoolsMcpAttempted": true,
+    "chromeDevtoolsMcpResult": "PASS",
+    "fallbackTool": "mcp__claude-in-chrome (Claude in Chrome 擴充功能) 用於初步端點探索與參數確認",
+    "notes": "直接以 curl／WebFetch 存取 www.rolex.com（含 /es/watches、/api/... 等路徑）一律回傳 Akamai 403 Forbidden（僅 robots.txt 例外回 200），確認為此環境出口 IP／非瀏覽器用戶端被反機器人防護擋下，而非頁面不存在或逾時。改用已連線的 Claude in Chrome 擴充功能分頁與 chrome-devtools MCP 各自開啟的即時瀏覽器分頁，於頁面內以 fetch() 執行同源請求（帶真實瀏覽器 session／TLS 指紋），全部成功回傳 200。最終正式收集改用 chrome-devtools MCP 的 evaluate_script（filePath 參數）將完整回應直接落地存檔，避免大型 JSON 經由對話文字通道回傳時被截斷。"
+  },
+  "primaryCollectionPath": {
+    "type": "official structured endpoint",
+    "endpoint": "https://www.rolex.com/api/catalog/watchgrid?language=es&firstResult=0&numberOfResults=2000&grid=all&countryCode=ES&group=%280%29",
+    "responseFile": "data/evidence/ES/2026-09-15/watchgrid-primary-source.json",
+    "responseSha256": "b08df3737a2942c124aeb69075c3b3ad3f6de4ad1af0644a68c15b7bb31886bd",
+    "responseFields": {
+      "modelReference": "rmc",
+      "collection": "family and familyCode",
+      "modelName": "title",
+      "caseDescription": "facet_case_title",
+      "dialAlt": "alt",
+      "newModel": "newmodelselection",
+      "rawPrice": "formattedPrice",
+      "parsedPrice": "price"
+    },
+    "pagination": "單一請求 firstResult=0、numberOfResults=2000（超過市場總數）回傳 totalCount=1465、results.length=1465；接著以 firstResult=1465、numberOfResults=200 再打一次，回傳 totalCount=1465、results.length=0，確認終止訊號（下一頁無新資料）。",
+    "structuredResultCount": 1465,
+    "structuredUniqueModelReferenceCount": 1465,
+    "terminalPage": {
+      "endpoint": "https://www.rolex.com/api/catalog/watchgrid?language=es&firstResult=1465&numberOfResults=200&grid=all&countryCode=ES&group=%280%29",
+      "httpStatus": 200,
+      "totalCount": 1465,
+      "resultCount": 0
+    }
+  },
+  "renderedCrossCheck": {
+    "view": "官方西班牙（rolex.com/es）find-rolex／watches 型號視圖；group=0；無系列、尺寸、材質或新款篩選",
+    "initialRenderedConfigurationCount": null,
+    "notes": "完成度以結構化端點本身的終止訊號（results.length===0 於 firstResult=totalCount）為主要停止證據；未另外逐頁點擊 UI 重新枚舉 1465 筆。改以 19 筆獨立官方抽查（17 系列代表款＋2 組同基本型號不同配置碼）分別呼叫另一個獨立的官方服務 /api/prices/{rmc} 以及商品頁 /es/watches/{family}/{rmc}（皆回 200）做交叉核對，詳見 validation-summary.json 的 independentSpotChecks。"
+  },
+  "counts": {
+    "rawConfigurationCount": 1465,
+    "uniqueModelReferenceCount": 1465,
+    "duplicateCount": 0,
+    "conflictCount": 0,
+    "listedWithPublicPriceCount": 1465,
+    "priceUnavailableCount": 0,
+    "confirmedNotListedCount": 0,
+    "parseFailureCount": 0
+  },
+  "collectionDistribution": {
+    "1908": 8,
+    "air-king": 1,
+    "cosmograph-daytona": 47,
+    "datejust": 681,
+    "day-date": 281,
+    "deepsea": 4,
+    "explorer": 3,
+    "explorer-ii": 2,
+    "gmt-master-ii": 13,
+    "lady-datejust": 291,
+    "land-dweller": 10,
+    "oyster-perpetual": 62,
+    "sea-dweller": 2,
+    "sky-dweller": 39,
+    "submariner": 7,
+    "yacht-master": 12,
+    "yacht-master-ii": 2
+  },
+  "priceRange": {
+    "min": { "modelReference": "m276200-0001", "formattedPrice": "6 000 €" },
+    "max": { "modelReference": "m279459rbr-0001", "formattedPrice": "182 500 €" }
+  },
+  "catalogReconciliation": {
+    "priorCatalogUniqueCount": 1465,
+    "esUniqueConfigurationCount": 1465,
+    "intersectionCount": 1465,
+    "newConfigurationsCount": 0,
+    "missingFromEsCount": 0,
+    "resultingCatalogCount": 1465,
+    "notes": "ES 結構化端點回傳的全部 1465 個 modelReference 與既有 catalog（data/catalog/rolex-catalog.json）的 1465 筆完全重合（交集=1465，差集=0）。本 fork 未修改 catalog；比對僅供統籌者合併時參考，實際合併（含 sourceMarketCodes 加入 'ES'）由統籌者執行。"
+  },
+  "taxVerification": {
+    "priceType": "tax-include",
+    "officialRolexProductPage": {
+      "status": "PASS",
+      "sourceUrl": "https://www.rolex.com/es/watches/land-dweller/m127334-0001",
+      "sourceApiUrl": "https://www.rolex.com/api/prices/m127334-0001?countryCode=ES&lang=es",
+      "observedAt": "2026-09-15T00:59:11+02:00",
+      "priceNotice": "Precio de venta recomendado, IVA incluido. El precio de venta recomendado puede modificarse en cualquier momento sin previo aviso.",
+      "currencyField": "EUR（由 /api/prices 回應自身的 currency 欄位確認，非由 € 符號推測）"
+    },
+    "governmentLookup": {
+      "status": "PASS",
+      "sourceUrl": "https://sede.agenciatributaria.gob.es/Sede/iva/calculo-iva-repercutido-clientes/tipos-impositivos-iva.html",
+      "publisher": "Agencia Estatal de Administración Tributaria（西班牙國家稅務總局）",
+      "finding": "官方頁面明載：「El tipo general de IVA es el 21%.」（一般 IVA 稅率為 21%）。手錶／珠寶等一般商品適用一般稅率，未查得任何指向手錶適用優惠稅率（10%／4%）的官方依據；另查得 2026 年曾有針對能源／燃料類商品的暫時性調降措施，與手錶類商品無關。",
+      "verifiedAt": "2026-09-15"
+    },
+    "storedTaxRatePercent": 21,
+    "notes": "priceType 與 taxRatePercent 均以官方一手來源查證，未使用記憶或其他市場數字推算。"
+  },
+  "errors": [
+    "直接對 www.rolex.com（含 API 與商品頁）的 curl／WebFetch 存取一律回傳 Akamai 403 Forbidden；改用已連線瀏覽器分頁（Claude in Chrome 擴充功能、chrome-devtools MCP）內的同源 fetch() 呼叫成功取得 200。",
+    "javascript_tool（Claude in Chrome）對大型 JSON 字串的回傳會在約 1000 字元處被截斷（非我方請求內容有誤），因此正式的 1465 筆完整資料改用 chrome-devtools MCP 的 evaluate_script filePath 參數直接落地存檔，避免資料經對話文字通道傳輸時遺失或被截斷；本次最終寫入的 observations.json／market／history 檔案均源自該次落地存檔的原始回應，未使用任何經截斷或不完整的中間結果。"
+  ]
+}

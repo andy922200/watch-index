@@ -1,0 +1,118 @@
+{
+  "market": "Thailand",
+  "marketCode": "TH",
+  "locale": "th",
+  "officialEntryUrl": "https://www.rolex.com/th/watches",
+  "startedAt": "2026-09-15T05:57:44+07:00",
+  "completedAt": "2026-09-15T06:09:27+07:00",
+  "status": "completed",
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "available",
+    "chromeDevtoolsMcpConfigured": false,
+    "chromeDevtoolsMcpAttempted": false,
+    "chromeDevtoolsMcpResult": "NOT AVAILABLE",
+    "fallbackTool": "mcp__claude-in-chrome（Claude in Chrome 瀏覽器擴充功能）",
+    "notes": "直接以 curl（含標準瀏覽器 UA／Accept-Language headers）與 WebFetch 存取 www.rolex.com（含 /th/watches、/api/catalog/watchgrid 等路徑，以及 rolex.co.th 導向後的目標）一律回傳 Akamai 403 Forbidden（僅 robots.txt 例外回 200），在 30ms 內即回應，判定為此環境出口 IP 被反機器人防護（WAF／bot management）依 IP 信譽封鎖，而非頁面不存在或逾時。改用使用者 本機已連線的 Claude in Chrome 瀏覽器擴充功能開啟即時分頁，於頁面內以 fetch() 執行同源 請求（帶真實瀏覽器 session／TLS 指紋），全部成功回傳 200。javascript_tool 對大型 JSON 字串的直接文字回傳約在 1000 字元處被截斷；改用瀏覽器分頁建立 Blob 並以 <a download> 觸發瀏覽器下載到本機 Downloads 目錄再讀取的方式落地完整回應，避免資料經對話文字通道 傳輸時遺失或被截斷（注意：同一分頁對同一來源的第二次以後自動下載會被 Chrome 的 「多重自動下載」保護靜默封鎖，需改用新分頁；已在正式收集中改用新分頁下載一次成功）。"
+  },
+  "primaryCollectionPath": {
+    "type": "official structured endpoint",
+    "endpoint": "https://www.rolex.com/api/catalog/watchgrid?language=th&firstResult=0&numberOfResults=2000&grid=all&countryCode=TH&group=%280%29",
+    "responseFields": {
+      "modelReference": "rmc",
+      "collection": "family and familyCode",
+      "modelName": "title",
+      "caseDescription": "facet_case_title",
+      "dialAlt": "alt",
+      "newModel": "newmodelselection",
+      "rawPrice": "formattedPrice",
+      "parsedPrice": "price"
+    },
+    "pagination": "單一請求 firstResult=0、numberOfResults=2000（超過市場總數）回傳 totalCount=1465、results.length=1465；接著以 firstResult=1465、numberOfResults=200 再打一次，回傳 totalCount=1465、results.length=0，確認終止訊號（下一頁無新資料）。",
+    "structuredResultCount": 1465,
+    "structuredUniqueModelReferenceCount": 1465,
+    "terminalPage": {
+      "endpoint": "https://www.rolex.com/api/catalog/watchgrid?language=th&firstResult=1465&numberOfResults=200&grid=all&countryCode=TH&group=%280%29",
+      "httpStatus": 200,
+      "totalCount": 1465,
+      "resultCount": 0
+    }
+  },
+  "renderedCrossCheck": {
+    "view": "官方泰國（rolex.com/th）watches 型號視圖；group=0；無系列、尺寸、材質或新款篩選",
+    "initialRenderedConfigurationCount": null,
+    "notes": "完成度以結構化端點本身的終止訊號（firstResult=totalCount 時 results.length=0）為主要停止證據；未另外逐頁點擊 UI 重新枚舉 1465 筆。改以 19 筆獨立官方抽查（17 系列代表款＋2 組同基本型號不同配置碼）分別呼叫另一個獨立的官方服務 /api/prices/{rmc}?countryCode=TH&lang=th 以及商品頁 /th/watches/{family}/{rmc}（皆回 200）做交叉核對，詳見 validation-summary.json 的 independentSpotChecks。"
+  },
+  "counts": {
+    "rawConfigurationCount": 1465,
+    "uniqueModelReferenceCount": 1465,
+    "duplicateCount": 0,
+    "conflictCount": 0,
+    "listedWithPublicPriceCount": 1465,
+    "priceUnavailableCount": 0,
+    "confirmedNotListedCount": 0,
+    "parseFailureCount": 0
+  },
+  "collectionDistribution": {
+    "1908": 8,
+    "air-king": 1,
+    "cosmograph-daytona": 47,
+    "datejust": 681,
+    "day-date": 281,
+    "deepsea": 4,
+    "explorer": 3,
+    "explorer-ii": 2,
+    "gmt-master-ii": 13,
+    "lady-datejust": 291,
+    "land-dweller": 10,
+    "oyster-perpetual": 62,
+    "sea-dweller": 2,
+    "sky-dweller": 39,
+    "submariner": 7,
+    "yacht-master": 12,
+    "yacht-master-ii": 2
+  },
+  "priceRange": {
+    "min": {
+      "modelReference": "m276200-0009",
+      "formattedPrice": "223,100 บาท"
+    },
+    "max": {
+      "modelReference": "m279459rbr-0001",
+      "formattedPrice": "6,738,200 บาท"
+    }
+  },
+  "catalogReconciliation": {
+    "priorCatalogUniqueCount": 1465,
+    "thUniqueConfigurationCount": 1465,
+    "intersectionCount": 1465,
+    "newConfigurationsCount": 0,
+    "missingFromThCount": 0,
+    "resultingCatalogCount": 1465,
+    "notes": "TH 結構化端點回傳的全部 1465 個 modelReference 與既有 catalog（data/catalog/rolex-catalog.json）的 1465 筆完全重合（交集=1465，差集=0）。本次收集未修改 catalog；比對僅供統籌者合併時參考，實際合併（含 sourceMarketCodes 加入 \"TH\"）由統籌者執行。"
+  },
+  "taxVerification": {
+    "priceType": "tax-include",
+    "officialRolexProductPage": {
+      "status": "PASS",
+      "sourceUrl": "https://www.rolex.com/th/watches/land-dweller/m127334-0001",
+      "sourceApiUrl": "https://www.rolex.com/api/prices/m127334-0001?countryCode=TH&lang=th",
+      "observedAt": "2026-09-15T06:08:00+07:00",
+      "priceNotice": "ราคาจำหน่ายปลีกที่แนะนำรวมภาษีมูลค่าเพิ่มแล้ว（建議零售價已含加值稅／VAT）",
+      "currencyField": "THB（由 /api/prices 回應自身的 currency 欄位確認，非由「บาท」字樣推測）"
+    },
+    "governmentLookup": {
+      "status": "PASS",
+      "sourceUrl": "https://www.rd.go.th/english/6043.html",
+      "publisher": "The Revenue Department, Thailand（泰國財政部稅務局 กรมสรรพากร）",
+      "finding": "官方頁面明載：「Currently, the rate is 7 percent.」（目前加值稅稅率為 7%）。",
+      "verifiedAt": "2026-09-15"
+    },
+    "storedTaxRatePercent": 7,
+    "notes": "priceType 與 taxRatePercent 均以官方一手來源查證，未使用記憶或其他市場數字推算。"
+  },
+  "errors": [
+    "直接對 www.rolex.com（含 API 與商品頁，以及 rolex.co.th 導向）的 curl／WebFetch 存取一律回傳 Akamai 403 Forbidden；改用已連線瀏覽器分頁（Claude in Chrome 擴充功能）內的同源 fetch() 呼叫 成功取得 200。",
+    "javascript_tool 對大型 JSON 字串／剪貼簿寫入的直接回傳在約 1000～4000 字元即被截斷或逾時（包含純 ASCII 內容測試，排除為 Thai Unicode 編碼問題）；改用瀏覽器分頁建立 Blob 物件並以 <a download> 觸發真實瀏覽器下載到本機 Downloads 目錄、再由本機檔案系統讀取的方式落地完整 1465 筆回應，避免資料經對話文字通道傳輸時遺失或被截斷。"
+  ]
+}

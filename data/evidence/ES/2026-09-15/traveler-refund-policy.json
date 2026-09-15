@@ -1,0 +1,32 @@
+{
+  "marketCode": "ES",
+  "observedAt": "2026-09-15T09:32:53Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level traveler consumption-tax policy only; this does not establish Rolex retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "sources": [
+    {
+      "publisher": "Agencia Estatal de Administración Tributaria (AEAT)",
+      "title": "Devoluciones de IVA por compras de viajeros (DIVA)",
+      "url": "https://sede.agenciatributaria.gob.es/Sede/viajeros-trabajadores-desplazados-fronterizos/devoluciones-iva-compras-viajeros.html",
+      "accessedAt": "2026-09-15T09:32:53Z"
+    },
+    {
+      "publisher": "Agencia Estatal de Administración Tributaria (AEAT)",
+      "title": "Información general sobre la devolución de IVA a viajeros",
+      "url": "https://sede.agenciatributaria.gob.es/Sede/viajeros-trabajadores-desplazados-fronterizos/devoluciones-iva-compras-viajeros/informacion-general-sobre-devolucion-iva-viajeros.html",
+      "accessedAt": "2026-09-15T09:32:53Z"
+    }
+  ],
+  "observedFacts": [
+    "Travelers habitually resident outside the EU (and residents of the Canary Islands, Ceuta, or Melilla) may obtain a VAT refund on goods purchased in Spain: \"Podrán obtener la devolución IVA viajeros las personas residentes en un país que no pertenezca a la UE\".",
+    "Goods must leave the EU within a maximum of three months from the date of purchase: \"Tienes un plazo máximo de tres meses desde la compra para abandonar la UE\".",
+    "The purchase must not constitute a commercial expedition and must be for personal use or as a gift; goods intended to equip or provision any means of transport are explicitly excluded.",
+    "At purchase, the retailer must issue an electronic Tax Free document (Documento Electrónico de Reembolso, DER) after verifying the traveler's identity and residency (full name, date of birth, and passport or other ID number).",
+    "At the EU exit point in Spain, the DER is validated via an electronic kiosk (sellado digital DIVA): a green check mark means automatic approval, a red cross means the traveler must present the goods and DER to Customs for manual review."
+  ],
+  "limitations": [
+    "The official pages describe the general DIVA process and do not themselves confirm that any specific Rolex authorized retailer in Spain issues the DER/Tax Free document.",
+    "The refund percentage actually retained as a service fee by tax-free operators (e.g. Global Blue/Planet) was not located on the AEAT pages reviewed and is not recorded here.",
+    "As an EU member state, Spain's scheme is structurally the same as the AT/DE/FR/IT entries already in this dataset (non-EU residence, personal-use goods, retailer-issued document, customs/digital export validation); this is a genuinely independent official source for ES, not inferred from those other markets."
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "nicknameResearch": {
+    "status": "PASS",
+    "scope": "new-market",
+    "languages": ["es"],
+    "queries": [
+      "Rolex Daytona 126500LN \"Panda\" reloj apodo esfera blanca foro reloj España",
+      "Rolex GMT-Master II \"Batman\" 126710BLNR apodo reloj España distribuidor oficial",
+      "Rolex Submariner \"Kermit\" 126610LV apodo España esfera negra bisel verde joyería oficial",
+      "Rolex Submariner \"Hulk\" 116610LV esfera verde bisel verde apodo actual catálogo España"
+    ],
+    "sourcesReviewed": 10,
+    "candidateCount": 4,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 1,
+    "rejectedCandidates": [
+      {
+        "name": "Batman / Batgirl (GMT-Master II 126710BLNR)",
+        "reason": "西班牙文來源（pawnshop.es 及多家官方經銷商網站）將「Batman」泛指整個 126710BLNR 參考型號，並以錶帶區分 Batman（Oyster 錶帶）與 Batgirl（Jubilee 錶帶）；但 ES 目錄目前有兩個此型號的配置（m126710blnr-0002 與 m126710blnr-0003），兩者的 facet_case_title 都顯示「Oyster」，文字描述無法區分兩者差異，因此無法精確對應到單一配置碼。"
+      },
+      {
+        "name": "Kermit / Starbucks (Submariner 126610LV)",
+        "reason": "查閱的西班牙文來源（chrono24.es、watchpatrol.net、superlativewatches.es、1stdibs.com）對同一現行參考型號使用互相衝突的名稱（Kermit、Cermit、Starbucks），顯示命名尚未收斂為單一在地慣用俗稱，而非已確立的在地命名。"
+      },
+      {
+        "name": "Hulk（Submariner 綠色錶盤＋綠色錶圈）",
+        "reason": "來源確認歷史參考型號 116610LV（俗稱 Hulk）已於 2020 年停產；ES 目前結構化目錄中沒有任何綠色錶盤配置（唯一的綠圈 Submariner m126610lv-0002 為黑色錶盤），因此沒有現行目錄配置可供此俗稱對應。"
+      },
+      {
+        "name": "Pepsi（GMT-Master II 藍紅雙色錶圈）",
+        "reason": "ES 目前結構化目錄中沒有任何藍紅雙色（BLRO）錶圈配置，此型號目前未在該市場上架，沒有配置可供此名稱對應。"
+      }
+    ],
+    "accepted": [
+      {
+        "modelReference": "m126500ln-0001",
+        "name": "Panda",
+        "scope": "localNickname（限定錶盤：白色錶盤搭配黑色計時盤圈；姊妹配置 m126500ln-0002 為黑色錶盤，不稱為 Panda，已排除）",
+        "sources": [
+          "https://www.superlativewatches.es/2024/09/18/rolex-daytona-panda-esfera-blanca-126500ln/",
+          "https://chronomadrid.com/products/rolex-daytona-126500ln-panda"
+        ]
+      }
+    ],
+    "notes": "PASS，採用 1 筆 localNickname，0 筆 collection-wide alias。官方系列／家族名稱（如「Cosmograph Daytona」「GMT-Master II」）未視為俗稱。僅在西班牙文來源能精確對應單一 modelReference（含配置碼）且來源可信時才採用；命名有分歧（Kermit/Cermit/Starbucks）、配置文字描述無法區分（Batman/Batgirl）或已停產不在現行目錄中（Hulk）、目錄無對應配置（Pepsi）者一律拒絕。此為代表性研究（4 組候選、非窮舉全部 17 系列），符合新增市場最低要求。"
+  }
+}

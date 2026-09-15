@@ -1,0 +1,348 @@
+{
+  "marketCode": "TH",
+  "validationCompletedAt": "2026-09-15T06:15:00+07:00",
+  "evidencePath": "data/evidence/TH/2026-09-15",
+  "fiveLayerValidation": {
+    "syntaxAndSchema": {
+      "strictJson": {
+        "status": "PASS",
+        "filesChecked": 40,
+        "method": "Python json.loads，object_pairs_hook 拒絕重複 key、parse_constant 拒絕 NaN/Infinity，範圍涵蓋 data/catalog、data/markets、data/history、data/schemas、data/evidence/TH。"
+      },
+      "jsonSchema": {
+        "status": "NOT RUN",
+        "reason": "本機未安裝 Draft 2020-12 JSON Schema 驗證器（無 Python jsonschema、無 Node ajv），且未經授權不得安裝依賴。",
+        "supplementaryCheck": {
+          "status": "PASS",
+          "method": "針對 data/schemas/rolex-market.schema.json 與 rolex-price-history.schema.json 實際文字，逐欄位人工比對：頂層必填鍵集合、schemaVersion=2 附帶必填 brandId／watchId、marketCode／modelReference／watchId／currencyCode 正則、collectionAliases 與 localNicknames 的 names/sources 結構、priceType／listingStatus enum、taxRatePercent 範圍、listed 對應正整數價格、非 listed 對應 null 價格。",
+          "errorsFound": 0
+        }
+      }
+    },
+    "crossFileConsistency": {
+      "status": "PASS",
+      "method": "改編自指南提供的 Node.js／Python 跨檔不變條件檢查，指向本專案實際 data/catalog、data/markets、data/history 路徑。",
+      "marketWatchCount": 1465,
+      "historyPriceSeriesCount": 1465,
+      "marketHistoryIdSetMatch": true,
+      "marketWatchIdsSubsetOfCatalog": true,
+      "orphanCount": 0
+    },
+    "sourceReconciliation": {
+      "status": "PASS",
+      "evidenceObservationCount": 1465,
+      "marketAndHistoryReconciliationMismatchCount": 0,
+      "structuredVsRenderedMismatchCount": 0,
+      "priceParseFailureCount": 0,
+      "method": "以程式比對全部 1465 筆 evidence observations 與 data/markets/rolex-thailand-market.json（modelName／caseDescription／dialDescription／isNewModel／productUrl）及 data/history/TH/rolex-price-history.json（幣別、最新價格）。0 筆不一致；0 筆孤兒。"
+    },
+    "websiteCompleteness": {
+      "status": "PASS",
+      "endpointTotalCount": 1465,
+      "endpointUniqueConfigurationCount": 1465,
+      "unresolvedConflictCount": 0,
+      "notes": "停止條件為結構化端點本身：firstResult=0,numberOfResults=2000 回傳 results.length===totalCount===1465，且 firstResult=1465 的後續請求回傳 results.length=0。另以 19 筆獨立官方抽查（見下方 independentSpotChecks）交叉核對，0 筆不一致。"
+    },
+    "changeSafety": {
+      "status": "PASS",
+      "method": "git status --short 於本次收集前後比對，確認僅新增未追蹤檔案／目錄，沒有任何既有已追蹤檔案被修改；並對既有 13 個市場與 schemas 目錄下所有檔案取 SHA-256 前後比對一致。",
+      "unchangedFiles": [
+        "data/catalog/rolex-catalog.json",
+        "data/schemas/rolex-catalog.schema.json",
+        "data/schemas/rolex-market.schema.json",
+        "data/schemas/rolex-price-history.schema.json",
+        "所有既有 13 個市場（AT/CH/CN/DE/FR/GB/HK/IT/JP/KR/SG/TW/US）的 market／history／evidence 檔案"
+      ],
+      "newFiles": [
+        "data/markets/rolex-thailand-market.json",
+        "data/history/TH/rolex-price-history.json",
+        "data/evidence/TH/2026-09-15/observations.json",
+        "data/evidence/TH/2026-09-15/collection-summary.json",
+        "data/evidence/TH/2026-09-15/validation-summary.json",
+        "data/evidence/TH/2026-09-15/nickname-research.json"
+      ],
+      "schemasChanged": false,
+      "catalogChanged": false
+    }
+  },
+  "evidenceTraceability": {
+    "status": "PASS",
+    "acceptedObservations": 1465,
+    "observationsWithMatchingMarketTextAndLatestPrice": 1465,
+    "sensitiveDataScan": {
+      "status": "PASS",
+      "method": "grep -riE 'authorization|cookie|session|token|bearer|password|secret' 掃描所有新增 TH evidence、market、history 檔案。",
+      "matchedSensitiveValueCount": 0
+    }
+  },
+  "nicknameResearch": {
+    "status": "PASS",
+    "scope": "new-market",
+    "acceptedLocalNicknameCount": 0,
+    "acceptedCollectionAliasCount": 0,
+    "rejectedCandidateCount": 4,
+    "detail": "完整內容見 data/evidence/TH/2026-09-15/nickname-research.json。拒絕：Batman/Batgirl（配置文字無法區分）、Hulk（已停產不在目錄中）、Panda（未找到可信泰文在地來源）、Pepsi（目錄無對應配置）。0 筆採用。"
+  },
+  "independentSpotChecks": {
+    "status": "PASS",
+    "method": "17 個系列代表款＋2 組同基本型號不同配置碼（m228236-0018/m228236-0002、m336935-0008/m336935-0006），共 19 筆不重複 modelReference，透過與主要收集路徑（/api/catalog/watchgrid）不同的官方服務 /api/prices/{rmc}?countryCode=TH&lang=th 取得價格，並同時確認官方商品頁 /th/watches/{family}/{rmc} 回應 200，再與主要結構化來源的 price 欄位逐筆比對。",
+    "collectionRepresentativeCount": 17,
+    "sameBaseModelPairs": [
+      [
+        "m228236-0018",
+        "m228236-0002"
+      ],
+      [
+        "m336935-0008",
+        "m336935-0006"
+      ]
+    ],
+    "totalChecks": 19,
+    "failureCount": 0,
+    "checks": [
+      {
+        "modelReference": "m127334-0001",
+        "collection": "land-dweller",
+        "sourceUrl": "https://www.rolex.com/th/watches/land-dweller/m127334-0001",
+        "apiUrl": "https://www.rolex.com/api/prices/m127334-0001?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m228236-0018",
+        "collection": "day-date",
+        "sourceUrl": "https://www.rolex.com/th/watches/day-date/m228236-0018",
+        "apiUrl": "https://www.rolex.com/api/prices/m228236-0018?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m228236-0002",
+        "collection": "day-date",
+        "sourceUrl": "https://www.rolex.com/th/watches/day-date/m228236-0002",
+        "apiUrl": "https://www.rolex.com/api/prices/m228236-0002?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m336935-0008",
+        "collection": "sky-dweller",
+        "sourceUrl": "https://www.rolex.com/th/watches/sky-dweller/m336935-0008",
+        "apiUrl": "https://www.rolex.com/api/prices/m336935-0008?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m336935-0006",
+        "collection": "sky-dweller",
+        "sourceUrl": "https://www.rolex.com/th/watches/sky-dweller/m336935-0006",
+        "apiUrl": "https://www.rolex.com/api/prices/m336935-0006?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m279173-0007",
+        "collection": "lady-datejust",
+        "sourceUrl": "https://www.rolex.com/th/watches/lady-datejust/m279173-0007",
+        "apiUrl": "https://www.rolex.com/api/prices/m279173-0007?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m126334-0033",
+        "collection": "datejust",
+        "sourceUrl": "https://www.rolex.com/th/watches/datejust/m126334-0033",
+        "apiUrl": "https://www.rolex.com/api/prices/m126334-0033?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m134303-0001",
+        "collection": "oyster-perpetual",
+        "sourceUrl": "https://www.rolex.com/th/watches/oyster-perpetual/m134303-0001",
+        "apiUrl": "https://www.rolex.com/api/prices/m134303-0001?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m126506-0001",
+        "collection": "cosmograph-daytona",
+        "sourceUrl": "https://www.rolex.com/th/watches/cosmograph-daytona/m126506-0001",
+        "apiUrl": "https://www.rolex.com/api/prices/m126506-0001?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m126613lb-0002",
+        "collection": "submariner",
+        "sourceUrl": "https://www.rolex.com/th/watches/submariner/m126613lb-0002",
+        "apiUrl": "https://www.rolex.com/api/prices/m126613lb-0002?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m126603-0001",
+        "collection": "sea-dweller",
+        "sourceUrl": "https://www.rolex.com/th/watches/sea-dweller/m126603-0001",
+        "apiUrl": "https://www.rolex.com/api/prices/m126603-0001?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m136660-0005",
+        "collection": "deepsea",
+        "sourceUrl": "https://www.rolex.com/th/watches/deepsea/m136660-0005",
+        "apiUrl": "https://www.rolex.com/api/prices/m136660-0005?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m126710blnr-0003",
+        "collection": "gmt-master-ii",
+        "sourceUrl": "https://www.rolex.com/th/watches/gmt-master-ii/m126710blnr-0003",
+        "apiUrl": "https://www.rolex.com/api/prices/m126710blnr-0003?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m226658-0001",
+        "collection": "yacht-master",
+        "sourceUrl": "https://www.rolex.com/th/watches/yacht-master/m226658-0001",
+        "apiUrl": "https://www.rolex.com/api/prices/m226658-0001?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m126680-0001",
+        "collection": "yacht-master-ii",
+        "sourceUrl": "https://www.rolex.com/th/watches/yacht-master-ii/m126680-0001",
+        "apiUrl": "https://www.rolex.com/api/prices/m126680-0001?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m224270-0001",
+        "collection": "explorer",
+        "sourceUrl": "https://www.rolex.com/th/watches/explorer/m224270-0001",
+        "apiUrl": "https://www.rolex.com/api/prices/m224270-0001?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m226570-0001",
+        "collection": "explorer-ii",
+        "sourceUrl": "https://www.rolex.com/th/watches/explorer-ii/m226570-0001",
+        "apiUrl": "https://www.rolex.com/api/prices/m226570-0001?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m126900-0001",
+        "collection": "air-king",
+        "sourceUrl": "https://www.rolex.com/th/watches/air-king/m126900-0001",
+        "apiUrl": "https://www.rolex.com/api/prices/m126900-0001?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      },
+      {
+        "modelReference": "m52508-0008",
+        "collection": "1908",
+        "sourceUrl": "https://www.rolex.com/th/watches/1908/m52508-0008",
+        "apiUrl": "https://www.rolex.com/api/prices/m52508-0008?countryCode=TH&lang=th",
+        "observedAt": "2026-09-15T06:11:00+07:00",
+        "comparedFields": [
+          "price",
+          "currency"
+        ],
+        "status": "PASS"
+      }
+    ],
+    "notes": "totalChecks=19（17 個系列代表款，其中 2 筆同時是同基本型號配對的第一筆成員，另加 2 筆配對的第二筆成員）。全部 19 筆 pageStatus=200、priceStatus=200，且與主要結構化來源（watchgrid）的 price 欄位完全一致，0 筆不一致。"
+  },
+  "readmeUpdate": {
+    "status": "NOT REQUIRED",
+    "updated": false,
+    "sections": [],
+    "reason": "TH 與 ES 為同批新增的兩個市場；為避免對 README.md／watch-data-collection-guide.md 產生衝突性編輯，人類文件的長期描述同步（市場清單等）留待統籌者在合併雙市場 catalog 後一併執行。"
+  },
+  "limitations": [
+    "JSON Schema 正式驗證為 NOT RUN（本機未安裝驗證器，未經授權不安裝依賴），改以逐欄位人工比對作為補充檢查（PASS，0 筆錯誤）。",
+    "未逐頁點擊官方渲染 UI 重新枚舉 1465 筆；完整性主要以結構化端點自身的終止訊號（results.length=0）為停止證據，另以 19 筆獨立官方抽查交叉核對。",
+    "俗稱研究為代表性研究（4 組候選：Batman／Hulk／Panda／Pepsi），非窮舉全部 17 系列；符合新增市場最低要求但非全面調查，本次 0 筆採用。",
+    "本次收集未修改 data/catalog/rolex-catalog.json；TH 尚未被列入 catalog 的 sourceMarketCodes，需由統籌者在合併 TH／ES 後一併處理。",
+    "README.md／watch-data-collection-guide.md 的市場清單尚未同步，留待統籌者合併後一併更新（見 readmeUpdate）。",
+    "旅客退稅政策（traveler-refund-policies.json）未在本次任務範圍內研究，維持缺席，不代表已驗證不可退稅。"
+  ]
+}

@@ -91,6 +91,28 @@
       ]
     },
     {
+      "marketCode": "ES",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-15T09:32:53Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "適用於通常居住在歐盟以外（或屬加那利群島、休達、梅利利亞居民）的旅客；購買時須取得商家開立的電子退稅文件（DER），商品須於購買後三個月內攜出歐盟，並於西班牙離境點以電子機台完成數位驗證（顯示紅色則須交由海關人工查驗）。僅限個人自用或餽贈用途，不得為商業性採購。",
+        "enUs": "Available to travelers habitually resident outside the EU (or resident in the Canary Islands, Ceuta, or Melilla); the retailer must issue an electronic refund document (DER) at purchase, goods must leave the EU within three months of purchase, and the DER is validated at a Spanish exit point via an electronic kiosk (a red result routes the traveler to manual Customs review). Limited to personal or gift use, not commercial expeditions."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/ES/2026-09-15/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "Agencia Estatal de Administración Tributaria (AEAT)",
+          "title": "Devoluciones de IVA por compras de viajeros (DIVA)",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/viajeros-trabajadores-desplazados-fronterizos/devoluciones-iva-compras-viajeros.html",
+          "accessedAt": "2026-09-15T09:32:53Z"
+        }
+      ]
+    },
+    {
       "marketCode": "FR",
       "effectiveFrom": null,
       "effectiveTo": null,
@@ -253,6 +275,28 @@
           "title": "IRAS | Tourist Refund Scheme",
           "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/consumers/tourist-refund-scheme",
           "accessedAt": "2026-09-10T16:29:36Z"
+        }
+      ]
+    },
+    {
+      "marketCode": "TH",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-15T09:32:53Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "適用於非泰國籍、且非執勤中機組人員、自國際機場離境的旅客；須在貼有「VAT REFUND FOR TOURISTS」標誌的商店消費，同一商店同一天消費須達 2,000 泰銖（含稅）以上，並於購買後 60 天內攜帶商品出境。離境時須在報到前向海關出示商品並取得 P.P.10 表格用印；官方頁面明確將手錶列為「奢侈品」，須在入境審查後於退稅櫃檯另外接受稅務官員查驗。",
+        "enUs": "Available to travelers who are not Thai nationals, are not on-duty airline crew, and depart Thailand from an international airport; purchases must be made at stores displaying the \"VAT REFUND FOR TOURISTS\" sign, at least THB 2,000 (VAT-inclusive) per store per day, and goods must leave Thailand within 60 days of purchase. Goods must be shown to Customs for a P.P.10 stamp before check-in, and the official page explicitly lists watches as a \"luxury goods\" category requiring an additional inspection by Revenue officers at the VAT Refund counter after immigration."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/TH/2026-09-15/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "The Revenue Department, Thailand (กรมสรรพากร)",
+          "title": "VAT Refund for Tourists",
+          "url": "https://www.rd.go.th/english/28049.html",
+          "accessedAt": "2026-09-15T09:32:53Z"
         }
       ]
     },

@@ -1,0 +1,38 @@
+{
+  "nicknameResearch": {
+    "status": "PASS",
+    "scope": "new-market",
+    "languages": ["th"],
+    "queries": [
+      "โรเล็กซ์ Batman Pepsi Hulk Kermit ชื่อเล่น นาฬิกา",
+      "site:pantip.com นาฬิกา โรเล็กซ์ \"แบทแมน\" OR \"ฮัลค์\" OR \"เคอร์มิท\"",
+      "โรเล็กซ์ GMT-Master II แบทแมน 126710BLNR ราคา ตัวแทนจำหน่าย ไทย",
+      "\"โรเล็กซ์\" \"ซับมารีเนอร์\" เขียว \"ฮัลค์\" นาฬิกา รีวิว",
+      "โรเล็กซ์ เดย์โทนา แพนด้า 126500LN หน้าปัดขาว ทับทิม รีวิว"
+    ],
+    "sourcesReviewed": 9,
+    "candidateCount": 4,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [
+      {
+        "name": "Batman / Batgirl (GMT-Master II 126710BLNR)",
+        "reason": "查得的來源多為國際或馬來西亞經銷商站台（非泰文在地來源），且將「Batman」泛指整個 126710BLNR 參考型號；TH 目錄目前有兩個此型號的配置（m126710blnr-0002 與 m126710blnr-0003），結構化資料中兩者的 facet_case_title 皆顯示「Oystersteel」，文字描述無法區分兩者的錶帶差異，因此即使有來源也無法精確對應到單一配置碼。"
+      },
+      {
+        "name": "Hulk（Submariner 綠色錶盤＋綠色錶圈）",
+        "reason": "查得泰文來源（YouTube 中文/泰文評測、Lemon8）明確將「ฮัลค์」（Hulk）對應到已停產的舊參考型號 116610LV；TH 目前結構化目錄中唯一的綠圈 Submariner 為 m126610lv-0002，其 facet_case_title／alt 顯示為黑色錶盤（ไม่ใช่綠色），與 Hulk 俗稱所指的綠色錶盤不符，現行目錄無對應配置可採用。"
+      },
+      {
+        "name": "Panda（Cosmograph Daytona 126500LN 白色錶盤）",
+        "reason": "搜尋結果多為國際二手交易網站（1stdibs、ebay 等）與泰國綜合拍賣平台（auctionhouse.co.th），未找到專門討論此配置且明確以泰文使用「Panda」或其泰文音譯詞彙命名的可信在地來源（如泰文錶評部落格或論壇），信心不足以採用為 localNickname。"
+      },
+      {
+        "name": "Pepsi（GMT-Master II 藍紅雙色錶圈）",
+        "reason": "TH 目前結構化目錄中沒有任何藍紅雙色（BLRO）錶圈配置，此顏色組合的參考型號目前未在該市場結構化目錄中出現，沒有配置可供此俗稱對應。"
+      }
+    ],
+    "accepted": [],
+    "notes": "PASS，0 筆 localNickname、0 筆 collection-wide alias 通過驗收門檻。官方系列／家族名稱（如「Cosmograph Daytona」「GMT-Master II」）未視為俗稱。與並行處理西班牙（ES）市場的另一次收集相比，泰文於本次查得的候選中，來源多為國際／區域經銷商站台而非泰文專屬社群或部落格，或查得的泰文來源本身即指向已停產、不在現行目錄中的參考型號；因此本次全部候選皆未達「精確對應單一 modelReference 且來源可信」的採用門檻。此為代表性研究（4 組候選、非窮舉全部 17 系列），符合新增市場最低要求，但非全面調查。"
+  }
+}

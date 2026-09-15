@@ -1,0 +1,44 @@
+{
+  "marketCode": "TH",
+  "observedAt": "2026-09-15T09:32:53Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level traveler consumption-tax policy only; this does not establish Rolex retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "sources": [
+    {
+      "publisher": "The Revenue Department, Thailand (กรมสรรพากร)",
+      "title": "VAT Refund for Tourists",
+      "url": "https://www.rd.go.th/english/28049.html",
+      "accessedAt": "2026-09-15T09:32:53Z"
+    },
+    {
+      "publisher": "The Revenue Department, Thailand (กรมสรรพากร)",
+      "title": "VAT Refund for Tourists procedures",
+      "url": "https://www.rd.go.th/english/56327.html",
+      "accessedAt": "2026-09-15T09:32:53Z"
+    },
+    {
+      "publisher": "The Revenue Department, Thailand — VAT Refund for Tourists system (vrtmap.rd.go.th)",
+      "title": "How to Claim VRT",
+      "url": "https://vrtmap.rd.go.th/gps/En/HowToClaimVRT.aspx",
+      "accessedAt": "2026-09-15T09:32:53Z"
+    },
+    {
+      "publisher": "The Revenue Department, Thailand — VAT Refund for Tourists system (vrtmap.rd.go.th)",
+      "title": "Conditions",
+      "url": "https://vrtmap.rd.go.th/gps/en/Conditions.aspx",
+      "accessedAt": "2026-09-15T09:32:53Z"
+    }
+  ],
+  "observedFacts": [
+    "A tourist eligible for the VAT Refund for Tourists (VRT) scheme must: (1) not hold Thai nationality, (2) not be an airline crew member departing Thailand on duty, and (3) depart Thailand from an international airport.",
+    "Goods must be purchased from stores displaying the \"VAT REFUND FOR TOURISTS\" sign; the amount must be at least THB 2,000 (VAT-inclusive) per store per day, and goods must be taken out of Thailand within 60 days of the date of purchase.",
+    "At departure, the traveler must present the goods and a VAT Refund Application form (P.P.10) with original tax invoices to Customs for stamping before check-in.",
+    "Luxury goods — the official page explicitly lists jewelry, gold ornaments, watches, glasses/eyeglasses, and pens — require an additional inspection by Revenue Department officers at the VAT Refund for Tourists counter in the departure lounge, after passing immigration, in addition to the Customs stamp.",
+    "Refunds up to THB 30,000 may be paid in cash (Baht), by bank draft, or credited to a credit card; claims are submitted at the airport VAT Refund counter, or the documents may be mailed to the Revenue Department."
+  ],
+  "limitations": [
+    "The official pages describe the general VRT process and do not themselves confirm that any specific Rolex authorized retailer in Thailand participates in the VRT sign-up scheme.",
+    "The exact processing fee/administrative charge deducted from the refund amount was not located on the pages reviewed and is not recorded here.",
+    "Watches are explicitly named as a 'luxury goods' category subject to the additional in-person inspection step; this project's price data does not track which specific retailers participate."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "correctionType": "post-hoc-note",
+  "reason": "TH 與 ES 原規劃為市場隔離的兩個並行工作單元，各自只負責 TH／ES 的 evidence、market、history 檔案，`data/catalog/rolex-catalog.json` 的合併原規劃由統籌者於兩市場都完成後統一執行。實際執行時，負責 TH 的工作單元在完成 TH 自身收集後，額外重建了 `data/markets/rolex-spain-market.json`、`data/history/ES/rolex-price-history.json`，並自行對 `data/catalog/rolex-catalog.json` 執行了合併寫入——這兩項都超出其被指派的範圍，且發生在本目錄既有的 `collection-summary.json`（`catalogReconciliation.notes`）與 `validation-summary.json`（`fiveLayerValidation.changeSafety.catalogChanged: false` 及 `unchangedFiles` 內列出 `data/catalog/rolex-catalog.json`）寫入之後，導致這兩份既有 evidence 檔案目前對 catalog 狀態的敘述已不準確。依 `ai-data-maintenance-guide.md`「Evidence 一旦寫入即不可變更」規範，原檔不予改寫，改以本檔案補充更正記錄。",
+  "supersedes": {
+    "file": "data/evidence/TH/2026-09-15/validation-summary.json",
+    "field": "fiveLayerValidation.changeSafety.catalogChanged",
+    "originalValue": false,
+    "correctedStatement": "data/catalog/rolex-catalog.json 實際上已被本次 TH 工作單元修改（見下方 verifiedDiff）。"
+  },
+  "supersedesAlso": {
+    "file": "data/evidence/TH/2026-09-15/collection-summary.json",
+    "field": "catalogReconciliation.notes",
+    "correctedStatement": "「本次收集未修改 catalog」一句不成立；catalog 合併已在同一次執行中發生，非由獨立的統籌者事後執行。"
+  },
+  "verifiedBy": "統籌者（本次對話的主要 agent），非原 TH／ES 工作單元",
+  "verifiedAt": "2026-09-15T07:29:00+08:00",
+  "verifiedDiff": {
+    "method": "git diff data/catalog/rolex-catalog.json",
+    "summary": "唯一變動是 sourceMarketCodes 陣列尾端新增 \"TH\" 與 \"ES\" 兩個字串；watches 陣列、watchCount（1465）、collectedAt（2026-09-10T03:45:00+08:00）與其餘所有欄位逐位元組未變。",
+    "diff": "@@ -14,7 +14,9 @@\n     \"SG\",\n     \"CH\",\n     \"FR\",\n-    \"CN\"\n+    \"CN\",\n+    \"TH\",\n+    \"ES\"\n   ],\n   \"watchCount\": 1465,\n   \"watches\": [",
+    "verificationSteps": [
+      "確認 sourceMarketCodes 新增前後 watches 陣列的 SHA-256 一致（僅頂層陣列增補，watches 區塊 byte-for-byte 未變）。",
+      "重新執行 ai-data-maintenance-guide.md 提供的跨檔案不變條件 Node.js 驗證片段，涵蓋全部 15 個市場（含新增的 rolex-thailand-market.json、rolex-spain-market.json），全數 PASS，無 orphan watchId。",
+      "確認 data/markets/rolex-spain-market.json、data/history/ES/rolex-price-history.json 目前內容與 data/evidence/ES/2026-09-15/observations.json（ES 工作單元自行保存、未被改寫的原始 evidence）逐筆比對 1465/1465 筆一致、0 筆不符，因此雖然這兩個正式檔案的最終落地動作由 TH 工作單元執行，其內容仍可回溯且忠於 ES 自己保存的 evidence，未被竄改或捏造。"
+    ],
+    "conclusion": "本次 catalog 合併的最終結果（sourceMarketCodes 新增 TH、ES；watches／watchCount 不變）在事實上正確，且符合 ai-data-maintenance-guide.md 的 C∪M 合併規則（|C∩M|=1465=|C|=|M|，故合併後總數不變）。問題僅在於執行者不是原規劃的統籌者，而是 TH 工作單元自行越權執行；已回報使用者知悉此流程偏差。"
+  },
+  "userDisclosure": "此流程偏差（工作單元越權修改共用的 catalog 與非其負責市場的檔案）已在本次交付摘要中明確告知使用者，並附上經統籌者獨立重新驗證的結果。"
+}
