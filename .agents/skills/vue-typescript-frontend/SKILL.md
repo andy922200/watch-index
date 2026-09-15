@@ -174,8 +174,10 @@ export const useProfile = (): UseProfileResult => {
 
 - 純函式（不依賴 Vue 響應式、生命週期或 i18n context）放 `src/lib/`，並**依領域命名檔案**（`markets.ts`、`formatters.ts`、`pageUrls.ts`）。不得建立 `helpers.ts`、`common.ts`、`misc.ts` 這類沒有邊界的雜物櫃檔名。
 - 需要 `ref`、`computed`、生命週期或 `useI18n()` 的邏輯放 `src/composables/`。同一件事若同時有純計算與響應式包裝，純計算留在 `lib/`，`composables/` 只負責綁定響應式來源。
-- 只有單一頁面用得到的邏輯放該頁底下的 `src/pages/<page>/utils/`；等到**第二個頁面真的要用**時才上移到 `src/lib/`，不為了預測共用性提前搬家。
-- 上移時，目的地是「能涵蓋所有使用者的最小共用層」，不是一律 `lib/`。若第二個使用者是同一個品牌或同一個功能群組底下的另一個頁面，就搬到該群組的共用層（例如 `src/pages/<brand>/utils/`）；`lib/` 留給真正跨群組共用的模組。判斷依據是「這些使用者共同隸屬的最小範圍是什麼」，不是「有沒有第二個使用者」。
+- `src/pages/` 放可直接進入的路由／MPA 頁面：處理網址、`main.ts`、頁面 metadata 與品牌 adapter，不用來收納沒有對應入口的共用功能實作。
+- `src/features/<feature>/` 放跨頁或跨品牌的完整產品能力；它可包含功能根元件、專屬子元件、型別與 feature-local composable，但本身不負責網址、MPA entry、頁面 metadata 或品牌資料契約。例如 `features/price-compare/PriceComparePage.vue` 可由各品牌的 `pages/<brand>/price-compare/main.ts` 載入。
+- 只有單一頁面用得到的邏輯放該頁底下的 `src/pages/<page>/utils/`；等到第二個使用者真的需要時才上移。若共享的是純函式，移到涵蓋所有使用者的最小 `lib/` 範圍；若共享的是含頁面組成、互動流程與專屬元件的完整能力，移到 `features/`。不為預測共用性提前搬家。
+- `components/` 只放跨功能可重用的通用 UI；不要把整個功能流程放進 `components/`，也不要為只有單一品牌的一次性頁面預先建立 `features/`。
 - **不另開 `src/utils/`**：`src/lib/` 已經是這一層。兩者並存會讓每次新增檔案都要先判斷「這算 lib 還是 utils」，而這條界線無法明確定義，結果一定是兩邊各放一半。既有專案若已用 `src/utils/` 則沿用它，不要在同一個專案裡再補一個 `src/lib/`。
 - 使用 shadcn-vue 的專案，`src/lib/utils.ts` 是 `components.json` 的 `utils` alias，屬於元件庫的檔案，只放 `cn()`。不得把專案自己的 helper 加進去：該檔會被每個 UI 元件 import，且後續 `shadcn-vue add` 可能覆寫它。
 - `lib/` 的函式不得在內部呼叫 `useI18n()`、讀取 Store，或在 module top-level 觸碰 `window`。語系、翻譯後字串等一律由呼叫端以參數傳入，函式才能在沒有 Vue context 的單元測試中直接使用；需要瀏覽器 API 時，只在函式內部存取。
@@ -184,6 +186,11 @@ export const useProfile = (): UseProfileResult => {
 
 ```text
 src/
+  features/             # 跨頁或跨品牌的完整功能，不負責路由／MPA entry
+    price-compare/
+      PriceComparePage.vue
+      components/
+      types.ts
   lib/                  # 跨頁共用的純函式，依領域命名
     formatters.ts
     markets.ts
@@ -192,6 +199,8 @@ src/
     useWatchCatalog.ts
   pages/
     rolex/
+      price-compare/    # Rolex 網址、MPA entry 與品牌 adapter
+        main.ts
       utils/            # 只有這個頁面用得到
         watchSearch.ts
 ```
@@ -279,7 +288,7 @@ const { login } = authStore
 
 ## 實作流程
 
-1. 先閱讀既有前端結構、共用元件、Composable、Axios instance、i18n、Store、lockfile 與工具設定，沿用既有模式，不平行造輪子；需要新增共用程式碼時，先依「共用程式碼的放置位置」決定它屬於 `lib/`、`composables/` 還是頁面自己的 `utils/`。
+1. 先閱讀既有前端結構、共用元件、Composable、Axios instance、i18n、Store、lockfile 與工具設定，沿用既有模式，不平行造輪子；需要新增共用程式碼時，先依「共用程式碼的放置位置」決定它屬於 `lib/`、`composables/`、`features/` 或頁面自己的 `utils/`。
 2. 建立前端專案或首次安裝相依前，先詢問使用者要用 `pnpm`、`bun`、`npm` 或其他工具；使用者未指定時才使用 `npm`。既有專案則沿用其 lockfile 或 `packageManager` 指定的工具。
 3. 專案第一次需要多語系（i18n）時，先詢問使用者是否有 SEO 或 LINE／Facebook 等社群分享預覽需求；沒有就採用單頁式架構，有才採用多頁靜態架構（見「技術線與相依套件」）。既有專案已有 i18n 架構時直接沿用，不自行更換。
 4. 新建專案時安裝並設定 ESLint、Prettier、Vitest Unit Test 與 Playwright E2E Test，建立對應 scripts、最小可執行測試與必要的 ignore 規則；預設選用最新穩定版本。既有專案僅判斷是否需要補齊使用者要求的相依或設定。
@@ -313,7 +322,7 @@ const { login } = authStore
 - [ ] 元件、Composable、Helper、常數、Store 檔案與 Store 匯出符合命名規則
 - [ ] Pinia 使用 Option Store；解構 State / Getters 時使用 `storeToRefs()`
 - [ ] API 經由既有共用 Axios instance 或 API composable
-- [ ] 共用程式碼依「純函式→`lib/`、需要響應式或 i18n→`composables/`、單一頁面→該頁 `utils/`」放置，上移時選擇能涵蓋所有使用者的最小共用層；沒有新增 `src/utils/`，也沒有動到 shadcn-vue 的 `lib/utils.ts`
+- [ ] 共用程式碼依「純函式→`lib/`、需要響應式或 i18n→`composables/`、完整跨頁／跨品牌能力→`features/`、單一頁面→該頁 `utils/`」放置；`pages/` 只保留路由／MPA entry 與品牌 adapter，上移時選擇能涵蓋所有使用者的最小共用層；沒有新增 `src/utils/`，也沒有動到 shadcn-vue 的 `lib/utils.ts`
 - [ ] 使用者可見文字已納入 i18n，圖示按需使用 `unplugin-icons`
 - [ ] Template 沒有三段以上的條件鏈：同一位置的多重結果已收斂成 computed 或 view model，且格式化函式不在 template 重複呼叫
 - [ ] 若專案新導入多語系或變更既有語系架構，已在動工前跟使用者確認採用單頁式或多頁靜態架構，未自行預設
