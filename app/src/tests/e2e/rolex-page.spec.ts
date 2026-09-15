@@ -204,6 +204,23 @@ test('switches the displayed prices to the China market', async ({ page }) => {
   await expect(page.locator('[data-slot="card"]').first()).toContainText('CNY')
 })
 
+test('switches the displayed prices to the Thailand and Spain markets', async ({ page }) => {
+  await page.goto('en-us/')
+
+  const marketSelect = page.getByRole('combobox', { name: 'Market' })
+  await marketSelect.click()
+  await page.getByRole('option', { name: 'Thailand' }).click()
+
+  await expect(marketSelect).toContainText('Thailand')
+  await expect(page.locator('[data-slot="card"]').first()).toContainText('THB')
+
+  await marketSelect.click()
+  await page.getByRole('option', { name: 'Spain' }).click()
+
+  await expect(marketSelect).toContainText('Spain')
+  await expect(page.locator('[data-slot="card"]').first()).toContainText('EUR')
+})
+
 test('switches the displayed prices to the Korea and Italy markets', async ({ page }) => {
   await page.goto('en-us/')
 

@@ -9,8 +9,10 @@ export const MarketCode = {
   Italy: 'IT',
   Japan: 'JP',
   Singapore: 'SG',
+  Spain: 'ES',
   SouthKorea: 'KR',
   Taiwan: 'TW',
+  Thailand: 'TH',
   UnitedStates: 'US',
 } as const
 
@@ -40,9 +42,11 @@ export const marketOptions: readonly MarketOption[] = [
   { code: MarketCode.Germany, flag: '🇩🇪', labelKey: 'site.market.germany' },
   { code: MarketCode.France, flag: '🇫🇷', labelKey: 'site.market.france' },
   { code: MarketCode.Italy, flag: '🇮🇹', labelKey: 'site.market.italy' },
+  { code: MarketCode.Spain, flag: '🇪🇸', labelKey: 'site.market.spain' },
   { code: MarketCode.Switzerland, flag: '🇨🇭', labelKey: 'site.market.switzerland' },
   { code: MarketCode.UnitedKingdom, flag: '🇬🇧', labelKey: 'site.market.unitedKingdom' },
   { code: MarketCode.UnitedStates, flag: '🇺🇸', labelKey: 'site.market.unitedStates' },
+  { code: MarketCode.Thailand, flag: '🇹🇭', labelKey: 'site.market.thailand' },
 ]
 
 export const isMarketCode = (value: string): value is MarketCode =>
@@ -58,6 +62,7 @@ export const EU_MARKET_CODES: ReadonlySet<MarketCode> = new Set([
   MarketCode.Germany,
   MarketCode.France,
   MarketCode.Italy,
+  MarketCode.Spain,
 ])
 
 export const isEuMember = (marketCode: string): boolean =>

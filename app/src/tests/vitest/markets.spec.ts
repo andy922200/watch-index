@@ -27,6 +27,8 @@ describe('market query', () => {
   it.each([
     ['Italy', 'IT', MarketCode.Italy],
     ['South Korea', 'KR', MarketCode.SouthKorea],
+    ['Spain', 'ES', MarketCode.Spain],
+    ['Thailand', 'TH', MarketCode.Thailand],
   ])('supports the %s market query', (_marketName, marketCode, expectedMarket) => {
     expect(getMarketFromQuery(`?market_code=${marketCode}`)).toBe(expectedMarket)
   })
@@ -49,19 +51,25 @@ describe('market lookup', () => {
 })
 
 describe('isEuMember', () => {
-  it.each([MarketCode.Austria, MarketCode.Germany, MarketCode.France, MarketCode.Italy])(
-    'treats %s as an EU market',
-    (marketCode) => {
-      expect(isEuMember(marketCode)).toBe(true)
-    },
-  )
+  it.each([
+    MarketCode.Austria,
+    MarketCode.Germany,
+    MarketCode.France,
+    MarketCode.Italy,
+    MarketCode.Spain,
+  ])('treats %s as an EU market', (marketCode) => {
+    expect(isEuMember(marketCode)).toBe(true)
+  })
 
-  it.each([MarketCode.Switzerland, MarketCode.UnitedKingdom, MarketCode.Taiwan, 'XX'])(
-    'does not treat %s as an EU market',
-    (marketCode) => {
-      expect(isEuMember(marketCode)).toBe(false)
-    },
-  )
+  it.each([
+    MarketCode.Switzerland,
+    MarketCode.Thailand,
+    MarketCode.UnitedKingdom,
+    MarketCode.Taiwan,
+    'XX',
+  ])('does not treat %s as an EU market', (marketCode) => {
+    expect(isEuMember(marketCode)).toBe(false)
+  })
 })
 
 describe('replaceMarketQuery', () => {
