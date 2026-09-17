@@ -1,14 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Rolex Price History",
-  "description": "Append-only Rolex price and listing-status changes for one market. Schema version 2 keys priceSeries by globally unique watchId values.",
+  "title": "Watch Price History",
+  "description": "Brand-neutral append-only price and listing-status changes for one brand in one market.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["$schema", "schemaVersion", "marketCode", "currencyCode", "priceType", "taxRatePercent", "collectionRuns", "priceSeries"],
+  "required": ["$schema", "schemaVersion", "brandId", "marketCode", "currencyCode", "priceType", "taxRatePercent", "collectionRuns", "priceSeries"],
   "properties": {
-    "$schema": { "const": "../../schemas/rolex-price-history.schema.json" },
-    "schemaVersion": { "enum": [1, 2] },
-    "brandId": { "const": "rolex" },
+    "$schema": { "const": "../../schemas/watch-price-history.schema.json" },
+    "schemaVersion": { "const": 3 },
+    "brandId": { "$ref": "#/$defs/slug" },
     "marketCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
     "currencyCode": { "type": "string", "pattern": "^[A-Z]{3}$" },
     "priceType": { "enum": ["tax-include", "tax-exclude", "no-tax"] },
@@ -21,7 +21,7 @@
     "priceSeries": {
       "type": "object",
       "minProperties": 1,
-      "propertyNames": { "pattern": "^(?:rolex:)?m[0-9a-z]+-[0-9]{4}$" },
+      "propertyNames": { "$ref": "#/$defs/watchId" },
       "additionalProperties": {
         "type": "array",
         "minItems": 1,
@@ -29,20 +29,9 @@
       }
     }
   },
-  "allOf": [
-    {
-      "if": { "properties": { "schemaVersion": { "const": 2 } } },
-      "then": {
-        "required": ["brandId"],
-        "properties": {
-          "priceSeries": {
-            "propertyNames": { "pattern": "^rolex:m[0-9a-z]+-[0-9]{4}$" }
-          }
-        }
-      }
-    }
-  ],
   "$defs": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "watchId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*:.+$" },
     "collectionRun": {
       "type": "object",
       "additionalProperties": false,

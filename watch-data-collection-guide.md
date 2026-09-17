@@ -8,8 +8,8 @@
 
 收集與維護時請遵守以下原則：
 
-- 一筆資料代表「完整配置」，跨品牌唯一鍵為 `watchId`。勞力士以 `rolex:${modelReference}` 組成，例如 `rolex:m228236-0004` 與 `rolex:m228236-0018` 必須是兩筆資料；`modelReference` 保留官方原始參考號。
-- `configurationCode` 是四位字串，前導零不可移除，也不能假定它只代表面盤。
+- 一筆資料代表「完整配置」，品牌官方完整參考號保存在 `reference`，跨品牌唯一鍵固定為 `watchId = brandId + ":" + reference`。例如 `rolex:m228236-0004` 與 `rolex:m228236-0018` 必須是兩筆資料。
+- 品牌參考號必須完整保存，包含任何前導零、分隔符號與配置後綴；不得拆解後再推測或重組來源值。
 - 不知道價格不等於零；無法取得資料不等於 `not-listed`。
 - 正式資料只保存已驗證的事實；來源觀察、收集路徑與驗證結果保留在 evidence，而非塞入正式 Schema。
 - 價格歷史採追加式保存。不得修改或刪除既有輪次與價格點；無變化時不重複新增價格點。
@@ -28,15 +28,15 @@ data/
 └── schemas/
 ```
 
-各份 Schema 位於 `data/schemas/`，是正式資料欄位與型別的唯一依據。
+各份 Schema 位於 `data/schemas/`，是正式資料欄位與型別的唯一依據。Catalog、market 與 price history 分別使用 `watch-catalog.schema.json`、`watch-market.schema.json` 與 `watch-price-history.schema.json`。舊 Schema 名稱若出現在既有 evidence，代表當次驗證所使用的歷史契約，應透過 Git 歷史追溯，不得回頭修改 evidence。
 
 ### 共用配置目錄
 
-`data/catalog/` 中的配置目錄是所有已收集市場的配置聯集。每份品牌目錄以 `brandId` 識別；每筆腕錶只存跨市場穩定的欄位，包括 `watchId`、系列 ID、品牌原始型號／配置資訊與官方圖片。它不放價格、當地名稱、稅率或俗稱。
+`data/catalog/` 中的配置目錄是所有已收集市場的配置聯集。每份品牌目錄以 `brandId` 識別；每筆腕錶只存跨市場穩定的欄位，包括 `watchId`、`reference`、系列 ID 與官方圖片。它不放價格、當地名稱、稅率或俗稱。
 
 ### 市場在地化資料
 
-`data/markets/` 中的市場檔保存單一市場的地區、語系、官方來源、系列別名，以及每個配置的 `watchId`、當地名稱、錶殼／面盤描述、新款標示、官方商品連結與當地俗稱。市場檔不保存價格或稅務欄位。
+`data/markets/` 中的市場檔保存單一品牌、單一市場的地區、語系、官方來源、系列別名，以及每個配置的 `watchId`、`reference`、當地名稱、錶殼／面盤描述、新款標示、官方商品連結與當地俗稱。市場檔不保存價格或稅務欄位。
 
 ### 價格歷史
 
@@ -161,4 +161,4 @@ Evidence 是「某個時間點從某個來源觀察到什麼」的快照，一�
 
 ## 新增品牌前的檢查
 
-新增其他品牌前，先為該品牌建立專屬的 catalog、market 與 price-history schema，並定義穩定的 `brandId` 與 `watchId` 組成方式。該品牌的原始型號欄位、圖片、在地化欄位、價格單位與稅務語意必須由其 schema 表達；不要為了沿用勞力士的 `modelReference`、檔名或欄位而扭曲來源事實。
+新增其他品牌前，先確認其官方完整參考號能無損映射到 generic contract 的 `reference`，並定義穩定的 `brandId`、檔名、evidence 路徑與前端產生流程。若來源事實無法由現有 generic Schema 表達，必須先提出契約變更並取得同意；不得為了配合既有品牌或前端而填造來源不存在的識別欄位。

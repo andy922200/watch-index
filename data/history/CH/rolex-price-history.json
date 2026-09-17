@@ -1,6 +1,6 @@
 {
-  "$schema": "../../schemas/rolex-price-history.schema.json",
-  "schemaVersion": 2,
+  "$schema": "../../schemas/watch-price-history.schema.json",
+  "schemaVersion": 3,
   "brandId": "rolex",
   "marketCode": "CH",
   "currencyCode": "CHF",

@@ -1,42 +1,33 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Rolex Market",
-  "description": "Market-specific Rolex display text, URLs, aliases, and nicknames without price data. Schema version 2 adds globally unique watchId values.",
+  "title": "Watch Market",
+  "description": "Brand-neutral market-specific watch display text, URLs, aliases, and nicknames without price data. Schema version 3 uses the brand's complete official reference as the canonical identity source.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["$schema", "schemaVersion", "collectedAt", "salesRegion", "marketCode", "locale", "watchCount", "source", "collectionAliases", "watches"],
+  "required": ["$schema", "schemaVersion", "brandId", "collectedAt", "salesRegion", "marketCode", "locale", "watchCount", "source", "collectionAliases", "watches"],
   "properties": {
-    "$schema": { "const": "../schemas/rolex-market.schema.json" },
-    "schemaVersion": { "enum": [1, 2] },
-    "brandId": { "const": "rolex" },
+    "$schema": { "const": "../schemas/watch-market.schema.json" },
+    "schemaVersion": { "const": 3 },
+    "brandId": { "$ref": "#/$defs/slug" },
     "collectedAt": { "type": "string", "format": "date-time" },
     "salesRegion": { "type": "string", "minLength": 1 },
-    "marketCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "marketCode": { "$ref": "#/$defs/marketCode" },
     "locale": { "type": "string", "minLength": 2 },
     "watchCount": { "type": "integer", "minimum": 0 },
     "source": { "$ref": "#/$defs/source" },
     "collectionAliases": {
       "type": "object",
       "minProperties": 1,
-      "propertyNames": { "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+      "propertyNames": { "$ref": "#/$defs/slug" },
       "additionalProperties": { "$ref": "#/$defs/namesWithSources" }
     },
     "watches": { "type": "array", "items": { "$ref": "#/$defs/marketWatch" } }
   },
-  "allOf": [
-    {
-      "if": { "properties": { "schemaVersion": { "const": 2 } } },
-      "then": {
-        "required": ["brandId"],
-        "properties": {
-          "watches": {
-            "items": { "required": ["watchId"] }
-          }
-        }
-      }
-    }
-  ],
   "$defs": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "marketCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "reference": { "type": "string", "minLength": 1 },
+    "watchId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*:.+$" },
     "source": {
       "type": "object",
       "additionalProperties": false,
@@ -67,10 +58,10 @@
     "marketWatch": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["modelReference", "collectionName", "modelName", "caseDescription", "dialDescription", "isNewModel", "productUrl", "localNicknames"],
+      "required": ["watchId", "reference", "collectionName", "modelName", "caseDescription", "dialDescription", "isNewModel", "productUrl", "localNicknames"],
       "properties": {
-        "watchId": { "type": "string", "pattern": "^rolex:m[0-9a-z]+-[0-9]{4}$" },
-        "modelReference": { "type": "string", "pattern": "^m[0-9a-z]+-[0-9]{4}$" },
+        "watchId": { "$ref": "#/$defs/watchId" },
+        "reference": { "$ref": "#/$defs/reference" },
         "collectionName": { "type": "string", "minLength": 1 },
         "modelName": { "type": "string", "minLength": 1 },
         "caseDescription": { "type": ["string", "null"] },

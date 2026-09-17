@@ -45,7 +45,7 @@ app/public/watch-data/ 或 app/dist/watch-data/
 Vue 頁面、搜尋、清單、詳細視窗與單錶跨市場比較
 ```
 
-`scripts/generate-watch-data.mjs` 會以 `watchId` 將共用配置、單一市場的在地文字與該市場最後一個價格狀態合併成前端資料。輸出以 `watchesById` 索引腕錶，畫面仍顯示品牌原始的 `modelReference`。另會產生只含最新市場價格、稅別、更新時間與可選旅客政策摘要的 `comparison.<hash>.json`，供單錶比較頁一次取得完整矩陣，而不下載所有在地化 catalog。輸出檔以內容雜湊命名，`manifest.json` 負責指向各市場目前版本與 comparison payload；資料更新時網址隨內容改變，可安全使用快取。
+`scripts/generate-watch-data.mjs` 會以 `watchId` 將共用配置、單一市場的在地文字與該市場最後一個價格狀態合併成前端資料。來源資料的跨品牌官方參考號是 `reference`，輸出以 `watchesById` 索引腕錶，並另產生只含最新市場價格、稅別、更新時間與可選旅客政策摘要的 `comparison.<hash>.json`。來源契約已移除舊 Rolex 識別欄位，但目前前端型別、搜尋與畫面尚未完成 `reference` 遷移；完成下一階段前，正式前端建置不視為可用。現有產生流程也仍只支援 Rolex；新增其他品牌前必須先完成 brand-scoped 輸入與 manifest 隔離。
 
 資料載入前會檢查 manifest 與 catalog 的必要欄位。若市場資料缺少任一配置、價格歷史或必要文字，產生流程會失敗，而不是發布部分資料。
 
@@ -84,7 +84,7 @@ pnpm test:e2e        # 執行 Playwright 端對端測試
 ## 維護建議
 
 - 新增或調整市場時，同步更新 `src/lib/markets.ts`、介面翻譯與資料層；市場代碼必須也存在於建置後的 manifest。若新市場屬於歐盟，需同步更新 `src/lib/markets.ts` 的 `EU_MARKET_CODES`——這份清單不會自動從其他資料推導，漏改會讓退稅估算的歐盟連動判斷（任一歐盟市場設有稅務居住地，即失去所有歐盟市場的退稅資格）失準。
-- 新增品牌前，確認其專屬 schema 與產生流程能產出 `brandId`、`watchId`，再擴充前端資料型別、搜尋索引與頁面文案；不得把現有勞力士的型號規則或顯示文字套用到其他品牌。
+- 新增品牌前，確認 generic source schema 能無損表達其 `brandId`、`reference` 與 `watchId`，再完成品牌隔離的產生流程、前端資料型別、搜尋索引與頁面文案；不得把現有勞力士的型號規則或顯示文字套用到其他品牌。
 - 修改前端資料欄位時，同步調整 `src/types/` 的資料型別、`src/lib/validation/` 的對應 guard 與產生腳本，並補上測試。跨品牌共用的欄位放在 `watch-data.ts` 與 `validation/watch.ts`，品牌專屬欄位則放在該品牌的型別與 guard（如 `rolex-watch.ts` 與 `validation/rolexWatch.ts`）。
 - 搜尋功能的規則與頁面狀態位於 `src/pages/` 的產品頁目錄；修改搜尋行為時請測試鍵盤操作與無結果狀態。
 - 首頁顯示的是每個市場價格歷史中的最後一個狀態；比較頁會以頁面載入時的 Frankfurter 匯率將各市場值換算成使用者所選幣別，並逐列標示官方價格與匯率日期。退稅估算只能作為未稅／制度條件參考，不是可保證退款。退稅估算頁的稅務居住地設定只存於瀏覽器 `localStorage`，刻意不同步進網址查詢字串（與市場代碼不同）——這是隱私考量下的決定，調整比較頁的狀態管理時應維持此區隔。資料語意有變更時，先依資料指南更新正式資料與證據。

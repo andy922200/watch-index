@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Watch Catalog",
+  "description": "Brand-neutral catalog of market-independent watch configurations. Schema version 3 uses the brand's complete official reference as the canonical identity source.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schemaVersion", "brandId", "collectedAt", "sourceMarketCodes", "watchCount", "watches"],
+  "properties": {
+    "$schema": { "const": "../schemas/watch-catalog.schema.json" },
+    "schemaVersion": { "const": 3 },
+    "brandId": { "$ref": "#/$defs/slug" },
+    "collectedAt": { "type": "string", "format": "date-time" },
+    "sourceMarketCodes": {
+      "description": "Market codes whose collected data have been reconciled with this catalog; this does not assert complete market coverage or availability of every configuration in every market.",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/marketCode" }
+    },
+    "watchCount": {
+      "description": "Number of unique watch references; must equal watches.length.",
+      "type": "integer",
+      "minimum": 0
+    },
+    "watches": {
+      "type": "array",
+      "uniqueItems": true,
+      "$comment": "JSON Schema uniqueItems rejects identical objects, not distinct objects sharing an identity. Validate reference and watchId uniqueness, watchCount equality, and watchId = brandId + ':' + reference separately.",
+      "items": { "$ref": "#/$defs/watch" }
+    }
+  },
+  "$defs": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "marketCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "reference": { "type": "string", "minLength": 1 },
+    "watchId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*:.+$" },
+    "watch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["watchId", "collectionId", "reference", "imageUrl"],
+      "properties": {
+        "watchId": { "$ref": "#/$defs/watchId" },
+        "collectionId": { "$ref": "#/$defs/slug" },
+        "reference": { "$ref": "#/$defs/reference" },
+        "imageUrl": { "type": "string", "format": "uri" }
+      }
+    }
+  }
+}

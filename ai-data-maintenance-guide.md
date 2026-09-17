@@ -7,7 +7,7 @@
 ## 適用範圍與硬性限制
 
 - 目前正式資料只涵蓋勞力士，包含 AT、CH、CN、DE、ES、FR、GB、HK、IT、JP、KR、SG、TH、TW、US 共 15 個市場。
-- 專案日後會支援其他品牌；不得假定現有的型號格式、檔名、`modelReference` 規則或前端欄位仍適用。
+- Catalog、market 與 price history 已使用 brand-neutral v3 Schema；專案日後加入其他品牌時，不得假定 Rolex 的檔名、參考號格式或前端欄位仍適用。
 - 未經明確授權，不得修改 Schema、另建正式格式、安裝依賴、推送遠端或繞過網站存取限制。
 - 面向人類的文件一律使用繁體中文。
 
@@ -43,11 +43,10 @@
 一筆現有 Rolex 腕錶資料代表完整配置，且必須滿足：
 
 ```text
-modelReference === modelNumber + "-" + configurationCode
-watchId === "rolex:" + modelReference
+watchId === brandId + ":" + reference
 ```
 
-`configurationCode` 是四位字串，前導零不可移除；同基本型號但不同配置碼是不同資料。新增品牌必須使用自己的 schema 與原始型號規則，但仍應定義品牌範圍內穩定、可組成全域 `watchId` 的識別方式。
+`reference` 必須逐字保留品牌官方完整參考號，包括前導零、分隔符號與配置後綴；同基本型號但不同完整參考號是不同資料。新增品牌使用 generic Schema 與品牌官方完整 `reference`；來源若無法無損映射到現有契約，必須先取得 Schema 變更同意。
 
 | `listingStatus` | `price` | 使用時機 |
 | --- | --- | --- |
@@ -206,7 +205,7 @@ print(f"PASS: strict JSON parsing, {len(paths)} files")
 
 ### 跨檔案不變條件：現有勞力士資料範例
 
-此 Node.js 片段只驗證目前的勞力士資料契約：完整配置鍵、market／history 關聯、runId 與價格狀態。檔名、路徑與 `modelReference` 正規表示式都以勞力士現況為例；新增其他品牌時，應依新品牌的識別碼與資料契約另建或擴充驗證，不能直接套用本片段。
+此 Node.js 片段驗證 generic identity、market／history 關聯、runId 與價格狀態。檔名與路徑仍以目前的 Rolex 正式資料為例；新增其他品牌時，應擴充檔案發現與品牌隔離，不能直接套用 Rolex 檔名。
 
 它不取代 JSON Schema、來源回對或完整性驗證。
 
@@ -217,7 +216,6 @@ const assert = require('node:assert/strict')
 
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8'))
 const fail = (condition, message) => assert(condition, message)
-const refPattern = /^m[0-9a-z]+-[0-9]{4}$/
 const isTime = value => typeof value === 'string' && Number.isFinite(Date.parse(value))
 const unique = values => new Set(values).size === values.length
 
@@ -229,11 +227,9 @@ fail(catalog.watchCount === catalog.watches.length, 'catalog watchCount mismatch
 fail(unique(catalogWatchIdList), 'catalog duplicate watchId')
 
 for (const watch of catalog.watches) {
-  fail(watch.watchId === `rolex:${watch.modelReference}`, `invalid watchId: ${watch.watchId}`)
-  fail(refPattern.test(watch.modelReference), `invalid reference: ${watch.modelReference}`)
-  fail(watch.modelReference === `${watch.modelNumber}-${watch.configurationCode}`,
-    `reference parts mismatch: ${watch.modelReference}`)
-  fail(/^\d{4}$/.test(watch.configurationCode), `invalid configuration code: ${watch.modelReference}`)
+  fail(watch.watchId === `${catalog.brandId}:${watch.reference}`, `invalid watchId: ${watch.watchId}`)
+  fail(typeof watch.reference === 'string' && watch.reference.length > 0,
+    `invalid reference: ${watch.watchId}`)
 }
 
 for (const file of fs.readdirSync('data/markets').filter(name => name.endsWith('.json'))) {
@@ -247,7 +243,7 @@ for (const file of fs.readdirSync('data/markets').filter(name => name.endsWith('
   fail(history.marketCode === market.marketCode, `${file}: marketCode mismatch`)
 
   for (const watch of market.watches) {
-    fail(watch.watchId === `rolex:${watch.modelReference}`, `${file}: invalid watchId ${watch.watchId}`)
+    fail(watch.watchId === `${market.brandId}:${watch.reference}`, `${file}: invalid watchId ${watch.watchId}`)
   }
 
   const runIds = new Set()
