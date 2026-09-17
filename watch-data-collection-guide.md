@@ -28,7 +28,17 @@ data/
 └── schemas/
 ```
 
-各份 Schema 位於 `data/schemas/`，是正式資料欄位與型別的唯一依據。Catalog、market 與 price history 分別使用 `watch-catalog.schema.json`、`watch-market.schema.json` 與 `watch-price-history.schema.json`。舊 Schema 名稱若出現在既有 evidence，代表當次驗證所使用的歷史契約，應透過 Git 歷史追溯，不得回頭修改 evidence。
+各份 Schema 位於 `data/schemas/`，是正式資料欄位與型別的唯一依據。Catalog、market 與 price history 分別使用 `watch-catalog.schema.json`、`watch-market.schema.json` 與 `watch-price-history.schema.json`。目前核心資料契約是 [`data-schema-v3`](https://github.com/andy922200/watch-index/releases/tag/data-schema-v3)，旅客退稅政策契約是 [`traveler-refund-schema-v1`](https://github.com/andy922200/watch-index/releases/tag/traveler-refund-schema-v1)。
+
+歷史 Schema 應從 [GitHub Releases](https://github.com/andy922200/watch-index/releases) 的對應版本下載，或透過同名 annotated tag 查閱當時的原始路徑；Release 同時提供原始 Schema 與 `SHA256SUMS.txt`。舊 Schema 名稱若出現在既有 evidence，代表當次驗證所使用的歷史契約，不得改用現行 Schema 重新詮釋，也不得回頭修改 evidence。
+
+### Schema 版本規則
+
+- Catalog、market 與 price history 共用 `data-schema-vN` 版本線，三份 Schema 必須同步提升版本與發布。
+- 旅客退稅政策使用獨立的 `traveler-refund-schema-vN` 版本線。
+- 欄位、型別、必填條件、識別規則或 Schema 路徑約束改變時，必須提升對應的 `schemaVersion` 並建立 annotated tag、GitHub Release、原始 Schema 附件與 SHA-256 校驗檔。
+- 僅修改 `description`、`$comment` 或文件文字而未改變契約時，不提升資料契約版本。
+- 已發布的 tag、Release 附件與歷史 evidence 一律不覆寫；需要修正時發布新版本，並在說明中指出前版問題與遷移影響。
 
 ### 共用配置目錄
 

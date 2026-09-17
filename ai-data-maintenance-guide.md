@@ -67,6 +67,21 @@ watchId === brandId + ":" + reference
 
 不得先改正式 JSON，再由正式 JSON 補造 evidence。
 
+## Schema 發布流程
+
+Catalog、market 與 price history 共用 `data-schema-vN` 版本線並同步升版；旅客退稅政策使用獨立的 `traveler-refund-schema-vN` 版本線。欄位、型別、必填條件、識別規則或 Schema 路徑約束改變時，必須提升對應的 `schemaVersion`。僅修改 `description`、`$comment` 或文件文字且未改變契約時，不升版。
+
+發布新版本時固定執行：
+
+1. 確認版本號、原始生效日、來源 commit，以及相容性與破壞性差異。
+2. 在該來源 commit 建立 annotated tag；核心契約使用 `data-schema-vN`，退稅政策使用 `traveler-refund-schema-vN`。
+3. 從該 tag 匯出原始 Schema，不得以工作區現行檔案代替歷史內容；核心契約附上三份同步版本的 Schema，退稅政策只附其獨立 Schema。
+4. 為附件產生 `SHA256SUMS.txt`，建立非 prerelease 的 GitHub Release，並在繁體中文 notes 中列出原始生效日、來源 commit、相容性／破壞性差異及 tag 內原始檔連結。
+5. 下載全部 Release 附件，確認 JSON 可解析、SHA-256 全部通過，且每份 Schema 與 `git show <tag>:<原始路徑>` 位元完全一致。
+6. 確認 tag 解析到預期 commit、Release 狀態與 Latest 設定正確，並實際開啟 notes 中的檔案連結。
+
+建立前必須同時檢查本機與遠端同名 tag。若同名 tag 已存在且指向不同 commit，立即停止；不得移動、強制推送或刪除重建。已發布的 tag 與 Release 附件一律不可覆寫；發布內容有誤時保留原版本，另發新版本並說明問題。歷史 evidence 同樣維持不可變更，不因 Schema 發布而回溯改寫。
+
 ## 來源發現與完整性
 
 以目標市場的官方來源作為市場清單、在地文字與價格的事實基礎。對 JavaScript 網站，優先使用頁面實際載入的 JSON、REST、GraphQL、內嵌 state 或 network response，確認市場／語系參數、篩選狀態、分頁或 cursor 與真正的結束條件。再用不同的官方視圖、rendered UI 或商品頁進行獨立抽查。

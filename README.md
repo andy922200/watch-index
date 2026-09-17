@@ -24,6 +24,12 @@ Watch Index 將品牌官方公開的腕錶配置、各市場的在地化資訊�
 
 資料結構、收集流程、驗證標準與新增市場方式，請見 [watch-data-collection-guide.md](watch-data-collection-guide.md)。
 
+### Schema Releases
+
+已發布的資料契約可從 [GitHub Releases](https://github.com/andy922200/watch-index/releases) 查閱及下載；每個版本均保留原始 Schema 與 SHA-256 校驗檔。目前 catalog、market 與 price history 的正式版本是 [`data-schema-v3`](https://github.com/andy922200/watch-index/releases/tag/data-schema-v3)，旅客退稅政策的正式版本是 [`traveler-refund-schema-v1`](https://github.com/andy922200/watch-index/releases/tag/traveler-refund-schema-v1)。
+
+核心資料契約使用 `data-schema-vN` 版本線，三份 Schema 同步升版；旅客退稅政策則使用獨立的 `traveler-refund-schema-vN` 版本線。歷史版本以對應的 annotated tag 與 Release 為準，不會覆寫既有 tag 或附件。
+
 ## 專案導覽
 
 ```text
