@@ -27,9 +27,7 @@ vi.mock('@/composables/useWatchCatalog', async () => {
           'rolex:m124060-0001': {
             watchId: 'rolex:m124060-0001',
             collectionId: 'submariner',
-            modelNumber: 'm124060',
-            configurationCode: '0001',
-            modelReference: 'm124060-0001',
+            reference: 'm124060-0001',
             imageUrl: 'https://example.com/m124060-0001',
             modelName: 'Submariner',
             caseDescription: 'Oystersteel',

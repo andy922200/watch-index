@@ -67,13 +67,9 @@ export const matchesWatchSearch = (
 
   return (
     !normalizedQuery ||
-    [
-      watch.modelNumber,
-      watch.modelReference,
-      watch.modelName,
-      collectionLabel,
-      ...watch.localNicknames,
-    ].some((value) => includesSearchText(value, normalizedQuery))
+    [watch.reference, watch.modelName, collectionLabel, ...watch.localNicknames].some((value) =>
+      includesSearchText(value, normalizedQuery),
+    )
   )
 }
 
@@ -224,9 +220,9 @@ export const getWatchSearchSuggestions = ({
     .filter((watch) =>
       matchesWatchSearch(watch, query, collectionLabels.get(watch.collectionId) ?? ''),
     )
-    .sort((left, right) => left.modelReference.localeCompare(right.modelReference))
+    .sort((left, right) => left.reference.localeCompare(right.reference))
     .slice(0, maxWatchSuggestions)
-    .map((watch) => ({ type: 'watch', watch, searchTerm: watch.modelReference }))
+    .map((watch) => ({ type: 'watch', watch, searchTerm: watch.reference }))
 
   return [...modelNameSuggestions, ...collectionSuggestions, ...watchSuggestions]
 }

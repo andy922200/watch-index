@@ -74,7 +74,7 @@
       "sortPriceLowToHigh": "Price: low to high",
       "sortPriceHighToLow": "Price: high to low",
       "loadMore": "Load more watches",
-      "modelReferenceLabel": "Reference",
+      "referenceLabel": "Reference",
       "priceLabelIncludingTax": "Retail price (tax included)",
       "priceLabelExcludingTax": "Retail price (tax excluded)",
       "priceLabelNoTax": "Retail price (tax-free market)",

@@ -1,19 +1,17 @@
 import { expect, type Page, test } from '@playwright/test'
 
 interface PriceSortWatchInput {
-  modelReference: string
+  reference: string
   price: number | null
   priceStatus: 'listed' | 'price-unavailable'
 }
 
-const createPriceSortWatch = ({ modelReference, price, priceStatus }: PriceSortWatchInput) => ({
-  watchId: `rolex:${modelReference}`,
+const createPriceSortWatch = ({ reference, price, priceStatus }: PriceSortWatchInput) => ({
+  watchId: `rolex:${reference}`,
   collectionId: 'submariner',
-  modelNumber: modelReference.slice(0, 7),
-  configurationCode: modelReference.slice(8),
-  modelReference,
-  imageUrl: `https://example.com/${modelReference}.jpg`,
-  modelName: `Test ${modelReference}`,
+  reference,
+  imageUrl: `https://example.com/${reference}.jpg`,
+  modelName: `Test ${reference}`,
   caseDescription: 'Test case',
   dialDescription: 'Test dial',
   localNicknames: [],
@@ -24,18 +22,18 @@ const createPriceSortWatch = ({ modelReference, price, priceStatus }: PriceSortW
 const priceSortWatches = [
   ...Array.from({ length: 12 }, (_, index) =>
     createPriceSortWatch({
-      modelReference: `m100${String(index).padStart(3, '0')}-0001`,
+      reference: `m100${String(index).padStart(3, '0')}-0001`,
       price: 100 + Math.max(index - 1, 0) * 10,
       priceStatus: 'listed',
     }),
   ),
   createPriceSortWatch({
-    modelReference: 'm999999-0001',
+    reference: 'm999999-0001',
     price: 300,
     priceStatus: 'listed',
   }),
   createPriceSortWatch({
-    modelReference: 'm500000-0001',
+    reference: 'm500000-0001',
     price: null,
     priceStatus: 'price-unavailable',
   }),
@@ -78,13 +76,13 @@ test('changes the Rolex index page language', async ({ page }) => {
   await page.goto('en-us/')
 
   await expect(page.getByRole('heading', { name: 'Global Rolex Watches Index' })).toBeVisible()
-  await expect(page.getByText('Price data updated Aug 31, 2026')).toBeVisible()
+  await expect(page.getByText('Price data updated Sep 14, 2026')).toBeVisible()
 
   await page.getByRole('combobox', { name: 'Language' }).click()
   await page.getByRole('option', { name: '繁體中文' }).click()
 
   await expect(page.getByRole('heading', { name: '全球 Rolex 腕錶索引' })).toBeVisible()
-  await expect(page.getByText('價格資料更新於 2026年8月31日')).toBeVisible()
+  await expect(page.getByText('價格資料更新於 2026年9月14日')).toBeVisible()
   await expect(page.getByRole('combobox', { name: '排序' })).toContainText('預設排序')
 })
 

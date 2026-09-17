@@ -10,6 +10,7 @@ import {
 const baseWatch = {
   watchId: 'rolex:m126234-0001',
   collectionId: 'datejust',
+  reference: 'm126234-0001',
   imageUrl: 'https://example.com/watch.png',
   modelName: 'Datejust 36',
   caseDescription: 'Oyster, 36 mm, Oystersteel',
@@ -21,7 +22,7 @@ const baseWatch = {
 
 const catalogWithWatches = (watchesById: Record<string, unknown>): unknown => ({
   schemaVersion: 3,
-  brandId: 'example',
+  brandId: 'rolex',
   collectedAt: '2026-09-04T00:00:00.000Z',
   watchCount: 1,
   collections: [{ id: 'datejust', watchCount: 1 }],

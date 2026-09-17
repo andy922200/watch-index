@@ -120,7 +120,7 @@ const sortedWatches = computed<RolexWatch[]>(() => {
     const rightPrice = getListedPrice(right)
 
     if (leftPrice === null && rightPrice === null) {
-      return left.modelReference.localeCompare(right.modelReference)
+      return left.reference.localeCompare(right.reference)
     }
 
     if (leftPrice === null) {
@@ -133,7 +133,7 @@ const sortedWatches = computed<RolexWatch[]>(() => {
 
     const priceDifference = (leftPrice - rightPrice) * priceDirection
 
-    return priceDifference || left.modelReference.localeCompare(right.modelReference)
+    return priceDifference || left.reference.localeCompare(right.reference)
   })
 })
 
@@ -362,7 +362,7 @@ watchSource(selectedPriceSort, () => {
               watch.modelName
             }}</CardTitle>
             <CardDescription class="h-4 truncate font-mono text-xs">
-              {{ watch.modelReference }}
+              {{ watch.reference }}
             </CardDescription>
             <div class="mt-2 min-h-14">
               <p class="text-muted-foreground text-xs">{{ getPriceLabel() }}</p>

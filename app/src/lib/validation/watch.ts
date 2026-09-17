@@ -33,6 +33,7 @@ export const isBaseWatch = (value: unknown): value is BaseWatch =>
   isRecord(value) &&
   typeof value.watchId === 'string' &&
   typeof value.collectionId === 'string' &&
+  typeof value.reference === 'string' &&
   typeof value.imageUrl === 'string' &&
   typeof value.modelName === 'string' &&
   typeof value.caseDescription === 'string' &&
@@ -115,7 +116,11 @@ export const createWatchCatalogGuard =
     value.collections.every(isWatchCollection) &&
     isPriceMarket(value.priceMarket) &&
     typeof value.priceUpdatedAt === 'string' &&
-    isWatchesById(value.watchesById, isWatch)
+    isWatchesById(value.watchesById, isWatch) &&
+    Object.keys(value.watchesById).length === value.watchCount &&
+    Object.values(value.watchesById).every(
+      (watch) => watch.watchId === `${value.brandId}:${watch.reference}`,
+    )
 
 const isComparisonPricesByWatchId = (
   value: unknown,

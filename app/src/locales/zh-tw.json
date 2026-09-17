@@ -74,7 +74,7 @@
       "sortPriceLowToHigh": "價格：低到高",
       "sortPriceHighToLow": "價格：高到低",
       "loadMore": "載入更多錶款",
-      "modelReferenceLabel": "型號",
+      "referenceLabel": "型號",
       "priceLabelIncludingTax": "建議售價（含稅）",
       "priceLabelExcludingTax": "建議售價（未含稅）",
       "priceLabelNoTax": "建議售價（免稅市場）",

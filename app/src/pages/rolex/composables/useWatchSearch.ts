@@ -143,7 +143,7 @@ export const useWatchSearch = ({
         watchOptions.push({
           id: getSearchOptionId(suggestion),
           label: suggestion.watch.modelName,
-          description: suggestion.watch.modelReference,
+          description: suggestion.watch.reference,
         })
       }
     }
@@ -192,7 +192,7 @@ export const useWatchSearch = ({
           collectionLabels.get(watch.collectionId) ?? '',
         ),
       )
-      .sort((left, right) => left.modelReference.localeCompare(right.modelReference))
+      .sort((left, right) => left.reference.localeCompare(right.reference))
   })
 
   /**

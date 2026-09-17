@@ -9,16 +9,14 @@ const createOysterPerpetual34Catalog = (): WatchCatalog<RolexWatch> => {
   const watchesById: Record<string, RolexWatch> = {}
 
   for (let index = 1; index <= 15; index += 1) {
-    const configurationCode = String(index).padStart(4, '0')
-    const modelReference = `m124200-${configurationCode}`
+    const variantSuffix = String(index).padStart(4, '0')
+    const reference = `m124200-${variantSuffix}`
 
-    watchesById[`rolex:${modelReference}`] = {
-      watchId: `rolex:${modelReference}`,
+    watchesById[`rolex:${reference}`] = {
+      watchId: `rolex:${reference}`,
       collectionId: 'oyster-perpetual',
-      modelNumber: 'm124200',
-      configurationCode,
-      modelReference,
-      imageUrl: `https://example.com/${modelReference}`,
+      reference,
+      imageUrl: `https://example.com/${reference}`,
       modelName: 'Oyster Perpetual 34',
       caseDescription: 'Oystersteel',
       dialDescription: 'Blue',
@@ -47,18 +45,16 @@ const createOysterPerpetual34Catalog = (): WatchCatalog<RolexWatch> => {
 
 const createOysterPerpetualWatch = (
   modelName: string,
-  modelNumber: string,
-  configurationCode: string,
+  referencePrefix: string,
+  variantSuffix: string,
 ): RolexWatch => {
-  const modelReference = `${modelNumber}-${configurationCode}`
+  const reference = `${referencePrefix}-${variantSuffix}`
 
   return {
-    watchId: `rolex:${modelReference}`,
+    watchId: `rolex:${reference}`,
     collectionId: 'oyster-perpetual',
-    modelNumber,
-    configurationCode,
-    modelReference,
-    imageUrl: `https://example.com/${modelReference}`,
+    reference,
+    imageUrl: `https://example.com/${reference}`,
     modelName,
     caseDescription: 'Oystersteel',
     dialDescription: 'Blue',
@@ -130,9 +126,7 @@ const catalog: WatchCatalog<RolexWatch> = {
     'rolex:m124060-0001': {
       watchId: 'rolex:m124060-0001',
       collectionId: 'submariner',
-      modelNumber: 'm124060',
-      configurationCode: '0001',
-      modelReference: 'm124060-0001',
+      reference: 'm124060-0001',
       imageUrl: 'https://example.com/m124060-0001',
       modelName: 'Submariner',
       caseDescription: 'Oystersteel',
@@ -144,9 +138,7 @@ const catalog: WatchCatalog<RolexWatch> = {
     'rolex:m126234-0001': {
       watchId: 'rolex:m126234-0001',
       collectionId: 'datejust',
-      modelNumber: 'm126234',
-      configurationCode: '0001',
-      modelReference: 'm126234-0001',
+      reference: 'm126234-0001',
       imageUrl: 'https://example.com/m126234-0001',
       modelName: 'Datejust',
       caseDescription: 'Oystersteel',
@@ -185,7 +177,7 @@ describe('useWatchSearch', () => {
     await nextTick()
 
     expect(isSearchPending.value).toBe(false)
-    expect(filteredWatches.value.map((watch) => watch.modelReference)).toEqual(['m124060-0001'])
+    expect(filteredWatches.value.map((watch) => watch.reference)).toEqual(['m124060-0001'])
     expect(searchComboboxGroups.value).toEqual([
       {
         id: 'watches',

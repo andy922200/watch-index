@@ -13,7 +13,7 @@ const isRolexWatchId = (watchId: string): boolean => ROLEX_WATCH_ID_PATTERN.test
 /** Rolex 對共用跨市場比價功能提供的資料驗證與顯示設定。 */
 export const rolexPriceCompareConfig: PriceCompareBrandConfig<RolexWatch> = {
   brandId: BRAND_ID,
-  getWatchReference: (watch: RolexWatch): string => watch.modelReference,
+  getWatchReference: (watch: RolexWatch): string => watch.reference,
   isCatalog: isRolexWatchCatalog,
   isWatchIdValid: isRolexWatchId,
 }

@@ -6,9 +6,7 @@ import type { RolexWatch } from '@/types/rolex-watch'
 const submariner: RolexWatch = {
   watchId: 'rolex:m124060-0001',
   collectionId: 'submariner',
-  modelNumber: 'm124060',
-  configurationCode: '0001',
-  modelReference: 'm124060-0001',
+  reference: 'm124060-0001',
   imageUrl: 'https://example.com/m124060-0001',
   modelName: 'Submariner',
   caseDescription: 'Oystersteel',
@@ -20,15 +18,13 @@ const submariner: RolexWatch = {
 
 const createOysterPerpetual = (
   modelName: string,
-  modelNumber: string,
-  configurationCode: string,
+  referencePrefix: string,
+  variantSuffix: string,
 ): RolexWatch => ({
-  watchId: `rolex:${modelNumber}-${configurationCode}`,
+  watchId: `rolex:${referencePrefix}-${variantSuffix}`,
   collectionId: 'oyster-perpetual',
-  modelNumber,
-  configurationCode,
-  modelReference: `${modelNumber}-${configurationCode}`,
-  imageUrl: `https://example.com/${modelNumber}-${configurationCode}`,
+  reference: `${referencePrefix}-${variantSuffix}`,
+  imageUrl: `https://example.com/${referencePrefix}-${variantSuffix}`,
   modelName,
   caseDescription: 'Oystersteel',
   dialDescription: 'Blue',
@@ -37,14 +33,14 @@ const createOysterPerpetual = (
   priceStatus: 'listed',
 })
 
-const oysterPerpetual31Watches = ['0001', '0002'].map((configurationCode) =>
-  createOysterPerpetual('Oyster Perpetual 31', 'm277200', configurationCode),
+const oysterPerpetual31Watches = ['0001', '0002'].map((variantSuffix) =>
+  createOysterPerpetual('Oyster Perpetual 31', 'm277200', variantSuffix),
 )
 const oysterPerpetual34Watches = ['0001', '0002', '0003', '0004', '0005', '0006'].map(
-  (configurationCode) => createOysterPerpetual('Oyster Perpetual 34', 'm124200', configurationCode),
+  (variantSuffix) => createOysterPerpetual('Oyster Perpetual 34', 'm124200', variantSuffix),
 )
-const oysterPerpetual36Watches = ['0001', '0002', '0003'].map((configurationCode) =>
-  createOysterPerpetual('Oyster Perpetual 36', 'm126000', configurationCode),
+const oysterPerpetual36Watches = ['0001', '0002', '0003'].map((variantSuffix) =>
+  createOysterPerpetual('Oyster Perpetual 36', 'm126000', variantSuffix),
 )
 const oysterPerpetualWatches = [
   ...oysterPerpetual31Watches,
@@ -136,7 +132,7 @@ describe('watch search', () => {
       ...oysterPerpetual34Watches.slice(0, 5).map((watch) => ({
         type: 'watch',
         watch,
-        searchTerm: watch.modelReference,
+        searchTerm: watch.reference,
       })),
     ])
     expect(

@@ -5,6 +5,7 @@ import { isRolexWatch, isRolexWatchCatalog } from '@/lib/validation/rolexWatch'
 const baseWatch = {
   watchId: 'rolex:m126234-0001',
   collectionId: 'datejust',
+  reference: 'm126234-0001',
   imageUrl: 'https://example.com/watch.png',
   modelName: 'Datejust 36',
   caseDescription: 'Oyster, 36 mm, Oystersteel',
@@ -14,20 +15,20 @@ const baseWatch = {
   priceStatus: 'listed',
 }
 
-const rolexWatch = {
-  ...baseWatch,
-  modelNumber: 'm126234',
-  configurationCode: '0001',
-  modelReference: 'm126234-0001',
-}
+const watchWithoutReference: Record<string, unknown> = { ...baseWatch }
+delete watchWithoutReference.reference
 
 describe('rolex watch validation', () => {
-  it('accepts a watch carrying the Rolex model fields', () => {
-    expect(isRolexWatch(rolexWatch)).toBe(true)
+  it('accepts a watch carrying the canonical reference', () => {
+    expect(isRolexWatch(baseWatch)).toBe(true)
   })
 
-  it('rejects a watch without the Rolex model fields', () => {
-    expect(isRolexWatch(baseWatch)).toBe(false)
+  it('rejects a watch without the canonical reference', () => {
+    expect(isRolexWatch(watchWithoutReference)).toBe(false)
+  })
+
+  it('rejects a reference that does not match watchId', () => {
+    expect(isRolexWatch({ ...baseWatch, reference: 'm126234-0002' })).toBe(false)
   })
 
   it('rejects catalogs containing invalid watch records', () => {
@@ -60,12 +61,12 @@ describe('rolex watch validation', () => {
           taxRatePercent: 5,
         },
         priceUpdatedAt: '2026-09-04T00:00:00.000Z',
-        watchesById: { 'rolex:m126234-0001': rolexWatch },
+        watchesById: { 'rolex:m126234-0001': baseWatch },
       }),
     ).toBe(true)
   })
 
-  it('rejects a catalog whose watches only carry the shared fields', () => {
+  it('rejects a catalog whose watches omit the canonical reference', () => {
     expect(
       isRolexWatchCatalog({
         schemaVersion: 3,
@@ -80,7 +81,7 @@ describe('rolex watch validation', () => {
           taxRatePercent: 5,
         },
         priceUpdatedAt: '2026-09-04T00:00:00.000Z',
-        watchesById: { 'rolex:m126234-0001': baseWatch },
+        watchesById: { 'rolex:m126234-0001': watchWithoutReference },
       }),
     ).toBe(false)
   })

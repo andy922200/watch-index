@@ -33,7 +33,7 @@ const getWatchImageAlt = (watch: RolexWatch): string =>
         <DialogHeader>
           <DialogTitle>{{ watch.modelName }}</DialogTitle>
           <DialogDescription>
-            {{ t('site.watchList.modelReferenceLabel') }}: {{ watch.modelReference }}
+            {{ t('site.watchList.referenceLabel') }}: {{ watch.reference }}
           </DialogDescription>
         </DialogHeader>
         <img

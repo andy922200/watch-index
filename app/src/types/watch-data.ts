@@ -13,6 +13,7 @@ export interface WatchCollection {
 export interface BaseWatch {
   watchId: string
   collectionId: string
+  reference: string
   imageUrl: string
   modelName: string
   caseDescription: string
