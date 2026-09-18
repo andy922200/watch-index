@@ -1,0 +1,615 @@
+{
+  "brandId": "omega",
+  "marketCode": "TW",
+  "locale": "zh-Hant-TW",
+  "collectedAt": "2026-09-18T09:12:11.092Z",
+  "entryUrl": "https://www.omegawatches.com.tw/watches",
+  "sourceDiscovery": {
+    "method": "Playwright-controlled Google Chrome observed the Taiwan locale selector, category UI, each category count, visible product cards, the batch price response, and the official next-page request before this run used the same public URLs.",
+    "confirmedPublicEndpoints": [
+      "https://www.omegawatches.com.tw/watches/{family}/{subcategory}/catalog?p={page}&ajax=1&noFilters=1",
+      "https://www.omegawatches.com.tw/ajax/product/index/?ids={comma-separated-product-ids}"
+    ]
+  },
+  "catalogCategoryCount": 16,
+  "categories": [
+    {
+      "catalogUrl": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog",
+      "officialTotal": 107,
+      "uniqueSourceProductCount": 107,
+      "repeatedSourceProductIds": [],
+      "pages": [
+        {
+          "pageNumber": 1,
+          "url": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog",
+          "recordCount": 24,
+          "nextPageUrl": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog?p=2"
+        },
+        {
+          "pageNumber": 2,
+          "url": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog?p=2",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog?p=2&ajax=1&noFilters=1",
+          "recordCount": 24,
+          "nextPageUrl": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog?p=3"
+        },
+        {
+          "pageNumber": 3,
+          "url": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog?p=3",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog?p=3&ajax=1&noFilters=1",
+          "recordCount": 24,
+          "nextPageUrl": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog?p=4"
+        },
+        {
+          "pageNumber": 4,
+          "url": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog?p=4",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog?p=4&ajax=1&noFilters=1",
+          "recordCount": 24,
+          "nextPageUrl": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog?p=5"
+        },
+        {
+          "pageNumber": 5,
+          "url": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog?p=5",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog?p=5&ajax=1&noFilters=1",
+          "recordCount": 11,
+          "nextPageUrl": null
+        }
+      ]
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.tw/watches/seamaster/diver-300-m/catalog",
+      "officialTotal": 60,
+      "uniqueSourceProductCount": 60,
+      "repeatedSourceProductIds": [
+        {
+          "sourceProductId": "8839",
+          "reference": "210.30.42.20.01.010",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8840",
+          "reference": "210.32.42.20.01.003",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8858",
+          "reference": "210.32.42.20.01.005",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8959",
+          "reference": "210.30.42.20.01.018",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8960",
+          "reference": "210.32.42.20.01.006",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8841",
+          "reference": "210.30.42.20.06.002",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8842",
+          "reference": "210.32.42.20.06.002",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8844",
+          "reference": "210.90.42.20.10.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8845",
+          "reference": "210.92.42.20.10.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "5761",
+          "reference": "210.30.42.20.01.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "6036",
+          "reference": "210.32.42.20.01.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "6591",
+          "reference": "210.90.42.20.01.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "6592",
+          "reference": "210.92.42.20.01.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "7812",
+          "reference": "210.32.42.20.10.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "7811",
+          "reference": "210.30.42.20.10.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8106",
+          "reference": "210.30.42.20.03.002",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8107",
+          "reference": "210.55.42.20.99.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "5762",
+          "reference": "210.30.42.20.03.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "6035",
+          "reference": "210.32.42.20.03.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8452",
+          "reference": "210.32.42.20.03.002",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8451",
+          "reference": "210.30.42.20.03.003",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "5771",
+          "reference": "210.32.42.20.06.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "5763",
+          "reference": "210.30.42.20.06.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8767",
+          "reference": "210.32.42.20.04.002",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8766",
+          "reference": "210.30.42.20.04.002",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "6386",
+          "reference": "210.32.42.20.04.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "6385",
+          "reference": "210.30.42.20.04.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8507",
+          "reference": "522.21.42.20.04.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "6042",
+          "reference": "210.20.42.20.01.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "5766",
+          "reference": "210.22.42.20.01.002",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "6038",
+          "reference": "210.20.42.20.01.002",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "6039",
+          "reference": "210.22.42.20.01.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "5764",
+          "reference": "210.20.42.20.03.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "6040",
+          "reference": "210.20.42.20.03.002",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "6041",
+          "reference": "210.22.42.20.03.002",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "6037",
+          "reference": "210.22.42.20.03.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "6371",
+          "reference": "210.62.42.20.03.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8833",
+          "reference": "210.62.42.20.01.002",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8956",
+          "reference": "210.52.42.20.04.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8871",
+          "reference": "210.92.42.20.01.003",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8870",
+          "reference": "210.90.42.20.01.003",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8832",
+          "reference": "210.62.42.20.10.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "8957",
+          "reference": "210.62.42.20.01.003",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "9091",
+          "reference": "522.92.44.20.04.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "9101",
+          "reference": "522.92.44.20.04.002",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "7517",
+          "reference": "210.92.44.20.01.003",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "7518",
+          "reference": "210.62.44.20.01.001",
+          "repeatedOnPage": 3
+        },
+        {
+          "sourceProductId": "6263",
+          "reference": "210.92.44.20.01.001",
+          "repeatedOnPage": 3
+        }
+      ],
+      "pages": [
+        {
+          "pageNumber": 1,
+          "url": "https://www.omegawatches.com.tw/watches/seamaster/diver-300-m/catalog",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/seamaster/diver-300-m/catalog",
+          "recordCount": 24,
+          "nextPageUrl": "https://www.omegawatches.com.tw/watches/seamaster/diver-300-m/catalog?p=2"
+        },
+        {
+          "pageNumber": 2,
+          "url": "https://www.omegawatches.com.tw/watches/seamaster/diver-300-m/catalog?p=2",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/seamaster/diver-300-m/catalog?p=2&ajax=1&noFilters=1",
+          "recordCount": 24,
+          "nextPageUrl": "https://www.omegawatches.com.tw/watches/seamaster/diver-300-m/catalog?p=3"
+        },
+        {
+          "pageNumber": 3,
+          "url": "https://www.omegawatches.com.tw/watches/seamaster/diver-300-m/catalog?p=3",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/seamaster/diver-300-m/catalog?p=3&ajax=1&noFilters=1",
+          "recordCount": 60,
+          "nextPageUrl": null
+        }
+      ]
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.tw/watches/seamaster/planet-ocean/catalog",
+      "officialTotal": 17,
+      "uniqueSourceProductCount": 17,
+      "repeatedSourceProductIds": [],
+      "pages": [
+        {
+          "pageNumber": 1,
+          "url": "https://www.omegawatches.com.tw/watches/seamaster/planet-ocean/catalog",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/seamaster/planet-ocean/catalog",
+          "recordCount": 17,
+          "nextPageUrl": null
+        }
+      ]
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.tw/watches/seamaster/heritage-models/catalog",
+      "officialTotal": 16,
+      "uniqueSourceProductCount": 16,
+      "repeatedSourceProductIds": [],
+      "pages": [
+        {
+          "pageNumber": 1,
+          "url": "https://www.omegawatches.com.tw/watches/seamaster/heritage-models/catalog",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/seamaster/heritage-models/catalog",
+          "recordCount": 16,
+          "nextPageUrl": null
+        }
+      ]
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.tw/watches/seamaster/instruments/catalog",
+      "officialTotal": 1,
+      "uniqueSourceProductCount": 1,
+      "repeatedSourceProductIds": [],
+      "pages": [
+        {
+          "pageNumber": 1,
+          "url": "https://www.omegawatches.com.tw/watches/seamaster/instruments/catalog",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/seamaster/instruments/catalog",
+          "recordCount": 1,
+          "nextPageUrl": null
+        }
+      ]
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.tw/watches/speedmaster/moonwatch-professional/catalog",
+      "officialTotal": 24,
+      "uniqueSourceProductCount": 24,
+      "repeatedSourceProductIds": [],
+      "pages": [
+        {
+          "pageNumber": 1,
+          "url": "https://www.omegawatches.com.tw/watches/speedmaster/moonwatch-professional/catalog",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/speedmaster/moonwatch-professional/catalog",
+          "recordCount": 24,
+          "nextPageUrl": null
+        }
+      ]
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.tw/watches/speedmaster/heritage-models/catalog",
+      "officialTotal": 16,
+      "uniqueSourceProductCount": 16,
+      "repeatedSourceProductIds": [],
+      "pages": [
+        {
+          "pageNumber": 1,
+          "url": "https://www.omegawatches.com.tw/watches/speedmaster/heritage-models/catalog",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/speedmaster/heritage-models/catalog",
+          "recordCount": 16,
+          "nextPageUrl": null
+        }
+      ]
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.tw/watches/speedmaster/dark-side-of-the-moon/catalog",
+      "officialTotal": 8,
+      "uniqueSourceProductCount": 8,
+      "repeatedSourceProductIds": [],
+      "pages": [
+        {
+          "pageNumber": 1,
+          "url": "https://www.omegawatches.com.tw/watches/speedmaster/dark-side-of-the-moon/catalog",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/speedmaster/dark-side-of-the-moon/catalog",
+          "recordCount": 8,
+          "nextPageUrl": null
+        }
+      ]
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.tw/watches/speedmaster/speedmaster-38-mm/catalog",
+      "officialTotal": 11,
+      "uniqueSourceProductCount": 11,
+      "repeatedSourceProductIds": [],
+      "pages": [
+        {
+          "pageNumber": 1,
+          "url": "https://www.omegawatches.com.tw/watches/speedmaster/speedmaster-38-mm/catalog",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/speedmaster/speedmaster-38-mm/catalog",
+          "recordCount": 11,
+          "nextPageUrl": null
+        }
+      ]
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.tw/watches/speedmaster/two-counters/catalog",
+      "officialTotal": 36,
+      "uniqueSourceProductCount": 36,
+      "repeatedSourceProductIds": [],
+      "pages": [
+        {
+          "pageNumber": 1,
+          "url": "https://www.omegawatches.com.tw/watches/speedmaster/two-counters/catalog",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/speedmaster/two-counters/catalog",
+          "recordCount": 24,
+          "nextPageUrl": "https://www.omegawatches.com.tw/watches/speedmaster/two-counters/catalog?p=2"
+        },
+        {
+          "pageNumber": 2,
+          "url": "https://www.omegawatches.com.tw/watches/speedmaster/two-counters/catalog?p=2",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/speedmaster/two-counters/catalog?p=2&ajax=1&noFilters=1",
+          "recordCount": 12,
+          "nextPageUrl": null
+        }
+      ]
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.tw/watches/constellation/observatory/catalog",
+      "officialTotal": 9,
+      "uniqueSourceProductCount": 9,
+      "repeatedSourceProductIds": [],
+      "pages": [
+        {
+          "pageNumber": 1,
+          "url": "https://www.omegawatches.com.tw/watches/constellation/observatory/catalog",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/constellation/observatory/catalog",
+          "recordCount": 9,
+          "nextPageUrl": null
+        }
+      ]
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.tw/watches/constellation/constellation/catalog",
+      "officialTotal": 119,
+      "uniqueSourceProductCount": 119,
+      "repeatedSourceProductIds": [],
+      "pages": [
+        {
+          "pageNumber": 1,
+          "url": "https://www.omegawatches.com.tw/watches/constellation/constellation/catalog",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/constellation/constellation/catalog",
+          "recordCount": 24,
+          "nextPageUrl": "https://www.omegawatches.com.tw/watches/constellation/constellation/catalog?p=2"
+        },
+        {
+          "pageNumber": 2,
+          "url": "https://www.omegawatches.com.tw/watches/constellation/constellation/catalog?p=2",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/constellation/constellation/catalog?p=2&ajax=1&noFilters=1",
+          "recordCount": 24,
+          "nextPageUrl": "https://www.omegawatches.com.tw/watches/constellation/constellation/catalog?p=3"
+        },
+        {
+          "pageNumber": 3,
+          "url": "https://www.omegawatches.com.tw/watches/constellation/constellation/catalog?p=3",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/constellation/constellation/catalog?p=3&ajax=1&noFilters=1",
+          "recordCount": 24,
+          "nextPageUrl": "https://www.omegawatches.com.tw/watches/constellation/constellation/catalog?p=4"
+        },
+        {
+          "pageNumber": 4,
+          "url": "https://www.omegawatches.com.tw/watches/constellation/constellation/catalog?p=4",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/constellation/constellation/catalog?p=4&ajax=1&noFilters=1",
+          "recordCount": 24,
+          "nextPageUrl": "https://www.omegawatches.com.tw/watches/constellation/constellation/catalog?p=5"
+        },
+        {
+          "pageNumber": 5,
+          "url": "https://www.omegawatches.com.tw/watches/constellation/constellation/catalog?p=5",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/constellation/constellation/catalog?p=5&ajax=1&noFilters=1",
+          "recordCount": 23,
+          "nextPageUrl": null
+        }
+      ]
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.tw/watches/de-ville/ladymatic/catalog",
+      "officialTotal": 5,
+      "uniqueSourceProductCount": 5,
+      "repeatedSourceProductIds": [],
+      "pages": [
+        {
+          "pageNumber": 1,
+          "url": "https://www.omegawatches.com.tw/watches/de-ville/ladymatic/catalog",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/de-ville/ladymatic/catalog",
+          "recordCount": 5,
+          "nextPageUrl": null
+        }
+      ]
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.tw/watches/de-ville/tresor/catalog",
+      "officialTotal": 38,
+      "uniqueSourceProductCount": 38,
+      "repeatedSourceProductIds": [],
+      "pages": [
+        {
+          "pageNumber": 1,
+          "url": "https://www.omegawatches.com.tw/watches/de-ville/tresor/catalog",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/de-ville/tresor/catalog",
+          "recordCount": 24,
+          "nextPageUrl": "https://www.omegawatches.com.tw/watches/de-ville/tresor/catalog?p=2"
+        },
+        {
+          "pageNumber": 2,
+          "url": "https://www.omegawatches.com.tw/watches/de-ville/tresor/catalog?p=2",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/de-ville/tresor/catalog?p=2&ajax=1&noFilters=1",
+          "recordCount": 14,
+          "nextPageUrl": null
+        }
+      ]
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.tw/watches/de-ville/prestige/catalog",
+      "officialTotal": 82,
+      "uniqueSourceProductCount": 82,
+      "repeatedSourceProductIds": [],
+      "pages": [
+        {
+          "pageNumber": 1,
+          "url": "https://www.omegawatches.com.tw/watches/de-ville/prestige/catalog",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/de-ville/prestige/catalog",
+          "recordCount": 24,
+          "nextPageUrl": "https://www.omegawatches.com.tw/watches/de-ville/prestige/catalog?p=2"
+        },
+        {
+          "pageNumber": 2,
+          "url": "https://www.omegawatches.com.tw/watches/de-ville/prestige/catalog?p=2",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/de-ville/prestige/catalog?p=2&ajax=1&noFilters=1",
+          "recordCount": 24,
+          "nextPageUrl": "https://www.omegawatches.com.tw/watches/de-ville/prestige/catalog?p=3"
+        },
+        {
+          "pageNumber": 3,
+          "url": "https://www.omegawatches.com.tw/watches/de-ville/prestige/catalog?p=3",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/de-ville/prestige/catalog?p=3&ajax=1&noFilters=1",
+          "recordCount": 24,
+          "nextPageUrl": "https://www.omegawatches.com.tw/watches/de-ville/prestige/catalog?p=4"
+        },
+        {
+          "pageNumber": 4,
+          "url": "https://www.omegawatches.com.tw/watches/de-ville/prestige/catalog?p=4",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/de-ville/prestige/catalog?p=4&ajax=1&noFilters=1",
+          "recordCount": 10,
+          "nextPageUrl": null
+        }
+      ]
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.tw/watches/de-ville/tourbillon/catalog",
+      "officialTotal": 2,
+      "uniqueSourceProductCount": 2,
+      "repeatedSourceProductIds": [],
+      "pages": [
+        {
+          "pageNumber": 1,
+          "url": "https://www.omegawatches.com.tw/watches/de-ville/tourbillon/catalog",
+          "requestUrl": "https://www.omegawatches.com.tw/watches/de-ville/tourbillon/catalog",
+          "recordCount": 2,
+          "nextPageUrl": null
+        }
+      ]
+    }
+  ],
+  "rawProductCount": 551,
+  "uniqueReferenceCount": 551,
+  "duplicateReferenceCount": 0,
+  "duplicateReferenceListings": [],
+  "terminationEvidence": "Every category was started from a catalog URL linked by the official Taiwan watches page. Each next page was followed only through the official rendered 「載入更多」 link and its public AJAX response. Collection stopped only after that link was absent and the accumulated unique official source-product ID count equalled the category page’s official 「N只腕錶」 count. Repeated source IDs from cumulative last-page responses were excluded; repeated references with distinct source IDs are retained in observations but represented once in the reference-keyed formal data.",
+  "errors": [],
+  "limitations": [
+    "Omega Taiwan product pages publicly show TWD prices but do not state whether the prices include tax. Per explicit user instruction, history uses the existing Taiwan market convention tax-include with taxRatePercent 5; this is a market-rule carry-forward, not a claim that Omega’s product page itself states the tax treatment.",
+    "Where a product page omits every structured dial field, dialDescription is an exact sentence or phrase from that same page’s official description containing 「錶盤」. observations.rawDialFieldCode identifies those fallback records.",
+    "Nickname research was not run. localNicknames and collectionAliases remain empty rather than asserting that no Taiwanese nicknames exist.",
+    "Draft 2020-12 JSON Schema validation is not run because no compatible validator is installed in this repository; strict JSON and direct contract checks are recorded separately."
+  ]
+}

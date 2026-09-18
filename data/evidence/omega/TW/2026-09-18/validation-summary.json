@@ -1,0 +1,109 @@
+{
+  "brandId": "omega",
+  "marketCode": "TW",
+  "collectedAt": "2026-09-18T09:12:11.092Z",
+  "status": "PASS WITH DECLARED LIMITATIONS",
+  "checks": {
+    "strictJson": "PASS: each generated payload was serialized with JSON.stringify and parsed successfully before writing.",
+    "directContractChecks": "PASS: identity, count, set-reconciliation, category-stop, and listing-status/price pairing checks completed before writing.",
+    "jsonSchema": "NOT RUN: no installed Draft 2020-12 JSON Schema validator.",
+    "watchCount": {
+      "catalog": 551,
+      "market": 551,
+      "historyRun": 551
+    },
+    "identities": {
+      "watchIdMatchesBrandAndReference": true,
+      "uniqueReferences": 551,
+      "uniqueProductUrls": 551
+    },
+    "sourceReconciliation": {
+      "observationCount": 551,
+      "catalogCount": 551,
+      "marketCount": 551,
+      "historyCount": 551,
+      "listedCount": 551,
+      "priceUnavailableCount": 0
+    },
+    "completeness": {
+      "categoryCount": 16,
+      "categoryTotals": [
+        {
+          "url": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog",
+          "count": 107
+        },
+        {
+          "url": "https://www.omegawatches.com.tw/watches/seamaster/diver-300-m/catalog",
+          "count": 60
+        },
+        {
+          "url": "https://www.omegawatches.com.tw/watches/seamaster/planet-ocean/catalog",
+          "count": 17
+        },
+        {
+          "url": "https://www.omegawatches.com.tw/watches/seamaster/heritage-models/catalog",
+          "count": 16
+        },
+        {
+          "url": "https://www.omegawatches.com.tw/watches/seamaster/instruments/catalog",
+          "count": 1
+        },
+        {
+          "url": "https://www.omegawatches.com.tw/watches/speedmaster/moonwatch-professional/catalog",
+          "count": 24
+        },
+        {
+          "url": "https://www.omegawatches.com.tw/watches/speedmaster/heritage-models/catalog",
+          "count": 16
+        },
+        {
+          "url": "https://www.omegawatches.com.tw/watches/speedmaster/dark-side-of-the-moon/catalog",
+          "count": 8
+        },
+        {
+          "url": "https://www.omegawatches.com.tw/watches/speedmaster/speedmaster-38-mm/catalog",
+          "count": 11
+        },
+        {
+          "url": "https://www.omegawatches.com.tw/watches/speedmaster/two-counters/catalog",
+          "count": 36
+        },
+        {
+          "url": "https://www.omegawatches.com.tw/watches/constellation/observatory/catalog",
+          "count": 9
+        },
+        {
+          "url": "https://www.omegawatches.com.tw/watches/constellation/constellation/catalog",
+          "count": 119
+        },
+        {
+          "url": "https://www.omegawatches.com.tw/watches/de-ville/ladymatic/catalog",
+          "count": 5
+        },
+        {
+          "url": "https://www.omegawatches.com.tw/watches/de-ville/tresor/catalog",
+          "count": 38
+        },
+        {
+          "url": "https://www.omegawatches.com.tw/watches/de-ville/prestige/catalog",
+          "count": 82
+        },
+        {
+          "url": "https://www.omegawatches.com.tw/watches/de-ville/tourbillon/catalog",
+          "count": 2
+        }
+      ],
+      "sourceStopCondition": "Every category was started from a catalog URL linked by the official Taiwan watches page. Each next page was followed only through the official rendered 「載入更多」 link and its public AJAX response. Collection stopped only after that link was absent and the accumulated unique official source-product ID count equalled the category page’s official 「N只腕錶」 count. Repeated source IDs from cumulative last-page responses were excluded; repeated references with distinct source IDs are retained in observations but represented once in the reference-keyed formal data."
+    },
+    "preservationScope": [
+      "No existing Rolex catalog, market, history, evidence, traveler-refund policy, or schema file was read for mutation or rewritten by this script.",
+      "The pre-existing uncommitted app multi-brand changes are outside this collection script’s write paths."
+    ]
+  },
+  "limitations": [
+    "Omega Taiwan product pages publicly show TWD prices but do not state whether the prices include tax. Per explicit user instruction, history uses the existing Taiwan market convention tax-include with taxRatePercent 5; this is a market-rule carry-forward, not a claim that Omega’s product page itself states the tax treatment.",
+    "Where a product page omits every structured dial field, dialDescription is an exact sentence or phrase from that same page’s official description containing 「錶盤」. observations.rawDialFieldCode identifies those fallback records.",
+    "Nickname research was not run. localNicknames and collectionAliases remain empty rather than asserting that no Taiwanese nicknames exist.",
+    "Draft 2020-12 JSON Schema validation is not run because no compatible validator is installed in this repository; strict JSON and direct contract checks are recorded separately."
+  ]
+}
