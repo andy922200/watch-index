@@ -14,7 +14,7 @@
       },
       "merchantParticipationRequired": true,
       "exportValidationRequired": true,
-      "evidencePath": "data/evidence/AT/2026-09-12/traveler-refund-policy.json",
+      "evidencePath": "data/evidence/rolex/AT/2026-09-12/traveler-refund-policy.json",
       "sources": [
         {
           "publisher": "Austrian Federal Ministry of Finance",
@@ -36,7 +36,7 @@
       },
       "merchantParticipationRequired": true,
       "exportValidationRequired": true,
-      "evidencePath": "data/evidence/CH/2026-09-12/traveler-refund-policy.json",
+      "evidencePath": "data/evidence/rolex/CH/2026-09-12/traveler-refund-policy.json",
       "sources": [
         {
           "publisher": "Swiss Federal Tax Administration",
@@ -58,7 +58,7 @@
       },
       "merchantParticipationRequired": true,
       "exportValidationRequired": true,
-      "evidencePath": "data/evidence/CN/2026-09-12/traveler-refund-policy.json",
+      "evidencePath": "data/evidence/rolex/CN/2026-09-12/traveler-refund-policy.json",
       "sources": [
         {
           "publisher": "State Taxation Administration of the People's Republic of China",
@@ -80,7 +80,7 @@
       },
       "merchantParticipationRequired": true,
       "exportValidationRequired": true,
-      "evidencePath": "data/evidence/DE/2026-09-12/traveler-refund-policy.json",
+      "evidencePath": "data/evidence/rolex/DE/2026-09-12/traveler-refund-policy.json",
       "sources": [
         {
           "publisher": "German Federal Foreign Office",
@@ -102,7 +102,7 @@
       },
       "merchantParticipationRequired": true,
       "exportValidationRequired": true,
-      "evidencePath": "data/evidence/ES/2026-09-15/traveler-refund-policy.json",
+      "evidencePath": "data/evidence/rolex/ES/2026-09-15/traveler-refund-policy.json",
       "sources": [
         {
           "publisher": "Agencia Estatal de Administración Tributaria (AEAT)",
@@ -124,7 +124,7 @@
       },
       "merchantParticipationRequired": true,
       "exportValidationRequired": true,
-      "evidencePath": "data/evidence/FR/2026-09-12/traveler-refund-policy.json",
+      "evidencePath": "data/evidence/rolex/FR/2026-09-12/traveler-refund-policy.json",
       "sources": [
         {
           "publisher": "Direction générale des douanes et droits indirects",
@@ -146,7 +146,7 @@
       },
       "merchantParticipationRequired": true,
       "exportValidationRequired": true,
-      "evidencePath": "data/evidence/GB/2026-09-12/traveler-refund-policy.json",
+      "evidencePath": "data/evidence/rolex/GB/2026-09-12/traveler-refund-policy.json",
       "sources": [
         {
           "publisher": "GOV.UK",
@@ -168,7 +168,7 @@
       },
       "merchantParticipationRequired": null,
       "exportValidationRequired": null,
-      "evidencePath": "data/evidence/HK/2026-09-12/traveler-refund-policy.json",
+      "evidencePath": "data/evidence/rolex/HK/2026-09-12/traveler-refund-policy.json",
       "sources": [
         {
           "publisher": "Financial Services and the Treasury Bureau, Hong Kong SAR Government",
@@ -190,7 +190,7 @@
       },
       "merchantParticipationRequired": true,
       "exportValidationRequired": true,
-      "evidencePath": "data/evidence/IT/2026-09-12/traveler-refund-policy.json",
+      "evidencePath": "data/evidence/rolex/IT/2026-09-12/traveler-refund-policy.json",
       "sources": [
         {
           "publisher": "Agenzia delle Dogane e dei Monopoli",
@@ -212,7 +212,7 @@
       },
       "merchantParticipationRequired": true,
       "exportValidationRequired": true,
-      "evidencePath": "data/evidence/JP/2026-09-11/traveler-refund-policy.json",
+      "evidencePath": "data/evidence/rolex/JP/2026-09-11/traveler-refund-policy.json",
       "sources": [
         {
           "publisher": "Japan Tourism Agency",
@@ -240,7 +240,7 @@
       },
       "merchantParticipationRequired": true,
       "exportValidationRequired": true,
-      "evidencePath": "data/evidence/KR/2026-09-11/traveler-refund-policy.json",
+      "evidencePath": "data/evidence/rolex/KR/2026-09-11/traveler-refund-policy.json",
       "sources": [
         {
           "publisher": "Korea Tourism Organization",
@@ -268,7 +268,7 @@
       },
       "merchantParticipationRequired": true,
       "exportValidationRequired": true,
-      "evidencePath": "data/evidence/SG/2026-09-11/traveler-refund-policy.json",
+      "evidencePath": "data/evidence/rolex/SG/2026-09-11/traveler-refund-policy.json",
       "sources": [
         {
           "publisher": "Inland Revenue Authority of Singapore",
@@ -290,7 +290,7 @@
       },
       "merchantParticipationRequired": true,
       "exportValidationRequired": true,
-      "evidencePath": "data/evidence/TH/2026-09-15/traveler-refund-policy.json",
+      "evidencePath": "data/evidence/rolex/TH/2026-09-15/traveler-refund-policy.json",
       "sources": [
         {
           "publisher": "The Revenue Department, Thailand (กรมสรรพากร)",
@@ -312,7 +312,7 @@
       },
       "merchantParticipationRequired": true,
       "exportValidationRequired": true,
-      "evidencePath": "data/evidence/TW/2026-09-11/traveler-refund-policy.json",
+      "evidencePath": "data/evidence/rolex/TW/2026-09-11/traveler-refund-policy.json",
       "sources": [
         {
           "publisher": "Tourism Administration, Republic of China (Taiwan)",
@@ -334,7 +334,7 @@
       },
       "merchantParticipationRequired": null,
       "exportValidationRequired": null,
-      "evidencePath": "data/evidence/US/2026-09-12/traveler-refund-policy.json",
+      "evidencePath": "data/evidence/rolex/US/2026-09-12/traveler-refund-policy.json",
       "sources": [
         {
           "publisher": "USAGov",
