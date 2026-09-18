@@ -40,7 +40,7 @@ const priceSortWatches = [
 ]
 
 const usePriceSortFixture = async (page: Page): Promise<void> => {
-  await page.route(/\/watch-data\/manifest\.json(?:\?.*)?$/, async (route) => {
+  await page.route(/\/watch-data\/rolex\/manifest\.json(?:\?.*)?$/, async (route) => {
     await route.fulfill({
       json: {
         schemaVersion: 1,
@@ -51,7 +51,7 @@ const usePriceSortFixture = async (page: Page): Promise<void> => {
       },
     })
   })
-  await page.route('**/watch-data/catalog.price-sort.json', async (route) => {
+  await page.route('**/watch-data/rolex/catalog.price-sort.json', async (route) => {
     await route.fulfill({
       json: {
         schemaVersion: 1,

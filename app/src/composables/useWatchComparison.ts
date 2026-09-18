@@ -1,6 +1,7 @@
 import { type Ref, ref } from 'vue'
 
 import { getWatchDataFile, getWatchDataManifest } from '@/api/watchDataApi'
+import type { BrandId } from '@/lib/brands'
 import { DEFAULT_MARKET, type MarketCode } from '@/lib/markets'
 import { isWatchPriceComparisonPayload } from '@/lib/validation/watch'
 import type { BaseWatch, WatchCatalog, WatchPriceComparisonPayload } from '@/types/watch-data'
@@ -12,6 +13,7 @@ interface RawComparisonResponse {
 }
 
 interface UseWatchComparisonOptions<TWatch extends BaseWatch> {
+  brandId: BrandId
   /** 該品牌 catalog 的 type guard，例如 `isRolexWatchCatalog`。 */
   isCatalog: (value: unknown) => value is WatchCatalog<TWatch>
 }
@@ -25,8 +27,11 @@ interface UseWatchComparisonResult<TWatch extends BaseWatch> {
   loadComparison: (market?: MarketCode) => Promise<void>
 }
 
-const fetchComparison = async (market: MarketCode): Promise<RawComparisonResponse> => {
-  const manifest = await getWatchDataManifest()
+const fetchComparison = async (
+  brandId: BrandId,
+  market: MarketCode,
+): Promise<RawComparisonResponse> => {
+  const manifest = await getWatchDataManifest(brandId)
   const catalogFileName = manifest.catalogs[market]
 
   if (!catalogFileName) {
@@ -34,8 +39,8 @@ const fetchComparison = async (market: MarketCode): Promise<RawComparisonRespons
   }
 
   const [catalog, comparison] = await Promise.all([
-    getWatchDataFile(catalogFileName),
-    getWatchDataFile(manifest.comparison),
+    getWatchDataFile(brandId, catalogFileName),
+    getWatchDataFile(brandId, manifest.comparison),
   ])
 
   return { catalog, comparison, currencies: manifest.currencies }
@@ -50,6 +55,7 @@ const fetchComparison = async (market: MarketCode): Promise<RawComparisonRespons
  * @returns 比價資料狀態與載入函式。
  */
 export const useWatchComparison = <TWatch extends BaseWatch>({
+  brandId,
   isCatalog,
 }: UseWatchComparisonOptions<TWatch>): UseWatchComparisonResult<TWatch> => {
   const catalog = ref<WatchCatalog<TWatch> | null>(null)
@@ -65,7 +71,7 @@ export const useWatchComparison = <TWatch extends BaseWatch>({
     error.value = null
 
     try {
-      const response = await fetchComparison(market)
+      const response = await fetchComparison(brandId, market)
 
       if (!isCatalog(response.catalog)) {
         throw new Error('Watch catalog has an invalid format')

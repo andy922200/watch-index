@@ -38,14 +38,14 @@ app/
 ```text
 data/catalog + data/markets + data/history + data/traveler-refund-policies.json
                     ↓ 建置時轉換
-app/public/watch-data/ 或 app/dist/watch-data/
-                    ↓ 瀏覽器先讀取 manifest.json
+app/public/watch-data/<brandId>/ 或 app/dist/watch-data/<brandId>/
+                    ↓ 瀏覽器先讀取 <brandId>/manifest.json
 市場專用 catalog.<hash>.json + comparison.<hash>.json
                     ↓ 驗證格式後
 Vue 頁面、搜尋、清單、詳細視窗與單錶跨市場比較
 ```
 
-`scripts/generate-watch-data.mjs` 會以 `watchId` 將共用配置、單一市場的在地文字與該市場最後一個價格狀態合併成前端資料。來源資料與畫面皆以跨品牌官方參考號 `reference` 顯示及搜尋；輸出以 `watchesById` 索引腕錶，並另產生只含最新市場價格、稅別、更新時間與可選旅客政策摘要的 `comparison.<hash>.json`。現有產生流程仍只支援 Rolex；新增其他品牌前必須先完成 brand-scoped 輸入與 manifest 隔離。
+`scripts/generate-watch-data.mjs` 會以 `watchId` 將共用配置、單一市場的在地文字與該市場最後一個價格狀態合併成前端資料。來源資料與畫面皆以跨品牌官方參考號 `reference` 顯示及搜尋；每個品牌輸出到自己的 `watch-data/<brandId>/`，並在其中以 `watchesById` 索引腕錶、產生只含最新市場價格、稅別、更新時間與可選旅客政策摘要的 `comparison.<hash>.json`。前端也依品牌讀取對應 manifest，避免不同品牌共用資料快取或檔名命名空間。
 
 資料載入前會檢查 manifest 與 catalog 的必要欄位。若市場資料缺少任一配置、價格歷史或必要文字，產生流程會失敗，而不是發布部分資料。
 

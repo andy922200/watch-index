@@ -84,6 +84,7 @@ if (marketFromQuery !== null) {
   selectedMarket.value = marketFromQuery
 }
 const { catalog, displayCurrencies, error, isLoading, loadCatalog } = useWatchCatalog({
+  brandId: BRAND_ID,
   isCatalog: isRolexWatchCatalog,
 })
 const {

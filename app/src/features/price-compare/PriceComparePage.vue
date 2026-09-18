@@ -122,7 +122,7 @@ const taxResidencyMarketCodes = useStorage<MarketCode[]>(TAX_RESIDENCY_STORAGE_K
   },
 })
 const { catalog, comparison, displayCurrencies, error, isLoading, loadComparison } =
-  useWatchComparison<TWatch>({ isCatalog: props.config.isCatalog })
+  useWatchComparison<TWatch>({ brandId: props.config.brandId, isCatalog: props.config.isCatalog })
 const {
   convertToDisplayCurrency,
   error: exchangeRateError,

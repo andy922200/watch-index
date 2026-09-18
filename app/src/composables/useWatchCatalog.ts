@@ -1,6 +1,7 @@
 import { type Ref, ref } from 'vue'
 
 import { getWatchDataFile, getWatchDataManifest } from '@/api/watchDataApi'
+import type { BrandId } from '@/lib/brands'
 import { DEFAULT_MARKET, type MarketCode } from '@/lib/markets'
 import type { BaseWatch, WatchCatalog } from '@/types/watch-data'
 
@@ -10,6 +11,7 @@ interface RawCatalogResponse {
 }
 
 interface UseWatchCatalogOptions<TWatch extends BaseWatch> {
+  brandId: BrandId
   /** 該品牌 catalog 的 type guard，例如 `isRolexWatchCatalog`。 */
   isCatalog: (value: unknown) => value is WatchCatalog<TWatch>
 }
@@ -22,15 +24,15 @@ interface UseWatchCatalogResult<TWatch extends BaseWatch> {
   loadCatalog: (market?: MarketCode) => Promise<void>
 }
 
-const fetchCatalog = async (market: MarketCode): Promise<RawCatalogResponse> => {
-  const manifest = await getWatchDataManifest()
+const fetchCatalog = async (brandId: BrandId, market: MarketCode): Promise<RawCatalogResponse> => {
+  const manifest = await getWatchDataManifest(brandId)
   const catalogFileName = manifest.catalogs[market]
 
   if (!catalogFileName) {
     throw new Error(`Watch data manifest does not contain the ${market} market`)
   }
 
-  const catalog = await getWatchDataFile(catalogFileName)
+  const catalog = await getWatchDataFile(brandId, catalogFileName)
 
   return { catalog, currencies: manifest.currencies }
 }
@@ -44,6 +46,7 @@ const fetchCatalog = async (market: MarketCode): Promise<RawCatalogResponse> => 
  * @returns catalog 狀態與載入函式。
  */
 export const useWatchCatalog = <TWatch extends BaseWatch>({
+  brandId,
   isCatalog,
 }: UseWatchCatalogOptions<TWatch>): UseWatchCatalogResult<TWatch> => {
   const catalog = ref<WatchCatalog<TWatch> | null>(null)
@@ -56,7 +59,7 @@ export const useWatchCatalog = <TWatch extends BaseWatch>({
     error.value = null
 
     try {
-      const response = await fetchCatalog(market)
+      const response = await fetchCatalog(brandId, market)
 
       if (!isCatalog(response.catalog)) {
         throw new Error('Watch catalog has an invalid format')

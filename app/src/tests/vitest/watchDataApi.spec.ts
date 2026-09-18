@@ -34,23 +34,24 @@ describe('watchDataApi request caching', () => {
     respondByFileName()
   })
 
-  it('requests the manifest only once across repeated calls', async () => {
+  it('requests the brand-scoped manifest only once across repeated calls', async () => {
     const { getWatchDataManifest } = await import('@/api/watchDataApi')
 
-    await Promise.all([getWatchDataManifest(), getWatchDataManifest()])
-    await getWatchDataManifest()
+    await Promise.all([getWatchDataManifest('rolex'), getWatchDataManifest('rolex')])
+    await getWatchDataManifest('rolex')
 
     expect(requestedUrls().filter((url) => url.includes('manifest.json'))).toHaveLength(1)
+    expect(requestedUrls()[0]).toContain('/watch-data/rolex/manifest.json')
   })
 
   it('shares one request per versioned file name and refetches distinct ones', async () => {
     const { getWatchDataFile } = await import('@/api/watchDataApi')
 
     await Promise.all([
-      getWatchDataFile('catalog.taiwan.json'),
-      getWatchDataFile('catalog.taiwan.json'),
+      getWatchDataFile('rolex', 'catalog.taiwan.json'),
+      getWatchDataFile('rolex', 'catalog.taiwan.json'),
     ])
-    await getWatchDataFile('catalog.japan.json')
+    await getWatchDataFile('rolex', 'catalog.japan.json')
 
     expect(requestedUrls().filter((url) => url.includes('catalog.taiwan.json'))).toHaveLength(1)
     expect(requestedUrls().filter((url) => url.includes('catalog.japan.json'))).toHaveLength(1)
@@ -59,13 +60,13 @@ describe('watchDataApi request caching', () => {
   it('clears the manifest cache when a versioned file request fails', async () => {
     const { getWatchDataFile, getWatchDataManifest } = await import('@/api/watchDataApi')
 
-    await getWatchDataManifest()
+    await getWatchDataManifest('rolex')
     useFetchDataMock.mockResolvedValueOnce({ result: [null, new Error('not found')] })
 
-    await expect(getWatchDataFile('catalog.taiwan.json')).rejects.toThrow('not found')
+    await expect(getWatchDataFile('rolex', 'catalog.taiwan.json')).rejects.toThrow('not found')
 
     respondByFileName()
-    await getWatchDataManifest()
+    await getWatchDataManifest('rolex')
 
     expect(requestedUrls().filter((url) => url.includes('manifest.json'))).toHaveLength(2)
   })
