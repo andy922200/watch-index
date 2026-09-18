@@ -6,8 +6,8 @@
 
 ## 適用範圍與硬性限制
 
-- 目前正式資料只涵蓋勞力士，包含 AT、CH、CN、DE、ES、FR、GB、HK、IT、JP、KR、SG、TH、TW、US 共 15 個市場。
-- Catalog、market 與 price history 已使用 brand-neutral v3 Schema；專案日後加入其他品牌時，不得假定 Rolex 的檔名、參考號格式或前端欄位仍適用。
+- 目前正式資料包含勞力士（AT、CH、CN、DE、ES、FR、GB、HK、IT、JP、KR、SG、TH、TW、US 共 15 個市場）與 Omega Taiwan（TW，551 個唯一參考編號）。
+- Catalog、market 與 price history 使用 brand-neutral v3 Schema；不得假定任何品牌的檔名、參考號格式或前端欄位適用於另一品牌。
 - 未經明確授權，不得修改 Schema、另建正式格式、安裝依賴、推送遠端或繞過網站存取限制。
 - 面向人類的文件一律使用繁體中文。
 
@@ -15,9 +15,9 @@
 
 在任何寫入前，讀取下列內容並檢查 `git status --short`：
 
-1. 本文件、`README.md`、`watch-data-collection-guide.md`。
+1. 本文件、`README.md`、`watch-data-collection-guide.md`；`examples/` 內若有與目標品牌／任務相符的範例文件，一併閱讀（範例文件為說明性質，缺席不構成阻擋）。
 2. `data/schemas/` 的實際 JSON Schema，包含旅客退稅政策 Schema。
-3. `data/catalog/rolex-catalog.json`，以及目標市場的 `data/markets/`、`data/history/`、`data/evidence/`；維護退稅政策，或執行新增市場／全市場重新考證任務時，另讀取 `data/traveler-refund-policies.json` 與 `data/schemas/traveler-refund-policy.schema.json`。
+3. 目標品牌的 `data/catalog/<brandId>-catalog.json`，以及目標市場的 `data/markets/`、`data/history/`、`data/evidence/`；維護退稅政策，或執行新增市場／全市場重新考證任務時，另讀取 `data/traveler-refund-policies.json` 與 `data/schemas/traveler-refund-policy.schema.json`。
 
 保護使用者既有未提交修改。既有筆數與歷史結果只可用於回歸檢查，不能作為本次收集的目標或停止條件。
 
@@ -34,13 +34,13 @@
 
 | 層級 | 實際位置 | 責任 | 不可放入 |
 | --- | --- | --- | --- |
-| Catalog | `data/catalog/rolex-catalog.json` | 跨市場穩定配置的聯集 | 價格、稅率、在地文字、俗稱 |
-| Market | `data/markets/rolex-[market]-market.json` | 當地文字、商品網址、別名與新款標示 | 價格、幣別、稅務語意 |
-| History | `data/history/[marketCode]/rolex-price-history.json` | 收集輪次與追加式價格／列出狀態 | 市場文字、圖片、俗稱、旅客退稅制度 |
+| Catalog | `data/catalog/<brandId>-catalog.json` | 跨市場穩定配置的聯集 | 價格、稅率、在地文字、俗稱 |
+| Market | `data/markets/<brandId>-<market>-market.json` | 當地文字、商品網址、別名與新款標示 | 價格、幣別、稅務語意 |
+| History | `data/history/[marketCode]/<brandId>-price-history.json` | 收集輪次與追加式價格／列出狀態 | 市場文字、圖片、俗稱、旅客退稅制度 |
 | Traveler refund policy | `data/traveler-refund-policies.json` | 已驗證的市場級旅客退稅制度、資格摘要、來源與 evidence 關聯 | 官方價格、零售商參與推測、交易退款保證 |
-| Evidence | `data/evidence/[marketCode]/[YYYY-MM-DD]/` | 原始觀察、收集方法與驗證 | Cookie、token、授權標頭、個資 |
+| Evidence | `data/evidence/<brandId>/[marketCode]/[YYYY-MM-DD]/` | 原始觀察、收集方法與驗證 | Cookie、token、授權標頭、個資 |
 
-一筆現有 Rolex 腕錶資料代表完整配置，且必須滿足：
+一筆正式腕錶資料代表完整配置，且必須滿足：
 
 ```text
 watchId === brandId + ":" + reference
@@ -88,9 +88,13 @@ Catalog、market 與 price history 共用 `data-schema-vN` 版本線並同步升
 
 Browser、CDP 或 network 工具不可用，不代表官方沒有結構化來源。若任務需要 network discovery，且環境已配置 Chrome DevTools 或等效 network MCP，必須實際呼叫並嘗試讀取請求／回應；僅確認工具存在不算完成。呼叫失敗時，在 `collection-summary.json` 或 `validation-summary.json` 記錄工具、錯誤摘要與後備嘗試。能力不足時標記 `NOT RUN / capability unavailable`，不得猜測 endpoint 或宣稱已完成全量收集。
 
+### 可套用的官方收集流程：Omega Taiwan 範例
+
+下列 Omega Taiwan 步驟是本專案所有品牌與市場的具體範例，不是 Omega 專用例外。其他國家／地區均應套用相同原則：先由目標市場的官方站與真實瀏覽器發現來源，再確認實際分頁或 cursor、以來源明示的停止條件完成全量對帳、保存不可變更的 observations 與驗證結果，最後才更新 brand-isolated catalog、market 與 history。不得直接複製 Omega 的 URL、AJAX 參數、欄位名稱、語系、幣別或稅別；那些必須在每個品牌、每個市場重新確認。完整步驟見 [examples/omega-taiwan-collection-workflow.md](examples/omega-taiwan-collection-workflow.md)。
+
 ## Evidence：最低內容與保存規則
 
-每次更新建立新的 `data/evidence/[marketCode]/[YYYY-MM-DD]/`；同日多次執行使用獨立 run 子目錄。至少保存：
+每次更新建立新的 `data/evidence/<brandId>/[marketCode]/[YYYY-MM-DD]/`；2026-09-18 前的 Rolex evidence 已遷移至 `data/evidence/rolex/`，舊的 `data/evidence/<marketCode>/` 以相容 symlink 保留，讓歷史 evidence 內未改寫的路徑仍可解析。同日多次執行使用獨立 run 子目錄。至少保存：
 
 - `observations.json`：完整配置碼、來源 URL、觀察時間、原始文字與價格、解析結果、商品網址及新款標示。
 - `collection-summary.json`：市場、語系、入口、收集路徑、分頁／cursor、筆數、重複／衝突、停止證據與錯誤。
@@ -127,7 +131,7 @@ JSON 或 Schema 通過，只代表結構合法，不代表來源正確或收集�
 
 多市場任務採市場隔離：每個工作單元只處理一個市場的來源、evidence、market 與 history 檔。只有統籌者可以合併 `data/catalog/rolex-catalog.json`，並在所有市場工作完成後執行跨檔驗證。單一市場工作不得覆寫 catalog，也不得因未觀察到既有配置就刪除它。
 
-單一市場工作單元不得讀寫任何非自己負責市場的 `data/markets/`、`data/history/[marketCode]/`、`data/evidence/[marketCode]/` 檔案，也不得代替其他工作單元完成其任務——即使透過 `git status` 或其他方式觀察到其他工作單元尚未完成、已失敗、或已產出可用結果，也不得基於這個觀察去讀取、重建、覆寫其他市場的檔案，或代為合併 catalog。發現其他工作單元異常時，只能在自己的 evidence 或回報中如實記錄觀察到的狀況，並交由統籌者處理，不得自行介入代勞。單一市場工作單元也不得再自行派生其他工作單元（例如巢狀 fork／subagent）來處理原本不屬於自己範圍的市場；若任務要求多市場，應由統籌者逐一派工，而非由某個工作單元自行擴張範圍。違反市場隔離即視為交付失敗，即使代勞產出的資料內容本身正確也一樣，因為這會破壞「每個市場一個可信作者」的可追溯性。
+單一市場工作單元不得讀寫任何非自己負責市場的 `data/markets/`、`data/history/[marketCode]/`、`data/evidence/<brandId>/[marketCode]/` 檔案，也不得代替其他工作單元完成其任務——即使透過 `git status` 或其他方式觀察到其他工作單元尚未完成、已失敗、或已產出可用結果，也不得基於這個觀察去讀取、重建、覆寫其他市場的檔案，或代為合併 catalog。發現其他工作單元異常時，只能在自己的 evidence 或回報中如實記錄觀察到的狀況，並交由統籌者處理，不得自行介入代勞。單一市場工作單元也不得再自行派生其他工作單元（例如巢狀 fork／subagent）來處理原本不屬於自己範圍的市場；若任務要求多市場，應由統籌者逐一派工，而非由某個工作單元自行擴張範圍。違反市場隔離即視為交付失敗，即使代勞產出的資料內容本身正確也一樣，因為這會破壞「每個市場一個可信作者」的可追溯性。
 
 令 `C` 為既有 catalog 的完整配置集合，`M` 為本次已驗證的市場集合：
 
@@ -150,7 +154,7 @@ JSON 或 Schema 通過，只代表結構合法，不代表來源正確或收集�
 
 「市場有消費稅」不等於「腕錶購買者可以退稅」。名目稅率只能讓前端在沒有已驗證政策時以 `含稅價 ÷ (1 + 稅率)` 顯示未稅參考價，不能被寫成旅客資格、零售商參與或保證退款。沒有可靠政策時保持市場記錄缺席；不得為了讓比較頁完整而補造 unavailable／available 結論、費率、門檻或來源。
 
-新增市場或對某市場執行全市場重新考證時，必須同時完成該市場的旅客退稅政策查核，並依查核結果在 `data/traveler-refund-policies.json` 新增或更新該市場的記錄（`policies` 陣列以 `marketCode` 字母序排列，插入新市場時比照既有順序，不做無關的整檔重排）：查到可信一手來源就記錄 `availability: "available"` 或 `"unavailable"` 並附上 `sources`／`evidencePath`；找不到可信一手來源時，不得補造結論，維持該市場記錄缺席即可，並在回報中說明未完成原因。查核與其 evidence（`data/evidence/[marketCode]/[YYYY-MM-DD]/traveler-refund-policy.json`）比照既有市場（如 `data/evidence/AT/2026-09-12/traveler-refund-policy.json`）的格式與查核標準辦理，不可與該市場的價格／目錄收集混為同一份 evidence 檔。純價格更新任務不需要重跑此查核。
+新增市場或對某市場執行全市場重新考證時，必須同時完成該市場的旅客退稅政策查核，並依查核結果在 `data/traveler-refund-policies.json` 新增或更新該市場的記錄（`policies` 陣列以 `marketCode` 字母序排列，插入新市場時比照既有順序，不做無關的整檔重排）：查到可信一手來源就記錄 `availability: "available"` 或 `"unavailable"` 並附上 `sources`／`evidencePath`；找不到可信一手來源時，不得補造結論，維持該市場記錄缺席即可，並在回報中說明未完成原因。查核與其 evidence（`data/evidence/<brandId>/[marketCode]/[YYYY-MM-DD]/traveler-refund-policy.json`）比照既有市場（如 `data/evidence/rolex/AT/2026-09-12/traveler-refund-policy.json`）的格式與查核標準辦理，不可與該市場的價格／目錄收集混為同一份 evidence 檔。純價格更新任務不需要重跑此查核。
 
 ## 完整性停止條件與抽查
 
@@ -218,85 +222,11 @@ for path in paths:
 print(f"PASS: strict JSON parsing, {len(paths)} files")
 ```
 
-### 跨檔案不變條件：現有勞力士資料範例
+### 跨檔案不變條件：跨品牌範例
 
-此 Node.js 片段驗證 generic identity、market／history 關聯、runId 與價格狀態。檔名與路徑仍以目前的 Rolex 正式資料為例；新增其他品牌時，應擴充檔案發現與品牌隔離，不能直接套用 Rolex 檔名。
+此 Node.js 片段依 `brandId` 發現 catalog、market 與 history，驗證 generic identity、market／history 關聯、runId 與價格狀態。
 
-它不取代 JSON Schema、來源回對或完整性驗證。
-
-```javascript
-const fs = require('node:fs')
-const path = require('node:path')
-const assert = require('node:assert/strict')
-
-const read = file => JSON.parse(fs.readFileSync(file, 'utf8'))
-const fail = (condition, message) => assert(condition, message)
-const isTime = value => typeof value === 'string' && Number.isFinite(Date.parse(value))
-const unique = values => new Set(values).size === values.length
-
-const catalog = read('data/catalog/rolex-catalog.json')
-const catalogWatchIdList = catalog.watches.map(watch => watch.watchId)
-const catalogWatchIds = new Set(catalogWatchIdList)
-fail(catalog.brandId === 'rolex', 'catalog brandId mismatch')
-fail(catalog.watchCount === catalog.watches.length, 'catalog watchCount mismatch')
-fail(unique(catalogWatchIdList), 'catalog duplicate watchId')
-
-for (const watch of catalog.watches) {
-  fail(watch.watchId === `${catalog.brandId}:${watch.reference}`, `invalid watchId: ${watch.watchId}`)
-  fail(typeof watch.reference === 'string' && watch.reference.length > 0,
-    `invalid reference: ${watch.watchId}`)
-}
-
-for (const file of fs.readdirSync('data/markets').filter(name => name.endsWith('.json'))) {
-  const market = read(path.join('data/markets', file))
-  const history = read(path.join('data/history', market.marketCode, 'rolex-price-history.json'))
-  const marketWatchIds = market.watches.map(watch => watch.watchId)
-  fail(market.brandId === catalog.brandId, `${file}: market brandId mismatch`)
-  fail(history.brandId === catalog.brandId, `${file}: history brandId mismatch`)
-  fail(market.watchCount === marketWatchIds.length, `${file}: watchCount mismatch`)
-  fail(unique(marketWatchIds), `${file}: duplicate watchId`)
-  fail(history.marketCode === market.marketCode, `${file}: marketCode mismatch`)
-
-  for (const watch of market.watches) {
-    fail(watch.watchId === `${market.brandId}:${watch.reference}`, `${file}: invalid watchId ${watch.watchId}`)
-  }
-
-  const runIds = new Set()
-  let previousRunId = 0
-  for (const run of history.collectionRuns) {
-    fail(Number.isSafeInteger(run.runId) && run.runId > previousRunId, `${file}: invalid runId`)
-    fail(isTime(run.collectedAt), `${file}: invalid run time`)
-    fail(Number.isSafeInteger(run.recordCount) && run.recordCount >= 0, `${file}: invalid recordCount`)
-    runIds.add(run.runId)
-    previousRunId = run.runId
-  }
-
-  for (const watchId of marketWatchIds) {
-    fail(catalogWatchIds.has(watchId), `${file}: market orphan ${watchId}`)
-    fail(Object.hasOwn(history.priceSeries, watchId), `${file}: missing price series ${watchId}`)
-  }
-  for (const [watchId, points] of Object.entries(history.priceSeries)) {
-    fail(catalogWatchIds.has(watchId), `${file}: history orphan ${watchId}`)
-    fail(Array.isArray(points) && points.length > 0, `${file}: empty price series ${watchId}`)
-    let previous
-    for (const point of points) {
-      fail(runIds.has(point.runId), `${file}: unknown runId ${watchId}`)
-      fail(['listed', 'price-unavailable', 'not-listed'].includes(point.listingStatus),
-        `${file}: invalid status ${watchId}`)
-      fail(point.listingStatus === 'listed'
-        ? Number.isSafeInteger(point.price) && point.price >= 0
-        : point.price === null, `${file}: price/status mismatch ${watchId}`)
-      if (previous) {
-        fail(point.runId > previous.runId, `${file}: unordered series ${watchId}`)
-        fail(point.price !== previous.price || point.listingStatus !== previous.listingStatus,
-          `${file}: redundant price point ${watchId}`)
-      }
-      previous = point
-    }
-  }
-  console.log(`PASS: ${file}`)
-}
-```
+它不取代 JSON Schema、來源回對或完整性驗證。完整片段見 [examples/cross-brand-validation-script.md](examples/cross-brand-validation-script.md)。
 
 ## Evidence 範本
 
@@ -350,11 +280,9 @@ for (const file of fs.readdirSync('data/markets').filter(name => name.endsWith('
 
 每次更新都要依目標市場、產品範圍與適用日期重新查核稅制；本文件不提供或維護特定國家的稅法連結。優先採用官方價格說明與政府／稅務機關來源，並將來源、適用範圍與查核日期保存於當次 evidence。不要新增已移除的正式欄位，例如 `taxName` 或 `researchSources.tax`。
 
-## 歷史回歸案例：日本 2026-09-01
+## 歷史回歸案例
 
-此案例只用來辨識回歸或擷取異常，不是後續驗收的筆數目標。日本完成全部載入後有 1,465 個唯一完整配置、17 個系列；初始局部擷取為 56 筆，補齊後新增 1,409 個價格基準點。完整批次時間為 `2026-09-01T17:06:44+09:00`。
-
-當時系列拆分為：1908 8、Land-Dweller 10、Day-Date 281、Sky-Dweller 39、Lady-Datejust 291、Datejust 681、Oyster Perpetual 62、Cosmograph Daytona 47、Submariner 7、Sea-Dweller 2、Deepsea 4、GMT-Master II 13、Yacht-Master 12、Yacht-Master II 2、Explorer 3、Explorer II 2、Air-King 1。日後結果不同時，檢查官方增減、差集與擷取問題，禁止補造或刪除資料以湊成此數字。
+案例只用來辨識回歸或擷取異常，不是後續驗收的筆數目標；日後結果不同時，檢查官方增減、差集與擷取問題，禁止補造或刪除資料以湊成案例中的數字。既有案例見 [examples/regression-cases.md](examples/regression-cases.md)；新增品牌／市場的回歸基準時，比照既有格式附加新小節，不覆寫既有案例。
 
 ## 最後自我檢查
 
