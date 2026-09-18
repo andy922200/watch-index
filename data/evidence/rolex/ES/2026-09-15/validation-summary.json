@@ -1,7 +1,7 @@
 {
   "marketCode": "ES",
   "validationCompletedAt": "2026-09-15T01:03:35+02:00",
-  "evidencePath": "data/evidence/ES/2026-09-15",
+  "evidencePath": "data/evidence/rolex/ES/2026-09-15",
   "fiveLayerValidation": {
     "syntaxAndSchema": {
       "strictJson": {
@@ -57,11 +57,11 @@
       "newFiles": [
         "data/markets/rolex-spain-market.json",
         "data/history/ES/rolex-price-history.json",
-        "data/evidence/ES/2026-09-15/watchgrid-primary-source.json",
-        "data/evidence/ES/2026-09-15/observations.json",
-        "data/evidence/ES/2026-09-15/collection-summary.json",
-        "data/evidence/ES/2026-09-15/validation-summary.json",
-        "data/evidence/ES/2026-09-15/nickname-research.json"
+        "data/evidence/rolex/ES/2026-09-15/watchgrid-primary-source.json",
+        "data/evidence/rolex/ES/2026-09-15/observations.json",
+        "data/evidence/rolex/ES/2026-09-15/collection-summary.json",
+        "data/evidence/rolex/ES/2026-09-15/validation-summary.json",
+        "data/evidence/rolex/ES/2026-09-15/nickname-research.json"
       ],
       "schemasChanged": false,
       "catalogChanged": false
@@ -83,7 +83,7 @@
     "acceptedLocalNicknameCount": 1,
     "acceptedCollectionAliasCount": 0,
     "rejectedCandidateCount": 4,
-    "detail": "完整內容見 data/evidence/ES/2026-09-15/nickname-research.json。採用：m126500ln-0001「Panda」（西班牙文來源精確對應白色錶盤配置）。拒絕：Batman/Batgirl（配置文字無法區分）、Kermit/Starbucks（命名分歧未收斂）、Hulk（已停產不在目錄中）、Pepsi（目錄無對應配置）。"
+    "detail": "完整內容見 data/evidence/rolex/ES/2026-09-15/nickname-research.json。採用：m126500ln-0001「Panda」（西班牙文來源精確對應白色錶盤配置）。拒絕：Batman/Batgirl（配置文字無法區分）、Kermit/Starbucks（命名分歧未收斂）、Hulk（已停產不在目錄中）、Pepsi（目錄無對應配置）。"
   },
   "independentSpotChecks": {
     "status": "PASS",

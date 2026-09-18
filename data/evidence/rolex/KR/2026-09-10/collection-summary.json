@@ -18,7 +18,7 @@
   "primaryCollectionPath": {
     "type": "official structured endpoint",
     "endpoint": "https://www.rolex.com/api/catalog/watchgrid?language=ko&firstResult=0&numberOfResults=1872&grid=all&countryCode=KR&group=%280%29",
-    "responseFile": "data/evidence/KR/2026-09-10/watchgrid-primary-source.network-response",
+    "responseFile": "data/evidence/rolex/KR/2026-09-10/watchgrid-primary-source.network-response",
     "responseSha256": "efb759105502eb059d8578179f45231f6d1dfde181589562b504ffb8ae3fcba1",
     "responseFields": {
       "modelReference": "rmc",

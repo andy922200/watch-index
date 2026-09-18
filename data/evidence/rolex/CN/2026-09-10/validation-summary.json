@@ -1,7 +1,7 @@
 {
   "marketCode": "CN",
   "validationCompletedAt": "2026-09-10T03:40:00+08:00",
-  "evidencePath": "data/evidence/CN/2026-09-10",
+  "evidencePath": "data/evidence/rolex/CN/2026-09-10",
   "overallValidationStatus": "PASS",
   "fiveLayerValidation": {
     "syntaxAndSchema": {
@@ -68,9 +68,9 @@
         "intersectionCount": 1465,
         "chinaReferencesNotInCatalogCount": 0,
         "catalogReferencesNotObservedInChinaCount": 0,
-        "notes": "The China market data is entirely within the existing catalog union (C ∩ M = C = M). Per the single-market isolation rule, the catalog was not rewritten; only data/markets/rolex-china-market.json, data/history/CN/, and data/evidence/CN/ were added."
+        "notes": "The China market data is entirely within the existing catalog union (C ∩ M = C = M). Per the single-market isolation rule, the catalog was not rewritten; only data/markets/rolex-china-market.json, data/history/CN/, and data/evidence/rolex/CN/ were added."
       },
-      "gitStatusScope": "git status --short before and after this task showed only new, untracked paths under data/markets/rolex-china-market.json, data/history/CN/, and data/evidence/CN/; no existing tracked file was modified."
+      "gitStatusScope": "git status --short before and after this task showed only new, untracked paths under data/markets/rolex-china-market.json, data/history/CN/, and data/evidence/rolex/CN/; no existing tracked file was modified."
     }
   },
   "evidenceTraceability": {
@@ -87,7 +87,7 @@
         "session id",
         "api key"
       ],
-      "method": "case-insensitive grep across all files under data/evidence/CN/2026-09-10/"
+      "method": "case-insensitive grep across all files under data/evidence/rolex/CN/2026-09-10/"
     }
   },
   "taxRateVerification": {
@@ -113,7 +113,7 @@
     "acceptedCollectionAliasCount": 2,
     "acceptedLocalNicknameCount": 3,
     "rejectedCandidates": 2,
-    "notes": "See data/evidence/CN/2026-09-10/nickname-research.json for full detail. This is a representative, source-verified sample (4 exact-configuration nicknames across 3 model references, 2 family-wide aliases) rather than an exhaustive per-collection survey; the other 15 collections were left with empty names/sources rather than guessed."
+    "notes": "See data/evidence/rolex/CN/2026-09-10/nickname-research.json for full detail. This is a representative, source-verified sample (4 exact-configuration nicknames across 3 model references, 2 family-wide aliases) rather than an exhaustive per-collection survey; the other 15 collections were left with empty names/sources rather than guessed."
   },
   "independentSpotChecks": {
     "status": "PASS",

@@ -1,7 +1,7 @@
 {
   "marketCode": "US",
   "validationCompletedAt": "2026-09-01T07:34:44-04:00",
-  "evidencePath": "data/evidence/US/2026-09-01",
+  "evidencePath": "data/evidence/rolex/US/2026-09-01",
   "fiveLayerValidation": {
     "syntaxAndSchema": {
       "status": "NOT RUN",

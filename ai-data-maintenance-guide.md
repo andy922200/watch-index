@@ -94,7 +94,7 @@ Browser、CDP 或 network 工具不可用，不代表官方沒有結構化來源
 
 ## Evidence：最低內容與保存規則
 
-每次更新建立新的 `data/evidence/<brandId>/[marketCode]/[YYYY-MM-DD]/`；2026-09-18 前的 Rolex evidence 已遷移至 `data/evidence/rolex/`，舊的 `data/evidence/<marketCode>/` 以相容 symlink 保留，讓歷史 evidence 內未改寫的路徑仍可解析。同日多次執行使用獨立 run 子目錄。至少保存：
+每次更新建立新的 `data/evidence/<brandId>/[marketCode]/[YYYY-MM-DD]/`；Rolex 的 historical evidence 統一位於 `data/evidence/rolex/`，不再保留 `data/evidence/<marketCode>/` 的舊路徑。同日多次執行使用獨立 run 子目錄。至少保存：
 
 - `observations.json`：完整配置碼、來源 URL、觀察時間、原始文字與價格、解析結果、商品網址及新款標示。
 - `collection-summary.json`：市場、語系、入口、收集路徑、分頁／cursor、筆數、重複／衝突、停止證據與錯誤。

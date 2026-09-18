@@ -1,7 +1,7 @@
 {
   "marketCode": "CH",
   "validationCompletedAt": "2026-09-01T18:34:58+02:00",
-  "evidencePath": "data/evidence/CH/2026-09-01",
+  "evidencePath": "data/evidence/rolex/CH/2026-09-01",
   "fiveLayerValidation": {
     "syntaxAndSchema": {
       "status": "NOT RUN",

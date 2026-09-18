@@ -24,7 +24,7 @@ const validPolicy = {
   },
   merchantParticipationRequired: true,
   exportValidationRequired: true,
-  evidencePath: 'data/evidence/JP/2026-09-11/traveler-refund-policy.json',
+  evidencePath: 'data/evidence/rolex/JP/2026-09-11/traveler-refund-policy.json',
   sources: [validSource],
 }
 

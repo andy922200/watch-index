@@ -31,7 +31,7 @@ const createPayload = (): WatchPriceComparisonPayload => ({
         eligibilitySummary: { zhTw: '摘要', enUs: 'Summary' },
         merchantParticipationRequired: true,
         exportValidationRequired: true,
-        evidencePath: 'data/evidence/TW/2026-09-11/traveler-refund-policy.json',
+        evidencePath: 'data/evidence/rolex/TW/2026-09-11/traveler-refund-policy.json',
         sources: [
           {
             publisher: 'Test authority',

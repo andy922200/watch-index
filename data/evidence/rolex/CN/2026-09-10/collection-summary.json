@@ -18,7 +18,7 @@
   "primaryCollectionPath": {
     "type": "official structured endpoint",
     "endpoint": "https://api.rolex.cn/api/catalog/watchgrid?language=zh-hans&firstResult=0&numberOfResults=1872&grid=all&countryCode=CN&group=%280%29",
-    "responseFile": "data/evidence/CN/2026-09-10/watchgrid-primary-source.network-response",
+    "responseFile": "data/evidence/rolex/CN/2026-09-10/watchgrid-primary-source.network-response",
     "responseSha256": "5f0ecef76de7b343920ee7a17f905ee44978f649b14230c94b83a6da74efb062",
     "responseFields": {
       "modelReference": "rmc",

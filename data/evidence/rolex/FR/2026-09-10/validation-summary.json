@@ -1,7 +1,7 @@
 {
   "marketCode": "FR",
   "validationCompletedAt": "2026-09-10T02:04:31+08:00",
-  "evidencePath": "data/evidence/FR/2026-09-10",
+  "evidencePath": "data/evidence/rolex/FR/2026-09-10",
   "overallValidationStatus": "FAIL",
   "fiveLayerValidation": {
     "syntaxAndSchema": {

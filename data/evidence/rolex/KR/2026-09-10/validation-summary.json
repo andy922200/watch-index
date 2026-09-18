@@ -1,7 +1,7 @@
 {
   "marketCode": "KR",
   "validationCompletedAt": "2026-09-10T15:55:00+08:00",
-  "evidencePath": "data/evidence/KR/2026-09-10",
+  "evidencePath": "data/evidence/rolex/KR/2026-09-10",
   "overallValidationStatus": "completed-with-limitations",
   "fiveLayerValidation": {
     "syntaxAndSchema": {

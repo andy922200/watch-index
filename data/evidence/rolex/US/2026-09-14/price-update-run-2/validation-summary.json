@@ -2,7 +2,7 @@
   "evidenceFormatVersion": 2,
   "marketCode": "US",
   "validationCompletedAt": "2026-09-14T15:20:53.870Z",
-  "evidencePath": "data/evidence/US/2026-09-14/price-update-run-2",
+  "evidencePath": "data/evidence/rolex/US/2026-09-14/price-update-run-2",
   "fiveLayerValidation": {
     "syntaxAndSchema": {
       "status": "NOT RUN",

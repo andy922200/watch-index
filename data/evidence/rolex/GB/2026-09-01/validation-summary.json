@@ -1,7 +1,7 @@
 {
   "marketCode": "GB",
   "validationCompletedAt": "2026-09-01T13:58:13+01:00",
-  "evidencePath": "data/evidence/GB/2026-09-01",
+  "evidencePath": "data/evidence/rolex/GB/2026-09-01",
   "fiveLayerValidation": {
     "syntaxAndSchema": {
       "status": "NOT RUN",
@@ -63,15 +63,15 @@
         "data/history/JP/rolex-price-history.json",
         "data/history/TW/rolex-price-history.json",
         "data/history/US/rolex-price-history.json",
-        "data/evidence/AT/2026-09-01/collection-summary.json",
-        "data/evidence/AT/2026-09-01/observations.json",
-        "data/evidence/AT/2026-09-01/validation-summary.json",
-        "data/evidence/DE/2026-09-01/collection-summary.json",
-        "data/evidence/DE/2026-09-01/observations.json",
-        "data/evidence/DE/2026-09-01/validation-summary.json",
-        "data/evidence/US/2026-09-01/collection-summary.json",
-        "data/evidence/US/2026-09-01/observations.json",
-        "data/evidence/US/2026-09-01/validation-summary.json"
+        "data/evidence/rolex/AT/2026-09-01/collection-summary.json",
+        "data/evidence/rolex/AT/2026-09-01/observations.json",
+        "data/evidence/rolex/AT/2026-09-01/validation-summary.json",
+        "data/evidence/rolex/DE/2026-09-01/collection-summary.json",
+        "data/evidence/rolex/DE/2026-09-01/observations.json",
+        "data/evidence/rolex/DE/2026-09-01/validation-summary.json",
+        "data/evidence/rolex/US/2026-09-01/collection-summary.json",
+        "data/evidence/rolex/US/2026-09-01/observations.json",
+        "data/evidence/rolex/US/2026-09-01/validation-summary.json"
       ],
       "intentionallyChangedFiles": {
         "data/catelog/rolex-catalog.json": "sourceMarketCodes gained 'GB' (now [JP, TW, DE, US, AT, GB]); watches array (1465 entries, byte-for-byte identical structure and content), watchCount (1465), and collectedAt (2026-08-31T21:17:28+08:00) are unchanged because every GB modelReference already existed in the catalog (0 new configurations). File grew by exactly 1 line (10270 -> 10271) matching the single new array element."
@@ -79,9 +79,9 @@
       "newFiles": [
         "data/markets/rolex-united-kingdom-market.json",
         "data/history/GB/rolex-price-history.json",
-        "data/evidence/GB/2026-09-01/observations.json",
-        "data/evidence/GB/2026-09-01/collection-summary.json",
-        "data/evidence/GB/2026-09-01/validation-summary.json"
+        "data/evidence/rolex/GB/2026-09-01/observations.json",
+        "data/evidence/rolex/GB/2026-09-01/collection-summary.json",
+        "data/evidence/rolex/GB/2026-09-01/validation-summary.json"
       ],
       "schemasChanged": false,
       "catalogWatchesArrayChanged": false

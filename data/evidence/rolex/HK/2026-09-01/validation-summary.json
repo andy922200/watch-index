@@ -1,7 +1,7 @@
 {
   "marketCode": "HK",
   "validationCompletedAt": "2026-09-01T21:29:11+08:00",
-  "evidencePath": "data/evidence/HK/2026-09-01",
+  "evidencePath": "data/evidence/rolex/HK/2026-09-01",
   "fiveLayerValidation": {
     "syntaxAndSchema": {
       "status": "NOT RUN",
@@ -48,7 +48,7 @@
     },
     "changeSafety": {
       "status": "PASS",
-      "method": "This task only used the Edit tool on data/catelog/rolex-catalog.json (appending 'HK' to sourceMarketCodes) and the Write tool to create new files under data/markets/rolex-hong-kong-market.json, data/history/HK/, and data/evidence/HK/2026-09-01/. No other Read/Edit/Write calls touched any other file in this session, so every other market/history/evidence/schema file is unmodified by construction. The catalog file grew from 10,271 to 10,272 lines (the single new 'HK' array element), matching the same +1-line growth pattern seen when GB was added to sourceMarketCodes; watches array (1,465 entries), watchCount (1,465), and collectedAt (2026-08-31T21:17:28+08:00) are unchanged because every HK modelReference already existed in the catalog (0 new configurations).",
+      "method": "This task only used the Edit tool on data/catelog/rolex-catalog.json (appending 'HK' to sourceMarketCodes) and the Write tool to create new files under data/markets/rolex-hong-kong-market.json, data/history/HK/, and data/evidence/rolex/HK/2026-09-01/. No other Read/Edit/Write calls touched any other file in this session, so every other market/history/evidence/schema file is unmodified by construction. The catalog file grew from 10,271 to 10,272 lines (the single new 'HK' array element), matching the same +1-line growth pattern seen when GB was added to sourceMarketCodes; watches array (1,465 entries), watchCount (1,465), and collectedAt (2026-08-31T21:17:28+08:00) are unchanged because every HK modelReference already existed in the catalog (0 new configurations).",
       "unchangedFiles": [
         "data/schemas/rolex-catalog.schema.json",
         "data/schemas/rolex-market.schema.json",
@@ -65,18 +65,18 @@
         "data/history/TW/rolex-price-history.json",
         "data/history/GB/rolex-price-history.json",
         "data/history/US/rolex-price-history.json",
-        "data/evidence/AT/2026-09-01/collection-summary.json",
-        "data/evidence/AT/2026-09-01/observations.json",
-        "data/evidence/AT/2026-09-01/validation-summary.json",
-        "data/evidence/DE/2026-09-01/collection-summary.json",
-        "data/evidence/DE/2026-09-01/observations.json",
-        "data/evidence/DE/2026-09-01/validation-summary.json",
-        "data/evidence/GB/2026-09-01/collection-summary.json",
-        "data/evidence/GB/2026-09-01/observations.json",
-        "data/evidence/GB/2026-09-01/validation-summary.json",
-        "data/evidence/US/2026-09-01/collection-summary.json",
-        "data/evidence/US/2026-09-01/observations.json",
-        "data/evidence/US/2026-09-01/validation-summary.json"
+        "data/evidence/rolex/AT/2026-09-01/collection-summary.json",
+        "data/evidence/rolex/AT/2026-09-01/observations.json",
+        "data/evidence/rolex/AT/2026-09-01/validation-summary.json",
+        "data/evidence/rolex/DE/2026-09-01/collection-summary.json",
+        "data/evidence/rolex/DE/2026-09-01/observations.json",
+        "data/evidence/rolex/DE/2026-09-01/validation-summary.json",
+        "data/evidence/rolex/GB/2026-09-01/collection-summary.json",
+        "data/evidence/rolex/GB/2026-09-01/observations.json",
+        "data/evidence/rolex/GB/2026-09-01/validation-summary.json",
+        "data/evidence/rolex/US/2026-09-01/collection-summary.json",
+        "data/evidence/rolex/US/2026-09-01/observations.json",
+        "data/evidence/rolex/US/2026-09-01/validation-summary.json"
       ],
       "intentionallyChangedFiles": {
         "data/catelog/rolex-catalog.json": "sourceMarketCodes gained 'HK' (now [JP, TW, DE, US, AT, GB, HK]); watches array (1465 entries, byte-for-byte identical structure and content), watchCount (1465), and collectedAt (2026-08-31T21:17:28+08:00) are unchanged because every HK modelReference already existed in the catalog (0 new configurations). File grew by exactly 1 line (10271 -> 10272) matching the single new array element."
@@ -84,9 +84,9 @@
       "newFiles": [
         "data/markets/rolex-hong-kong-market.json",
         "data/history/HK/rolex-price-history.json",
-        "data/evidence/HK/2026-09-01/observations.json",
-        "data/evidence/HK/2026-09-01/collection-summary.json",
-        "data/evidence/HK/2026-09-01/validation-summary.json"
+        "data/evidence/rolex/HK/2026-09-01/observations.json",
+        "data/evidence/rolex/HK/2026-09-01/collection-summary.json",
+        "data/evidence/rolex/HK/2026-09-01/validation-summary.json"
       ],
       "schemasChanged": false,
       "catalogWatchesArrayChanged": false

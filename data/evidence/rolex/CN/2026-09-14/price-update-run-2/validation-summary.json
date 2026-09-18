@@ -2,7 +2,7 @@
   "evidenceFormatVersion": 2,
   "marketCode": "CN",
   "validationCompletedAt": "2026-09-14T15:20:53.583Z",
-  "evidencePath": "data/evidence/CN/2026-09-14/price-update-run-2",
+  "evidencePath": "data/evidence/rolex/CN/2026-09-14/price-update-run-2",
   "fiveLayerValidation": {
     "syntaxAndSchema": {
       "status": "NOT RUN",

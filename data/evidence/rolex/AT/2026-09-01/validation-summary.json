@@ -1,7 +1,7 @@
 {
   "marketCode": "AT",
   "validationCompletedAt": "2026-09-01T14:39:20+02:00",
-  "evidencePath": "data/evidence/AT/2026-09-01",
+  "evidencePath": "data/evidence/rolex/AT/2026-09-01",
   "fiveLayerValidation": {
     "syntaxAndSchema": {
       "status": "NOT RUN",
@@ -61,12 +61,12 @@
         "data/history/JP/rolex-price-history.json",
         "data/history/TW/rolex-price-history.json",
         "data/history/US/rolex-price-history.json",
-        "data/evidence/DE/2026-09-01/collection-summary.json",
-        "data/evidence/DE/2026-09-01/observations.json",
-        "data/evidence/DE/2026-09-01/validation-summary.json",
-        "data/evidence/US/2026-09-01/collection-summary.json",
-        "data/evidence/US/2026-09-01/observations.json",
-        "data/evidence/US/2026-09-01/validation-summary.json"
+        "data/evidence/rolex/DE/2026-09-01/collection-summary.json",
+        "data/evidence/rolex/DE/2026-09-01/observations.json",
+        "data/evidence/rolex/DE/2026-09-01/validation-summary.json",
+        "data/evidence/rolex/US/2026-09-01/collection-summary.json",
+        "data/evidence/rolex/US/2026-09-01/observations.json",
+        "data/evidence/rolex/US/2026-09-01/validation-summary.json"
       ],
       "intentionallyChangedFiles": {
         "data/catelog/rolex-catalog.json": "sourceMarketCodes gained 'AT'; watches array (1465 entries), watchCount, and collectedAt are byte-for-byte unchanged because every AT modelReference already existed in the catalog (0 new configurations)."
@@ -74,9 +74,9 @@
       "newFiles": [
         "data/markets/rolex-austria-market.json",
         "data/history/AT/rolex-price-history.json",
-        "data/evidence/AT/2026-09-01/observations.json",
-        "data/evidence/AT/2026-09-01/collection-summary.json",
-        "data/evidence/AT/2026-09-01/validation-summary.json"
+        "data/evidence/rolex/AT/2026-09-01/observations.json",
+        "data/evidence/rolex/AT/2026-09-01/collection-summary.json",
+        "data/evidence/rolex/AT/2026-09-01/validation-summary.json"
       ],
       "schemasChanged": false,
       "catalogWatchesArrayChanged": false

@@ -2,7 +2,7 @@
   "evidenceFormatVersion": 2,
   "marketCode": "SG",
   "validationCompletedAt": "2026-09-14T15:20:53.741Z",
-  "evidencePath": "data/evidence/SG/2026-09-14/price-update-run-2",
+  "evidencePath": "data/evidence/rolex/SG/2026-09-14/price-update-run-2",
   "fiveLayerValidation": {
     "syntaxAndSchema": {
       "status": "NOT RUN",

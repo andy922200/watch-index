@@ -1,7 +1,7 @@
 {
   "marketCode": "TH",
   "validationCompletedAt": "2026-09-15T06:15:00+07:00",
-  "evidencePath": "data/evidence/TH/2026-09-15",
+  "evidencePath": "data/evidence/rolex/TH/2026-09-15",
   "fiveLayerValidation": {
     "syntaxAndSchema": {
       "strictJson": {
@@ -56,10 +56,10 @@
       "newFiles": [
         "data/markets/rolex-thailand-market.json",
         "data/history/TH/rolex-price-history.json",
-        "data/evidence/TH/2026-09-15/observations.json",
-        "data/evidence/TH/2026-09-15/collection-summary.json",
-        "data/evidence/TH/2026-09-15/validation-summary.json",
-        "data/evidence/TH/2026-09-15/nickname-research.json"
+        "data/evidence/rolex/TH/2026-09-15/observations.json",
+        "data/evidence/rolex/TH/2026-09-15/collection-summary.json",
+        "data/evidence/rolex/TH/2026-09-15/validation-summary.json",
+        "data/evidence/rolex/TH/2026-09-15/nickname-research.json"
       ],
       "schemasChanged": false,
       "catalogChanged": false
@@ -81,7 +81,7 @@
     "acceptedLocalNicknameCount": 0,
     "acceptedCollectionAliasCount": 0,
     "rejectedCandidateCount": 4,
-    "detail": "完整內容見 data/evidence/TH/2026-09-15/nickname-research.json。拒絕：Batman/Batgirl（配置文字無法區分）、Hulk（已停產不在目錄中）、Panda（未找到可信泰文在地來源）、Pepsi（目錄無對應配置）。0 筆採用。"
+    "detail": "完整內容見 data/evidence/rolex/TH/2026-09-15/nickname-research.json。拒絕：Batman/Batgirl（配置文字無法區分）、Hulk（已停產不在目錄中）、Panda（未找到可信泰文在地來源）、Pepsi（目錄無對應配置）。0 筆採用。"
   },
   "independentSpotChecks": {
     "status": "PASS",
