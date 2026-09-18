@@ -1,4 +1,20 @@
 {
+  "home": {
+    "eyebrow": "WATCH INDEX",
+    "title": "探索腕錶品牌\n與全球官方定價",
+    "brandDirectoryHeading": "品牌",
+    "comingSoon": "即將推出",
+    "brands": {
+      "rolex": {
+        "name": "ROLEX",
+        "description": "探索 Rolex 在全球市場的官方定價"
+      },
+      "omega": {
+        "name": "OMEGA",
+        "description": "Omega 全球官方定價與市場比較，即將推出"
+      }
+    }
+  },
   "site": {
     "title": "全球 Rolex 腕錶索引",
     "priceUpdatedAt": "價格資料更新於 {date}",

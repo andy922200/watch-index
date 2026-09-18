@@ -42,6 +42,26 @@ describe('AppNav', () => {
     expect(screen.getByRole('combobox', { name: 'Display currency' }).textContent).toContain('TWD')
   })
 
+  it('hides market and display-currency controls in the Root context', async () => {
+    render(AppNav, {
+      props: { showMarketControls: false },
+      global: {
+        plugins: [i18n],
+      },
+    })
+
+    expect(screen.queryByRole('combobox', { name: 'Market' })).toBeNull()
+    expect(screen.queryByRole('combobox', { name: 'Display currency' })).toBeNull()
+    expect(screen.getByRole('combobox', { name: 'Language' })).toBeTruthy()
+
+    await fireEvent.click(screen.getByRole('button', { name: 'More options' }))
+
+    expect(screen.queryByText('Market')).toBeNull()
+    expect(screen.queryByText('Display currency')).toBeNull()
+    expect(screen.getByRole('menuitemradio', { name: 'English' })).toBeTruthy()
+    expect(screen.getByRole('menuitem', { name: 'Switch to dark mode' })).toBeTruthy()
+  })
+
   it('keeps readable Donate and icon-only GitHub links in the navbar', () => {
     render(AppNav, {
       props: { displayCurrencies: ['TWD', 'USD'] },

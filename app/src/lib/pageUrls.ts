@@ -10,7 +10,12 @@
  */
 import type { BrandId } from '@/lib/brands'
 import { MARKET_QUERY_KEY, type MarketCode } from '@/lib/markets'
-import { type BrandPage, getBrandPagePublicPath, type PageLanguageCode } from '@/lib/pageRoutes'
+import {
+  type BrandPage,
+  getBrandPagePublicPath,
+  getSiteIndexPublicPath,
+  type PageLanguageCode,
+} from '@/lib/pageRoutes'
 import { Locale } from '@/plugins/i18n'
 
 export type { BrandPage }
@@ -20,6 +25,12 @@ export interface BrandPageLanguagePaths {
   /** 英文版網址。 */
   enUs: string
   /** 繁體中文版（預設語言）網址。 */
+  zhTw: string
+}
+
+/** Site root 的各語言完整網址，供 Root AppNav 使用。 */
+export interface SiteIndexLanguagePaths {
+  enUs: string
   zhTw: string
 }
 
@@ -72,6 +83,28 @@ const getBaseUrl = (): string =>
  */
 const getBrandPageUrl = ({ brandId, language, page }: GetBrandPageUrlOptions): string =>
   `${getBaseUrl()}${getBrandPagePublicPath({ brandId, language, page })}`
+
+/**
+ * 組出可直接放進 `href` 的 site index 網址。
+ *
+ * `pageRoutes.ts` 的 site-relative 路徑會接在已正規化的 Vite base 後；因此繁中回傳
+ * base 本身（例如 `/watch-index/app/`），英文則回傳 base 下的 `en-us/` 目錄。
+ *
+ * @param options - 目標語言。
+ * @returns 以 Vite base path 起始的完整 site index 網址。
+ */
+const getSiteIndexUrl = ({ language }: { language: PageLanguageCode }): string =>
+  `${getBaseUrl()}${getSiteIndexPublicPath({ language })}`
+
+/**
+ * 取得 site index 的繁中與英文完整網址，供 Root AppNav 的語言切換使用。
+ *
+ * @returns Root 頁面的各語言完整網址。
+ */
+export const getSiteIndexLanguagePaths = (): SiteIndexLanguagePaths => ({
+  enUs: getSiteIndexUrl({ language: Locale.enUs }),
+  zhTw: getSiteIndexUrl({ language: Locale.zhTw }),
+})
 
 /**
  * 取得同一個頁面的繁中與英文網址，供 `AppNav` 的語言切換連結使用。

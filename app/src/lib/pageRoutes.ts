@@ -38,6 +38,34 @@ export const PageLanguage = {
 
 export type PageLanguageCode = (typeof PageLanguage)[keyof typeof PageLanguage]
 
+/** Site root 的首頁位置；Root 不屬於任何品牌。 */
+export interface SiteIndexLocation {
+  language: PageLanguageCode
+}
+
+/**
+ * Site root 靜態 HTML 的輸出檔案路徑。
+ *
+ * 預設繁中放在輸出根目錄；英文放在 `en-us/` 子目錄。
+ *
+ * @param location - 目標語言，見 {@link SiteIndexLocation}。
+ * @returns 不以斜線開頭、必定以 `.html` 結尾的輸出檔案路徑。
+ */
+export const getSiteIndexFilePath = ({ language }: SiteIndexLocation): `${string}.html` =>
+  language === PageLanguage.enUs ? 'en-us/index.html' : 'index.html'
+
+/**
+ * Site root 對外路徑，刻意維持相對於 Vite base 的格式。
+ *
+ * 預設繁中回傳空字串，讓 runtime 將它接在已帶尾端斜線的 base 後得到 `/`；
+ * 英文則回傳 `en-us/`，得到 `/en-us/`。
+ *
+ * @param location - 目標語言，見 {@link SiteIndexLocation}。
+ * @returns 不以斜線開頭、相對於 Vite base 的 site index 公開路徑。
+ */
+export const getSiteIndexPublicPath = ({ language }: SiteIndexLocation): string =>
+  language === PageLanguage.enUs ? `${PageLanguage.enUs}/` : ''
+
 /**
  * 品牌底下的頁面種類。與品牌無關：每個品牌都有相同的這幾種頁面。
  *

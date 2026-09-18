@@ -1,4 +1,20 @@
 {
+  "home": {
+    "eyebrow": "WATCH INDEX",
+    "title": "Explore watches\nby brand.",
+    "brandDirectoryHeading": "Brands",
+    "comingSoon": "Coming soon",
+    "brands": {
+      "rolex": {
+        "name": "ROLEX",
+        "description": "Explore official Rolex prices across global markets"
+      },
+      "omega": {
+        "name": "OMEGA",
+        "description": "Official Omega prices and market comparison, coming soon"
+      }
+    }
+  },
   "site": {
     "title": "Global Rolex Watches Index",
     "priceUpdatedAt": "Price data updated {date}",

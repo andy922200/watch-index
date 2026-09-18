@@ -4,6 +4,8 @@ import {
   getBrandLanguagePrefix,
   getBrandPageFilePath,
   getBrandPagePublicPath,
+  getSiteIndexFilePath,
+  getSiteIndexPublicPath,
   PageLanguage,
   toLanguagePathname,
 } from '@/lib/pageRoutes'
@@ -43,6 +45,15 @@ describe('brand page paths', () => {
         page: 'price-compare',
       }),
     ).toBe('rolex/watch-price-compare.html')
+  })
+})
+
+describe('site index paths', () => {
+  it('keeps the default language at the site root and nests English beneath en-us', () => {
+    expect(getSiteIndexFilePath({ language: PageLanguage.zhTw })).toBe('index.html')
+    expect(getSiteIndexPublicPath({ language: PageLanguage.zhTw })).toBe('')
+    expect(getSiteIndexFilePath({ language: PageLanguage.enUs })).toBe('en-us/index.html')
+    expect(getSiteIndexPublicPath({ language: PageLanguage.enUs })).toBe('en-us/')
   })
 })
 
@@ -87,8 +98,10 @@ describe('switching an existing pathname to another language', () => {
   })
 
   it('works at the site root where there is no base or brand prefix', () => {
-    expect(toLanguagePathname({ pathname: '/rolex/', language: PageLanguage.enUs })).toBe(
-      '/rolex/en-us/',
+    expect(toLanguagePathname({ pathname: '/', language: PageLanguage.enUs })).toBe('/en-us/')
+    expect(toLanguagePathname({ pathname: '/en-us/', language: PageLanguage.zhTw })).toBe('/')
+    expect(toLanguagePathname({ pathname: '/watch-index/app/', language: PageLanguage.enUs })).toBe(
+      '/watch-index/app/en-us/',
     )
   })
 })

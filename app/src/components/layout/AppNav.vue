@@ -41,15 +41,20 @@ interface LanguagePaths {
 }
 
 interface Props {
-  displayCurrencies: readonly string[]
+  displayCurrencies?: readonly string[]
   languagePaths?: LanguagePaths
+  showMarketControls?: boolean
 }
 
 const REPOSITORY_URL = 'https://github.com/andy922200/watch-index'
 const DONATE_URL = 'https://ko-fi.com/smlpoints'
 
 const { t, locale } = useI18n()
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  displayCurrencies: () => [],
+  languagePaths: undefined,
+  showMarketControls: true,
+})
 const market = defineModel<MarketCode>('market', { default: DEFAULT_MARKET })
 const displayCurrency = defineModel<string>('displayCurrency', {
   default: DEFAULT_DISPLAY_CURRENCY,
@@ -96,6 +101,8 @@ const { isOpen: isDesktopLanguageSelectOpen } = useCloseOnResize()
 const { isOpen: isMobileMarketSelectOpen } = useCloseOnResize()
 const { isOpen: isMobileDisplayCurrencySelectOpen } = useCloseOnResize()
 
+const displayCurrencyOptions = computed<readonly string[]>(() => props.displayCurrencies)
+
 const getCurrencyLabel = (currency: string): string => {
   const currencyName = new Intl.DisplayNames([locale.value], { type: 'currency' }).of(currency)
 
@@ -123,37 +130,42 @@ const getCurrencyLabel = (currency: string): string => {
       </Button>
     </div>
     <div class="hidden items-center gap-2 lg:flex">
-      <Select v-model:open="isDesktopMarketSelectOpen" v-model="market">
-        <SelectTrigger class="w-36" :aria-label="t('site.marketLabel')">
-          <SelectValue :placeholder="t('site.market.taiwan')" />
-        </SelectTrigger>
-        <SelectContent class="max-h-56 w-(--reka-select-trigger-width)" :side-offset="4">
-          <SelectGroup>
-            <SelectItem v-for="option in marketOptions" :key="option.code" :value="option.code">
-              <span class="flex items-center gap-2">
-                <span aria-hidden="true">{{ option.flag }}</span>
-                {{ t(option.labelKey) }}
-              </span>
-            </SelectItem>
-          </SelectGroup>
-        </SelectContent>
-      </Select>
-      <Select v-model:open="isDesktopDisplayCurrencySelectOpen" v-model="displayCurrency">
-        <SelectTrigger class="w-56 whitespace-nowrap" :aria-label="t('site.displayCurrencyLabel')">
-          <SelectValue :placeholder="displayCurrency" />
-        </SelectTrigger>
-        <SelectContent class="w-(--reka-select-trigger-width) whitespace-nowrap" :side-offset="4">
-          <SelectGroup>
-            <SelectItem
-              v-for="currency in props.displayCurrencies"
-              :key="currency"
-              :value="currency"
-            >
-              {{ getCurrencyLabel(currency) }}
-            </SelectItem>
-          </SelectGroup>
-        </SelectContent>
-      </Select>
+      <template v-if="props.showMarketControls">
+        <Select v-model:open="isDesktopMarketSelectOpen" v-model="market">
+          <SelectTrigger class="w-36" :aria-label="t('site.marketLabel')">
+            <SelectValue :placeholder="t('site.market.taiwan')" />
+          </SelectTrigger>
+          <SelectContent class="max-h-56 w-(--reka-select-trigger-width)" :side-offset="4">
+            <SelectGroup>
+              <SelectItem v-for="option in marketOptions" :key="option.code" :value="option.code">
+                <span class="flex items-center gap-2">
+                  <span aria-hidden="true">{{ option.flag }}</span>
+                  {{ t(option.labelKey) }}
+                </span>
+              </SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+        <Select v-model:open="isDesktopDisplayCurrencySelectOpen" v-model="displayCurrency">
+          <SelectTrigger
+            class="w-56 whitespace-nowrap"
+            :aria-label="t('site.displayCurrencyLabel')"
+          >
+            <SelectValue :placeholder="displayCurrency" />
+          </SelectTrigger>
+          <SelectContent class="w-(--reka-select-trigger-width) whitespace-nowrap" :side-offset="4">
+            <SelectGroup>
+              <SelectItem
+                v-for="currency in displayCurrencyOptions"
+                :key="currency"
+                :value="currency"
+              >
+                {{ getCurrencyLabel(currency) }}
+              </SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      </template>
       <Select
         v-model:open="isDesktopLanguageSelectOpen"
         :model-value="locale"
@@ -205,44 +217,49 @@ const getCurrencyLabel = (currency: string): string => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent class="w-56 max-w-[calc(100vw-1.5rem)] lg:hidden" align="end">
-        <DropdownMenuLabel>{{ t('site.marketLabel') }}</DropdownMenuLabel>
-        <Select v-model:open="isMobileMarketSelectOpen" v-model="market">
-          <SelectTrigger class="h-11 w-full" :aria-label="t('site.marketLabel')">
-            <SelectValue :placeholder="t('site.market.taiwan')" />
-          </SelectTrigger>
-          <SelectContent class="max-h-56 w-(--reka-select-trigger-width)" :side-offset="4">
-            <SelectGroup>
-              <SelectItem v-for="option in marketOptions" :key="option.code" :value="option.code">
-                <span class="flex items-center gap-2">
-                  <span aria-hidden="true">{{ option.flag }}</span>
-                  {{ t(option.labelKey) }}
-                </span>
-              </SelectItem>
-            </SelectGroup>
-          </SelectContent>
-        </Select>
-        <DropdownMenuSeparator />
-        <DropdownMenuLabel>{{ t('site.displayCurrencyLabel') }}</DropdownMenuLabel>
-        <Select v-model:open="isMobileDisplayCurrencySelectOpen" v-model="displayCurrency">
-          <SelectTrigger
-            class="h-11 w-full whitespace-nowrap"
-            :aria-label="t('site.displayCurrencyLabel')"
-          >
-            <SelectValue :placeholder="displayCurrency" />
-          </SelectTrigger>
-          <SelectContent class="w-(--reka-select-trigger-width) whitespace-nowrap" :side-offset="4">
-            <SelectGroup>
-              <SelectItem
-                v-for="currency in props.displayCurrencies"
-                :key="currency"
-                :value="currency"
-              >
-                {{ getCurrencyLabel(currency) }}
-              </SelectItem>
-            </SelectGroup>
-          </SelectContent>
-        </Select>
-        <DropdownMenuSeparator />
+        <template v-if="props.showMarketControls">
+          <DropdownMenuLabel>{{ t('site.marketLabel') }}</DropdownMenuLabel>
+          <Select v-model:open="isMobileMarketSelectOpen" v-model="market">
+            <SelectTrigger class="h-11 w-full" :aria-label="t('site.marketLabel')">
+              <SelectValue :placeholder="t('site.market.taiwan')" />
+            </SelectTrigger>
+            <SelectContent class="max-h-56 w-(--reka-select-trigger-width)" :side-offset="4">
+              <SelectGroup>
+                <SelectItem v-for="option in marketOptions" :key="option.code" :value="option.code">
+                  <span class="flex items-center gap-2">
+                    <span aria-hidden="true">{{ option.flag }}</span>
+                    {{ t(option.labelKey) }}
+                  </span>
+                </SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+          <DropdownMenuSeparator />
+          <DropdownMenuLabel>{{ t('site.displayCurrencyLabel') }}</DropdownMenuLabel>
+          <Select v-model:open="isMobileDisplayCurrencySelectOpen" v-model="displayCurrency">
+            <SelectTrigger
+              class="h-11 w-full whitespace-nowrap"
+              :aria-label="t('site.displayCurrencyLabel')"
+            >
+              <SelectValue :placeholder="displayCurrency" />
+            </SelectTrigger>
+            <SelectContent
+              class="w-(--reka-select-trigger-width) whitespace-nowrap"
+              :side-offset="4"
+            >
+              <SelectGroup>
+                <SelectItem
+                  v-for="currency in displayCurrencyOptions"
+                  :key="currency"
+                  :value="currency"
+                >
+                  {{ getCurrencyLabel(currency) }}
+                </SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+          <DropdownMenuSeparator />
+        </template>
         <DropdownMenuLabel>{{ t('site.languageLabel') }}</DropdownMenuLabel>
         <DropdownMenuGroup>
           <DropdownMenuRadioGroup :model-value="locale" @update:model-value="navigateToLocale">

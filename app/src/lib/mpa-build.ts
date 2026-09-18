@@ -3,10 +3,11 @@ import { createPages } from 'vite-plugin-virtual-mpa'
 
 import type { BrandConfig } from './brands.ts'
 import {
-  type BrandPageLocation,
   getBrandLanguagePrefix,
   getBrandPageFilePath,
   getBrandPagePublicPath,
+  getSiteIndexFilePath,
+  getSiteIndexPublicPath,
   PageLanguage,
 } from './pageRoutes.ts'
 
@@ -48,37 +49,82 @@ export const createMpaConfig = ({
   const ogImage = `${sharedRoot}/og-image.png`
 
   /** 對外分享用的絕對網址，供 canonical、hreflang 與 OG meta 使用。 */
-  const getAbsoluteUrl = (location: BrandPageLocation): string =>
-    `${sharedRoot}/${getBrandPagePublicPath(location)}`
+  const getAbsoluteUrl = (publicPath: string): string => `${sharedRoot}/${publicPath}`
 
   // 首頁的對外網址是目錄形式（`/rolex/`、`/rolex/en-us/`），不露出 index.html，
   // 因此需要 rewrite 把它對應回實體檔案；dev server 與 preview 都靠這組規則。
-  const rewrites: Exclude<RewriteRule, false> = brands.flatMap((brand) =>
-    [PageLanguage.enUs, PageLanguage.zhTw].map((language) => {
-      const prefix = getBrandLanguagePrefix({ brandId: brand.id, language })
+  const rewrites: Exclude<RewriteRule, false> = [
+    {
+      from: new RegExp(`^${base}?$`),
+      to: `${base}${getSiteIndexFilePath({ language: PageLanguage.zhTw })}`,
+    },
+    {
+      from: new RegExp(`^${base}${PageLanguage.enUs}/?$`),
+      to: `${base}${getSiteIndexFilePath({ language: PageLanguage.enUs })}`,
+    },
+    ...brands.flatMap((brand) =>
+      [PageLanguage.enUs, PageLanguage.zhTw].map((language) => {
+        const prefix = getBrandLanguagePrefix({ brandId: brand.id, language })
 
-      return {
-        from: new RegExp(`^${base}${prefix}/?$`),
-        to: `${base}${getBrandPageFilePath({ brandId: brand.id, language, page: 'index' })}`,
-      }
-    }),
-  )
+        return {
+          from: new RegExp(`^${base}${prefix}/?$`),
+          to: `${base}${getBrandPageFilePath({ brandId: brand.id, language, page: 'index' })}`,
+        }
+      }),
+    ),
+  ]
 
-  const pages = createPages(
-    brands.flatMap((brand) => {
+  const pages = createPages([
+    {
+      name: 'site-index-zh-tw',
+      filename: getSiteIndexFilePath({ language: PageLanguage.zhTw }),
+      entry: '/src/pages/index/main.ts',
+      data: {
+        lang: PageLanguage.zhTw,
+        siteName: 'Watch Index',
+        title: 'Watch Index｜全球腕錶官方定價與市場比較',
+        description: '探索各腕錶品牌的全球官方定價與市場比較。',
+        url: getAbsoluteUrl(getSiteIndexPublicPath({ language: PageLanguage.zhTw })),
+        alternateLang: PageLanguage.enUs,
+        alternateUrl: getAbsoluteUrl(getSiteIndexPublicPath({ language: PageLanguage.enUs })),
+        defaultUrl: getAbsoluteUrl(getSiteIndexPublicPath({ language: PageLanguage.zhTw })),
+        ogImage,
+        ogLocale: 'zh_TW',
+        ogLocaleAlternate: 'en_US',
+      },
+    },
+    {
+      name: 'site-index-en-us',
+      filename: getSiteIndexFilePath({ language: PageLanguage.enUs }),
+      entry: '/src/pages/index/main.ts',
+      data: {
+        lang: PageLanguage.enUs,
+        siteName: 'Watch Index',
+        title: 'Watch Index | Global Watch Prices and Market Comparison',
+        description: 'Explore global official watch prices and market comparison by brand.',
+        url: getAbsoluteUrl(getSiteIndexPublicPath({ language: PageLanguage.enUs })),
+        alternateLang: PageLanguage.zhTw,
+        alternateUrl: getAbsoluteUrl(getSiteIndexPublicPath({ language: PageLanguage.zhTw })),
+        defaultUrl: getAbsoluteUrl(getSiteIndexPublicPath({ language: PageLanguage.zhTw })),
+        ogImage,
+        ogLocale: 'en_US',
+        ogLocaleAlternate: 'zh_TW',
+      },
+    },
+    ...brands.flatMap((brand) => {
       const brandId = brand.id
-      const indexZhTwUrl = getAbsoluteUrl({ brandId, language: PageLanguage.zhTw, page: 'index' })
-      const indexEnUsUrl = getAbsoluteUrl({ brandId, language: PageLanguage.enUs, page: 'index' })
-      const compareZhTwUrl = getAbsoluteUrl({
-        brandId,
-        language: PageLanguage.zhTw,
-        page: 'price-compare',
-      })
-      const compareEnUsUrl = getAbsoluteUrl({
-        brandId,
-        language: PageLanguage.enUs,
-        page: 'price-compare',
-      })
+      const indexZhTwUrl = getAbsoluteUrl(
+        getBrandPagePublicPath({ brandId, language: PageLanguage.zhTw, page: 'index' }),
+      )
+      const indexEnUsUrl = getAbsoluteUrl(
+        getBrandPagePublicPath({ brandId, language: PageLanguage.enUs, page: 'index' }),
+      )
+      const compareZhTwUrl = getAbsoluteUrl(
+        getBrandPagePublicPath({ brandId, language: PageLanguage.zhTw, page: 'price-compare' }),
+      )
+      const compareEnUsUrl = getAbsoluteUrl(
+        getBrandPagePublicPath({ brandId, language: PageLanguage.enUs, page: 'price-compare' }),
+      )
 
       return [
         {
@@ -163,7 +209,7 @@ export const createMpaConfig = ({
         },
       ]
     }),
-  )
+  ])
 
   return { pages, rewrites }
 }

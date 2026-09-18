@@ -47,9 +47,8 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* 預設 fallback 與 Rolex 主題共用目前色票；新增品牌時僅覆寫相同語意 token。 */
-:root,
-:root[data-brand='rolex'] {
+/* Watch Index 入口頁採中性色票；各品牌頁可覆寫相同語意 token。 */
+:root {
   color-scheme: light dark;
   font-family:
     Inter,
@@ -60,6 +59,75 @@
     'Segoe UI',
     sans-serif;
   --radius: 0.625rem;
+  --background: #f7f5f0;
+  --foreground: #1e1c1a;
+  --card: #fffdf9;
+  --card-foreground: #1e1c1a;
+  --popover: #fffdf9;
+  --popover-foreground: #1e1c1a;
+  --primary: #272421;
+  --primary-foreground: #f7f5f0;
+  --secondary: #ece9e2;
+  --secondary-foreground: #3d3934;
+  --muted: #ece9e2;
+  --muted-foreground: #6c6760;
+  --accent: #e4e0d8;
+  --accent-foreground: #1e1c1a;
+  --destructive: var(--color-red-600);
+  --border: #d8d3c9;
+  --input: #d8d3c9;
+  --ring: #4f4840;
+  --chart-1: #4f4840;
+  --chart-2: #947a50;
+  --chart-3: #7d756c;
+  --chart-4: #a35842;
+  --chart-5: #59514a;
+  --sidebar: #ece9e2;
+  --sidebar-foreground: #1e1c1a;
+  --sidebar-primary: #272421;
+  --sidebar-primary-foreground: #f7f5f0;
+  --sidebar-accent: #e4e0d8;
+  --sidebar-accent-foreground: #1e1c1a;
+  --sidebar-border: #d8d3c9;
+  --sidebar-ring: #4f4840;
+}
+
+:root.dark {
+  --background: #171513;
+  --foreground: #f5f1e9;
+  --card: #211f1b;
+  --card-foreground: #f5f1e9;
+  --popover: #211f1b;
+  --popover-foreground: #f5f1e9;
+  --primary: #f5f1e9;
+  --primary-foreground: #171513;
+  --secondary: #2b2824;
+  --secondary-foreground: #f5f1e9;
+  --muted: #2b2824;
+  --muted-foreground: #b9b2a8;
+  --accent: #37332e;
+  --accent-foreground: #f5f1e9;
+  --destructive: var(--color-red-500);
+  --border: color-mix(in oklab, #f5f1e9 14%, transparent);
+  --input: color-mix(in oklab, #f5f1e9 18%, transparent);
+  --ring: #c8c0b6;
+  --chart-1: #c8c0b6;
+  --chart-2: #d2ad72;
+  --chart-3: #aaa197;
+  --chart-4: #dc8d70;
+  --chart-5: #837970;
+  --sidebar: #211f1b;
+  --sidebar-foreground: #f5f1e9;
+  --sidebar-primary: #f5f1e9;
+  --sidebar-primary-foreground: #171513;
+  --sidebar-accent: #37332e;
+  --sidebar-accent-foreground: #f5f1e9;
+  --sidebar-border: color-mix(in oklab, #f5f1e9 14%, transparent);
+  --sidebar-ring: #c8c0b6;
+}
+
+/* Rolex 品牌頁維持既有綠色主題。 */
+:root[data-brand='rolex'] {
   --background: #f5f4ef;
   --foreground: #10261c;
   --card: #fffdf8;
@@ -93,7 +161,6 @@
   --sidebar-ring: #006039;
 }
 
-:root.dark,
 :root.dark[data-brand='rolex'] {
   --background: #0b1712;
   --foreground: #f5f4ef;
