@@ -1,0 +1,31 @@
+{
+  "nicknameResearch": {
+    "status": "PASS",
+    "scope": "new-market",
+    "languages": ["ko"],
+    "queries": [
+      "\"오메가\" 시계 애칭 별명 스피드마스터",
+      "\"오메가\" 시계 별명 씨마스터 007",
+      "(cross-checked against the equivalent Japanese-language research run for the JP market, see data/evidence/omega/JP/2026-09-18/nickname-research.json)"
+    ],
+    "sourcesReviewed": 9,
+    "candidateCount": 2,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [
+      {
+        "candidate": "문워치 (Moonwatch)",
+        "scope": "Speedmaster Moonwatch Professional line",
+        "sources": ["blog.naver.com/rayharp", "gqkorea.co.kr", "econovill.com", "luxsphere.tistory.com"],
+        "reason": "Not an unofficial nickname: 'Moonwatch' is Omega's own official product-line name, already captured verbatim as the on-page collectionName ('스피드마스터 문워치 프로페셔널') for every reference in that line. Recording it again as a localNickname would misrepresent it as community slang."
+      },
+      {
+        "candidate": "본드 워치 / 007 (Bond Watch)",
+        "scope": "Seamaster Diver 300M line generally, referenced loosely across many decades of models by Korean watch press",
+        "sources": ["blog.gmt-j.com is Japanese-language and was cross-checked, not a KR source; KR-side generic association confirmed via omega/James Bond partnership coverage"],
+        "reason": "Live-verified during independent spot-check: reference 210.55.42.20.99.001's own official on-page title is literally '씨마스터 다이버 300M 제임스 본드 탄생 60주년 기념' (Seamaster Diver 300M James Bond 60th Anniversary) -- i.e. where a Bond connection is real, Omega already states it as the official name, not an informal nickname. The looser generic press habit of calling the whole Diver 300M line a 'Bond watch' does not precisely map to one full reference as required by this project's rule (俗稱只有在能精確對應完整配置並附可信來源時才可採用), so it is not adopted as either a localNickname or a collectionAlias (collectionAliases in the current schema are also only family-level (seamaster/speedmaster/constellation/de-ville), too coarse to accurately scope a Diver-300M-only association without misrepresenting Aqua Terra/Planet Ocean models under the same family)."
+      }
+    ],
+    "notes": "PASS with 0 accepted results: research was genuinely performed (not skipped), real candidates were found and evaluated, but none satisfied the precise full-reference-mapping and non-official-branding requirements. collectionAliases for all four families were left empty for the same reason no market-wide alias met the bar."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "brandId": "omega",
+  "marketCode": "KR",
+  "validatedAt": "2026-09-18T16:02:21.000Z",
+  "strictJsonParsing": {
+    "status": "PASS",
+    "notes": "Duplicate-key and invalid-JSON-constant (NaN/Infinity) checks per ai-data-maintenance-guide.md's provided script ran clean across all 40 files under data/catalog, data/markets, data/history, data/schemas (repo-wide, not just this market's new files)."
+  },
+  "jsonSchemaValidation": {
+    "status": "NOT RUN",
+    "reason": "No Draft 2020-12 compatible validator (e.g. Python `jsonschema` package) is installed in this environment. Manual field/type/required/pattern/uniqueness checks reproducing the schema's constraints were run instead (see crossFileAndContractChecks) and passed clean."
+  },
+  "crossFileAndContractChecks": {
+    "status": "PASS",
+    "checks": [
+      "watchCount (554) equals watches.length",
+      "every watchId matches ^omega:<reference>$ and the market schema's watchId pattern",
+      "554 unique watchId, 554 unique reference (no duplicates)",
+      "collectionAliases keys are valid slugs matching the four catalog collectionIds",
+      "history.marketCode = KR, currencyCode = KRW, priceType = tax-include, taxRatePercent = 10",
+      "collectionRuns[0].recordCount (554) equals priceSeries key count (554)",
+      "priceSeries keys are exactly the market's 554 watchIds (no missing, no extra)",
+      "every pricePoint's runId is a positive, strictly increasing integer per watchId (single run here: runId 1 throughout)",
+      "every listingStatus=listed point has a non-negative integer price; no price-unavailable/not-listed points exist in this initial run",
+      "no non-zero-decimal prices encountered while parsing rawPriceText (KRW has no minor currency unit; parser raises on any '.' found and none did)",
+      "catalog-candidate entries (551+554 = will be merged by the coordinator step) contain no watchId collisions with the existing Rolex or Omega Taiwan catalog data checked separately"
+    ]
+  },
+  "sourceReconciliation": {
+    "status": "PASS",
+    "notes": "All 16 categories' collected unique product-card counts equal their officially displayed counts (see collection-summary.json). Total collected (554) equals the sum of the four family totals (203+95+128+128) shown on the omegawatches.co.kr/watches entry page."
+  },
+  "priceStats": {
+    "currencyCode": "KRW",
+    "count": 554,
+    "min": 4900000,
+    "max": 937500000,
+    "median": 15900000
+  },
+  "independentSpotCheck": {
+    "status": "PASS",
+    "sampleSize": 20,
+    "method": "Re-navigated live to each sampled product's own detail page (a different view path than the category-listing pass used for card-level data) and re-extracted reference (sku), price, case material, and dial color directly from the DOM in a fresh page load, comparing against the values already written to the market/history files.",
+    "coverage": "one representative per each of the four families (Seamaster, Speedmaster, Constellation, De Ville), two same-base-reference-prefix configuration pairs (De Ville Prestige 434.20.42.22.0x/1x, Speedmaster '38 324.30.38.50.0x), lowest price, highest price, second-highest price, three isNewModel=true items, four officially-named special/anomaly editions (Chrono Chime, Ultra Deep Planet Ocean 6000M, James Bond 60th Anniversary Diver 300M, Summer Blue Ploprof), the rare 2-item Tourbillon category, and two of the 34 dial-field-absent references.",
+    "results": "20/20 exact matches, 0 diffs, including both null-dial items independently reconfirmed as genuinely absent (not a scraping artifact) on live reload.",
+    "referencesChecked": [
+      "220.10.28.60.54.001", "522.50.45.52.03.001", "529.53.43.22.99.001", "434.20.42.22.02.001",
+      "434.20.42.22.10.001", "324.30.38.50.01.002", "324.30.38.50.02.003", "217.32.42.21.01.002",
+      "210.32.44.51.01.002", "140.13.39.21.02.001", "220.50.41.21.10.001", "310.32.42.50.01.002",
+      "131.25.29.20.99.002", "434.10.41.20.10.001", "215.30.46.21.03.001", "210.55.42.20.99.001",
+      "227.32.55.21.03.001", "220.10.38.20.10.005", "529.53.43.22.01.001", "220.10.41.21.03.006"
+    ]
+  },
+  "limitations": [
+    "34/554 references have dialDescription: null (official page lacks a structured dial-color field), documented in collection-summary.json; not guessed.",
+    "priceType/taxRatePercent determined from a Korean NTS written ruling establishing a legal deemed-inclusive default, not an explicit Omega statement — documented in collection-summary.json.",
+    "jsonSchemaValidation NOT RUN due to missing validator; manual equivalent checks substituted (see above)."
+  ],
+  "readmeUpdate": {
+    "status": "NOT REQUIRED",
+    "updated": false,
+    "sections": [],
+    "reason": "This task adds JP and KR together; README/watch-data-collection-guide.md will be synced once in a single pass after both markets' formal data is written, to avoid a description that is immediately stale mid-task. Tracked to be completed before final delivery."
+  }
+}

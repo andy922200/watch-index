@@ -1,0 +1,222 @@
+[
+  {
+    "label": "lowest price",
+    "watchId": "omega:220.10.28.60.54.001",
+    "reference": "220.10.28.60.54.001",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-quartz-28-mm-22010286054001",
+    "collectionName": "씨마스터 아쿠아 테라 150M",
+    "caseDescription": "28 mm, 스틸 및 스틸",
+    "dialDescription": "화이트",
+    "price": 4900000,
+    "isNewModel": false
+  },
+  {
+    "label": "highest price",
+    "watchId": "omega:522.50.45.52.03.001",
+    "reference": "522.50.45.52.03.001",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-speedmaster-chrono-chime-co-axial-master-chronometer-chronograph-45-mm-52250455203001",
+    "collectionName": "스피드마스터 Chrono Chime",
+    "caseDescription": "45 mm, 세드나ᵀᴹ 골드 및 세드나ᵀᴹ 골드",
+    "dialDescription": "블루",
+    "price": 937500000,
+    "isNewModel": false
+  },
+  {
+    "label": "second highest",
+    "watchId": "omega:529.53.43.22.99.001",
+    "reference": "529.53.43.22.99.001",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-de-ville-tourbillon-co-axial-master-chronometer-43-mm-52953432299001",
+    "collectionName": "넘버드 에디션 드 빌 뚜르비용",
+    "caseDescription": "43 mm, Canopus Gold™ 및 레더 스트랩",
+    "dialDescription": "브라운",
+    "price": 400800000,
+    "isNewModel": false
+  },
+  {
+    "label": "same-base config pair",
+    "watchId": "omega:434.20.42.22.02.001",
+    "reference": "434.20.42.22.02.001",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-de-ville-prestige-co-axial-master-chronometer-date-hand-42-mm-43420422202001",
+    "collectionName": "드 빌 프레스티지",
+    "caseDescription": "42 mm, 스틸 ‑ 세드나ᵀᴹ 골드 및 스틸 ‑ 세드나ᵀᴹ 골드",
+    "dialDescription": "실버",
+    "price": 18600000,
+    "isNewModel": false
+  },
+  {
+    "label": "same-base config pair",
+    "watchId": "omega:434.20.42.22.10.001",
+    "reference": "434.20.42.22.10.001",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-de-ville-prestige-co-axial-master-chronometer-date-hand-42-mm-43420422210001",
+    "collectionName": "드 빌 프레스티지",
+    "caseDescription": "42 mm, 스틸 ‑ 옐로우 골드 및 스틸‑옐로우 골드",
+    "dialDescription": "그린",
+    "price": 18600000,
+    "isNewModel": false
+  },
+  {
+    "label": "same-base config pair",
+    "watchId": "omega:324.30.38.50.01.002",
+    "reference": "324.30.38.50.01.002",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-speedmaster-38-co-axial-chronometer-chronograph-38-mm-32430385001002",
+    "collectionName": "스피드마스터 38",
+    "caseDescription": "38 mm, 스틸 및 스틸",
+    "dialDescription": "블랙",
+    "price": 9800000,
+    "isNewModel": true
+  },
+  {
+    "label": "same-base config pair",
+    "watchId": "omega:324.30.38.50.02.003",
+    "reference": "324.30.38.50.02.003",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-speedmaster-38-co-axial-chronometer-chronograph-38-mm-32430385002003",
+    "collectionName": "스피드마스터 38",
+    "caseDescription": "38 mm, 스틸 및 스틸",
+    "dialDescription": "실버",
+    "price": 10000000,
+    "isNewModel": true
+  },
+  {
+    "label": "new model",
+    "watchId": "omega:217.32.42.21.01.002",
+    "reference": "217.32.42.21.01.002",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-planet-ocean-600m-co-axial-master-chronometer-42-mm-21732422101002",
+    "collectionName": "씨마스터 플래닛 오션 600M",
+    "caseDescription": "42 mm, 스틸 및 러버 스트랩",
+    "dialDescription": "블랙",
+    "price": 12800000,
+    "isNewModel": true
+  },
+  {
+    "label": "new model",
+    "watchId": "omega:210.32.44.51.01.002",
+    "reference": "210.32.44.51.01.002",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-chronograph-44-mm-21032445101002",
+    "collectionName": "007 퍼스트 라이트 신제품 씨마스터 다이버 300M",
+    "caseDescription": "44 mm, 스틸 및 NATO 스트랩",
+    "dialDescription": "블랙",
+    "price": 14000000,
+    "isNewModel": true
+  },
+  {
+    "label": "new model",
+    "watchId": "omega:140.13.39.21.02.001",
+    "reference": "140.13.39.21.02.001",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-constellation-observatory-co-axial-master-chronometer-39-4-mm-14013392102001",
+    "collectionName": "컨스텔레이션 옵저버토리",
+    "caseDescription": "39.4 mm, O‑MEGASTEEL 및 앨리게이터",
+    "dialDescription": "실버",
+    "price": 16300000,
+    "isNewModel": true
+  },
+  {
+    "label": "family rep: 씨마스터",
+    "watchId": "omega:220.50.41.21.10.001",
+    "reference": "220.50.41.21.10.001",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412110001",
+    "collectionName": "씨마스터 아쿠아 테라 150M",
+    "caseDescription": "41 mm, 문샤인™ 골드 및 문샤인™ 골드",
+    "dialDescription": "그린",
+    "price": 69500000,
+    "isNewModel": false
+  },
+  {
+    "label": "family rep: 스피드마스터",
+    "watchId": "omega:310.32.42.50.01.002",
+    "reference": "310.32.42.50.01.002",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31032425001002",
+    "collectionName": "스피드마스터 문워치 프로페셔널",
+    "caseDescription": "42 mm, 스틸 및 레더 스트랩",
+    "dialDescription": "블랙",
+    "price": 12800000,
+    "isNewModel": false
+  },
+  {
+    "label": "family rep: 컨스텔레이션",
+    "watchId": "omega:131.25.29.20.99.002",
+    "reference": "131.25.29.20.99.002",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-constellation-co-axial-master-chronometer-29-mm-13125292099002",
+    "collectionName": "컨스텔레이션",
+    "caseDescription": "29 mm, 스틸 ‑ 옐로우 골드 및 스틸‑옐로우 골드",
+    "dialDescription": "옐로우",
+    "price": 27800000,
+    "isNewModel": false
+  },
+  {
+    "label": "family rep: 드",
+    "watchId": "omega:434.10.41.20.10.001",
+    "reference": "434.10.41.20.10.001",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-de-ville-prestige-co-axial-master-chronometer-small-seconds-41-mm-43410412010001",
+    "collectionName": "드 빌 프레스티지",
+    "caseDescription": "41 mm, 스틸 및 스틸",
+    "dialDescription": "그린",
+    "price": 9200000,
+    "isNewModel": false
+  },
+  {
+    "label": "naming anomaly: Ultra",
+    "watchId": "omega:215.30.46.21.03.001",
+    "reference": "215.30.46.21.03.001",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-planet-ocean-6000m-co-axial-master-chronometer-45-5-mm-21530462103001",
+    "collectionName": "Ultra Deep 씨마스터 플래닛 오션 6000M",
+    "caseDescription": "45.5 mm, O‑MEGASTEEL 및 O‑MEGASTEEL",
+    "dialDescription": "블루",
+    "price": 21300000,
+    "isNewModel": false
+  },
+  {
+    "label": "naming anomaly: 제임스",
+    "watchId": "omega:210.55.42.20.99.001",
+    "reference": "210.55.42.20.99.001",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21055422099001",
+    "collectionName": "제임스 본드 탄생 60주년 기념 씨마스터 다이버 300M",
+    "caseDescription": "42 mm, Canopus Gold™ 및 Canopus Gold™",
+    "dialDescription": "그레이",
+    "price": 281300000,
+    "isNewModel": false
+  },
+  {
+    "label": "naming anomaly: Summer",
+    "watchId": "omega:227.32.55.21.03.001",
+    "reference": "227.32.55.21.03.001",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-ploprof-1200m-co-axial-master-chronometer-55-x-45-mm-22732552103001",
+    "collectionName": "Summer Blue 씨마스터 플로프로프 1200M",
+    "caseDescription": "55 x 45 mm, O‑MEGASTEEL 및 러버 스트랩",
+    "dialDescription": "블루",
+    "price": 24000000,
+    "isNewModel": false
+  },
+  {
+    "label": "null dial",
+    "watchId": "omega:220.10.38.20.10.005",
+    "reference": "220.10.38.20.10.005",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-shades-co-axial-master-chronometer-38-mm-22010382010005",
+    "collectionName": "씨마스터 아쿠아 테라 쉐이드",
+    "caseDescription": "38 mm, 스틸 및 스틸",
+    "dialDescription": null,
+    "price": 11100000,
+    "isNewModel": false
+  },
+  {
+    "label": "rare category: tourbillon",
+    "watchId": "omega:529.53.43.22.01.001",
+    "reference": "529.53.43.22.01.001",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-de-ville-tourbillon-co-axial-master-chronometer-43-mm-52953432201001",
+    "collectionName": "넘버드 에디션 드 빌 뚜르비용",
+    "caseDescription": "43 mm, 세드나™ 골드 ‑ Canopus Gold™ 및 레더 스트랩",
+    "dialDescription": "블랙",
+    "price": 353900000,
+    "isNewModel": false
+  },
+  {
+    "label": "null dial 2",
+    "watchId": "omega:220.10.41.21.03.006",
+    "reference": "220.10.41.21.03.006",
+    "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103006",
+    "collectionName": "씨마스터 아쿠아 테라 150M",
+    "caseDescription": "41 mm, 스틸 및 스틸",
+    "dialDescription": null,
+    "price": 11100000,
+    "isNewModel": false
+  }
+]

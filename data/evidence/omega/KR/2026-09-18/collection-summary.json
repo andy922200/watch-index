@@ -1,0 +1,47 @@
+{
+  "brandId": "omega",
+  "marketCode": "KR",
+  "locale": "ko-KR",
+  "collectedAt": "2026-09-18T16:02:21.000Z",
+  "entryUrl": "https://www.omegawatches.co.kr/watches",
+  "sourceDiscovery": {
+    "method": "Real Chrome browser navigation (not blind HTTP) confirmed the entry page, category structure, category-level official counts, and per-product listing/detail markup independently for omegawatches.co.kr. Same 16 category slugs and same underlying Magento platform as the already-documented Omega Taiwan workflow were independently re-confirmed live, not assumed from the Taiwan example.",
+    "confirmedPublicEndpoints": [
+      "https://www.omegawatches.co.kr/watches/{family}/{subcategory}/catalog",
+      "https://www.omegawatches.co.kr/watches/{family}/{subcategory}/catalog?p={page}&ajax=1&noFilters=1 (JSON wrapper with html.products_list fragment, requires X-Requested-With: XMLHttpRequest header)"
+    ],
+    "rateLimitFinding": "Repeated same-origin fetch() calls issued directly from page-context JavaScript (bypassing normal navigation) were silently rate-limited/hung by the site's bot defenses after roughly 10-12 requests in quick succession, regardless of added delays. Real top-level browser navigation (the `navigate` tool) was not observed to trigger this and remained reliable throughout. Collection was therefore restructured to use real per-page navigation for every page actually recorded as formal data: category pages via navigation to the plain (non-ajax) `?p=<lastPage>` URL, which this Magento theme's own client-side script hydrates cumulatively (rendering pages 1..N together) once given enough time to settle, confirmed by matching the official per-category count in a single navigation per category. Product detail pages (for dial/case technical data) were each visited individually via real navigation; the small number of fetch() calls used for the AJAX pagination check itself were paced at 1.5s+ and limited to short bursts after discovering the rate limit."
+  },
+  "catalogCategoryCount": 16,
+  "categories": [
+    {"catalogUrl": "https://www.omegawatches.co.kr/watches/seamaster/aqua-terra-150m/catalog", "officialTotal": 108, "collectedCount": 108},
+    {"catalogUrl": "https://www.omegawatches.co.kr/watches/seamaster/diver-300-m/catalog", "officialTotal": 60, "collectedCount": 60},
+    {"catalogUrl": "https://www.omegawatches.co.kr/watches/seamaster/planet-ocean/catalog", "officialTotal": 17, "collectedCount": 17},
+    {"catalogUrl": "https://www.omegawatches.co.kr/watches/seamaster/heritage-models/catalog", "officialTotal": 17, "collectedCount": 17},
+    {"catalogUrl": "https://www.omegawatches.co.kr/watches/seamaster/instruments/catalog", "officialTotal": 1, "collectedCount": 1},
+    {"catalogUrl": "https://www.omegawatches.co.kr/watches/speedmaster/moonwatch-professional/catalog", "officialTotal": 24, "collectedCount": 24},
+    {"catalogUrl": "https://www.omegawatches.co.kr/watches/speedmaster/heritage-models/catalog", "officialTotal": 16, "collectedCount": 16},
+    {"catalogUrl": "https://www.omegawatches.co.kr/watches/speedmaster/dark-side-of-the-moon/catalog", "officialTotal": 8, "collectedCount": 8},
+    {"catalogUrl": "https://www.omegawatches.co.kr/watches/speedmaster/speedmaster-38-mm/catalog", "officialTotal": 11, "collectedCount": 11},
+    {"catalogUrl": "https://www.omegawatches.co.kr/watches/speedmaster/two-counters/catalog", "officialTotal": 36, "collectedCount": 36},
+    {"catalogUrl": "https://www.omegawatches.co.kr/watches/constellation/observatory/catalog", "officialTotal": 9, "collectedCount": 9},
+    {"catalogUrl": "https://www.omegawatches.co.kr/watches/constellation/constellation/catalog", "officialTotal": 119, "collectedCount": 119},
+    {"catalogUrl": "https://www.omegawatches.co.kr/watches/de-ville/ladymatic/catalog", "officialTotal": 6, "collectedCount": 6},
+    {"catalogUrl": "https://www.omegawatches.co.kr/watches/de-ville/tresor/catalog", "officialTotal": 38, "collectedCount": 38},
+    {"catalogUrl": "https://www.omegawatches.co.kr/watches/de-ville/prestige/catalog", "officialTotal": 82, "collectedCount": 82},
+    {"catalogUrl": "https://www.omegawatches.co.kr/watches/de-ville/tourbillon/catalog", "officialTotal": 2, "collectedCount": 2}
+  ],
+  "rawProductCount": 554,
+  "uniqueReferenceCount": 554,
+  "duplicateReferenceCount": 0,
+  "duplicateReferenceListings": [],
+  "terminationEvidence": "Every category's official count (as displayed on the entry page and re-confirmed on each category page's own 'Products list N' counter) was matched exactly by the unique product-card count collected for that category, using productUrl as the de-duplication key (an internal numeric source-product ID was not exposed in the listing markup on this site, unlike the Taiwan example; productUrl is a stable, reference-bearing substitute independently confirmed to be unique per configuration). No category showed unresolved further pagination beyond the point where accumulated unique cards matched the official count.",
+  "errors": [],
+  "limitations": [
+    "Dial color (rawDialText / data-code=watch_dial) was absent on the official product page for 34 of 554 references (6.1%), overwhelmingly concentrated in the 'Aqua Terra Shades' textile-strap/dial line (20 of 34) plus scattered gem-set or special-material Constellation/De Ville Prestige/Speedmaster 38 variants. These were independently spot-checked live (2 of the 34 are in the 19-item spot-check sample, both confirmed to genuinely lack the field on a fresh reload) and are recorded as dialDescription: null rather than guessed.",
+    "Omega Korea product pages do not state whether displayed KRW prices include VAT. Per this project's tax-research standard, priceType tax-include / taxRatePercent 10 was determined from a Korea National Tax Service written ruling (국세청 서면인터넷방문상담3팀-2350, 2007-08-22, citing 서면3팀-1695/2006-08-04 and 부가46015-1797/2000-07-26) establishing that when a price does not separately state VAT and it is unclear whether VAT is included, the amount is deemed VAT-inclusive at 10/110 of the stated price; this is a legal default/deeming rule, not an explicit statement by Omega itself, and is recorded here as such.",
+    "Nickname research (see nickname-research.json) found only candidates that were either already part of the watch's own official on-page name (e.g. '제임스 본드 탄생 60주년 기념' / James Bond 60th Anniversary is the literal official title of reference 210.55.42.20.99.001, not an unofficial nickname) or too loosely scoped across many references to satisfy this project's precise full-reference mapping requirement (e.g. generic press use of '본드 워치' for the Diver 300M line broadly). Result: PASS with 0 accepted results, not NOT RUN.",
+    "Draft 2020-12 JSON Schema validation was not run because no compatible validator (e.g. the `jsonschema` Python package) is installed in this environment; strict JSON parsing and manual field/type/pattern/uniqueness/cross-file checks equivalent to the schema's constraints were run instead and are recorded in validation-summary.json.",
+    "collectionAliases were left empty for all four collectionIds; no market-wide (not sub-collection-scoped) alias satisfied this project's precision bar during nickname research."
+  ]
+}

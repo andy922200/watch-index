@@ -1,0 +1,3896 @@
+{
+  "$schema": "../../schemas/watch-price-history.schema.json",
+  "schemaVersion": 3,
+  "brandId": "omega",
+  "marketCode": "KR",
+  "currencyCode": "KRW",
+  "priceType": "tax-include",
+  "taxRatePercent": 10,
+  "collectionRuns": [
+    {
+      "runId": 1,
+      "collectedAt": "2026-09-18T16:02:21.000Z",
+      "recordCount": 554
+    }
+  ],
+  "priceSeries": {
+    "omega:131.10.25.60.02.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 5000000
+      }
+    ],
+    "omega:131.10.25.60.52.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 6100000
+      }
+    ],
+    "omega:131.10.25.60.53.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8800000
+      }
+    ],
+    "omega:131.10.28.60.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 5200000
+      }
+    ],
+    "omega:131.10.28.60.02.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 5200000
+      }
+    ],
+    "omega:131.10.28.60.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 5400000
+      }
+    ],
+    "omega:131.10.28.60.03.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 5200000
+      }
+    ],
+    "omega:131.10.28.60.05.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 5800000
+      }
+    ],
+    "omega:131.10.28.60.11.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 5400000
+      }
+    ],
+    "omega:131.10.28.60.52.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 6500000
+      }
+    ],
+    "omega:131.10.28.60.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 7100000
+      }
+    ],
+    "omega:131.10.28.60.60.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 6700000
+      }
+    ],
+    "omega:131.10.28.60.60.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 6700000
+      }
+    ],
+    "omega:131.10.29.20.52.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 12700000
+      }
+    ],
+    "omega:131.10.29.20.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 13200000
+      }
+    ],
+    "omega:131.10.34.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11900000
+      }
+    ],
+    "omega:131.10.34.20.53.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14000000
+      }
+    ],
+    "omega:131.10.36.60.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 5000000
+      }
+    ],
+    "omega:131.10.39.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:131.10.39.20.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:131.12.41.21.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10700000
+      }
+    ],
+    "omega:131.15.25.60.53.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 13200000
+      }
+    ],
+    "omega:131.15.25.60.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:131.15.25.60.55.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 12300000
+      }
+    ],
+    "omega:131.15.25.60.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14200000
+      }
+    ],
+    "omega:131.15.28.60.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10200000
+      }
+    ],
+    "omega:131.15.28.60.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10200000
+      }
+    ],
+    "omega:131.15.28.60.11.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10200000
+      }
+    ],
+    "omega:131.15.28.60.60.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 12700000
+      }
+    ],
+    "omega:131.15.28.60.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15300000
+      }
+    ],
+    "omega:131.15.29.20.53.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 20900000
+      }
+    ],
+    "omega:131.15.29.20.60.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 19600000
+      }
+    ],
+    "omega:131.15.29.20.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 21900000
+      }
+    ],
+    "omega:131.18.29.20.60.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 19200000
+      }
+    ],
+    "omega:131.20.25.60.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10800000
+      }
+    ],
+    "omega:131.20.25.60.55.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10800000
+      }
+    ],
+    "omega:131.20.28.60.05.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10100000
+      }
+    ],
+    "omega:131.20.28.60.05.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10100000
+      }
+    ],
+    "omega:131.20.28.60.52.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10800000
+      }
+    ],
+    "omega:131.20.28.60.52.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10800000
+      }
+    ],
+    "omega:131.20.28.60.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11400000
+      }
+    ],
+    "omega:131.20.28.60.55.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11400000
+      }
+    ],
+    "omega:131.20.28.60.58.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10800000
+      }
+    ],
+    "omega:131.20.28.60.63.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10800000
+      }
+    ],
+    "omega:131.20.29.20.02.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16800000
+      }
+    ],
+    "omega:131.20.29.20.05.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17400000
+      }
+    ],
+    "omega:131.20.29.20.05.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17400000
+      }
+    ],
+    "omega:131.20.29.20.52.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18600000
+      }
+    ],
+    "omega:131.20.29.20.52.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18600000
+      }
+    ],
+    "omega:131.20.29.20.53.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 22000000
+      }
+    ],
+    "omega:131.20.29.20.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 19200000
+      }
+    ],
+    "omega:131.20.29.20.55.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 19200000
+      }
+    ],
+    "omega:131.20.29.20.58.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18600000
+      }
+    ],
+    "omega:131.20.34.20.63.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 21800000
+      }
+    ],
+    "omega:131.20.36.60.02.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11000000
+      }
+    ],
+    "omega:131.20.39.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 19400000
+      }
+    ],
+    "omega:131.20.39.20.02.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 19400000
+      }
+    ],
+    "omega:131.20.39.20.52.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 22700000
+      }
+    ],
+    "omega:131.20.39.20.52.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 22700000
+      }
+    ],
+    "omega:131.20.39.20.58.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 22700000
+      }
+    ],
+    "omega:131.23.41.21.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17400000
+      }
+    ],
+    "omega:131.23.41.21.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17400000
+      }
+    ],
+    "omega:131.23.41.21.06.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17400000
+      }
+    ],
+    "omega:131.23.41.21.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17400000
+      }
+    ],
+    "omega:131.23.41.21.11.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17400000
+      }
+    ],
+    "omega:131.25.25.60.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15800000
+      }
+    ],
+    "omega:131.25.25.60.55.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15800000
+      }
+    ],
+    "omega:131.25.25.60.60.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16600000
+      }
+    ],
+    "omega:131.25.25.60.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18800000
+      }
+    ],
+    "omega:131.25.25.60.99.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18800000
+      }
+    ],
+    "omega:131.25.28.60.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17400000
+      }
+    ],
+    "omega:131.25.28.60.55.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17400000
+      }
+    ],
+    "omega:131.25.28.60.55.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 19000000
+      }
+    ],
+    "omega:131.25.28.60.60.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18400000
+      }
+    ],
+    "omega:131.25.28.60.63.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16800000
+      }
+    ],
+    "omega:131.25.28.60.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 20300000
+      }
+    ],
+    "omega:131.25.28.60.99.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 20300000
+      }
+    ],
+    "omega:131.25.29.20.52.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 24400000
+      }
+    ],
+    "omega:131.25.29.20.52.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 24400000
+      }
+    ],
+    "omega:131.25.29.20.52.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 26300000
+      }
+    ],
+    "omega:131.25.29.20.53.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 27800000
+      }
+    ],
+    "omega:131.25.29.20.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 25100000
+      }
+    ],
+    "omega:131.25.29.20.55.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 25100000
+      }
+    ],
+    "omega:131.25.29.20.58.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 26300000
+      }
+    ],
+    "omega:131.25.29.20.63.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 24400000
+      }
+    ],
+    "omega:131.25.29.20.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 27800000
+      }
+    ],
+    "omega:131.25.29.20.99.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 27800000
+      }
+    ],
+    "omega:131.25.39.20.52.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 36900000
+      }
+    ],
+    "omega:131.25.39.20.52.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 36900000
+      }
+    ],
+    "omega:131.28.29.20.52.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 22500000
+      }
+    ],
+    "omega:131.28.29.20.58.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 22500000
+      }
+    ],
+    "omega:131.28.29.20.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 26300000
+      }
+    ],
+    "omega:131.28.29.20.99.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 26300000
+      }
+    ],
+    "omega:131.28.29.20.99.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 26300000
+      }
+    ],
+    "omega:131.28.34.20.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 28500000
+      }
+    ],
+    "omega:131.30.41.21.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 12300000
+      }
+    ],
+    "omega:131.30.41.21.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 12300000
+      }
+    ],
+    "omega:131.30.41.21.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16300000
+      }
+    ],
+    "omega:131.30.41.21.99.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16300000
+      }
+    ],
+    "omega:131.30.41.21.99.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15700000
+      }
+    ],
+    "omega:131.33.41.21.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11900000
+      }
+    ],
+    "omega:131.33.41.21.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11900000
+      }
+    ],
+    "omega:131.33.41.21.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11900000
+      }
+    ],
+    "omega:131.33.41.21.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11900000
+      }
+    ],
+    "omega:131.50.41.21.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 75600000
+      }
+    ],
+    "omega:131.55.25.60.55.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 45500000
+      }
+    ],
+    "omega:131.55.25.60.99.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 45200000
+      }
+    ],
+    "omega:131.55.28.60.58.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 49200000
+      }
+    ],
+    "omega:131.55.28.60.99.005": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 49200000
+      }
+    ],
+    "omega:131.55.29.20.55.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 61500000
+      }
+    ],
+    "omega:131.55.29.20.60.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 61000000
+      }
+    ],
+    "omega:131.55.29.20.99.006": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 60200000
+      }
+    ],
+    "omega:131.58.29.20.52.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 34500000
+      }
+    ],
+    "omega:131.58.29.20.53.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 38300000
+      }
+    ],
+    "omega:131.58.29.20.55.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 35400000
+      }
+    ],
+    "omega:131.58.29.20.55.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 37800000
+      }
+    ],
+    "omega:131.58.29.20.60.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 37200000
+      }
+    ],
+    "omega:131.58.34.20.61.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 48100000
+      }
+    ],
+    "omega:131.63.41.21.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 45000000
+      }
+    ],
+    "omega:140.13.39.21.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18200000
+      }
+    ],
+    "omega:140.13.39.21.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16300000
+      }
+    ],
+    "omega:140.13.39.21.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16300000
+      }
+    ],
+    "omega:140.13.39.21.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16300000
+      }
+    ],
+    "omega:140.50.39.21.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 88200000
+      }
+    ],
+    "omega:140.53.39.21.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 56600000
+      }
+    ],
+    "omega:140.53.39.21.99.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 56600000
+      }
+    ],
+    "omega:140.53.39.21.99.004": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 65800000
+      }
+    ],
+    "omega:140.93.39.21.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 86300000
+      }
+    ],
+    "omega:210.20.42.20.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 22000000
+      }
+    ],
+    "omega:210.20.42.20.01.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 22000000
+      }
+    ],
+    "omega:210.20.42.20.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 22000000
+      }
+    ],
+    "omega:210.20.42.20.03.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 22000000
+      }
+    ],
+    "omega:210.20.44.51.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 27800000
+      }
+    ],
+    "omega:210.20.44.51.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 27800000
+      }
+    ],
+    "omega:210.22.42.20.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14400000
+      }
+    ],
+    "omega:210.22.42.20.01.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14400000
+      }
+    ],
+    "omega:210.22.42.20.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14400000
+      }
+    ],
+    "omega:210.22.42.20.03.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14400000
+      }
+    ],
+    "omega:210.22.44.51.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 20900000
+      }
+    ],
+    "omega:210.22.44.51.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 20900000
+      }
+    ],
+    "omega:210.30.42.20.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10000000
+      }
+    ],
+    "omega:210.30.42.20.01.010": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10900000
+      }
+    ],
+    "omega:210.30.42.20.01.018": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10900000
+      }
+    ],
+    "omega:210.30.42.20.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10000000
+      }
+    ],
+    "omega:210.30.42.20.03.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14000000
+      }
+    ],
+    "omega:210.30.42.20.03.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10500000
+      }
+    ],
+    "omega:210.30.42.20.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10000000
+      }
+    ],
+    "omega:210.30.42.20.04.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10900000
+      }
+    ],
+    "omega:210.30.42.20.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10000000
+      }
+    ],
+    "omega:210.30.42.20.06.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10900000
+      }
+    ],
+    "omega:210.30.42.20.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10000000
+      }
+    ],
+    "omega:210.30.44.51.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14400000
+      }
+    ],
+    "omega:210.30.44.51.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14400000
+      }
+    ],
+    "omega:210.30.44.51.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14400000
+      }
+    ],
+    "omega:210.32.42.20.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9400000
+      }
+    ],
+    "omega:210.32.42.20.01.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10400000
+      }
+    ],
+    "omega:210.32.42.20.01.005": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10400000
+      }
+    ],
+    "omega:210.32.42.20.01.006": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10400000
+      }
+    ],
+    "omega:210.32.42.20.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9400000
+      }
+    ],
+    "omega:210.32.42.20.03.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10000000
+      }
+    ],
+    "omega:210.32.42.20.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9400000
+      }
+    ],
+    "omega:210.32.42.20.04.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10400000
+      }
+    ],
+    "omega:210.32.42.20.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9400000
+      }
+    ],
+    "omega:210.32.42.20.06.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10400000
+      }
+    ],
+    "omega:210.32.42.20.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9400000
+      }
+    ],
+    "omega:210.32.44.51.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 13800000
+      }
+    ],
+    "omega:210.32.44.51.01.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14000000
+      }
+    ],
+    "omega:210.52.42.20.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 53200000
+      }
+    ],
+    "omega:210.55.42.20.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 281300000
+      }
+    ],
+    "omega:210.60.44.51.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 40800000
+      }
+    ],
+    "omega:210.62.42.20.01.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 52200000
+      }
+    ],
+    "omega:210.62.42.20.01.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 52200000
+      }
+    ],
+    "omega:210.62.42.20.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 52200000
+      }
+    ],
+    "omega:210.62.42.20.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 52200000
+      }
+    ],
+    "omega:210.62.44.20.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 23200000
+      }
+    ],
+    "omega:210.62.44.51.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 61000000
+      }
+    ],
+    "omega:210.90.42.20.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16900000
+      }
+    ],
+    "omega:210.90.42.20.01.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 49800000
+      }
+    ],
+    "omega:210.90.42.20.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18600000
+      }
+    ],
+    "omega:210.92.42.20.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15000000
+      }
+    ],
+    "omega:210.92.42.20.01.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 24800000
+      }
+    ],
+    "omega:210.92.42.20.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17200000
+      }
+    ],
+    "omega:210.92.44.20.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15000000
+      }
+    ],
+    "omega:210.92.44.20.01.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15000000
+      }
+    ],
+    "omega:210.92.44.20.01.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15900000
+      }
+    ],
+    "omega:215.30.46.21.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 21300000
+      }
+    ],
+    "omega:215.30.46.21.03.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 21900000
+      }
+    ],
+    "omega:215.30.46.21.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 21300000
+      }
+    ],
+    "omega:215.30.46.21.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 21300000
+      }
+    ],
+    "omega:215.32.46.21.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 20700000
+      }
+    ],
+    "omega:215.32.46.21.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 20700000
+      }
+    ],
+    "omega:215.32.46.21.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 20700000
+      }
+    ],
+    "omega:215.92.46.21.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 22800000
+      }
+    ],
+    "omega:215.92.46.22.01.006": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 24900000
+      }
+    ],
+    "omega:215.92.46.22.01.007": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 24900000
+      }
+    ],
+    "omega:216.92.46.79.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 12500000
+      }
+    ],
+    "omega:217.30.42.21.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 13800000
+      }
+    ],
+    "omega:217.30.42.21.01.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 13800000
+      }
+    ],
+    "omega:217.30.42.21.01.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14200000
+      }
+    ],
+    "omega:217.32.42.21.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 12800000
+      }
+    ],
+    "omega:217.32.42.21.01.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 12800000
+      }
+    ],
+    "omega:217.32.42.21.01.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 13200000
+      }
+    ],
+    "omega:217.32.42.21.01.004": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 13200000
+      }
+    ],
+    "omega:220.10.28.60.54.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 4900000
+      }
+    ],
+    "omega:220.10.30.20.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10500000
+      }
+    ],
+    "omega:220.10.30.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10500000
+      }
+    ],
+    "omega:220.10.30.20.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10500000
+      }
+    ],
+    "omega:220.10.30.20.09.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10500000
+      }
+    ],
+    "omega:220.10.30.20.10.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10500000
+      }
+    ],
+    "omega:220.10.30.20.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 12300000
+      }
+    ],
+    "omega:220.10.30.20.60.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11700000
+      }
+    ],
+    "omega:220.10.34.20.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.34.20.03.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.34.20.09.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.34.20.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.34.20.10.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.34.20.10.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.38.20.01.004": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.38.20.01.005": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.38.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10500000
+      }
+    ],
+    "omega:220.10.38.20.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10500000
+      }
+    ],
+    "omega:220.10.38.20.03.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.38.20.03.004": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10900000
+      }
+    ],
+    "omega:220.10.38.20.03.005": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.38.20.09.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.38.20.10.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.38.20.10.004": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.38.20.10.005": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.38.20.10.006": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.38.20.12.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.38.20.13.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.41.21.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10500000
+      }
+    ],
+    "omega:220.10.41.21.01.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.41.21.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10500000
+      }
+    ],
+    "omega:220.10.41.21.02.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11500000
+      }
+    ],
+    "omega:220.10.41.21.02.004": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11500000
+      }
+    ],
+    "omega:220.10.41.21.03.004": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10500000
+      }
+    ],
+    "omega:220.10.41.21.03.005": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.41.21.03.006": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.10.41.21.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10500000
+      }
+    ],
+    "omega:220.10.43.22.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16700000
+      }
+    ],
+    "omega:220.10.43.22.03.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17100000
+      }
+    ],
+    "omega:220.12.38.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10200000
+      }
+    ],
+    "omega:220.12.38.20.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10200000
+      }
+    ],
+    "omega:220.12.38.20.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10200000
+      }
+    ],
+    "omega:220.12.41.21.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10200000
+      }
+    ],
+    "omega:220.12.41.21.02.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10200000
+      }
+    ],
+    "omega:220.12.41.21.03.005": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:220.12.41.21.03.007": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10200000
+      }
+    ],
+    "omega:220.12.41.21.03.008": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10700000
+      }
+    ],
+    "omega:220.12.41.21.03.009": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10500000
+      }
+    ],
+    "omega:220.12.43.22.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16300000
+      }
+    ],
+    "omega:220.12.43.22.03.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16700000
+      }
+    ],
+    "omega:220.13.41.21.03.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10000000
+      }
+    ],
+    "omega:220.13.41.21.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10000000
+      }
+    ],
+    "omega:220.15.30.20.56.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 21300000
+      }
+    ],
+    "omega:220.20.30.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18200000
+      }
+    ],
+    "omega:220.20.30.20.10.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18200000
+      }
+    ],
+    "omega:220.20.30.20.63.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 19400000
+      }
+    ],
+    "omega:220.20.34.20.08.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 20700000
+      }
+    ],
+    "omega:220.20.34.20.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 20700000
+      }
+    ],
+    "omega:220.20.34.20.10.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 20700000
+      }
+    ],
+    "omega:220.20.38.20.02.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 22300000
+      }
+    ],
+    "omega:220.20.38.20.09.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 22300000
+      }
+    ],
+    "omega:220.20.38.20.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 22300000
+      }
+    ],
+    "omega:220.20.38.20.10.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 22300000
+      }
+    ],
+    "omega:220.20.41.21.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 23500000
+      }
+    ],
+    "omega:220.20.41.21.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 22500000
+      }
+    ],
+    "omega:220.22.41.21.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17000000
+      }
+    ],
+    "omega:220.22.41.21.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17900000
+      }
+    ],
+    "omega:220.22.41.21.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17100000
+      }
+    ],
+    "omega:220.23.38.20.60.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 20300000
+      }
+    ],
+    "omega:220.23.41.21.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16200000
+      }
+    ],
+    "omega:220.25.30.20.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 30800000
+      }
+    ],
+    "omega:220.30.43.22.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18400000
+      }
+    ],
+    "omega:220.32.38.20.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11700000
+      }
+    ],
+    "omega:220.32.41.21.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11700000
+      }
+    ],
+    "omega:220.32.43.22.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18000000
+      }
+    ],
+    "omega:220.50.30.20.08.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 54800000
+      }
+    ],
+    "omega:220.50.30.20.09.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 54800000
+      }
+    ],
+    "omega:220.50.34.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 59000000
+      }
+    ],
+    "omega:220.50.34.20.08.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 59000000
+      }
+    ],
+    "omega:220.50.34.20.09.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 59000000
+      }
+    ],
+    "omega:220.50.38.20.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 63000000
+      }
+    ],
+    "omega:220.50.38.20.08.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 63000000
+      }
+    ],
+    "omega:220.50.38.20.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 63000000
+      }
+    ],
+    "omega:220.50.41.21.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 70100000
+      }
+    ],
+    "omega:220.50.41.21.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 69500000
+      }
+    ],
+    "omega:220.50.43.22.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 84900000
+      }
+    ],
+    "omega:220.52.41.21.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 39400000
+      }
+    ],
+    "omega:220.52.41.21.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 39000000
+      }
+    ],
+    "omega:220.52.41.21.03.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 39400000
+      }
+    ],
+    "omega:220.52.41.21.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 39600000
+      }
+    ],
+    "omega:220.53.34.20.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 30900000
+      }
+    ],
+    "omega:220.53.38.20.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 33600000
+      }
+    ],
+    "omega:220.53.43.22.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 52600000
+      }
+    ],
+    "omega:220.55.30.20.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 67900000
+      }
+    ],
+    "omega:220.55.30.20.60.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 67300000
+      }
+    ],
+    "omega:220.55.30.20.61.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 67300000
+      }
+    ],
+    "omega:220.55.34.20.60.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 75200000
+      }
+    ],
+    "omega:220.55.34.20.99.007": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 108300000
+      }
+    ],
+    "omega:220.55.38.20.09.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 73000000
+      }
+    ],
+    "omega:220.55.38.20.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 86400000
+      }
+    ],
+    "omega:220.55.38.20.99.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 109400000
+      }
+    ],
+    "omega:220.55.38.20.99.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 131300000
+      }
+    ],
+    "omega:220.58.34.20.99.007": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 87600000
+      }
+    ],
+    "omega:220.58.34.20.99.008": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 61400000
+      }
+    ],
+    "omega:220.58.38.20.55.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 55500000
+      }
+    ],
+    "omega:220.58.38.20.99.007": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 79300000
+      }
+    ],
+    "omega:220.58.38.20.99.008": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 96000000
+      }
+    ],
+    "omega:220.92.43.22.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 20900000
+      }
+    ],
+    "omega:227.32.55.21.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 24000000
+      }
+    ],
+    "omega:234.30.41.21.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11900000
+      }
+    ],
+    "omega:234.30.41.21.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11900000
+      }
+    ],
+    "omega:234.30.41.21.03.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 12500000
+      }
+    ],
+    "omega:234.63.41.21.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 60600000
+      }
+    ],
+    "omega:234.63.41.21.99.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 72800000
+      }
+    ],
+    "omega:234.92.41.21.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 23500000
+      }
+    ],
+    "omega:234.93.41.21.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 86600000
+      }
+    ],
+    "omega:234.93.41.21.99.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 97600000
+      }
+    ],
+    "omega:235.10.38.20.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9200000
+      }
+    ],
+    "omega:235.10.38.20.13.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10200000
+      }
+    ],
+    "omega:235.12.38.20.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8600000
+      }
+    ],
+    "omega:235.12.38.20.13.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9600000
+      }
+    ],
+    "omega:304.23.44.52.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 27000000
+      }
+    ],
+    "omega:304.23.44.52.13.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 27000000
+      }
+    ],
+    "omega:304.30.43.52.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 28800000
+      }
+    ],
+    "omega:304.30.43.52.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 28800000
+      }
+    ],
+    "omega:304.30.44.52.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 19400000
+      }
+    ],
+    "omega:304.33.44.52.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18800000
+      }
+    ],
+    "omega:304.33.44.52.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18800000
+      }
+    ],
+    "omega:304.63.44.52.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 63400000
+      }
+    ],
+    "omega:304.63.44.52.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 63400000
+      }
+    ],
+    "omega:304.93.44.52.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 21800000
+      }
+    ],
+    "omega:304.93.44.52.03.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 25300000
+      }
+    ],
+    "omega:304.93.44.52.99.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 111000000
+      }
+    ],
+    "omega:304.93.44.52.99.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 126600000
+      }
+    ],
+    "omega:304.93.44.52.99.004": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 111000000
+      }
+    ],
+    "omega:310.20.42.50.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 31400000
+      }
+    ],
+    "omega:310.20.42.50.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 31400000
+      }
+    ],
+    "omega:310.23.42.50.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 19600000
+      }
+    ],
+    "omega:310.23.42.50.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 19600000
+      }
+    ],
+    "omega:310.30.40.50.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 13200000
+      }
+    ],
+    "omega:310.30.42.50.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11700000
+      }
+    ],
+    "omega:310.30.42.50.01.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 13400000
+      }
+    ],
+    "omega:310.30.42.50.01.004": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15500000
+      }
+    ],
+    "omega:310.30.42.50.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 13600000
+      }
+    ],
+    "omega:310.32.40.50.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 12700000
+      }
+    ],
+    "omega:310.32.40.50.06.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 12700000
+      }
+    ],
+    "omega:310.32.42.50.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11100000
+      }
+    ],
+    "omega:310.32.42.50.01.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 12800000
+      }
+    ],
+    "omega:310.32.42.50.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17800000
+      }
+    ],
+    "omega:310.32.42.50.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 13000000
+      }
+    ],
+    "omega:310.32.42.50.04.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 13000000
+      }
+    ],
+    "omega:310.55.42.50.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 107300000
+      }
+    ],
+    "omega:310.55.42.50.13.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 85800000
+      }
+    ],
+    "omega:310.60.42.50.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 76000000
+      }
+    ],
+    "omega:310.60.42.50.01.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 73600000
+      }
+    ],
+    "omega:310.60.42.50.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 98900000
+      }
+    ],
+    "omega:310.60.42.50.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 76000000
+      }
+    ],
+    "omega:310.60.42.50.10.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 77000000
+      }
+    ],
+    "omega:310.60.42.50.99.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 79900000
+      }
+    ],
+    "omega:310.62.42.50.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 57700000
+      }
+    ],
+    "omega:310.63.42.50.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 53900000
+      }
+    ],
+    "omega:310.63.42.50.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 66200000
+      }
+    ],
+    "omega:310.63.42.50.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 53900000
+      }
+    ],
+    "omega:310.92.44.50.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 24000000
+      }
+    ],
+    "omega:310.92.44.50.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 24500000
+      }
+    ],
+    "omega:310.92.44.50.06.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 24500000
+      }
+    ],
+    "omega:310.92.44.51.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 24000000
+      }
+    ],
+    "omega:310.92.44.51.01.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 23400000
+      }
+    ],
+    "omega:310.92.44.51.01.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 24000000
+      }
+    ],
+    "omega:310.92.44.51.01.004": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 23400000
+      }
+    ],
+    "omega:310.92.44.51.01.005": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 24000000
+      }
+    ],
+    "omega:311.30.40.30.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 25900000
+      }
+    ],
+    "omega:311.50.39.30.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 162600000
+      }
+    ],
+    "omega:311.90.42.30.99.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 172700000
+      }
+    ],
+    "omega:311.93.42.30.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 116300000
+      }
+    ],
+    "omega:324.15.38.50.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18400000
+      }
+    ],
+    "omega:324.15.38.50.05.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 19600000
+      }
+    ],
+    "omega:324.20.38.50.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17400000
+      }
+    ],
+    "omega:324.20.38.50.02.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17400000
+      }
+    ],
+    "omega:324.30.38.50.01.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9800000
+      }
+    ],
+    "omega:324.30.38.50.02.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10000000
+      }
+    ],
+    "omega:324.30.38.50.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10500000
+      }
+    ],
+    "omega:324.55.38.50.60.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 82700000
+      }
+    ],
+    "omega:324.55.38.50.63.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 82700000
+      }
+    ],
+    "omega:324.58.38.50.60.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 60600000
+      }
+    ],
+    "omega:324.58.38.50.63.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 60600000
+      }
+    ],
+    "omega:329.23.44.51.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 23300000
+      }
+    ],
+    "omega:329.30.43.51.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15900000
+      }
+    ],
+    "omega:329.30.43.51.02.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15900000
+      }
+    ],
+    "omega:329.30.43.51.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15900000
+      }
+    ],
+    "omega:329.30.44.51.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16100000
+      }
+    ],
+    "omega:329.30.44.51.01.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16100000
+      }
+    ],
+    "omega:329.30.44.51.01.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 19600000
+      }
+    ],
+    "omega:329.30.44.51.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16100000
+      }
+    ],
+    "omega:329.32.43.51.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15300000
+      }
+    ],
+    "omega:329.32.43.51.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15300000
+      }
+    ],
+    "omega:329.32.44.51.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15500000
+      }
+    ],
+    "omega:329.33.43.51.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15300000
+      }
+    ],
+    "omega:329.33.44.51.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15500000
+      }
+    ],
+    "omega:329.33.44.51.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15500000
+      }
+    ],
+    "omega:329.53.44.51.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 56500000
+      }
+    ],
+    "omega:329.92.43.51.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 28900000
+      }
+    ],
+    "omega:332.10.41.51.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15900000
+      }
+    ],
+    "omega:332.10.41.51.01.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15900000
+      }
+    ],
+    "omega:332.10.41.51.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15900000
+      }
+    ],
+    "omega:332.10.41.51.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15900000
+      }
+    ],
+    "omega:332.10.41.51.11.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14800000
+      }
+    ],
+    "omega:332.12.41.51.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15300000
+      }
+    ],
+    "omega:332.12.41.51.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15300000
+      }
+    ],
+    "omega:332.12.41.51.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15300000
+      }
+    ],
+    "omega:332.12.41.51.11.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14300000
+      }
+    ],
+    "omega:425.20.34.20.55.004": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 30600000
+      }
+    ],
+    "omega:425.22.34.20.55.004": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 22000000
+      }
+    ],
+    "omega:425.25.34.20.55.004": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 41300000
+      }
+    ],
+    "omega:425.30.34.20.55.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14600000
+      }
+    ],
+    "omega:425.30.34.20.57.004": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14600000
+      }
+    ],
+    "omega:425.35.34.20.55.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 26400000
+      }
+    ],
+    "omega:428.15.26.60.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8400000
+      }
+    ],
+    "omega:428.15.26.60.04.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8400000
+      }
+    ],
+    "omega:428.15.26.60.04.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8400000
+      }
+    ],
+    "omega:428.15.36.60.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10000000
+      }
+    ],
+    "omega:428.17.26.60.04.004": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 7900000
+      }
+    ],
+    "omega:428.17.26.60.04.005": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8100000
+      }
+    ],
+    "omega:428.17.26.60.04.006": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8100000
+      }
+    ],
+    "omega:428.17.26.60.04.007": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8100000
+      }
+    ],
+    "omega:428.17.26.60.04.008": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8100000
+      }
+    ],
+    "omega:428.17.26.60.04.009": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8100000
+      }
+    ],
+    "omega:428.17.36.60.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8200000
+      }
+    ],
+    "omega:428.18.26.60.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 7900000
+      }
+    ],
+    "omega:428.18.26.60.04.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 7900000
+      }
+    ],
+    "omega:428.18.26.60.04.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 7900000
+      }
+    ],
+    "omega:428.18.36.60.02.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9400000
+      }
+    ],
+    "omega:428.18.36.60.03.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9400000
+      }
+    ],
+    "omega:428.18.36.60.04.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8200000
+      }
+    ],
+    "omega:428.18.36.60.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9400000
+      }
+    ],
+    "omega:428.18.36.60.10.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9400000
+      }
+    ],
+    "omega:428.18.36.60.10.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9400000
+      }
+    ],
+    "omega:428.55.26.60.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 42700000
+      }
+    ],
+    "omega:428.55.26.60.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 43900000
+      }
+    ],
+    "omega:428.55.36.60.99.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 66800000
+      }
+    ],
+    "omega:428.57.26.60.04.004": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15600000
+      }
+    ],
+    "omega:428.57.26.60.04.005": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15800000
+      }
+    ],
+    "omega:428.57.26.60.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16900000
+      }
+    ],
+    "omega:428.57.36.60.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 19700000
+      }
+    ],
+    "omega:428.58.26.60.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15600000
+      }
+    ],
+    "omega:428.58.26.60.04.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15800000
+      }
+    ],
+    "omega:428.58.26.60.04.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15800000
+      }
+    ],
+    "omega:428.58.26.60.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16900000
+      }
+    ],
+    "omega:428.58.26.60.99.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17100000
+      }
+    ],
+    "omega:428.58.36.60.11.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 19700000
+      }
+    ],
+    "omega:434.10.28.60.05.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 5400000
+      }
+    ],
+    "omega:434.10.28.60.09.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 5000000
+      }
+    ],
+    "omega:434.10.28.60.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 5000000
+      }
+    ],
+    "omega:434.10.28.60.11.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 5000000
+      }
+    ],
+    "omega:434.10.30.60.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 5000000
+      }
+    ],
+    "omega:434.10.30.60.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 5000000
+      }
+    ],
+    "omega:434.10.30.60.05.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 5600000
+      }
+    ],
+    "omega:434.10.30.60.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 5000000
+      }
+    ],
+    "omega:434.10.34.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 7900000
+      }
+    ],
+    "omega:434.10.34.20.02.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 7900000
+      }
+    ],
+    "omega:434.10.34.20.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 7900000
+      }
+    ],
+    "omega:434.10.34.20.03.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 7900000
+      }
+    ],
+    "omega:434.10.34.20.05.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8400000
+      }
+    ],
+    "omega:434.10.34.20.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 7900000
+      }
+    ],
+    "omega:434.10.40.20.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8200000
+      }
+    ],
+    "omega:434.10.40.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8200000
+      }
+    ],
+    "omega:434.10.40.20.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8200000
+      }
+    ],
+    "omega:434.10.40.20.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8200000
+      }
+    ],
+    "omega:434.10.40.20.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8200000
+      }
+    ],
+    "omega:434.10.41.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9200000
+      }
+    ],
+    "omega:434.10.41.20.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9200000
+      }
+    ],
+    "omega:434.10.41.20.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9200000
+      }
+    ],
+    "omega:434.10.41.21.03.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10200000
+      }
+    ],
+    "omega:434.10.41.21.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10200000
+      }
+    ],
+    "omega:434.13.34.20.52.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8200000
+      }
+    ],
+    "omega:434.13.34.20.52.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8200000
+      }
+    ],
+    "omega:434.13.34.20.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8800000
+      }
+    ],
+    "omega:434.13.34.20.60.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8200000
+      }
+    ],
+    "omega:434.13.40.20.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 7700000
+      }
+    ],
+    "omega:434.13.40.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 7700000
+      }
+    ],
+    "omega:434.13.40.20.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 7700000
+      }
+    ],
+    "omega:434.13.40.20.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 7700000
+      }
+    ],
+    "omega:434.13.41.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8600000
+      }
+    ],
+    "omega:434.13.41.20.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8600000
+      }
+    ],
+    "omega:434.13.41.20.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 8600000
+      }
+    ],
+    "omega:434.13.41.21.03.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9600000
+      }
+    ],
+    "omega:434.13.41.21.06.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 9600000
+      }
+    ],
+    "omega:434.15.28.60.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11900000
+      }
+    ],
+    "omega:434.15.30.60.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 13000000
+      }
+    ],
+    "omega:434.15.34.20.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17100000
+      }
+    ],
+    "omega:434.20.28.60.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10400000
+      }
+    ],
+    "omega:434.20.28.60.05.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10800000
+      }
+    ],
+    "omega:434.20.30.60.02.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 10600000
+      }
+    ],
+    "omega:434.20.30.60.05.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11200000
+      }
+    ],
+    "omega:434.20.34.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14600000
+      }
+    ],
+    "omega:434.20.34.20.02.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14600000
+      }
+    ],
+    "omega:434.20.34.20.05.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15200000
+      }
+    ],
+    "omega:434.20.34.20.05.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15200000
+      }
+    ],
+    "omega:434.20.34.20.08.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14600000
+      }
+    ],
+    "omega:434.20.40.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15800000
+      }
+    ],
+    "omega:434.20.40.20.02.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15800000
+      }
+    ],
+    "omega:434.20.40.20.08.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15800000
+      }
+    ],
+    "omega:434.20.40.20.52.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16800000
+      }
+    ],
+    "omega:434.20.41.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17200000
+      }
+    ],
+    "omega:434.20.41.21.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18200000
+      }
+    ],
+    "omega:434.20.42.22.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18600000
+      }
+    ],
+    "omega:434.20.42.22.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18600000
+      }
+    ],
+    "omega:434.23.34.20.52.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 12800000
+      }
+    ],
+    "omega:434.23.34.20.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 13400000
+      }
+    ],
+    "omega:434.23.34.20.55.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 13400000
+      }
+    ],
+    "omega:434.23.40.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 12500000
+      }
+    ],
+    "omega:434.23.40.20.02.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 12500000
+      }
+    ],
+    "omega:434.23.40.20.52.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 13400000
+      }
+    ],
+    "omega:434.23.41.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14000000
+      }
+    ],
+    "omega:434.23.41.21.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15100000
+      }
+    ],
+    "omega:434.23.42.22.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15400000
+      }
+    ],
+    "omega:434.23.42.22.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15400000
+      }
+    ],
+    "omega:434.25.28.60.52.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16800000
+      }
+    ],
+    "omega:434.25.28.60.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 17400000
+      }
+    ],
+    "omega:434.25.30.60.52.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18200000
+      }
+    ],
+    "omega:434.25.30.60.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 18800000
+      }
+    ],
+    "omega:434.25.34.20.55.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 23700000
+      }
+    ],
+    "omega:434.53.34.20.55.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 24000000
+      }
+    ],
+    "omega:434.53.34.20.55.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 24000000
+      }
+    ],
+    "omega:434.53.40.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 23000000
+      }
+    ],
+    "omega:434.53.40.20.02.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 23000000
+      }
+    ],
+    "omega:434.53.41.20.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 24600000
+      }
+    ],
+    "omega:434.53.41.20.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 24600000
+      }
+    ],
+    "omega:434.53.41.21.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 25600000
+      }
+    ],
+    "omega:434.53.41.21.10.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 25600000
+      }
+    ],
+    "omega:434.55.34.20.61.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 66200000
+      }
+    ],
+    "omega:434.58.34.20.55.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 39200000
+      }
+    ],
+    "omega:435.13.40.21.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 11900000
+      }
+    ],
+    "omega:435.13.40.21.03.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 13000000
+      }
+    ],
+    "omega:435.13.40.22.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14000000
+      }
+    ],
+    "omega:435.53.40.21.11.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 35600000
+      }
+    ],
+    "omega:435.53.40.22.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 36800000
+      }
+    ],
+    "omega:511.13.40.20.11.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 14000000
+      }
+    ],
+    "omega:522.21.42.20.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15400000
+      }
+    ],
+    "omega:522.30.43.51.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 16500000
+      }
+    ],
+    "omega:522.32.43.51.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15900000
+      }
+    ],
+    "omega:522.50.45.52.03.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 937500000
+      }
+    ],
+    "omega:522.53.37.20.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 34300000
+      }
+    ],
+    "omega:522.53.40.20.04.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 43300000
+      }
+    ],
+    "omega:522.53.40.20.04.003": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 39400000
+      }
+    ],
+    "omega:522.60.43.51.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 91600000
+      }
+    ],
+    "omega:522.62.43.51.02.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 58300000
+      }
+    ],
+    "omega:522.92.44.20.04.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15000000
+      }
+    ],
+    "omega:522.92.44.20.04.002": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 15700000
+      }
+    ],
+    "omega:529.53.43.22.01.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 353900000
+      }
+    ],
+    "omega:529.53.43.22.99.001": [
+      {
+        "runId": 1,
+        "listingStatus": "listed",
+        "price": 400800000
+      }
+    ]
+  }
+}

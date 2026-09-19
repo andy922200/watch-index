@@ -2,12 +2,13 @@
   "$schema": "../schemas/watch-catalog.schema.json",
   "schemaVersion": 3,
   "brandId": "omega",
-  "collectedAt": "2026-09-18T23:20:42.000Z",
+  "collectedAt": "2026-09-19T07:45:00.000Z",
   "sourceMarketCodes": [
     "TW",
-    "JP"
+    "JP",
+    "KR"
   ],
-  "watchCount": 553,
+  "watchCount": 554,
   "watches": [
     {
       "watchId": "omega:131.10.25.60.02.002",
@@ -3326,6 +3327,12 @@
       "collectionId": "seamaster",
       "reference": "511.13.40.20.11.002",
       "imageUrl": "https://www.omegawatches.jp/media/catalog/product/o/m/omega-seamaster-boutique-editions-co-axial-master-chronometer-39-5-mm-51113402011002-3dc9b8.png"
+    },
+    {
+      "watchId": "omega:220.10.28.60.54.001",
+      "collectionId": "seamaster",
+      "reference": "220.10.28.60.54.001",
+      "imageUrl": "https://www.omegawatches.co.kr/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-quartz-28-mm-22010286054001-9f7954.png"
     }
   ]
 }

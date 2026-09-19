@@ -1,0 +1,33 @@
+{
+  "correctsRun": "data/evidence/omega/KR/2026-09-18",
+  "checkedAt": "2026-09-19T07:40:00.000Z",
+  "reason": "Independent review (by the coordinator continuing this same overall JP+KR collection task) re-verified the 2026-09-18 KR run before adopting it, per this project's rule that even correct pre-existing work from another actor must be independently verified, not trusted blindly.",
+  "findings": [
+    {
+      "issue": "collection-summary.json's limitations entry claims 34 references genuinely lack a dial field on the official page, 'independently spot-checked live (2 of the 34 ... confirmed to genuinely lack the field on a fresh reload)'. This is inaccurate: a fresh independent spot-check of 220.32.41.21.03.001 (Seamaster Aqua Terra 150M, part of that 34) found a live, populated dial value ('터콰이즈' / turquoise) under the data-code=\"watch_dial_detailed_color\" field -- the same fallback field independently discovered during the parallel Omega JP collection round (see data/evidence/omega/JP/2026-09-19/collection-summary.json), which the original KR run's extraction did not check.",
+      "action": "Re-checked all 34 references from the original run's null-dial set using the fallback chain watch_dial -> watch_dial_detailed_color -> watch_dial_color (and, for the one reference with no structured field at all, the product's own description text). 33 of 34 resolved to a real value; the same single reference that JP could not resolve structurally, 434.23.40.20.02.001 (De Ville Prestige), was resolved from its own KR-language description panel text ('...실버 다이얼이 특징입니다' / 'features a silver dial'), matching the identical JP reference's identical resolution via the identical description sentence pattern.",
+      "filesUpdated": [
+        "data/markets/omega-south-korea-market.json (dialDescription patched for 34 watchId; no other field touched, no price/history/catalog/evidence-from-2026-09-18 file altered)"
+      ]
+    }
+  ],
+  "independentSpotCheckExtended": {
+    "status": "PASS",
+    "sampleSize": 21,
+    "method": "18 references sampled independently (not from the original run's own spotcheck-candidates.json) covering one per source category plus min/max price plus 2 isNewModel=true references, re-extracted live via a fresh same-origin iframe load per product; plus 3 references drawn from the original run's own spotcheck-candidates.json (lowest price, highest price, one same-base-config-pair member) to cross-check that file's claims too.",
+    "result": "21/21 matched on reference (sku), dialDescription (after the fix above), case material, and price. The one pre-fix mismatch (220.32.41.21.03.001) is the finding recorded above, not a residual discrepancy."
+  },
+  "otherVerification": [
+    {
+      "item": "Tax ruling citation (국세청 서면인터넷방문상담3팀-2350, 2007-08-22)",
+      "method": "Searched and opened live third-party legal-reference sources (taxfather.tistory.com, cross-referenced against casenote.kr and the National Tax Service's own taxlaw.nts.go.kr listing) citing this exact ruling number and date.",
+      "result": "Confirmed genuine and accurately quoted: the ruling does state that when a price does not separately disclose VAT and inclusion is unclear, 10/110 of the transaction amount is deemed VAT (원문: '...부가가치세가 포함되어 있는지 불분명한 경우에는 거래금액 또는 영수할 금액의 110분의 10에 상당하는 금액을 당해 부가가치세로 보는 것임'). priceType=tax-include / taxRatePercent=10 for KR is confirmed sound."
+    },
+    {
+      "item": "Total category count still matches",
+      "method": "Re-opened https://www.omegawatches.co.kr/watches live and re-read the Seamaster family total.",
+      "result": "203 (Seamaster), consistent with the original run's total of 203+95+128+128=554."
+    }
+  ],
+  "conclusion": "The 2026-09-18 KR collection (market/history/catalog-candidate data, and all evidence files other than the one limitations claim named above) is adopted as accurate after independent verification, with the one identified gap corrected in data/markets/omega-south-korea-market.json only. No other file from the original run was modified."
+}

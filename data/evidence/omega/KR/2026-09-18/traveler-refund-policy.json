@@ -1,0 +1,35 @@
+{
+  "marketCode": "KR",
+  "observedAt": "2026-09-18T16:02:21.000Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level departure tax-refund procedure only; this does not establish Omega authorized-boutique participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "priorRecordChecked": {
+    "existingEntryAssessedAt": "2026-09-10T16:29:36Z",
+    "existingEvidencePath": "data/evidence/rolex/KR/2026-09-11/traveler-refund-policy.json",
+    "reconciliation": "This is a jurisdiction-level legal fact independent of brand, already recorded in data/traveler-refund-policies.json (added during the Rolex Korea market work). Both source URLs below were independently re-opened live for this Omega market task and their content matches the prior record's observedFacts verbatim; no change in policy, eligibility, or procedure was found."
+  },
+  "sources": [
+    {
+      "publisher": "Korea Tourism Organization",
+      "title": "Duty Free & Tax Refunds",
+      "url": "https://english.visitkorea.or.kr/svc/contents/infoBscView.do?vcontsId=140736",
+      "accessedAt": "2026-09-18T16:02:21.000Z"
+    },
+    {
+      "publisher": "Korea Customs Service",
+      "title": "Tax Refund",
+      "url": "https://www.customs.go.kr/english/cm/cntnts/cntntsView.do?mi=10803&cntntsId=5504",
+      "accessedAt": "2026-09-18T16:02:21.000Z"
+    }
+  ],
+  "observedFacts": [
+    "The Customs Service page (re-opened live) still describes the same drawback process: non-Korean residents who bought goods at duty-free shops must have the outbound shipment of the goods confirmed by Customs at departure using passport, certificate of sale, and the unused/unopened goods themselves.",
+    "Duty-free items must be taken out of the country within 3 months of purchase for the drawback.",
+    "A separate, unrelated National Tax Service ruling on general VAT price-display practice for retail goods (cited in this market's collection-summary.json / validation-summary.json for the priceType determination) confirms Korea's standard VAT rate remains 10%, consistent with the refund basis described by Customs."
+  ],
+  "limitations": [
+    "The source applies to goods bought at duty-free shops and does not show that Omega's Korean boutiques (which are standard retail, not airport/downtown duty-free shops) participate in this specific procedure.",
+    "Omega retailer participation and any exact refund amount are not established by this evidence.",
+    "No change was made to the existing data/traveler-refund-policies.json KR record's substantive content (availability, eligibilitySummary, merchantParticipationRequired, exportValidationRequired) since this independent re-check found it still accurate; only assessedAt and evidencePath are being refreshed to point at this newer, independently-performed verification."
+  ]
+}
