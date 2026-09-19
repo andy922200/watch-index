@@ -293,7 +293,7 @@ watchSource(
       replaceMarketQuery(market)
     }
 
-    void loadComparison(market)
+    void loadComparison({ market, watchId })
   },
   { immediate: true },
 )
