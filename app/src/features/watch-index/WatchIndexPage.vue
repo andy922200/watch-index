@@ -314,12 +314,12 @@ watchSource([debouncedSearchQuery, selectedPriceSort], () => {
           <CardContent class="p-0"
             ><button
               type="button"
-              class="block aspect-square w-full cursor-pointer"
+              class="block aspect-square w-full cursor-pointer p-4"
               :aria-label="t('site.watchList.viewDetails')"
               @click="openWatchDetails(card.watch)"
             >
               <img
-                class="aspect-square w-full object-contain"
+                class="size-full object-contain"
                 :src="card.watch.imageUrl"
                 :alt="card.imageAlt"
                 loading="lazy"

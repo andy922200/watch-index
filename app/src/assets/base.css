@@ -195,6 +195,75 @@
   --sidebar-ring: #69b982;
 }
 
+/* Omega 品牌頁採紅色主題。 */
+:root[data-brand='omega'] {
+  --background: #f7f4f2;
+  --foreground: #1f1315;
+  --card: #fffdfc;
+  --card-foreground: #1f1315;
+  --popover: #fffdfc;
+  --popover-foreground: #1f1315;
+  --primary: #a6192e;
+  --primary-foreground: #fdf3f4;
+  --secondary: #f1e4e5;
+  --secondary-foreground: #3d2226;
+  --muted: #f1e4e5;
+  --muted-foreground: #7a5b5f;
+  --accent: #f6dee1;
+  --accent-foreground: #5c1420;
+  --destructive: var(--color-red-600);
+  --border: #e3d3d3;
+  --input: #e3d3d3;
+  --ring: #a6192e;
+  --chart-1: #a6192e;
+  --chart-2: #c98a3f;
+  --chart-3: #8f6b6d;
+  --chart-4: #6b4c4f;
+  --chart-5: #d68a95;
+  --sidebar: #f1e4e5;
+  --sidebar-foreground: #1f1315;
+  --sidebar-primary: #a6192e;
+  --sidebar-primary-foreground: #fdf3f4;
+  --sidebar-accent: #f6dee1;
+  --sidebar-accent-foreground: #5c1420;
+  --sidebar-border: #e3d3d3;
+  --sidebar-ring: #a6192e;
+}
+
+:root.dark[data-brand='omega'] {
+  --background: #170d0e;
+  --foreground: #f7ecec;
+  --card: #241416;
+  --card-foreground: #f7ecec;
+  --popover: #241416;
+  --popover-foreground: #f7ecec;
+  --primary: #e0485c;
+  --primary-foreground: #170d0e;
+  --secondary: #34191c;
+  --secondary-foreground: #f7ecec;
+  --muted: #34191c;
+  --muted-foreground: #c9a3a6;
+  --accent: #3d1e21;
+  --accent-foreground: #f7ecec;
+  --destructive: var(--color-red-500);
+  --border: color-mix(in oklab, #f7ecec 14%, transparent);
+  --input: color-mix(in oklab, #f7ecec 18%, transparent);
+  --ring: #e0485c;
+  --chart-1: #e0485c;
+  --chart-2: #d8a35e;
+  --chart-3: #b28689;
+  --chart-4: #8a5a5d;
+  --chart-5: #6b3c40;
+  --sidebar: #241416;
+  --sidebar-foreground: #f7ecec;
+  --sidebar-primary: #e0485c;
+  --sidebar-primary-foreground: #170d0e;
+  --sidebar-accent: #3d1e21;
+  --sidebar-accent-foreground: #f7ecec;
+  --sidebar-border: color-mix(in oklab, #f7ecec 14%, transparent);
+  --sidebar-ring: #e0485c;
+}
+
 body {
   margin: 0;
   min-width: 320px;
