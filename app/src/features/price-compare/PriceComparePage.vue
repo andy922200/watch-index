@@ -3,6 +3,7 @@ import { useStorage } from '@vueuse/core'
 import { computed, watch as watchSource } from 'vue'
 import { useI18n } from 'vue-i18n'
 
+import AppBreadcrumb from '@/components/layout/AppBreadcrumb.vue'
 import AppLayout from '@/components/layout/AppLayout.vue'
 import AppNav from '@/components/layout/AppNav.vue'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -33,9 +34,9 @@ import {
   PriceComparisonMode,
   type PriceComparisonModeId,
 } from '@/lib/watchPriceComparison'
+import { Locale } from '@/plugins/i18n'
 import type { BaseWatch } from '@/types/watch-data'
 
-import BackToIndexButton from './components/BackToIndexButton.vue'
 import MarketPriceRow, { type MarketPriceRowView } from './components/MarketPriceRow.vue'
 import TaxResidencySelector from './components/TaxResidencySelector.vue'
 import type { PriceCompareBrandConfig } from './types'
@@ -49,13 +50,12 @@ const PRICE_MAX_FRACTION_DIGITS = 2
 
 /**
  * 頁面在「還沒有東西可比」時要顯示的訊息卡。三種情況（載入中、載入失敗、找不到這支錶）
- * 只差在文字、ARIA role 與要不要回首頁按鈕，因此收斂成同一份資料，
- * 讓優先順序寫在這裡，而不是隱含在 template 的分支排列順序裡。
+ * 只差在文字與 ARIA role，因此收斂成同一份資料，讓優先順序寫在這裡，
+ * 而不是隱含在 template 的分支排列順序裡。返回上一頁的動線改由頂端的 `AppBreadcrumb` 統一提供。
  */
 interface PageStatus {
   messageKey: string
   role: 'alert' | 'status'
-  showBackToIndex: boolean
 }
 
 const props = defineProps<Props>()
@@ -64,6 +64,13 @@ const languagePaths = getBrandPageLanguagePaths({
   brandId: props.config.brandId,
   page: 'price-compare',
 })
+const brandIndexLanguagePaths = getBrandPageLanguagePaths({
+  brandId: props.config.brandId,
+  page: 'index',
+})
+const brandIndexHref = computed(
+  () => brandIndexLanguagePaths[locale.value === Locale.enUs ? 'enUs' : 'zhTw'],
+)
 const watchId = new URLSearchParams(window.location.search).get('watch_id')
 const selectedMarket = useStorage<MarketCode>(
   getBrandMarketStorageKey(props.config.brandId),
@@ -148,28 +155,25 @@ const isWatchIdValid = computed(() => watchId !== null && props.config.isWatchId
 const watch = computed(() =>
   watchId === null ? null : (catalog.value?.watchesById[watchId] ?? null),
 )
+const pageTitle = computed(() =>
+  watch.value
+    ? t('site.watchPriceComparison.title', { modelName: watch.value.modelName })
+    : t('site.watchPriceComparison.pageTitle'),
+)
 const isWatchUnavailable = computed(
   () => !isLoading.value && !error.value && (!isWatchIdValid.value || watch.value === null),
 )
 const pageStatus = computed<PageStatus | null>(() => {
   if (isLoading.value) {
-    return {
-      messageKey: 'site.watchPriceComparison.loading',
-      role: 'status',
-      showBackToIndex: false,
-    }
+    return { messageKey: 'site.watchPriceComparison.loading', role: 'status' }
   }
 
   if (error.value) {
-    return { messageKey: 'site.watchPriceComparison.error', role: 'alert', showBackToIndex: false }
+    return { messageKey: 'site.watchPriceComparison.error', role: 'alert' }
   }
 
   if (isWatchUnavailable.value) {
-    return {
-      messageKey: 'site.watchPriceComparison.invalidWatch',
-      role: 'alert',
-      showBackToIndex: true,
-    }
+    return { messageKey: 'site.watchPriceComparison.invalidWatch', role: 'alert' }
   }
 
   return null
@@ -334,13 +338,13 @@ watchSource(
       :market-options="props.config.marketOptions"
     />
     <section class="mt-8 w-full max-w-6xl" aria-labelledby="page-title">
-      <BackToIndexButton :brand-id="props.config.brandId" class="mb-4" show-icon variant="ghost" />
+      <AppBreadcrumb
+        :trail="[{ href: brandIndexHref, label: t(props.config.titleKey) }]"
+        :current="pageTitle"
+        class="mb-4"
+      />
       <h1 id="page-title" class="text-center text-3xl font-semibold tracking-tight sm:text-4xl">
-        {{
-          watch
-            ? t('site.watchPriceComparison.title', { modelName: watch.modelName })
-            : t('site.watchPriceComparison.pageTitle')
-        }}
+        {{ pageTitle }}
       </h1>
       <h2 v-if="watch" class="text-muted-foreground mt-3 text-center text-sm">
         {{ t('site.watchPriceComparison.heading', { marketName: getMarketName(selectedMarket) }) }}
@@ -348,11 +352,6 @@ watchSource(
 
       <Card v-if="pageStatus" class="mt-8 items-center py-12">
         <p :role="pageStatus.role">{{ t(pageStatus.messageKey) }}</p>
-        <BackToIndexButton
-          v-if="pageStatus.showBackToIndex"
-          :brand-id="props.config.brandId"
-          class="mt-2"
-        />
       </Card>
       <template v-else-if="watch && comparison">
         <fieldset class="bg-card mx-auto mt-8 flex w-fit gap-1 rounded-lg border p-1">

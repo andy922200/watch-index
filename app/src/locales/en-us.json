@@ -26,6 +26,9 @@
     "marketLabel": "Market",
     "displayCurrencyLabel": "Display currency",
     "moreLabel": "More options",
+    "breadcrumb": {
+      "home": "Home"
+    },
     "navBrand": "Rolex Watch Index",
     "githubRepo": "GitHub Repo",
     "donate": "♡ Donate",
@@ -125,7 +128,6 @@
       "loading": "Loading market comparison…",
       "error": "Market comparison data could not be loaded.",
       "invalidWatch": "The requested watch could not be found.",
-      "backToIndex": "Back to watch index",
       "marketRows": "Market prices",
       "baseline": "Baseline market",
       "officialPriceUpdatedAt": "Official price updated: {date}",

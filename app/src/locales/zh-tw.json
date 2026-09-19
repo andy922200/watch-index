@@ -26,6 +26,9 @@
     "marketLabel": "市場",
     "displayCurrencyLabel": "顯示貨幣",
     "moreLabel": "更多選項",
+    "breadcrumb": {
+      "home": "首頁"
+    },
     "navBrand": "Rolex 腕錶索引",
     "githubRepo": "GitHub Repo",
     "donate": "♡ Donate",
@@ -125,7 +128,6 @@
       "loading": "正在載入行情比較…",
       "error": "無法載入行情比較資料。",
       "invalidWatch": "找不到指定的腕錶。",
-      "backToIndex": "返回腕錶索引",
       "marketRows": "各市場價格",
       "baseline": "基準市場",
       "officialPriceUpdatedAt": "官方價格更新：{date}",

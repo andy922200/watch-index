@@ -3,6 +3,7 @@ import { useStorage } from '@vueuse/core'
 import { computed, ref, watch as watchSource } from 'vue'
 import { useI18n } from 'vue-i18n'
 
+import AppBreadcrumb from '@/components/layout/AppBreadcrumb.vue'
 import AppLayout from '@/components/layout/AppLayout.vue'
 import AppNav from '@/components/layout/AppNav.vue'
 import SearchCombobox from '@/components/search-combobox/SearchCombobox.vue'
@@ -241,6 +242,7 @@ watchSource([debouncedSearchQuery, selectedPriceSort], () => {
       :language-paths="languagePaths"
       :market-options="props.config.marketOptions"
     />
+    <AppBreadcrumb :current="t(props.config.titleKey)" class="my-2 self-start" />
     <section class="w-full max-w-4xl text-center" aria-labelledby="page-title">
       <h1
         id="page-title"
