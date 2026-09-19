@@ -2,7 +2,7 @@
  * 搜尋文字的正規化與比對。
  *
  * 這一層只認得「字串」，不認得任何腕錶或品牌欄位：要比對哪些欄位由呼叫端決定
- * （例如 `pages/rolex/utils/watchSearch.ts` 知道 Rolex 要比對型號與暱稱）。
+ * （例如 `features/watch-index/utils/watchSearch.ts` 知道要比對型號與暱稱）。
  * 因為正規化規則一旦在各品牌之間長歪，同一個查詢就會在不同品牌頁得到不同結果。
  */
 

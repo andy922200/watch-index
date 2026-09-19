@@ -32,7 +32,7 @@ const fetchComparison = async (
   market: MarketCode,
 ): Promise<RawComparisonResponse> => {
   const manifest = await getWatchDataManifest(brandId)
-  const catalogFileName = manifest.catalogs[market]
+  const catalogFileName = manifest.comparisonCatalog ?? manifest.catalogs[market]
 
   if (!catalogFileName) {
     throw new Error(`Watch data manifest does not contain the ${market} market`)

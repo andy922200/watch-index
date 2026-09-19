@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="ts" generic="TWatch extends BaseWatch">
 import { useI18n } from 'vue-i18n'
 
 import {
@@ -8,10 +8,10 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
-import type { RolexWatch } from '@/types/rolex-watch'
+import type { BaseWatch } from '@/types/watch-data'
 
 interface Props {
-  watch: RolexWatch | null
+  watch: TWatch | null
 }
 
 defineProps<Props>()
@@ -19,7 +19,7 @@ defineProps<Props>()
 const isOpen = defineModel<boolean>('open', { default: false })
 const { t } = useI18n()
 
-const getWatchImageAlt = (watch: RolexWatch): string =>
+const getWatchImageAlt = (watch: TWatch): string =>
   t('site.watchList.imageAlt', { modelName: watch.modelName })
 </script>
 

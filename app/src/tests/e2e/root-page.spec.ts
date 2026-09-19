@@ -5,8 +5,7 @@ test('renders the Root brand directory without market controls', async ({ page }
 
   await expect(page.getByRole('heading', { name: '探索腕錶品牌 與全球官方定價' })).toBeVisible()
   await expect(page.getByRole('link', { name: /ROLEX/i })).toHaveAttribute('href', '/rolex/')
-  await expect(page.getByText('OMEGA', { exact: true })).toBeVisible()
-  await expect(page.getByText('即將推出', { exact: true })).toBeVisible()
+  await expect(page.getByRole('link', { name: /OMEGA/i })).toHaveAttribute('href', '/omega/')
   await expect(page.getByRole('combobox', { name: '市場' })).toHaveCount(0)
   await expect(page.getByRole('combobox', { name: '顯示貨幣' })).toHaveCount(0)
 

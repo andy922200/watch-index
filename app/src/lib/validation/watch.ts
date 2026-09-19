@@ -89,6 +89,7 @@ export const isWatchDataManifest = (value: unknown): value is WatchDataManifest 
   typeof value.schemaVersion === 'number' &&
   typeof value.catalog === 'string' &&
   isStringRecord(value.catalogs) &&
+  (value.comparisonCatalog === undefined || typeof value.comparisonCatalog === 'string') &&
   typeof value.comparison === 'string' &&
   Array.isArray(value.currencies) &&
   value.currencies.every((currency) => typeof currency === 'string' && /^[A-Z]{3}$/.test(currency))

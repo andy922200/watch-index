@@ -1,3 +1,5 @@
+import type { MarketCode, MarketOption } from './markets.ts'
+
 interface BrandPageConfig {
   entry: `/${string}`
   title: { zhTw: string; enUs: string }
@@ -21,6 +23,8 @@ interface BrandDirectoryConfig {
 
 export interface BrandConfig extends BrandDirectoryConfig, BrandPageConfig {
   directory: BrandDirectoryConfig['directory'] & { availability: 'available' }
+  defaultMarket: MarketCode
+  marketOptions: readonly MarketOption[]
   siteName: string
   priceComparePage: BrandPageConfig
 }
@@ -41,6 +45,24 @@ export const isAvailableBrand = (brand: BrandDirectoryEntry): brand is BrandConf
 export const brandDirectory: readonly BrandDirectoryEntry[] = [
   {
     id: 'rolex',
+    defaultMarket: 'TW',
+    marketOptions: [
+      { code: 'TW', flag: '🇹🇼', labelKey: 'site.market.taiwan' },
+      { code: 'CN', flag: '🇨🇳', labelKey: 'site.market.china' },
+      { code: 'HK', flag: '🇭🇰', labelKey: 'site.market.hongKong' },
+      { code: 'SG', flag: '🇸🇬', labelKey: 'site.market.singapore' },
+      { code: 'JP', flag: '🇯🇵', labelKey: 'site.market.japan' },
+      { code: 'KR', flag: '🇰🇷', labelKey: 'site.market.southKorea' },
+      { code: 'AT', flag: '🇦🇹', labelKey: 'site.market.austria' },
+      { code: 'DE', flag: '🇩🇪', labelKey: 'site.market.germany' },
+      { code: 'FR', flag: '🇫🇷', labelKey: 'site.market.france' },
+      { code: 'IT', flag: '🇮🇹', labelKey: 'site.market.italy' },
+      { code: 'ES', flag: '🇪🇸', labelKey: 'site.market.spain' },
+      { code: 'CH', flag: '🇨🇭', labelKey: 'site.market.switzerland' },
+      { code: 'GB', flag: '🇬🇧', labelKey: 'site.market.unitedKingdom' },
+      { code: 'US', flag: '🇺🇸', labelKey: 'site.market.unitedStates' },
+      { code: 'TH', flag: '🇹🇭', labelKey: 'site.market.thailand' },
+    ],
     entry: '/src/pages/rolex/main.ts',
     siteName: 'Rolex Watch Index',
     title: { zhTw: 'Rolex 腕錶索引', enUs: 'Rolex Watch Index' },
@@ -67,8 +89,21 @@ export const brandDirectory: readonly BrandDirectoryEntry[] = [
   },
   {
     id: 'omega',
+    entry: '/src/pages/omega/main.ts',
+    siteName: 'Omega Watch Index',
+    title: { zhTw: 'Omega 腕錶索引', enUs: 'Omega Watch Index' },
+    description: {
+      zhTw: '您的 Omega 腕錶官方定價索引',
+      enUs: 'Your Omega official watch price index',
+    },
+    defaultMarket: 'TW',
+    marketOptions: [
+      { code: 'TW', flag: '🇹🇼', labelKey: 'site.market.taiwan' },
+      { code: 'JP', flag: '🇯🇵', labelKey: 'site.market.japan' },
+      { code: 'KR', flag: '🇰🇷', labelKey: 'site.market.southKorea' },
+    ],
     directory: {
-      availability: 'coming-soon',
+      availability: 'available',
       descriptionKey: 'home.brands.omega.description',
       nameKey: 'home.brands.omega.name',
       visual: {
@@ -76,6 +111,14 @@ export const brandDirectory: readonly BrandDirectoryEntry[] = [
           dark: '#ff8f87',
           light: '#b42318',
         },
+      },
+    },
+    priceComparePage: {
+      entry: '/src/pages/omega/price-compare/main.ts',
+      title: { zhTw: 'Omega 腕錶行情比較', enUs: 'Omega Watch Price Comparison' },
+      description: {
+        zhTw: '比較同一支 Omega 腕錶在台灣、日本與韓國的官方定價。',
+        enUs: 'Compare official Omega prices across Taiwan, Japan, and South Korea.',
       },
     },
   },

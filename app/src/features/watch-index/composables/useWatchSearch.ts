@@ -13,9 +13,8 @@ import {
   matchesWatchSearch,
   type WatchSearchCollection,
   type WatchSearchSuggestion,
-} from '@/pages/rolex/utils/watchSearch'
-import type { RolexWatch } from '@/types/rolex-watch'
-import type { WatchCatalog } from '@/types/watch-data'
+} from '@/features/watch-index/utils/watchSearch'
+import type { BaseWatch, WatchCatalog } from '@/types/watch-data'
 
 export const DEFAULT_SEARCH_DEBOUNCE_MS = 200
 
@@ -31,17 +30,17 @@ const getLocalizedCollectionLabel = (modelNames: readonly string[], fallback: st
     .map((modelName) => modelName.replace(/\s(?:2[6-9]|3[0-9]|4[0-9])$/, ''))
     .sort((left, right) => left.length - right.length)[0] ?? fallback
 
-interface UseWatchSearchResult {
+interface UseWatchSearchResult<TWatch extends BaseWatch> {
   debouncedSearchQuery: Readonly<Ref<string>>
-  filteredWatches: Readonly<ComputedRef<RolexWatch[]>>
+  filteredWatches: Readonly<ComputedRef<TWatch[]>>
   isSearchPending: Readonly<ComputedRef<boolean>>
   searchComboboxGroups: Readonly<ComputedRef<SearchComboboxGroup[]>>
   searchQuery: Ref<string>
   selectSearchSuggestion: (optionId: string) => void
 }
 
-export interface UseWatchSearchOptions {
-  catalog: Readonly<Ref<WatchCatalog<RolexWatch> | null>>
+export interface UseWatchSearchOptions<TWatch extends BaseWatch> {
+  catalog: Readonly<Ref<WatchCatalog<TWatch> | null>>
   debounceMs?: number
   getCollectionLabel: CollectionLabelResolver
   getSearchGroupLabel: SearchGroupLabelResolver
@@ -57,7 +56,7 @@ export interface UseWatchSearchOptions {
  * @param options - Catalog, localized label resolvers, and optional search settings.
  * @returns Search state, combobox groups, filtered watches, and selection handler.
  */
-export const useWatchSearch = ({
+export const useWatchSearch = <TWatch extends BaseWatch>({
   catalog,
   debounceMs = DEFAULT_SEARCH_DEBOUNCE_MS,
   getCollectionLabel,
@@ -65,7 +64,7 @@ export const useWatchSearch = ({
   maxCollectionSuggestions = DEFAULT_MAX_COLLECTION_SUGGESTIONS,
   maxModelNameSuggestions = DEFAULT_MAX_MODEL_NAME_SUGGESTIONS,
   maxWatchSuggestions = DEFAULT_MAX_WATCH_SUGGESTIONS,
-}: UseWatchSearchOptions): UseWatchSearchResult => {
+}: UseWatchSearchOptions<TWatch>): UseWatchSearchResult<TWatch> => {
   const searchQuery = ref('')
   const debouncedSearchQuery = refDebounced(searchQuery, debounceMs)
   const isSearchPending = computed(() => searchQuery.value !== debouncedSearchQuery.value)
@@ -91,7 +90,7 @@ export const useWatchSearch = ({
       }
     })
   })
-  const searchSuggestions = computed<WatchSearchSuggestion[]>(() =>
+  const searchSuggestions = computed<WatchSearchSuggestion<TWatch>[]>(() =>
     getWatchSearchSuggestions({
       watches: Object.values(catalog.value?.watchesById ?? {}),
       collections: collectionOptions.value,
@@ -108,7 +107,7 @@ export const useWatchSearch = ({
    * @param suggestion - A collection, model-name, or watch suggestion.
    * @returns A namespaced option id that cannot collide across suggestion types.
    */
-  const getSearchOptionId = (suggestion: WatchSearchSuggestion): string => {
+  const getSearchOptionId = (suggestion: WatchSearchSuggestion<TWatch>): string => {
     if (suggestion.type === 'collection') {
       return `collection-${suggestion.id}`
     }
@@ -178,7 +177,7 @@ export const useWatchSearch = ({
         searchSuggestions.value.map((suggestion) => [getSearchOptionId(suggestion), suggestion]),
       ),
   )
-  const filteredWatches = computed<RolexWatch[]>(() => {
+  const filteredWatches = computed<TWatch[]>(() => {
     const watches = Object.values(catalog.value?.watchesById ?? {})
     const collectionLabels = new Map(
       collectionOptions.value.map((collection) => [collection.id, collection.label]),

@@ -77,6 +77,7 @@ interface WatchDataManifest {
   schemaVersion: number
   catalog: string
   catalogs: Record<string, string>
+  comparisonCatalog?: string
   comparison: string
   currencies: string[]
 }

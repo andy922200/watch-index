@@ -26,7 +26,12 @@ import {
 import { useCloseOnResize } from '@/composables/useCloseOnResize'
 import { useDarkMode } from '@/composables/useDarkMode'
 import { DEFAULT_DISPLAY_CURRENCY } from '@/lib/displayCurrencies'
-import { DEFAULT_MARKET, type MarketCode, marketOptions } from '@/lib/markets'
+import {
+  DEFAULT_MARKET,
+  type MarketCode,
+  type MarketOption,
+  marketOptions as defaultMarketOptions,
+} from '@/lib/markets'
 import { toLanguagePathname } from '@/lib/pageRoutes'
 import { Locale, type LocaleCode } from '@/plugins/i18n'
 
@@ -43,6 +48,7 @@ interface LanguagePaths {
 interface Props {
   displayCurrencies?: readonly string[]
   languagePaths?: LanguagePaths
+  marketOptions?: readonly MarketOption[]
   showMarketControls?: boolean
 }
 
@@ -53,6 +59,7 @@ const { t, locale } = useI18n()
 const props = withDefaults(defineProps<Props>(), {
   displayCurrencies: () => [],
   languagePaths: undefined,
+  marketOptions: () => defaultMarketOptions,
   showMarketControls: true,
 })
 const market = defineModel<MarketCode>('market', { default: DEFAULT_MARKET })
@@ -137,7 +144,11 @@ const getCurrencyLabel = (currency: string): string => {
           </SelectTrigger>
           <SelectContent class="max-h-56 w-(--reka-select-trigger-width)" :side-offset="4">
             <SelectGroup>
-              <SelectItem v-for="option in marketOptions" :key="option.code" :value="option.code">
+              <SelectItem
+                v-for="option in props.marketOptions"
+                :key="option.code"
+                :value="option.code"
+              >
                 <span class="flex items-center gap-2">
                   <span aria-hidden="true">{{ option.flag }}</span>
                   {{ t(option.labelKey) }}
@@ -225,7 +236,11 @@ const getCurrencyLabel = (currency: string): string => {
             </SelectTrigger>
             <SelectContent class="max-h-56 w-(--reka-select-trigger-width)" :side-offset="4">
               <SelectGroup>
-                <SelectItem v-for="option in marketOptions" :key="option.code" :value="option.code">
+                <SelectItem
+                  v-for="option in props.marketOptions"
+                  :key="option.code"
+                  :value="option.code"
+                >
                   <span class="flex items-center gap-2">
                     <span aria-hidden="true">{{ option.flag }}</span>
                     {{ t(option.labelKey) }}

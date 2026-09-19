@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { nextTick, ref } from 'vue'
 
-import { useWatchSearch } from '@/pages/rolex/composables/useWatchSearch'
+import { useWatchSearch } from '@/features/watch-index/composables/useWatchSearch'
 import type { RolexWatch } from '@/types/rolex-watch'
 import type { WatchCatalog } from '@/types/watch-data'
 

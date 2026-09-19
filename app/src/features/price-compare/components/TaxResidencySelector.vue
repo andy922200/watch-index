@@ -7,7 +7,13 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
 import { Label } from '@/components/ui/label'
 import { formatList, getIntlLocale } from '@/lib/formatters'
-import { isEuMember, type MarketCode, marketOptions } from '@/lib/markets'
+import { isEuMember, type MarketCode, type MarketOption } from '@/lib/markets'
+
+interface Props {
+  marketOptions: readonly MarketOption[]
+}
+
+const props = defineProps<Props>()
 
 const { locale, t } = useI18n()
 
@@ -19,7 +25,7 @@ const isOpen = ref(false)
 const intlLocale = computed(() => getIntlLocale(locale.value))
 
 const selectedMarketNames = computed<string[]>(() =>
-  marketOptions
+  props.marketOptions
     .filter((option) => selectedMarketCodes.value.includes(option.code))
     .map((option) => t(option.labelKey)),
 )
@@ -65,7 +71,7 @@ const setMarketSelected = (code: MarketCode, value: boolean | 'indeterminate'): 
         {{ t('site.watchPriceComparison.taxResidencySectionDescription') }}
       </p>
       <ul class="mt-3 grid gap-x-4 gap-y-2 sm:grid-cols-2">
-        <li v-for="option in marketOptions" :key="option.code">
+        <li v-for="option in props.marketOptions" :key="option.code">
           <Label :for="`tax-residency-${option.code}`" class="cursor-pointer">
             <Checkbox
               :id="`tax-residency-${option.code}`"

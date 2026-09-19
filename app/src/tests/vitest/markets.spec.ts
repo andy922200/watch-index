@@ -7,6 +7,7 @@ import {
   getMarketFromQuery,
   getMarketLabelKey,
   isEuMember,
+  isMarketInOptions,
   MarketCode,
   replaceMarketQuery,
 } from '@/lib/markets'
@@ -35,6 +36,19 @@ describe('market query', () => {
 
   it('falls back to Taiwan when market_code is unsupported', () => {
     expect(getMarketFromQuery('?market_code=XX')).toBe(DEFAULT_MARKET)
+  })
+
+  it('uses the brand market set to reject a valid but unavailable market', () => {
+    const omegaMarkets = [
+      { code: MarketCode.Taiwan, flag: '🇹🇼', labelKey: 'site.market.taiwan' },
+      { code: MarketCode.Japan, flag: '🇯🇵', labelKey: 'site.market.japan' },
+      { code: MarketCode.SouthKorea, flag: '🇰🇷', labelKey: 'site.market.southKorea' },
+    ] as const
+
+    expect(getMarketFromQuery('?market_code=CN', omegaMarkets, MarketCode.Taiwan)).toBe(
+      MarketCode.Taiwan,
+    )
+    expect(isMarketInOptions(MarketCode.China, omegaMarkets)).toBe(false)
   })
 })
 

@@ -8,11 +8,7 @@ import AppNav from '@/components/layout/AppNav.vue'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { useComparisonExchangeRates } from '@/composables/useExchangeRates'
 import { useWatchComparison } from '@/composables/useWatchComparison'
-import {
-  DEFAULT_DISPLAY_CURRENCY,
-  DISPLAY_CURRENCY_STORAGE_KEY,
-  isCurrencyCode,
-} from '@/lib/displayCurrencies'
+import { getBrandDisplayCurrencyStorageKey, isCurrencyCode } from '@/lib/displayCurrencies'
 import {
   formatCurrency,
   formatMediumDate,
@@ -20,14 +16,12 @@ import {
   getIntlLocale,
 } from '@/lib/formatters'
 import {
-  DEFAULT_MARKET,
+  getBrandMarketStorageKey,
   getMarketFlag,
   getMarketFromQuery,
   getMarketLabelKey,
-  isMarketCode,
-  MARKET_STORAGE_KEY,
+  isMarketInOptions,
   type MarketCode,
-  marketOptions,
   replaceMarketQuery,
 } from '@/lib/markets'
 import { getBrandPageLanguagePaths } from '@/lib/pageUrls'
@@ -71,19 +65,25 @@ const languagePaths = getBrandPageLanguagePaths({
   page: 'price-compare',
 })
 const watchId = new URLSearchParams(window.location.search).get('watch_id')
-const selectedMarket = useStorage<MarketCode>(MARKET_STORAGE_KEY, DEFAULT_MARKET, undefined, {
-  serializer: {
-    read: (value: string): MarketCode => (isMarketCode(value) ? value : DEFAULT_MARKET),
-    write: (market: MarketCode): string => market,
-  },
-})
-const selectedDisplayCurrency = useStorage<string>(
-  DISPLAY_CURRENCY_STORAGE_KEY,
-  DEFAULT_DISPLAY_CURRENCY,
+const selectedMarket = useStorage<MarketCode>(
+  getBrandMarketStorageKey(props.config.brandId),
+  props.config.defaultMarket,
   undefined,
   {
     serializer: {
-      read: (value: string): string => (isCurrencyCode(value) ? value : DEFAULT_DISPLAY_CURRENCY),
+      read: (value: string): MarketCode =>
+        isMarketInOptions(value, props.config.marketOptions) ? value : props.config.defaultMarket,
+      write: (market: MarketCode): string => market,
+    },
+  },
+)
+const selectedDisplayCurrency = useStorage<string>(
+  getBrandDisplayCurrencyStorageKey(props.config.brandId),
+  'TWD',
+  undefined,
+  {
+    serializer: {
+      read: (value: string): string => (isCurrencyCode(value) ? value : 'TWD'),
       write: (currency: string): string => currency,
     },
   },
@@ -113,7 +113,12 @@ const taxResidencyMarketCodes = useStorage<MarketCode[]>(TAX_RESIDENCY_STORAGE_K
       try {
         const parsed: unknown = JSON.parse(value)
 
-        return Array.isArray(parsed) ? parsed.filter(isMarketCode) : []
+        return Array.isArray(parsed)
+          ? parsed.filter(
+              (code): code is MarketCode =>
+                typeof code === 'string' && isMarketInOptions(code, props.config.marketOptions),
+            )
+          : []
       } catch {
         return []
       }
@@ -129,7 +134,11 @@ const {
   getExchangeRateDate,
   loadExchangeRates,
 } = useComparisonExchangeRates()
-const marketFromQuery = getMarketFromQuery(window.location.search)
+const marketFromQuery = getMarketFromQuery(
+  window.location.search,
+  props.config.marketOptions,
+  props.config.defaultMarket,
+)
 
 if (marketFromQuery !== null) {
   selectedMarket.value = marketFromQuery
@@ -174,7 +183,7 @@ const comparisonRows = computed(() => {
     comparison: comparison.value,
     convertToDisplayCurrency,
     displayCurrency: selectedDisplayCurrency.value,
-    marketCodes: marketOptions.map((market) => market.code),
+    marketCodes: props.config.marketOptions.map((market) => market.code),
     mode: selectedMode.value,
     selectedMarketCode: selectedMarket.value,
     taxResidencyMarketCodes: taxResidencyMarketCodes.value,
@@ -293,9 +302,7 @@ watchSource(
   displayCurrencies,
   (currencies) => {
     if (currencies.length > 0 && !currencies.includes(selectedDisplayCurrency.value)) {
-      selectedDisplayCurrency.value = currencies.includes(DEFAULT_DISPLAY_CURRENCY)
-        ? DEFAULT_DISPLAY_CURRENCY
-        : currencies[0]
+      selectedDisplayCurrency.value = currencies.includes('TWD') ? 'TWD' : currencies[0]
     }
   },
   { immediate: true },
@@ -324,6 +331,7 @@ watchSource(
       v-model:market="selectedMarket"
       :display-currencies="displayCurrencies"
       :language-paths="languagePaths"
+      :market-options="props.config.marketOptions"
     />
     <section class="mt-8 w-full max-w-6xl" aria-labelledby="page-title">
       <BackToIndexButton :brand-id="props.config.brandId" class="mb-4" show-icon variant="ghost" />
@@ -382,6 +390,7 @@ watchSource(
           v-if="selectedMode === PriceComparisonMode.RefundEstimate"
           v-model="taxResidencyMarketCodes"
           class="mx-auto mt-4 w-full max-w-2xl"
+          :market-options="props.config.marketOptions"
         />
         <p
           v-if="exchangeRateError"

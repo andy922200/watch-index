@@ -255,16 +255,25 @@ const createBrandPayloads = ({ catalog, markets, historiesByMarketCode }) => {
     }
     for (const watchId of Object.keys(history.priceSeries)) {
       if (!catalogWatchIds.has(watchId)) {
-        throw new Error(`${catalog.brandId}:${market.marketCode} has an orphan price history: ${watchId}`)
+        throw new Error(
+          `${catalog.brandId}:${market.marketCode} has an orphan price history: ${watchId}`,
+        )
       }
     }
 
-    const marketWatchesById = new Map(market.watches.map((watch) => [watch.watchId, watch]))
-    const watches = catalog.watches.map((watch) => {
-      const marketWatch = marketWatchesById.get(watch.watchId)
-      const priceRecord = history.priceSeries[watch.watchId]?.at(-1)
-      if (!marketWatch || !priceRecord) {
-        throw new Error(`${catalog.brandId}:${market.marketCode} is missing ${watch.watchId}`)
+    const catalogWatchesById = new Map(catalog.watches.map((watch) => [watch.watchId, watch]))
+    const getLatestPriceRecord = (watchId) => history.priceSeries[watchId]?.at(-1)
+
+    const watches = market.watches.map((marketWatch) => {
+      const watch = catalogWatchesById.get(marketWatch.watchId)
+      const priceRecord = getLatestPriceRecord(marketWatch.watchId)
+      if (!watch || !priceRecord) {
+        throw new Error(`${catalog.brandId}:${market.marketCode} is missing ${marketWatch.watchId}`)
+      }
+      if (priceRecord.listingStatus === 'not-listed') {
+        throw new Error(
+          `${catalog.brandId}:${market.marketCode} lists ${marketWatch.watchId} without a current price status`,
+        )
       }
       if (
         marketWatch.watchId !== `${catalog.brandId}:${marketWatch.reference}` ||
@@ -294,7 +303,7 @@ const createBrandPayloads = ({ catalog, markets, historiesByMarketCode }) => {
       schemaVersion: 5,
       brandId: catalog.brandId,
       collectedAt: catalog.collectedAt,
-      watchCount: catalog.watchCount,
+      watchCount: market.watchCount,
       collections: [...collectionCounts]
         .map(([id, watchCount]) => ({ id, watchCount }))
         .sort((left, right) => left.id.localeCompare(right.id)),
@@ -316,6 +325,63 @@ const createBrandPayloads = ({ catalog, markets, historiesByMarketCode }) => {
   const sortedMarkets = [...markets].sort((left, right) =>
     left.marketCode.localeCompare(right.marketCode),
   )
+  const marketWatchIdsByMarketCode = new Map(
+    sortedMarkets.map((market) => [
+      market.marketCode,
+      new Set(market.watches.map((watch) => watch.watchId)),
+    ]),
+  )
+  const comparisonCatalog = createVersionedPayload({
+    filePrefix: 'comparison-catalog',
+    value: {
+      schemaVersion: 5,
+      brandId: catalog.brandId,
+      collectedAt: catalog.collectedAt,
+      watchCount: catalog.watchCount,
+      collections: [...new Map(catalog.watches.map((watch) => [watch.collectionId, 0]))]
+        .map(([id]) => ({
+          id,
+          watchCount: catalog.watches.filter((watch) => watch.collectionId === id).length,
+        }))
+        .sort((left, right) => left.id.localeCompare(right.id)),
+      priceMarket: {
+        code: sortedMarkets[0].marketCode,
+        currencyCode: getPriceHistory(sortedMarkets[0].marketCode).currencyCode,
+        priceType: getPriceHistory(sortedMarkets[0].marketCode).priceType,
+        taxRatePercent: getPriceHistory(sortedMarkets[0].marketCode).taxRatePercent,
+      },
+      priceUpdatedAt: getPriceUpdatedAt(getPriceHistory(sortedMarkets[0].marketCode)),
+      watchesById: Object.fromEntries(
+        catalog.watches.map((watch) => {
+          const marketWatch = sortedMarkets
+            .map((market) =>
+              market.watches.find((candidate) => candidate.watchId === watch.watchId),
+            )
+            .find((candidate) => candidate !== undefined)
+          const priceRecord = sortedMarkets
+            .map((market) => getPriceHistory(market.marketCode).priceSeries[watch.watchId]?.at(-1))
+            .find((candidate) => candidate !== undefined)
+
+          if (!marketWatch || !priceRecord) {
+            throw new Error(`${catalog.brandId} comparison catalog is missing ${watch.watchId}`)
+          }
+
+          return [
+            watch.watchId,
+            {
+              ...watch,
+              modelName: marketWatch.modelName,
+              caseDescription: marketWatch.caseDescription,
+              dialDescription: marketWatch.dialDescription,
+              localNicknames: marketWatch.localNicknames.names,
+              price: priceRecord.price,
+              priceStatus: priceRecord.listingStatus,
+            },
+          ]
+        }),
+      ),
+    },
+  })
   const comparison = createVersionedPayload({
     filePrefix: 'comparison',
     value: {
@@ -333,7 +399,8 @@ const createBrandPayloads = ({ catalog, markets, historiesByMarketCode }) => {
               priceType: history.priceType,
               taxRatePercent: history.taxRatePercent,
               priceUpdatedAt: getPriceUpdatedAt(history),
-              travelerRefundPolicy: travelerRefundPoliciesByMarketCode.get(market.marketCode) ?? null,
+              travelerRefundPolicy:
+                travelerRefundPoliciesByMarketCode.get(market.marketCode) ?? null,
             },
           ]
         }),
@@ -343,11 +410,18 @@ const createBrandPayloads = ({ catalog, markets, historiesByMarketCode }) => {
           watch.watchId,
           Object.fromEntries(
             sortedMarkets.map((market) => {
+              // A market catalog is the authoritative availability set. Omitted watches are
+              // represented in the generated comparison payload only; no history is invented.
+              if (!marketWatchIdsByMarketCode.get(market.marketCode)?.has(watch.watchId)) {
+                return [market.marketCode, { price: null, priceStatus: 'not-listed' }]
+              }
               const priceRecord = getPriceHistory(market.marketCode).priceSeries[watch.watchId]?.at(
                 -1,
               )
               if (!priceRecord) {
-                throw new Error(`${catalog.brandId}:${market.marketCode} is missing ${watch.watchId}`)
+                throw new Error(
+                  `${catalog.brandId}:${market.marketCode} is missing ${watch.watchId}`,
+                )
               }
               return [
                 market.marketCode,
@@ -368,11 +442,13 @@ const createBrandPayloads = ({ catalog, markets, historiesByMarketCode }) => {
 
   return {
     catalogFiles: marketCatalogs,
+    comparisonCatalog,
     comparisonFile: comparison,
     manifest: JSON.stringify({
       schemaVersion: 5,
       catalog: catalogs.TW,
       catalogs,
+      comparisonCatalog: comparisonCatalog.fileName,
       comparison: comparison.fileName,
       currencies: [
         ...new Set(sortedMarkets.map((market) => getPriceHistory(market.marketCode).currencyCode)),
@@ -407,14 +483,20 @@ await Promise.all(
   brandPayloads.map(({ brandId }) => mkdir(getBrandOutputDirectory(brandId), { recursive: true })),
 )
 await Promise.all(
-  brandPayloads.flatMap(({ brandId, catalogFiles, comparisonFile, manifest }) => {
-    const brandOutputDirectory = getBrandOutputDirectory(brandId)
-    return [
-      ...catalogFiles.map(({ fileName, payload }) =>
-        writeFile(resolve(brandOutputDirectory, fileName), payload),
-      ),
-      writeFile(resolve(brandOutputDirectory, comparisonFile.fileName), comparisonFile.payload),
-      writeFile(resolve(brandOutputDirectory, 'manifest.json'), manifest),
-    ]
-  }),
+  brandPayloads.flatMap(
+    ({ brandId, catalogFiles, comparisonCatalog, comparisonFile, manifest }) => {
+      const brandOutputDirectory = getBrandOutputDirectory(brandId)
+      return [
+        ...catalogFiles.map(({ fileName, payload }) =>
+          writeFile(resolve(brandOutputDirectory, fileName), payload),
+        ),
+        writeFile(
+          resolve(brandOutputDirectory, comparisonCatalog.fileName),
+          comparisonCatalog.payload,
+        ),
+        writeFile(resolve(brandOutputDirectory, comparisonFile.fileName), comparisonFile.payload),
+        writeFile(resolve(brandOutputDirectory, 'manifest.json'), manifest),
+      ]
+    },
+  ),
 )

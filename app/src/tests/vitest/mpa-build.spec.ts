@@ -19,8 +19,10 @@ describe('MPA build configuration', () => {
         'site-index-en-us',
         'rolex-zh-tw',
         'rolex-en-us',
+        'omega-zh-tw',
+        'omega-en-us',
+        'omega-price-compare-zh-tw',
       ]),
     )
-    expect(pages.map((page) => page.name)).not.toContain('omega-zh-tw')
   })
 })

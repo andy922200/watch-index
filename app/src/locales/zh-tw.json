@@ -11,12 +11,16 @@
       },
       "omega": {
         "name": "OMEGA",
-        "description": "Omega 全球官方定價與市場比較，即將推出"
+        "description": "探索 Omega 在台灣、日本與韓國的官方定價"
       }
     }
   },
   "site": {
     "title": "全球 Rolex 腕錶索引",
+    "brandTitle": {
+      "rolex": "全球 Rolex 腕錶索引",
+      "omega": "Omega 腕錶索引"
+    },
     "priceUpdatedAt": "價格資料更新於 {date}",
     "languageLabel": "語言",
     "marketLabel": "市場",
@@ -70,7 +74,11 @@
       "explorer": "Explorer",
       "explorer-ii": "Explorer II",
       "air-king": "Air-King",
-      "1908": "1908"
+      "1908": "1908",
+      "constellation": "Constellation 星座系列",
+      "de-ville": "De Ville 碟飛系列",
+      "seamaster": "Seamaster 海馬系列",
+      "speedmaster": "Speedmaster 超霸系列"
     },
     "watchSearch": {
       "label": "搜尋腕錶",

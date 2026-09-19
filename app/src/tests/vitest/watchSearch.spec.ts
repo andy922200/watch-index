@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest'
 
-import { getWatchSearchSuggestions, matchesWatchSearch } from '@/pages/rolex/utils/watchSearch'
+import {
+  getWatchSearchSuggestions,
+  matchesWatchSearch,
+} from '@/features/watch-index/utils/watchSearch'
 import type { RolexWatch } from '@/types/rolex-watch'
 
 const submariner: RolexWatch = {

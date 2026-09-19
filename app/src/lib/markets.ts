@@ -52,6 +52,14 @@ export const marketOptions: readonly MarketOption[] = [
 export const isMarketCode = (value: string): value is MarketCode =>
   marketOptions.some((market) => market.code === value)
 
+export const isMarketInOptions = (
+  value: string,
+  options: readonly MarketOption[],
+): value is MarketCode => options.some((market) => market.code === value)
+
+export const getBrandMarketStorageKey = (brandId: string): string =>
+  `${MARKET_STORAGE_KEY}-${brandId}`
+
 /**
  * 歐盟旅客退稅制度通常要求申請人「非歐盟居民」：只要在任一歐盟市場具稅務居民身分，
  * 就會喪失在所有歐盟市場申請退稅的資格，不只是該市場本身。因此獨立列出這份常數，
@@ -72,14 +80,18 @@ export const isEuMember = (marketCode: string): boolean =>
  * 讀取 URL query 的市場代碼。未提供 query 時回傳 null；提供未知代碼時則回退台灣，
  * 以確保 query 一旦存在就不會改用 localStorage 的舊選擇。
  */
-export const getMarketFromQuery = (search: string): MarketCode | null => {
+export const getMarketFromQuery = (
+  search: string,
+  options: readonly MarketOption[] = marketOptions,
+  defaultMarket: MarketCode = DEFAULT_MARKET,
+): MarketCode | null => {
   const marketCode = new URLSearchParams(search).get(MARKET_QUERY_KEY)
 
   if (marketCode === null) {
     return null
   }
 
-  return isMarketCode(marketCode) ? marketCode : DEFAULT_MARKET
+  return isMarketInOptions(marketCode, options) ? marketCode : defaultMarket
 }
 
 /**

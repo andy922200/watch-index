@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import WatchIndexPage from '@/features/watch-index/WatchIndexPage.vue'
 
-import { rolexWatchIndexConfig } from './brand'
+import { omegaWatchIndexConfig } from './brand'
 </script>
 
 <template>
-  <WatchIndexPage :config="rolexWatchIndexConfig" />
+  <WatchIndexPage :config="omegaWatchIndexConfig" />
 </template>

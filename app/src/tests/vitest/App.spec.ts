@@ -1,7 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/vue'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { MARKET_STORAGE_KEY, MarketCode } from '@/lib/markets'
+import { getBrandMarketStorageKey, MarketCode } from '@/lib/markets'
 import App from '@/pages/rolex/App.vue'
 import { i18n, Locale } from '@/plugins/i18n'
 
@@ -76,7 +76,7 @@ describe('Rolex index page', () => {
   })
 
   it('restores the selected market from local storage', async () => {
-    localStorage.setItem(MARKET_STORAGE_KEY, MarketCode.Japan)
+    localStorage.setItem(getBrandMarketStorageKey('rolex'), MarketCode.Japan)
 
     render(App, {
       global: {
@@ -90,7 +90,7 @@ describe('Rolex index page', () => {
   })
 
   it('falls back to Taiwan when local storage contains an unknown market', () => {
-    localStorage.setItem(MARKET_STORAGE_KEY, 'XX')
+    localStorage.setItem(getBrandMarketStorageKey('rolex'), 'XX')
 
     render(App, {
       global: {

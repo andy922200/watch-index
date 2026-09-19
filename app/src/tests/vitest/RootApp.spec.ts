@@ -10,7 +10,7 @@ describe('Root brand directory', () => {
     i18n.global.locale.value = Locale.enUs
   })
 
-  it('renders available and coming-soon brands without loading a catalog', () => {
+  it('renders available brands without loading a catalog', () => {
     render(App, {
       global: {
         plugins: [i18n],
@@ -21,8 +21,7 @@ describe('Root brand directory', () => {
     expect(screen.getByText('01')).toBeTruthy()
     expect(screen.getByText('02')).toBeTruthy()
     expect(screen.getByRole('link', { name: /ROLEX/i }).getAttribute('href')).toBe('/rolex/en-us/')
-    expect(screen.queryByRole('link', { name: /OMEGA/i })).toBeNull()
-    expect(screen.getByText('Coming soon')).toBeTruthy()
+    expect(screen.getByRole('link', { name: /OMEGA/i }).getAttribute('href')).toBe('/omega/en-us/')
   })
 
   it('uses the default-language Rolex URL for the Traditional Chinese Root', () => {
@@ -35,6 +34,7 @@ describe('Root brand directory', () => {
     })
 
     expect(screen.getByRole('link', { name: /ROLEX/i }).getAttribute('href')).toBe('/rolex/')
+    expect(screen.getByRole('link', { name: /OMEGA/i }).getAttribute('href')).toBe('/omega/')
   })
 
   it('defines light and dark directory accent colors for every brand', () => {

@@ -11,12 +11,16 @@
       },
       "omega": {
         "name": "OMEGA",
-        "description": "Official Omega prices and market comparison, coming soon"
+        "description": "Explore official Omega prices across Taiwan, Japan, and South Korea"
       }
     }
   },
   "site": {
     "title": "Global Rolex Watches Index",
+    "brandTitle": {
+      "rolex": "Global Rolex Watches Index",
+      "omega": "Omega Watch Index"
+    },
     "priceUpdatedAt": "Price data updated {date}",
     "languageLabel": "Language",
     "marketLabel": "Market",
@@ -70,7 +74,11 @@
       "explorer": "Explorer",
       "explorer-ii": "Explorer II",
       "air-king": "Air-King",
-      "1908": "1908"
+      "1908": "1908",
+      "constellation": "Constellation",
+      "de-ville": "De Ville",
+      "seamaster": "Seamaster",
+      "speedmaster": "Speedmaster"
     },
     "watchSearch": {
       "label": "Search watches",
