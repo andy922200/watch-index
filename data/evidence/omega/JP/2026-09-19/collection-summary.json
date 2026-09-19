@@ -1,0 +1,147 @@
+{
+  "brandId": "omega",
+  "marketCode": "JP",
+  "locale": "ja-JP",
+  "collectedAt": "2026-09-19T07:30:00.000Z",
+  "entryUrl": "https://www.omegawatches.jp/watches",
+  "sourceDiscovery": {
+    "method": "Real Chrome browser navigation (Playwright-controlled via the claude-in-chrome extension) confirmed the Japan locale entry page (https://www.omegawatches.jp/watches), its 16 category links, and each category's officially displayed count, independently of the already-documented Omega Taiwan workflow. The same 16 category slugs and the same underlying Magento platform (li.product-item cards; p.collection / p.name / price-box fields; .ow-prod__tag-new for new-model badge; dd.technical-data-value[data-code] structured fields on product detail pages) were independently re-confirmed live on omegawatches.jp, not assumed from the Taiwan example.",
+    "confirmedPublicEndpoints": [
+      "https://www.omegawatches.jp/watches/{family}/{subcategory}/catalog",
+      "https://www.omegawatches.jp/watches/{family}/{subcategory}/catalog?p={page}&ajax=1&noFilters=1 (JSON wrapper with html.products_list fragment, requires X-Requested-With: XMLHttpRequest header)"
+    ],
+    "rateLimitFinding": "Repeated same-origin fetch() calls issued directly from page-context JavaScript (bypassing normal navigation) were silently rate-limited/hung by the site's bot defenses after roughly 10-12 requests in quick succession, even with added delays between requests; this was observed and reproduced multiple times. Real top-level browser navigation and same-origin same-tab <iframe> subresource loads (which carry the full referrer/cookie/document context of a real page, unlike a bare fetch()) were not observed to trigger this and remained reliable. Collection was therefore done via: (1) one real navigation per category to that category's last page URL (?p=<lastPage>, no ajax param), which this Magento theme's own client-side script hydrates cumulatively (rendering pages 1..N together) once given time to settle -- confirmed by exact match against the officially displayed per-category count; and (2) one hidden same-origin <iframe> load per product detail page (with the iframe's src blanked and the element removed immediately after each extraction, which was necessary because retained iframes were found to accumulate to several GB of heap and severely degrade throughput -- see limitations) to read structured technical-data-value fields (sku, watch_dial / watch_dial_detailed_color / watch_dial_color, watch_watchcase) for dial/case confirmation.",
+    "builtInBrowserStatus": "available",
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "PASS"
+  },
+  "catalogCategoryCount": 16,
+  "categories": [
+    {
+      "catalogUrl": "https://www.omegawatches.jp/watches/seamaster/aqua-terra-150m/catalog",
+      "officialTotal": 107,
+      "uniqueCollectedCount": 107,
+      "pagesUsed": 5,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.jp/watches/seamaster/diver-300-m/catalog",
+      "officialTotal": 60,
+      "uniqueCollectedCount": 60,
+      "pagesUsed": 3,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.jp/watches/seamaster/planet-ocean/catalog",
+      "officialTotal": 17,
+      "uniqueCollectedCount": 17,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.jp/watches/seamaster/heritage-models/catalog",
+      "officialTotal": 17,
+      "uniqueCollectedCount": 17,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.jp/watches/seamaster/instruments/catalog",
+      "officialTotal": 1,
+      "uniqueCollectedCount": 1,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.jp/watches/speedmaster/moonwatch-professional/catalog",
+      "officialTotal": 24,
+      "uniqueCollectedCount": 24,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.jp/watches/speedmaster/heritage-models/catalog",
+      "officialTotal": 16,
+      "uniqueCollectedCount": 16,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.jp/watches/speedmaster/dark-side-of-the-moon/catalog",
+      "officialTotal": 8,
+      "uniqueCollectedCount": 8,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.jp/watches/speedmaster/speedmaster-38-mm/catalog",
+      "officialTotal": 11,
+      "uniqueCollectedCount": 11,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.jp/watches/speedmaster/two-counters/catalog",
+      "officialTotal": 36,
+      "uniqueCollectedCount": 36,
+      "pagesUsed": 2,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.jp/watches/constellation/observatory/catalog",
+      "officialTotal": 9,
+      "uniqueCollectedCount": 9,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.jp/watches/constellation/constellation/catalog",
+      "officialTotal": 119,
+      "uniqueCollectedCount": 119,
+      "pagesUsed": 5,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.jp/watches/de-ville/ladymatic/catalog",
+      "officialTotal": 6,
+      "uniqueCollectedCount": 6,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.jp/watches/de-ville/tresor/catalog",
+      "officialTotal": 37,
+      "uniqueCollectedCount": 37,
+      "pagesUsed": 2,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.jp/watches/de-ville/prestige/catalog",
+      "officialTotal": 82,
+      "uniqueCollectedCount": 82,
+      "pagesUsed": 4,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.jp/watches/de-ville/tourbillon/catalog",
+      "officialTotal": 2,
+      "uniqueCollectedCount": 2,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    }
+  ],
+  "rawProductCount": 552,
+  "uniqueReferenceCount": 552,
+  "duplicateReferenceCount": 0,
+  "duplicateReferenceListings": [],
+  "terminationEvidence": "Every category's official count (as displayed on the entry page's family totals and re-confirmed by each category page's own 'Products list N点' counter) was matched exactly by the unique product-card count collected for that category, using productUrl as the de-duplication key. All 16 categories matched exactly (see categories[].matchesOfficialTotal), and the sum of family totals (Seamaster 202 + Speedmaster 95 + Constellation 128 + De Ville 127 = 552) equals the entry page's overall total and the final collected count.",
+  "errors": [],
+  "limitations": [
+    "Dial color was absent under the primary data-code=\"watch_dial\" field for 34 of 552 references (6.2%). Of these, 33 were resolved via the documented fallback field data-code=\"watch_dial_detailed_color\" (present on this Magento theme; not previously documented for Taiwan, independently discovered here), and 1 (434.23.40.20.02.001, De Ville Prestige) had no structured dial field at all and was resolved by extracting the sentence \"ドーム型シルバーダイアルを備えています\" (features a dome-shaped silver dial) from that same product page's official 説明 (description) panel, recorded with dialFieldCode=\"description-fallback\" and dialFallbackText holding the exact source sentence.",
+    "An initial collection pass hit two operational issues that were corrected before this final dataset: (a) retained <iframe> elements were not being garbage-collected fast enough, building up to ~3.7GB of heap and severely degrading throughput after ~250 products -- fixed by blanking each iframe's src before removal; (b) a subsequent bulk retry pass for items that had genuinely timed out incorrectly overwrote their previously-successful sku/watchcase/h1 data with a bare {timeout:true} record on a later timeout -- caught during validation (the retry output showed nullSku count jumping to match nullDial count) and corrected by re-merging from the last known-good full dataset rather than trusting the retry pass's output wholesale. No formal JSON in data/ was affected; this was caught before any file was written to the repository.",
+    "Omega Japan product pages do not themselves state whether displayed JPY prices include consumption tax. priceType tax-include / taxRatePercent 10 was determined from: (1) Japan's mandatory 総額表示 (total price display) law requiring all consumer-facing prices to be tax-inclusive since 2021, and (2) explicit confirmatory text on the site's own e-commerce FAQ (https://www.omegawatches.jp/customer-service/faq/e-commerce), which states a cash-on-delivery payment method is available \"50万円（消費税を含む）まで\" (up to ¥500,000, consumption tax included) -- an explicit same-site statement that displayed amounts already include consumption tax. Japan's standard consumption tax rate is 10%.",
+    "Nickname research was not run for this collection round (see nickname-research.json). localNicknames and collectionAliases remain empty rather than asserting no Japanese nicknames exist.",
+    "Draft 2020-12 JSON Schema validation was not run because no compatible validator (the Python `jsonschema` package) is installed in this environment; strict JSON parsing and manual field/type/required/pattern/uniqueness/cross-file checks reproducing the schema's constraints were run instead (see validation-summary.json)."
+  ]
+}

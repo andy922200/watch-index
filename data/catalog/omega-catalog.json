@@ -2,11 +2,12 @@
   "$schema": "../schemas/watch-catalog.schema.json",
   "schemaVersion": 3,
   "brandId": "omega",
-  "collectedAt": "2026-09-18T09:12:11.092Z",
+  "collectedAt": "2026-09-18T23:20:42.000Z",
   "sourceMarketCodes": [
-    "TW"
+    "TW",
+    "JP"
   ],
-  "watchCount": 551,
+  "watchCount": 553,
   "watches": [
     {
       "watchId": "omega:131.10.25.60.02.002",
@@ -3313,6 +3314,18 @@
       "collectionId": "de-ville",
       "reference": "529.53.43.22.99.001",
       "imageUrl": "https://www.omegawatches.com.tw/media/catalog/product/o/m/omega-de-ville-tourbillon-co-axial-master-chronometer-43-mm-52953432299001-e6750b.png"
+    },
+    {
+      "watchId": "omega:425.22.34.20.55.004",
+      "collectionId": "de-ville",
+      "reference": "425.22.34.20.55.004",
+      "imageUrl": "https://www.omegawatches.jp/media/catalog/product/o/m/omega-de-ville-ladymatic-co-axial-chronometer-34-mm-42522342055004-986f6b.png"
+    },
+    {
+      "watchId": "omega:511.13.40.20.11.002",
+      "collectionId": "seamaster",
+      "reference": "511.13.40.20.11.002",
+      "imageUrl": "https://www.omegawatches.jp/media/catalog/product/o/m/omega-seamaster-boutique-editions-co-axial-master-chronometer-39-5-mm-51113402011002-3dc9b8.png"
     }
   ]
 }

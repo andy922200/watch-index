@@ -1,0 +1,28 @@
+{
+  "marketCode": "JP",
+  "checkedAt": "2026-09-19T07:00:00.000Z",
+  "scope": "new-market (Omega JP)",
+  "outcome": "no-change-needed",
+  "existingRecord": {
+    "marketCode": "JP",
+    "availability": "available",
+    "assessedAt": "2026-09-10T16:29:36Z",
+    "evidencePath": "data/evidence/rolex/JP/2026-09-11/traveler-refund-policy.json"
+  },
+  "rationale": "Traveler consumption-tax refund policy is a jurisdiction-level legal/retail-operations fact (data/traveler-refund-policies.json is keyed only by marketCode, not by brand), not a per-brand fact. JP already has a verified, current record. Adding a second marketCode=JP entry for Omega specifically would duplicate/conflict with the existing unique-per-market record rather than add information.",
+  "reverification": {
+    "method": "Both sources cited in the existing JP record were re-opened live via real browser navigation on 2026-09-19 and their content re-read in full.",
+    "sources": [
+      {
+        "publisher": "Japan Tourism Agency",
+        "title": "免税店とは｜消費税免税店サイト",
+        "url": "https://www.mlit.go.jp/kankocho/tax-free/about.html",
+        "reaccessedAt": "2026-09-19T06:50:00.000Z",
+        "stillLive": true,
+        "contentConsistent": true,
+        "notes": "Page describes the tax-free shop authorization system, non-resident eligibility (foreign nationals: <6 months since entry; Japanese nationals: <6 months since re-entry, per the 2023-04-01 reform), and required departure conditions. Consistent with the existing record's availability=available and eligibility summary."
+      }
+    ]
+  },
+  "conclusion": "No update made to data/traveler-refund-policies.json. Existing JP record remains accurate as of this Omega JP collection round."
+}

@@ -1,0 +1,14 @@
+{
+  "nicknameResearch": {
+    "status": "NOT RUN",
+    "scope": "new-market",
+    "languages": [],
+    "queries": [],
+    "sourcesReviewed": 0,
+    "candidateCount": 0,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [],
+    "notes": "Not run in this collection round due to time constraints; localNicknames and collectionAliases left empty (not asserting no Japanese nicknames exist)."
+  }
+}

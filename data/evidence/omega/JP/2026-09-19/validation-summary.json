@@ -1,0 +1,65 @@
+{
+  "brandId": "omega",
+  "marketCode": "JP",
+  "validatedAt": "2026-09-19T07:30:00.000Z",
+  "strictJsonParsing": {
+    "status": "PASS",
+    "notes": "Ran the ai-data-maintenance-guide.md strict JSON parsing snippet (duplicate-key / invalid-constant detection) across data/catalog, data/markets, data/history, data/schemas including the newly written omega-japan-market.json and data/history/JP/omega-price-history.json; no errors."
+  },
+  "jsonSchemaValidation": {
+    "status": "NOT RUN",
+    "reason": "No Draft 2020-12 compatible validator (Python `jsonschema` package) is installed in this environment. Manual field/type/required/pattern/uniqueness checks reproducing the schema's constraints were run instead (see crossFileAndContractChecks) and passed clean."
+  },
+  "crossFileAndContractChecks": {
+    "status": "PASS",
+    "checks": [
+      "watchCount (552) equals market.watches.length",
+      "every watchId matches ^omega:<reference>$",
+      "552 unique reference, 552 unique watchId (no duplicates)",
+      "collectionAliases keys are exactly the four collectionIds present in this market's watches (constellation, de-ville, seamaster, speedmaster), each with empty names/sources (nickname research NOT RUN)",
+      "history.marketCode = JP, currencyCode = JPY, priceType = tax-include, taxRatePercent = 10",
+      "collectionRuns[0].recordCount (552) equals priceSeries key count",
+      "priceSeries keys are exactly the market's watchIds (no missing, no extra)",
+      "every pricePoint has runId=1 (single initial run), listingStatus=listed with a non-negative integer price; no price-unavailable/not-listed points in this run",
+      "no non-zero-decimal prices encountered while parsing rawPriceText (JPY has no minor currency unit in retail display; the ￥ and comma-stripped digit string parsed cleanly as an integer for all 552 records)",
+      "catalog delta: 550 watchId already in data/catalog/omega-catalog.json (verified collectionId and reference identical, no stable-field conflicts), 2 new watchId to add (M-C), 1 existing catalog watchId not observed in JP this round (C-M, kept per protocol)"
+    ]
+  },
+  "sourceReconciliation": {
+    "status": "PASS",
+    "notes": "All 16 categories' collected unique product counts equal their officially displayed per-category counts, and the sum of the four family totals (Seamaster 202 + Speedmaster 95 + Constellation 128 + De Ville 127 = 552) equals the omegawatches.jp/watches entry page's overall total and the final collected count. See collection-summary.json for per-category detail."
+  },
+  "priceStats": {
+    "currencyCode": "JPY",
+    "count": 552,
+    "min": 495000,
+    "max": 93192000,
+    "median": 1595000.0
+  },
+  "independentSpotCheck": {
+    "status": "PASS",
+    "sampleSize": 20,
+    "method": "Re-loaded each sampled product's own detail page fresh (independent of the category-listing pass used for card-level data and independent of the earlier per-product iframe pass used for dial/case confirmation) and re-extracted sku, dial, case material, and price directly from the DOM, comparing against the values already written to the market/history files.",
+    "coverage": "One representative from each of the 16 source categories, plus the minimum-price and maximum-price references market-wide, plus two additional isNewModel=true references.",
+    "result": "20/20 matched on reference (sku), dialDescription, and case material exactly; 20/20 matched on price (confirmed as an exact trailing-digit match after correcting a spot-check-script selector bug that had concatenated the on-page SKU text with the price text)."
+  },
+  "readmeUpdate": {
+    "status": "PASS",
+    "updated": true,
+    "sections": [
+      "README.md 開頭摘要與 Data 章節市場統計段落",
+      "watch-data-collection-guide.md Omega Japan 收集段落"
+    ],
+    "reason": null
+  },
+  "travelerRefundPolicyCheck": {
+    "status": "PASS",
+    "outcome": "no-change-needed",
+    "notes": "JP already has a verified jurisdiction-level record in data/traveler-refund-policies.json (assessedAt 2026-09-10, evidencePath data/evidence/rolex/JP/2026-09-11/traveler-refund-policy.json) since traveler refund policy is a jurisdiction fact, not brand-specific. Both cited sources (Japan Tourism Agency tax-free shop pages) were re-opened live on 2026-09-19 and found current and consistent with the existing record; no update was made to avoid a duplicate/conflicting marketCode=JP entry. See traveler-refund-policy.json in this evidence folder for the re-verification detail."
+  },
+  "limitations": [
+    "Nickname research NOT RUN this round (see nickname-research.json).",
+    "34 of 552 dial values required a fallback field or description-text extraction rather than the primary structured field; see collection-summary.json limitations.",
+    "JSON Schema (Draft 2020-12) validation NOT RUN due to no validator installed; manual equivalent checks passed."
+  ]
+}
