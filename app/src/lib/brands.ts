@@ -103,6 +103,8 @@ export const brandDirectory: readonly BrandDirectoryEntry[] = [
       { code: 'KR', flag: '🇰🇷', labelKey: 'site.market.southKorea' },
       { code: 'HK', flag: '🇭🇰', labelKey: 'site.market.hongKong' },
       { code: 'CH', flag: '🇨🇭', labelKey: 'site.market.switzerland' },
+      { code: 'DE', flag: '🇩🇪', labelKey: 'site.market.germany' },
+      { code: 'US', flag: '🇺🇸', labelKey: 'site.market.unitedStates' },
     ],
     directory: {
       availability: 'available',
@@ -119,8 +121,8 @@ export const brandDirectory: readonly BrandDirectoryEntry[] = [
       entry: '/src/pages/omega/price-compare/main.ts',
       title: { zhTw: 'Omega 腕錶行情比較', enUs: 'Omega Watch Price Comparison' },
       description: {
-        zhTw: '比較同一支 Omega 腕錶在台灣、日本、韓國、香港與瑞士的官方定價。',
-        enUs: 'Compare official Omega prices across Taiwan, Japan, South Korea, Hong Kong, and Switzerland.',
+        zhTw: '比較同一支 Omega 腕錶在台灣、日本、韓國、香港、瑞士、德國與美國的官方定價。',
+        enUs: 'Compare official Omega prices across Taiwan, Japan, South Korea, Hong Kong, Switzerland, Germany, and the United States.',
       },
     },
   },

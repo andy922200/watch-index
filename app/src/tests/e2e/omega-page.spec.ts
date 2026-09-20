@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
 
-test('browses Omega by its five supported markets and opens specifications', async ({ page }) => {
+test('browses Omega by its seven supported markets and opens specifications', async ({ page }) => {
   await page.goto('/omega/en-us/')
 
   await expect(page.getByRole('heading', { name: 'Omega Watch Index' })).toBeVisible()
@@ -11,6 +11,8 @@ test('browses Omega by its five supported markets and opens specifications', asy
   await expect(page.getByRole('option', { name: 'South Korea' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'Hong Kong' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'Switzerland' })).toBeVisible()
+  await expect(page.getByRole('option', { name: 'Germany' })).toBeVisible()
+  await expect(page.getByRole('option', { name: 'United States' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'China' })).toHaveCount(0)
 
   await page.getByRole('option', { name: 'Hong Kong' }).click()
@@ -20,6 +22,16 @@ test('browses Omega by its five supported markets and opens specifications', asy
   await marketSelect.click()
   await page.getByRole('option', { name: 'Switzerland' }).click()
   await expect(marketSelect).toContainText('Switzerland')
+  await expect(page.locator('[data-slot="card"]')).toHaveCount(12)
+
+  await marketSelect.click()
+  await page.getByRole('option', { name: 'Germany' }).click()
+  await expect(marketSelect).toContainText('Germany')
+  await expect(page.locator('[data-slot="card"]')).toHaveCount(12)
+
+  await marketSelect.click()
+  await page.getByRole('option', { name: 'United States' }).click()
+  await expect(marketSelect).toContainText('United States')
   await expect(page.locator('[data-slot="card"]')).toHaveCount(12)
 
   await page.getByRole('combobox', { name: 'Search watches' }).fill('Diver')
@@ -36,6 +48,8 @@ test('uses Hong Kong and Switzerland as Omega comparison baselines', async ({ pa
   await expect(page.getByTestId('watch-price-comparison-card')).toBeVisible()
   await expect(page.getByTestId('market-price-HK')).toContainText('Baseline market')
   await expect(page.getByTestId('market-price-CH')).toBeVisible()
+  await expect(page.getByTestId('market-price-DE')).toBeVisible()
+  await expect(page.getByTestId('market-price-US')).toBeVisible()
 
   await page.getByRole('combobox', { name: 'Market' }).click()
   await page.getByRole('option', { name: 'Switzerland' }).click()

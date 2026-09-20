@@ -278,8 +278,8 @@ const createBrandPayloads = ({ catalog, markets, historiesByMarketCode }) => {
       if (
         marketWatch.watchId !== `${catalog.brandId}:${marketWatch.reference}` ||
         typeof marketWatch.modelName !== 'string' ||
-        typeof marketWatch.caseDescription !== 'string' ||
-        typeof marketWatch.dialDescription !== 'string' ||
+        (typeof marketWatch.caseDescription !== 'string' && marketWatch.caseDescription !== null) ||
+        (typeof marketWatch.dialDescription !== 'string' && marketWatch.dialDescription !== null) ||
         !Array.isArray(marketWatch.localNicknames?.names) ||
         !marketWatch.localNicknames.names.every((nickname) => typeof nickname === 'string')
       ) {
@@ -288,8 +288,8 @@ const createBrandPayloads = ({ catalog, markets, historiesByMarketCode }) => {
       return {
         ...watch,
         modelName: marketWatch.modelName,
-        caseDescription: marketWatch.caseDescription,
-        dialDescription: marketWatch.dialDescription,
+        caseDescription: marketWatch.caseDescription ?? '',
+        dialDescription: marketWatch.dialDescription ?? '',
         localNicknames: marketWatch.localNicknames.names,
         price: priceRecord.price,
         priceStatus: priceRecord.listingStatus,
@@ -371,8 +371,8 @@ const createBrandPayloads = ({ catalog, markets, historiesByMarketCode }) => {
             {
               ...watch,
               modelName: marketWatch.modelName,
-              caseDescription: marketWatch.caseDescription,
-              dialDescription: marketWatch.dialDescription,
+              caseDescription: marketWatch.caseDescription ?? '',
+              dialDescription: marketWatch.dialDescription ?? '',
               localNicknames: marketWatch.localNicknames.names,
               price: priceRecord.price,
               priceStatus: priceRecord.listingStatus,
