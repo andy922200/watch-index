@@ -1,0 +1,1 @@
+../../.agents/roles/multi-market-coordinator.md
