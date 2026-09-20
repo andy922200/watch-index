@@ -1,0 +1,64 @@
+{
+  "marketCode": "DE",
+  "brandId": "omega",
+  "checkedAt": "2026-09-20T15:40:00.000Z",
+  "scope": "new-market (Omega DE)",
+  "outcome": "needs-update",
+  "availabilityUnchanged": true,
+  "existingRecord": {
+    "marketCode": "DE",
+    "availability": "available",
+    "assessedAt": "2026-09-11T17:00:00Z",
+    "merchantParticipationRequired": true,
+    "exportValidationRequired": true,
+    "evidencePath": "data/evidence/rolex/DE/2026-09-12/traveler-refund-policy.json",
+    "eligibilitySummaryZhTw": "適用於居住地在歐盟以外、購買後將商品出口的旅客；購買時須向賣方取得出口及買方證明。退稅是否轉付給旅客由賣方決定，並非所有商店都提供。",
+    "sources": [
+      {
+        "publisher": "German Federal Foreign Office",
+        "title": "Mehrwertsteuer-Rückerstattung",
+        "url": "https://www.germany.info/us-de/service/steuern/mwst-rueckerstattung-1217014"
+      }
+    ]
+  },
+  "independentVerification": {
+    "method": "不沿用既有結論，改以德國稅法原文與德國海關（Zoll）官方頁面重新查證截至 2026-09-20 的制度、資格與門檻，再回頭比對既有記錄是否仍然準確。",
+    "sources": [
+      {
+        "publisher": "Bundesministerium der Justiz / juris (gesetze-im-internet.de)",
+        "title": "§ 6 UStG – Ausfuhrlieferung (Abs. 2, Abs. 3a)",
+        "url": "https://www.gesetze-im-internet.de/ustg_1980/__6.html",
+        "accessedAt": "2026-09-20",
+        "quote": "Wird in den Fällen des Absatzes 1 Satz 1 Nr. 2 und 3 der Gegenstand der Lieferung nicht für unternehmerische Zwecke erworben und durch den Abnehmer im persönlichen Reisegepäck ausgeführt, liegt eine Ausfuhrlieferung nur vor, wenn 1. der Abnehmer seinen Wohnort oder Sitz im Drittlandsgebiet, ausgenommen Gebiete nach § 1 Abs. 3, hat, 2. der Gegenstand der Lieferung vor Ablauf des dritten Kalendermonats, der auf den Monat der Lieferung folgt, ausgeführt wird und 3. der Gesamtwert der Lieferung einschließlich Umsatzsteuer 50 Euro übersteigt.",
+        "finding": "法定三項要件：第三國居住地、於交付月份之後第三個曆月結束前出口、含稅總額須「超過」50 歐元。"
+      },
+      {
+        "publisher": "Generalzolldirektion / Zoll online",
+        "title": "Umsatzsteuererstattung (nichtkommerzieller Reiseverkehr)",
+        "url": "https://www.zoll.de/DE/Fachthemen/Steuern/Umsatzsteuererstattung/umsatzsteuererstattung_node.html",
+        "accessedAt": "2026-09-20",
+        "finding": "確認現行作業：旅客須居住於第三國並以個人行李出口；須提出「Ausfuhr- und Abnehmerbescheinigung für Umsatzsteuerzwecke」或等效單據並取得海關確認；含稅總額須超過 50 歐元；退款由賣方處理，海關不直接退錢。另記載自 2026-06-16 起於部分邊境海關啟動數位出口單據 dAKZ 試辦，企業與第三國客戶參與皆屬自願。"
+      },
+      {
+        "publisher": "German Federal Foreign Office",
+        "title": "Mehrwertsteuer-Rückerstattung",
+        "url": "https://www.germany.info/us-de/service/steuern/mwst-rueckerstattung-1217014",
+        "accessedAt": "2026-09-20",
+        "finding": "既有記錄引用之來源頁面仍然存在且可讀取，仍載明非歐盟居民可退還價格中所含 19% 增值稅、須取得出口及買方證明、商店無轉付義務（「Eine Verpflichtung hierzu besteht allerdings nicht.」）、須於三個月內出口。該頁未揭示 50 歐元法定門檻。"
+      }
+    ],
+    "conclusionOnExistingRecord": {
+      "availability": "維持 available，無需變更。",
+      "merchantParticipationRequired": "維持 true，無需變更（商店無轉付義務）。",
+      "exportValidationRequired": "維持 true，無需變更（須取得海關確認之出口及買方證明）。",
+      "eligibilitySummary": "建議補強。既有摘要正確但不完整，未載明 § 6 Abs. 3a UStG 的兩項法定要件：(a) 含稅總額須超過 50 歐元；(b) 須於交付月份之後第三個曆月結束前出口。相同格式的 AT 記錄即已載明門檻與出口期限。",
+      "newDevelopment": "自 2026-06-16 起德國海關啟動 dAKZ 數位出口單據試辦（自願參與）；屬作業方式變化，不改變資格條件。"
+    },
+    "recommendedEligibilitySummary": {
+      "zhTw": "適用於居住地在歐盟以外的旅客；含增值稅之交易總額須超過 50 歐元，商品須於交付月份之後第三個曆月結束前以個人行李出口，並取得經德國海關確認的出口及買方證明。退稅是否轉付給旅客由賣方決定，並非所有商店都提供。",
+      "enUs": "Available to travelers domiciled outside the EU; the total value of the supply including VAT must exceed EUR 50, the goods must be exported in personal luggage before the end of the third calendar month following the month of supply, and a customs-certified export and purchaser certificate must be obtained. Passing the VAT relief to the traveler is the seller's decision and not all shops offer it."
+    }
+  },
+  "actionTaken": "未修改 data/traveler-refund-policies.json。該檔為跨品牌、以 marketCode 為唯一鍵的共用司法管轄區事實檔，且本次為多市場並行作業，為避免並行寫入衝突，依任務指示交由統籌者在所有子代理完成查核後統一處理。",
+  "conclusion": "DE 既有記錄的 availability 與兩個布林欄位仍然正確，可沿用；但 eligibilitySummary 建議依 § 6 Abs. 3a UStG 與德國海關現行說明補上 50 歐元門檻與第三個曆月出口期限，並可考慮補充 dAKZ 自願性數位程序。由統籌者決定是否更新。"
+}

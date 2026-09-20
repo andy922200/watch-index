@@ -1,0 +1,115 @@
+{
+  "brandId": "omega",
+  "marketCode": "DE",
+  "researchedAt": "2026-09-20T15:35:00.000Z",
+  "scope": "new-market",
+  "status": "PASS",
+  "languages": [
+    "de",
+    "en"
+  ],
+  "method": "以德文（必要時輔以英文）查詢德國市場在用的 OMEGA 俗稱／收藏家暱稱，並要求來源能把暱稱明確對應到本輪 552 個現行德國官方 reference 中的單一完整配置。先以搜尋找出候選暱稱，再回到 Omega 德國官網（de-de）確認該 reference 是否仍在本輪清單中、以及該名稱是否其實已是官方型號名稱。官方自己使用的版本名稱（例如「Silver Snoopy Award」「007 Edition」「James Bond 60th Anniversary」「Ploprof」）視為官方命名，不計入 localNicknames。",
+  "queries": [
+    "Omega Uhren Spitznamen Sammler Deutschland Speedmaster Seamaster Referenz",
+    "Omega Seamaster Diver 300M Spitzname \"James Bond\" Referenz 210.30.42.20.01.001 deutsch",
+    "Omega Speedmaster \"Snoopy\" Spitzname Referenz deutsch Uhrmagazin",
+    "Omega Seamaster Planet Ocean \"Ploprof\" Spitzname Referenz deutsch Watchtime",
+    "\"310.32.42.50.02.001\" Snoopy Speedmaster deutsch"
+  ],
+  "sourcesReviewed": [
+    {
+      "publisher": "ALTHERR (德國 OMEGA 零售商，Köln／Berlin／Hannover)",
+      "title": "OMEGA & Snoopy: Wie eine Speedmaster 1970 drei Leben rettete",
+      "url": "https://www.altherr.de/magazin/omega-speedmaster-snoopy-geschichte",
+      "finding": "明確將暱稱「Snoopy」對應到完整參考號：2015 年版為 311.32.42.30.04.003，現行（2020 年 50 週年）版為 310.32.42.50.02.001。後者確實存在於本輪德國官方清單中；前者不在本輪清單。",
+      "accepted": true
+    },
+    {
+      "publisher": "OMEGA Deutschland（官方商品頁）",
+      "title": "Speedmaster „Silver Snoopy Award“ Uhr 310.32.42.50.02.001",
+      "url": "https://www.omegawatches.com/de-de/watch-omega-speedmaster-anniversary-series-co-axial-master-chronometer-chronograph-42-mm-31032425002001",
+      "finding": "官方德文頁標題為「Silver Snoopy Award」，分類顯示名稱為「Speedmaster Jubiläumsreihen」。官方命名未單獨使用「Snoopy」，故「Snoopy」屬德國市場流通的簡稱暱稱，且可唯一對應此 reference。",
+      "accepted": true
+    },
+    {
+      "publisher": "OMEGA Deutschland（官方門市查詢）",
+      "title": "OMEGA Verkaufsstelle finden – Juwelier Altherr Berlin",
+      "url": "https://www.omegawatches.com/de-de/store",
+      "finding": "官方德國門市查詢結果包含「Juwelier Altherr Berlin」（is_retailer=1、is_watch_reseller=1），可佐證 ALTHERR 為 OMEGA 官方列名之德國零售商，屬可驗證經銷商來源。",
+      "accepted": true
+    },
+    {
+      "publisher": "Chrono24 Magazin (DE)",
+      "title": "Warum ist die Omega Speedmaster Snoopy so beliebt?",
+      "url": "https://www.chrono24.at/magazine/die-magie-der-omega-speedmaster-snoopy-p_71131/",
+      "finding": "搜尋結果顯示該文以「Snoopy」通稱多個世代的 Speedmaster；嘗試直接讀取 chrono24.de 版本時回應 HTTP 403，無法逐句核對，故不作為採用依據。",
+      "accepted": false
+    },
+    {
+      "publisher": "uhrforum.de",
+      "title": "Omega Speedmaster 310.32.42.50.02.001 Snoopy 2024",
+      "url": "https://uhrforum.de/threads/omega-speedmaster-310-32-42-50-02-001-snoopy-2024.581480/",
+      "finding": "德文使用者論壇標題直接把 310.32.42.50.02.001 稱為 Snoopy，可佐證該用法在德國市場流通；但屬使用者產生內容，僅作旁證，不單獨作為採用依據。",
+      "accepted": false
+    },
+    {
+      "publisher": "Swisswatches Magazine (DE)",
+      "title": "Alles, was Sie über die Omega Speedmaster wissen müssen",
+      "url": "https://swisswatches-magazine.com/de/alles-was-sie-ueber-die-omega-speedmaster-wissen-muessen/",
+      "finding": "使用「Speedy」「Moonwatch」等系列層級稱呼，並討論 2998、105.012、376.0822 等古董參考號，無法對應本輪現行德國官方 reference。",
+      "accepted": false
+    },
+    {
+      "publisher": "WatchTime (DE)",
+      "title": "5 Kultuhren von Omega / 5 Fakten über Omega",
+      "url": "https://www.watchtime.net/uhren-klassiker/5-kultuhren-von-omega/",
+      "finding": "說明「Ploprof」等暱稱的由來，並指出 Ploprof 自 2009 年起已成為官方型號名稱；本輪德國清單中 227.32.55.21.03.001 的官方名稱本就含 Ploprof，故非額外暱稱。",
+      "accepted": false
+    }
+  ],
+  "candidateCount": 6,
+  "acceptedCollectionAliasCount": 0,
+  "acceptedLocalNicknameCount": 1,
+  "acceptedNicknames": [
+    {
+      "reference": "310.32.42.50.02.001",
+      "watchId": "omega:310.32.42.50.02.001",
+      "name": "Snoopy",
+      "rationale": "德國 OMEGA 官方列名零售商 ALTHERR 的專文明確把「Snoopy」對應到完整參考號 310.32.42.50.02.001，且該 reference 存在於本輪德國官方清單（Speedmaster Jubiläumsreihen，11.600 €）。官方德文命名為「Silver Snoopy Award」，未單獨使用「Snoopy」，因此「Snoopy」是可唯一對應此配置的在地俗稱。",
+      "sources": [
+        {
+          "publisher": "ALTHERR",
+          "url": "https://www.altherr.de/magazin/omega-speedmaster-snoopy-geschichte"
+        }
+      ]
+    }
+  ],
+  "rejectedCandidates": [
+    {
+      "name": "Moonwatch / Speedy",
+      "reason": "系列層級通稱，無法唯一對應單一完整配置（本輪 Moonwatch Professional 分類即有 24 個 reference）。"
+    },
+    {
+      "name": "Silver Snoopy Award",
+      "reason": "這是 OMEGA 德國官網自己的官方版本名稱（頁面標題為「Speedmaster „Silver Snoopy Award“ Uhr 310.32.42.50.02.001」），屬官方命名而非在地俗稱。"
+    },
+    {
+      "name": "James Bond / 007",
+      "reason": "OMEGA 德國官網自己即以「007 Edition」（210.92.42.20.01.001）與「James Bond 60th Anniversary」（210.30.42.20.03.002）作為官方版本名稱；作為俗稱則同時指向多個 reference，無法唯一對應。"
+    },
+    {
+      "name": "Ploprof",
+      "reason": "自 2009 年起已是官方型號名稱，本輪 227.32.55.21.03.001 的官方 collectionName 即為「Seamaster Ploprof 1200M」，不另列為俗稱。"
+    },
+    {
+      "name": "Heiliger Gral / Vierter Musketier / F.O.I.S.（古董款）",
+      "reason": "德文來源指向 ST 376.0822、2998、Ranchero 等已停產參考號，不在本輪 552 個現行德國官方 listing 中。"
+    },
+    {
+      "name": "Snoopy（2015 年限量版 311.32.42.30.04.003）",
+      "reason": "該 reference 不在本輪德國官方清單中，不寫入本市場檔。"
+    }
+  ],
+  "collectionAliasesDecision": "未採用任何 collection 層級別名。德文來源中的「Moonwatch」「Speedy」等皆為次系列或泛稱，無法穩定對應到 constellation／de-ville／seamaster／speedmaster 四個官方系列本身，依不可猜測規則保持空陣列。",
+  "notes": "本輪實際執行查詢並檢視來源，結果為 PASS，採用 1 筆 localNickname、0 筆 collectionAlias。"
+}

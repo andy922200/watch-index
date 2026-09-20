@@ -2,15 +2,17 @@
   "$schema": "../schemas/watch-catalog.schema.json",
   "schemaVersion": 3,
   "brandId": "omega",
-  "collectedAt": "2026-09-20T00:22:30.631Z",
+  "collectedAt": "2026-09-20T15:40:00.000Z",
   "sourceMarketCodes": [
     "TW",
     "JP",
     "KR",
     "CH",
-    "HK"
+    "HK",
+    "US",
+    "DE"
   ],
-  "watchCount": 555,
+  "watchCount": 556,
   "watches": [
     {
       "watchId": "omega:131.10.25.60.02.002",
@@ -3341,6 +3343,12 @@
       "collectionId": "seamaster",
       "reference": "220.10.28.60.54.001",
       "imageUrl": "https://www.omegawatches.co.kr/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-quartz-28-mm-22010286054001-9f7954.png"
+    },
+    {
+      "watchId": "omega:215.92.46.22.03.001",
+      "collectionId": "seamaster",
+      "reference": "215.92.46.22.03.001",
+      "imageUrl": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-planet-ocean-600m-co-axial-master-chronometer-gmt-45-5-mm-21592462203001-f3f5a8.png"
     }
   ]
 }

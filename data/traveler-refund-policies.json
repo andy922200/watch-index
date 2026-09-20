@@ -72,21 +72,33 @@
       "marketCode": "DE",
       "effectiveFrom": null,
       "effectiveTo": null,
-      "assessedAt": "2026-09-11T17:00:00Z",
+      "assessedAt": "2026-09-20T15:40:00Z",
       "availability": "available",
       "eligibilitySummary": {
-        "zhTw": "適用於居住地在歐盟以外、購買後將商品出口的旅客；購買時須向賣方取得出口及買方證明。退稅是否轉付給旅客由賣方決定，並非所有商店都提供。",
-        "enUs": "Available when customers resident outside the EU export goods bought in Germany and obtain the seller's export and purchaser certificate at purchase. Passing the VAT relief to the traveler is the seller's decision and not all shops offer it."
+        "zhTw": "適用於居住地在歐盟以外的旅客；含增值稅之交易總額須超過 50 歐元，商品須於交付月份之後第三個曆月結束前以個人行李出口，並取得經德國海關確認的出口及買方證明。退稅是否轉付給旅客由賣方決定，並非所有商店都提供。",
+        "enUs": "Available to travelers domiciled outside the EU; the total value of the supply including VAT must exceed EUR 50, the goods must be exported in personal luggage before the end of the third calendar month following the month of supply, and a customs-certified export and purchaser certificate must be obtained. Passing the VAT relief to the traveler is the seller's decision and not all shops offer it."
       },
       "merchantParticipationRequired": true,
       "exportValidationRequired": true,
-      "evidencePath": "data/evidence/rolex/DE/2026-09-12/traveler-refund-policy.json",
+      "evidencePath": "data/evidence/omega/DE/2026-09-20/traveler-refund-policy.json",
       "sources": [
         {
           "publisher": "German Federal Foreign Office",
           "title": "Mehrwertsteuer-Rückerstattung",
           "url": "https://www.germany.info/us-de/service/steuern/mwst-rueckerstattung-1217014",
-          "accessedAt": "2026-09-11T17:00:00Z"
+          "accessedAt": "2026-09-20T00:00:00Z"
+        },
+        {
+          "publisher": "Bundesministerium der Justiz / juris (gesetze-im-internet.de)",
+          "title": "§ 6 UStG – Ausfuhrlieferung",
+          "url": "https://www.gesetze-im-internet.de/ustg_1980/__6.html",
+          "accessedAt": "2026-09-20T00:00:00Z"
+        },
+        {
+          "publisher": "Generalzolldirektion / Zoll online",
+          "title": "Umsatzsteuererstattung (nichtkommerzieller Reiseverkehr)",
+          "url": "https://www.zoll.de/DE/Fachthemen/Steuern/Umsatzsteuererstattung/umsatzsteuererstattung_node.html",
+          "accessedAt": "2026-09-20T00:00:00Z"
         }
       ]
     },

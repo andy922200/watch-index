@@ -1,0 +1,55 @@
+{
+  "brandId": "omega",
+  "marketCode": "US",
+  "checkedAt": "2026-09-20T15:30:00.000Z",
+  "scope": "new-market (Omega US) 價格稅別語意查核",
+  "conclusion": {
+    "currencyCode": "USD",
+    "priceType": "tax-exclude",
+    "taxRatePercent": null,
+    "rationale": "OMEGA 美國官網 Conditions of Sale 第 3.1 條明文載明網站價格為美元且不含稅；美國無全國統一銷售稅率，銷售稅由各州與地方政府分別課徵，故不得填入任何單一 taxRatePercent，依契約規則保留 null（未知稅率不可填 0）。"
+  },
+  "primarySources": [
+    {
+      "publisher": "OMEGA US",
+      "title": "Conditions of Sale",
+      "url": "https://www.omegawatches.com/en-us/conditions-of-sale",
+      "accessedAt": "2026-09-20T15:26:00.000Z",
+      "httpStatus": 200,
+      "quote": "3.1. The prices on this website are in US dollars and do not include taxes or charges for shipping and handling. All such taxes and charges will be added to your merchandise total, and will be itemized in your shopping cart and in your order confirmation email."
+    },
+    {
+      "publisher": "USAGov",
+      "title": "How to pay and get help with state and local taxes",
+      "url": "https://www.usa.gov/state-taxes",
+      "accessedAt": "2026-09-20T15:24:00.000Z",
+      "quote": "The sales tax you pay is based on a percentage of the sales price of an item you buy. Most states and municipalities have a sales tax and charge different percentages on different goods, or not at all for other items.",
+      "relevance": "佐證美國無全國統一銷售稅率與課稅品項，故 taxRatePercent 必須為 null。"
+    }
+  ],
+  "corroboratingObservations": [
+    {
+      "observation": "OMEGA 美國站前端 Magento 設定 display_cart_subtotal_incl_tax = 0、display_cart_subtotal_excl_tax = 1（於 /en-us 頁面內嵌設定中觀察）。",
+      "url": "https://www.omegawatches.com/en-us/customer-service",
+      "accessedAt": "2026-09-20T15:24:00.000Z",
+      "relevance": "官方購物車顯示未稅小計，與 Conditions of Sale 3.1 的未稅語意一致；僅作為佐證，不單獨作為結論依據。"
+    }
+  ],
+  "conflictingSourceReviewed": [
+    {
+      "publisher": "OMEGA US",
+      "title": "Customer service FAQ – Will taxes and fees be charged?",
+      "url": "https://www.omegawatches.com/en-us/customer-service/faq",
+      "accessedAt": "2026-09-20T15:26:00.000Z",
+      "quote": "Shipping is only possible within the national territory of the country where you place your order. Therefore, there are no additional taxes or charges.",
+      "assessment": "此段為 OMEGA 各市場共用的通用 FAQ 文字，語意是「不會另有跨境關稅／進口費用」，與同站 Conditions of Sale 3.1 明確、且針對美元定價撰寫的條款相衝突。依『官方價格說明優先』原則採用 Conditions of Sale 3.1，並記錄此衝突以供追溯。"
+    }
+  ],
+  "crossBrandNote": "本結論與 data/history/US/rolex-price-history.json 既有的 tax-exclude / taxRatePercent = null 結果一致，但係以上述 OMEGA 官方來源獨立查證而得，未沿用 Rolex 既有結論作為依據。",
+  "priceFormatCheck": {
+    "observedFormat": "$ + 千分位逗號，例如 $7,400、$627,900",
+    "decimalPricesObserved": 0,
+    "lossless": true,
+    "note": "548 筆價格的顯示文字、data-price-amount 與 dataLayer price 三者皆為整數美元且完全一致，可無損寫入現行整數契約；未進行任何四捨五入或截斷。"
+  }
+}

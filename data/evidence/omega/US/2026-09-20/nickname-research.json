@@ -1,0 +1,101 @@
+{
+  "brandId": "omega",
+  "marketCode": "US",
+  "researchedAt": "2026-09-20T15:20:00.000Z",
+  "nicknameResearch": {
+    "status": "PASS",
+    "scope": "new-market",
+    "languages": [
+      "en"
+    ],
+    "queries": [
+      "Omega Speedmaster nickname reference \"310.32.42.50.02.001\" Snoopy",
+      "Omega Speedmaster \"Silver Snoopy Award\" 310.32.42.50.02.001 review (限 monochrome-watches.com / fratellowatches.com / watchtime.com / ablogtowatch.com)",
+      "Hodinkee Omega Speedmaster Calibre 321 \"Ed White\" 311.30.40.30.01.001 nickname",
+      "Omega Speedmaster Calibre 321 Ed White 311.30.40.30.01.001 nickname (限 monochrome-watches.com / fratellowatches.com / watchtime.com / ablogtowatch.com)",
+      "Omega Seamaster Diver 300M nickname \"James Bond\" reference current model 2026",
+      "\"Speedy\" nickname Omega Speedmaster Speedy Tuesday Fratello why called Speedy"
+    ],
+    "sourcesReviewed": 8,
+    "candidateCount": 6,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 2,
+    "notes": "僅在來源能將俗稱一對一對應到本輪 548 筆現行官方 reference 時才採用；collectionAliases 全部維持空陣列。"
+  },
+  "method": "以英文查詢美國／英語市場對本輪收集到之現行官方 reference 的俗稱；先由 OMEGA US 官方商品頁確認官方正式名稱，再檢視獨立鐘錶媒體是否把『非官方俗稱』明確綁定到同一完整參考號。官方正式型號名稱（例如 Moonwatch、Ploprof、007 Edition、Silver Snoopy Award）不視為俗稱。",
+  "acceptedNicknames": [
+    {
+      "watchId": "omega:310.32.42.50.02.001",
+      "reference": "310.32.42.50.02.001",
+      "officialModelName": "Speedmaster Anniversary Series（官方頁標題為 Speedmaster “Silver Snoopy Award”）",
+      "names": [
+        "Snoopy"
+      ],
+      "sources": [
+        {
+          "publisher": "Monochrome Watches",
+          "title": "Introducing - Omega Speedmaster Silver Snoopy Award 50th Anniversary",
+          "url": "https://monochrome-watches.com/omega-speedmaster-silver-snoopy-award-50th-anniversary-31032425002001-price/",
+          "finding": "文章明列 reference 310.32.42.50.02.001，並通篇以簡稱 Snoopy 指稱該款。"
+        },
+        {
+          "publisher": "Fratello Watches",
+          "title": "Hands-On: Omega Speedmaster Silver Snoopy Award 50th Review",
+          "url": "https://www.fratellowatches.com/hands-on-omega-speedmaster-silver-snoopy-award-50th-review/",
+          "finding": "獨立鐘錶媒體以 Snoopy 稱呼同一 50 週年款，對應官方現行在售 reference。"
+        }
+      ],
+      "acceptReason": "俗稱 Snoopy 與此完整參考號一對一對應，且該 reference 確實出現在本輪 OMEGA US 現行官方 listing。"
+    },
+    {
+      "watchId": "omega:311.30.40.30.01.001",
+      "reference": "311.30.40.30.01.001",
+      "officialModelName": "Speedmaster Calibre 321",
+      "names": [
+        "Ed White"
+      ],
+      "sources": [
+        {
+          "publisher": "Monochrome Watches",
+          "title": "Omega Speedmaster Moonwatch 321 Stainless Steel \"Ed White\"",
+          "url": "https://monochrome-watches.com/omega-speedmaster-moonwatch-321-stainless-steel-ed-white/",
+          "finding": "文章載明 reference 311.30.40.30.01.001，並稱其為 the ‘Ed White’ re-edition。"
+        },
+        {
+          "publisher": "aBlogtoWatch",
+          "title": "Omega Releases First New Calibre 321 Speedmaster Model In Steel, Referencing The Legendary 'Ed White'",
+          "url": "https://www.ablogtowatch.com/omega-releases-first-new-calibre-321-speedmaster-model-in-steel-referencing-the-legendary-ed-white/",
+          "finding": "同樣將 Ed White 俗稱綁定至此不鏽鋼 Calibre 321 款式。"
+        }
+      ],
+      "acceptReason": "Ed White 是官方名稱以外的業界通用俗稱，且來源明確標示同一完整參考號，該 reference 在本輪美國官網現行在售。"
+    }
+  ],
+  "rejectedCandidates": [
+    {
+      "name": "Moonwatch",
+      "reason": "為 OMEGA 官方系列名稱（Speedmaster Moonwatch Professional），非俗稱；且涵蓋 24 個以上現行 reference，無法一對一對應。"
+    },
+    {
+      "name": "Speedy",
+      "reason": "雖在英語社群廣泛使用，但檢視的來源皆未提供可引用的定義性說明或與特定完整配置／系列的權威對應；依不可猜測規則不寫入 collectionAliases。"
+    },
+    {
+      "name": "Bond / 007",
+      "reason": "OMEGA 官方已將 007 Edition、James Bond 60th anniversary 作為正式型號名稱使用；且本輪 007-edition 視圖含 5 個不同 reference，俗稱無法一對一對應單一完整配置。"
+    },
+    {
+      "name": "Ultraman",
+      "reason": "來源所指 reference 311.12.42.30.01.001 未出現在本輪 548 筆 OMEGA US 現行官方 listing 中。"
+    },
+    {
+      "name": "Tintin",
+      "reason": "來源所指 reference 311.30.42.30.01.004 未出現在本輪 548 筆 OMEGA US 現行官方 listing 中。"
+    },
+    {
+      "name": "Ploprof",
+      "reason": "為官方系列名稱（Seamaster Ploprof 1200M），非俗稱。"
+    }
+  ],
+  "conclusion": "本輪實際執行俗稱研究並採用 2 筆可精確對應現行官方 reference 的美國英語市場俗稱（Snoopy、Ed White），其餘候選皆因屬官方名稱、無法一對一對應或該 reference 未在本市場現行在售而拒絕；collectionAliases 四個系列維持空陣列。"
+}

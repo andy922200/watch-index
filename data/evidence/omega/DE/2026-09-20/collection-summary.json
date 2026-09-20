@@ -1,0 +1,295 @@
+{
+  "brandId": "omega",
+  "marketCode": "DE",
+  "locale": "de-DE",
+  "collectedAt": "2026-09-20T15:20:45.681Z",
+  "entryUrl": "https://www.omegawatches.com/de-de/watches",
+  "sourceDiscovery": {
+    "method": "直接載入 https://www.omegawatches.com/de-de/watches/... 的分類頁會被 geo-IP 導向 https://www.omegawatches.com.tw/...；因此先在官方頁面的語言／地區選擇器中取得標籤為「Deutschland」的官方連結（a.ow-language__link → https://www.omegawatches.com/de-de/...），完成官方市場切換後才開始讀取資料。之後所有請求都在同一個已選德國市場的瀏覽器 session（獨立 isolatedContext）內以同源 fetch 發出。頁面實際載入的結構化資料即為 catalog 回應中的 li.product-item 屬性與 data-product-dl JSON；未發現獨立的 REST/GraphQL 商品端點，因此以官方 HTML 回應中的結構化屬性為事實基礎，並另以官方站內搜尋視圖與商品頁 schema.org JSON-LD 做獨立抽查。",
+    "redirectHandling": "只採用完成官方地區切換後、htmlLang 為 de-DE 且 dataLayer country=DE 的回應；自動導向至 omegawatches.com.tw 的回應一律不納入。",
+    "officialEndpoints": [
+      "https://www.omegawatches.com/de-de/watches",
+      "https://www.omegawatches.com/de-de/watches/{family}/{subcategory}/catalog",
+      "https://www.omegawatches.com/de-de/watches/{family}/{subcategory}/catalog?p={n}",
+      "https://www.omegawatches.com/de-de/watch-omega-{product-slug}",
+      "https://www.omegawatches.com/de-de/catalogsearch/result/?q={reference}",
+      "https://www.omegawatches.com/de-de/conditions-of-sale",
+      "https://www.omegawatches.com/de-de/customer-service/faq/e-commerce",
+      "https://www.omegawatches.com/de-de/store"
+    ],
+    "structuredFieldsUsed": [
+      "li.product-item[data-id] / [data-sku]",
+      "span.tracking-data[data-sku] (完整點分 reference)",
+      "span.tracking-data[data-real-sku]",
+      "span.tracking-data[data-product-dl] (JSON: website.country, website.language, currency, item_category2, item_category3, price)",
+      "[data-price-amount] (結構化價格數值)",
+      "span.price (原始在地價格文字)",
+      ".ow-prod__tag-new (新款標示，顯示文字為 NEU)",
+      "a[data-role=\"ajax-pager\"][data-target=\"next\"] (官方下一頁／Mehr laden 連結)",
+      "span[data-count] / .ow-filters-modal__action[data-count] (官方分類總數)",
+      "[data-code=\"watch_dial\"] / [data-code=\"watch_dial_detailed_color\"] / [data-code=\"sku\"] (商品詳情)",
+      "script[type=\"application/ld+json\"] @type=Product offers.price / offers.sku / priceCurrency"
+    ]
+  },
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "available",
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "PASS",
+    "toolsAttempted": [
+      {
+        "tool": "Bash curl (直接 HTTP)",
+        "result": "FAIL",
+        "detail": "本次執行環境對 www.omegawatches.com 無出口連線；curl 以 HTTP/2 INTERNAL_ERROR 與 20 秒逾時收場（0 bytes）。改用瀏覽器工具。"
+      },
+      {
+        "tool": "WebFetch",
+        "result": "PASS",
+        "detail": "用於初步確認 de-de 站存在與分類清單，以及德國 VAT 法規與海關來源；因其為摘要式讀取，不作為逐筆資料來源。"
+      },
+      {
+        "tool": "chrome-devtools MCP (new_page / navigate_page / evaluate_script)",
+        "result": "PASS",
+        "detail": "在 isolatedContext=omega-de-market 的獨立瀏覽器 context 中完成官方地區切換、分類全量收集、商品詳情與抽查。"
+      },
+      {
+        "tool": "claude-in-chrome MCP",
+        "result": "NOT RUN",
+        "detail": "chrome-devtools MCP 已足以完成 network 與 DOM 觀察，未另行呼叫。"
+      },
+      {
+        "tool": "browser-web-data-discovery skill",
+        "result": "NOT RUN",
+        "detail": "已直接以 chrome-devtools MCP 實作該 skill 規範的真實瀏覽器觀察與停止條件驗證流程。"
+      }
+    ],
+    "fallbackTool": "chrome-devtools MCP",
+    "notes": "同一瀏覽器另有其他工作單元開啟的 en-us 分頁；本次一律使用獨立 isolatedContext，未共用 cookie，也未讀取該分頁內容。"
+  },
+  "catalogCategoryCount": 16,
+  "categories": [
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-de/watches/seamaster/aqua-terra-150m/catalog",
+      "officialTotal": 107,
+      "uniqueCollectedCount": 107,
+      "pagesUsed": 5,
+      "matchesOfficialTotal": true,
+      "lastPageNextUrl": null
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-de/watches/seamaster/diver-300-m/catalog",
+      "officialTotal": 59,
+      "uniqueCollectedCount": 59,
+      "pagesUsed": 3,
+      "matchesOfficialTotal": true,
+      "lastPageNextUrl": null
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-de/watches/seamaster/planet-ocean/catalog",
+      "officialTotal": 17,
+      "uniqueCollectedCount": 17,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true,
+      "lastPageNextUrl": null
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-de/watches/seamaster/heritage-models/catalog",
+      "officialTotal": 17,
+      "uniqueCollectedCount": 17,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true,
+      "lastPageNextUrl": null
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-de/watches/seamaster/instruments/catalog",
+      "officialTotal": 1,
+      "uniqueCollectedCount": 1,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true,
+      "lastPageNextUrl": null
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-de/watches/speedmaster/moonwatch-professional/catalog",
+      "officialTotal": 24,
+      "uniqueCollectedCount": 24,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true,
+      "lastPageNextUrl": null
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-de/watches/speedmaster/heritage-models/catalog",
+      "officialTotal": 16,
+      "uniqueCollectedCount": 16,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true,
+      "lastPageNextUrl": null
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-de/watches/speedmaster/dark-side-of-the-moon/catalog",
+      "officialTotal": 8,
+      "uniqueCollectedCount": 8,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true,
+      "lastPageNextUrl": null
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-de/watches/speedmaster/speedmaster-38-mm/catalog",
+      "officialTotal": 11,
+      "uniqueCollectedCount": 11,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true,
+      "lastPageNextUrl": null
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-de/watches/speedmaster/two-counters/catalog",
+      "officialTotal": 36,
+      "uniqueCollectedCount": 36,
+      "pagesUsed": 2,
+      "matchesOfficialTotal": true,
+      "lastPageNextUrl": null
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-de/watches/constellation/observatory/catalog",
+      "officialTotal": 9,
+      "uniqueCollectedCount": 9,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true,
+      "lastPageNextUrl": null
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-de/watches/constellation/constellation/catalog",
+      "officialTotal": 119,
+      "uniqueCollectedCount": 119,
+      "pagesUsed": 5,
+      "matchesOfficialTotal": true,
+      "lastPageNextUrl": null
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-de/watches/de-ville/ladymatic/catalog",
+      "officialTotal": 6,
+      "uniqueCollectedCount": 6,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true,
+      "lastPageNextUrl": null
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-de/watches/de-ville/tresor/catalog",
+      "officialTotal": 38,
+      "uniqueCollectedCount": 38,
+      "pagesUsed": 2,
+      "matchesOfficialTotal": true,
+      "lastPageNextUrl": null
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-de/watches/de-ville/prestige/catalog",
+      "officialTotal": 82,
+      "uniqueCollectedCount": 82,
+      "pagesUsed": 4,
+      "matchesOfficialTotal": true,
+      "lastPageNextUrl": null
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-de/watches/de-ville/tourbillon/catalog",
+      "officialTotal": 2,
+      "uniqueCollectedCount": 2,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true,
+      "lastPageNextUrl": null
+    }
+  ],
+  "stopEvidence": {
+    "paginationModel": "官方「Mehr laden」為累積式分頁（?p=N 回傳第 1..N 頁的累積卡片）。",
+    "rule": "逐一跟隨官方 a[data-role=\"ajax-pager\"][data-target=\"next\"]，直到該連結不存在為止。",
+    "allCategoriesLastPageNextUrlNull": true,
+    "allCategoriesMatchOfficialTotal": true,
+    "sumOfCategoryUniques": 552,
+    "crossCategoryUniqueTotal": 552,
+    "noCrossCategoryDuplicates": true,
+    "allPagesHttp200": true
+  },
+  "uniqueListingCount": 552,
+  "productDetailCount": 552,
+  "priceStatusCounts": {
+    "listed": 552,
+    "price-unavailable": 0,
+    "not-listed": 0
+  },
+  "currencyAndNumberFormat": {
+    "currencyCode": "EUR",
+    "listingPriceTextPatterns": [
+      "#.### €",
+      "##.### €",
+      "###.### €"
+    ],
+    "searchViewPriceTextPattern": "#.###,00 €",
+    "interpretation": "德語數字格式：點為千分位、逗號為小數分隔。分類卡片不顯示小數；官方站內搜尋視圖顯示兩位小數，本輪抽查 21 筆的小數部分皆為 ,00。",
+    "structuredAmountsAllIntegers": true,
+    "nonZeroDecimalPriceCount": 0,
+    "nonZeroDecimalNote": "552 筆 [data-price-amount] 全為整數，且 552 筆原始價格文字皆不含逗號（無小數部分）；本輪未出現無法以整數契約無損保存的價格。"
+  },
+  "taxDetermination": {
+    "conclusion": "tax-include，taxRatePercent 19",
+    "omegaOwnSources": [
+      {
+        "url": "https://www.omegawatches.com/de-de/conditions-of-sale",
+        "httpStatus": 200,
+        "quotes": [
+          "Die Preise auf dieser Website sind in Euro und beinhalten die lokale Mehrwertsteuer sowie die Standard-Liefergebühren (wie auf der Checkout-Seite und in der Auftragsbestätigung angegeben).",
+          "Die Preise auf dieser Webseite sind in Euro und sind inklusive Mehrwertsteuer, sowie Standard-Liefergebühren (wie auf der Bestellseite und in der Auftragsbestätigung angegeben)."
+        ]
+      },
+      {
+        "url": "https://www.omegawatches.com/de-de/customer-service/faq/e-commerce",
+        "httpStatus": 200,
+        "quotes": [
+          "Unsere Preise sind inklusive Mehrwertsteuer und inklusive Versand.",
+          "Alle Preise verstehen sich inklusive Mwst.",
+          "Fallen zusätzliche Steuern oder Zollgebühren an? Die Produkte werden aus der Schweiz versendet. Es fallen für Sie keine zusätzlichen Steuern oder Zollgebühren an."
+        ]
+      },
+      {
+        "url": "https://www.omegawatches.com/de-de/site-information",
+        "httpStatus": 200,
+        "quotes": [
+          "Firmensitz: Eschborn / Deutschland ... UST-ID-Nr."
+        ],
+        "note": "德國站營運主體為 The Swatch Group (Deutschland) GmbH，設於 Eschborn，並登載德國 USt-IdNr.，佐證其適用德國增值稅制度。"
+      }
+    ],
+    "rateSources": [
+      {
+        "publisher": "Bundesministerium der Justiz / juris (gesetze-im-internet.de)",
+        "title": "§ 12 UStG – Steuersätze",
+        "url": "https://www.gesetze-im-internet.de/ustg_1980/__12.html",
+        "quote": "Die Steuer beträgt für jeden steuerpflichtigen Umsatz 19 Prozent der Bemessungsgrundlage",
+        "accessedAt": "2026-09-20"
+      },
+      {
+        "publisher": "Bundesministerium der Finanzen",
+        "title": "Das ändert sich 2026 (steuerliche Änderungen)",
+        "url": "https://www.bundesfinanzministerium.de/Content/DE/Standardartikel/Themen/Steuern/das-aendert-sich-2026.html",
+        "note": "2026-01-01 生效的稅率調整僅涉及餐飲服務（Restaurant- und Verpflegungsdienstleistungen 由 19% 降為 7%）；一般商品的 Regelsteuersatz 維持 19%，腕錶不屬於 UStG 附件 2 的減稅清單。",
+        "accessedAt": "2026-09-20"
+      }
+    ],
+    "reasoning": "先以 Omega 德國官網自己的條款與電商 FAQ 確認顯示價格「inklusive Mehrwertsteuer」；官網未揭露稅率百分比，故再以德國稅法（§ 12 Abs. 1 UStG）確認適用之 Regelsteuersatz 為 19%，並確認 2026 年生效的稅率變動不涵蓋腕錶。未沿用瑞士市場或 Rolex 德國市場的既有結論。",
+    "limitations": "官網 FAQ 說明商品自瑞士出貨且消費者不另負擔稅費；本專案 priceType 記錄的是「官方顯示價格是否含適用消費稅」，依 Omega DE 條款為含稅，故記為 tax-include 19%。實際發票上的稅額拆分未於官網公開，未另行推算。"
+  },
+  "protectedScope": {
+    "filesWritten": [
+      "data/markets/omega-germany-market.json",
+      "data/history/DE/omega-price-history.json",
+      "data/evidence/omega/DE/2026-09-20/*"
+    ],
+    "filesDeliberatelyUntouched": [
+      "data/catalog/omega-catalog.json（catalog 合併由統籌者執行）",
+      "data/traveler-refund-policies.json（跨品牌共用檔，由統籌者統一處理）",
+      "data/history/DE/rolex-price-history.json",
+      "data/schemas/*",
+      "任何 US 市場檔案與其他市場的 market／history／evidence"
+    ],
+    "observedOutOfScopeArtifacts": "工作區已存在 data/markets/omega-united-states-market.json（由另一獨立工作單元負責）。本單元僅在確認 Omega 市場檔命名慣例時以檔名清單掃描到其存在並讀取其標頭欄位（salesRegion／locale／source），未讀取其 watches 內容，未使用其任何資料，也未修改它。"
+  },
+  "errors": []
+}

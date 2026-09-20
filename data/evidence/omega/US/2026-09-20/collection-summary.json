@@ -1,0 +1,302 @@
+{
+  "brandId": "omega",
+  "marketCode": "US",
+  "locale": "en-US",
+  "currencyCode": "USD",
+  "collectedAt": "2026-09-20T14:59:49.952Z",
+  "finishedAt": "2026-09-20T15:21:58.375Z",
+  "entryUrl": "https://www.omegawatches.com/en-us/watches",
+  "marketVerification": {
+    "htmlLang": "en-US",
+    "hreflangAlternate": "https://www.omegawatches.com/en-us/watches/seamaster/aqua-terra-150m/catalog (rel=alternate hreflang=\"en-US\")",
+    "storeCode": "us_en（頁面 localization 設定 storeCode）",
+    "dataLayerWebsite": {
+      "country": "US",
+      "language": "EN",
+      "currency": "USD"
+    },
+    "priceFormatObserved": "US$ 前置符號加千分位逗號，例如 $7,400；548 筆皆為整數美元，未觀察到任何含分（cents）的價格。"
+  },
+  "sourceDiscovery": {
+    "method": "先以 chrome-devtools MCP 開啟 https://www.omegawatches.com/en-us/watches；瀏覽器所在 IP 位於台灣，第一次直接開啟分類頁時曾被官方 geo 導向 www.omegawatches.com.tw（已捨棄該回應、未納入資料）。改由 /en-us 入口進入後，後續 /en-us 分類頁與商品頁皆維持 en-US 不再導向，並以 html lang、hreflang、storeCode 與 dataLayer 幣別逐項確認市場條件後才開始收集。",
+    "networkDiscovery": {
+      "required": true,
+      "builtInBrowserStatus": "available",
+      "networkToolConfigured": true,
+      "networkToolAttempted": true,
+      "networkToolResult": "PASS",
+      "toolsUsed": [
+        "chrome-devtools MCP: navigate_page / evaluate_script / list_pages / close_page"
+      ],
+      "directHttpAttempt": "先嘗試以 curl 直接請求 https://www.omegawatches.com/en-us/watches，連線被對方中斷（curl exit 92 / 000，無回應內容），因此改用已授權真實瀏覽器；同一環境對 https://example.com 的 curl 可正常取得 200，確認並非本機網路問題。",
+      "structuredSourceFound": "官方分類目錄頁在伺服器端直接輸出完整商品卡（li.product-item）與 span.tracking-data 的 data-sku、data-product-dl（JSON dataLayer），以及 [data-role=\"list-pager\"] a.action.next 的明確下一頁連結；官方未另外提供公開 REST/GraphQL 目錄端點，故以同源請求讀取官方 HTML 回應內的結構化 dataLayer 為主要來源。",
+      "fallbackTool": null,
+      "notes": "所有請求皆在同一已通過市場驗證的 en-us browser session 中以 fetch(credentials:'include') 發出，未猜測任何未觀察到的 endpoint、未繞過任何存取限制，evidence 未保存 Cookie、token 或授權標頭。"
+    },
+    "officialEndpoints": [
+      "https://www.omegawatches.com/en-us/watches",
+      "https://www.omegawatches.com/en-us/watches/{family}",
+      "https://www.omegawatches.com/en-us/watches/{family}/{subcategory}/catalog[?p=N]",
+      "https://www.omegawatches.com/en-us/watch-omega-{product-slug}",
+      "https://www.omegawatches.com/en-us/watchfinder[?p=N]"
+    ],
+    "redirectHandling": "只採用 final URL 仍在 /en-us/ 之下的回應；收集函式對任何被導離 en-us 的 final URL 直接丟出錯誤中止，本輪 16 個分類與 548 筆商品詳情皆未觸發。"
+  },
+  "catalogCategoryCount": 16,
+  "categories": [
+    {
+      "catalogUrl": "https://www.omegawatches.com/en-us/watches/seamaster/aqua-terra-150m/catalog",
+      "officialTotal": 107,
+      "officialTotalSource": "分類篩選面板 [data-role=\"apply-filters\"] 的 data-count",
+      "uniqueCollectedCount": 107,
+      "pagesUsed": 5,
+      "lastPageNextUrl": null,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/en-us/watches/seamaster/diver-300-m/catalog",
+      "officialTotal": 60,
+      "officialTotalSource": "分類篩選面板 [data-role=\"apply-filters\"] 的 data-count",
+      "uniqueCollectedCount": 60,
+      "pagesUsed": 3,
+      "lastPageNextUrl": null,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/en-us/watches/seamaster/planet-ocean/catalog",
+      "officialTotal": 18,
+      "officialTotalSource": "分類篩選面板 [data-role=\"apply-filters\"] 的 data-count",
+      "uniqueCollectedCount": 18,
+      "pagesUsed": 1,
+      "lastPageNextUrl": null,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/en-us/watches/seamaster/heritage-models/catalog",
+      "officialTotal": 17,
+      "officialTotalSource": "分類篩選面板 [data-role=\"apply-filters\"] 的 data-count",
+      "uniqueCollectedCount": 17,
+      "pagesUsed": 1,
+      "lastPageNextUrl": null,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/en-us/watches/seamaster/instruments/catalog",
+      "officialTotal": 1,
+      "officialTotalSource": "分類頁 #product-list-count 的 <span data-count=\"1\">1</span> watch（該分類僅 1 筆，官方未渲染篩選面板）",
+      "uniqueCollectedCount": 1,
+      "pagesUsed": 1,
+      "lastPageNextUrl": null,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/en-us/watches/speedmaster/moonwatch-professional/catalog",
+      "officialTotal": 24,
+      "officialTotalSource": "分類篩選面板 [data-role=\"apply-filters\"] 的 data-count",
+      "uniqueCollectedCount": 24,
+      "pagesUsed": 1,
+      "lastPageNextUrl": null,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/en-us/watches/speedmaster/heritage-models/catalog",
+      "officialTotal": 16,
+      "officialTotalSource": "分類篩選面板 [data-role=\"apply-filters\"] 的 data-count",
+      "uniqueCollectedCount": 16,
+      "pagesUsed": 1,
+      "lastPageNextUrl": null,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/en-us/watches/speedmaster/dark-side-of-the-moon/catalog",
+      "officialTotal": 8,
+      "officialTotalSource": "分類篩選面板 [data-role=\"apply-filters\"] 的 data-count",
+      "uniqueCollectedCount": 8,
+      "pagesUsed": 1,
+      "lastPageNextUrl": null,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/en-us/watches/speedmaster/speedmaster-38-mm/catalog",
+      "officialTotal": 11,
+      "officialTotalSource": "分類篩選面板 [data-role=\"apply-filters\"] 的 data-count",
+      "uniqueCollectedCount": 11,
+      "pagesUsed": 1,
+      "lastPageNextUrl": null,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/en-us/watches/speedmaster/two-counters/catalog",
+      "officialTotal": 36,
+      "officialTotalSource": "分類篩選面板 [data-role=\"apply-filters\"] 的 data-count",
+      "uniqueCollectedCount": 36,
+      "pagesUsed": 2,
+      "lastPageNextUrl": null,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/en-us/watches/constellation/observatory/catalog",
+      "officialTotal": 9,
+      "officialTotalSource": "分類篩選面板 [data-role=\"apply-filters\"] 的 data-count",
+      "uniqueCollectedCount": 9,
+      "pagesUsed": 1,
+      "lastPageNextUrl": null,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/en-us/watches/constellation/constellation/catalog",
+      "officialTotal": 119,
+      "officialTotalSource": "分類篩選面板 [data-role=\"apply-filters\"] 的 data-count",
+      "uniqueCollectedCount": 119,
+      "pagesUsed": 5,
+      "lastPageNextUrl": null,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/en-us/watches/de-ville/ladymatic/catalog",
+      "officialTotal": 6,
+      "officialTotalSource": "分類篩選面板 [data-role=\"apply-filters\"] 的 data-count",
+      "uniqueCollectedCount": 6,
+      "pagesUsed": 1,
+      "lastPageNextUrl": null,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/en-us/watches/de-ville/tresor/catalog",
+      "officialTotal": 32,
+      "officialTotalSource": "分類篩選面板 [data-role=\"apply-filters\"] 的 data-count",
+      "uniqueCollectedCount": 32,
+      "pagesUsed": 2,
+      "lastPageNextUrl": null,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/en-us/watches/de-ville/prestige/catalog",
+      "officialTotal": 82,
+      "officialTotalSource": "分類篩選面板 [data-role=\"apply-filters\"] 的 data-count",
+      "uniqueCollectedCount": 82,
+      "pagesUsed": 4,
+      "lastPageNextUrl": null,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/en-us/watches/de-ville/tourbillon/catalog",
+      "officialTotal": 2,
+      "officialTotalSource": "分類篩選面板 [data-role=\"apply-filters\"] 的 data-count",
+      "uniqueCollectedCount": 2,
+      "pagesUsed": 1,
+      "lastPageNextUrl": null,
+      "matchesOfficialTotal": true
+    }
+  ],
+  "familyLevelCrossCheck": {
+    "method": "以官方 family 層級頁面的篩選面板 data-count 與各子分類官方總數相加比對。",
+    "families": [
+      {
+        "url": "https://www.omegawatches.com/en-us/watches/seamaster",
+        "officialTotal": 203,
+        "sumOfSubcategoryOfficialTotals": 203,
+        "collectedUnique": 203
+      },
+      {
+        "url": "https://www.omegawatches.com/en-us/watches/speedmaster",
+        "officialTotal": 95,
+        "sumOfSubcategoryOfficialTotals": 95,
+        "collectedUnique": 95
+      },
+      {
+        "url": "https://www.omegawatches.com/en-us/watches/constellation",
+        "officialTotal": 128,
+        "sumOfSubcategoryOfficialTotals": 128,
+        "collectedUnique": 128
+      },
+      {
+        "url": "https://www.omegawatches.com/en-us/watches/de-ville",
+        "officialTotal": 122,
+        "sumOfSubcategoryOfficialTotals": 122,
+        "collectedUnique": 122
+      }
+    ],
+    "familyTotalSum": 548
+  },
+  "watchfinderCrossCheck": {
+    "entryUrl": "https://www.omegawatches.com/en-us/watchfinder",
+    "officialTotal": 552,
+    "uniqueCollectedCount": 552,
+    "pagesUsed": 23,
+    "lastPageNextUrl": null,
+    "inWatchfinderNotInFourCollections": [
+      {
+        "reference": "522.53.45.52.04.001",
+        "collectionName": "Specialities Olympic 1932 Chrono Chime",
+        "rawPrice": "$586,000",
+        "family": "Specialities",
+        "productUrl": "https://www.omegawatches.com/en-us/watch-omega-specialities-olympic-1932-chrono-chime-52253455204001"
+      },
+      {
+        "reference": "5110.20.00",
+        "collectionName": "Specialities Olympic Pocket Watch 1932",
+        "rawPrice": "$141,700",
+        "family": "Specialities",
+        "productUrl": "https://www.omegawatches.com/en-us/watch-omega-specialities-olympic-pocket-watch-1932-51102000"
+      },
+      {
+        "reference": "5109.20.00",
+        "collectionName": "Specialities Olympic Pocket Watch 1932",
+        "rawPrice": "$141,700",
+        "family": "Specialities",
+        "productUrl": "https://www.omegawatches.com/en-us/watch-omega-specialities-olympic-pocket-watch-1932-51092000"
+      },
+      {
+        "reference": "5108.20.00",
+        "collectionName": "Specialities Olympic Pocket Watch 1932",
+        "rawPrice": "$141,700",
+        "family": "Specialities",
+        "productUrl": "https://www.omegawatches.com/en-us/watch-omega-specialities-olympic-pocket-watch-1932-51082000"
+      }
+    ],
+    "inFourCollectionsNotInWatchfinder": [],
+    "scopeDecision": "本專案既有 Omega 五個市場（TW/JP/KR/CH/HK）與 omega-catalog.json 的 collectionId 僅涵蓋 seamaster、speedmaster、constellation、de-ville 四個官方腕錶系列；Specialities（奧運懷錶與 Olympic 1932 Chrono Chime）不在該範圍內，也不出現在 /en-us/watches 的系列導覽樹下。為維持跨市場可比性，本輪美國市場沿用同一範圍收集 548 筆，並在此完整記錄 Watchfinder 觀察到但未納入的 4 筆 Specialities，交由統籌者決定是否要另行擴大 Omega 的收錄範圍（屬跨市場範圍決策，非單一市場工作單元可自行變更）。"
+  },
+  "subCategoryContainmentCheck": {
+    "catalogUrl": "https://www.omegawatches.com/en-us/watches/seamaster/diver-300-m/007-edition/catalog",
+    "officialTotal": 5,
+    "collectedUnique": 5,
+    "references": [
+      "210.32.44.51.01.002",
+      "210.30.42.20.03.002",
+      "210.55.42.20.99.001",
+      "210.92.42.20.01.001",
+      "210.90.42.20.01.001"
+    ],
+    "allContainedInMainCollection": true,
+    "note": "官方在 diver-300-m 下另有 007-edition 篩選視圖；其 5 筆全部已包含於 diver-300-m 的 60 筆之中，未產生額外配置。"
+  },
+  "stopEvidence": {
+    "paginationSignal": "16 個分類的最後一頁皆無 [data-role=\"list-pager\"] a.action.next（nextUrl = null）；Watchfinder 第 23 頁同樣無 next。",
+    "countReconciliation": "每個分類的官方 data-count 與唯一收集數逐一相等；4 個 family 官方總數（203/95/128/122）與子分類總和及實收數一致，合計 548。",
+    "uniqueSetStable": "16 個分類累計唯一 reference 548，無跨分類重複（548 = 各分類官方總數之和）；額外抓取的 007-edition 視圖與 Watchfinder 未再新增四系列內的配置。",
+    "errors": []
+  },
+  "uniqueListingCount": 548,
+  "productDetailCount": 548,
+  "productDetailHttp200Count": 548,
+  "listingStatusBreakdown": {
+    "listed": 548,
+    "price-unavailable": 0,
+    "not-listed": 0
+  },
+  "newModelCount": 70,
+  "retryLog": {
+    "http429": 0,
+    "http5xx": 0,
+    "timeouts": 0,
+    "connectionErrors": 0,
+    "retriedRequests": 0
+  },
+  "limitations": [
+    "本輪未觀察到任何 price-unavailable 或 not-listed 配置；548 筆官方列出皆有公開美元價格。",
+    "reference 434.23.40.20.02.001 的官方商品詳情頁（含真實瀏覽器渲染後）未提供 watch_dial 或 watch_dial_detailed_color 欄位，dialDescription 改以官方 description 原文逐字保存（dialSourceField = description），未自行改寫或摘要；此為已知欄位語意限制。",
+    "Watchfinder 的官方總數 552 包含 4 筆 Specialities 商品，不在本專案 Omega 既有的四系列範圍內，本輪未納入正式資料（詳見 watchfinderCrossCheck）。"
+  ]
+}

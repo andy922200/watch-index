@@ -9,3 +9,15 @@
 日本完成全部載入後有 1,465 個唯一完整配置、17 個系列；初始局部擷取為 56 筆，補齊後新增 1,409 個價格基準點。完整批次時間為 `2026-09-01T17:06:44+09:00`。
 
 當時系列拆分為：1908 8、Land-Dweller 10、Day-Date 281、Sky-Dweller 39、Lady-Datejust 291、Datejust 681、Oyster Perpetual 62、Cosmograph Daytona 47、Submariner 7、Sea-Dweller 2、Deepsea 4、GMT-Master II 13、Yacht-Master 12、Yacht-Master II 2、Explorer 3、Explorer II 2、Air-King 1。
+
+## Omega — 美國（US）2026-09-20
+
+美國完成全部 16 個分類載入後有 548 個唯一完整配置，四大系列官方總數分別為 Seamaster 203、Speedmaster 95、Constellation 128、De Ville 122。完整批次時間為 `2026-09-20T14:59:49.952Z`。
+
+分類拆分為：seamaster/aqua-terra-150m 107、seamaster/diver-300-m 60、seamaster/planet-ocean 18、seamaster/heritage-models 17、seamaster/instruments 1、speedmaster/moonwatch-professional 24、speedmaster/heritage-models 16、speedmaster/dark-side-of-the-moon 8、speedmaster/speedmaster-38-mm 11、speedmaster/two-counters 36、constellation/observatory 9、constellation/constellation 119、de-ville/ladymatic 6、de-ville/tresor 32、de-ville/prestige 82、de-ville/tourbillon 2。另外官方 Watchfinder 視圖比四系列多出 4 筆 Specialities（含 3 款懷錶），未納入本輪正式資料，屬待統籌者裁量的範圍擴充議題，詳見 `data/evidence/omega/US/2026-09-20/collection-summary.json`。
+
+## Omega — 德國（DE）2026-09-20
+
+德國完成全部 16 個分類載入後有 552 個唯一完整配置，四大系列官方總數分別為 Seamaster 201、Speedmaster 95、Constellation 128、De Ville 128。完整批次時間為 `2026-09-20T15:20:45.681Z`。
+
+分類拆分為：seamaster/aqua-terra-150m 107、seamaster/diver-300-m 59、seamaster/planet-ocean 17、seamaster/heritage-models 17、seamaster/instruments 1、speedmaster/moonwatch-professional 24、speedmaster/heritage-models 16、speedmaster/dark-side-of-the-moon 8、speedmaster/speedmaster-38-mm 11、speedmaster/two-counters 36、constellation/observatory 9、constellation/constellation 119、de-ville/ladymatic 6、de-ville/tresor 38、de-ville/prestige 82、de-ville/tourbillon 2。與瑞士／香港既有市場相比，de-ville/ladymatic 在德國為 6 款（CH／HK 為 3 款），為真實市場差異，非擷取錯誤。

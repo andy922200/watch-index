@@ -1,0 +1,47 @@
+{
+  "brandId": "omega",
+  "marketCode": "US",
+  "checkedAt": "2026-09-20T15:15:00.000Z",
+  "scope": "new-market (Omega US) 旅客退稅政策查核",
+  "outcome": "no-change-needed",
+  "existingRecord": {
+    "marketCode": "US",
+    "availability": "unavailable",
+    "assessedAt": "2026-09-11T17:00:00Z",
+    "evidencePath": "data/evidence/rolex/US/2026-09-12/traveler-refund-policy.json",
+    "existingSource": {
+      "publisher": "USAGov",
+      "title": "How to pay and get help with state and local taxes",
+      "url": "https://www.usa.gov/state-taxes"
+    }
+  },
+  "independentVerification": {
+    "method": "不以既有記錄存在為由跳過查核；另行以美國聯邦政府一手來源重新確認截至查核當日，美國是否存在任何全國性或值得記錄的旅客銷售稅退稅安排。",
+    "sources": [
+      {
+        "publisher": "U.S. Customs and Border Protection (CBP)",
+        "title": "How do I get a refund of sales tax paid while visiting the United States?",
+        "url": "https://www.help.cbp.gov/s/article/Article-1410",
+        "accessedAt": "2026-09-20T15:12:00.000Z",
+        "articleNumber": "000001410",
+        "datePublished": "2026/2/27",
+        "quote": "The United States Government does not refund sales tax to foreign visitors. Sales tax charged in the United States is paid to individual states, not the Federal government, just like Value Added Tax (VAT) is paid in many countries. If you intend to export a major purchase, like a car, you must contact the state taxation authority in the state where you will be purchasing it. They will inform you of the criteria for refunding any sales tax paid.",
+        "note": "該頁為 JavaScript 渲染，直接 HTTP 擷取只會取得載入錯誤畫面；本次以真實瀏覽器開啟並讀取渲染後內容。"
+      },
+      {
+        "publisher": "USAGov",
+        "title": "How to pay and get help with state and local taxes",
+        "url": "https://www.usa.gov/state-taxes",
+        "accessedAt": "2026-09-20T15:10:00.000Z",
+        "finding": "重新查核後確認該頁仍僅說明銷售稅由各州與地方課徵、稅率與課稅品項不一，未提及任何聯邦銷售稅，也未提及任何旅客／觀光客退稅方案。"
+      }
+    ],
+    "result": "截至 2026-09-20 查核時點，未發現任何全國性旅客銷售稅退稅制度；CBP 官方條目（2026-02-27 更新）明確聲明美國政府不對外國旅客退還銷售稅。既有記錄的 availability: \"unavailable\" 與其理由仍然成立。"
+  },
+  "rationale": "旅客退稅是以 marketCode 為唯一鍵的跨品牌司法管轄區事實，非品牌別資料；US 已有可追溯的政府來源記錄，且本次獨立查證結論一致，不需新增 Omega 專屬記錄，也不需變更既有內容。",
+  "writeAction": {
+    "modifiedGlobalPolicyFile": false,
+    "reason": "依本次任務範圍限制，data/traveler-refund-policies.json 為 US 與 DE 兩個平行子代理共用的檔案，一律不由單一市場工作單元寫入；查核結論交付統籌者統一處理。"
+  },
+  "conclusion": "沿用既有 US 記錄（availability: unavailable），不需更新 data/traveler-refund-policies.json；若統籌者希望加註本次複查，可另行將 CBP Article 1410 作為補充 source 並更新 assessedAt，但非必要。"
+}
