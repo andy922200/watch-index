@@ -169,17 +169,9 @@ Omega 目前已收錄 5 個市場，各市場配置筆數不相同：
 
 提交前應檢查 README 是否仍正確描述長期結構與涵蓋範圍；單次市場的來源、時間、輪次與結果應留在 evidence，不要累積到 README。
 
-## AI 任務 Prompt 範本
+## 指派 AI 任務
 
-以下範本供人類指派 AI／代理任務時複製使用。請先填入方括號中的參數；AI 收到任務後仍必須依 `AGENTS.md` 與 `ai-data-maintenance-guide.md` 執行。
-
-### 多市場協調員
-
-> 你是 Watch Index 資料工程協調員。完整閱讀 `AGENTS.md`、`ai-data-maintenance-guide.md`、`README.md`、實際 Schema 與既有資料後執行。模式為：[純價格更新／市場重新考證]；目標市場為：[代碼清單]；目標品牌為：[腕錶品牌]。每個市場獨立收集與保存 evidence，完成後才合併 catalog、執行跨檔驗證，並同步受影響的人類文件。未執行的檢查必須標記 `NOT RUN`。
-
-### 單一市場維護員
-
-> 你負責腕錶 [品牌名稱] 的 [市場名稱] 資料。完整閱讀 `AGENTS.md`、`ai-data-maintenance-guide.md`、實際 Schema、目標市場資料與 evidence。模式為：[純價格更新／全市場重新考證／新增市場]，marketCode 為：[代碼]。優先發現官方結構化資料及停止條件，先保存 evidence，再更新市場資料與追加式價格歷史。不得覆寫舊價格點、修改 Schema 或猜測缺漏資料；回報資料差異、驗證、evidence 與限制。
+人類指派 AI／代理進行資料維護時，改用 `.agents/roles/` 下的角色定義（`multi-market-coordinator`、`single-market-maintainer`），該目錄同時同步至 `.claude/agents/` 與 `.codex/agents/`，可直接作為 subagent 調用。角色定義維護方式見 [.agents/roles/README.md](.agents/roles/README.md)；AI 執行任務時仍須依 `AGENTS.md` 與 `ai-data-maintenance-guide.md` 執行。
 
 ## 與網站的關係
 
