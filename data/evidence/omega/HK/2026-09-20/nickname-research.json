@@ -1,0 +1,38 @@
+{
+  "brandId": "omega",
+  "marketCode": "HK",
+  "researchedAt": "2026-09-20T00:00:00.000Z",
+  "method": "以香港繁體中文搜尋 OMEGA 系列、綽號與型號名稱；只在來源能明確對應現行官方 reference 時才會寫入 localNicknames。",
+  "sourcesReviewed": [
+    {
+      "publisher": "OMEGA HK",
+      "title": "第一批「Ultraman」腕表即將抵港",
+      "url": "https://www.omegawatches.com.hk/zh-hk/stories/the-ultraman-is-on-its-way",
+      "finding": "內容討論已售罄的限量 Speedy Tuesday Ultraman，未能對應本輪 551 枚現行官方 listings 的 reference。"
+    },
+    {
+      "publisher": "BestWatch Hong Kong",
+      "title": "歐米茄 Omega 超霸系列手錶",
+      "url": "https://bestwatch.com.hk/zh/%E6%AD%90%E7%B1%B3%E8%8C%84/%E8%B6%85%E9%9C%B8%E7%B3%BB%E5%88%97/",
+      "finding": "使用「月球錶」等系列稱呼，但頁面沒有把該稱呼可靠地對應到單一現行官方 reference。"
+    },
+    {
+      "publisher": "Freedom Of Watchman",
+      "title": "點解 Omega Professional Speedmaster 會叫 Moonwatch?",
+      "url": "https://www.youtube.com/watch?v=fvlyHc85enc",
+      "finding": "說明 Moonwatch 稱呼的歷史，未提供本輪現行 HK 商品 reference 的一對一對應。"
+    }
+  ],
+  "acceptedNicknames": [],
+  "rejectedCandidates": [
+    {
+      "name": "月球錶／Moonwatch",
+      "reason": "屬系列級一般稱呼，來源沒有穩定對應至單一現行 HK reference；依不可猜測規則不寫入。"
+    },
+    {
+      "name": "Ultraman",
+      "reason": "來源所述限量款並非本輪現行 HK listing，且沒有可對應 reference。"
+    }
+  ],
+  "conclusion": "本輪未找到可驗證且可精確映射至現行 HK official listing reference 的本地暱稱；所有 localNicknames 保持空陣列。"
+}

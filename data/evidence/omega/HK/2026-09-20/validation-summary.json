@@ -1,0 +1,264 @@
+{
+  "brandId": "omega",
+  "marketCode": "HK",
+  "validatedAt": "2026-09-20T00:24:04.286Z",
+  "collectionValidation": {
+    "status": "PASS",
+    "categoryCount": 16,
+    "checks": [
+      {
+        "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+        "officialTotal": 107,
+        "collectedUniqueReferences": 107
+      },
+      {
+        "categoryPath": "watches/seamaster/diver-300-m/catalog",
+        "officialTotal": 60,
+        "collectedUniqueReferences": 60
+      },
+      {
+        "categoryPath": "watches/seamaster/planet-ocean/catalog",
+        "officialTotal": 17,
+        "collectedUniqueReferences": 17
+      },
+      {
+        "categoryPath": "watches/seamaster/heritage-models/catalog",
+        "officialTotal": 17,
+        "collectedUniqueReferences": 17
+      },
+      {
+        "categoryPath": "watches/seamaster/instruments/catalog",
+        "officialTotal": 1,
+        "collectedUniqueReferences": 1
+      },
+      {
+        "categoryPath": "watches/speedmaster/moonwatch-professional/catalog",
+        "officialTotal": 24,
+        "collectedUniqueReferences": 24
+      },
+      {
+        "categoryPath": "watches/speedmaster/heritage-models/catalog",
+        "officialTotal": 16,
+        "collectedUniqueReferences": 16
+      },
+      {
+        "categoryPath": "watches/speedmaster/dark-side-of-the-moon/catalog",
+        "officialTotal": 8,
+        "collectedUniqueReferences": 8
+      },
+      {
+        "categoryPath": "watches/speedmaster/speedmaster-38-mm/catalog",
+        "officialTotal": 12,
+        "collectedUniqueReferences": 12
+      },
+      {
+        "categoryPath": "watches/speedmaster/two-counters/catalog",
+        "officialTotal": 36,
+        "collectedUniqueReferences": 36
+      },
+      {
+        "categoryPath": "watches/constellation/observatory/catalog",
+        "officialTotal": 9,
+        "collectedUniqueReferences": 9
+      },
+      {
+        "categoryPath": "watches/constellation/constellation/catalog",
+        "officialTotal": 119,
+        "collectedUniqueReferences": 119
+      },
+      {
+        "categoryPath": "watches/de-ville/ladymatic/catalog",
+        "officialTotal": 3,
+        "collectedUniqueReferences": 3
+      },
+      {
+        "categoryPath": "watches/de-ville/tresor/catalog",
+        "officialTotal": 38,
+        "collectedUniqueReferences": 38
+      },
+      {
+        "categoryPath": "watches/de-ville/prestige/catalog",
+        "officialTotal": 82,
+        "collectedUniqueReferences": 82
+      },
+      {
+        "categoryPath": "watches/de-ville/tourbillon/catalog",
+        "officialTotal": 2,
+        "collectedUniqueReferences": 2
+      }
+    ]
+  },
+  "crossFileAndContractChecks": {
+    "status": "PASS",
+    "checks": [
+      "market.watchCount、watchId 與 reference 格式",
+      "551 個 market reference 與 551 條 priceSeries 一對一",
+      "全部價格為正整數，且唯一 collection run 為 runId 1",
+      "每一筆商品都有官方 HTTP 200 詳情與 watch_dial、watch_dial_detailed_color 或 description 面盤來源",
+      "priceType 為 no-tax、taxRatePercent 為 0"
+    ],
+    "errors": []
+  },
+  "sourceReconciliation": {
+    "status": "PASS",
+    "observedListingCount": 551,
+    "marketWatchCount": 551,
+    "priceSeriesCount": 551,
+    "duplicateReferenceCount": 0,
+    "detailHttp200Count": 551,
+    "dialSourceFieldCounts": {
+      "watch_dial": 517,
+      "watch_dial_detailed_color": 33,
+      "description": 1
+    },
+    "catalogMatchedCount": 551,
+    "unmatchedCatalogReferences": []
+  },
+  "independentSpotCheck": {
+    "status": "PASS",
+    "method": "以 20 個等距參考編號核對官方商品詳情 HTTP 狀態、實際可用的面盤來源欄位與 market 輸出。",
+    "sampleCount": 20,
+    "samples": [
+      {
+        "reference": "220.10.41.21.01.002",
+        "listingPrice": 52200,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "220.10.38.20.03.005",
+        "listingPrice": 52200,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial_detailed_color",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "220.20.38.20.10.001",
+        "listingPrice": 104900,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "220.10.30.20.60.001",
+        "listingPrice": 54900,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial_detailed_color",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "210.92.42.20.10.001",
+        "listingPrice": 80600,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "210.62.42.20.01.002",
+        "listingPrice": 245300,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "217.32.42.21.01.004",
+        "listingPrice": 62100,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "310.30.42.50.04.001",
+        "listingPrice": 63900,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "332.10.41.51.03.001",
+        "listingPrice": 74700,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "324.55.38.50.60.001",
+        "listingPrice": 388400,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "304.33.44.52.01.001",
+        "listingPrice": 88200,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "131.23.41.21.03.001",
+        "listingPrice": 81500,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "131.58.29.20.55.003",
+        "listingPrice": 177300,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "131.58.29.20.52.002",
+        "listingPrice": 162000,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "131.20.28.60.05.002",
+        "listingPrice": 47300,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "428.17.26.60.04.004",
+        "listingPrice": 36900,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "435.53.40.21.11.002",
+        "listingPrice": 167000,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "434.13.40.20.01.001",
+        "listingPrice": 36000,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "434.13.34.20.55.001",
+        "listingPrice": 41400,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "529.53.43.22.99.001",
+        "listingPrice": 1881500,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      }
+    ]
+  }
+}

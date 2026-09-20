@@ -1,0 +1,49 @@
+{
+  "brandId": "omega",
+  "marketCode": "HK",
+  "assessedAt": "2026-09-19T15:30:00.000Z",
+  "status": "PARTIAL PASS",
+  "requestedWorkflow": "若香港網址或分類頁跳回台灣站，使用 footer 的 data-qa-i=\"footer-toggle-language\" 開啟區域選單，再選擇「香港特別行政區」。",
+  "browserObservations": [
+    {
+      "step": 1,
+      "action": "開啟 https://www.omegawatches.com.hk/zh-hk/",
+      "observedFinalUrl": "https://www.omegawatches.com.tw/",
+      "finding": "首次直接進入香港首頁被導向台灣。"
+    },
+    {
+      "step": 2,
+      "action": "在台灣 footer 語言按鈕（data-qa-i=footer-toggle-language）開啟選單，選取「香港特別行政區」。",
+      "selectedHref": "https://www.omegawatches.com.hk/zh-hk/",
+      "observedFinalUrl": "https://www.omegawatches.com.hk/zh-hk/",
+      "observedTitle": "歐米茄腕表: 瑞士著名鐘表製造商 | OMEGA HK®",
+      "finding": "香港首頁成功載入，頁內商品卡片顯示 HKD 價格。"
+    },
+    {
+      "step": 3,
+      "action": "直接開啟 Aqua Terra 150米 香港分類網址。",
+      "requestedUrl": "https://www.omegawatches.com.hk/zh-hk/watches/seamaster/aqua-terra-150m/catalog",
+      "observedFinalUrl": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog",
+      "finding": "直接分類導覽仍被導向台灣。"
+    },
+    {
+      "step": 4,
+      "action": "在被導向的台灣 Aqua Terra 分類 footer 區域選單中，選取同一路徑的「香港特別行政區」。",
+      "selectedHref": "https://www.omegawatches.com.hk/zh-hk/watches/seamaster/aqua-terra-150m/catalog",
+      "observedFinalUrl": "https://www.omegawatches.com.hk/zh-hk/watches/seamaster/aqua-terra-150m/catalog",
+      "observedTitle": "Aqua Terra 150米: 海馬系列 腕錶 | OMEGA HK®",
+      "observedCatalogCount": 107,
+      "sampleListing": {
+        "reference": "220.10.41.21.01.002",
+        "price": "HKD52,200",
+        "productUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101002"
+      },
+      "finding": "同一分類的香港版本成功載入；此路徑可用於逐分類收集。"
+    }
+  ],
+  "decision": "已撤銷「香港站無法取得」的前提，但尚未完成所有 16 個分類與停止條件驗證；在完整收集前不建立 market、history 或 catalog 正式資料。",
+  "limitations": [
+    "直接輸入 HK 分類網址不是可靠進入方式；每個被導向的分類必須透過頁面 footer 地區選單重新選擇香港。",
+    "此 evidence 僅證明香港分類取數路徑已可用，並不是完整市場資料集。"
+  ]
+}

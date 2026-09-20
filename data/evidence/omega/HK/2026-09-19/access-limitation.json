@@ -1,0 +1,37 @@
+{
+  "brandId": "omega",
+  "marketCode": "HK",
+  "assessedAt": "2026-09-19T14:20:00.000Z",
+  "status": "STOP",
+  "sourceDiscovery": {
+    "method": "真實瀏覽器開啟 OMEGA 香港入口與官方市場選擇器；再導覽至入口可見的 Aqua Terra 150M 目錄連結。",
+    "entryUrl": "https://www.omegawatches.com.hk/zh-hk/watches",
+    "entryResult": {
+      "status": 200,
+      "finalUrl": "https://www.omegawatches.com.hk/zh-hk/watches",
+      "finding": "香港入口可顯示 OMEGA 腕錶系列與分類連結。"
+    },
+    "catalogAttempt": {
+      "requestedUrl": "https://www.omegawatches.com.hk/zh-hk/watches/seamaster/aqua-terra-150m/catalog",
+      "observedFinalUrl": "https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog",
+      "observedLocale": "zh-Hant-TW",
+      "observedCurrency": "TWD",
+      "finding": "官方香港目錄請求被導向台灣站；取得的產品卡片、價格與分頁均非 HK 市場資料。"
+    },
+    "officialMarketSelectorAttempt": {
+      "selectedMarket": "香港特別行政區",
+      "finding": "選擇後的商品目錄仍導向台灣站，未形成可驗證的香港目錄回應。"
+    }
+  },
+  "terminationEvidence": "無法取得 HK 目錄的本地產品卡片或分頁／停止條件；依新市場完整性規則停止，不以台灣回應推論香港上市、價格、稅別或語系。",
+  "decision": {
+    "createdMarketFile": false,
+    "createdPriceHistory": false,
+    "createdCatalogChange": false,
+    "reason": "官方香港商品目錄未可驗證，資料不完整。"
+  },
+  "limitations": [
+    "香港入口頁存在不代表可取得香港市場的產品清單或價格。",
+    "本 evidence 只記錄可重現的存取限制，並不宣稱香港沒有販售任何 Omega 腕錶。"
+  ]
+}

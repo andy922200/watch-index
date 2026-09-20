@@ -2,13 +2,15 @@
   "$schema": "../schemas/watch-catalog.schema.json",
   "schemaVersion": 3,
   "brandId": "omega",
-  "collectedAt": "2026-09-19T07:45:00.000Z",
+  "collectedAt": "2026-09-20T00:22:30.631Z",
   "sourceMarketCodes": [
     "TW",
     "JP",
-    "KR"
+    "KR",
+    "CH",
+    "HK"
   ],
-  "watchCount": 554,
+  "watchCount": 555,
   "watches": [
     {
       "watchId": "omega:131.10.25.60.02.002",
@@ -2307,6 +2309,12 @@
       "collectionId": "speedmaster",
       "reference": "324.30.38.50.02.003",
       "imageUrl": "https://www.omegawatches.com.tw/media/catalog/product/o/m/omega-speedmaster-38-co-axial-chronometer-chronograph-38-mm-32430385002003-15ce89.png"
+    },
+    {
+      "watchId": "omega:324.30.38.50.03.002",
+      "collectionId": "speedmaster",
+      "reference": "324.30.38.50.03.002",
+      "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-speedmaster-38-co-axial-chronometer-chronograph-38-mm-32430385003002-829796.png"
     },
     {
       "watchId": "omega:324.30.38.50.04.001",

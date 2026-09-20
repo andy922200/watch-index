@@ -1,0 +1,151 @@
+{
+  "brandId": "omega",
+  "marketCode": "CH",
+  "locale": "de-CH",
+  "collectedAt": "2026-09-19T14:35:36.199Z",
+  "entryUrl": "https://www.omegawatches.com/de-ch/watches",
+  "sourceDiscovery": {
+    "method": "OMEGA 官方語言／市場選擇器切換至「Schweiz」後，以真實瀏覽器檢視瑞士德文站；逐一沿可見的「Mehr laden」連結至停止，從 li.product-item 官方卡片擷取資料。面盤欄位以同一瀏覽器 context 對卡片連結的官方商品詳情頁發出請求，讀取 dd.technical-data-value[data-code]。",
+    "browserStatus": "Built-in browser session unavailable; Playwright real-browser fallback used.",
+    "networkToolAttempted": true,
+    "networkToolResult": "PASS",
+    "officialEndpoints": [
+      "https://www.omegawatches.com/de-ch/watches",
+      "https://www.omegawatches.com/de-ch/watches/{family}/{subcategory}/catalog",
+      "https://www.omegawatches.com/de-ch/watch-omega-{product-slug}",
+      "https://www.omegawatches.com/de-ch/conditions-of-sale"
+    ]
+  },
+  "catalogCategoryCount": 16,
+  "categories": [
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-ch/watches/seamaster/aqua-terra-150m/catalog",
+      "officialTotal": 107,
+      "uniqueCollectedCount": 107,
+      "pagesUsed": 5,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-ch/watches/seamaster/diver-300-m/catalog",
+      "officialTotal": 59,
+      "uniqueCollectedCount": 59,
+      "pagesUsed": 3,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-ch/watches/seamaster/planet-ocean/catalog",
+      "officialTotal": 17,
+      "uniqueCollectedCount": 17,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-ch/watches/seamaster/heritage-models/catalog",
+      "officialTotal": 17,
+      "uniqueCollectedCount": 17,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-ch/watches/seamaster/instruments/catalog",
+      "officialTotal": 1,
+      "uniqueCollectedCount": 1,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-ch/watches/speedmaster/moonwatch-professional/catalog",
+      "officialTotal": 24,
+      "uniqueCollectedCount": 24,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-ch/watches/speedmaster/heritage-models/catalog",
+      "officialTotal": 16,
+      "uniqueCollectedCount": 16,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-ch/watches/speedmaster/dark-side-of-the-moon/catalog",
+      "officialTotal": 8,
+      "uniqueCollectedCount": 8,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-ch/watches/speedmaster/speedmaster-38-mm/catalog",
+      "officialTotal": 11,
+      "uniqueCollectedCount": 11,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-ch/watches/speedmaster/two-counters/catalog",
+      "officialTotal": 36,
+      "uniqueCollectedCount": 36,
+      "pagesUsed": 2,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-ch/watches/constellation/observatory/catalog",
+      "officialTotal": 9,
+      "uniqueCollectedCount": 9,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-ch/watches/constellation/constellation/catalog",
+      "officialTotal": 119,
+      "uniqueCollectedCount": 119,
+      "pagesUsed": 5,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-ch/watches/de-ville/ladymatic/catalog",
+      "officialTotal": 6,
+      "uniqueCollectedCount": 6,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-ch/watches/de-ville/tresor/catalog",
+      "officialTotal": 38,
+      "uniqueCollectedCount": 38,
+      "pagesUsed": 2,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-ch/watches/de-ville/prestige/catalog",
+      "officialTotal": 82,
+      "uniqueCollectedCount": 82,
+      "pagesUsed": 4,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com/de-ch/watches/de-ville/tourbillon/catalog",
+      "officialTotal": 2,
+      "uniqueCollectedCount": 2,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    }
+  ],
+  "rawProductCount": 552,
+  "uniqueReferenceCount": 552,
+  "duplicateReferenceCount": 0,
+  "duplicateReferenceListings": [],
+  "terminationEvidence": "所有 16 個官方分類都依可見「Mehr laden」連結遞進至該連結消失；每一分類的最終產品卡片數均與頁面顯示計數相符。四個系列合計為 Seamaster 201、Speedmaster 95、Constellation 128、De Ville 128，總計 552，與入口頁的系列計數一致。",
+  "priceTaxEvidence": {
+    "sourceUrl": "https://www.omegawatches.com/de-ch/conditions-of-sale",
+    "accessedAt": "2026-09-19T14:36:27.325Z",
+    "finding": "條款第 3.1 節明示網站價格以 CHF 顯示，且包含當地 Mehrwertsteuer（增值稅）與標準運費；價格因此記為含稅。",
+    "taxRateEvidence": "瑞士現行標準 VAT 稅率 8.1%；市場既有全域旅客退稅政策紀錄引用 Swiss Federal Tax Administration。"
+  },
+  "errors": [],
+  "limitations": [
+    "直接由瀏覽器以外的 HTTP 環境開啟 de-ch 連結會被導向台灣站；本次只以已選定瑞士地區的真實瀏覽器與其相同 context 的商品詳情回應取數，未將被導向內容混入瑞士資料。",
+    "參考號 434.23.40.20.02.001 的官方商品詳情頁回應成功（HTTP 200），但 watch_dial、watch_dial_detailed_color 與 watch_dial_color 均未出現；官方 Beschreibung 段落明確寫出「gewölbtes silbernes Zifferblatt mit kristallinem Finish」，因此以該原文的面盤片語保存並標記 description-fallback，未從圖片猜測。",
+    "香港官方入口可開啟，但每個嘗試的商品目錄均被導向台灣站；未取得可驗證的香港 listing 與停止條件，故本輪沒有建立 HK 市場或價格歷史資料。"
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "brandId": "omega",
+  "marketCode": "CH",
+  "validatedAt": "2026-09-19T14:46:00.000Z",
+  "strictJsonParsing": {
+    "status": "PASS",
+    "files": [
+      "data/markets/omega-switzerland-market.json",
+      "data/history/CH/omega-price-history.json",
+      "data/catalog/omega-catalog.json",
+      "data/evidence/omega/CH/2026-09-19/*.json"
+    ]
+  },
+  "jsonSchemaValidation": {
+    "status": "PASS",
+    "method": "依已讀取 v3 Schema 的 required、型別、reference pattern、唯一性、market/history 關聯與價格欄位限制執行嚴格手動檢查；環境未安裝可直接執行 Draft 2020-12 的 JSON Schema validator。"
+  },
+  "crossFileAndContractChecks": {
+    "status": "PASS",
+    "checks": [
+      "market.watchCount、watchId 與 reference pattern",
+      "552 個 market reference 與 552 條 priceSeries 一對一",
+      "全部價格為正整數，且唯一 collection run 為 runId 1",
+      "552 個 CH reference 全部存在於 Omega catalog，catalog.sourceMarketCodes 已含 CH",
+      "所有 market 必填呈現欄位與 localNicknames 結構有效"
+    ],
+    "errors": []
+  },
+  "sourceReconciliation": {
+    "status": "PASS",
+    "observedListingCount": 552,
+    "marketWatchCount": 552,
+    "priceSeriesCount": 552,
+    "catalogMatchedCount": 552,
+    "duplicateReferenceCount": 0,
+    "unmatchedCatalogReferences": []
+  },
+  "independentSpotCheck": {
+    "status": "PASS",
+    "method": "主資料來自官方目錄產品卡片；20 個等距樣本另以同一已選瑞士地區的真實瀏覽器 context 讀取官方商品詳情頁，逐筆比對 HTTP 200、面盤來源欄位及輸出 market 面盤文字。",
+    "sampleCount": 20,
+    "samples": [
+      {
+        "reference": "131.10.25.60.02.002",
+        "listingPrice": 2800,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "131.15.28.60.11.001",
+        "listingPrice": 5700,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial_detailed_color",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "131.20.36.60.02.002",
+        "listingPrice": 6200,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "131.25.29.20.55.001",
+        "listingPrice": 14200,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "131.55.28.60.99.005",
+        "listingPrice": 27700,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "210.22.42.20.01.002",
+        "listingPrice": 8100,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "210.32.42.20.06.002",
+        "listingPrice": 5800,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "215.32.46.21.04.001",
+        "listingPrice": 11700,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "220.10.38.20.01.005",
+        "listingPrice": 6300,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "220.12.41.21.01.001",
+        "listingPrice": 5700,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "220.23.41.21.02.001",
+        "listingPrice": 9100,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "220.55.34.20.60.001",
+        "listingPrice": 42400,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial_detailed_color",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "304.30.43.52.01.001",
+        "listingPrice": 16200,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "310.32.42.50.04.002",
+        "listingPrice": 7400,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "324.20.38.50.02.001",
+        "listingPrice": 9800,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "332.10.41.51.03.001",
+        "listingPrice": 9000,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "428.18.36.60.02.002",
+        "listingPrice": 5300,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "434.10.34.20.02.001",
+        "listingPrice": 4400,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "434.13.41.21.03.002",
+        "listingPrice": 5400,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      },
+      {
+        "reference": "434.23.40.20.52.001",
+        "listingPrice": 7600,
+        "productDetailHttpStatus": 200,
+        "dialSourceField": "watch_dial",
+        "dialMatchesMarket": true
+      }
+    ]
+  },
+  "priceStats": {
+    "min": 2800,
+    "max": 528600,
+    "currency": "CHF",
+    "count": 552
+  },
+  "travelerRefundPolicyCheck": {
+    "status": "PASS",
+    "marketPolicy": "CH",
+    "availability": "available",
+    "policyRecord": "data/traveler-refund-policies.json",
+    "evidence": "data/evidence/omega/CH/2026-09-19/traveler-refund-policy.json"
+  },
+  "readmeUpdate": {
+    "status": "PASS",
+    "files": [
+      "README.md",
+      "watch-data-collection-guide.md"
+    ],
+    "finding": "Omega 市場數更新為 4，新增瑞士 552 筆與 CHF 含稅 8.1% 說明；跨市場聯集仍為 554。"
+  },
+  "buildValidation": {
+    "status": "PASS",
+    "command": "pnpm run build (app/)",
+    "checks": [
+      "vue-tsc --noEmit",
+      "vite build",
+      "generate-watch-data.mjs"
+    ]
+  },
+  "limitations": [
+    "香港市場未建立正式資料：官方香港入口可開啟，但實測目錄導向台灣站，未取得可驗證的香港 listing、價格或完整停止條件。",
+    "本次 CH 正式資料是新市場的首個歷史 run；不存在可供覆寫的舊 CH 價格點。"
+  ]
+}

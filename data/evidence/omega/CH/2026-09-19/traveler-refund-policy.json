@@ -1,0 +1,19 @@
+{
+  "brandId": "omega",
+  "marketCode": "CH",
+  "checkedAt": "2026-09-19T14:36:27.325Z",
+  "finding": "已核對全域 traveler-refund-policies.json 的 CH 現有政策：available；其來源為 Swiss Federal Tax Administration，且明確要求商家參與及出口驗證。此為跨品牌市場政策，故未重複新增或改寫全域政策紀錄。",
+  "policySnapshot": {
+    "marketCode": "CH",
+    "availability": "available",
+    "merchantParticipationRequired": true,
+    "exportValidationRequired": true,
+    "evidencePath": "data/evidence/rolex/CH/2026-09-12/traveler-refund-policy.json",
+    "source": {
+      "publisher": "Swiss Federal Tax Administration",
+      "title": "Tax free for tourists",
+      "url": "https://www.estv.admin.ch/en/tax-free-for-tourists",
+      "accessedAt": "2026-09-11T17:00:00Z"
+    }
+  }
+}

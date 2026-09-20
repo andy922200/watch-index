@@ -1,0 +1,20 @@
+{
+  "marketCode": "HK",
+  "checkedAt": "2026-09-20T00:00:00.000Z",
+  "scope": "new-market (Omega HK)",
+  "outcome": "no-change-needed",
+  "existingRecord": {
+    "marketCode": "HK",
+    "availability": "unavailable",
+    "assessedAt": "2026-09-11T17:00:00Z",
+    "evidencePath": "data/evidence/rolex/HK/2026-09-12/traveler-refund-policy.json"
+  },
+  "rationale": "旅客 VAT／銷售稅退稅是司法管轄區事實，traveler-refund-policies.json 以 marketCode 為唯一鍵，非品牌別資料；HK 已有可追溯的政府來源記錄。新增 Omega 專屬 HK 記錄會造成重複與衝突。",
+  "source": {
+    "publisher": "Financial Services and the Treasury Bureau, Hong Kong SAR Government",
+    "title": "Prevailing Tax Policy",
+    "url": "https://www.fstb.gov.hk/en/treasury/general/prevailing-tax-policy.htm",
+    "existingRecordAccessedAt": "2026-09-11T17:00:00Z"
+  },
+  "conclusion": "沿用既有 HK 記錄：香港沒有增值稅或銷售稅，故本市場無適用的旅客 VAT／銷售稅退稅制度；不修改全域政策檔。"
+}

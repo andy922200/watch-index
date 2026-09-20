@@ -1,0 +1,133 @@
+{
+  "brandId": "omega",
+  "marketCode": "HK",
+  "locale": "zh-HK",
+  "collectedAt": "2026-09-20T00:23:41.950Z",
+  "entryUrl": "https://www.omegawatches.com.hk/zh-hk/watches",
+  "sourceDiscovery": {
+    "method": "直接進入 .com.hk/zh-hk 會自動跳轉台灣；在台灣頁面以 footer 的 data-qa-i=\"footer-toggle-language\" 開啟地區選單並選取「香港特別行政區」後，成功進入 OMEGA HK，且分類頁可呈現 HKD 與官方 data-count。其後讀取同一已選香港市場的官方結構化目錄及商品詳情回應。",
+    "officialEndpoints": [
+      "https://www.omegawatches.com.hk/zh-hk/watches",
+      "https://www.omegawatches.com.hk/zh-hk/watches/{family}/{subcategory}/catalog",
+      "https://www.omegawatches.com.hk/zh-hk/watch-omega-{product-slug}"
+    ],
+    "redirectHandling": "只有完成官方地區選擇器切換後才讀取香港資料；未將自動導向至台灣的回應納入。"
+  },
+  "catalogCategoryCount": 16,
+  "categories": [
+    {
+      "catalogUrl": "https://www.omegawatches.com.hk/zh-hk/watches/seamaster/aqua-terra-150m/catalog",
+      "officialTotal": 107,
+      "uniqueCollectedCount": 107,
+      "pagesUsed": 5,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.hk/zh-hk/watches/seamaster/diver-300-m/catalog",
+      "officialTotal": 60,
+      "uniqueCollectedCount": 60,
+      "pagesUsed": 3,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.hk/zh-hk/watches/seamaster/planet-ocean/catalog",
+      "officialTotal": 17,
+      "uniqueCollectedCount": 17,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.hk/zh-hk/watches/seamaster/heritage-models/catalog",
+      "officialTotal": 17,
+      "uniqueCollectedCount": 17,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.hk/zh-hk/watches/seamaster/instruments/catalog",
+      "officialTotal": 1,
+      "uniqueCollectedCount": 1,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.hk/zh-hk/watches/speedmaster/moonwatch-professional/catalog",
+      "officialTotal": 24,
+      "uniqueCollectedCount": 24,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.hk/zh-hk/watches/speedmaster/heritage-models/catalog",
+      "officialTotal": 16,
+      "uniqueCollectedCount": 16,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.hk/zh-hk/watches/speedmaster/dark-side-of-the-moon/catalog",
+      "officialTotal": 8,
+      "uniqueCollectedCount": 8,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.hk/zh-hk/watches/speedmaster/speedmaster-38-mm/catalog",
+      "officialTotal": 12,
+      "uniqueCollectedCount": 12,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.hk/zh-hk/watches/speedmaster/two-counters/catalog",
+      "officialTotal": 36,
+      "uniqueCollectedCount": 36,
+      "pagesUsed": 2,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.hk/zh-hk/watches/constellation/observatory/catalog",
+      "officialTotal": 9,
+      "uniqueCollectedCount": 9,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.hk/zh-hk/watches/constellation/constellation/catalog",
+      "officialTotal": 119,
+      "uniqueCollectedCount": 119,
+      "pagesUsed": 5,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.hk/zh-hk/watches/de-ville/ladymatic/catalog",
+      "officialTotal": 3,
+      "uniqueCollectedCount": 3,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.hk/zh-hk/watches/de-ville/tresor/catalog",
+      "officialTotal": 38,
+      "uniqueCollectedCount": 38,
+      "pagesUsed": 2,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.hk/zh-hk/watches/de-ville/prestige/catalog",
+      "officialTotal": 82,
+      "uniqueCollectedCount": 82,
+      "pagesUsed": 4,
+      "matchesOfficialTotal": true
+    },
+    {
+      "catalogUrl": "https://www.omegawatches.com.hk/zh-hk/watches/de-ville/tourbillon/catalog",
+      "officialTotal": 2,
+      "uniqueCollectedCount": 2,
+      "pagesUsed": 1,
+      "matchesOfficialTotal": true
+    }
+  ],
+  "uniqueListingCount": 551,
+  "productDetailCount": 551
+}

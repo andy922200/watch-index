@@ -1,0 +1,62 @@
+{
+  "nicknameResearch": {
+    "status": "PASS",
+    "scope": "new-market",
+    "languages": [
+      "de-CH",
+      "en"
+    ],
+    "queries": [
+      "Omega Schweiz Spitzname Uhr Referenz Omega \"Moonwatch\" \"Spitzname\"",
+      "Omega Schweiz Uhr Spitzname \"Aqua Terra\" Omega",
+      "Omega \"Schweizer Spitzname\" Uhren",
+      "Omega Schweiz Uhren Spitzname Omega 220.10.41.21.01.002"
+    ],
+    "sourcesReviewed": 5,
+    "candidateCount": 3,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [
+      {
+        "term": "Moonwatch",
+        "reason": "來源將其用於 Speedmaster Professional／過往參考號，未提供可對應本次 552 支清單中單一完整 reference 的依據；且 OMEGA 現行商品集合本身使用 Moonwatch Professional 名稱，不能當作地方別名。"
+      },
+      {
+        "term": "Speedy",
+        "reason": "來源只將其作為 Speedmaster Moonwatch 的通稱，沒有市場限定或完整 reference 對應。"
+      },
+      {
+        "term": "Aqua Terra",
+        "reason": "多個結果將其當 OMEGA 官方產品線名稱，非瑞士當地別名。"
+      }
+    ],
+    "sources": [
+      {
+        "publisher": "Chrononautix",
+        "url": "https://chrononautix.com/spitznamen-uhren-rolex-seiko-omega-tudor-panerai-breitling/",
+        "result": "僅見系列層級／歷史型號說明，無可接受的市場別完整 reference 映射。"
+      },
+      {
+        "publisher": "WatchBandit",
+        "url": "https://watchbandit.de/blogs/blog/omega-speedmaster-professional-uhrenarmband-ratgeber-von-watchbandit",
+        "result": "僅見 Speedmaster Professional 的通稱，無當前瑞士目錄完整 reference 映射。"
+      },
+      {
+        "publisher": "Swisswatches Magazine",
+        "url": "https://swisswatches-magazine.com/de/omega-seamaster-aquaterra-in-venice/",
+        "result": "Aqua Terra 為官方系列名稱，非地方別名。"
+      },
+      {
+        "publisher": "ALTHERR Magazin",
+        "url": "https://www.altherr.de/magazin/omega-seamaster-aqua-terra",
+        "result": "Aqua Terra 為官方系列名稱，非地方別名。"
+      },
+      {
+        "publisher": "OMEGA Switzerland",
+        "url": "https://www.omegawatches.com/de-ch/watches",
+        "result": "官方目錄未提供可驗證的地方別名對完整 reference 映射。"
+      }
+    ],
+    "notes": "研究已實際執行；沒有接受任何 collection alias 或 local nickname。空陣列只表示本輪未有符合資料契約的可收錄映射，並非斷言瑞士不存在其他非正式稱呼。"
+  }
+}
