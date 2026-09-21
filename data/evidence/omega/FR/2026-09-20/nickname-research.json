@@ -1,0 +1,51 @@
+{
+  "brandId": "omega",
+  "marketCode": "FR",
+  "researchedAt": "2026-09-20T18:00:00.000Z",
+  "scope": "new-market",
+  "status": "PASS",
+  "languages": [
+    "fr",
+    "en"
+  ],
+  "method": "實際以當地語言搜尋候選俗稱，僅在能由可靠的當地來源唯一對應本輪現行完整 reference 時寫入；官方型號名與系列泛稱不視為 localNickname。",
+  "queries": [
+    "OMEGA Speedmaster Speedy France référence",
+    "OMEGA Snoopy France Speedmaster référence"
+  ],
+  "sourcesReviewed": [
+    {
+      "publisher": "Lepage (France)",
+      "title": "Montre Omega Speedmaster Moonwatch Silver Snoopy Award 42 mm",
+      "url": "https://www.lepage.fr/fr/8615-montre-omega-speedmaster-moonwatch-silver-snoopy-award-42-mm-31032425002001.html",
+      "finding": "將 Silver Snoopy Award 對應 310.32.42.50.02.001；該名稱為官方版本名稱，未採用作俗稱。",
+      "accepted": false
+    },
+    {
+      "publisher": "OMEGA France",
+      "title": "Speedmaster Silver Snoopy Award 310.32.42.50.02.001",
+      "url": "https://www.omegawatches.com/fr-fr/watch-omega-speedmaster-anniversary-series-co-axial-master-chronometer-chronograph-42-mm-31032425002001",
+      "finding": "官方頁同樣使用 Silver Snoopy Award；不把官方命名另列為俗稱。",
+      "accepted": false
+    }
+  ],
+  "candidateCount": 3,
+  "acceptedCollectionAliasCount": 0,
+  "acceptedLocalNicknameCount": 0,
+  "acceptedNicknames": [],
+  "rejectedCandidates": [
+    {
+      "name": "Speedy / Moonwatch",
+      "reason": "系列或次系列通稱，無法唯一對應一個完整配置。"
+    },
+    {
+      "name": "Silver Snoopy Award",
+      "reason": "OMEGA 官方版本名稱，非本資料集的額外 localNickname。"
+    },
+    {
+      "name": "James Bond / 007",
+      "reason": "官方名稱且可對應多個現行配置，無法唯一映射。"
+    }
+  ],
+  "notes": "研究已實際執行；沒有符合唯一映射與來源門檻的在地俗稱，故市場檔保持空陣列。"
+}

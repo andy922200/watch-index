@@ -1,0 +1,16 @@
+{
+  "brandId": "omega",
+  "marketCode": "FR",
+  "observedAt": "2026-09-20T17:38:39.455Z",
+  "scope": "official product-detail pages",
+  "trigger": "The official French session returned TypeError: Failed to fetch after 264 successful product-detail responses during the initial sweep.",
+  "retry": {
+    "attemptedAt": "2026-09-20T17:38:39.455Z",
+    "method": "A fresh, rate-limited retry of one representative product-detail URL from each of the six unrepresented categories in the same official France browser session.",
+    "attemptedCount": 6,
+    "successfulCount": 0,
+    "result": "All six attempts returned TypeError: Failed to fetch. No further retries were made to avoid increasing request pressure."
+  },
+  "impact": "All 552 catalog listings, references, localized case descriptions and structured EUR prices were collected successfully and are supported by official listing markup. dialDescription is null for product pages whose detail request did not succeed; null means not observed, not an inferred absence.",
+  "checkpoint": "The original listing and detail response records, including status/error fields, are preserved in observations.json. A future run should start from the 288 records where productDetail.status is not 200 and use a newly verified France browser session."
+}

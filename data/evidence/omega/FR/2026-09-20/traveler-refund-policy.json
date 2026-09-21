@@ -1,0 +1,38 @@
+{
+  "brandId": "omega",
+  "marketCode": "FR",
+  "checkedAt": "2026-09-20T18:00:00.000Z",
+  "finding": "旅客退稅為以 marketCode 為唯一鍵的跨品牌司法管轄區事實；本輪重新查核官方主管機關來源，結果與既有全域政策的 availability、商家參與與出口驗證結論一致，因此未新增重複政策。",
+  "policySnapshot": {
+    "marketCode": "FR",
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "assessedAt": "2026-09-11T17:00:00Z",
+    "availability": "available",
+    "eligibilitySummary": {
+      "zhTw": "適用於通常居住在歐盟以外的旅客；須由商店開立退稅文件並在離開歐盟時完成海關出口驗證。退款由商家處理，海關不直接退款。",
+      "enUs": "Available to travelers habitually resident outside the EU when the shop issues a tax-free sales slip and Customs validates export on leaving the EU. The merchant, not Customs, handles any refund."
+    },
+    "merchantParticipationRequired": true,
+    "exportValidationRequired": true,
+    "evidencePath": "data/evidence/rolex/FR/2026-09-12/traveler-refund-policy.json",
+    "sources": [
+      {
+        "publisher": "Direction générale des douanes et droits indirects",
+        "title": "La détaxe en France pour les touristes - PABLO",
+        "url": "https://www.douane.gouv.fr/fiche/la-detaxe-en-france-pour-les-touristes-pablo",
+        "accessedAt": "2026-09-11T17:00:00Z"
+      }
+    ]
+  },
+  "independentVerification": {
+    "source": {
+      "publisher": "Direction générale des douanes et droits indirects",
+      "title": "La détaxe en France pour les touristes - PABLO",
+      "url": "https://www.douane.gouv.fr/fiche/la-detaxe-en-france-pour-les-touristes-pablo",
+      "finding": "非歐盟常住旅客得依條件辦理；商店開立 PABLO 單據、離開歐盟時由海關驗證，退款由商家而非海關處理；同一商店同日含稅購買額須超過 EUR 100。"
+    },
+    "result": "PASS"
+  },
+  "actionTaken": "未修改 data/traveler-refund-policies.json，避免重複 marketCode 政策；本檔保存 Omega 法國／西班牙新市場資料收集時的獨立複查證據。"
+}

@@ -1,0 +1,331 @@
+{
+  "brandId": "omega",
+  "marketCode": "FR",
+  "checkedAt": "2026-09-20T17:14:41.998Z",
+  "method": "主要來源為官方 catalog 商品卡片；抽查使用同一已確認市場 session 的獨立官方商品詳情頁，逐筆比對完整 reference、結構化價格與面盤欄位。僅選 HTTP 200 詳情頁，不把失敗回應算作通過。",
+  "coverage": {
+    "categoryRepresentatives": "10/16",
+    "sampleCount": 15,
+    "includesLowestDetailAvailablePrice": true,
+    "includesHighestDetailAvailablePrice": true,
+    "includesNewModels": 6
+  },
+  "allSamplesPassed": true,
+  "samples": [
+    {
+      "reference": "220.10.41.21.01.002",
+      "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+      "price": 7300,
+      "rawPrice": "7 300 €",
+      "isNewModel": false,
+      "listingDataLayer": {
+        "country": "FR",
+        "language": "FR",
+        "currency": "EUR",
+        "price": 7300
+      },
+      "productDetail": {
+        "status": 200,
+        "htmlLang": "fr-FR",
+        "sku": "220.10.41.21.01.002",
+        "price": 7300,
+        "dialDescription": "Noir"
+      },
+      "passed": true
+    },
+    {
+      "reference": "210.30.42.20.01.010",
+      "categoryPath": "watches/seamaster/diver-300-m/catalog",
+      "price": 7100,
+      "rawPrice": "7 100 €",
+      "isNewModel": false,
+      "listingDataLayer": {
+        "country": "FR",
+        "language": "FR",
+        "currency": "EUR",
+        "price": 7100
+      },
+      "productDetail": {
+        "status": 200,
+        "htmlLang": "fr-FR",
+        "sku": "210.30.42.20.01.010",
+        "price": 7100,
+        "dialDescription": "Noir"
+      },
+      "passed": true
+    },
+    {
+      "reference": "217.30.42.21.01.001",
+      "categoryPath": "watches/seamaster/planet-ocean/catalog",
+      "price": 9000,
+      "rawPrice": "9 000 €",
+      "isNewModel": true,
+      "listingDataLayer": {
+        "country": "FR",
+        "language": "FR",
+        "currency": "EUR",
+        "price": 9000
+      },
+      "productDetail": {
+        "status": 200,
+        "htmlLang": "fr-FR",
+        "sku": "217.30.42.21.01.001",
+        "price": 9000,
+        "dialDescription": "Noir"
+      },
+      "passed": true
+    },
+    {
+      "reference": "235.10.38.20.06.001",
+      "categoryPath": "watches/seamaster/heritage-models/catalog",
+      "price": 6000,
+      "rawPrice": "6 000 €",
+      "isNewModel": false,
+      "listingDataLayer": {
+        "country": "FR",
+        "language": "FR",
+        "currency": "EUR",
+        "price": 6000
+      },
+      "productDetail": {
+        "status": 200,
+        "htmlLang": "fr-FR",
+        "sku": "235.10.38.20.06.001",
+        "price": 6000,
+        "dialDescription": "Gris"
+      },
+      "passed": true
+    },
+    {
+      "reference": "216.92.46.79.10.001",
+      "categoryPath": "watches/seamaster/instruments/catalog",
+      "price": 8200,
+      "rawPrice": "8 200 €",
+      "isNewModel": false,
+      "listingDataLayer": {
+        "country": "FR",
+        "language": "FR",
+        "currency": "EUR",
+        "price": 8200
+      },
+      "productDetail": {
+        "status": 200,
+        "htmlLang": "fr-FR",
+        "sku": "216.92.46.79.10.001",
+        "price": 8200,
+        "dialDescription": "Gris"
+      },
+      "passed": true
+    },
+    {
+      "reference": "310.30.42.50.04.001",
+      "categoryPath": "watches/speedmaster/moonwatch-professional/catalog",
+      "price": 8900,
+      "rawPrice": "8 900 €",
+      "isNewModel": false,
+      "listingDataLayer": {
+        "country": "FR",
+        "language": "FR",
+        "currency": "EUR",
+        "price": 8900
+      },
+      "productDetail": {
+        "status": 200,
+        "htmlLang": "fr-FR",
+        "sku": "310.30.42.50.04.001",
+        "price": 8900,
+        "dialDescription": "Blanc"
+      },
+      "passed": true
+    },
+    {
+      "reference": "310.30.40.50.06.001",
+      "categoryPath": "watches/speedmaster/heritage-models/catalog",
+      "price": 8700,
+      "rawPrice": "8 700 €",
+      "isNewModel": false,
+      "listingDataLayer": {
+        "country": "FR",
+        "language": "FR",
+        "currency": "EUR",
+        "price": 8700
+      },
+      "productDetail": {
+        "status": 200,
+        "htmlLang": "fr-FR",
+        "sku": "310.30.40.50.06.001",
+        "price": 8700,
+        "dialDescription": "Bleu ‑ Gris"
+      },
+      "passed": true
+    },
+    {
+      "reference": "310.92.44.51.01.004",
+      "categoryPath": "watches/speedmaster/dark-side-of-the-moon/catalog",
+      "price": 15300,
+      "rawPrice": "15 300 €",
+      "isNewModel": true,
+      "listingDataLayer": {
+        "country": "FR",
+        "language": "FR",
+        "currency": "EUR",
+        "price": 15300
+      },
+      "productDetail": {
+        "status": 200,
+        "htmlLang": "fr-FR",
+        "sku": "310.92.44.51.01.004",
+        "price": 15300,
+        "dialDescription": "Noir"
+      },
+      "passed": true
+    },
+    {
+      "reference": "324.30.38.50.01.002",
+      "categoryPath": "watches/speedmaster/speedmaster-38-mm/catalog",
+      "price": 6400,
+      "rawPrice": "6 400 €",
+      "isNewModel": true,
+      "listingDataLayer": {
+        "country": "FR",
+        "language": "FR",
+        "currency": "EUR",
+        "price": 6400
+      },
+      "productDetail": {
+        "status": 200,
+        "htmlLang": "fr-FR",
+        "sku": "324.30.38.50.01.002",
+        "price": 6400,
+        "dialDescription": "Noir"
+      },
+      "passed": true
+    },
+    {
+      "reference": "332.10.41.51.01.002",
+      "categoryPath": "watches/speedmaster/two-counters/catalog",
+      "price": 10400,
+      "rawPrice": "10 400 €",
+      "isNewModel": false,
+      "listingDataLayer": {
+        "country": "FR",
+        "language": "FR",
+        "currency": "EUR",
+        "price": 10400
+      },
+      "productDetail": {
+        "status": 200,
+        "htmlLang": "fr-FR",
+        "sku": "332.10.41.51.01.002",
+        "price": 10400,
+        "dialDescription": "Noir"
+      },
+      "passed": true
+    },
+    {
+      "reference": "235.12.38.20.06.001",
+      "categoryPath": "watches/seamaster/heritage-models/catalog",
+      "price": 5600,
+      "rawPrice": "5 600 €",
+      "isNewModel": false,
+      "listingDataLayer": {
+        "country": "FR",
+        "language": "FR",
+        "currency": "EUR",
+        "price": 5600
+      },
+      "productDetail": {
+        "status": 200,
+        "htmlLang": "fr-FR",
+        "sku": "235.12.38.20.06.001",
+        "price": 5600,
+        "dialDescription": "Gris"
+      },
+      "passed": true
+    },
+    {
+      "reference": "210.55.42.20.99.001",
+      "categoryPath": "watches/seamaster/diver-300-m/catalog",
+      "price": 184000,
+      "rawPrice": "184 000 €",
+      "isNewModel": false,
+      "listingDataLayer": {
+        "country": "FR",
+        "language": "FR",
+        "currency": "EUR",
+        "price": 184000
+      },
+      "productDetail": {
+        "status": 200,
+        "htmlLang": "fr-FR",
+        "sku": "210.55.42.20.99.001",
+        "price": 184000,
+        "dialDescription": "Gris"
+      },
+      "passed": true
+    },
+    {
+      "reference": "220.32.41.21.03.001",
+      "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+      "price": 7600,
+      "rawPrice": "7 600 €",
+      "isNewModel": true,
+      "listingDataLayer": {
+        "country": "FR",
+        "language": "FR",
+        "currency": "EUR",
+        "price": 7600
+      },
+      "productDetail": {
+        "status": 200,
+        "htmlLang": "fr-FR",
+        "sku": "220.32.41.21.03.001",
+        "price": 7600,
+        "dialDescription": "Turquoise"
+      },
+      "passed": true
+    },
+    {
+      "reference": "220.22.41.21.06.001",
+      "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+      "price": 11200,
+      "rawPrice": "11 200 €",
+      "isNewModel": true,
+      "listingDataLayer": {
+        "country": "FR",
+        "language": "FR",
+        "currency": "EUR",
+        "price": 11200
+      },
+      "productDetail": {
+        "status": 200,
+        "htmlLang": "fr-FR",
+        "sku": "220.22.41.21.06.001",
+        "price": 11200,
+        "dialDescription": "Gris"
+      },
+      "passed": true
+    },
+    {
+      "reference": "220.10.38.20.01.005",
+      "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+      "price": 7300,
+      "rawPrice": "7 300 €",
+      "isNewModel": true,
+      "listingDataLayer": {
+        "country": "FR",
+        "language": "FR",
+        "currency": "EUR",
+        "price": 7300
+      },
+      "productDetail": {
+        "status": 200,
+        "htmlLang": "fr-FR",
+        "sku": "220.10.38.20.01.005",
+        "price": 7300,
+        "dialDescription": "Noir"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "brandId": "omega",
+  "marketCode": "ES",
+  "validatedAt": "2026-09-20T18:05:00.000Z",
+  "schemasUsed": [
+    "data/schemas/watch-market.schema.json (schemaVersion 3)",
+    "data/schemas/watch-price-history.schema.json (schemaVersion 3)"
+  ],
+  "layer1_jsonAndSchema": {
+    "status": "PASS",
+    "checks": [
+      "JSON 嚴格解析，無重複 key 或非法常數。",
+      "market 552 筆、history 552 條 priceSeries，價格皆為非負整數。",
+      "dialDescription 僅由詳情頁成功觀察時寫入，其餘為 schema 允許的 null。"
+    ]
+  },
+  "layer2_crossFileRelations": {
+    "status": "PASS",
+    "checks": [
+      "watchCount=552，reference／watchId 均唯一。",
+      "market 與 history 的 watchId 集合雙向差集為空。",
+      "collectionRuns runId=1 的 recordCount=552 與 priceSeries 相符。"
+    ]
+  },
+  "layer3_sourceReconciliation": {
+    "status": "PASS",
+    "checks": [
+      "552 筆均具官方 data-price-amount、dataLayer price 與 EUR/ES market 標示。",
+      "商品詳情 HTTP 200 為 441 筆；其餘 111 筆保留 null 面盤，不將未成功請求當作產品事實。"
+    ]
+  },
+  "layer4_completenessAndSpotCheck": {
+    "status": "PASS",
+    "checks": [
+      "16 個分類的收集數均等於官方頁面數（Observatory 9 筆由可見市場首頁與分類頁交叉確認）。",
+      "每個分類在最後一頁皆無 next pager。",
+      "跨分類唯一 reference 總數=552。",
+      "官方商品詳情頁獨立抽查 19 筆，涵蓋 14/16 個分類、可取得詳情中的最低／最高價與新款；reference、結構化價格均一致（見 independent-spotcheck.json）。"
+    ]
+  },
+  "layer5_changeSafety": {
+    "status": "PASS",
+    "checks": [
+      "新增 FR／ES 市場各自 runId 1，未覆寫任何既有價格歷史。",
+      "既有 traveler-refund-policies.json 與 schema 未修改。"
+    ]
+  },
+  "sourceReconciliation": {
+    "observedListingCount": 552,
+    "marketWatchCount": 552,
+    "priceSeriesCount": 552,
+    "detailHttp200Count": 441,
+    "detailUnavailableOrFailedCount": 111,
+    "priceRange": "3,300–618,300 EUR"
+  },
+  "independentSpotCheck": {
+    "status": "PASS",
+    "sampleCount": 19,
+    "evidence": "data/evidence/omega/ES/2026-09-20/independent-spotcheck.json"
+  }
+}
