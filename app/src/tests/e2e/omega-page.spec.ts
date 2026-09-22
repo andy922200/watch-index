@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
 
-test('browses Omega by its seven supported markets and opens specifications', async ({ page }) => {
+test('browses Omega by its nine supported markets and opens specifications', async ({ page }) => {
   await page.goto('/omega/en-us/')
 
   await expect(page.getByRole('heading', { name: 'Omega Watch Index' })).toBeVisible()
@@ -12,6 +12,8 @@ test('browses Omega by its seven supported markets and opens specifications', as
   await expect(page.getByRole('option', { name: 'Hong Kong' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'Switzerland' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'Germany' })).toBeVisible()
+  await expect(page.getByRole('option', { name: 'France' })).toBeVisible()
+  await expect(page.getByRole('option', { name: 'Spain' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'United States' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'China' })).toHaveCount(0)
 
@@ -27,6 +29,16 @@ test('browses Omega by its seven supported markets and opens specifications', as
   await marketSelect.click()
   await page.getByRole('option', { name: 'Germany' }).click()
   await expect(marketSelect).toContainText('Germany')
+  await expect(page.locator('[data-slot="card"]')).toHaveCount(12)
+
+  await marketSelect.click()
+  await page.getByRole('option', { name: 'France' }).click()
+  await expect(marketSelect).toContainText('France')
+  await expect(page.locator('[data-slot="card"]')).toHaveCount(12)
+
+  await marketSelect.click()
+  await page.getByRole('option', { name: 'Spain' }).click()
+  await expect(marketSelect).toContainText('Spain')
   await expect(page.locator('[data-slot="card"]')).toHaveCount(12)
 
   await marketSelect.click()
@@ -49,6 +61,8 @@ test('uses Hong Kong and Switzerland as Omega comparison baselines', async ({ pa
   await expect(page.getByTestId('market-price-HK')).toContainText('Baseline market')
   await expect(page.getByTestId('market-price-CH')).toBeVisible()
   await expect(page.getByTestId('market-price-DE')).toBeVisible()
+  await expect(page.getByTestId('market-price-FR')).toBeVisible()
+  await expect(page.getByTestId('market-price-ES')).toBeVisible()
   await expect(page.getByTestId('market-price-US')).toBeVisible()
 
   await page.getByRole('combobox', { name: 'Market' }).click()
