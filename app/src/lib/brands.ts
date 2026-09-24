@@ -127,8 +127,8 @@ export const brandDirectory: readonly BrandDirectoryEntry[] = [
       entry: '/src/pages/omega/price-compare/main.ts',
       title: { zhTw: 'Omega 腕錶行情比較', enUs: 'Omega Watch Price Comparison' },
       description: {
-        zhTw: '比較同一支 Omega 腕錶在台灣、中國、日本、韓國、香港、瑞士、奧地利、德國、法國、義大利、西班牙、英國與美國的官方定價。',
-        enUs: 'Compare official Omega prices across Taiwan, China, Japan, South Korea, Hong Kong, Switzerland, Austria, Germany, France, Italy, Spain, the United Kingdom, and the United States.',
+        zhTw: '比較同一支 Omega 腕錶在各市場的官方定價與退稅估算參考。',
+        enUs: 'Compare official Omega prices and tax-refund estimate references across markets.',
       },
     },
   },
