@@ -1,0 +1,906 @@
+{
+  "brandId": "omega",
+  "marketCode": "GB",
+  "validatedAt": "2026-09-22T05:45:00.000Z",
+  "schemasUsed": [
+    "data/schemas/watch-market.schema.json (schemaVersion 3)",
+    "data/schemas/watch-price-history.schema.json (schemaVersion 3)"
+  ],
+  "validationMethodNote": "環境未安裝 ajv 或 python-jsonschema，且不得安裝依賴；因此以 Python 逐條實作兩份 Schema 的實際約束（required／const／pattern／type／enum／minItems／minProperties／uniqueItems／additionalProperties，以及 listingStatus 與 price 的 if-then 配對），而非呼叫通用 JSON Schema 引擎。此為手工轉寫，非官方驗證器輸出。",
+  "layer1_jsonAndSchema": {
+    "status": "PASS",
+    "checks": [
+      "嚴格 JSON 解析（object_pairs_hook 攔重複 key、parse_constant 攔 NaN/Infinity）：本市場 2 份正式檔 + 5 份 evidence 全數通過",
+      "market：必填欄位齊全、無額外欄位、$schema 與 schemaVersion 3 相符、brandId slug、collectedAt 為 date-time、marketCode ^[A-Z]{2}$、locale 長度 >= 2、source 為 {name,url} 且 url 合法",
+      "market.watches 549 筆全數符合 marketWatch 定義；dialDescription 全數為非 null 字串（含 1 筆 description 摘錄 fallback）；productUrl 全為合法 URI",
+      "history：必填欄位齊全、$schema 與 schemaVersion 3 相符、currencyCode ^[A-Z]{3}$、priceType 為 enum 值、taxRatePercent 介於 0..100",
+      "history.priceSeries 全部 key 符合 watchId pattern；549 條序列各 1 個價格點，listed 一律搭配非負整數 price（無 null／字串／浮點）"
+    ],
+    "errors": []
+  },
+  "layer2_crossFileRelations": {
+    "status": "PASS",
+    "checks": [
+      "watchCount 549 == len(watches) 549",
+      "549 個 reference 全部唯一，無重複完整配置",
+      "全部 watchId 皆等於 brandId + ':' + reference",
+      "market 與 history 為嚴格一對一（雙向差集皆為空）",
+      "marketCode 與 brandId 在 market／history 兩檔一致（omega / GB）",
+      "collectionRuns 只有 runId 1，recordCount 549 與 priceSeries 筆數相符；所有價格點 runId 皆存在於 collectionRuns",
+      "無相鄰且狀態與價格完全相同的冗餘價格點（本輪每條序列僅 1 點）",
+      "market.collectedAt 與 run 1 的 collectedAt 一致"
+    ],
+    "errors": []
+  },
+  "layer3_sourceReconciliation": {
+    "status": "PASS",
+    "checks": [
+      "549 筆 market 欄位（collectionName／modelName／caseDescription／dialDescription／isNewModel／productUrl）逐筆回對 observations.json，無差異",
+      "549 筆價格在三個官方取得點一致：分類卡片 span.price 文字、[data-price-amount]、data-product-dl 的 dataLayer price",
+      "549 筆原始英鎊價格文字依英式格式（逗號＝千分位、點＝小數）解析，結果與 parsedPrice 完全一致",
+      "549 筆商品詳情頁皆為 HTTP 200、htmlLang=en-GB，且詳情頁 sku 與 reference 逐字相符",
+      "549 筆 dataLayer 皆為 country=GB、language=EN、currency=GBP",
+      "寫入 market 的 localNicknames 與 nickname-research.json 的 acceptedNicknames 完全一致（310.32.42.50.02.001、311.30.40.30.01.001 共 2 筆）"
+    ],
+    "errors": []
+  },
+  "layer4_completenessAndSpotCheck": {
+    "status": "PASS",
+    "checks": [
+      "16 個官方分類逐一收集，15 個分類 officialTotal 與 uniqueCollectedCount 相符；De Ville Tourbillon 官方回應 NO RESULTS FOUND，以 0 筆計入且與官方首頁未列出該子系列一致",
+      "每個分類的最後一頁皆無官方下一頁連結（a[data-role=\"ajax-pager\"][data-target=\"next\"] 不存在），nextUrl 為 null",
+      "全部分頁請求皆 HTTP 200，無逾時、無未解決的下一頁",
+      "各分類唯一數總和 549 == 跨分類唯一總數 549，代表無跨分類重複",
+      "549 個商品詳情頁全部成功取得（HTTP 200），productDetailCount == uniqueListingCount",
+      "20 款獨立抽查全部通過（見 independentSpotCheck）"
+    ],
+    "errors": []
+  },
+  "layer5_changeSafety": {
+    "status": "PASS",
+    "checks": [
+      "本次為新增市場，GB 的 Omega 價格歷史先前不存在，無既有價格序列可被覆寫；建立後 collectionRuns 僅 runId 1",
+      "data/history/GB/rolex-price-history.json 未被修改",
+      "data/catalog/omega-catalog.json 未被修改（sourceMarketCodes 仍不含 GB，留待統籌者合併；本輪 549 個 reference 全部已存在於既有 catalog，合併不會新增任何配置）",
+      "data/traveler-refund-policies.json 未被修改（既有 GB 記錄經獨立複查內容仍正確）",
+      "data/schemas/ 未被修改",
+      "未讀寫任何非 GB 市場的 market／history／evidence 正式資料；工作區中屬於使用者既有未提交工作的 CN 相關檔案（data/markets/omega-CN-market.json、data/history/CN/omega-price-history.json、data/evidence/omega/CN/）未被本單元讀取或修改",
+      "執行前 git status 顯示僅有使用者既有未提交的 CN 相關變更與若干已修改的人類文件／前端檔案；本次寫入未觸及這些既有變更"
+    ],
+    "errors": []
+  },
+  "sourceReconciliation": {
+    "observedListingCount": 549,
+    "marketWatchCount": 549,
+    "priceSeriesCount": 549,
+    "duplicateReferenceCount": 0,
+    "detailHttp200Count": 549,
+    "dialSourceFieldCounts": {
+      "watch_dial": 515,
+      "watch_dial_detailed_color": 33,
+      "description-fallback": 1
+    },
+    "priceStatusCounts": {
+      "listed": 549,
+      "price-unavailable": 0,
+      "not-listed": 0
+    }
+  },
+  "catalogRelation": {
+    "note": "本工作單元不寫入 data/catalog/omega-catalog.json；以下僅為提供統籌者合併時參考的唯讀比對結果。",
+    "existingCatalogCount": 586,
+    "gbMarketCount": 549,
+    "intersectionCount": 549,
+    "gbOnlyCount": 0,
+    "gbOnlyReferences": [],
+    "catalogOnlyCount": 37,
+    "unionCountIfMerged": 586,
+    "interpretation": "GB 本輪 549 個 reference 全部已存在於既有 omega catalog，M − C 為空，合併 GB 不會新增任何配置；C − M 的 37 個配置本輪未於英國官網列出，依規則保留、不得視為下架證據（可能為其他市場獨有配置，例如 CN／JP／KR／US 等市場專屬款）。"
+  },
+  "independentSpotCheck": {
+    "status": "PASS",
+    "sampleCount": 20,
+    "method": "主要收集路徑為官方分類目錄（catalog 分頁卡片）。抽查改用兩個不同的官方視圖：(1) 官方站內搜尋結果頁 /en-gb/catalogsearch/result/?q={reference}；(2) 官方商品頁內嵌的 schema.org JSON-LD Product.offers（含 sku、price、priceCurrency）。三者價格與 reference 需完全一致才算通過。",
+    "coverage": {
+      "perCategoryRepresentative": "15／15 個非空官方分類各 1 款（De Ville Tourbillon 為 0 筆分類，無代表款可抽查）",
+      "sameBaseModelDifferentConfig": "2 組（220.10.41.21.* 與 220.13.41.21.*）",
+      "lowestPrice": "131.10.36.60.01.001（£2,800）",
+      "highestPrice": "522.50.45.52.03.001（£526,300）",
+      "newModel": "4 款帶官方新款標示（140.13.39.21.02.001、217.30.42.21.01.001、310.92.44.51.01.004、324.30.38.50.01.002）",
+      "anomaly": "434.23.40.20.02.001（官方詳情頁缺 watch_dial／watch_dial_detailed_color／watch_dial_color 欄位，dialDescription 依商品 description 摘錄）",
+      "noPublicPrice": "NOT APPLICABLE — 本輪 549 筆英國官方 listing 全部有公開價格，不存在 price-unavailable 或 not-listed 的案例可供抽查；已如實記錄而非以其他狀態替代。"
+    },
+    "allSamplesPassed": true,
+    "samples": [
+      {
+        "reference": "131.30.41.21.04.001",
+        "role": "系列代表款 constellation/constellation",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£6,900",
+          "priceAmount": 6900
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=131.30.41.21.04.001",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£6,900.00",
+          "priceAmount": 6900
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-constellation-co-axial-master-chronometer-41-mm-13130412104001",
+          "httpStatus": 200,
+          "offerSku": "131.30.41.21.04.001",
+          "price": 6900,
+          "priceCurrency": "GBP",
+          "name": "Constellation Steel Master Chronometer Certified Watch 131.30.41.21.04.001"
+        },
+        "storedPrice": 6900,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "Constellation",
+          "modelName": "Constellation",
+          "caseDescription": "41 mm, steel on steel",
+          "dialDescription": "White",
+          "isNewModel": false
+        }
+      },
+      {
+        "reference": "140.13.39.21.02.001",
+        "role": "系列代表款 constellation/observatory；新款",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£9,100",
+          "priceAmount": 9100
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=140.13.39.21.02.001",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£9,100.00",
+          "priceAmount": 9100
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-constellation-observatory-co-axial-master-chronometer-39-4-mm-14013392102001",
+          "httpStatus": 200,
+          "offerSku": "140.13.39.21.02.001",
+          "price": 9100,
+          "priceCurrency": "GBP",
+          "name": "Constellation O-MEGASTEEL Master Chronometer Certified Watch 140.13.39.21.02.001"
+        },
+        "storedPrice": 9100,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "Constellation Observatory",
+          "modelName": "Observatory",
+          "caseDescription": "39.4 mm, O‑MEGASTEEL on alligator",
+          "dialDescription": "Silver",
+          "isNewModel": true
+        }
+      },
+      {
+        "reference": "210.30.42.20.01.010",
+        "role": "系列代表款 seamaster/diver-300-m",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£6,100",
+          "priceAmount": 6100
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=210.30.42.20.01.010",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£6,100.00",
+          "priceAmount": 6100
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001010",
+          "httpStatus": 200,
+          "offerSku": "210.30.42.20.01.010",
+          "price": 6100,
+          "priceCurrency": "GBP",
+          "name": "Seamaster Steel Master Chronometer Certified Watch 210.30.42.20.01.010"
+        },
+        "storedPrice": 6100,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "Seamaster Diver 300M",
+          "modelName": "Diver 300M",
+          "caseDescription": "42 mm, steel on steel",
+          "dialDescription": "Black",
+          "isNewModel": false
+        }
+      },
+      {
+        "reference": "217.30.42.21.01.001",
+        "role": "系列代表款 seamaster/planet-ocean；新款",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£7,700",
+          "priceAmount": 7700
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=217.30.42.21.01.001",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£7,700.00",
+          "priceAmount": 7700
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-seamaster-planet-ocean-600m-co-axial-master-chronometer-42-mm-21730422101001",
+          "httpStatus": 200,
+          "offerSku": "217.30.42.21.01.001",
+          "price": 7700,
+          "priceCurrency": "GBP",
+          "name": "Seamaster Steel Master Chronometer Certified Watch 217.30.42.21.01.001"
+        },
+        "storedPrice": 7700,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "Seamaster Planet Ocean 600M",
+          "modelName": "Planet Ocean 600M",
+          "caseDescription": "42 mm, steel on steel",
+          "dialDescription": "Black",
+          "isNewModel": true
+        }
+      },
+      {
+        "reference": "216.92.46.79.10.001",
+        "role": "系列代表款 seamaster/instruments（該分類僅 1 款）",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£7,000",
+          "priceAmount": 7000
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=216.92.46.79.10.001",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£7,000.00",
+          "priceAmount": 7000
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-seamaster-regatta-chronograph-46-75-mm-21692467910001",
+          "httpStatus": 200,
+          "offerSku": "216.92.46.79.10.001",
+          "price": 7000,
+          "priceCurrency": "GBP",
+          "name": "Seamaster America's Cup Watch 216.92.46.79.10.001"
+        },
+        "storedPrice": 7000,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "Seamaster Regatta",
+          "modelName": "Regatta",
+          "caseDescription": "46.75 mm, titanium on rubber strap",
+          "dialDescription": "Grey",
+          "isNewModel": false
+        }
+      },
+      {
+        "reference": "220.10.41.21.01.002",
+        "role": "系列代表款 seamaster/aqua-terra-150m；同基本型號組 A 之一",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£6,200",
+          "priceAmount": 6200
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=220.10.41.21.01.002",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£6,200.00",
+          "priceAmount": 6200
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101002",
+          "httpStatus": 200,
+          "offerSku": "220.10.41.21.01.002",
+          "price": 6200,
+          "priceCurrency": "GBP",
+          "name": "Seamaster Steel Master Chronometer Certified Watch 220.10.41.21.01.002"
+        },
+        "storedPrice": 6200,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "Seamaster Aqua Terra 150M",
+          "modelName": "Aqua Terra 150M",
+          "caseDescription": "41 mm, steel on steel",
+          "dialDescription": "Black",
+          "isNewModel": false
+        }
+      },
+      {
+        "reference": "235.10.38.20.06.001",
+        "role": "系列代表款 seamaster/heritage-models（Railmaster）",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£5,200",
+          "priceAmount": 5200
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=235.10.38.20.06.001",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£5,200.00",
+          "priceAmount": 5200
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-seamaster-railmaster-co-axial-master-chronometer-38-mm-23510382006001",
+          "httpStatus": 200,
+          "offerSku": "235.10.38.20.06.001",
+          "price": 5200,
+          "priceCurrency": "GBP",
+          "name": "Seamaster Steel Master Chronometer Certified Watch 235.10.38.20.06.001"
+        },
+        "storedPrice": 5200,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "Seamaster Railmaster",
+          "modelName": "Railmaster",
+          "caseDescription": "38 mm, steel on steel",
+          "dialDescription": "Grey",
+          "isNewModel": false
+        }
+      },
+      {
+        "reference": "332.10.41.51.01.002",
+        "role": "系列代表款 speedmaster/two-counters（Pilot）",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£8,900",
+          "priceAmount": 8900
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=332.10.41.51.01.002",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£8,900.00",
+          "priceAmount": 8900
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-speedmaster-pilot-co-axial-master-chronometer-chronograph-40-85-mm-33210415101002",
+          "httpStatus": 200,
+          "offerSku": "332.10.41.51.01.002",
+          "price": 8900,
+          "priceCurrency": "GBP",
+          "name": "Speedmaster Steel Master Chronometer Certified Watch 332.10.41.51.01.002"
+        },
+        "storedPrice": 8900,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "Speedmaster Pilot",
+          "modelName": "Pilot",
+          "caseDescription": "40.85 mm, steel on steel",
+          "dialDescription": "Black",
+          "isNewModel": false
+        }
+      },
+      {
+        "reference": "310.30.42.50.04.001",
+        "role": "系列代表款 speedmaster/moonwatch-professional",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£7,600",
+          "priceAmount": 7600
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=310.30.42.50.04.001",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£7,600.00",
+          "priceAmount": 7600
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425004001",
+          "httpStatus": 200,
+          "offerSku": "310.30.42.50.04.001",
+          "price": 7600,
+          "priceCurrency": "GBP",
+          "name": "Speedmaster Steel Master Chronometer Certified Watch 310.30.42.50.04.001"
+        },
+        "storedPrice": 7600,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "Speedmaster Moonwatch Professional",
+          "modelName": "Moonwatch Professional",
+          "caseDescription": "42 mm, steel on steel",
+          "dialDescription": "White",
+          "isNewModel": false
+        }
+      },
+      {
+        "reference": "310.30.40.50.06.001",
+        "role": "系列代表款 speedmaster/heritage-models（First OMEGA in Space）",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£7,400",
+          "priceAmount": 7400
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=310.30.40.50.06.001",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£7,400.00",
+          "priceAmount": 7400
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-speedmaster-first-omega-in-space-co-axial-master-chronometer-chronograph-39-7-mm-31030405006001",
+          "httpStatus": 200,
+          "offerSku": "310.30.40.50.06.001",
+          "price": 7400,
+          "priceCurrency": "GBP",
+          "name": "Speedmaster Steel Master Chronometer Certified Watch 310.30.40.50.06.001"
+        },
+        "storedPrice": 7400,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "Speedmaster First OMEGA in Space",
+          "modelName": "First OMEGA in Space",
+          "caseDescription": "39.7 mm, steel on steel",
+          "dialDescription": "Blue ‑ Grey",
+          "isNewModel": false
+        }
+      },
+      {
+        "reference": "310.92.44.51.01.004",
+        "role": "系列代表款 speedmaster/dark-side-of-the-moon；新款",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£13,100",
+          "priceAmount": 13100
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=310.92.44.51.01.004",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£13,100.00",
+          "priceAmount": 13100
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-speedmaster-dark-side-of-the-moon-co-axial-master-chronometer-chronograph-44-25-mm-31092445101004",
+          "httpStatus": 200,
+          "offerSku": "310.92.44.51.01.004",
+          "price": 13100,
+          "priceCurrency": "GBP",
+          "name": "Speedmaster Black ceramic Master Chronometer Certified Watch 310.92.44.51.01.004"
+        },
+        "storedPrice": 13100,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "Speedmaster Dark Side of the Moon",
+          "modelName": "Dark Side of the Moon",
+          "caseDescription": "44.25 mm, black ceramic on rubber strap",
+          "dialDescription": "Black",
+          "isNewModel": true
+        }
+      },
+      {
+        "reference": "324.30.38.50.01.002",
+        "role": "系列代表款 speedmaster/speedmaster-38-mm；新款",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£5,500",
+          "priceAmount": 5500
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=324.30.38.50.01.002",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£5,500.00",
+          "priceAmount": 5500
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-speedmaster-38-co-axial-chronometer-chronograph-38-mm-32430385001002",
+          "httpStatus": 200,
+          "offerSku": "324.30.38.50.01.002",
+          "price": 5500,
+          "priceCurrency": "GBP",
+          "name": "Speedmaster Steel Chronometer Watch 324.30.38.50.01.002"
+        },
+        "storedPrice": 5500,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "Speedmaster 38",
+          "modelName": "Speedmaster 38",
+          "caseDescription": "38 mm, steel on steel",
+          "dialDescription": "Black",
+          "isNewModel": true
+        }
+      },
+      {
+        "reference": "425.30.34.20.55.002",
+        "role": "系列代表款 de-ville/ladymatic",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£8,200",
+          "priceAmount": 8200
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=425.30.34.20.55.002",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£8,200.00",
+          "priceAmount": 8200
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-de-ville-ladymatic-co-axial-chronometer-34-mm-42530342055002",
+          "httpStatus": 200,
+          "offerSku": "425.30.34.20.55.002",
+          "price": 8200,
+          "priceCurrency": "GBP",
+          "name": "De Ville Steel Chronometer Watch 425.30.34.20.55.002"
+        },
+        "storedPrice": 8200,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "De Ville Ladymatic",
+          "modelName": "Ladymatic",
+          "caseDescription": "34 mm, steel on steel",
+          "dialDescription": "White",
+          "isNewModel": false
+        }
+      },
+      {
+        "reference": "428.17.26.60.04.008",
+        "role": "系列代表款 de-ville/tresor",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£4,500",
+          "priceAmount": 4500
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=428.17.26.60.04.008",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£4,500.00",
+          "priceAmount": 4500
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-de-ville-mini-tresor-quartz-26-mm-42817266004008",
+          "httpStatus": 200,
+          "offerSku": "428.17.26.60.04.008",
+          "price": 4500,
+          "priceCurrency": "GBP",
+          "name": "De Ville Steel Diamonds Watch 428.17.26.60.04.008"
+        },
+        "storedPrice": 4500,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "De Ville Mini Trésor",
+          "modelName": "Mini Trésor",
+          "caseDescription": "26 mm, steel on leather strap",
+          "dialDescription": "White",
+          "isNewModel": false
+        }
+      },
+      {
+        "reference": "434.23.40.20.02.001",
+        "role": "系列代表款 de-ville/prestige；異常項目：官方詳情頁無 watch_dial／watch_dial_detailed_color／watch_dial_color 欄位，dialDescription 依 description 摘錄",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£7,000",
+          "priceAmount": 7000
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=434.23.40.20.02.001",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£7,000.00",
+          "priceAmount": 7000
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-de-ville-prestige-co-axial-master-chronometer-40-mm-43423402002001",
+          "httpStatus": 200,
+          "offerSku": "434.23.40.20.02.001",
+          "price": 7000,
+          "priceCurrency": "GBP",
+          "name": "De Ville Steel - Sedna™ gold Master Chronometer Certified Watch 434.23.40.20.02.001"
+        },
+        "storedPrice": 7000,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "De Ville Prestige",
+          "modelName": "Prestige",
+          "caseDescription": "40 mm, steel ‑ Sedna™ gold",
+          "dialDescription": "The domed silvery dial features a crystal finish.",
+          "isNewModel": false
+        }
+      },
+      {
+        "reference": "131.10.36.60.01.001",
+        "role": "全市場最低價（£2,800）",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£2,800",
+          "priceAmount": 2800
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=131.10.36.60.01.001",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£2,800.00",
+          "priceAmount": 2800
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-constellation-quartz-36-mm-13110366001001",
+          "httpStatus": 200,
+          "offerSku": "131.10.36.60.01.001",
+          "price": 2800,
+          "priceCurrency": "GBP",
+          "name": "Constellation Steel Date Watch 131.10.36.60.01.001"
+        },
+        "storedPrice": 2800,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "Constellation",
+          "modelName": "Constellation",
+          "caseDescription": "36 mm, steel on steel",
+          "dialDescription": "Black",
+          "isNewModel": false
+        }
+      },
+      {
+        "reference": "522.50.45.52.03.001",
+        "role": "全市場最高價（£526,300）",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£526,300",
+          "priceAmount": 526300
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=522.50.45.52.03.001",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£526,300.00",
+          "priceAmount": 526300
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-speedmaster-chrono-chime-co-axial-master-chronometer-chronograph-45-mm-52250455203001",
+          "httpStatus": 200,
+          "offerSku": "522.50.45.52.03.001",
+          "price": 526300,
+          "priceCurrency": "GBP",
+          "name": "Speedmaster Sedna™ gold Master Chronometer Certified Watch 522.50.45.52.03.001"
+        },
+        "storedPrice": 526300,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "Speedmaster Chrono Chime",
+          "modelName": "Chrono Chime",
+          "caseDescription": "45 mm, Sedna™ gold on Sedna™ gold",
+          "dialDescription": "Blue",
+          "isNewModel": false
+        }
+      },
+      {
+        "reference": "220.10.41.21.02.001",
+        "role": "同基本型號組 A 之二（220.10.41.21.*）",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£5,900",
+          "priceAmount": 5900
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=220.10.41.21.02.001",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£5,900.00",
+          "priceAmount": 5900
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102001",
+          "httpStatus": 200,
+          "offerSku": "220.10.41.21.02.001",
+          "price": 5900,
+          "priceCurrency": "GBP",
+          "name": "Aqua Terra Silvery Dial 38mm - 220.10.41.21.02.001"
+        },
+        "storedPrice": 5900,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "Seamaster Aqua Terra 150M",
+          "modelName": "Aqua Terra 150M",
+          "caseDescription": "41 mm, steel on steel",
+          "dialDescription": "Silver",
+          "isNewModel": false
+        }
+      },
+      {
+        "reference": "220.13.41.21.10.001",
+        "role": "同基本型號組 B 之一（220.13.41.21.*）",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£5,600",
+          "priceAmount": 5600
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=220.13.41.21.10.001",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£5,600.00",
+          "priceAmount": 5600
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22013412110001",
+          "httpStatus": 200,
+          "offerSku": "220.13.41.21.10.001",
+          "price": 5600,
+          "priceCurrency": "GBP",
+          "name": "Aqua Terra Green Dial - 220.13.41.21.10.001"
+        },
+        "storedPrice": 5600,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "Seamaster Aqua Terra 150M",
+          "modelName": "Aqua Terra 150M",
+          "caseDescription": "41 mm, steel on leather strap",
+          "dialDescription": "Green",
+          "isNewModel": false
+        }
+      },
+      {
+        "reference": "220.13.41.21.03.003",
+        "role": "同基本型號組 B 之二（220.13.41.21.*）",
+        "primaryPath": {
+          "view": "官方分類目錄卡片 (li.product-item)",
+          "priceText": "£5,600",
+          "priceAmount": 5600
+        },
+        "independentView1": {
+          "view": "官方站內搜尋結果 /en-gb/catalogsearch/result/?q={ref}",
+          "url": "https://www.omegawatches.com/en-gb/catalogsearch/result/?q=220.13.41.21.03.003",
+          "httpStatus": 200,
+          "resultCount": 1,
+          "priceText": "£5,600.00",
+          "priceAmount": 5600
+        },
+        "independentView2": {
+          "view": "官方商品頁 schema.org JSON-LD (Product.offers)",
+          "url": "https://www.omegawatches.com/en-gb/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22013412103003",
+          "httpStatus": 200,
+          "offerSku": "220.13.41.21.03.003",
+          "price": 5600,
+          "priceCurrency": "GBP",
+          "name": "Aqua Terra Blue Dial 220.13.41.21.03.003"
+        },
+        "storedPrice": 5600,
+        "storedListingStatus": "listed",
+        "skuMatches": true,
+        "priceMatchesAcrossAllViews": true,
+        "marketRecord": {
+          "collectionName": "Seamaster Aqua Terra 150M",
+          "modelName": "Aqua Terra 150M",
+          "caseDescription": "41 mm, steel on leather strap",
+          "dialDescription": "Blue",
+          "isNewModel": false
+        }
+      }
+    ]
+  },
+  "notRun": [
+    {
+      "item": "通用 JSON Schema 驗證器（ajv / python-jsonschema）",
+      "status": "NOT RUN / capability unavailable",
+      "detail": "環境未安裝且不得安裝依賴或存取 npm／PyPI；已改以逐條手工實作 Schema 約束（見 validationMethodNote）。"
+    },
+    {
+      "item": "無公開價（price-unavailable）與未列出（not-listed）狀態的抽查",
+      "status": "NOT RUN / not applicable",
+      "detail": "本市場本輪不存在此兩種狀態的資料。"
+    },
+    {
+      "item": "claude-in-chrome MCP 與 browser-web-data-discovery skill",
+      "status": "NOT RUN",
+      "detail": "chrome-devtools MCP 已完成所需的真實瀏覽器與 network 觀察，未另行呼叫。"
+    },
+    {
+      "item": "data/catalog/omega-catalog.json 合併與跨檔全域驗證",
+      "status": "NOT RUN (out of scope)",
+      "detail": "依任務範圍限制，catalog 合併由統籌者在所有市場完成後執行；本檔已提供唯讀比對結果（catalogRelation）供參考。"
+    },
+    {
+      "item": "data/traveler-refund-policies.json 寫入",
+      "status": "NOT RUN (not required)",
+      "detail": "獨立複查已完成並記錄於 traveler-refund-policy.json；既有 GB 記錄（原評估自 Rolex GB）內容經重新查證仍正確，未發現需要更新之處，因此未修改共用檔案。"
+    },
+    {
+      "item": "前端建置（app/）與資料輸出驗證",
+      "status": "NOT RUN (out of scope)",
+      "detail": "本任務資料收集部分僅涵蓋 data/ 之單一市場資料維護；前端顯示變更另於 app/ 修改後以 TypeScript／Vue 慣例檢查（非本節涵蓋範圍）。"
+    }
+  ],
+  "readmeUpdate": {
+    "status": "NOT REQUIRED（由統籌者決定）",
+    "updated": false,
+    "sections": [
+      "README.md 的 Omega 涵蓋市場敘述",
+      "watch-data-collection-guide.md 的 Omega 市場表格"
+    ],
+    "reason": "README.md 與 watch-data-collection-guide.md 目前記載 Omega 涵蓋 10 個市場（含使用者既有未提交的 CN）。本次新增 GB 後長期描述確實會受影響，但該敘述同時涵蓋其他並行市場與 catalog 聯集數字；本單元已在人類文件層另行同步 GB 相關段落（見回報），惟跨市場總數與聯集數字建議由使用者在所有並行市場工作完成後再次確認。"
+  },
+  "limitations": [
+    "本市場歷史檔僅有 runId 1，尚無跨輪次價格變動可供比較。",
+    "Omega 英國官網未揭露價格中的增值稅稅率百分比；20% 係依 GOV.UK 標準稅率認定，非官網原文。",
+    "1 筆配置（434.23.40.20.02.001）的官方詳情頁不提供結構化面盤欄位，dialDescription 依官方商品 description 中明確含 dial 字樣的原文句段摘錄（The domed silvery dial features a crystal finish.），非結構化欄位來源。",
+    "俗稱研究中，Chrono24 相關頁面與部分零售商頁面存取受限或內容非決定性，已列為未採用或僅作旁證來源。",
+    "Schema 驗證為手工轉寫實作，非通用驗證器輸出（見 validationMethodNote）。",
+    "本次未執行 catalog 合併；catalogRelation 僅為唯讀比對，實際合併與跨市場總數更新留待使用者／統籌者執行。"
+  ]
+}

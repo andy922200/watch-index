@@ -2,7 +2,7 @@
   "$schema": "../schemas/watch-catalog.schema.json",
   "schemaVersion": 3,
   "brandId": "omega",
-  "collectedAt": "2026-09-20T15:40:00.000Z",
+  "collectedAt": "2026-09-22T04:36:38.944Z",
   "sourceMarketCodes": [
     "TW",
     "JP",
@@ -12,9 +12,10 @@
     "US",
     "DE",
     "FR",
-    "ES"
+    "ES",
+    "CN"
   ],
-  "watchCount": 556,
+  "watchCount": 586,
   "watches": [
     {
       "watchId": "omega:131.10.25.60.02.002",
@@ -3351,6 +3352,186 @@
       "collectionId": "seamaster",
       "reference": "215.92.46.22.03.001",
       "imageUrl": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-planet-ocean-600m-co-axial-master-chronometer-gmt-45-5-mm-21592462203001-f3f5a8.png"
+    },
+    {
+      "watchId": "omega:434.13.30.60.60.001",
+      "collectionId": "de-ville",
+      "reference": "434.13.30.60.60.001",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-quartz-30_mm-43413306060001-2faa99.png"
+    },
+    {
+      "watchId": "omega:434.10.30.60.10.001",
+      "collectionId": "de-ville",
+      "reference": "434.10.30.60.10.001",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-quartz-30_mm-43410306010001-307e3b.png"
+    },
+    {
+      "watchId": "omega:434.13.30.60.53.001",
+      "collectionId": "de-ville",
+      "reference": "434.13.30.60.53.001",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-quartz-30_mm-43413306053001-091fd0.png"
+    },
+    {
+      "watchId": "omega:434.13.30.60.51.001",
+      "collectionId": "de-ville",
+      "reference": "434.13.30.60.51.001",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-quartz-30_mm-43413306051001-3fb263.png"
+    },
+    {
+      "watchId": "omega:434.10.30.60.01.001",
+      "collectionId": "de-ville",
+      "reference": "434.10.30.60.01.001",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-quartz-30_mm-43410306001001-9d87c3.png"
+    },
+    {
+      "watchId": "omega:434.13.28.60.59.001",
+      "collectionId": "de-ville",
+      "reference": "434.13.28.60.59.001",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-quartz-27-5_mm-43413286059001-29cb13.png"
+    },
+    {
+      "watchId": "omega:434.13.28.60.53.001",
+      "collectionId": "de-ville",
+      "reference": "434.13.28.60.53.001",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-quartz-27-5_mm-43413286053001-58c936.png"
+    },
+    {
+      "watchId": "omega:434.10.28.60.03.001",
+      "collectionId": "de-ville",
+      "reference": "434.10.28.60.03.001",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-quartz-27-5_mm-43410286003001-76f4d8.png"
+    },
+    {
+      "watchId": "omega:434.13.28.60.60.001",
+      "collectionId": "de-ville",
+      "reference": "434.13.28.60.60.001",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-quartz-27-5_mm-43413286060001-911b38.png"
+    },
+    {
+      "watchId": "omega:434.13.28.60.53.002",
+      "collectionId": "de-ville",
+      "reference": "434.13.28.60.53.002",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-quartz-27-5_mm-43413286053002-5834a6.png"
+    },
+    {
+      "watchId": "omega:434.10.28.60.03.002",
+      "collectionId": "de-ville",
+      "reference": "434.10.28.60.03.002",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-quartz-27-5_mm-43410286003002-63bac3.png"
+    },
+    {
+      "watchId": "omega:424.13.40.21.01.002",
+      "collectionId": "de-ville",
+      "reference": "424.13.40.21.01.002",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-power-reserve-39-5-mm-42413402101002-deb953.png"
+    },
+    {
+      "watchId": "omega:424.13.40.21.02.002",
+      "collectionId": "de-ville",
+      "reference": "424.13.40.21.02.002",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-power-reserve-39-5-mm-42413402102002-a30a5c.png"
+    },
+    {
+      "watchId": "omega:424.13.40.20.03.001",
+      "collectionId": "de-ville",
+      "reference": "424.13.40.20.03.001",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-395_mm-42413402003001-f00de7.png"
+    },
+    {
+      "watchId": "omega:424.13.40.20.02.003",
+      "collectionId": "de-ville",
+      "reference": "424.13.40.20.02.003",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-395_mm-42413402002003-f5b544.png"
+    },
+    {
+      "watchId": "omega:424.13.40.20.02.002",
+      "collectionId": "de-ville",
+      "reference": "424.13.40.20.02.002",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-395_mm-42413402002002-0ac01e.png"
+    },
+    {
+      "watchId": "omega:424.13.40.20.02.001",
+      "collectionId": "de-ville",
+      "reference": "424.13.40.20.02.001",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-395_mm-42413402002001-ea3496.png"
+    },
+    {
+      "watchId": "omega:424.10.40.20.01.001",
+      "collectionId": "de-ville",
+      "reference": "424.10.40.20.01.001",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-395_mm-42410402001001-8cabb6.png"
+    },
+    {
+      "watchId": "omega:424.10.40.20.02.007",
+      "collectionId": "de-ville",
+      "reference": "424.10.40.20.02.007",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-395_mm-42410402002007-c13ca1.png"
+    },
+    {
+      "watchId": "omega:424.10.40.20.02.005",
+      "collectionId": "de-ville",
+      "reference": "424.10.40.20.02.005",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-395_mm-42410402002005-cc7a80.png"
+    },
+    {
+      "watchId": "omega:424.10.40.20.02.001",
+      "collectionId": "de-ville",
+      "reference": "424.10.40.20.02.001",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-395_mm-42410402002001-51f2f9.png"
+    },
+    {
+      "watchId": "omega:424.10.40.20.02.002",
+      "collectionId": "de-ville",
+      "reference": "424.10.40.20.02.002",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-395_mm-42410402002002-f323e3.png"
+    },
+    {
+      "watchId": "omega:424.10.40.20.02.004",
+      "collectionId": "de-ville",
+      "reference": "424.10.40.20.02.004",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-395_mm-42410402002004-3f8bc1.png"
+    },
+    {
+      "watchId": "omega:424.10.40.20.03.004",
+      "collectionId": "de-ville",
+      "reference": "424.10.40.20.03.004",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-395_mm-42410402003004-ec3569.png"
+    },
+    {
+      "watchId": "omega:424.10.40.20.03.002",
+      "collectionId": "de-ville",
+      "reference": "424.10.40.20.03.002",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-395_mm-42410402003002-377882.png"
+    },
+    {
+      "watchId": "omega:424.10.33.20.56.002",
+      "collectionId": "de-ville",
+      "reference": "424.10.33.20.56.002",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-32-7_mm-42410332056002-6cab4f.png"
+    },
+    {
+      "watchId": "omega:424.10.33.20.06.001",
+      "collectionId": "de-ville",
+      "reference": "424.10.33.20.06.001",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-32-7_mm-42410332006001-9ea2f3.png"
+    },
+    {
+      "watchId": "omega:424.23.33.20.09.001",
+      "collectionId": "de-ville",
+      "reference": "424.23.33.20.09.001",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-32-7_mm-42423332009001-f10e93.png"
+    },
+    {
+      "watchId": "omega:424.10.33.20.52.001",
+      "collectionId": "de-ville",
+      "reference": "424.10.33.20.52.001",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-32-7_mm-42410332052001-4c5496.png"
+    },
+    {
+      "watchId": "omega:424.10.33.20.05.001",
+      "collectionId": "de-ville",
+      "reference": "424.10.33.20.05.001",
+      "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-32-7_mm-42410332005001-f90ced.png"
     }
   ]
 }

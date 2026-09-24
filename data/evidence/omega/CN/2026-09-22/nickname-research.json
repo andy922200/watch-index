@@ -1,0 +1,78 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "omega",
+  "marketCode": "CN",
+  "researchedAt": "2026-09-22T04:32:30.000Z",
+  "nicknameResearch": {
+    "status": "PASS",
+    "scope": "new-market",
+    "languages": [
+      "zh-Hans",
+      "zh-Hant",
+      "en"
+    ],
+    "queries": [
+      "Omega 310.32.42.50.02.001 史努比",
+      "Omega 311.30.44.51.01.002 熊猫迪",
+      "欧米茄 210.30.42.20.03.001 俗称",
+      "欧米茄 522.30.42.30.06.001 俗称"
+    ],
+    "sourcesReviewed": [
+      {
+        "publisher": "腕表之家",
+        "url": "https://www.xbiao.com/omega/77478/",
+        "reference": "310.32.42.50.02.001",
+        "result": "頁面逐字列出完整型號 310.32.42.50.02.001，並稱為「史努比奖」50周年纪念腕表。"
+      },
+      {
+        "publisher": "OMEGA",
+        "url": "https://www.omegawatches.cn/watch-omega-speedmaster-anniversary-series-co-axial-master-chronometer-chronograph-42-mm-31032425002001",
+        "reference": "310.32.42.50.02.001",
+        "result": "中國官方商品頁確認完整參考號與正式名稱「银史努比奖章」。"
+      },
+      {
+        "publisher": "OMEGA",
+        "url": "https://www.omegawatches.cn/watch-omega-speedmaster-two-counters-co-axial-chronometer-chronograph-44-25-mm-31130445101002",
+        "reference": "311.30.44.51.01.002",
+        "result": "中國官方頁可確認此查詢候選的完整參考號，但該配置未列於本次 CN 官方在售集合，故不採用。"
+      },
+      {
+        "publisher": "OMEGA",
+        "url": "https://www.omegawatches.cn/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003001",
+        "reference": "210.30.42.20.03.001",
+        "result": "在售集合中的候選；未找到可精確對應完整參考號的可信俗稱來源，拒絕採用。"
+      }
+    ],
+    "candidateCount": 4,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 1,
+    "acceptedLocalNicknames": [
+      {
+        "reference": "310.32.42.50.02.001",
+        "name": "史努比",
+        "sources": [
+          {
+            "publisher": "腕表之家",
+            "url": "https://www.xbiao.com/omega/77478/"
+          }
+        ],
+        "reason": "來源以完整配置碼連結「史努比奖」名稱；本次 CN 官方在售觀察亦有相同完整參考號。"
+      }
+    ],
+    "rejectedCandidates": [
+      {
+        "query": "Omega 311.30.44.51.01.002 熊猫迪",
+        "reason": "候選完整參考號不在本次 CN 官方在售集合。"
+      },
+      {
+        "query": "欧米茄 210.30.42.20.03.001 俗称",
+        "reason": "未發現將俗稱與該完整配置碼明確相連的可信來源。"
+      },
+      {
+        "query": "欧米茄 522.30.42.30.06.001 俗称",
+        "reason": "候選完整參考號不在本次 CN 官方在售集合。"
+      }
+    ],
+    "notes": "未把系列官方名稱或泛用型號詞當作俗稱；其餘配置維持空俗稱陣列，並非聲稱不存在俗稱。"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "brandId": "omega",
+  "marketCode": "GB",
+  "researchedAt": "2026-09-22T05:50:00.000Z",
+  "scope": "new-market",
+  "status": "PASS",
+  "languages": [
+    "en"
+  ],
+  "method": "以英文查詢英國市場在用的 OMEGA 俗稱／收藏家暱稱，並要求來源能把暱稱明確對應到本輪 549 個現行英國官方 reference 中的單一完整配置，且來源須為英國（.co.uk 或明確英國地址／GBP／英國門市）零售商、收藏家出版品或拍賣平台。先以搜尋找出候選暱稱，再回到 Omega 英國官網（en-gb）確認該 reference 是否仍在本輪清單中、以及該名稱是否其實已是官方型號名稱（collectionName／modelName／頁面標題）。官方自己使用的版本名稱（例如「007 Edition」「Silver Snoopy Award」「Ploprof」）視為官方命名，不計入 localNicknames，除非市場慣用的簡稱與官方全名不同且能唯一對應。",
+  "queries": [
+    "Omega Speedmaster \"Snoopy\" 310.32.42.50.02.001 UK retailer",
+    "Omega Seamaster Ploprof nickname UK collector reference 227.32.55.21.03.001",
+    "Omega Speedmaster \"Ed White\" nickname UK reference current lineup",
+    "\"311.30.40.30.01.001\" \"Ed White\" watch UK"
+  ],
+  "sourcesReviewed": [
+    {
+      "publisher": "BQ Watches (UK retailer, Radlett & London Hatton Garden)",
+      "title": "OMEGA SPEEDMASTER SNOOPY 310.32.42.50.02.001 - SKU: 47131",
+      "url": "https://www.bqwatches.com/product/21162",
+      "finding": "頁面標題與內文直接以「SNOOPY」稱呼 310.32.42.50.02.001（Home / Omega / Speedmaster / Snoopy），並以 GBP 標價、列有英國兩處門市地址（Radlett WD7 7NP；London Hatton Garden EC1N 8BN）。該 reference 存在於本輪英國官方清單（Speedmaster Anniversary Series，£10,000）。",
+      "accepted": true
+    },
+    {
+      "publisher": "OMEGA United Kingdom（官方商品頁）",
+      "title": "Speedmaster “Silver Snoopy Award” Watch 310.32.42.50.02.001",
+      "url": "https://www.omegawatches.com/en-gb/watch-omega-speedmaster-anniversary-series-co-axial-master-chronometer-chronograph-42-mm-31032425002001",
+      "finding": "官方英文頁標題為「Silver Snoopy Award」，market 檔 collectionName 為「Speedmaster Anniversary Series」。官方命名未單獨使用「Snoopy」，故「Snoopy」屬英國市場流通的簡稱暱稱，可唯一對應此 reference。",
+      "accepted": true
+    },
+    {
+      "publisher": "Watches of Mayfair (UK retailer, London)",
+      "title": "Omega Speedmaster Calibre 321 Ed White Moonwatch Chronograph 39.7 mm 311.30.40.30.01.001",
+      "url": "https://watchesofmayfair.com/brand/omega/speedmaster-collection/omega-speedmaster-moonwatch-chronograph-39-7-mm-311-30-40-30-01-001",
+      "finding": "頁面標題與內文以「Ed White」稱呼 311.30.40.30.01.001，以 GBP 標價，品牌名稱與網域明確為英國零售商（Mayfair, London）。該 reference 存在於本輪英國官方清單（Speedmaster Calibre 321，£14,500）。",
+      "accepted": true
+    },
+    {
+      "publisher": "OMEGA United Kingdom（官方商品頁）",
+      "title": "Speedmaster Steel Transparent caseback Watch 311.30.40.30.01.001",
+      "url": "https://www.omegawatches.com/en-gb/watch-omega-speedmaster-calibre-321-chronograph-39-7-mm-31130403001001",
+      "finding": "官方英文頁標題與內文（含 description）皆未出現「Ed White」字樣，market 檔 collectionName 為「Speedmaster Calibre 321」。確認「Ed White」並非官方命名，屬市場流通的收藏家暱稱。",
+      "accepted": true
+    },
+    {
+      "publisher": "OMEGA United Kingdom（官方商品頁）",
+      "title": "Seamaster Ploprof 1200M Watch 227.32.55.21.03.001",
+      "url": "https://www.omegawatches.com/en-gb/watch-omega-seamaster-ploprof-1200m-co-axial-master-chronometer-55-x-45-mm-22732552103001",
+      "finding": "官方英文 market 檔 collectionName 即為「Seamaster Ploprof 1200M」，「Ploprof」已是官方型號名稱（自 2009 年起），不另列為俗稱。",
+      "accepted": false
+    },
+    {
+      "publisher": "OMEGA United Kingdom（官方商品頁）",
+      "title": "Seamaster 007 Edition Watch 210.92.42.20.01.001",
+      "url": "https://www.omegawatches.com/en-gb/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21092422001001",
+      "finding": "官方英文頁標題直接使用「007 Edition」。確認「James Bond」／「007」屬官方命名而非市場俗稱，與 DE 市場結論一致。",
+      "accepted": false
+    },
+    {
+      "publisher": "WatchBase",
+      "title": "Omega 227.32.55.21.03.001 : Seamaster PloProf Co-Axial Master Chronometer",
+      "url": "https://watchbase.com/omega/seamaster-ploprof/227-32-55-21-03-001",
+      "finding": "型錄型網站以「Summer Blue」描述面盤色系，非市場俗稱，且非英國零售商來源，僅作背景參考，不採用。",
+      "accepted": false
+    }
+  ],
+  "candidateCount": 4,
+  "acceptedCollectionAliasCount": 0,
+  "acceptedLocalNicknameCount": 2,
+  "acceptedNicknames": [
+    {
+      "reference": "310.32.42.50.02.001",
+      "watchId": "omega:310.32.42.50.02.001",
+      "name": "Snoopy",
+      "rationale": "英國零售商 BQ Watches（Radlett／London Hatton Garden 門市）明確把「Snoopy」對應到完整參考號 310.32.42.50.02.001，且該 reference 存在於本輪英國官方清單（Speedmaster Anniversary Series，£10,000）。官方英文命名為「Silver Snoopy Award」，未單獨使用「Snoopy」，因此「Snoopy」是可唯一對應此配置的市場俗稱。",
+      "sources": [
+        {
+          "publisher": "BQ Watches",
+          "url": "https://www.bqwatches.com/product/21162"
+        }
+      ]
+    },
+    {
+      "reference": "311.30.40.30.01.001",
+      "watchId": "omega:311.30.40.30.01.001",
+      "name": "Ed White",
+      "rationale": "英國零售商 Watches of Mayfair（London）明確把「Ed White」對應到完整參考號 311.30.40.30.01.001，且該 reference 存在於本輪英國官方清單（Speedmaster Calibre 321，£14,500）。官方英文頁標題與 description 皆未使用「Ed White」字樣，因此「Ed White」是可唯一對應此配置的市場俗稱。",
+      "sources": [
+        {
+          "publisher": "Watches of Mayfair",
+          "url": "https://watchesofmayfair.com/brand/omega/speedmaster-collection/omega-speedmaster-moonwatch-chronograph-39-7-mm-311-30-40-30-01-001"
+        }
+      ]
+    }
+  ],
+  "rejectedCandidates": [
+    {
+      "name": "Ploprof",
+      "reason": "自 2009 年起已是官方型號名稱，本輪 227.32.55.21.03.001 的官方 collectionName 即為「Seamaster Ploprof 1200M」，不另列為俗稱。"
+    },
+    {
+      "name": "James Bond / 007",
+      "reason": "OMEGA 英國官網自己即以「007 Edition」（210.92.42.20.01.001）作為官方版本名稱；作為俗稱則可能同時指向多個 reference，無法唯一對應，與 DE 市場結論一致。"
+    },
+    {
+      "name": "Moonwatch / Speedy",
+      "reason": "系列層級通稱，無法唯一對應單一完整配置（本輪 Moonwatch Professional 分類即有 24 個 reference）。"
+    },
+    {
+      "name": "Summer Blue",
+      "reason": "型錄網站用來描述面盤色系的敘述性用語，非市場流通的收藏家俗稱，且來源非英國零售商。"
+    }
+  ],
+  "collectionAliasesDecision": "未採用任何 collection 層級別名。英文來源中的「Moonwatch」「Speedy」等皆為次系列或泛稱，無法穩定對應到 constellation／de-ville／seamaster／speedmaster 四個官方系列本身，依不可猜測規則保持空陣列。",
+  "notes": "本輪實際執行查詢並檢視來源，結果為 PASS，採用 2 筆 localNickname（Snoopy、Ed White）、0 筆 collectionAlias。"
+}

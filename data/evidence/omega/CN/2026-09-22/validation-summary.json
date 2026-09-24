@@ -1,0 +1,1262 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "omega",
+  "marketCode": "CN",
+  "validatedAt": "2026-09-22T04:44:36Z",
+  "status": "PASS WITH PRE-EXISTING SHARED-POLICY SCHEMA LIMITATION",
+  "workerValidation": {
+    "note": "原獨立存放於 run-3/validation-summary.json，為單一市場 worker 在協調者合併 catalog 前的驗證結果（當時 catalogRelationship 為 PENDING COORDINATOR MERGE，已由下列 coordinatorValidation 補齊）。",
+    "validatedAt": "2026-09-22T04:36:38.944Z",
+    "status": "PASS WITH COORDINATOR PENDING CATALOG MERGE",
+    "checks": {
+      "strictJson": "PASS: target formal JSON and observations parsed with duplicate-key detection; no invalid constants or missing terminal newlines.",
+      "jsonSchema": "NOT RUN: no Draft 2020-12 JSON Schema validator is installed; equivalent target-schema required-field, additional-property, type, identity, and price/status checks were run directly.",
+      "directContractChecks": "PASS",
+      "marketHistoryRelationship": "PASS",
+      "sourceReconciliation": "PASS",
+      "catalogRelationship": "PENDING COORDINATOR MERGE",
+      "independentSpotcheck": "PASS: independent-spotcheck-run-2.json has 20/20 PASS.",
+      "completeness": "PASS: 16 official rendered-entry category links; each category matched its official data-count with the final next-page link absent.",
+      "preservationScope": "PASS: this worker wrote only Omega CN market/history/evidence paths; catalog and shared traveler policy were not modified."
+    },
+    "counts": {
+      "observations": 579,
+      "market": 579,
+      "historySeries": 579,
+      "listed": 579,
+      "priceUnavailable": 0,
+      "nullDialDescription": 1,
+      "priceMin": 24000,
+      "priceMax": 4519700
+    },
+    "catalogReconciliation": {
+      "catalogCountBeforeCoordinatorMerge": 556,
+      "intersectionCount": 549,
+      "marketOnlyCount": 30,
+      "marketOnlyReferences": [
+        "424.10.33.20.05.001",
+        "424.10.33.20.06.001",
+        "424.10.33.20.52.001",
+        "424.10.33.20.56.002",
+        "424.10.40.20.01.001",
+        "424.10.40.20.02.001",
+        "424.10.40.20.02.002",
+        "424.10.40.20.02.004",
+        "424.10.40.20.02.005",
+        "424.10.40.20.02.007",
+        "424.10.40.20.03.002",
+        "424.10.40.20.03.004",
+        "424.13.40.20.02.001",
+        "424.13.40.20.02.002",
+        "424.13.40.20.02.003",
+        "424.13.40.20.03.001",
+        "424.13.40.21.01.002",
+        "424.13.40.21.02.002",
+        "424.23.33.20.09.001",
+        "434.10.28.60.03.001",
+        "434.10.28.60.03.002",
+        "434.10.30.60.01.001",
+        "434.10.30.60.10.001",
+        "434.13.28.60.53.001",
+        "434.13.28.60.53.002",
+        "434.13.28.60.59.001",
+        "434.13.28.60.60.001",
+        "434.13.30.60.51.001",
+        "434.13.30.60.53.001",
+        "434.13.30.60.60.001"
+      ],
+      "catalogOnlyCount": 7,
+      "catalogOnlyReferences": [
+        "131.10.36.60.01.001",
+        "131.20.36.60.02.002",
+        "210.60.44.51.03.001",
+        "215.92.46.22.03.001",
+        "220.10.28.60.54.001",
+        "324.30.38.50.03.002",
+        "435.13.40.21.02.001"
+      ],
+      "requiredUnionCountAfterCoordinatorMerge": 586
+    },
+    "limitations": [
+      "Catalog is intentionally outside this single-market worker write scope. The coordinator must merge all market-only configurations with stable catalog fields and then rerun cross-file validation.",
+      "One listed configuration, 434.23.40.20.02.001, has no structured dial field on its official product page; its market dialDescription is null rather than inferred.",
+      "The first independent-spotcheck.json is retained as immutable FAIL evidence of an encoded-HTML comparison defect. independent-spotcheck-run-2.json corrects the verifier and records 20/20 PASS; no formal source fact changed.",
+      "The two earlier same-date checkpoint runs are retained as immutable interrupted collection attempts; run-3 is the completed collection run."
+    ]
+  },
+  "coordinatorValidation": {
+    "note": "原獨立存放於 coordinator-validation-summary.json，內文提及之檔名 \"omega-CN-market.json\" 為撰寫當下真實檔名，原文保留不竄改；該檔案已於本次整理同步更名為 omega-china-market.json。",
+    "validatedAt": "2026-09-22T04:44:36Z",
+    "status": "PASS WITH PRE-EXISTING SHARED-POLICY SCHEMA LIMITATION",
+    "checks": {
+      "strictJson": "PASS：catalog、所有 market/history、共享政策、CN/GB 本輪 evidence 共 76 個 JSON 均以重複 key 與非法常數檢查解析。",
+      "catalogSchemaCompatible": "PASS：以本機既有 Ajv 做結構、required、additionalProperties、URI 與時間格式驗證。",
+      "marketSchemaCompatible": "PASS：omega-CN-market.json。",
+      "historySchemaCompatible": "PASS：data/history/CN/omega-price-history.json。",
+      "crossBrandRelations": "PASS：專案跨品牌驗證腳本通過全部 25 個既有正式 market，包含新增 omega-CN-market.json。",
+      "cnSourceReconciliation": "PASS：CN observations、market 與 history 各 579 個相同 watchId；皆存在於合併後 586 筆 Omega catalog。",
+      "catalogSetMerge": "PASS：556 + 579 − 549 = 586；保留 7 筆 catalog-only reference。",
+      "historyStatusPrice": "PASS：579 筆均為 runId 1 的 listed 非負整數 CNY 價格。",
+      "humanDocumentation": "PASS：README、資料指南、前端指南同步 CN 與 Omega 10 市場／586 聯集狀態。",
+      "frontendIntegration": "PASS：Omega 市場選單、雙語文案與 E2E 斷言均加入 CN；type-check、Vitest、production build 均通過。",
+      "changeSafety": "PASS：未覆寫舊 Omega history/evidence；未建立 GB formal data；未修改 schema。",
+      "travelerRefundPolicy": "FAIL (pre-existing baseline)：現有 traveler-refund-policies.json 的 15 個 evidencePath 均不符 schema 所要求舊式 data/evidence/<marketCode>/... 路徑；本任務未改該檔，亦未擴大衝突。"
+    },
+    "notRun": [
+      "原生 Draft 2020-12 validator：環境沒有對應 validator；Ajv 相容驗證已執行，但不宣稱為原生 Draft 2020-12 實作。"
+    ],
+    "gbStatus": "PARTIAL — retry-02 已透過可見 United Kingdom 地區控制項重試，仍被官方分類頁導向 Taiwan；保留 checkpoint，未建立 GB market/history/catalog 或共享政策。"
+  },
+  "independentSpotCheck": {
+    "initial": {
+      "note": "原獨立存放於 run-3/independent-spotcheck.json，保留為不可變更的 FAIL 記錄（比對器誤把編碼 HTML 直接與解碼文字比較所致的技術性缺陷，非正式資料錯誤）。",
+      "collectedAt": "2026-09-22T04:34:25.376Z",
+      "sourceView": "Independent official product pages, following category-page collection. The product-page browser route and server response were separately observed before HTTP requests were used for this check.",
+      "checkCount": 20,
+      "checks": [
+        {
+          "reference": "131.10.25.60.02.002",
+          "reason": "最低公開價格",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-constellation-quartz-25-mm-13110256002002",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "星座系列 25毫米, 精钢表壳 搭配 精钢表链 - 131.10.25.60.02.002  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "131.10.25.60.02.002",
+              "matched": true
+            },
+            "price": {
+              "expected": 24000,
+              "observed": 24000,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "银色",
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "522.50.45.52.03.001",
+          "reason": "最高公開價格",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-speedmaster-chrono-chime-co-axial-master-chronometer-chronograph-45-mm-52250455203001",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "超霸系列 Chrono Chime 45毫米, Sedna® 18k金表壳 搭配 Sedna® 18k金表链 - 522.50.45.52.03.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "522.50.45.52.03.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 4519700,
+              "observed": 4519700,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "Sedna® 18k金 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "蓝色",
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "434.23.40.20.02.001",
+          "reason": "異常項目：官方商品頁沒有結構化錶盤欄位",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-de-ville-prestige-co-axial-master-chronometer-40-mm-43423402002001",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "碟飞系列 典雅腕表 40毫米, 精钢-Sedna® 18k金表壳 - 434.23.40.20.02.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "434.23.40.20.02.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 60100,
+              "observed": 60100,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢‑Sedna® 18k金 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": null,
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "220.10.41.21.01.002",
+          "reason": "同基本型號之不同完整配置配對",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101002",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "海马系列 AQUA TERRA 150米腕表 41毫米, 精钢表壳 搭配 精钢表链 - 220.10.41.21.01.002  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "220.10.41.21.01.002",
+              "matched": true
+            },
+            "price": {
+              "expected": 53600,
+              "observed": 53600,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "黑色",
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "220.10.41.21.02.001",
+          "reason": "同基本型號之不同完整配置配對",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102001",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "海马系列 AQUA TERRA 150米腕表 41毫米, 精钢表壳 搭配 精钢表链 - 220.10.41.21.02.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "220.10.41.21.02.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 50800,
+              "observed": 50800,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "银色",
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "210.30.42.20.01.010",
+          "reason": "同基本型號之不同完整配置配對",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001010",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "海马系列 300米潜水表 42毫米, 精钢表壳 搭配 精钢表链 - 210.30.42.20.01.010  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "210.30.42.20.01.010",
+              "matched": true
+            },
+            "price": {
+              "expected": 52700,
+              "observed": 52700,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "黑色",
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "210.32.42.20.01.003",
+          "reason": "同基本型號之不同完整配置配對",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21032422001003",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "海马系列 300米潜水表 42毫米, 精钢表壳 搭配 橡胶表带 - 210.32.42.20.01.003  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "210.32.42.20.01.003",
+              "matched": true
+            },
+            "price": {
+              "expected": 49900,
+              "observed": 49900,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "黑色",
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "210.20.42.20.01.001",
+          "reason": "系列代表：seamaster",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21020422001001",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "Seamaster 300米潜水表 欧米茄同轴•至臻天文台表42毫米 - 210.20.42.20.01.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "210.20.42.20.01.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 105800,
+              "observed": 105800,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢‑Sedna® 18k金 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "黑色",
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "304.23.44.52.06.001",
+          "reason": "系列代表：speedmaster",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-speedmaster-moonphase-co-axial-master-chronometer-moonphase-chronograph-44-25-mm-30423445206001",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "超霸系列 月相功能 44.25毫米, 精钢-黄色18 k金表壳 搭配 皮表带 - 304.23.44.52.06.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "304.23.44.52.06.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 130300,
+              "observed": 130300,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢‑黄色18 k金 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "灰色",
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "424.10.33.20.05.001",
+          "reason": "系列代表：de-ville",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-de-ville-prestige-co-axial-chronometer-32-7-mm-42410332005001",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "碟飞系列 典雅腕表 32.7毫米, 精钢表壳 搭配 精钢表链 - 424.10.33.20.05.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "424.10.33.20.05.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 33100,
+              "observed": 33100,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "白色",
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "220.32.41.21.03.001",
+          "reason": "新品標示代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22032412103001",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "海马系列 AQUA TERRA 150米腕表 41毫米, 精钢表壳 搭配 橡胶表带 - 220.32.41.21.03.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "220.32.41.21.03.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 56500,
+              "observed": 56500,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "绿松 石色",
+              "matched": false
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "220.32.38.20.03.001",
+          "reason": "新品標示代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22032382003001",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "海马系列 AQUA TERRA 150米腕表 38毫米, 精钢表壳 搭配 橡胶表带 - 220.32.38.20.03.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "220.32.38.20.03.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 56500,
+              "observed": 56500,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "绿松 石色",
+              "matched": false
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "220.12.38.20.10.001",
+          "reason": "新品標示代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22012382010001",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "海马系列 AQUA TERRA 150米腕表 38毫米, 精钢表壳 搭配 橡胶表带 - 220.12.38.20.10.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "220.12.38.20.10.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 49000,
+              "observed": 49000,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "绿色",
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "220.10.30.20.01.001",
+          "reason": "新品標示代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-30-mm-22010302001001",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "海马系列 AQUA TERRA 150米腕表 30毫米, 精钢表壳 搭配 精钢表链 - 220.10.30.20.01.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "220.10.30.20.01.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 50800,
+              "observed": 50800,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "黑色",
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "220.10.30.20.03.001",
+          "reason": "新品標示代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-30-mm-22010302003001",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "海马系列 AQUA TERRA 150米腕表 30毫米, 精钢表壳 搭配 精钢表链 - 220.10.30.20.03.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "220.10.30.20.03.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 50800,
+              "observed": 50800,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "蓝色",
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "131.10.25.60.52.001",
+          "reason": "額外跨分類代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-constellation-quartz-25-mm-13110256052001",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "星座系列 25毫米, 精钢表壳 搭配 精钢表链 - 131.10.25.60.52.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "131.10.25.60.52.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 29600,
+              "observed": 29600,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "银色",
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "131.10.25.60.53.001",
+          "reason": "額外跨分類代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-constellation-quartz-25-mm-13110256053001",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "星座系列 25毫米, 精钢表壳 搭配 精钢表链 - 131.10.25.60.53.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "131.10.25.60.53.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 42500,
+              "observed": 42500,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "蓝色",
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "131.10.28.60.01.001",
+          "reason": "額外跨分類代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-constellation-quartz-28-mm-13110286001001",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "星座系列 28毫米, 精钢表壳 搭配 精钢表链 - 131.10.28.60.01.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "131.10.28.60.01.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 25000,
+              "observed": 25000,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "黑色",
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "131.10.28.60.02.002",
+          "reason": "額外跨分類代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-constellation-quartz-28-mm-13110286002002",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "星座系列 28毫米, 精钢表壳 搭配 精钢表链 - 131.10.28.60.02.002  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "131.10.28.60.02.002",
+              "matched": true
+            },
+            "price": {
+              "expected": 25000,
+              "observed": 25000,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "银色",
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        },
+        {
+          "reference": "131.10.28.60.03.001",
+          "reason": "額外跨分類代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-constellation-quartz-28-mm-13110286003001",
+          "checkedAt": "2026-09-22T04:34:25.376Z",
+          "pageTitle": "星座系列 28毫米, 精钢表壳 搭配 精钢表链 - 131.10.28.60.03.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "131.10.28.60.03.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 25900,
+              "observed": 25900,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "matched": false
+            },
+            "dial": {
+              "expected": "蓝色",
+              "matched": true
+            }
+          },
+          "result": "FAIL"
+        }
+      ],
+      "noPublicPriceCandidate": {
+        "status": "NOT APPLICABLE",
+        "reason": "The complete CN category collection contained no price-unavailable listing, so no such item exists to sample."
+      },
+      "result": "FAIL",
+      "failureCount": 20
+    },
+    "correction": {
+      "note": "原獨立存放於 run-3/independent-spotcheck-run-2.json，訂正比對器邏輯後重新執行，20/20 PASS；未變更任何正式資料或先前來源事實。",
+      "collectedAt": "2026-09-22T04:35:13.964Z",
+      "correctionOf": "independent-spotcheck.json",
+      "correctionReason": "The first verifier searched for decoded technical text directly in encoded HTML. This second verifier parses the same official technical-data fields before comparison; it does not change formal data or prior evidence.",
+      "sourceView": "Independent official product pages, following category-page collection. The product-page browser route and server response were separately observed before HTTP requests were used for this check.",
+      "checkCount": 20,
+      "checks": [
+        {
+          "reference": "131.10.25.60.02.002",
+          "reason": "最低公開價格",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-constellation-quartz-25-mm-13110256002002",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "星座系列 25毫米, 精钢表壳 搭配 精钢表链 - 131.10.25.60.02.002  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "131.10.25.60.02.002",
+              "matched": true
+            },
+            "price": {
+              "expected": 24000,
+              "observed": 24000,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "observed": "精钢 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "银色",
+              "observed": "银色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "522.50.45.52.03.001",
+          "reason": "最高公開價格",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-speedmaster-chrono-chime-co-axial-master-chronometer-chronograph-45-mm-52250455203001",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "超霸系列 Chrono Chime 45毫米, Sedna® 18k金表壳 搭配 Sedna® 18k金表链 - 522.50.45.52.03.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "522.50.45.52.03.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 4519700,
+              "observed": 4519700,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "Sedna® 18k金 表壳",
+              "observed": "Sedna® 18k金 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "蓝色",
+              "observed": "蓝色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "434.23.40.20.02.001",
+          "reason": "異常項目：官方商品頁沒有結構化錶盤欄位",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-de-ville-prestige-co-axial-master-chronometer-40-mm-43423402002001",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "碟飞系列 典雅腕表 40毫米, 精钢-Sedna® 18k金表壳 - 434.23.40.20.02.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "434.23.40.20.02.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 60100,
+              "observed": 60100,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢‑Sedna® 18k金 表壳",
+              "observed": "精钢‑Sedna® 18k金 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": null,
+              "observed": null,
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "220.10.41.21.01.002",
+          "reason": "同基本型號之不同完整配置配對",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101002",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "海马系列 AQUA TERRA 150米腕表 41毫米, 精钢表壳 搭配 精钢表链 - 220.10.41.21.01.002  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "220.10.41.21.01.002",
+              "matched": true
+            },
+            "price": {
+              "expected": 53600,
+              "observed": 53600,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "observed": "精钢 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "黑色",
+              "observed": "黑色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "220.10.41.21.02.001",
+          "reason": "同基本型號之不同完整配置配對",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102001",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "海马系列 AQUA TERRA 150米腕表 41毫米, 精钢表壳 搭配 精钢表链 - 220.10.41.21.02.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "220.10.41.21.02.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 50800,
+              "observed": 50800,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "observed": "精钢 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "银色",
+              "observed": "银色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "210.30.42.20.01.010",
+          "reason": "同基本型號之不同完整配置配對",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001010",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "海马系列 300米潜水表 42毫米, 精钢表壳 搭配 精钢表链 - 210.30.42.20.01.010  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "210.30.42.20.01.010",
+              "matched": true
+            },
+            "price": {
+              "expected": 52700,
+              "observed": 52700,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "observed": "精钢 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "黑色",
+              "observed": "黑色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "210.32.42.20.01.003",
+          "reason": "同基本型號之不同完整配置配對",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21032422001003",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "海马系列 300米潜水表 42毫米, 精钢表壳 搭配 橡胶表带 - 210.32.42.20.01.003  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "210.32.42.20.01.003",
+              "matched": true
+            },
+            "price": {
+              "expected": 49900,
+              "observed": 49900,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "observed": "精钢 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "黑色",
+              "observed": "黑色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "210.20.42.20.01.001",
+          "reason": "系列代表：seamaster",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21020422001001",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "Seamaster 300米潜水表 欧米茄同轴•至臻天文台表42毫米 - 210.20.42.20.01.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "210.20.42.20.01.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 105800,
+              "observed": 105800,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢‑Sedna® 18k金 表壳",
+              "observed": "精钢‑Sedna® 18k金 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "黑色",
+              "observed": "黑色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "304.23.44.52.06.001",
+          "reason": "系列代表：speedmaster",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-speedmaster-moonphase-co-axial-master-chronometer-moonphase-chronograph-44-25-mm-30423445206001",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "超霸系列 月相功能 44.25毫米, 精钢-黄色18 k金表壳 搭配 皮表带 - 304.23.44.52.06.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "304.23.44.52.06.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 130300,
+              "observed": 130300,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢‑黄色18 k金 表壳",
+              "observed": "精钢‑黄色18 k金 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "灰色",
+              "observed": "灰色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "424.10.33.20.05.001",
+          "reason": "系列代表：de-ville",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-de-ville-prestige-co-axial-chronometer-32-7-mm-42410332005001",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "碟飞系列 典雅腕表 32.7毫米, 精钢表壳 搭配 精钢表链 - 424.10.33.20.05.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "424.10.33.20.05.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 33100,
+              "observed": 33100,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "observed": "精钢 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "白色",
+              "observed": "白色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "220.32.41.21.03.001",
+          "reason": "新品標示代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22032412103001",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "海马系列 AQUA TERRA 150米腕表 41毫米, 精钢表壳 搭配 橡胶表带 - 220.32.41.21.03.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "220.32.41.21.03.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 56500,
+              "observed": 56500,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "observed": "精钢 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "绿松 石色",
+              "observed": "绿松 石色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "220.32.38.20.03.001",
+          "reason": "新品標示代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22032382003001",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "海马系列 AQUA TERRA 150米腕表 38毫米, 精钢表壳 搭配 橡胶表带 - 220.32.38.20.03.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "220.32.38.20.03.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 56500,
+              "observed": 56500,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "observed": "精钢 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "绿松 石色",
+              "observed": "绿松 石色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "220.12.38.20.10.001",
+          "reason": "新品標示代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22012382010001",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "海马系列 AQUA TERRA 150米腕表 38毫米, 精钢表壳 搭配 橡胶表带 - 220.12.38.20.10.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "220.12.38.20.10.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 49000,
+              "observed": 49000,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "observed": "精钢 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "绿色",
+              "observed": "绿色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "220.10.30.20.01.001",
+          "reason": "新品標示代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-30-mm-22010302001001",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "海马系列 AQUA TERRA 150米腕表 30毫米, 精钢表壳 搭配 精钢表链 - 220.10.30.20.01.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "220.10.30.20.01.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 50800,
+              "observed": 50800,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "observed": "精钢 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "黑色",
+              "observed": "黑色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "220.10.30.20.03.001",
+          "reason": "新品標示代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-30-mm-22010302003001",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "海马系列 AQUA TERRA 150米腕表 30毫米, 精钢表壳 搭配 精钢表链 - 220.10.30.20.03.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "220.10.30.20.03.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 50800,
+              "observed": 50800,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "observed": "精钢 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "蓝色",
+              "observed": "蓝色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "131.10.25.60.52.001",
+          "reason": "額外跨分類代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-constellation-quartz-25-mm-13110256052001",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "星座系列 25毫米, 精钢表壳 搭配 精钢表链 - 131.10.25.60.52.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "131.10.25.60.52.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 29600,
+              "observed": 29600,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "observed": "精钢 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "银色",
+              "observed": "银色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "131.10.25.60.53.001",
+          "reason": "額外跨分類代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-constellation-quartz-25-mm-13110256053001",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "星座系列 25毫米, 精钢表壳 搭配 精钢表链 - 131.10.25.60.53.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "131.10.25.60.53.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 42500,
+              "observed": 42500,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "observed": "精钢 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "蓝色",
+              "observed": "蓝色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "131.10.28.60.01.001",
+          "reason": "額外跨分類代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-constellation-quartz-28-mm-13110286001001",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "星座系列 28毫米, 精钢表壳 搭配 精钢表链 - 131.10.28.60.01.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "131.10.28.60.01.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 25000,
+              "observed": 25000,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "observed": "精钢 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "黑色",
+              "observed": "黑色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "131.10.28.60.02.002",
+          "reason": "額外跨分類代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-constellation-quartz-28-mm-13110286002002",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "星座系列 28毫米, 精钢表壳 搭配 精钢表链 - 131.10.28.60.02.002  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "131.10.28.60.02.002",
+              "matched": true
+            },
+            "price": {
+              "expected": 25000,
+              "observed": 25000,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "observed": "精钢 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "银色",
+              "observed": "银色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        },
+        {
+          "reference": "131.10.28.60.03.001",
+          "reason": "額外跨分類代表",
+          "productUrl": "https://www.omegawatches.cn/watch-omega-constellation-quartz-28-mm-13110286003001",
+          "checkedAt": "2026-09-22T04:35:13.964Z",
+          "pageTitle": "星座系列 28毫米, 精钢表壳 搭配 精钢表链 - 131.10.28.60.03.001  | OMEGA®",
+          "compared": {
+            "reference": {
+              "expected": "131.10.28.60.03.001",
+              "matched": true
+            },
+            "price": {
+              "expected": 25900,
+              "observed": 25900,
+              "matched": true
+            },
+            "technicalCase": {
+              "expected": "精钢 表壳",
+              "observed": "精钢 表壳",
+              "matched": true
+            },
+            "dial": {
+              "expected": "蓝色",
+              "observed": "蓝色",
+              "matched": true
+            }
+          },
+          "result": "PASS"
+        }
+      ],
+      "noPublicPriceCandidate": {
+        "status": "NOT APPLICABLE",
+        "reason": "The complete CN category collection contained no price-unavailable listing, so no such item exists to sample."
+      },
+      "result": "PASS",
+      "failureCount": 0
+    }
+  }
+}

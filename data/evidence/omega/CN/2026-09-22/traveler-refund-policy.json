@@ -1,0 +1,61 @@
+{
+  "brandId": "omega",
+  "marketCode": "CN",
+  "checkedAt": "2026-09-22T04:44:36Z",
+  "finding": "旅客退稅為以 marketCode 為唯一鍵的跨品牌司法管轄區事實；本輪以國家稅務總局官方來源重新查核，結果與既有全域政策的 availability、商家參與與出口驗證結論一致，因此未新增或修改重複政策。",
+  "policySnapshot": {
+    "marketCode": "CN",
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "assessedAt": "2026-09-11T17:00:00Z",
+    "availability": "available",
+    "eligibilitySummary": {
+      "zhTw": "適用於在退稅商店購買可退稅商品並自合資格離境口岸出境的境外旅客；即買即退另須完成協議與信用卡預授權，實際資格依官方規定。",
+      "enUs": "Available to overseas visitors buying tax-refundable goods at tax-free stores and leaving through eligible departure ports; refund-upon-purchase also requires an agreement and credit-card pre-authorisation, subject to official conditions."
+    },
+    "merchantParticipationRequired": true,
+    "exportValidationRequired": true,
+    "evidencePath": "data/evidence/rolex/CN/2026-09-12/traveler-refund-policy.json",
+    "sources": [
+      {
+        "publisher": "State Taxation Administration of the People's Republic of China",
+        "title": "What is the Departure Tax Refund Policy?",
+        "url": "https://www.chinatax.gov.cn/eng/c101276/c102444/c5240901/content.html",
+        "accessedAt": "2026-09-11T17:00:00Z"
+      }
+    ]
+  },
+  "independentVerification": {
+    "assessedAt": "2026-09-22T04:32:30.000Z",
+    "availability": "available",
+    "conclusion": "中國境內存在境外旅客購物離境退稅制度；僅限符合資格的境外旅客在退稅商店購買的退稅物品。未確認 Omega 或任何特定 Omega 銷售點是退稅商店。",
+    "eligibility": {
+      "traveler": "在中國境內連續居住不超過 183 天的外國人及港澳台同胞。",
+      "merchant": "必須在退稅商店購買，並取得發票與離境退稅申請單。",
+      "exportValidation": "離境時須由海關驗核確認，後向退稅代理機構申請辦理。"
+    },
+    "sources": [
+      {
+        "publisher": "国家税务总局",
+        "title": "境外旅客离境时，应如何办理离境退税？",
+        "url": "https://www.chinatax.gov.cn/chinatax/n810356/n3255681/c5233268/content.html",
+        "accessedAt": "2026-09-22T04:32:30.000Z"
+      },
+      {
+        "publisher": "国家税务总局上海市税务局",
+        "title": "境外旅客购物离境退税政策指引",
+        "url": "https://shanghai.chinatax.gov.cn/xwdt/ztzl/zcgll/ljts/zchb/201911/t449153.html",
+        "accessedAt": "2026-09-22T04:32:30.000Z"
+      }
+    ],
+    "verifiedFacts": {
+      "availability": "available",
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "omegaSellerParticipation": "not verified"
+    },
+    "result": "PASS",
+    "conclusionOnExistingRecord": "既有 CN 記錄（原評估自 Rolex CN，2026-09-11）的 availability（available）、merchantParticipationRequired（true）、exportValidationRequired（true）於 2026-09-22 以國家稅務總局（含上海市稅務局）官方頁面重新查核後內容仍然正確；Omega 銷售點是否為退稅商店（omegaSellerParticipation）未經驗證。"
+  },
+  "actionTaken": "未修改 data/traveler-refund-policies.json。CN 已有以 marketCode 唯一的跨品牌政策；本輪國家稅務總局來源再次確認制度可用、須退稅商店參與及海關離境驗核，與現有 availability、merchantParticipationRequired、exportValidationRequired 相同。新增第二筆 CN 政策會違反市場唯一性，且把新品牌 evidencePath 寫入現行 schema 會不符合既有路徑模式；因此保留既有可驗證記錄並保存本輪獨立複查證據。"
+}
