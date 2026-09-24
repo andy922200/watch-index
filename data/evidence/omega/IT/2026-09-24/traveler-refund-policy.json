@@ -1,0 +1,25 @@
+{
+  "brandId": "omega",
+  "marketCode": "IT",
+  "assessedAt": "2026-09-24T10:52:00Z",
+  "source": {
+    "publisher": "Agenzia delle Dogane e dei Monopoli",
+    "title": "The procedure",
+    "url": "https://www.adm.gov.it/portale/-/the-procedure",
+    "accessedAt": "2026-09-24T10:52:00Z"
+  },
+  "observedFacts": {
+    "eligibilityResidence": "individuals residing or domiciled outside the EU",
+    "invoiceThreshold": "each invoice exceeds EUR 70, VAT included",
+    "personalUse": "goods intended for personal or family use and carried in personal luggage",
+    "exportDeadline": "goods leave EU territory within three months following invoice issue",
+    "customsValidation": "OTELLO digital customs endorsement; red channel may require physical inspection",
+    "refundOperator": "refund is made by Italian seller; tax-free companies may provide service and deduct fees"
+  },
+  "conclusion": {
+    "availability": "available",
+    "merchantParticipationRequired": true,
+    "exportValidationRequired": true
+  },
+  "limitations": "Market-level policy summary; not a guarantee of retailer participation or refund amount."
+}

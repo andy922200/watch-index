@@ -1,0 +1,31 @@
+{
+  "brandId": "omega",
+  "marketCode": "AT",
+  "assessedAt": "2026-09-24T10:55:53.863Z",
+  "status": "NOT RUN / capability unavailable",
+  "existingSharedPolicyRecord": {
+    "sourceFile": "data/traveler-refund-policies.json",
+    "availability": "available",
+    "evidencePath": "data/evidence/rolex/AT/2026-09-12/traveler-refund-policy.json",
+    "source": {
+      "publisher": "Austrian Federal Ministry of Finance",
+      "title": "VAT Refund",
+      "url": "https://www.bmf.gv.at/en/topics/customs/travellers/vat-refund.html"
+    },
+    "note": "This jurisdiction-level Austria policy record already exists and was not overwritten."
+  },
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "available",
+    "networkToolConfigured": true,
+    "networkToolAttempted": false,
+    "networkToolResult": "NOT RUN / capability unavailable",
+    "fallbackTool": null,
+    "notes": "Browser auto-mode denied navigation to the Austrian Ministry of Finance source as an unrelated destination. No current policy conclusion was fabricated, and the existing shared Austria record was left unchanged."
+  },
+  "limitations": [
+    "This new-market run did not independently reopen the government source.",
+    "No new policy record or source claim was created; the existing jurisdiction-level policy remains the only policy record.",
+    "Coordinator should rerun the Austrian policy source check before declaring the overall new-market task fully complete."
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "brandId": "omega",
+  "marketCode": "IT",
+  "marketName": "Italy",
+  "locale": "it-IT",
+  "currencyCode": "EUR",
+  "entryUrl": "https://www.omegawatches.com/it-it/watches",
+  "observedAt": "2026-09-24T10:18:05.007Z",
+  "completedAt": "2026-09-24T10:47:01.994Z",
+  "collectionPath": {
+    "browser": "Chrome DevTools rendered official OMEGA Italy site",
+    "catalog": "server-rendered category HTML; parsed li.product-item cards",
+    "details": "official product pages; parsed dd[data-code] and JSON-LD Product",
+    "pagination": "official next links using ?p=<n>; no guessed page beyond observed next link"
+  },
+  "categories": [
+    "https://www.omegawatches.com/it-it/watches/seamaster/aqua-terra-150m/catalog",
+    "https://www.omegawatches.com/it-it/watches/seamaster/diver-300-m/catalog",
+    "https://www.omegawatches.com/it-it/watches/seamaster/planet-ocean/catalog",
+    "https://www.omegawatches.com/it-it/watches/seamaster/heritage-models/catalog",
+    "https://www.omegawatches.com/it-it/watches/seamaster/instruments/catalog",
+    "https://www.omegawatches.com/it-it/watches/speedmaster/moonwatch-professional/catalog",
+    "https://www.omegawatches.com/it-it/watches/speedmaster/heritage-models/catalog",
+    "https://www.omegawatches.com/it-it/watches/speedmaster/dark-side-of-the-moon/catalog",
+    "https://www.omegawatches.com/it-it/watches/speedmaster/speedmaster-38-mm/catalog",
+    "https://www.omegawatches.com/it-it/watches/speedmaster/two-counters/catalog",
+    "https://www.omegawatches.com/it-it/watches/constellation/observatory/catalog",
+    "https://www.omegawatches.com/it-it/watches/constellation/constellation/catalog",
+    "https://www.omegawatches.com/it-it/watches/de-ville/ladymatic/catalog",
+    "https://www.omegawatches.com/it-it/watches/de-ville/tresor/catalog",
+    "https://www.omegawatches.com/it-it/watches/de-ville/prestige/catalog",
+    "https://www.omegawatches.com/it-it/watches/de-ville/tourbillon/catalog"
+  ],
+  "pagination": {
+    "pageCount": 41,
+    "rawItemCount": 1536,
+    "uniqueReferenceCount": 552,
+    "duplicateCount": 984,
+    "duplicateHandling": "cumulative pages deduplicated by complete dotted reference",
+    "stopEvidence": "Every category final page had no href with next page parameter; every fetched page returned HTTP 200; no unresolved next page.",
+    "perCategory": [
+      {
+        "categoryUrl": "https://www.omegawatches.com/it-it/watches/seamaster/aqua-terra-150m/catalog",
+        "lastPage": 5,
+        "finalPageHasNext": false
+      },
+      {
+        "categoryUrl": "https://www.omegawatches.com/it-it/watches/seamaster/diver-300-m/catalog",
+        "lastPage": 3,
+        "finalPageHasNext": false
+      },
+      {
+        "categoryUrl": "https://www.omegawatches.com/it-it/watches/seamaster/planet-ocean/catalog",
+        "lastPage": 2,
+        "finalPageHasNext": false
+      },
+      {
+        "categoryUrl": "https://www.omegawatches.com/it-it/watches/seamaster/heritage-models/catalog",
+        "lastPage": 2,
+        "finalPageHasNext": false
+      },
+      {
+        "categoryUrl": "https://www.omegawatches.com/it-it/watches/seamaster/instruments/catalog",
+        "lastPage": 2,
+        "finalPageHasNext": false
+      },
+      {
+        "categoryUrl": "https://www.omegawatches.com/it-it/watches/speedmaster/moonwatch-professional/catalog",
+        "lastPage": 2,
+        "finalPageHasNext": false
+      },
+      {
+        "categoryUrl": "https://www.omegawatches.com/it-it/watches/speedmaster/heritage-models/catalog",
+        "lastPage": 2,
+        "finalPageHasNext": false
+      },
+      {
+        "categoryUrl": "https://www.omegawatches.com/it-it/watches/speedmaster/dark-side-of-the-moon/catalog",
+        "lastPage": 2,
+        "finalPageHasNext": false
+      },
+      {
+        "categoryUrl": "https://www.omegawatches.com/it-it/watches/speedmaster/speedmaster-38-mm/catalog",
+        "lastPage": 2,
+        "finalPageHasNext": false
+      },
+      {
+        "categoryUrl": "https://www.omegawatches.com/it-it/watches/speedmaster/two-counters/catalog",
+        "lastPage": 2,
+        "finalPageHasNext": false
+      },
+      {
+        "categoryUrl": "https://www.omegawatches.com/it-it/watches/constellation/observatory/catalog",
+        "lastPage": 2,
+        "finalPageHasNext": false
+      },
+      {
+        "categoryUrl": "https://www.omegawatches.com/it-it/watches/constellation/constellation/catalog",
+        "lastPage": 5,
+        "finalPageHasNext": false
+      },
+      {
+        "categoryUrl": "https://www.omegawatches.com/it-it/watches/de-ville/ladymatic/catalog",
+        "lastPage": 2,
+        "finalPageHasNext": false
+      },
+      {
+        "categoryUrl": "https://www.omegawatches.com/it-it/watches/de-ville/tresor/catalog",
+        "lastPage": 2,
+        "finalPageHasNext": false
+      },
+      {
+        "categoryUrl": "https://www.omegawatches.com/it-it/watches/de-ville/prestige/catalog",
+        "lastPage": 4,
+        "finalPageHasNext": false
+      },
+      {
+        "categoryUrl": "https://www.omegawatches.com/it-it/watches/de-ville/tourbillon/catalog",
+        "lastPage": 2,
+        "finalPageHasNext": false
+      }
+    ]
+  },
+  "officialCountReconciliation": {
+    "homeGroupCounts": {
+      "seamaster": 201,
+      "speedmaster": 95,
+      "constellation": 128,
+      "de-ville": 128
+    },
+    "sum": 552,
+    "uniqueCollected": 552,
+    "result": "PASS"
+  },
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "available",
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "PASS",
+    "fallbackTool": null,
+    "observedRequests": [
+      {
+        "method": "GET",
+        "url": "https://www.omegawatches.com/it-it/watches",
+        "status": 200,
+        "purpose": "official entry page"
+      },
+      {
+        "method": "GET",
+        "url": "https://www.omegawatches.com/it-it/watches/seamaster/aqua-terra-150m/catalog?p=2",
+        "status": 200,
+        "purpose": "observed pagination request"
+      },
+      {
+        "method": "GET",
+        "url": "https://www.omegawatches.com/it-it/ajax/product/index/?ids=8711,3990,3981,6543,6544,8981,8850,8061,6541,6542,8725,8437,8435,3988,3980,9214,6154,4520,4016,7535,8752,8740,8739,8712",
+        "status": 200,
+        "purpose": "official product-detail auxiliary request observed; not used as completeness source"
+      }
+    ],
+    "notes": "Primary catalog source was official rendered category HTML; no undocumented API was guessed or used as completeness claim."
+  },
+  "errors": [],
+  "unresolvedReferences": [],
+  "listingStatusCounts": {
+    "listed": 552,
+    "price-unavailable": 0,
+    "not-listed": 0
+  },
+  "priceStatistics": {
+    "min": 3300,
+    "max": 623400,
+    "currencyCode": "EUR",
+    "allPricesInteger": true
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "type": "initial-collection",
+      "startedAt": "2026-09-24T10:18:05.007Z",
+      "completedAt": "2026-09-24T10:47:01.994Z",
+      "scope": "Full catalog, product details, prices, nickname research, tax research and traveler-refund policy",
+      "result": "PASS; 552 unique references collected. Files: observations.json, collection-summary.json, validation-summary.json, nickname-research.json, tax-research.json, traveler-refund-policy.json"
+    },
+    {
+      "attempt": 2,
+      "type": "supplemental-evidence",
+      "createdAt": "2026-09-24T11:00:00Z",
+      "scope": "Record the official tax-source observation and the traveler-policy evidencePath schema conflict found during final validation",
+      "result": "Wrote correction-1/tax-research.json and correction-1/validation-summary.json, byte-identical to the root files, plus correction-notes.json. No market observation, price or formal watch fact changed.",
+      "findings": [
+        "KNOWN CONFLICT: traveler-refund-policy.schema.json evidencePath regex excludes the brand segment, while ai-data-maintenance-guide.md and existing records require data/evidence/<brandId>/<marketCode>/...; Schema was not modified."
+      ]
+    },
+    {
+      "attempt": 3,
+      "type": "navigation-index",
+      "createdAt": "2026-09-24T12:42:03Z",
+      "scope": "Write a read-only navigation summary for attempts 1 and 2 in index-1/evidence-index.json",
+      "result": "Navigation only; no new source observation."
+    }
+  ],
+  "consolidation": {
+    "consolidatedAt": "2026-09-24",
+    "basis": "ai-data-maintenance-guide.md allows merging multiple attempts from the same round before commit",
+    "committedBeforeConsolidation": false,
+    "actions": [
+      "Removed correction-1/tax-research.json and correction-1/validation-summary.json; byte-identical to root tax-research.json and validation-summary.json",
+      "Removed correction-1/correction-notes.json; its reason, validation results and known conflict are preserved in attempts[1]",
+      "Removed index-1/evidence-index.json; navigation summary superseded by attempts"
+    ],
+    "observationsChanged": false,
+    "formalDataChanged": false
+  }
+}

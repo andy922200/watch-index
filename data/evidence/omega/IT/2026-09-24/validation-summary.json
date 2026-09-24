@@ -1,0 +1,527 @@
+{
+  "brandId": "omega",
+  "marketCode": "IT",
+  "validatedAt": "2026-09-24T10:55:00Z",
+  "checks": {
+    "strictJson": "PASS (custom strict Python parser rerun on formal preview artifacts)",
+    "schema": "FAIL / known contract conflict (market/history v3 contract checks PASS; traveler-refund-policy.schema.json evidencePath regex excludes the brand segment required by ai-data-maintenance-guide.md and all existing brand-prefixed records; Schema not modified)",
+    "duplicateKeys": "PASS",
+    "identity": "PASS (552 unique watchId; watchId = omega:reference)",
+    "marketHistoryLinkage": "PASS (552 market watches and 552 priceSeries keys; all catalog references)",
+    "priceStatus": "PASS (552 listed + integer EUR prices)",
+    "sourceReconciliation": "PASS",
+    "paginationCompleteness": "PASS (41 pages, all 200, final pages no next link, 552 unique)",
+    "officialIndependentSpotChecks": {
+      "status": "PASS",
+      "count": 20,
+      "checks": [
+        {
+          "reference": "220.10.41.21.01.002",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/seamaster/aqua-terra-150m/catalog",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101002",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "220.10.41.21.01.002",
+            "collectionName": "SEAMASTER AQUA TERRA 150M",
+            "modelName": "41 mm, acciaio su acciaio",
+            "parsedPrice": 7400,
+            "isNewModel": false,
+            "caseDescription": "Acciaio",
+            "dialDescription": "Nero"
+          }
+        },
+        {
+          "reference": "310.30.42.50.04.001",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/speedmaster/moonwatch-professional/catalog?p=2",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425004001",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "310.30.42.50.04.001",
+            "collectionName": "Speedmaster Moonwatch Professional",
+            "modelName": "42 mm, acciaio su acciaio",
+            "parsedPrice": 9100,
+            "isNewModel": false,
+            "caseDescription": "Acciaio",
+            "dialDescription": "Bianco"
+          }
+        },
+        {
+          "reference": "140.13.39.21.02.001",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/constellation/observatory/catalog?p=2",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-constellation-observatory-co-axial-master-chronometer-39-4-mm-14013392102001",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "140.13.39.21.02.001",
+            "collectionName": "Constellation Observatory",
+            "modelName": "39,4 mm, O‑MEGASTEEL su alligatore",
+            "parsedPrice": 10800,
+            "isNewModel": true,
+            "caseDescription": "O‑MEGASTEEL",
+            "dialDescription": "Argento"
+          }
+        },
+        {
+          "reference": "425.30.34.20.55.002",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/de-ville/ladymatic/catalog?p=2",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-de-ville-ladymatic-co-axial-chronometer-34-mm-42530342055002",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "425.30.34.20.55.002",
+            "collectionName": "De Ville Ladymatic",
+            "modelName": "34 mm, acciaio su acciaio",
+            "parsedPrice": 9700,
+            "isNewModel": false,
+            "caseDescription": "Acciaio",
+            "dialDescription": "Bianco"
+          }
+        },
+        {
+          "reference": "220.12.41.21.02.002",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/seamaster/aqua-terra-150m/catalog",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22012412102002",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "220.12.41.21.02.002",
+            "collectionName": "SEAMASTER AQUA TERRA 150M",
+            "modelName": "41 mm, acciaio su cinturino in caucciù",
+            "parsedPrice": 6800,
+            "isNewModel": false,
+            "caseDescription": "Acciaio",
+            "dialDescription": "Argento"
+          }
+        },
+        {
+          "reference": "131.10.36.60.01.001",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/constellation/constellation/catalog?p=2",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-constellation-quartz-36-mm-13110366001001",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "131.10.36.60.01.001",
+            "collectionName": "Constellation",
+            "modelName": "36 mm, acciaio su acciaio",
+            "parsedPrice": 3300,
+            "isNewModel": false,
+            "caseDescription": "Acciaio",
+            "dialDescription": "Nero"
+          }
+        },
+        {
+          "reference": "522.50.45.52.03.001",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/speedmaster/two-counters/catalog?p=2",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-speedmaster-chrono-chime-co-axial-master-chronometer-chronograph-45-mm-52250455203001",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "522.50.45.52.03.001",
+            "collectionName": "Speedmaster Chrono Chime",
+            "modelName": "45 mm, oro Sedna™ su oro Sedna™",
+            "parsedPrice": 623400,
+            "isNewModel": false,
+            "caseDescription": "Oro Sedna™",
+            "dialDescription": "Blu"
+          }
+        },
+        {
+          "reference": "220.32.41.21.03.001",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/seamaster/aqua-terra-150m/catalog",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22032412103001",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "220.32.41.21.03.001",
+            "collectionName": "SEAMASTER AQUA TERRA 150M",
+            "modelName": "41 mm, acciaio su cinturino in caucciù",
+            "parsedPrice": 7800,
+            "isNewModel": true,
+            "caseDescription": "Acciaio",
+            "dialDescription": "Turchese"
+          }
+        },
+        {
+          "reference": "220.22.41.21.06.001",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/seamaster/aqua-terra-150m/catalog",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22022412106001",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "220.22.41.21.06.001",
+            "collectionName": "SEAMASTER AQUA TERRA 150M",
+            "modelName": "41 mm, acciaio‑oro Sedna™ su cinturino in caucciù",
+            "parsedPrice": 11300,
+            "isNewModel": true,
+            "caseDescription": "Acciaio‑oro Sedna™",
+            "dialDescription": "Grigio"
+          }
+        },
+        {
+          "reference": "220.10.38.20.01.005",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/seamaster/aqua-terra-150m/catalog?p=2",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382001005",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "220.10.38.20.01.005",
+            "collectionName": "Seamaster Aqua Terra 150M",
+            "modelName": "38 mm, acciaio su acciaio",
+            "parsedPrice": 7400,
+            "isNewModel": true,
+            "caseDescription": "Acciaio",
+            "dialDescription": "Nero"
+          }
+        },
+        {
+          "reference": "434.23.40.20.02.001",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/de-ville/prestige/catalog?p=2",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-de-ville-prestige-co-axial-master-chronometer-40-mm-43423402002001",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "434.23.40.20.02.001",
+            "collectionName": "De Ville Prestige",
+            "modelName": "40 mm, acciaio‑oro Sedna™",
+            "parsedPrice": 8300,
+            "isNewModel": false,
+            "caseDescription": "Acciaio‑oro Sedna™",
+            "dialDescription": "Argento"
+          }
+        },
+        {
+          "reference": "220.10.38.20.03.003",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/seamaster/aqua-terra-150m/catalog?p=2",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-seamaster-aqua-terra-shades-co-axial-master-chronometer-38-mm-22010382003003",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "220.10.38.20.03.003",
+            "collectionName": "Seamaster Aqua Terra Shades",
+            "modelName": "38 mm, acciaio su acciaio",
+            "parsedPrice": 7400,
+            "isNewModel": false,
+            "caseDescription": "Acciaio",
+            "dialDescription": "Blu oceano"
+          }
+        },
+        {
+          "reference": "210.30.42.20.01.010",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/seamaster/diver-300-m/catalog?p=2",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001010",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "210.30.42.20.01.010",
+            "collectionName": "Seamaster Diver 300M",
+            "modelName": "42 mm, acciaio su acciaio",
+            "parsedPrice": 7300,
+            "isNewModel": false,
+            "caseDescription": "Acciaio",
+            "dialDescription": "Nero"
+          }
+        },
+        {
+          "reference": "217.30.42.21.01.001",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/seamaster/planet-ocean/catalog?p=2",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-seamaster-planet-ocean-600m-co-axial-master-chronometer-42-mm-21730422101001",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "217.30.42.21.01.001",
+            "collectionName": "Seamaster Planet Ocean 600M",
+            "modelName": "42 mm, acciaio su acciaio",
+            "parsedPrice": 9200,
+            "isNewModel": true,
+            "caseDescription": "Acciaio",
+            "dialDescription": "Nero"
+          }
+        },
+        {
+          "reference": "215.30.46.21.03.002",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/seamaster/planet-ocean/catalog?p=2",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-seamaster-planet-ocean-6000m-co-axial-master-chronometer-45-5-mm-21530462103002",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "215.30.46.21.03.002",
+            "collectionName": "Seamaster Planet Ocean 6000M",
+            "modelName": "45,5 mm, O‑MEGASTEEL su O‑MEGASTEEL",
+            "parsedPrice": 14500,
+            "isNewModel": false,
+            "caseDescription": "O‑MEGASTEEL",
+            "dialDescription": "Blu"
+          }
+        },
+        {
+          "reference": "235.10.38.20.06.001",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/seamaster/heritage-models/catalog?p=2",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-seamaster-railmaster-co-axial-master-chronometer-38-mm-23510382006001",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "235.10.38.20.06.001",
+            "collectionName": "Seamaster Railmaster",
+            "modelName": "38 mm, acciaio su acciaio",
+            "parsedPrice": 6100,
+            "isNewModel": false,
+            "caseDescription": "Acciaio",
+            "dialDescription": "Grigio"
+          }
+        },
+        {
+          "reference": "234.30.41.21.03.002",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/seamaster/heritage-models/catalog?p=2",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-seamaster-300-co-axial-master-chronometer-41-mm-23430412103002",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "234.30.41.21.03.002",
+            "collectionName": "Seamaster 300",
+            "modelName": "41 mm, acciaio su acciaio",
+            "parsedPrice": 8300,
+            "isNewModel": false,
+            "caseDescription": "Acciaio",
+            "dialDescription": "Blu"
+          }
+        },
+        {
+          "reference": "522.53.37.20.04.001",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/seamaster/heritage-models/catalog?p=2",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-seamaster-37-mm-co-axial-master-chronometer-37-mm-52253372004001",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "522.53.37.20.04.001",
+            "collectionName": "Seamaster 37 mm",
+            "modelName": "37 mm, oro Moonshine™ su alligatore",
+            "parsedPrice": 22800,
+            "isNewModel": false,
+            "caseDescription": "Oro Moonshine™",
+            "dialDescription": "Bianco"
+          }
+        },
+        {
+          "reference": "522.53.40.20.04.002",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/seamaster/heritage-models/catalog?p=2",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-seamaster-olympic-official-timekeeper-co-axial-master-chronometer-39-5-mm-52253402004002",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "522.53.40.20.04.002",
+            "collectionName": "Seamaster Olympic Official Timekeeper",
+            "modelName": "39,5 mm, oro Canopus Gold™ su cinturino di pelle",
+            "parsedPrice": 28800,
+            "isNewModel": false,
+            "caseDescription": "Oro Canopus Gold™",
+            "dialDescription": "Bianco"
+          }
+        },
+        {
+          "reference": "227.32.55.21.03.001",
+          "categorySourceUrl": "https://www.omegawatches.com/it-it/watches/seamaster/heritage-models/catalog?p=2",
+          "productSourceUrl": "https://www.omegawatches.com/it-it/watch-omega-seamaster-ploprof-1200m-co-axial-master-chronometer-55-x-45-mm-22732552103001",
+          "fieldsCompared": [
+            "reference",
+            "collectionName",
+            "modelName",
+            "price",
+            "isNewModel",
+            "caseDescription",
+            "dialDescription"
+          ],
+          "result": "PASS",
+          "observed": {
+            "reference": "227.32.55.21.03.001",
+            "collectionName": "Seamaster Ploprof 1200M",
+            "modelName": "55 x 45 mm, O‑MEGASTEEL su cinturino in caucciù",
+            "parsedPrice": 15900,
+            "isNewModel": false,
+            "caseDescription": "O‑MEGASTEEL",
+            "dialDescription": "Blu"
+          }
+        }
+      ]
+    },
+    "historyAppendOnly": "PASS (new market runId 1; no prior IT Omega history existed)",
+    "catalogDelta": "PASS (M-C empty; no catalog addition; 586 catalog references retained)",
+    "travelerRefundPolicy": "PASS (official ADM source reviewed)",
+    "nicknameResearch": "PASS with 0 accepted results",
+    "readmeUpdate": "NOT RUN (coordinator-owned multi-market documentation update)",
+    "nonTargetMarketSafety": "PASS"
+  },
+  "differences": {
+    "marketWatchCount": {
+      "before": 0,
+      "after": 552
+    },
+    "historyRuns": {
+      "before": 0,
+      "after": 1
+    },
+    "catalogNewReferences": 0,
+    "listed": 552,
+    "priceUnavailable": 0,
+    "notListed": 0
+  },
+  "limitations": [
+    "No price-unavailable or not-listed records were exposed by the official Italy catalog during this run.",
+    "One product lacked watch_dial technical field; official description explicitly said quadrante argentato and documented fallback was used.",
+    "README and human guide table require coordinator synchronization.",
+    "The current traveler-refund-policy.schema.json evidencePath regex omits the brand segment, conflicting with ai-data-maintenance-guide.md and existing brand-prefixed policy records; no Schema change was authorized."
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "brandId": "omega",
+  "marketCode": "AT",
+  "validatedAt": "2026-09-24T10:56:15.731Z",
+  "overall": "PASS with documented NOT RUN limitations",
+  "checks": {
+    "strictJson": {
+      "status": "PASS",
+      "details": "8 target/catalog/evidence JSON files parsed with duplicate-key and invalid-constant rejection."
+    },
+    "marketSchemaContract": {
+      "status": "PASS",
+      "details": "Manual validation of all watch-market.schema.json required/additional-property/type/identity constraints."
+    },
+    "historySchemaContract": {
+      "status": "PASS",
+      "details": "Manual validation of all watch-price-history.schema.json required/additional-property/type/listing-status constraints."
+    },
+    "watchCountAndUniqueIds": {
+      "status": "PASS",
+      "details": "552 market records and 552 unique omega:<reference> watchIds."
+    },
+    "catalogMarketHistoryRelations": {
+      "status": "PASS",
+      "details": "All 552 AT references exist in omega catalog; market/history/evidence sets reconcile."
+    },
+    "priceParsing": {
+      "status": "PASS",
+      "details": "552 listed EUR integer prices, no null/decimal/unlisted records; price values trace to evidence."
+    },
+    "paginationStopAndIndependentDetail": {
+      "status": "PASS",
+      "details": "16 category paths, rendered root totals sum to 552, final pages have no next link, and each record has a 200 product-detail response."
+    },
+    "nicknameResearch": {
+      "status": "PASS with 0 accepted results",
+      "details": "Queries and reviewed sources are in nickname-research.json; no local nickname accepted."
+    },
+    "travelerRefundPolicyRecheck": {
+      "status": "NOT RUN / capability unavailable",
+      "details": "Existing AT jurisdiction policy retained; current BMF source was not reopened because browser auto-mode denied the navigation."
+    },
+    "taxRateGovernmentRecheck": {
+      "status": "NOT RUN / capability unavailable",
+      "details": "OMEGA tax-inclusive banner observed; current Austrian government rate source was not reopened. Existing project 20% Austria value retained."
+    },
+    "readmeSynchronization": {
+      "status": "NOT RUN",
+      "details": "Coordinator should update long-term human documentation after accepting this market."
+    },
+    "preexistingDataProtection": {
+      "status": "PASS",
+      "details": "No existing catalog, market, history, or evidence file was overwritten; shared traveler policy was unchanged."
+    }
+  },
+  "spotCheck": {
+    "status": "PASS",
+    "method": "Independent product-detail pages were fetched for all 552 category records; full reference, case, and dial fields were parsed from detail pages where present.",
+    "sampleReferences": [
+      "131.10.25.60.02.002",
+      "220.50.30.20.08.001",
+      "511.13.40.20.11.002"
+    ],
+    "dialDescriptionNullCount": 1
+  },
+  "limitations": [
+    "Traveler refund policy was not independently reopened in this run; existing shared Austria policy was preserved.",
+    "Austrian VAT rate source was not independently reopened in this run; 20% remains the existing project jurisdiction value.",
+    "README.md and watch-data-collection-guide.md were not updated by this single-market work unit."
+  ]
+}

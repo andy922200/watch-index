@@ -1,0 +1,76 @@
+{
+  "nicknameResearch": {
+    "status": "PASS with 0 accepted results",
+    "scope": "new-market",
+    "languages": [
+      "it-IT",
+      "en-US"
+    ],
+    "queries": [
+      {
+        "query": "OMEGA Italia Moonwatch Snoopy orologi",
+        "url": "https://duckduckgo.com/?q=OMEGA+Italia+Moonwatch+Snoopy+orologi&ia=web",
+        "result": "Secondary-market and Swatch MoonSwatch references were not accepted as exact current Omega Italy configuration aliases."
+      },
+      {
+        "query": "site:omegawatches.com/it-it \"Moonwatch\" OMEGA",
+        "url": "https://duckduckgo.com/?q=site%3Aomegawatches.com%2Fit-it+%22Moonwatch%22+OMEGA",
+        "result": "Search challenge appeared; no candidate accepted."
+      },
+      {
+        "query": "Omega Italia orologi soprannomi Speedmaster Moonwatch",
+        "url": "https://duckduckgo.com/?q=Omega+Italia+orologi+soprannomi+Speedmaster+Moonwatch&ia=web",
+        "result": "Official OMEGA Moonwatch Professional category and secondary articles reviewed; Moonwatch is official collection terminology, not stored as a local nickname."
+      }
+    ],
+    "sourcesReviewed": [
+      {
+        "publisher": "OMEGA Italia",
+        "url": "https://www.omegawatches.com/it-it/watches",
+        "reason": "Official collection labels and market catalog."
+      },
+      {
+        "publisher": "OMEGA Italia",
+        "url": "https://www.omegawatches.com/it-it/watches/speedmaster/moonwatch-professional/catalog",
+        "reason": "Official category labels; Moonwatch treated as official collection term."
+      },
+      {
+        "publisher": "Chrono24 Italia",
+        "url": "https://www.chrono24.it/omega/speedmaster-professional-moonwatch--mod71.htm",
+        "reason": "Secondary terminology only; not accepted as local nickname evidence."
+      },
+      {
+        "publisher": "Wristler",
+        "url": "https://wristler.eu/it/insights/guida-agli-omega-speedmaster",
+        "reason": "Secondary guide; no exact current IT configuration mapping accepted."
+      },
+      {
+        "publisher": "DuckDuckGo result page",
+        "url": "https://duckduckgo.com/?q=OMEGA+Italia+Moonwatch+Snoopy+orologi&ia=web",
+        "reason": "Search discovery only; not a factual source."
+      }
+    ],
+    "candidateCount": 4,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [
+      {
+        "candidate": "Moonwatch",
+        "reason": "Official OMEGA collection term, not market-local nickname."
+      },
+      {
+        "candidate": "Snoopy",
+        "reason": "Secondary-market terminology and not exact current IT catalog configuration."
+      },
+      {
+        "candidate": "Tintin",
+        "reason": "Secondary guide terminology; no exact current IT catalog configuration mapping."
+      },
+      {
+        "candidate": "Mark",
+        "reason": "Secondary guide terminology; no exact current IT catalog configuration mapping."
+      }
+    ],
+    "notes": "All localNicknames.names arrays remain empty; no nickname was invented or copied from an unrelated reference."
+  }
+}

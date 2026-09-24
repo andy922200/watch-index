@@ -1,0 +1,59 @@
+{
+  "brandId": "omega",
+  "marketCode": "AT",
+  "status": "PASS with 0 accepted results",
+  "scope": "new-market",
+  "languages": [
+    "de-AT",
+    "en-US",
+    "zh-TW"
+  ],
+  "queries": [
+    "OMEGA Austria watches nickname 220.10.41.21.01.002",
+    "Omega Österreich Spitzname Speedmaster Moonwatch"
+  ],
+  "sourcesReviewed": [
+    {
+      "publisher": "OMEGA Austria",
+      "url": "https://www.omegawatches.com/de-at/watches",
+      "reviewedAt": "2026-09-24T10:55:53.863Z",
+      "result": "Official collection labels and category names; no Austria-specific nickname field."
+    },
+    {
+      "publisher": "OMEGA Austria",
+      "url": "https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101002",
+      "reviewedAt": "2026-09-24T10:55:53.863Z",
+      "result": "Official product page uses collection/model/reference labels, not a local nickname."
+    },
+    {
+      "publisher": "Bing Web Search",
+      "url": "https://www.bing.com/search?q=Omega+Austria+watches+nickname+220.10.41.21.01.002",
+      "reviewedAt": "2026-09-24T10:55:53.863Z",
+      "result": "Results identify generic collection terms such as Seamaster/Aqua Terra; no verifiable Austria-specific nickname tied to a complete reference."
+    },
+    {
+      "publisher": "Bing Web Search",
+      "url": "https://www.bing.com/search?q=Omega+%C3%96sterreich+Spitzname+Speedmaster+Moonwatch",
+      "reviewedAt": "2026-09-24T10:55:53.863Z",
+      "result": "Results discuss generic Moonwatch terminology and official collection labels, not a verified Austria-local nickname."
+    }
+  ],
+  "candidateCount": 3,
+  "acceptedCollectionAliasCount": 0,
+  "acceptedLocalNicknameCount": 0,
+  "rejectedCandidates": [
+    {
+      "candidate": "Seamaster",
+      "reason": "Official collection name, not a market-local nickname."
+    },
+    {
+      "candidate": "Aqua Terra",
+      "reason": "Official sub-collection/model name, not an Austria-local nickname."
+    },
+    {
+      "candidate": "Moonwatch",
+      "reason": "Generic official collection term; no exact Austria-local nickname mapping was established for a complete reference."
+    }
+  ],
+  "notes": "Market-local nickname arrays remain empty. Official collection aliases are recorded separately in the market file."
+}

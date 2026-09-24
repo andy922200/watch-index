@@ -6,7 +6,7 @@
 
 ## 適用範圍與硬性限制
 
-- 目前正式資料包含勞力士（AT、CH、CN、DE、ES、FR、GB、HK、IT、JP、KR、SG、TH、TW、US 共 15 個市場）與 Omega Taiwan（TW，551 個唯一參考編號）。
+- 目前正式資料包含勞力士（AT、CH、CN、DE、ES、FR、GB、HK、IT、JP、KR、SG、TH、TW、US 共 15 個市場）與 Omega（AT、CH、CN、DE、ES、FR、GB、HK、IT、JP、KR、TW、US 共 13 個市場）。
 - Catalog、market 與 price history 使用 brand-neutral v3 Schema；不得假定任何品牌的檔名、參考號格式或前端欄位適用於另一品牌。
 - 未經明確授權，不得修改 Schema、另建正式格式、安裝依賴、推送遠端或繞過網站存取限制。
 - 面向人類的文件一律使用繁體中文。

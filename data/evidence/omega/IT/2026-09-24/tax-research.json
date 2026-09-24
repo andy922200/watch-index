@@ -1,0 +1,27 @@
+{
+  "brandId": "omega",
+  "marketCode": "IT",
+  "assessedAt": "2026-09-24T10:50:00Z",
+  "sources": [
+    {
+      "publisher": "OMEGA Italia",
+      "title": "Condizioni di vendita",
+      "url": "https://www.omegawatches.com/it-it/conditions-of-sale",
+      "accessedAt": "2026-09-24T10:50:00Z",
+      "observedFact": "Section 3.1 states that prices on the website are in EURO and include local VAT and default delivery costs."
+    },
+    {
+      "publisher": "European Commission Taxation and Customs Union",
+      "title": "Taxes in Europe Database v5 - VAT Search Results",
+      "url": "https://ec.europa.eu/taxation_customs/tedb/#/vat-search/vat-search-result",
+      "accessedAt": "2026-09-24T10:51:00Z",
+      "observedFact": "IT - Italy, standard VAT rate 22, situation on 2026/07/01."
+    }
+  ],
+  "conclusion": {
+    "currencyCode": "EUR",
+    "priceType": "tax-include",
+    "taxRatePercent": 22
+  },
+  "limitations": "The official OMEGA page establishes VAT inclusion; the European Commission database establishes the standard Italian VAT rate. This does not establish traveler refund eligibility or a guaranteed refund amount."
+}
