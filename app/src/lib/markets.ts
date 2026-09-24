@@ -49,6 +49,16 @@ export const marketOptions: readonly MarketOption[] = [
   { code: MarketCode.Thailand, flag: '🇹🇭', labelKey: 'site.market.thailand' },
 ]
 
+/**
+ * 依全域 {@link marketOptions} 的順序挑出指定市場，讓各品牌的市場選單順序只由這份清單決定；
+ * 傳入代碼的先後順序不影響結果。
+ */
+export const getMarketOptions = (marketCodes: readonly MarketCode[]): readonly MarketOption[] => {
+  const selectedCodes = new Set(marketCodes)
+
+  return marketOptions.filter((option) => selectedCodes.has(option.code))
+}
+
 export const isMarketCode = (value: string): value is MarketCode =>
   marketOptions.some((market) => market.code === value)
 
