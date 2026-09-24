@@ -17,5 +17,6 @@
 
 - 修改資料前先檢查工作區，保留使用者既有未提交變更。
 - 價格歷史與 evidence 必須保留可追溯性；不得覆寫舊價格點、補造來源或保存機敏資訊。
+- 同一輪收集中尚未 commit 的多次嘗試可整併為單一 evidence，但須保留各次嘗試紀錄；已 commit 的 evidence 不可變更，規則見 `ai-data-maintenance-guide.md`。
 - 修改資料契約、Schema、資料產生流程或新增品牌前，先取得使用者明確同意。
 - 修改前端 TypeScript 時，遵守 `.agents/skills/typescript-standards/SKILL.md`；修改 Vue 前端時，另遵守 `.agents/skills/vue-typescript-frontend/SKILL.md`。
