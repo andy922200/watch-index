@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test'
 
-test('browses Omega by its eleven supported markets and opens specifications', async ({ page }) => {
+test('browses Omega by its thirteen supported markets and opens specifications', async ({
+  page,
+}) => {
   await page.goto('/omega/en-us/')
 
   await expect(page.getByRole('heading', { name: 'Omega Watch Index' })).toBeVisible()
@@ -12,8 +14,10 @@ test('browses Omega by its eleven supported markets and opens specifications', a
   await expect(page.getByRole('option', { name: 'South Korea' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'Hong Kong' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'Switzerland' })).toBeVisible()
+  await expect(page.getByRole('option', { name: 'Austria' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'Germany' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'France' })).toBeVisible()
+  await expect(page.getByRole('option', { name: 'Italy' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'Spain' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'United Kingdom' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'United States' })).toBeVisible()
@@ -28,6 +32,11 @@ test('browses Omega by its eleven supported markets and opens specifications', a
   await expect(page.locator('[data-slot="card"]')).toHaveCount(12)
 
   await marketSelect.click()
+  await page.getByRole('option', { name: 'Austria' }).click()
+  await expect(marketSelect).toContainText('Austria')
+  await expect(page.locator('[data-slot="card"]')).toHaveCount(12)
+
+  await marketSelect.click()
   await page.getByRole('option', { name: 'Germany' }).click()
   await expect(marketSelect).toContainText('Germany')
   await expect(page.locator('[data-slot="card"]')).toHaveCount(12)
@@ -35,6 +44,11 @@ test('browses Omega by its eleven supported markets and opens specifications', a
   await marketSelect.click()
   await page.getByRole('option', { name: 'France' }).click()
   await expect(marketSelect).toContainText('France')
+  await expect(page.locator('[data-slot="card"]')).toHaveCount(12)
+
+  await marketSelect.click()
+  await page.getByRole('option', { name: 'Italy' }).click()
+  await expect(marketSelect).toContainText('Italy')
   await expect(page.locator('[data-slot="card"]')).toHaveCount(12)
 
   await marketSelect.click()
@@ -58,7 +72,9 @@ test('browses Omega by its eleven supported markets and opens specifications', a
   await expect(page.getByRole('dialog')).toBeVisible()
 })
 
-test('uses Hong Kong and Switzerland as Omega comparison baselines', async ({ page }) => {
+test('uses Hong Kong, Switzerland, Austria, and Italy as Omega comparison baselines', async ({
+  page,
+}) => {
   await page.goto(
     '/omega/en-us/watch-price-compare.html?market_code=HK&watch_id=omega%3A131.10.25.60.02.002',
   )
@@ -66,8 +82,10 @@ test('uses Hong Kong and Switzerland as Omega comparison baselines', async ({ pa
   await expect(page.getByTestId('watch-price-comparison-card')).toBeVisible()
   await expect(page.getByTestId('market-price-HK')).toContainText('Baseline market')
   await expect(page.getByTestId('market-price-CH')).toBeVisible()
+  await expect(page.getByTestId('market-price-AT')).toBeVisible()
   await expect(page.getByTestId('market-price-DE')).toBeVisible()
   await expect(page.getByTestId('market-price-FR')).toBeVisible()
+  await expect(page.getByTestId('market-price-IT')).toBeVisible()
   await expect(page.getByTestId('market-price-ES')).toBeVisible()
   await expect(page.getByTestId('market-price-GB')).toBeVisible()
   await expect(page.getByTestId('market-price-US')).toBeVisible()
@@ -78,6 +96,20 @@ test('uses Hong Kong and Switzerland as Omega comparison baselines', async ({ pa
   await expect(page).toHaveURL(/market_code=CH/)
   await expect(page.getByTestId('market-price-CH')).toContainText('Baseline market')
   await expect(page.getByTestId('market-price-HK')).toBeVisible()
+
+  await page.getByRole('combobox', { name: 'Market' }).click()
+  await page.getByRole('option', { name: 'Austria' }).click()
+
+  await expect(page).toHaveURL(/market_code=AT/)
+  await expect(page.getByTestId('market-price-AT')).toContainText('Baseline market')
+  await expect(page.getByTestId('market-price-IT')).toBeVisible()
+
+  await page.getByRole('combobox', { name: 'Market' }).click()
+  await page.getByRole('option', { name: 'Italy' }).click()
+
+  await expect(page).toHaveURL(/market_code=IT/)
+  await expect(page.getByTestId('market-price-IT')).toContainText('Baseline market')
+  await expect(page.getByTestId('market-price-AT')).toBeVisible()
 })
 
 test('marks market-limited Omega configurations as not listed in comparison', async ({ page }) => {

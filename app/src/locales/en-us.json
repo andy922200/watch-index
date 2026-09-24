@@ -11,7 +11,7 @@
       },
       "omega": {
         "name": "OMEGA",
-        "description": "Explore official Omega prices across Taiwan, China, Japan, South Korea, Hong Kong, Switzerland, Germany, France, Spain, the United Kingdom, and the United States"
+        "description": "Explore official Omega prices across Taiwan, China, Japan, South Korea, Hong Kong, Switzerland, Austria, Germany, France, Italy, Spain, the United Kingdom, and the United States"
       }
     }
   },
@@ -156,7 +156,7 @@
       "taxResidencySectionUnsetSummary": "Not set: showing refund estimates for all markets",
       "taxResidencySectionSetSummary": "Set: {markets}",
       "taxResidencySectionDescription": "Select the market(s) where you hold tax residency (multiple allowed). Tax residents of a market typically cannot claim the traveler VAT refund there, so that market will show the tax-inclusive (official) price instead.",
-      "taxResidencyEuHelperText": "EU traveler refund schemes generally require residency outside the EU. Selecting tax residency in any EU market (Austria, Germany, France, Italy) will switch all EU markets — not just that one — to the tax-inclusive price.",
+      "taxResidencyEuHelperText": "EU traveler refund schemes generally require residency outside the EU. Selecting tax residency in any EU market (Austria, Germany, France, Italy, Spain) will switch all EU markets — not just that one — to the tax-inclusive price.",
       "taxResidencyEuBadge": "EU"
     }
   }

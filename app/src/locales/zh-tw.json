@@ -11,7 +11,7 @@
       },
       "omega": {
         "name": "OMEGA",
-        "description": "探索 Omega 在台灣、中國、日本、韓國、香港、瑞士、德國、法國、西班牙、英國與美國的官方定價"
+        "description": "探索 Omega 在台灣、中國、日本、韓國、香港、瑞士、奧地利、德國、法國、義大利、西班牙、英國與美國的官方定價"
       }
     }
   },
@@ -156,7 +156,7 @@
       "taxResidencySectionUnsetSummary": "尚未設定：顯示所有地區退稅金額",
       "taxResidencySectionSetSummary": "已設定：{markets}",
       "taxResidencySectionDescription": "選擇您具有稅務居住身分的市場（可複選）。若您是某市場的稅務居民，該市場通常無法申請旅客退稅，將改為顯示含稅（官方）價格。",
-      "taxResidencyEuHelperText": "歐盟（奧地利／德國／法國／義大利）的旅客退稅制度通常要求申請人「非歐盟居民」；只要您在任一歐盟市場設有稅務居住地，所有歐盟市場都會改顯示含稅價格，而不只是您選擇的那一個。",
+      "taxResidencyEuHelperText": "歐盟（奧地利／德國／法國／義大利／西班牙）的旅客退稅制度通常要求申請人「非歐盟居民」；只要您在任一歐盟市場設有稅務居住地，所有歐盟市場都會改顯示含稅價格，而不只是您選擇的那一個。",
       "taxResidencyEuBadge": "歐盟"
     }
   }
