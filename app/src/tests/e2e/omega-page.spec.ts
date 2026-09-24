@@ -1,12 +1,13 @@
 import { expect, test } from '@playwright/test'
 
-test('browses Omega by its nine supported markets and opens specifications', async ({ page }) => {
+test('browses Omega by its eleven supported markets and opens specifications', async ({ page }) => {
   await page.goto('/omega/en-us/')
 
   await expect(page.getByRole('heading', { name: 'Omega Watch Index' })).toBeVisible()
   const marketSelect = page.getByRole('combobox', { name: 'Market' })
   await marketSelect.click()
   await expect(page.getByRole('option', { name: 'Taiwan' })).toBeVisible()
+  await expect(page.getByRole('option', { name: 'China' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'Japan' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'South Korea' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'Hong Kong' })).toBeVisible()
@@ -14,8 +15,8 @@ test('browses Omega by its nine supported markets and opens specifications', asy
   await expect(page.getByRole('option', { name: 'Germany' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'France' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'Spain' })).toBeVisible()
+  await expect(page.getByRole('option', { name: 'United Kingdom' })).toBeVisible()
   await expect(page.getByRole('option', { name: 'United States' })).toBeVisible()
-  await expect(page.getByRole('option', { name: 'China' })).toHaveCount(0)
 
   await page.getByRole('option', { name: 'Hong Kong' }).click()
   await expect(marketSelect).toContainText('Hong Kong')
@@ -42,6 +43,11 @@ test('browses Omega by its nine supported markets and opens specifications', asy
   await expect(page.locator('[data-slot="card"]')).toHaveCount(12)
 
   await marketSelect.click()
+  await page.getByRole('option', { name: 'United Kingdom' }).click()
+  await expect(marketSelect).toContainText('United Kingdom')
+  await expect(page.locator('[data-slot="card"]')).toHaveCount(12)
+
+  await marketSelect.click()
   await page.getByRole('option', { name: 'United States' }).click()
   await expect(marketSelect).toContainText('United States')
   await expect(page.locator('[data-slot="card"]')).toHaveCount(12)
@@ -63,6 +69,7 @@ test('uses Hong Kong and Switzerland as Omega comparison baselines', async ({ pa
   await expect(page.getByTestId('market-price-DE')).toBeVisible()
   await expect(page.getByTestId('market-price-FR')).toBeVisible()
   await expect(page.getByTestId('market-price-ES')).toBeVisible()
+  await expect(page.getByTestId('market-price-GB')).toBeVisible()
   await expect(page.getByTestId('market-price-US')).toBeVisible()
 
   await page.getByRole('combobox', { name: 'Market' }).click()
