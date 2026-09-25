@@ -152,7 +152,7 @@ Longines 目前已收錄 4 個市場：
 | 日本 | JP | `ja-JP` | JPY | 含稅（10%） | 612 |
 | 韓國 | KR | `ko-KR` | KRW | 含稅（10%） | 456 |
 
-Longines 的 `collectionId` 採官方子系列網址路徑的最後一段（例如 `hydroconquest`、`master-collection`），而非 Master、Conquest 等五大家族；網站前端尚未加入 Longines 頁面。各市場的官方子系列並非完全相同：例如 `master-gmt` 僅出現在 HK／JP／KR，`conquest-classic` 僅出現在 TW，`evidenza` 未出現在 KR，這是官方目錄的真實市場差異，非收集缺漏。
+Longines 的 `collectionId` 採官方子系列網址路徑的最後一段（例如 `hydroconquest`、`master-collection`），而非 Master、Conquest 等五大家族；各市場的官方子系列並非完全相同：例如 `master-gmt` 僅出現在 HK／JP／KR，`conquest-classic` 僅出現在 TW，`evidenza` 未出現在 KR，這是官方目錄的真實市場差異，非收集缺漏。
 
 實際的收集時間、來源、輪次與價格請讀取各市場的 history 與 evidence；本表不應用作下一次收集的筆數目標。
 

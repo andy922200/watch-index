@@ -142,7 +142,12 @@ export const brandDirectory: readonly BrandDirectoryEntry[] = [
       enUs: 'Your Global Longines Watches Index',
     },
     defaultMarket: MarketCode.Taiwan,
-    marketOptions: getMarketOptions([MarketCode.Taiwan]),
+    marketOptions: getMarketOptions([
+      MarketCode.Taiwan,
+      MarketCode.HongKong,
+      MarketCode.Japan,
+      MarketCode.SouthKorea,
+    ]),
     directory: {
       availability: 'available',
       descriptionKey: 'home.brands.longines.description',
