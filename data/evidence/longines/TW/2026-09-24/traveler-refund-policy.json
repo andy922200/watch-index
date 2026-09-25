@@ -1,0 +1,28 @@
+{
+  "brandId": "longines",
+  "marketCode": "TW",
+  "observedAt": "2026-09-24T15:25:00Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level VAT refund guidance for foreign travelers only; this does not establish Longines retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "purpose": "新增 Longines 台灣市場時的旅客退稅政策查核。data/traveler-refund-policies.json 已有 TW 市場級記錄（evidencePath 指向 data/evidence/rolex/TW/2026-09-11/traveler-refund-policy.json）；本次重新開啟同一官方來源確認制度仍存在且與既有摘要一致，未修改正式政策記錄。",
+  "sources": [
+    {
+      "publisher": "Tourism Administration, Republic of China (Taiwan)",
+      "title": "VAT Refund Guidelines for Foreign Travelers",
+      "url": "https://eng.taiwan.net.tw/m1.aspx?sNo=0024567",
+      "accessedAt": "2026-09-24T15:25:00Z",
+      "pageLastUpdated": "2026-06-03"
+    }
+  ],
+  "observedFacts": [
+    "Foreign travelers who enter with the listed non-ROC-ID documents and stay no more than 183 days from arrival are covered.",
+    "Purchases must total at least NT$2,000 on the same day from the same designated store displaying the 'Taiwan Tax Refund' label.",
+    "Tax refund applications must be completed before the goods are taken out of the country for the first time; applications not approved by Customs before departure cannot be processed afterward."
+  ],
+  "comparisonWithExistingRecord": "與既有 TW 記錄的 availability=available、merchantParticipationRequired=true、exportValidationRequired=true 及資格摘要一致；無需更新。",
+  "method": "WebFetch 讀取官方頁面摘要式內容（非逐字全文保存）。",
+  "limitations": [
+    "Longines retailer participation in the Taiwan Tax Refund scheme is not established by this evidence.",
+    "No exact transaction-specific refund amount is represented in the comparison."
+  ]
+}

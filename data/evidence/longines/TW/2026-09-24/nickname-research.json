@@ -1,0 +1,85 @@
+{
+  "brandId": "longines",
+  "marketCode": "TW",
+  "researchedAt": "2026-09-24T15:35:00Z",
+  "scope": "new-market",
+  "status": "PASS",
+  "languages": [
+    "zh-Hant",
+    "zh-Hans"
+  ],
+  "method": "以繁中（輔以簡中）查詢台灣市場流通的 Longines 俗稱，要求來源能把名稱明確對應到本輪 30 個官方子系列（collectionId）之一，或 544 個台灣官方完整參考號中的單一配置。候選來源須為台灣可驗證的經銷商／媒體；經銷商身分以 LONGINES 台灣官方門市查詢（/zh-tw/store）結果佐證。其他市場的官方譯名（例如香港／中國官網的「名匠」「康卡斯」）不視為台灣俗稱。",
+  "queries": [
+    "浪琴 名匠系列 巨擘系列 同一系列 Master Collection 台灣",
+    "浪琴 康卡斯 Conquest 俗稱 暱稱 型號 L3",
+    "浪琴 手錶 暱稱 綽號 錶友 型號 \"L2.\" OR \"L3.\" 小三針 月相 台灣",
+    "\"浪鬼\" 浪琴 深海征服者 HydroConquest",
+    "\"名匠系列\" 浪琴 台灣 巨擘 舊稱 更名"
+  ],
+  "sourcesReviewed": [
+    {
+      "publisher": "新萬國鐘錶（新萬國鐘錶有限公司）",
+      "title": "LONGINES 浪琴錶深海征服者系列也是大家俗稱的浪鬼，全系列完整大解析!",
+      "url": "https://hwkwatch.com/pages/longineshydroconquest",
+      "finding": "原文：「HydroConquest深海征服者系列…外型酷似…勞力士潛水錶Submariner(水鬼)，所以有了\"浪鬼\"的稱號。」明確指向 HydroConquest 深海征服者系列（本輪 collectionId=hydroconquest）。",
+      "accepted": true,
+      "acceptedAs": "collectionAliases.hydroconquest"
+    },
+    {
+      "publisher": "LONGINES 台灣官方門市查詢",
+      "title": "LONGINES 專門店列表在 台灣",
+      "url": "https://www.longines.com/zh-tw/store",
+      "finding": "官方門市資料含「新萬國鐘錶」（country_code=TW、is_third_party=true），佐證其為官方列名之台灣零售據點。",
+      "accepted": true,
+      "acceptedAs": "經銷商身分佐證（非俗稱來源）"
+    },
+    {
+      "publisher": "世界腕錶 World Wrist Watch",
+      "title": "2026潛水錶CP值之王？浪琴表第三代「深海征服者」全面進化",
+      "url": "https://www.world-wrist-watch.com/zh-Hant/Article/16217",
+      "finding": "搜尋摘要顯示討論深海征服者；未逐字確認文中使用「浪鬼」，不作為採用來源。",
+      "accepted": false
+    },
+    {
+      "publisher": "LONGINES 香港／中國官方網站",
+      "title": "浪琴表名匠系列（Longines Master）／康卡斯系列",
+      "url": "https://www.longines.com/hk/watches/master",
+      "finding": "「名匠」「康卡斯」為香港／中國官網的官方譯名，非台灣市場俗稱；且「名匠」指整個 Master 家族，無法唯一對應本輪 collectionId（master-collection、master-collection-chronograph 等 4 個子系列）。",
+      "accepted": false
+    },
+    {
+      "publisher": "Yahoo 奇摩拍賣 / BigGo 比價",
+      "title": "名匠 / 巨擘 商品搜尋結果",
+      "url": "https://tw.bid.yahoo.com/search/auction/product?p=%E6%B5%AA%E7%90%B4+%E5%B7%A8%E6%93%98",
+      "finding": "賣家標題混用「巨擘」「名匠」，屬拍賣／比價頁，非可信來源，且無法唯一對應子系列。",
+      "accepted": false
+    }
+  ],
+  "candidateCount": 3,
+  "acceptedCollectionAliasCount": 1,
+  "acceptedLocalNicknameCount": 0,
+  "acceptedCollectionAliases": {
+    "hydroconquest": [
+      "浪鬼"
+    ]
+  },
+  "acceptedNicknames": [],
+  "rejectedCandidates": [
+    {
+      "name": "名匠",
+      "target": "Master 家族",
+      "reason": "港／中官方譯名而非台灣俗稱；指涉家族層級，無法唯一對應單一 collectionId。"
+    },
+    {
+      "name": "康卡斯",
+      "target": "Conquest",
+      "reason": "港／中官方譯名而非台灣俗稱；台灣官方名稱為「征服者」。"
+    },
+    {
+      "name": "浪鬼（套用至 hydroconquest-gmt）",
+      "target": "HydroConquest GMT",
+      "reason": "來源僅指 HydroConquest 深海征服者系列；GMT 為官方獨立子系列，未套用。"
+    }
+  ],
+  "notes": "未找到能以可信來源唯一對應到單一完整參考號的台灣俗稱，因此所有 localNicknames 維持空陣列（PASS with 0 accepted local nicknames）。"
+}

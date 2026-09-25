@@ -1,0 +1,1160 @@
+{
+  "brandId": "longines",
+  "marketCode": "TW",
+  "validatedAt": "2026-09-24T15:30:00Z",
+  "schemasUsed": [
+    "data/schemas/watch-catalog.schema.json (schemaVersion 3)",
+    "data/schemas/watch-market.schema.json (schemaVersion 3)",
+    "data/schemas/watch-price-history.schema.json (schemaVersion 3)"
+  ],
+  "validationMethodNote": "環境未安裝 ajv 或 python-jsonschema，且不得安裝依賴；以不依賴外部套件的 Python 驗證器實作三份 Schema 實際使用的 draft 2020-12 關鍵字（$ref、type、const、enum、pattern、required、properties、additionalProperties、items、minItems、uniqueItems、minProperties、propertyNames、minimum、maximum、minLength、allOf/if/then、format date-time／uri），遇到未支援的關鍵字即報錯。以刻意破壞的 history（listed 搭配 null 價格、額外欄位）做反向測試，驗證器正確回報 FAIL。此為手工實作，非官方驗證器輸出。",
+  "layer1_jsonAndSchema": {
+    "status": "PASS",
+    "checks": [
+      "嚴格 JSON 解析（攔重複 key、NaN/Infinity）：data/catalog、data/markets、data/history、data/schemas 與本次 evidence 共 69 份檔案通過",
+      "data/catalog/longines-catalog.json、data/markets/longines-taiwan-market.json、data/history/TW/longines-price-history.json 通過對應 v3 Schema",
+      "對照組：omega-catalog、omega-taiwan-market、TW omega history 以同一驗證器亦通過（確認驗證器與既有資料一致）",
+      "反向測試：破壞後的 history 被正確判為 FAIL"
+    ],
+    "errors": []
+  },
+  "layer2_crossFileRelations": {
+    "status": "PASS",
+    "checks": [
+      "examples/cross-brand-validation-script.md 的 Node.js 跨檔腳本對全部 29 份 market 檔（含 longines-taiwan-market.json）皆 PASS",
+      "catalog watchCount 544 == watches.length；market watchCount 544 == watches.length；history recordCount 544 == priceSeries 筆數",
+      "544 個 reference 全部唯一；watchId 全部等於 'longines:' + reference",
+      "catalog／market／history 三者 watchId 集合完全相同（無孤兒）",
+      "collectionRuns 僅 runId 1；所有價格點 runId 存在；無冗餘相鄰價格點",
+      "market 30 個 collectionAliases key 與 catalog 30 個 collectionId 完全一致",
+      "app/scripts/generate-watch-data.mjs 以暫存輸出目錄執行成功，產生 watch-data/longines/ 輸出；app vitest 23 檔 128 測試全數通過"
+    ],
+    "errors": []
+  },
+  "layer3_sourceReconciliation": {
+    "status": "PASS",
+    "checks": [
+      "544 筆 market 的 productUrl、isNewModel 與 history 價格逐筆回對 observations.json，無差異",
+      "544 筆 catalog 的 imageUrl、collectionId 逐筆回對 observations.json，無差異",
+      "544 筆價格文字 value_formatted（$NNN,NNN.00）依逗號千分位解析，與結構化 base_price.value 完全一致；無非零小數；special_price 全為 null",
+      "544 筆 currency 皆為 TWD；StoreConfig 為 TW／zh_Hant_TW／TWD",
+      "case_material 與 dial_color 選項 ID 全部可由官方 zh-tw attribute_options 對應（0 筆未對應）",
+      "market 的 collectionAliases 與 nickname-research.json 的 acceptedCollectionAliases 一致（僅 hydroconquest: 浪鬼）；localNicknames 全為空，與 acceptedNicknames 一致"
+    ],
+    "errors": []
+  },
+  "layer4_completenessAndSpotCheck": {
+    "status": "PASS",
+    "checks": [
+      "官方 total_count 544；23 頁皆 HTTP 200，每頁 24 筆、第 23 頁 16 筆；第 24 頁官方回傳「greater than the 23 page(s) available」",
+      "5 個家族頁官方總數（110+164+53+155+62=544）與收集結果逐一相符",
+      "30 個子系列頁官方總數與收集結果逐一相符，且每筆恰屬一個子系列",
+      "21 款以 SSR 商品頁（schema.org JSON-LD 與 ProductPageDocument）獨立抽查全部 PASS"
+    ],
+    "errors": []
+  },
+  "layer5_changeSafety": {
+    "status": "PASS",
+    "checks": [
+      "本次為新品牌、新市場：longines 的 catalog、market、history 先前皆不存在，無既有價格序列可被覆寫",
+      "未修改 Rolex／Omega 的 catalog、market、history 或 evidence",
+      "未修改 data/schemas/ 與 data/traveler-refund-policies.json",
+      "執行前 git status 為 clean，無使用者未提交變更需保留"
+    ],
+    "errors": []
+  },
+  "sourceReconciliation": {
+    "observedListingCount": 544,
+    "marketWatchCount": 544,
+    "priceSeriesCount": 544,
+    "catalogWatchCount": 544,
+    "duplicateReferenceCount": 0,
+    "collectionIdCount": 30
+  },
+  "priceStatistics": {
+    "currency": "TWD",
+    "listed": 544,
+    "priceUnavailable": 0,
+    "notListed": 0,
+    "min": {
+      "price": 29200,
+      "references": [
+        "L3.759.4.76.6",
+        "L3.759.4.96.6",
+        "L3.759.4.58.6"
+      ]
+    },
+    "max": {
+      "price": 331700,
+      "references": [
+        "L2.793.8.78.3"
+      ]
+    },
+    "median": 83800
+  },
+  "independentSpotCheck": {
+    "count": 21,
+    "result": "PASS",
+    "coverage": "最低價、次低價、最高價、次高價、5 個家族代表、2 筆英數後綴參考號（L5.512.4.71.A、L5.255.4.71.A）、2 組同基本型號不同配置（L3.809.4.93.9/.6、L2.960.4.93.2/.78.2）、新款、暢銷標示與系統抽樣；本市場無「無公開價」款式可抽查。",
+    "items": [
+      {
+        "reference": "L3.759.4.76.6",
+        "selectionReasons": [
+          "lowest price"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-conquest-l3-759-4-76-6",
+        "observedAt": "2026-09-24T15:20:49.116Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L3.759.4.76.6",
+            "name": "征服者系列",
+            "width": "Ø 41.00 mm",
+            "material": "不鏽鋼",
+            "color": "銀色太陽飾紋",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-l3-759-4-76-6-eb1e2d-hero.png",
+            "price": 29200,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/OutOfStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L3.759.4.76.6",
+            "name": "征服者系列",
+            "tag": "UNDEFINED",
+            "base_price": {
+              "value": 29200,
+              "currency": "TWD",
+              "value_formatted": "$29,200.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>石英手錶, Ø 41.00 mm, 不鏽鋼, L3.759.4.76.6</p>",
+          "descriptionHtml": "<p>日期.</p><p>旋入式表冠, 防水深度30巴, 抗磨损合成蓝宝石内侧带防反光图层.</p><p>銀色太陽飾紋 飾紋 表盤.</p><p>不鏽鋼 表帶, 三重折疊式安全錶扣和按壓式開啟裝置。。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.759.4.96.6",
+        "selectionReasons": [
+          "2nd lowest"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-conquest-l3-759-4-96-6",
+        "observedAt": "2026-09-24T15:20:50.602Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L3.759.4.96.6",
+            "name": "征服者系列",
+            "width": "Ø 41.00 mm",
+            "material": "不鏽鋼",
+            "color": "藍色太陽飾紋",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-l3-759-4-96-6-2d59a7-hero.png",
+            "price": 29200,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L3.759.4.96.6",
+            "name": "征服者系列",
+            "tag": "UNDEFINED",
+            "base_price": {
+              "value": 29200,
+              "currency": "TWD",
+              "value_formatted": "$29,200.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>石英手錶, Ø 41.00 mm, 不鏽鋼, L3.759.4.96.6</p>",
+          "descriptionHtml": "<p>日期.</p><p>旋入式表冠, 防水深度30巴, 抗磨损合成蓝宝石内侧带防反光图层.</p><p>藍色太陽飾紋 飾紋 表盤.</p><p>不鏽鋼 表帶, 三重折疊式安全錶扣和按壓式開啟裝置。。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.793.8.78.3",
+        "selectionReasons": [
+          "highest price"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-the-longines-master-collection-l2-793-8-78-3",
+        "observedAt": "2026-09-24T15:20:53.168Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L2.793.8.78.3",
+            "name": "巨擘系列",
+            "width": "Ø 40.00 mm",
+            "material": "18K玫瑰金",
+            "color": "銀色\"麥粒\"飾紋",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-793-8-78-3-3155bb-hero.png",
+            "price": 331700,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/OutOfStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L2.793.8.78.3",
+            "name": "巨擘系列",
+            "tag": "UNDEFINED",
+            "base_price": {
+              "value": 331700,
+              "currency": "TWD",
+              "value_formatted": "$331,700.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>自動上鏈機械機芯手錶, Ø 40.00 mm, 18K玫瑰金, L2.793.8.78.3</p>",
+          "descriptionHtml": "<p>日期, 自動上鏈機械機芯，每小時振動25,200次，提供約72小時動力儲存。.</p><p>防水深度3巴, 抗磨损合成蓝宝石.</p><p>銀色&quot;麥粒&quot;飾紋 飾紋 表盤.</p><p>鱷魚皮錶帶 表帶, 三重折疊式安全錶扣和按壓式開啟裝置。。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L5.200.5.78.7",
+        "selectionReasons": [
+          "2nd highest"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-longines-mini-dolcevita-l5-200-5-78-7",
+        "observedAt": "2026-09-24T15:20:55.608Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L5.200.5.78.7",
+            "name": "浪琴表迷你多情系列",
+            "width": "21.50 X 29.00 mm",
+            "material": "不鏽鋼錶殼搭配18K黃金錶冠",
+            "color": "銀色\"flinqué\"飾紋",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-mini-dolcevita-l5-200-5-78-7-f954e8-hero.png",
+            "price": 257200,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/OutOfStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L5.200.5.78.7",
+            "name": "浪琴表迷你多情系列",
+            "tag": "UNDEFINED",
+            "base_price": {
+              "value": 257200,
+              "currency": "TWD",
+              "value_formatted": "$257,200.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>石英手錶, 21.50 X 29.00 mm, 不鏽鋼錶殼搭配18K黃金錶冠, L5.200.5.78.7</p>",
+          "descriptionHtml": "<p>防水深度3巴, 抗磨損藍寶石水晶鏡面，雙面多層防反光塗層.</p><p>銀色&quot;Flinqué&quot;飾紋 飾紋 表盤.</p><p>不鏽鋼及18K黃金 表帶, 三重折疊式安全錶扣和按壓式開啟裝置。。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.357.4.78.6",
+        "selectionReasons": [
+          "family representative master"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-the-longines-master-collection-l2-357-4-78-6",
+        "observedAt": "2026-09-24T15:20:58.063Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L2.357.4.78.6",
+            "name": "巨擘系列",
+            "width": "Ø 34.00 mm",
+            "material": "不鏽鋼",
+            "color": "銀色\"麥粒\"飾紋",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-357-4-78-6-fb2ade-hero.png",
+            "price": 73500,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/OutOfStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L2.357.4.78.6",
+            "name": "巨擘系列",
+            "tag": "UNDEFINED",
+            "base_price": {
+              "value": 73500,
+              "currency": "TWD",
+              "value_formatted": "$73,500.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>自動上鏈機械機芯手錶, Ø 34.00 mm, 不鏽鋼, L2.357.4.78.6</p>",
+          "descriptionHtml": "<p>日期, 自動上鏈機械機芯，每小時振動25,200次，提供約72小時動力儲存。.</p><p>防水深度3巴, 抗磨損藍寶石水晶鏡面，雙面多層防反光塗層.</p><p>銀色&quot;麥粒&quot;飾紋 飾紋 表盤.</p><p>不鏽鋼 表帶, 三重折疊式安全錶扣和按壓式開啟裝置。。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.320.4.87.6",
+        "selectionReasons": [
+          "family representative conquest"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-conquest-l3-320-4-87-6",
+        "observedAt": "2026-09-24T15:21:01.665Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L3.320.4.87.6",
+            "name": "征服者系列",
+            "width": "Ø 30.00 mm",
+            "material": "不鏽鋼",
+            "color": "白色珍珠母貝",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-l3-320-4-87-6-c5ee7a-hero.png",
+            "price": 91300,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/OutOfStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L3.320.4.87.6",
+            "name": "征服者系列",
+            "tag": "UNDEFINED",
+            "base_price": {
+              "value": 91300,
+              "currency": "TWD",
+              "value_formatted": "$91,300.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>自動上鏈機械機芯手錶, Ø 30.00 mm, 不鏽鋼, L3.320.4.87.6</p>",
+          "descriptionHtml": "<p>日期, 自動上鏈機械機芯，每小時振動28,800次，設有單晶矽擺輪游絲，提供約45小時動力儲存。.</p><p>防水深度10巴, 抗磨損藍寶石水晶鏡面，雙面多層防反光塗層.</p><p>白色珍珠母貝 &quot;Swiss Super-LumiNova&quot; 飾紋 表盤.</p><p>不鏽鋼 表帶, 三重折疊式安全錶扣和按壓式開啟裝置。。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.802.4.63.2",
+        "selectionReasons": [
+          "family representative spirit"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-longines-spirit-zulu-time-l3-802-4-63-2",
+        "observedAt": "2026-09-24T15:21:07.567Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L3.802.4.63.2",
+            "name": "LONGINES SPIRIT ZULU TIME",
+            "width": "Ø 39.00 mm",
+            "material": "不鏽鋼及陶瓷",
+            "color": "炭黑色",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-spirit-zulu-time-l3-802-4-63-2-4316a1-hero.png",
+            "price": 107000,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/OutOfStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L3.802.4.63.2",
+            "name": "LONGINES SPIRIT ZULU TIME",
+            "tag": "BESTSELLER",
+            "base_price": {
+              "value": 107000,
+              "currency": "TWD",
+              "value_formatted": "$107,000.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>自動上鏈機械機芯手錶, Ø 39.00 mm, 不鏽鋼及陶瓷, L3.802.4.63.2</p>",
+          "descriptionHtml": "<p>日期, GMT, 自動上鏈機械機芯，每小時振動25,200次，設有單晶矽擺輪游絲，提供約72小時動力儲存。.</p><p>雙向旋轉表圈, 旋入式表冠, 防水深度10巴, 抗磨損藍寶石水晶鏡面，雙面多層防反光塗層.</p><p>炭黑色 &quot;Swiss Super-LumiNova&quot; 飾紋 表盤.</p><p>皮錶帶 表帶, 配備微調系統的雙重安全摺疊錶扣。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L5.255.7.71.0",
+        "selectionReasons": [
+          "family representative elegance"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-longines-dolcevita-l5-255-7-71-0",
+        "observedAt": "2026-09-24T15:21:12.025Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L5.255.7.71.0",
+            "name": "多情系列",
+            "width": "20.50 X 32.00 mm",
+            "material": "18K黃金",
+            "color": "銀色\"flinqué\"飾紋",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-255-7-71-0-2f9bb2-hero.png",
+            "price": 249700,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/OutOfStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L5.255.7.71.0",
+            "name": "多情系列",
+            "tag": "UNDEFINED",
+            "base_price": {
+              "value": 249700,
+              "currency": "TWD",
+              "value_formatted": "$249,700.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>石英手錶, 20.50 X 32.00 mm, 18K黃金, L5.255.7.71.0</p>",
+          "descriptionHtml": "<p>防水深度3巴, 抗磨损合成蓝宝石.</p><p>銀色&quot;Flinqué&quot;飾紋 飾紋 表盤.</p><p>鱷魚皮錶帶 表帶, 錶扣。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.838.1.53.2",
+        "selectionReasons": [
+          "family representative heritage"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-longines-pilot-majetek-l2-838-1-53-2",
+        "observedAt": "2026-09-24T15:21:18.589Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L2.838.1.53.2",
+            "name": "LONGINES PILOT MAJETEK PIONEER EDITION",
+            "width": "Ø 43.00 mm",
+            "material": "鈦金屬",
+            "color": "黑色啞光",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-pilot-majetek-pioneer-edition-l2-838-1-53-2-7b4cea-hero.png",
+            "price": 168300,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L2.838.1.53.2",
+            "name": "LONGINES PILOT MAJETEK PIONEER EDITION",
+            "tag": "UNDEFINED",
+            "base_price": {
+              "value": 168300,
+              "currency": "TWD",
+              "value_formatted": "$168,300.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>自動上鏈機械機芯手錶, Ø 43.00 mm, 鈦金屬, L2.838.1.53.2</p>",
+          "descriptionHtml": "<p>自動上鏈機械機芯，每小時振動25,200次，設有單晶矽擺輪游絲，提供約72小時動力儲存。.</p><p>雙向旋轉表圈, 旋入式表冠, 防水深度10巴, 抗磨損藍寶石水晶鏡面，雙面多層防反光塗層.</p><p>黑色啞光 &quot;Swiss Super-LumiNova&quot; 飾紋 表盤.</p><p>合成纖維表帶 表帶, 錶扣。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L5.512.4.71.A",
+        "selectionReasons": [
+          "non-numeric suffix reference"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-longines-dolcevita-l5-512-4-71-a",
+        "observedAt": "2026-09-24T15:21:27.141Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L5.512.4.71.A",
+            "name": "多情系列",
+            "width": "23.30 X 37.00 mm",
+            "material": "不鏽鋼",
+            "color": "銀色\"flinqué\"飾紋",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-512-4-71-a-5f1426-hero.png",
+            "price": 50000,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/OutOfStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L5.512.4.71.A",
+            "name": "多情系列",
+            "tag": "UNDEFINED",
+            "base_price": {
+              "value": 50000,
+              "currency": "TWD",
+              "value_formatted": "$50,000.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>石英 腕錶, 23.30 x 37.00 mm, 不鏽鋼, L5.512.4.71.A</p>",
+          "descriptionHtml": "<p>銀色\"flinqué\"飾紋 面盤.</p> <p>鱷魚皮錶帶 鏈帶, 錶扣.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L5.255.4.71.A",
+        "selectionReasons": [
+          "non-numeric suffix reference"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-longines-dolcevita-l5-255-4-71-a",
+        "observedAt": "2026-09-24T15:21:34.955Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L5.255.4.71.A",
+            "name": "多情系列",
+            "width": "20.80 X 32.00 mm",
+            "material": "不鏽鋼",
+            "color": "銀色\"flinqué\"飾紋",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-255-4-71-a-8ee666-hero.png",
+            "price": 50000,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/OutOfStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L5.255.4.71.A",
+            "name": "多情系列",
+            "tag": "UNDEFINED",
+            "base_price": {
+              "value": 50000,
+              "currency": "TWD",
+              "value_formatted": "$50,000.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>石英 腕錶, 20.80 x 32.00 mm, 不鏽鋼, L5.255.4.71.A</p>",
+          "descriptionHtml": "<p>銀色\"flinqué\"飾紋 面盤.</p> <p>鱷魚皮錶帶 鏈帶, 錶扣.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.809.4.93.9",
+        "selectionReasons": [
+          "same base ref pair A"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-longines-spirit-pilot-l3-809-4-93-9",
+        "observedAt": "2026-09-24T15:21:38.435Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L3.809.4.93.9",
+            "name": "LONGINES SPIRIT PILOT",
+            "width": "Ø 39.00 mm",
+            "material": "不鏽鋼",
+            "color": "藍色啞光",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-spirit-pilot-l3-809-4-93-9-595c01-hero.png",
+            "price": 82000,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L3.809.4.93.9",
+            "name": "LONGINES SPIRIT PILOT",
+            "tag": "NEW",
+            "base_price": {
+              "value": 82000,
+              "currency": "TWD",
+              "value_formatted": "$82,000.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>自動上鏈機械機芯手錶, Ø 39.00 mm, 不鏽鋼, L3.809.4.93.9</p>",
+          "descriptionHtml": "<p>自動上鏈機械機芯，每小時振動25,200次，設有單晶矽擺輪游絲，提供約72小時動力儲存。.</p><p>旋入式表冠, 防水深度10巴, 抗磨損藍寶石水晶鏡面，雙面多層防反光塗層.</p><p>藍色啞光 &quot;Swiss Super-LumiNova&quot; 飾紋 表盤.</p><p>橡膠錶帶 表帶, 錶扣。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.809.4.93.6",
+        "selectionReasons": [
+          "same base ref pair A"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-longines-spirit-pilot-l3-809-4-93-6",
+        "observedAt": "2026-09-24T15:21:41.889Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L3.809.4.93.6",
+            "name": "LONGINES SPIRIT PILOT",
+            "width": "Ø 39.00 mm",
+            "material": "不鏽鋼",
+            "color": "藍色啞光",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-spirit-pilot-l3-809-4-93-6-bd95d8-hero.png",
+            "price": 93200,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L3.809.4.93.6",
+            "name": "LONGINES SPIRIT PILOT",
+            "tag": "NEW",
+            "base_price": {
+              "value": 93200,
+              "currency": "TWD",
+              "value_formatted": "$93,200.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>自動上鏈機械機芯手錶, Ø 39.00 mm, 不鏽鋼, L3.809.4.93.6</p>",
+          "descriptionHtml": "<p>自動上鏈機械機芯，每小時振動25,200次，設有單晶矽擺輪游絲，提供約72小時動力儲存。.</p><p>旋入式表冠, 防水深度10巴, 抗磨損藍寶石水晶鏡面，雙面多層防反光塗層.</p><p>藍色啞光 &quot;Swiss Super-LumiNova&quot; 飾紋 表盤.</p><p>不鏽鋼 表帶, 配備微調系統的雙重安全摺疊錶扣。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.960.4.93.2",
+        "selectionReasons": [
+          "same base ref pair B"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-the-longines-master-collection-chrono-monopusher-l2-960-4-93-2",
+        "observedAt": "2026-09-24T15:21:45.343Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L2.960.4.93.2",
+            "name": "巨擘系列單按把計時腕錶",
+            "width": "Ø 41.00 mm",
+            "material": "不鏽鋼",
+            "color": "霜藍色麥穗紋\r\n",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-the-longines-master-collection-chrono-monopusher-l2-960-4-93-2-afaedf-hero.png",
+            "price": 119300,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L2.960.4.93.2",
+            "name": "巨擘系列單按把計時腕錶",
+            "tag": "NEW",
+            "base_price": {
+              "value": 119300,
+              "currency": "TWD",
+              "value_formatted": "$119,300.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>手動手錶, Ø 41.00 mm, 不鏽鋼, L2.960.4.93.2</p>",
+          "descriptionHtml": "<p>計時, 手動上鏈機械機芯，每小時振動28,800次，動力儲存約68小時。.</p><p>防水深度3巴, 抗磨損藍寶石水晶鏡面，雙面多層防反光塗層.</p><p>霜藍色麥穗紋\r\n 飾紋 表盤.</p><p>鱷魚皮錶帶 表帶, 配備三重摺疊式安全錶扣和附微調系統的按鈕開關裝置\r\n。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.960.4.78.2",
+        "selectionReasons": [
+          "same base ref pair B"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-the-longines-master-collection-chrono-monopusher-l2-960-4-78-2",
+        "observedAt": "2026-09-24T15:21:46.778Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L2.960.4.78.2",
+            "name": "巨擘系列單按把計時腕錶",
+            "width": "Ø 41.00 mm",
+            "material": "不鏽鋼",
+            "color": "象牙色麥粒\r\n",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-the-longines-master-collection-chrono-monopusher-l2-960-4-78-2-eb8ab3-hero.png",
+            "price": 119300,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L2.960.4.78.2",
+            "name": "巨擘系列單按把計時腕錶",
+            "tag": "NEW",
+            "base_price": {
+              "value": 119300,
+              "currency": "TWD",
+              "value_formatted": "$119,300.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>手動手錶, Ø 41.00 mm, 不鏽鋼, L2.960.4.78.2</p>",
+          "descriptionHtml": "<p>計時, 手動上鏈機械機芯，每小時振動28,800次，動力儲存約68小時。.</p><p>防水深度3巴, 抗磨損藍寶石水晶鏡面，雙面多層防反光塗層.</p><p>象牙色麥粒\r\n 飾紋 表盤.</p><p>鱷魚皮錶帶 表帶, 配備三重摺疊式安全錶扣和附微調系統的按鈕開關裝置\r\n。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.450.4.87.6",
+        "selectionReasons": [
+          "new model"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-the-longines-master-collection-l2-450-4-87-6",
+        "observedAt": "2026-09-24T15:21:50.987Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L2.450.4.87.6",
+            "name": "巨擘系列",
+            "width": "Ø 34.00 mm",
+            "material": "不鏽鋼",
+            "color": "白色珍珠母貝",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-450-4-87-6-feaa6a-hero.png",
+            "price": 93200,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L2.450.4.87.6",
+            "name": "巨擘系列",
+            "tag": "NEW",
+            "base_price": {
+              "value": 93200,
+              "currency": "TWD",
+              "value_formatted": "$93,200.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>自動上鏈機械機芯手錶, Ø 34.00 mm, 不鏽鋼, L2.450.4.87.6</p>",
+          "descriptionHtml": "<p>日期, 自動上鏈機械機芯，每小時振動25,200次，設有單晶矽擺輪游絲，提供約72小時動力儲存。.</p><p>防水深度3巴, 抗磨損藍寶石水晶鏡面，雙面多層防反光塗層.</p><p>白色珍珠母貝 飾紋 表盤.</p><p>不鏽鋼 表帶, 配備三重摺疊式安全錶扣和附微調系統的按鈕開關裝置\r\n。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.750.3.98.7",
+        "selectionReasons": [
+          "new model"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-conquest-l3-750-3-98-7",
+        "observedAt": "2026-09-24T15:21:55.191Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L3.750.3.98.7",
+            "name": "征服者系列",
+            "width": "Ø 38.00 mm",
+            "material": "不鏽鋼和紅色PVD塗層",
+            "color": "藍色噴砂\r\n",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-l3-750-3-98-7-fcdc01-hero.png",
+            "price": 54000,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/OutOfStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L3.750.3.98.7",
+            "name": "征服者系列",
+            "tag": "NEW",
+            "base_price": {
+              "value": 54000,
+              "currency": "TWD",
+              "value_formatted": "$54,000.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>石英手錶, Ø 38.00 mm, 不鏽鋼和紅色PVD塗層, L3.750.3.98.7</p>",
+          "descriptionHtml": "<p>日期.</p><p>防水深度10巴, 抗磨損藍寶石水晶鏡面，雙面多層防反光塗層.</p><p>藍色噴砂\r\n 飾紋 表盤.</p><p>不鏽鋼及紅色PVD塗層 表帶, 三重折疊式安全錶扣和按壓式開啟裝置。。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L5.200.4.71.6",
+        "selectionReasons": [
+          "bestseller tag"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-longines-mini-dolcevita-l5-200-4-71-6",
+        "observedAt": "2026-09-24T15:21:59.915Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L5.200.4.71.6",
+            "name": "浪琴表迷你多情系列",
+            "width": "21.50 X 29.00 mm",
+            "material": "不鏽鋼",
+            "color": "銀色\"flinqué\"飾紋",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-mini-dolcevita-l5-200-4-71-6-a155c9-hero.png",
+            "price": 65400,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L5.200.4.71.6",
+            "name": "浪琴表迷你多情系列",
+            "tag": "BESTSELLER",
+            "base_price": {
+              "value": 65400,
+              "currency": "TWD",
+              "value_formatted": "$65,400.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>石英手錶, 21.50 X 29.00 mm, 不鏽鋼, L5.200.4.71.6</p>",
+          "descriptionHtml": "<p>防水深度3巴, 抗磨損藍寶石水晶鏡面，雙面多層防反光塗層.</p><p>銀色&quot;Flinqué&quot;飾紋 飾紋 表盤.</p><p>不鏽鋼 表帶, 三重折疊式安全錶扣和按壓式開啟裝置。。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.780.4.96.6",
+        "selectionReasons": [
+          "bestseller tag"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-hydroconquest-l3-780-4-96-6",
+        "observedAt": "2026-09-24T15:22:05.116Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L3.780.4.96.6",
+            "name": "深海征服者系列",
+            "width": "Ø 39.00 mm",
+            "material": "不鏽鋼及陶瓷",
+            "color": "藍色太陽飾紋",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-hydroconquest-l3-780-4-96-6-b259aa-hero.png",
+            "price": 62500,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L3.780.4.96.6",
+            "name": "深海征服者系列",
+            "tag": "BESTSELLER",
+            "base_price": {
+              "value": 62500,
+              "currency": "TWD",
+              "value_formatted": "$62,500.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>自動上鏈機械機芯手錶, Ø 39.00 mm, 不鏽鋼及陶瓷, L3.780.4.96.6</p>",
+          "descriptionHtml": "<p>日期, 自動上鏈機械機芯，每小時振動25,200次，提供約72小時動力儲存。.</p><p>旋入式表冠, 單向旋轉表圈, 防水深度30巴, 抗磨損藍寶石水晶鏡面，雙面多層防反光塗層.</p><p>藍色太陽飾紋 &quot;Swiss Super-LumiNova&quot; 飾紋 表盤.</p><p>不鏽鋼 表帶, 雙重折疊式安全錶扣。。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.721.4.93.9",
+        "selectionReasons": [
+          "systematic sample"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-longines-spirit-pilot-flyback-l3-721-4-93-9",
+        "observedAt": "2026-09-24T15:22:06.531Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L3.721.4.93.9",
+            "name": "LONGINES SPIRIT PILOT FLYBACK",
+            "width": "Ø 39.50 mm",
+            "material": "不鏽鋼及陶瓷",
+            "color": "藍色啞光",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-spirit-pilot-flyback-l3-721-4-93-9-684648-hero.png",
+            "price": 160300,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L3.721.4.93.9",
+            "name": "LONGINES SPIRIT PILOT FLYBACK",
+            "tag": "NEW",
+            "base_price": {
+              "value": 160300,
+              "currency": "TWD",
+              "value_formatted": "$160,300.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>手動手錶, Ø 39.50 mm, 不鏽鋼及陶瓷, L3.721.4.93.9</p>",
+          "descriptionHtml": "<p>計時, Flyback, 手動上鏈機械機芯，每小時振動28,800次，動力儲存約68小時。.</p><p>雙向旋轉表圈, 防水深度10巴, 抗磨損藍寶石水晶鏡面，雙面多層防反光塗層.</p><p>藍色啞光 &quot;Swiss Super-LumiNova&quot; 飾紋 表盤.</p><p>橡膠錶帶 表帶, 錶扣。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.449.4.87.6",
+        "selectionReasons": [
+          "systematic sample"
+        ],
+        "sourceUrl": "https://www.longines.com/zh-tw/p/watch-the-longines-master-collection-l2-449-4-87-6",
+        "observedAt": "2026-09-24T15:22:08.005Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD 與 __NEXT_DATA__ ProductPageDocument",
+        "observed": {
+          "jsonLd": {
+            "sku": "L2.449.4.87.6",
+            "name": "巨擘系列",
+            "width": "Ø 30.00 mm",
+            "material": "不鏽鋼",
+            "color": "白色珍珠母貝",
+            "image": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-449-4-87-6-ba2ca4-hero.png",
+            "price": 87600,
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "applicableCountry": "TW"
+          },
+          "pageDocument": {
+            "sku": "L2.449.4.87.6",
+            "name": "巨擘系列",
+            "tag": "NEW",
+            "base_price": {
+              "value": 87600,
+              "currency": "TWD",
+              "value_formatted": "$87,600.00",
+              "currency_symbol": "$"
+            }
+          },
+          "shortDescriptionHtml": "<p>自動上鏈機械機芯手錶, Ø 30.00 mm, 不鏽鋼, L2.449.4.87.6</p>",
+          "descriptionHtml": "<p>日期, 自動上鏈機械機芯，每小時振動28,800次，設有單晶矽擺輪游絲，提供約45小時動力儲存。.</p><p>防水深度3巴, 抗磨損藍寶石水晶鏡面，雙面多層防反光塗層.</p><p>白色珍珠母貝 飾紋 表盤.</p><p>不鏽鋼 表帶, 配備三重摺疊式安全錶扣和附微調系統的按鈕開關裝置\r\n。.</p>"
+        },
+        "checks": {
+          "httpStatus200": true,
+          "htmlLangZhTw": true,
+          "referenceMatches": true,
+          "priceMatches": true,
+          "currencyTWD": true,
+          "caseMatches": true,
+          "dialMatches": true,
+          "modelNameMatches": true,
+          "newTagMatches": true,
+          "imageMatches": true
+        },
+        "result": "PASS"
+      }
+    ]
+  },
+  "nicknameResearch": {
+    "status": "PASS",
+    "scope": "new-market",
+    "acceptedCollectionAliasCount": 1,
+    "acceptedLocalNicknameCount": 0,
+    "evidence": "nickname-research.json"
+  },
+  "travelerRefundPolicy": {
+    "status": "PASS",
+    "evidence": "traveler-refund-policy.json",
+    "result": "既有 TW 市場級記錄經重新查核仍一致，未修改 data/traveler-refund-policies.json。"
+  },
+  "readmeUpdate": {
+    "status": "PASS",
+    "updated": true,
+    "sections": [
+      "README.md「Data：官方配置與多市場價格」涵蓋範圍",
+      "watch-data-collection-guide.md「現況」新增 Longines 小節",
+      "ai-data-maintenance-guide.md「適用範圍與硬性限制」品牌清單",
+      "examples/regression-cases.md 新增 Longines TW 小節"
+    ],
+    "reason": "新增品牌改變長期涵蓋範圍描述。"
+  },
+  "limitations": [
+    "Longines 台灣站未以文字明示價格含稅；tax-include 5% 依營業稅法第 32 條定價內含規定與既有 TW 市場規則記錄。",
+    "caseDescription 由官方 case_dimension 與 case_material 標籤組合（與商品頁 JSON-LD width、material 相同欄位）；非商品頁上的單一原文句子。",
+    "前端尚未加入 Longines 品牌頁（app/src/lib/brands.ts 未註冊），網站目前不會顯示 Longines；資料已可由產生腳本輸出。",
+    "僅完成 TW；其餘 6 個市場（HK、CN、JP、CH、US、DE）尚未收集。"
+  ]
+}

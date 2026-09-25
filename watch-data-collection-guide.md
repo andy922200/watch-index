@@ -141,6 +141,16 @@ Omega 目前已收錄 13 個市場，各市場配置筆數不相同：
 | 義大利 | IT | `it-IT` | EUR | 含稅（22%） | 552 |
 | 奧地利 | AT | `de-AT` | EUR | 含稅（20%） | 552 |
 
+### Longines
+
+Longines 目前已收錄 1 個市場：
+
+| 市場 | 代碼 | 語系 | 幣別 | 價格語意 | 配置筆數 |
+| --- | --- | --- | --- | --- | --- |
+| 台灣 | TW | `zh-Hant-TW` | TWD | 含稅（5%） | 544 |
+
+Longines 的 `collectionId` 採官方子系列網址路徑的最後一段（例如 `hydroconquest`、`master-collection`），而非 Master、Conquest 等五大家族；網站前端尚未加入 Longines 頁面。
+
 實際的收集時間、來源、輪次與價格請讀取各市場的 history 與 evidence；本表不應用作下一次收集的筆數目標。
 
 ## 更新流程
