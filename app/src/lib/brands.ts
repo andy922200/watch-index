@@ -132,6 +132,37 @@ export const brandDirectory: readonly BrandDirectoryEntry[] = [
       },
     },
   },
+  {
+    id: 'longines',
+    entry: '/src/pages/longines/main.ts',
+    siteName: 'Longines Watch Index',
+    title: { zhTw: 'Longines 腕錶索引', enUs: 'Longines Watch Index' },
+    description: {
+      zhTw: '您的全球 Longines 腕錶索引',
+      enUs: 'Your Global Longines Watches Index',
+    },
+    defaultMarket: MarketCode.Taiwan,
+    marketOptions: getMarketOptions([MarketCode.Taiwan]),
+    directory: {
+      availability: 'available',
+      descriptionKey: 'home.brands.longines.description',
+      nameKey: 'home.brands.longines.name',
+      visual: {
+        accent: {
+          dark: '#85ABD6',
+          light: '#1A324D',
+        },
+      },
+    },
+    priceComparePage: {
+      entry: '/src/pages/longines/price-compare/main.ts',
+      title: { zhTw: 'Longines 腕錶行情比較', enUs: 'Longines Watch Price Comparison' },
+      description: {
+        zhTw: '比較同一支 Longines 腕錶在各市場的官方定價與退稅估算參考。',
+        enUs: 'Compare official Longines prices and tax-refund estimate references across markets.',
+      },
+    },
+  },
 ]
 
 /** 已完成整合、可產生靜態頁面的品牌。 */

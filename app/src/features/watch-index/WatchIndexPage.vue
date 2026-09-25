@@ -328,7 +328,7 @@ watchSource([debouncedSearchQuery, selectedPriceSort], () => {
               /></button
           ></CardContent>
           <CardHeader class="flex-1 px-4 py-4"
-            ><CardTitle class="line-clamp-2 h-11 text-base leading-snug">{{
+            ><CardTitle class="min-h-11 text-base leading-snug">{{
               card.watch.modelName
             }}</CardTitle
             ><CardDescription class="h-4 truncate font-mono text-xs">{{

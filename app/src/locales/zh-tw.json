@@ -12,6 +12,10 @@
       "omega": {
         "name": "OMEGA",
         "description": "探索 Omega 在全球市場的官方定價"
+      },
+      "longines": {
+        "name": "LONGINES",
+        "description": "探索 Longines 在全球市場的官方定價"
       }
     }
   },
@@ -19,7 +23,8 @@
     "title": "全球 Rolex 腕錶索引",
     "brandTitle": {
       "rolex": "全球 Rolex 腕錶索引",
-      "omega": "Omega 腕錶索引"
+      "omega": "Omega 腕錶索引",
+      "longines": "Longines 腕錶索引"
     },
     "priceUpdatedAt": "價格資料更新於 {date}",
     "languageLabel": "語言",

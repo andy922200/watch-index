@@ -12,6 +12,10 @@
       "omega": {
         "name": "OMEGA",
         "description": "Explore official Omega prices across global markets"
+      },
+      "longines": {
+        "name": "LONGINES",
+        "description": "Explore official Longines prices across global markets"
       }
     }
   },
@@ -19,7 +23,8 @@
     "title": "Global Rolex Watches Index",
     "brandTitle": {
       "rolex": "Global Rolex Watches Index",
-      "omega": "Omega Watch Index"
+      "omega": "Omega Watch Index",
+      "longines": "Longines Watch Index"
     },
     "priceUpdatedAt": "Price data updated {date}",
     "languageLabel": "Language",
