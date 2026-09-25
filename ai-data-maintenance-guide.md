@@ -107,9 +107,11 @@ Catalog、market 與 price history 共用 `data-schema-vN` 版本線並同步升
 
 Browser、CDP 或 network 工具不可用，不代表官方沒有結構化來源。若任務需要 network discovery，且環境已配置 Chrome DevTools 或等效 network MCP，必須實際呼叫並嘗試讀取請求／回應；僅確認工具存在不算完成。呼叫失敗時，在 `collection-summary.json` 或 `validation-summary.json` 記錄工具、錯誤摘要與後備嘗試。能力不足時標記 `NOT RUN / capability unavailable`，不得猜測 endpoint 或宣稱已完成全量收集。
 
+實際操作瀏覽器進行來源探索前，先確認環境是否有可用的爬蟲／網頁資料收集 skill；若有，優先套用其規範（工具盤點、目標條件驗證、checkpoint、限流重試）。僅在確認沒有這類 skill 可用時，才依本節與下方範例自行執行對應步驟。
+
 ### 可套用的官方收集流程：Omega Taiwan 範例
 
-下列 Omega Taiwan 步驟是本專案所有品牌與市場的具體範例，不是 Omega 專用例外。其他國家／地區均應套用相同原則：先由目標市場的官方站與真實瀏覽器發現來源，再確認實際分頁或 cursor、以來源明示的停止條件完成全量對帳、保存不可變更的 observations 與驗證結果，最後才更新 brand-isolated catalog、market 與 history。不得直接複製 Omega 的 URL、AJAX 參數、欄位名稱、語系、幣別或稅別；那些必須在每個品牌、每個市場重新確認。完整步驟見 [examples/omega-taiwan-collection-workflow.md](examples/omega-taiwan-collection-workflow.md)。
+下列 Omega Taiwan 步驟是本專案所有品牌與市場的具體範例，不是 Omega 專用例外，套用範圍與限制以本節為準；不得直接複製 Omega 的 URL、AJAX 參數、欄位名稱、語系、幣別或稅別，那些必須在每個品牌、每個市場重新確認。完整步驟見 [examples/omega-taiwan-collection-workflow.md](examples/omega-taiwan-collection-workflow.md)。
 
 ## Evidence：最低內容與保存規則
 
