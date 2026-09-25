@@ -1,0 +1,27 @@
+{
+  "brandId": "longines",
+  "marketCode": "HK",
+  "observedAt": "2026-09-25T09:20:00.000Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level VAT/sales-tax refund guidance for foreign travelers only; this does not establish Longines retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "purpose": "新增 Longines 香港市場時的旅客退稅政策查核。data/traveler-refund-policies.json 已有 HK 市場級記錄（evidencePath 指向 data/evidence/rolex/HK/2026-09-12/traveler-refund-policy.json，availability=unavailable），本次重新開啟同一政府官方來源確認制度仍與既有記錄一致，未修改正式政策記錄，交由統籌者決定是否更新。",
+  "sources": [
+    {
+      "publisher": "Financial Services and the Treasury Bureau, Hong Kong SAR Government",
+      "title": "Prevailing Tax Policy",
+      "url": "https://www.fstb.gov.hk/en/treasury/general/prevailing-tax-policy.htm",
+      "accessedAt": "2026-09-25T09:20:00.000Z"
+    }
+  ],
+  "observedFacts": [
+    "官方頁面明示：香港沒有加值稅或銷售稅（\"There is no value-added or sales tax\"）。",
+    "香港現行稅制僅涵蓋利得稅（profits tax）、物業稅（property tax）與薪俸稅（salaries tax），維持低稅率簡單稅制。",
+    "因不存在消費稅／銷售稅，故無對應的旅客消費稅退稅（VAT/GST refund）制度可適用。"
+  ],
+  "comparisonWithExistingRecord": "與既有 HK 記錄的 availability=unavailable、merchantParticipationRequired=null、exportValidationRequired=null 及資格摘要（香港沒有增值稅或銷售稅，因此沒有可適用於本市場的旅客 VAT／銷售稅退稅制度）一致；無需更新 data/traveler-refund-policies.json。",
+  "method": "WebFetch 讀取官方政府頁面摘要式內容（非逐字全文保存），並與 data/traveler-refund-policies.json 既有 HK 記錄逐欄比對。",
+  "limitations": [
+    "本查核僅確認稅制層級的事實（香港無消費稅），不代表任何零售商參與或保證退款金額。",
+    "未查核是否有其他非稅務性質的機場離境退款或會員回饋方案，因其非本專案旅客退稅政策 Schema 涵蓋範圍。"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "brandId": "longines",
+  "marketCode": "JP",
+  "observedAt": "2026-09-25T09:45:00Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level consumption-tax refund guidance for foreign travelers only; this does not establish Longines retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "purpose": "新增 Longines 日本市場時的旅客退稅政策查核。data/traveler-refund-policies.json 已有 JP 市場級記錄（evidencePath 指向 data/evidence/rolex/JP/2026-09-11/traveler-refund-policy.json，assessedAt 2026-09-10）。本次重新開啟同一系列官方來源（觀光廳消費税免税店サイト）確認制度是否仍存在且與既有記錄摘要一致，未修改 data/traveler-refund-policies.json 正式檔。",
+  "existingRecord": {
+    "marketCode": "JP",
+    "availability": "available",
+    "merchantParticipationRequired": true,
+    "exportValidationRequired": true,
+    "evidencePath": "data/evidence/rolex/JP/2026-09-11/traveler-refund-policy.json",
+    "assessedAt": "2026-09-10T16:29:36Z"
+  },
+  "sources": [
+    {
+      "publisher": "観光庁（Japan Tourism Agency, 国土交通省）",
+      "title": "免税店とは｜消費税免税店サイト",
+      "url": "https://www.mlit.go.jp/kankocho/tax-free/about.html",
+      "accessedAt": "2026-09-25T09:45:00Z"
+    },
+    {
+      "publisher": "観光庁（Japan Tourism Agency, 国土交通省）",
+      "title": "免税店になったら｜消費税免税店サイト",
+      "url": "https://www.mlit.go.jp/kankocho/tax-free/after.html",
+      "accessedAt": "2026-09-25T09:45:00Z"
+    }
+  ],
+  "observedFacts": [
+    "免税店とは外国人旅行者等の非居住者に対して特定の物品を一定の方法で販売する場合に、消費税を免除して販売できる店舗のこと（適用對象為非居住者；含外國籍與入境未滿6個月之日本籍旅客）。",
+    "免税販売は誰でもできるものではなく、店舗ごとに納税地を所轄する税務署長の許可が必要（需個別取得税務署授權，merchantParticipationRequired=true）。",
+    "非居住者は購入した免税物品を携帯して国外へ持ち出し、出国の際に税関に旅券等を提示する（需商品攜出日本並經海關查驗，exportValidationRequired=true）。",
+    "免税店の都道府県別分布統計標示至 2025 年 9 月 30 日，顯示制度持續運作中（截至查核當下仍有效）。"
+  ],
+  "comparisonWithExistingRecord": "與既有 JP 記錄的 availability=available、merchantParticipationRequired=true、exportValidationRequired=true 及資格摘要（個別取得許可的免稅店；非居住者與個人使用等資格條件依官方規定，商品須帶離日本）一致；未發現制度已變更或既有摘要有誤之處，無需更新 data/traveler-refund-policies.json。",
+  "method": "WebFetch 讀取官方頁面摘要式內容（非逐字全文保存），並與既有 JP 記錄逐項比對。",
+  "limitations": [
+    "Longines retailer participation in Japan's tax-free scheme is not established by this evidence; observed facts are jurisdiction-level rules, not per-retailer confirmation.",
+    "No exact transaction-specific refund amount is represented in the comparison.",
+    "本次僅重新查核既有來源頁面現況，未搜尋是否有其他官方來源（例如国税庁）補充細節；国税庁總額表示制度來源另記錄於 collection-summary.json 的 tax 章節，用於稅制判定而非退稅資格判定。"
+  ]
+}

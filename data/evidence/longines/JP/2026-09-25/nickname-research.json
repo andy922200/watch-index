@@ -1,0 +1,70 @@
+{
+  "brandId": "longines",
+  "marketCode": "JP",
+  "researchedAt": "2026-09-25T09:40:00Z",
+  "scope": "new-market",
+  "status": "PASS",
+  "languages": [
+    "ja",
+    "zh-Hant"
+  ],
+  "method": "以日文查詢日本市場流通的 Longines 系列或特定配置俗稱／暱稱，要求候選能把名稱明確、唯一對應到本輪 31 個官方子系列（collectionId）之一，或 612 個日本官方完整參考號中的單一配置。候選來源須為可信的日本經銷商、時計媒體或 Swatch Group Japan 官方新聞稿；純售價比較網站（例如 kakaku.com、樂天商城搜尋結果頁）與缺乏具體引用的 SEO 文章不視為可信來源。輔以繁中確認 Longines 台灣既有俗稱（例如「浪鬼」）是否也在日本市場流通，惟未發現任何日文來源使用中文俗稱指稱 Longines 系列。",
+  "queries": [
+    "ロンジン 腕時計 愛称 通称 日本 マスターコレクション",
+    "ロンジン ハイドロコンクエスト 愛称 通称",
+    "ロンジン 腕時計 \"の愛称で\" OR \"の通称で\" 親しまれ",
+    "ロンジン レジェンドダイバー 愛称 通称 由来",
+    "ロンジン コンクエスト 愛称 通称 呼び名",
+    "ロンジン ドルチェヴィータ 愛称 通称"
+  ],
+  "sourcesReviewed": [
+    {
+      "publisher": "スウォッチ グループ ジャパン株式会社（THE SWATCH GROUP (JAPAN) KK）",
+      "title": "「ロンジン」の正統派ドレスウォッチ「ロンジン マスターコレクション」が刷新",
+      "url": "https://swatchgroup.jp/topics/2026/6/25/longines-dress-watch-master-collection",
+      "finding": "官方新聞稿以「『ザ・ロンジン』ウォッチ『ロンジン マスターコレクション』」稱呼該系列。惟此為官方全球產品名稱「THE LONGINES MASTER COLLECTION」的日文簡稱／行銷用語，非市場獨立衍生的俗稱，且與官方名稱高度重疊（同 TW 研究中『名匠』『康卡斯』被判定為官方譯名而非俗稱的邏輯）。",
+      "accepted": false
+    },
+    {
+      "publisher": "YOSHIDA（正規販売店ヨシダ）",
+      "title": "ロンジン マスターコレクション商品頁",
+      "url": "https://watch-yoshida.co.jp/brands/mens/longines/s12102",
+      "finding": "使用官方系列全名，未見任何獨立俗稱或暱稱。",
+      "accepted": false
+    },
+    {
+      "publisher": "KOMEHYO（トケイ通信）",
+      "title": "ロンジン｜「レジェンドダイバー」のマニアックな選び方",
+      "url": "https://komehyo.jp/tokei-tsushin/article/15142",
+      "finding": "文中僅使用官方系列名稱「レジェンドダイバー」討論選購重點，未提及任何暱稱或通稱。",
+      "accepted": false
+    },
+    {
+      "publisher": "TANAKA（ショップブログ）",
+      "title": "【ロンジン】コンクエスト深掘り探訪",
+      "url": "https://www.kk-tanaka.com/blog/longines2026/",
+      "finding": "說明「コンクエスト」名稱源自 1954 年商標「征服」之意，並提及「V.H.P（Very High Precision）」等官方副名稱，未見市場獨立俗稱。",
+      "accepted": false
+    },
+    {
+      "publisher": "SPUR（HPPLUS）",
+      "title": "【ロンジン】の名品時計「ドルチェヴィータ」【名品時計物語】",
+      "url": "https://spur.hpplus.jp/jewelry_watch/iconstories/1PjxoQ/",
+      "finding": "說明「ドルチェヴィータ」為義大利語「甘い生活」之意的官方系列命名由來，未見市場獨立俗稱。",
+      "accepted": false
+    }
+  ],
+  "candidateCount": 1,
+  "acceptedCollectionAliasCount": 0,
+  "acceptedLocalNicknameCount": 0,
+  "acceptedCollectionAliases": {},
+  "acceptedNicknames": [],
+  "rejectedCandidates": [
+    {
+      "name": "ザ・ロンジン",
+      "target": "master-collection（ロンジン マスターコレクション）",
+      "reason": "來源為 Swatch Group Japan 官方新聞稿，且該詞是官方全球產品名稱「THE LONGINES MASTER COLLECTION」開頭部分的日文簡稱／行銷用語，並非市場獨立衍生、與官方名稱有區別的俗稱，不符合『俗稱』採用門檻。"
+    }
+  ],
+  "notes": "未找到能以可信來源唯一對應到單一 collectionId 或單一完整參考號、且與官方名稱有區別的日本市場俗稱，因此 collectionAliases 與 localNicknames 皆維持空陣列（PASS with 0 accepted results）。與 Longines 台灣既有俗稱「浪鬼」（hydroconquest）不同，本次查詢未發現任何日文來源使用該詞或其他中文俗稱指稱 Longines HydroConquest 或其他系列；因此未沿用台灣俗稱至日本市場資料。"
+}

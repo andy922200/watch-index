@@ -27,3 +27,21 @@
 台灣完成官方「腕錶」分類 ProductList GraphQL 全部 23 頁（每頁 24 筆，第 23 頁 16 筆）後有 544 個唯一完整配置，第 24 頁官方回傳超出可用頁數錯誤。完整批次時間為 `2026-09-24T15:18:10.629Z`。
 
 五大家族官方總數為 Master 110、Conquest 164、Spirit 53、Elegance 155、Heritage 62。30 個子系列中較大者為 conquest/conquest 82、master/master-collection 67、conquest/hydroconquest 57、elegance/primaluna 39、elegance/dolcevita 36；完整拆分見 `data/evidence/longines/TW/2026-09-24/collection-summary.json`。參考號含英數後綴（如 `L5.512.4.71.A`），不可假設全為數字。
+
+## Longines — 香港（HK）2026-09-25
+
+香港完成官方「腕錶」分類 ProductList GraphQL 全部 21 頁（每頁 24 筆，第 21 頁 13 筆）後有 493 個唯一完整配置，第 22 頁官方回傳超出可用頁數錯誤。完整批次時間見 `data/evidence/longines/HK/2026-09-25/observations.json`。
+
+30 個子系列官方總數與收集結果逐一相符；與台灣市場相比，HK 多出 `master-gmt`（2 筆，TW 無），但沒有 `conquest-classic`（TW 有 6 筆）。完整拆分見 `data/evidence/longines/HK/2026-09-25/collection-summary.json`。稅制依港府「無加值稅或銷售稅」記錄為 `no-tax`。
+
+## Longines — 日本（JP）2026-09-25
+
+日本完成官方「腕錶」分類 ProductList GraphQL 全部 26 頁（每頁 24 筆，第 26 頁 12 筆）後有 612 個唯一完整配置，第 27 頁官方回傳超出可用頁數錯誤。完整批次時間見 `data/evidence/longines/JP/2026-09-25/observations.json`。
+
+31 個子系列（較台灣多出 `master-gmt`）官方總數與收集結果逐一相符，5 家族合計 612。完整拆分見 `data/evidence/longines/JP/2026-09-25/collection-summary.json`。與台灣市場對照僅供差異概況：544 對 612，交集 453、JP 獨有 159、TW 獨有 91，屬官方目錄的真實市場差異。
+
+## Longines — 韓國（KR）2026-09-25
+
+韓國完成官方「腕錶」分類 ProductList GraphQL 全部 19 頁（每頁 24 筆整除）後有 456 個唯一完整配置，第 20 頁官方回傳超出可用頁數錯誤。完整批次時間見 `data/evidence/longines/KR/2026-09-25/observations.json`。
+
+五大家族官方總數為 Master 91、Conquest 132、Spirit 43、Elegance 132、Heritage 58，合計 456，30 個子系列逐一相符。與台灣市場相比，KR 多出 `master-gmt`（2 筆：`L2.844.6.71.2`、`L2.844.8.71.2`），但沒有 `evidenza`（官方導覽回傳「頁面不存在」，已交叉驗證為真實市場差異）。完整拆分見 `data/evidence/longines/KR/2026-09-25/collection-summary.json`。

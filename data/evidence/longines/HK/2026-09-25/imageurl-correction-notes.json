@@ -1,0 +1,23 @@
+{
+  "correctsRun": "data/evidence/longines/HK/2026-09-25/observations.json",
+  "checkedAt": "2026-09-25T12:00:00.000Z",
+  "reason": "統籌者在合併 data/catalog/longines-catalog.json 時，交叉比對 HK／JP／KR 三市場對同一參考號（如 L1.648.4.52.2、L2.844.6.71.2）觀察到的 imageUrl，發現 HK 這份 observations.json 全部 493 筆記錄的 imageUrl 欄位缺少 `/media/catalog/product` 路徑段，與同一筆 imagePath 應組成的網址不符，也與本檔案自身 collection-summary.json 第 58 行所宣稱的『圖片以 https://api.ecom.longines.com/media/catalog/product 為前綴』不一致。依 ai-data-maintenance-guide.md「Evidence 一旦寫入即不可變更」規則（發現既有 evidence 解析有誤時另立更正記錄指回原檔案，不得回頭改寫原檔），本檔案不修改 observations.json 本體，僅記錄問題與已完成的下游修正。",
+  "findings": [
+    {
+      "issue": "observations.json 全部 493 筆 imageUrl 欄位皆為 `https://api.ecom.longines.com` + imagePath，實際應為 `https://api.ecom.longines.com/media/catalog/product` + imagePath（缺少 /media/catalog/product 路徑段），判定為 HK 工作單元組字串時的拼接瑕疵，並非官方來源本身回傳如此。",
+      "verification": "逐筆程式檢查 493 筆 imageUrl 是否等於 'https://api.ecom.longines.com' + imagePath：493/493 全數符合此錯誤樣式，0 筆為正確格式，樣式一致代表系統性拼接錯誤而非個別觀察差異。另外交叉比對 JP／KR 對相同參考號（例如 L1.648.4.52.2、L2.844.6.71.2）觀察到的 imageUrl，皆帶有 /media/catalog/product 前綴，且檔名雜湊（例如 a083d6-hero.png）與 HK 記錄的 imagePath 檔名完全相同，確認是同一實體圖片資產，僅路徑前綴被 HK 工作單元漏接。",
+      "correctFormula": "correctImageUrl = 'https://api.ecom.longines.com/media/catalog/product' + observations[i].imagePath",
+      "scopeOfImpact": "僅影響 observations.json 逐筆的 imageUrl 欄位（493 筆全數）；imagePath、reference、價格、庫存、分類等其他欄位不受影響，不需修正。"
+    }
+  ],
+  "downstreamCorrection": {
+    "filesUpdated": [
+      "data/catalog/longines-catalog.json：合併時對來源於 HK 的 725 筆中的 HK 觀察值，一律套用上述 correctFormula 由 imagePath 重新組出 imageUrl，不採用 observations.json 原始（有瑕疵）的 imageUrl 欄位；HK 與 JP/KR 重複的參考號另以 JP/KR 觀察值交叉驗證後採用，一致無誤。"
+    ],
+    "filesNotModified": [
+      "data/evidence/longines/HK/2026-09-25/observations.json（依 Evidence 不可變更規則，原檔保留瑕疵欄位原樣，不回頭改寫）"
+    ],
+    "verificationOfFix": "重新抽查 data/catalog/longines-catalog.json 中全部 29 筆僅存在於 HK（JP、KR 觀察值均無對應參考號）的條目，其 imageUrl 全數 29/29 已套用正確前綴 /media/catalog/product，與各自 imagePath 組合結果一致；另抽查與 JP/KR 重複的參考號，catalog 內 imageUrl 亦與 JP/KR 觀察值一致。"
+  },
+  "conclusion": "data/catalog/longines-catalog.json 目前的 imageUrl 欄位皆已正確，本次發現的瑕疵僅存在於 data/evidence/longines/HK/2026-09-25/observations.json 這份原始 evidence 檔案本身，依規則保留原樣不修改，改以本更正記錄說明問題成因、驗證方式與下游正式資料已修正的事實。日後若有其他流程直接讀取 observations.json 的 imageUrl 欄位（而非讀取已修正的 catalog），必須套用本檔案的 correctFormula 重新組出正確網址，不可直接採用原始欄位值。"
+}

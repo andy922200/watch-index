@@ -1,0 +1,71 @@
+{
+  "brandId": "longines",
+  "marketCode": "HK",
+  "researchedAt": "2026-09-25T09:40:00.000Z",
+  "scope": "new-market",
+  "status": "PASS",
+  "languages": [
+    "zh-Hant"
+  ],
+  "method": "以繁體中文（香港慣用書面用字）查詢香港市場流通的 Longines 俗稱，要求來源能把名稱明確對應到本輪 30 個官方子系列（collectionId）之一，或 493 個香港官方完整參考號中的單一配置。候選來源須為香港可驗證的錶類媒體或經銷商（以 .hk 網域、繁體中文內容與香港市場語境佐證）；其他市場（例如台灣）流通的俗稱僅在該香港來源獨立、明確使用時才採用，不可僅因台灣已採用而逕行套用到香港市場記錄。官方譯名（如「名匠」「康卡斯」為 HK 官網本身分類名稱）不視為俗稱。",
+  "queries": [
+    "浪琴 手錶 花名 香港 名匠 康卡斯 俗稱",
+    "浪琴 康卡斯 潛水 \"浪鬼\" 香港",
+    "浪琴 康卡斯潛水 花名 香港 錶友",
+    "浪琴 名匠 花名 香港 錶友 暱稱",
+    "Longines 香港 \"花名\" 手錶 暱稱 先行者 心月"
+  ],
+  "sourcesReviewed": [
+    {
+      "publisher": "Horoguides 名錶指南（香港）",
+      "title": "熱門系列 BEST 30 - HydroConquest（香港）",
+      "url": "https://horoguides.com/hk/hot_series/longines/hydro-conquest",
+      "finding": "原文：「又外型形似勞力士的『水鬼』而被暱稱『浪鬼』。」為 .hk 網域、繁體中文香港市場內容，明確將「浪鬼」對應到 HydroConquest（本輪 collectionId=hydroconquest，官方 HK 分類名稱「康卡斯潛水系列」）。",
+      "accepted": true,
+      "acceptedAs": "collectionAliases.hydroconquest"
+    },
+    {
+      "publisher": "聯合新聞網（台灣）／鏡週刊（台灣）／世界腕錶（台灣）／Dcard（台灣）／新萬國鐘錶（台灣）",
+      "title": "「浪鬼」相關報導與商品頁",
+      "url": "https://udn.com/news/story/7270/9407169",
+      "finding": "多篇「浪鬼」報導與商品頁來自台灣媒體或經銷商（.tw／台灣語境），與 TW 既有 evidence 中已採用的來源重複；不作為香港市場的獨立佐證，僅用於確認「浪鬼」一詞的品牌與系列對應無誤。",
+      "accepted": false
+    },
+    {
+      "publisher": "LONGINES 香港官方網站",
+      "title": "浪琴表名匠系列（Longines Master）／浪琴表康卡斯系列（Longines Conquest）",
+      "url": "https://www.longines.com/hk/watches/master",
+      "finding": "「名匠」「康卡斯」為 LONGINES 香港官網本身的正式分類名稱（categoryName），非民間俗稱；且「名匠」對應整個 Master 家族，無法唯一對應本輪 collectionId（master-collection、master-gmt 等 5 個子系列）。",
+      "accepted": false
+    },
+    {
+      "publisher": "WebSearch 綜合摘要（多來源）",
+      "title": "浪琴 名匠／先行者／心月 花名 香港 錶友",
+      "url": "https://www.longines.com/hk/watches/classic/elegance/primaluna",
+      "finding": "搜尋結果未發現香港錶友社群對 Master、Spirit、PrimaLuna 等系列使用特定俗稱的可信報導或討論；僅出現官方名稱與台灣既有俗稱的重複引用。",
+      "accepted": false
+    }
+  ],
+  "candidateCount": 2,
+  "acceptedCollectionAliasCount": 1,
+  "acceptedLocalNicknameCount": 0,
+  "acceptedCollectionAliases": {
+    "hydroconquest": [
+      "浪鬼"
+    ]
+  },
+  "acceptedNicknames": [],
+  "rejectedCandidates": [
+    {
+      "name": "名匠",
+      "target": "Master 家族",
+      "reason": "LONGINES 香港官方分類名稱而非民間俗稱；指涉家族層級，無法唯一對應單一 collectionId。"
+    },
+    {
+      "name": "康卡斯",
+      "target": "Conquest 家族",
+      "reason": "LONGINES 香港官方分類名稱而非民間俗稱。"
+    }
+  ],
+  "notes": "香港來源（Horoguides 名錶指南）獨立確認「浪鬼」適用於 HydroConquest，故本次採用；其餘系列未找到能以香港可信來源唯一對應到單一完整參考號或子系列的俗稱，因此對應的 localNicknames 全部維持空陣列（PASS with 1 accepted collection alias, 0 accepted local nicknames）。"
+}

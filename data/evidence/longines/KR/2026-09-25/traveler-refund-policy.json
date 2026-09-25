@@ -1,0 +1,56 @@
+{
+  "brandId": "longines",
+  "marketCode": "KR",
+  "observedAt": "2026-09-25T09:45:00Z",
+  "status": "PASS",
+  "scope": "Jurisdiction-level departure tax-refund procedure for foreign travelers only; this does not establish Longines authorized-dealer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+  "purpose": "新增 Longines 韓國市場時的旅客退稅政策查核。data/traveler-refund-policies.json 已有 marketCode=KR 的既有記錄，evidencePath 指向 data/evidence/rolex/KR/2026-09-11/traveler-refund-policy.json（由 Rolex 韓國市場工作單元建立）。本次以官方來源重新開啟並查核該記錄目前是否仍然一致；依專案規則本工作單元不修改 data/traveler-refund-policies.json 正式檔，僅在此記錄查核過程與結果，交由統籌者決定是否需要更新正式檔。",
+  "existingRecordSnapshot": {
+    "marketCode": "KR",
+    "availability": "available",
+    "merchantParticipationRequired": true,
+    "exportValidationRequired": true,
+    "evidencePath": "data/evidence/rolex/KR/2026-09-11/traveler-refund-policy.json",
+    "sources": [
+      {
+        "publisher": "Korea Tourism Organization",
+        "title": "Duty Free & Tax Refunds",
+        "url": "https://english.visitkorea.or.kr/svc/contents/infoBscView.do?vcontsId=140736"
+      },
+      {
+        "publisher": "Korea Customs Service",
+        "title": "Tax Refund",
+        "url": "https://www.customs.go.kr/english/cm/cntnts/cntntsView.do?mi=10803&cntntsId=5504"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "publisher": "Korea Tourism Organization",
+      "title": "Duty Free & Tax Refunds",
+      "url": "https://english.visitkorea.or.kr/svc/contents/infoBscView.do?vcontsId=140736",
+      "accessedAt": "2026-09-25T09:45:00Z"
+    },
+    {
+      "publisher": "Korea Customs Service",
+      "title": "Tax Refund",
+      "url": "https://www.customs.go.kr/english/cm/cntnts/cntntsView.do?mi=10803&cntntsId=5504",
+      "accessedAt": "2026-09-25T09:45:00Z"
+    }
+  ],
+  "observedFacts": [
+    "Foreign travelers staying under 6 months (or eligible overseas Koreans) qualify; goods must be new/unopened and taken out of Korea within 3 months of purchase.",
+    "Minimum single-receipt purchase amount is KRW 15,000; downtown refund booths cap per-receipt refunds at KRW 6,000,000 and instant cash refunds at under KRW 1,000,000.",
+    "At airports/ports: present receipt to customs before check-in (or use self-service kiosks) for export confirmation, then collect the refund at the refund counter.",
+    "At downtown refund booths: present passport and an international credit card (or receive cash) after customs export confirmation is later verified.",
+    "Products must remain unused/unopened for the refund to be honored, consistent with the Korea Customs Service drawback procedure."
+  ],
+  "comparisonWithExistingRecord": "本次重新開啟兩個既有來源，內容與既有 KR 記錄的 availability=available、merchantParticipationRequired=true、exportValidationRequired=true 及資格摘要（外國旅客、免稅商店購買、未使用商品、護照與銷售證明、離境查驗）一致，未發現制度已變更或失效的跡象；新增觀察到最低單筆消費金額（KRW 15,000）與市區退稅窗口金額上限等既有記錄摘要未逐字列出但方向一致的細節。",
+  "method": "WebFetch 讀取官方頁面內容摘要（非逐字全文保存），並與既有記錄的 sources 逐一核對 URL 仍可正常存取、內容仍描述相同制度。",
+  "recommendationToCoordinator": "既有 traveler-refund-policies.json 的 KR 記錄經本次重新查核仍與官方來源一致，未發現需要修正或更新之處；建議統籌者維持現有記錄不變，不需因本次 Longines KR 新增市場任務而修改 data/traveler-refund-policies.json。",
+  "limitations": [
+    "Longines 韓國經銷商是否實際參與此退稅／購物退稅流程，本查核未予確認（僅為司法管轄層級的旅客退稅制度事實）。",
+    "未取得任何特定交易的實際退稅金額。",
+    "本工作單元依範圍限制未修改 data/traveler-refund-policies.json 正式檔，僅記錄查核結果供統籌者決策。"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "correctsRun": "data/evidence/longines/KR/2026-09-25/collection-summary.json (tax.basis[3] 與 tax.limitation)",
+  "checkedAt": "2026-09-25T13:00:00.000Z",
+  "reason": "使用者指出：collection-summary.json 的 tax.basis[3] 與 tax.limitation 記錄『國稅廳書面解釋（국세청 서면인터넷방문상담3팀-2350, 2007-08-22）本次透過 WebSearch 嘗試獨立查證未能取得可公開檢視原文』，但該同一文號、同一日期的稅制解釋，已於本專案既有 evidence data/evidence/omega/KR/2026-09-19/correction-notes.json 的 otherVerification 段落完成過獨立查證，不需視為未解決的限制。該書面解釋是韓國國稅廳對一般加值稅申報的通用見解，不限定特定品牌或商品，故可直接援引作為 Longines KR 稅制判定的佐證依據。",
+  "existingVerification": {
+    "source": "data/evidence/omega/KR/2026-09-19/correction-notes.json → otherVerification[0]",
+    "item": "Tax ruling citation (국세청 서면인터넷방문상담3팀-2350, 2007-08-22)",
+    "method": "當時查證方式：搜尋並開啟 taxfather.tistory.com，並交叉比對 casenote.kr 與國稅廳自有的 taxlaw.nts.go.kr 列表，確認同一文號、同一日期的解釋原文存在。",
+    "quotedFinding": "原文（韓文）：『...부가가치세가 포함되어 있는지 불분명한 경우에는 거래금액 또는 영수할 금액의 110분의 10에 상당하는 금액을 당해 부가가치세로 보는 것임』，即：價格未另外標示加值稅且無法判斷是否含稅時，視為含稅價格之 110 分之 10 相當金額為加值稅。",
+    "genuineAndBrandNeutral": "此為國稅廳對一般交易的通用書面解釋，內容未限定特定品牌、商品類別或申請人，適用範圍涵蓋任何未明示含稅與否的零售交易，因此可直接援引至 Longines KR 案例，不需要重新以 Longines 商品頁另行查證同一份國稅廳文件。"
+  },
+  "conclusion": "Longines KR 的 tax-include / 10% 判定不變（本更正記錄不影響 data/markets/longines-south-korea-market.json、data/history/KR/longines-price-history.json 任何欄位）。原 collection-summary.json 記錄的『國稅廳特定文號書面解釋未能獨立取得原文核實』這項限制，經對照既有 data/evidence/omega/KR/2026-09-19/correction-notes.json 後，應理解為『該文號已由本專案先前的 Omega KR 查證回合獨立取得並核實原文，本次 Longines KR 收集時另行重新搜尋未果，但可直接沿用先前已驗證的結果，不構成事實缺口』。依 Evidence 不可變更規則，原 collection-summary.json 保留原樣不修改，以本檔案補充說明查證狀態的更新。"
+}

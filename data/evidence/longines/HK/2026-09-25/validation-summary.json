@@ -1,0 +1,619 @@
+{
+  "brandId": "longines",
+  "marketCode": "HK",
+  "validatedAt": "2026-09-25T09:45:00.000Z",
+  "schemasUsed": [
+    "data/schemas/watch-market.schema.json (schemaVersion 3)",
+    "data/schemas/watch-price-history.schema.json (schemaVersion 3)"
+  ],
+  "validationMethodNote": "環境未安裝 ajv 或 python-jsonschema，且不得安裝依賴；以不依賴外部套件的 Python 逐項核對三份 Schema 實際使用的關鍵字（$ref、type、const、enum、pattern、required、additionalProperties、items、minItems、uniqueItems、minProperties、propertyNames、minimum/maximum、minLength、allOf/if/then、format date-time／uri）：market 與 history 檔案已逐欄核對通過；未修改 catalog schema 或 catalog 檔案，故本次不涉及 catalog 層驗證（catalog 合併為統籌者職責）。此為手工實作，非官方驗證器輸出。",
+  "layer1_jsonAndSchema": {
+    "status": "PASS",
+    "checks": [
+      "嚴格 JSON 解析（攔重複 key、NaN/Infinity）：data/catalog、data/markets、data/history、data/schemas 與 data/evidence/longines/HK 共 71 份檔案通過",
+      "data/markets/longines-hong-kong-market.json 通過 watch-market.schema.json（schemaVersion 3）全部必要欄位、型別、pattern、enum 與 additionalProperties=false 檢查",
+      "data/history/HK/longines-price-history.json 通過 watch-price-history.schema.json（schemaVersion 3）全部必要欄位、型別、pattern、enum、allOf/if-then（listed 需整數價格、非 listed 需 null）檢查",
+      "market 493 筆 watches 與 history priceSeries 493 筆逐一核對 additionalProperties=false（無多餘欄位，例如未將 collectionId 誤寫入 market watch）"
+    ],
+    "errors": []
+  },
+  "layer2_crossFileRelations": {
+    "status": "PASS",
+    "checks": [
+      "market watchCount 493 == watches.length；history collectionRuns[0].recordCount 493 == priceSeries 筆數",
+      "493 個 reference 全部唯一；watchId 全部等於 'longines:' + reference",
+      "market／history 的 watchId 集合完全相同（差集為空，無孤兒）",
+      "collectionRuns 僅 runId 1；priceSeries 493 筆價格點的 runId 均為 1，存在於 collectionRuns；每個 watchId 僅 1 個價格點，無相鄰重複點需檢查",
+      "market 30 個 collectionAliases key 與 evidence（observations.json／collection-summary.json）記錄的 30 個 collectionId 完全一致",
+      "未修改 data/catalog/longines-catalog.json；本次未產生任何 catalog 相關檔案或欄位（catalog 合併留待統籌者執行）"
+    ],
+    "errors": [],
+    "notRun": [
+      {
+        "item": "app/scripts/generate-watch-data.mjs 建置與 app vitest 測試",
+        "reason": "NOT RUN — 任務範圍限定為 market/history/evidence 三類檔案，且 Longines 資料尚未加入網站頁面（README 現況：'Longines 資料尚未加入網站頁面'）；此為單一市場工作單元，不涉及前端建置驗證，且未獲授權執行涉及 catalog 合併後的整體建置驗證。"
+      }
+    ]
+  },
+  "layer3_sourceReconciliation": {
+    "status": "PASS",
+    "checks": [
+      "493 筆 market 的 productUrl、isNewModel、caseDescription、dialDescription 逐筆回對 observations.json，無差異",
+      "493 筆 history 價格逐筆回對 observations.json 的 parsedPrice，無差異",
+      "493 筆價格文字 value_formatted（例如 'HK$19,900.00'）依 'HK$' 前綴與逗號千分位解析，與結構化 base_price.value 完全一致；無非零小數；special_price 全數為 null",
+      "493 筆 currency 皆為 HKD；StoreConfig 為 HK／zh_Hant_HK／HKD／store_code=zh_hk",
+      "case_material（19 個唯一 ID）與 dial_color（66 個唯一 ID）選項全部可由官方 ProductAttributes(hk) zh-hk attribute_options 對應（0 筆未對應）",
+      "market 的 collectionAliases 與 nickname-research.json 的 acceptedCollectionAliases 一致（僅 hydroconquest: 浪鬼）；localNicknames 全為空，與 acceptedNicknames 一致",
+      "20 筆獨立抽查逐一以商品頁 schema.org JSON-LD 交叉核對 sku/width/material/color/price/priceCurrency，20/20 完全一致（見 independentSpotCheck）"
+    ],
+    "errors": []
+  },
+  "layer4_completenessAndSpotCheck": {
+    "status": "PASS",
+    "checks": [
+      "官方 total_count 493；21 頁皆 HTTP 200，前 20 頁每頁 24 筆、第 21 頁 13 筆；第 22 頁官方回傳「currentPage value 22 specified is greater than the 21 page(s) available.」",
+      "5 個家族頁官方總數（conquest 138 + elegance 163 + heritage 64 + master 93 + spirit 35 = 493）與收集結果逐一相符",
+      "30 個子系列頁官方總數與收集結果逐一相符，且每筆恰屬一個子系列（見 collection-summary.json subcategoryReconciliation，全數 matchesOfficialTotal=true）",
+      "20 款以 SSR 商品頁 schema.org JSON-LD 獨立抽查全部 PASS（見 independentSpotCheck）"
+    ],
+    "errors": []
+  },
+  "layer5_changeSafety": {
+    "status": "PASS",
+    "checks": [
+      "本次為 Longines 新增市場：HK 的 market、history、evidence 先前皆不存在，無既有價格序列可被覆寫",
+      "未修改 Rolex／Omega／Longines TW 的 catalog、market、history 或 evidence",
+      "未修改 data/schemas/ 與 data/traveler-refund-policies.json（旅客退稅政策查核結果已記錄於 evidence，交由統籌者決定是否更新正式檔）",
+      "未修改 data/catalog/longines-catalog.json（catalog 合併為統籌者職責，非本次範圍）",
+      "執行前 git status 為 clean；執行後僅新增 data/markets/longines-hong-kong-market.json、data/history/HK/longines-price-history.json 與 data/evidence/longines/HK/2026-09-25/ 下 5 份檔案",
+      "觀察到工作區另有 data/evidence/longines/JP/ 與專案根目錄下 kr-productlist-full.json、kr-productlist-raw.json、kr-subcategory-check.json、kr-product-page-fallback.json 等非本次任務範圍的檔案（推測為統籌者派給其他市場工作單元的產出），本次未讀取、未使用、未合併、未刪除這些檔案，僅在此如實記錄觀察結果供統籌者處理"
+    ],
+    "errors": []
+  },
+  "sourceReconciliation": {
+    "observedListingCount": 493,
+    "marketWatchCount": 493,
+    "priceSeriesCount": 493,
+    "duplicateReferenceCount": 0,
+    "collectionIdCount": 30
+  },
+  "priceStatistics": {
+    "currency": "HKD",
+    "listed": 493,
+    "priceUnavailable": 0,
+    "notListed": 0,
+    "min": {
+      "price": 6800,
+      "references": [
+        "L3.759.4.58.6",
+        "L3.759.4.76.6",
+        "L3.759.4.96.6"
+      ]
+    },
+    "max": {
+      "price": 201800,
+      "references": [
+        "L5.200.7.71.6",
+        "L5.200.9.71.6"
+      ]
+    },
+    "median": 20400
+  },
+  "independentSpotCheck": {
+    "count": 20,
+    "result": "PASS",
+    "coverage": "最低價（3 款同價並列，抽 2 款含同基本型號配對）、最高價（2 款同價並列，含同基本型號配對）、5 個家族代表、3 組同基本型號不同配置、新款（tag=NEW）、暢銷標示（tag=BESTSELLER）、HK 特有子系列 master-gmt 代表款，共 20 款；本市場無「無公開價」款式可抽查（493 筆全數 listed 且有公開價格）。",
+    "items": [
+      {
+        "reference": "L3.759.4.96.6",
+        "selectionReasons": [
+          "lowest price (tie)"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-conquest-l3-759-4-96-6",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L3.759.4.96.6",
+            "width": "Ø 41.00 mm",
+            "material": "精鋼",
+            "color": "藍色太陽飾紋",
+            "price": 6800,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "Ø 41.00 mm, 精鋼",
+          "dialDescription": "藍色太陽飾紋",
+          "price": 6800
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.759.4.76.6",
+        "selectionReasons": [
+          "lowest price (tie)",
+          "same base model as L3.759.4.96.6, different dial config"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-conquest-l3-759-4-76-6",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L3.759.4.76.6",
+            "width": "Ø 41.00 mm",
+            "material": "精鋼",
+            "color": "銀色太陽飾紋",
+            "price": 6800,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "Ø 41.00 mm, 精鋼",
+          "dialDescription": "銀色太陽飾紋",
+          "price": 6800
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L5.200.9.71.6",
+        "selectionReasons": [
+          "highest price (tie)"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-longines-mini-dolcevita-l5-200-9-71-6",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L5.200.9.71.6",
+            "width": "21.50 X 29.00 mm",
+            "material": "18K玫瑰金",
+            "color": "銀色\"flinqué\"飾紋",
+            "price": 201800,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "21.50 X 29.00 mm, 18K玫瑰金",
+          "dialDescription": "銀色\"flinqué\"飾紋",
+          "price": 201800
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L5.200.7.71.6",
+        "selectionReasons": [
+          "highest price (tie)",
+          "same base model as L5.200.9.71.6, different bezel/diamond config"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-longines-mini-dolcevita-l5-200-7-71-6",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L5.200.7.71.6",
+            "width": "21.50 X 29.00 mm",
+            "material": "18K黃金",
+            "color": "銀色\"flinqué\"飾紋",
+            "price": 201800,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "21.50 X 29.00 mm, 18K黃金",
+          "dialDescription": "銀色\"flinqué\"飾紋",
+          "price": 201800
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.449.4.97.6",
+        "selectionReasons": [
+          "family representative: master (master-collection)",
+          "new model (tag=NEW)"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-the-longines-master-collection-l2-449-4-97-6",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L2.449.4.97.6",
+            "width": "Ø 30.00 mm",
+            "material": "精鋼",
+            "color": "霜藍色太陽飾紋",
+            "price": 19900,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "Ø 30.00 mm, 精鋼",
+          "dialDescription": "霜藍色太陽飾紋",
+          "price": 19900
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L1.648.4.92.6",
+        "selectionReasons": [
+          "family representative: heritage (conquest-heritage)"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-conquest-heritage-l1-648-4-92-6",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L1.648.4.92.6",
+            "width": "Ø 38.00 mm",
+            "material": "精鋼",
+            "color": "淺藍色乳光",
+            "price": 32500,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "Ø 38.00 mm, 精鋼",
+          "dialDescription": "淺藍色乳光",
+          "price": 32500
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.769.4.96.6",
+        "selectionReasons": [
+          "family representative: conquest (hydroconquest)"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-hydroconquest-l3-769-4-96-6",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L3.769.4.96.6",
+            "width": "Ø 42.00 mm",
+            "material": "精鋼",
+            "color": "藍色噴砂",
+            "price": 11300,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "Ø 42.00 mm, 精鋼",
+          "dialDescription": "藍色噴砂",
+          "price": 11300
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L5.512.4.70.6",
+        "selectionReasons": [
+          "family representative: elegance (dolcevita)"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-longines-dolcevita-l5-512-4-70-6",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L5.512.4.70.6",
+            "width": "23.30 X 37.00 mm",
+            "material": "精鋼",
+            "color": "銀色\"flinqué\"飾紋",
+            "price": 12100,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "23.30 X 37.00 mm, 精鋼",
+          "dialDescription": "銀色\"flinqué\"飾紋",
+          "price": 12100
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.809.4.53.9",
+        "selectionReasons": [
+          "family representative: spirit (spirit-pilot)"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-longines-spirit-pilot-l3-809-4-53-9",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L3.809.4.53.9",
+            "width": "Ø 39.00 mm",
+            "material": "精鋼",
+            "color": "黑色啞光",
+            "price": 19000,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "Ø 39.00 mm, 精鋼",
+          "dialDescription": "黑色啞光",
+          "price": 19000
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.450.4.97.6",
+        "selectionReasons": [
+          "new model (tag=NEW)",
+          "same base model as L2.449.4.97.6, different size/config"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-the-longines-master-collection-l2-450-4-97-6",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L2.450.4.97.6",
+            "width": "Ø 34.00 mm",
+            "material": "精鋼",
+            "color": "霜藍色太陽飾紋",
+            "price": 21200,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "Ø 34.00 mm, 精鋼",
+          "dialDescription": "霜藍色太陽飾紋",
+          "price": 21200
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.449.5.87.7",
+        "selectionReasons": [
+          "same base model pair with L2.449.5.87.2, different bracelet/dial config"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-the-longines-master-collection-l2-449-5-87-7",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L2.449.5.87.7",
+            "width": "Ø 30.00 mm",
+            "material": "精鋼及18K黃金",
+            "color": "白色珍珠母貝",
+            "price": 30300,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "Ø 30.00 mm, 精鋼及18K黃金",
+          "dialDescription": "白色珍珠母貝",
+          "price": 30300
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.449.5.87.2",
+        "selectionReasons": [
+          "same base model pair with L2.449.5.87.7, different bracelet/dial config"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-the-longines-master-collection-l2-449-5-87-2",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L2.449.5.87.2",
+            "width": "Ø 30.00 mm",
+            "material": "精鋼及18K黃金",
+            "color": "白色珍珠母貝",
+            "price": 24700,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "Ø 30.00 mm, 精鋼及18K黃金",
+          "dialDescription": "白色珍珠母貝",
+          "price": 24700
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.962.4.73.6",
+        "selectionReasons": [
+          "same base model pair with L2.962.4.73.2, different dial/bracelet config"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-the-longines-master-collection-chronograph-l2-962-4-73-6",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L2.962.4.73.6",
+            "width": "Ø 41.00 mm",
+            "material": "精鋼",
+            "color": "銀色\"麥粒\"飾紋",
+            "price": 30300,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "Ø 41.00 mm, 精鋼",
+          "dialDescription": "銀色\"麥粒\"飾紋",
+          "price": 30300
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.962.4.73.2",
+        "selectionReasons": [
+          "same base model pair with L2.962.4.73.6, different dial/bracelet config"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-the-longines-master-collection-chronograph-l2-962-4-73-2",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L2.962.4.73.2",
+            "width": "Ø 41.00 mm",
+            "material": "精鋼",
+            "color": "銀色\"麥粒\"飾紋",
+            "price": 30300,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "Ø 41.00 mm, 精鋼",
+          "dialDescription": "銀色\"麥粒\"飾紋",
+          "price": 30300
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.430.4.92.6",
+        "selectionReasons": [
+          "bestseller tag (tag=BESTSELLER)"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-conquest-l3-430-4-92-6",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L3.430.4.92.6",
+            "width": "Ø 34.00 mm",
+            "material": "精鋼",
+            "color": "藍色太陽飾紋",
+            "price": 16900,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "Ø 34.00 mm, 精鋼",
+          "dialDescription": "藍色太陽飾紋",
+          "price": 16900
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.844.8.71.2",
+        "selectionReasons": [
+          "subcategory representative: master-gmt (present in HK, absent in TW collection set)"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-the-longines-master-collection-gmt-l2-844-8-71-2",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L2.844.8.71.2",
+            "width": "Ø 40.00 mm",
+            "material": "18K玫瑰金",
+            "color": "銀色",
+            "price": 122000,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "Ø 40.00 mm, 18K玫瑰金",
+          "dialDescription": "銀色",
+          "price": 122000
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.812.4.50.6",
+        "selectionReasons": [
+          "subcategory representative: spirit-zulu-time"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-longines-spirit-zulu-time-l3-812-4-50-6",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L3.812.4.50.6",
+            "width": "Ø 42.00 mm",
+            "material": "精鋼及陶瓷",
+            "color": "黑色啞光",
+            "price": 25800,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "Ø 42.00 mm, 精鋼及陶瓷",
+          "dialDescription": "黑色啞光",
+          "price": 25800
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.764.4.06.9",
+        "selectionReasons": [
+          "subcategory representative: legend-diver"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-longines-legend-diver-l3-764-4-06-9",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L3.764.4.06.9",
+            "width": "Ø 39.00 mm",
+            "material": "精鋼",
+            "color": "綠色漆面拋光",
+            "price": 25100,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "Ø 39.00 mm, 精鋼",
+          "dialDescription": "綠色漆面拋光",
+          "price": 25100
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L4.310.4.79.6",
+        "selectionReasons": [
+          "subcategory representative: elegant"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-310-4-79-6",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L4.310.4.79.6",
+            "width": "Ø 29.00 mm",
+            "material": "精鋼",
+            "color": "Striped Silver",
+            "price": 17700,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "Ø 29.00 mm, 精鋼",
+          "dialDescription": "Striped Silver",
+          "price": 17700
+        },
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.937.4.72.6",
+        "selectionReasons": [
+          "subcategory representative: ultra-chron"
+        ],
+        "sourceUrl": "https://www.longines.com/hk/p/watch-ultra-chron-l2-937-4-72-6",
+        "observedAt": "2026-09-25T09:30:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "observed": {
+          "jsonLd": {
+            "sku": "L2.937.4.72.6",
+            "width": "Ø 40.00 mm",
+            "material": "精鋼",
+            "color": "銀色太陽飾紋",
+            "price": 28600,
+            "priceCurrency": "HKD"
+          }
+        },
+        "comparedToListing": {
+          "caseDescription": "Ø 40.00 mm, 精鋼",
+          "dialDescription": "銀色太陽飾紋",
+          "price": 28600
+        },
+        "result": "MATCH"
+      }
+    ]
+  },
+  "marketDiffFromTW": {
+    "note": "與既有 Longines TW 市場（544 筆，30 個 collectionId）比較的初步觀察，僅供參考，不作為驗收依據：",
+    "watchCountDiff": "HK 493 筆 vs TW 544 筆（差異 51 筆，屬市場官方陳列差異）",
+    "collectionIdDiff": "HK 有 'master-gmt'（2 筆）而 TW 無此子系列；TW 有 'conquest-classic'（6 筆）而 HK 無此子系列；其餘 29／29 個 collectionId 名稱相同",
+    "referenceOverlapNotComputed": "未逐一比對 493×544 筆完整參考號交集，因 reference 完全比對屬於統籌者合併 catalog 時的職責（C∩M／M−C／C−M 計算），非本工作單元範圍"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "brandId": "longines",
+  "marketCode": "KR",
+  "researchedAt": "2026-09-25T09:40:00Z",
+  "scope": "new-market",
+  "status": "PASS",
+  "languages": [
+    "ko",
+    "zh-Hant"
+  ],
+  "method": "以韓文（輔以繁中比對）查詢韓國市場流通的 Longines 系列俗稱／暱稱，要求來源能把名稱明確且唯一對應到本輪 30 個官方子系列（collectionId）之一，或 456 個韓國官方完整參考號中的單一配置；不接受僅為官方系列名稱韓文/直譯標題的候選（例如「마스터(Master)」僅是導覽選單/百科標題的括號翻譯，不是獨立於官方名稱之外的俗稱）。不直接沿用台灣市場既有的「浪鬼」（該詞源自台灣中文語境的『水鬼』諧音，未在韓文來源中出現對應詞），必須在韓國市場獨立查證。",
+  "queries": [
+    "론진 하이드로콘퀘스트 별명 애칭 시계 커뮤니티",
+    "론진 스피릿 줄루타임 별명 마스터컬렉션 별칭 시계",
+    "\"론진\" 시계 별명 줄임말 \"하콘\" OR \"마컬\" OR \"돌체비타\" 커뮤니티",
+    "나무위키 Longines 하콘 줄여 부른다"
+  ],
+  "sourcesReviewed": [
+    {
+      "publisher": "나무위키 (Namu Wiki)",
+      "title": "Longines",
+      "url": "https://namu.wiki/w/Longines",
+      "finding": "原文（以瀏覽器實際載入頁面內文逐字讀取確認）：「대한민국 시계 커뮤니티에서는 '하콘'이라 줄여 부른다」（韓國時計社群將 [HydroConquest] 簡稱為『하콘』），緊接於 HydroConquest 段落描述之後，明確且唯一指向本輪 collectionId=hydroconquest。同頁面對 Master Collection、Conquest、Spirit、Elegance、Heritage 家族的韓文字樣（如「Master Collection(마스터)」）僅為章節標題的括號直譯，並無「줄여 부른다」等社群俗稱敘述，不視為俗稱候選。",
+      "accepted": true,
+      "acceptedAs": "collectionAliases.hydroconquest"
+    },
+    {
+      "publisher": "WebSearch 彙整結果（含 YouTube 標題「론진 신형 하콘. 하이드로콘퀘스트.」等）",
+      "title": "론진 하이드로콘퀘스트 관련 검색 결과",
+      "url": "https://www.youtube.com/shorts/mSQlHhcEt_0",
+      "finding": "多筆獨立搜尋結果（YouTube 影片標題、社群討論摘要）交叉印證「하콘」為韓國市場對 HydroConquest 的通用簡稱，與 Namu Wiki 記載一致。",
+      "accepted": true,
+      "acceptedAs": "collectionAliases.hydroconquest（交叉佐證，非獨立採用）"
+    },
+    {
+      "publisher": "에스콰이어 코리아 (Esquire Korea) / TIMEFORUM",
+      "title": "듀얼 타임 워치의 기준, 론진 줄루 타임 等報導",
+      "url": "https://www.esquirekorea.co.kr/article/67071",
+      "finding": "文章說明「줄루 타임」一詞源自航空／軍事領域對 UTC 的稱呼，是官方系列名稱本身的典故說明，並非韓國市場另外賦予的非官方俗稱；未發現獨立於官方名稱之外的簡稱。",
+      "accepted": false
+    },
+    {
+      "publisher": "WebSearch 彙整結果",
+      "title": "\"마컬\" 검색",
+      "url": null,
+      "finding": "未檢索到任何來源將「마컬」（Master Collection 可能的縮寫方式）作為韓國市場實際使用的俗稱；無法確認此詞條真實存在於市場語境，故不採用。",
+      "accepted": false
+    },
+    {
+      "publisher": "既有 Longines 台灣市場俗稱記錄（data/markets/longines-taiwan-market.json）",
+      "title": "浪鬼（hydroconquest）",
+      "url": "https://hwkwatch.com/pages/longineshydroconquest",
+      "finding": "台灣既有俗稱「浪鬼」為中文語境對照勞力士「水鬼」的諧音玩笑，查證後韓文來源中未出現對應詞彙或概念性引用；本次未在韓文來源中發現「浪鬼」的韓文等價詞，因此不將其套用至韓國市場，改以韓國市場獨立查得的「하콘」取代。",
+      "accepted": false
+    }
+  ],
+  "candidateCount": 5,
+  "acceptedCollectionAliasCount": 1,
+  "acceptedLocalNicknameCount": 0,
+  "acceptedCollectionAliases": {
+    "hydroconquest": [
+      "하콘"
+    ]
+  },
+  "acceptedNicknames": [],
+  "rejectedCandidates": [
+    {
+      "name": "마스터(Master)/콘퀘스트(Conquest)/스피릿(Spirit)/엘레강스(Elegance)/헤리티지(Heritage)",
+      "target": "家族層級標題",
+      "reason": "僅為百科全書章節標題的官方名稱括號直譯，非社群另行賦予的俗稱，且指涉家族層級而非單一 collectionId。"
+    },
+    {
+      "name": "줄루 타임 (Zulu Time)",
+      "target": "Spirit Zulu Time",
+      "reason": "為官方系列命名典故的說明，非市場另外產生的非官方簡稱。"
+    },
+    {
+      "name": "마컬",
+      "target": "Master Collection（推測縮寫）",
+      "reason": "查無實際使用證據，無法確認此縮寫真實流通於韓國市場。"
+    },
+    {
+      "name": "浪鬼（比照台灣套用至 hydroconquest）",
+      "target": "HydroConquest",
+      "reason": "台灣中文語境詞彙，查無對應韓文用法，不應未經查證直接沿用至韓國市場。"
+    }
+  ],
+  "notes": "本次韓國市場俗稱研究採 PASS，1 個 collectionAlias（hydroconquest → 하콘）通過精確對應與可信來源門檻；0 個 localNicknames（單一完整參考號層級）通過門檻，因未找到能唯一對應到特定配置（而非整個子系列）的韓文俗稱來源。"
+}

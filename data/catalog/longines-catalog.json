@@ -2,11 +2,14 @@
   "$schema": "../schemas/watch-catalog.schema.json",
   "schemaVersion": 3,
   "brandId": "longines",
-  "collectedAt": "2026-09-24T15:18:10.629Z",
+  "collectedAt": "2026-09-25T09:47:48.209Z",
   "sourceMarketCodes": [
-    "TW"
+    "TW",
+    "HK",
+    "JP",
+    "KR"
   ],
-  "watchCount": 544,
+  "watchCount": 725,
   "watches": [
     {
       "watchId": "longines:L1.648.4.52.2",
@@ -3271,6 +3274,1092 @@
       "collectionId": "primaluna",
       "reference": "L8.142.4.97.6",
       "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-primaluna-l8-142-4-97-6-c13125-hero.png"
+    },
+    {
+      "watchId": "longines:L2.950.4.79.6",
+      "collectionId": "master-collection",
+      "reference": "L2.950.4.79.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-arabic-dial-l2-950-4-79-6-34ccb8-hero.png"
+    },
+    {
+      "watchId": "longines:L2.950.4.79.2",
+      "collectionId": "master-collection",
+      "reference": "L2.950.4.79.2",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-arabic-dial-l2-950-4-79-2-80e7d0-hero.png"
+    },
+    {
+      "watchId": "longines:L3.460.3.12.7",
+      "collectionId": "conquest",
+      "reference": "L3.460.3.12.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-l3-460-3-12-7-d7c25a-hero.png"
+    },
+    {
+      "watchId": "longines:L3.350.4.18.6",
+      "collectionId": "conquest",
+      "reference": "L3.350.4.18.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-l3-350-4-18-6-9984e0-hero.png"
+    },
+    {
+      "watchId": "longines:L3.350.3.18.7",
+      "collectionId": "conquest",
+      "reference": "L3.350.3.18.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-l3-350-3-18-7-15643a-hero.png"
+    },
+    {
+      "watchId": "longines:L3.350.3.12.7",
+      "collectionId": "conquest",
+      "reference": "L3.350.3.12.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-l3-350-3-12-7-cac2fc-hero.png"
+    },
+    {
+      "watchId": "longines:L3.764.4.06.9",
+      "collectionId": "legend-diver",
+      "reference": "L3.764.4.06.9",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-legend-diver-l3-764-4-06-9-75c789-hero.png"
+    },
+    {
+      "watchId": "longines:L3.430.5.80.6",
+      "collectionId": "conquest",
+      "reference": "L3.430.5.80.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-l3-430-5-80-6-3e1e36-hero.png"
+    },
+    {
+      "watchId": "longines:L3.430.5.70.6",
+      "collectionId": "conquest",
+      "reference": "L3.430.5.70.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-l3-430-5-70-6-32e6dd-hero.png"
+    },
+    {
+      "watchId": "longines:L1.650.4.72.0",
+      "collectionId": "conquest-heritage",
+      "reference": "L1.650.4.72.0",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-heritage-l1-650-4-72-0-52493b-hero.png"
+    },
+    {
+      "watchId": "longines:L4.984.3.77.7",
+      "collectionId": "flagship",
+      "reference": "L4.984.3.77.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-984-3-77-7-9c185c-hero.png"
+    },
+    {
+      "watchId": "longines:L4.984.3.07.7",
+      "collectionId": "flagship",
+      "reference": "L4.984.3.07.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-984-3-07-7-3ab9d6-hero.png"
+    },
+    {
+      "watchId": "longines:L4.866.1.98.7",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.866.1.98.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-866-1-98-7-bcb4da-hero.png"
+    },
+    {
+      "watchId": "longines:L4.866.1.68.7",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.866.1.68.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-866-1-68-7-d5ed33-hero.png"
+    },
+    {
+      "watchId": "longines:L4.866.1.08.7",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.866.1.08.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-866-1-08-7-baf0ba-hero.png"
+    },
+    {
+      "watchId": "longines:L4.512.1.98.7",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.512.1.98.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-1-98-7-a673fd-hero.png"
+    },
+    {
+      "watchId": "longines:L4.512.1.68.7",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.512.1.68.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-1-68-7-819fb9-hero.png"
+    },
+    {
+      "watchId": "longines:L4.374.3.08.7",
+      "collectionId": "flagship",
+      "reference": "L4.374.3.08.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-374-3-08-7-72af21-hero.png"
+    },
+    {
+      "watchId": "longines:L4.374.3.07.7",
+      "collectionId": "flagship",
+      "reference": "L4.374.3.07.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-374-3-07-7-1136cd-hero.png"
+    },
+    {
+      "watchId": "longines:L1.649.4.72.0",
+      "collectionId": "conquest-heritage",
+      "reference": "L1.649.4.72.0",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-heritage-l1-649-4-72-0-88edab-hero.png"
+    },
+    {
+      "watchId": "longines:L4.310.4.79.6",
+      "collectionId": "elegant",
+      "reference": "L4.310.4.79.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-elegant-collection-l4-310-4-79-6-cb6f80-hero.png"
+    },
+    {
+      "watchId": "longines:L4.310.4.19.6",
+      "collectionId": "elegant",
+      "reference": "L4.310.4.19.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-elegant-collection-l4-310-4-19-6-75335f-hero.png"
+    },
+    {
+      "watchId": "longines:L4.309.5.81.7",
+      "collectionId": "elegant",
+      "reference": "L4.309.5.81.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-elegant-collection-l4-309-5-81-7-568132-hero.png"
+    },
+    {
+      "watchId": "longines:L4.309.5.80.7",
+      "collectionId": "elegant",
+      "reference": "L4.309.5.80.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-elegant-collection-l4-309-5-80-7-dc7e98-hero.png"
+    },
+    {
+      "watchId": "longines:L8.126.4.97.6",
+      "collectionId": "primaluna",
+      "reference": "L8.126.4.97.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-primaluna-moonphase-l8-126-4-97-6-81cc19-hero.png"
+    },
+    {
+      "watchId": "longines:L8.126.4.07.6",
+      "collectionId": "primaluna",
+      "reference": "L8.126.4.07.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-primaluna-moonphase-l8-126-4-07-6-537156-hero.png"
+    },
+    {
+      "watchId": "longines:L5.200.9.71.6",
+      "collectionId": "mini-dolcevita",
+      "reference": "L5.200.9.71.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-mini-dolcevita-l5-200-9-71-6-60d3d4-hero.png"
+    },
+    {
+      "watchId": "longines:L5.200.7.71.6",
+      "collectionId": "mini-dolcevita",
+      "reference": "L5.200.7.71.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-mini-dolcevita-l5-200-7-71-6-f62895-hero.png"
+    },
+    {
+      "watchId": "longines:L4.984.4.58.6",
+      "collectionId": "flagship",
+      "reference": "L4.984.4.58.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-984-4-58-6-32bf59-hero.png"
+    },
+    {
+      "watchId": "longines:L4.984.4.18.6",
+      "collectionId": "flagship",
+      "reference": "L4.984.4.18.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-984-4-18-6-e27cb1-hero.png"
+    },
+    {
+      "watchId": "longines:L4.984.3.38.7",
+      "collectionId": "flagship",
+      "reference": "L4.984.3.38.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-984-3-38-7-227460-hero.png"
+    },
+    {
+      "watchId": "longines:L2.409.8.87.2",
+      "collectionId": "master-collection-moonphase",
+      "reference": "L2.409.8.87.2",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-moonphase-l2-409-8-87-2-67e61a-hero.png"
+    },
+    {
+      "watchId": "longines:L4.984.3.30.7",
+      "collectionId": "flagship",
+      "reference": "L4.984.3.30.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-984-3-30-7-69438c-hero.png"
+    },
+    {
+      "watchId": "longines:L4.374.4.88.6",
+      "collectionId": "flagship",
+      "reference": "L4.374.4.88.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-374-4-88-6-8420e2-hero.png"
+    },
+    {
+      "watchId": "longines:L4.374.3.38.7",
+      "collectionId": "flagship",
+      "reference": "L4.374.3.38.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-374-3-38-7-827f4a-hero.png"
+    },
+    {
+      "watchId": "longines:L4.984.3.17.7",
+      "collectionId": "flagship",
+      "reference": "L4.984.3.17.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-984-3-17-7-b42f84-hero.png"
+    },
+    {
+      "watchId": "longines:L4.374.4.17.6",
+      "collectionId": "flagship",
+      "reference": "L4.374.4.17.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-374-4-17-6-d5fd00-hero.png"
+    },
+    {
+      "watchId": "longines:L4.374.4.18.6",
+      "collectionId": "flagship",
+      "reference": "L4.374.4.18.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-374-4-18-6-3e5e97-hero.png"
+    },
+    {
+      "watchId": "longines:L2.844.8.71.2",
+      "collectionId": "master-gmt",
+      "reference": "L2.844.8.71.2",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-gmt-l2-844-8-71-2-19ce8e-hero.png"
+    },
+    {
+      "watchId": "longines:L2.844.6.71.2",
+      "collectionId": "master-gmt",
+      "reference": "L2.844.6.71.2",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-gmt-l2-844-6-71-2-04b98b-hero.png"
+    },
+    {
+      "watchId": "longines:L4.815.4.09.2",
+      "collectionId": "flagship-heritage",
+      "reference": "L4.815.4.09.2",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-heritage-moonphase-l4-815-4-09-2-4d3c54-hero.png"
+    },
+    {
+      "watchId": "longines:L3.790.4.56.9",
+      "collectionId": "hydroconquest-gmt",
+      "reference": "L3.790.4.56.9",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-hydroconquest-gmt-l3-790-4-56-9-a1197d-hero.png"
+    },
+    {
+      "watchId": "longines:L1.649.4.52.2",
+      "collectionId": "conquest-heritage",
+      "reference": "L1.649.4.52.2",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-heritage-l1-649-4-52-2-81cbf1-hero.png"
+    },
+    {
+      "watchId": "longines:L2.838.4.53.2",
+      "collectionId": "pilot-majetek",
+      "reference": "L2.838.4.53.2",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-pilot-majetek-l2-838-4-53-2-9edbad-hero.png"
+    },
+    {
+      "watchId": "longines:L8.115.4.67.6",
+      "collectionId": "primaluna",
+      "reference": "L8.115.4.67.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-primaluna-moonphase-l8-115-4-67-6-7db5fc-hero.png"
+    },
+    {
+      "watchId": "longines:L4.512.4.91.6",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.512.4.91.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-4-91-6-1122ae-hero.png"
+    },
+    {
+      "watchId": "longines:L3.410.4.93.6",
+      "collectionId": "spirit",
+      "reference": "L3.410.4.93.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-spirit-l3-410-4-93-6-d2146a-hero.png"
+    },
+    {
+      "watchId": "longines:L3.410.4.63.6",
+      "collectionId": "spirit",
+      "reference": "L3.410.4.63.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-spirit-l3-410-4-63-6-224591-hero.png"
+    },
+    {
+      "watchId": "longines:L5.512.0.71.7",
+      "collectionId": "dolcevita",
+      "reference": "L5.512.0.71.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-512-0-71-7-902521-hero.png"
+    },
+    {
+      "watchId": "longines:L5.767.4.71.0",
+      "collectionId": "dolcevita",
+      "reference": "L5.767.4.71.0",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-767-4-71-0-65a2de-hero.png"
+    },
+    {
+      "watchId": "longines:L2.909.4.77.6",
+      "collectionId": "master-collection-moonphase",
+      "reference": "L2.909.4.77.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-moonphase-l2-909-4-77-6-8aaf90-hero.png"
+    },
+    {
+      "watchId": "longines:L2.909.4.77.3",
+      "collectionId": "master-collection-moonphase",
+      "reference": "L2.909.4.77.3",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-moonphase-l2-909-4-77-3-a55b40-hero.png"
+    },
+    {
+      "watchId": "longines:L8.116.4.87.6",
+      "collectionId": "primaluna",
+      "reference": "L8.116.4.87.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-primaluna-moonphase-l8-116-4-87-6-ee8767-hero.png"
+    },
+    {
+      "watchId": "longines:L8.116.4.71.6",
+      "collectionId": "primaluna",
+      "reference": "L8.116.4.71.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-primaluna-moonphase-l8-116-4-71-6-75624e-hero.png"
+    },
+    {
+      "watchId": "longines:L2.820.8.72.2",
+      "collectionId": "record",
+      "reference": "L2.820.8.72.2",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-record-l2-820-8-72-2-034ef0-hero.png"
+    },
+    {
+      "watchId": "longines:L2.820.8.11.2",
+      "collectionId": "record",
+      "reference": "L2.820.8.11.2",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-record-l2-820-8-11-2-54cb19-hero.png"
+    },
+    {
+      "watchId": "longines:L2.321.5.87.7",
+      "collectionId": "record",
+      "reference": "L2.321.5.87.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-record-l2-321-5-87-7-c08920-hero.png"
+    },
+    {
+      "watchId": "longines:L2.320.5.89.7",
+      "collectionId": "record",
+      "reference": "L2.320.5.89.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-record-l2-320-5-89-7-638917-hero.png"
+    },
+    {
+      "watchId": "longines:L2.320.5.87.7",
+      "collectionId": "record",
+      "reference": "L2.320.5.87.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-record-l2-320-5-87-7-8883e2-hero.png"
+    },
+    {
+      "watchId": "longines:L8.111.4.87.6",
+      "collectionId": "primaluna",
+      "reference": "L8.111.4.87.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-primaluna-l8-111-4-87-6-e951c7-hero.png"
+    },
+    {
+      "watchId": "longines:L8.111.4.71.6",
+      "collectionId": "primaluna",
+      "reference": "L8.111.4.71.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-primaluna-l8-111-4-71-6-3a31a5-hero.png"
+    },
+    {
+      "watchId": "longines:L8.111.0.87.6",
+      "collectionId": "primaluna",
+      "reference": "L8.111.0.87.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-primaluna-l8-111-0-87-6-cf7aa5-hero.png"
+    },
+    {
+      "watchId": "longines:L8.111.0.71.6",
+      "collectionId": "primaluna",
+      "reference": "L8.111.0.71.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-primaluna-l8-111-0-71-6-9459db-hero.png"
+    },
+    {
+      "watchId": "longines:L5.512.5.79.7",
+      "collectionId": "dolcevita",
+      "reference": "L5.512.5.79.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-512-5-79-7-06b531-hero.png"
+    },
+    {
+      "watchId": "longines:L5.512.0.71.5",
+      "collectionId": "dolcevita",
+      "reference": "L5.512.0.71.5",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-512-0-71-5-e9473c-hero.png"
+    },
+    {
+      "watchId": "longines:L5.255.8.71.0",
+      "collectionId": "dolcevita",
+      "reference": "L5.255.8.71.0",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-255-8-71-0-ce0e5a-hero.png"
+    },
+    {
+      "watchId": "longines:L4.378.8.87.4",
+      "collectionId": "elegant",
+      "reference": "L4.378.8.87.4",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-elegant-collection-l4-378-8-87-4-e75e4b-hero.png"
+    },
+    {
+      "watchId": "longines:L4.274.3.99.7",
+      "collectionId": "flagship",
+      "reference": "L4.274.3.99.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-274-3-99-7-a7738b-hero.png"
+    },
+    {
+      "watchId": "longines:L2.821.4.11.2",
+      "collectionId": "record",
+      "reference": "L2.821.4.11.2",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-record-l2-821-4-11-2-d854b8-hero.png"
+    },
+    {
+      "watchId": "longines:L2.793.5.77.7",
+      "collectionId": "master-collection",
+      "reference": "L2.793.5.77.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-793-5-77-7-bcfca3-hero.png"
+    },
+    {
+      "watchId": "longines:L2.793.5.37.7",
+      "collectionId": "master-collection",
+      "reference": "L2.793.5.37.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-793-5-37-7-2dc98e-hero.png"
+    },
+    {
+      "watchId": "longines:L2.713.4.11.0",
+      "collectionId": "heritage-avigation",
+      "reference": "L2.713.4.11.0",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-weems-second-setting-watch-l2-713-4-11-0-61ac00-hero.png"
+    },
+    {
+      "watchId": "longines:L2.678.4.11.0",
+      "collectionId": "heritage-avigation",
+      "reference": "L2.678.4.11.0",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-lindbergh-hour-angle-watch-l2-678-4-11-0-cf4cdc-hero.png"
+    },
+    {
+      "watchId": "longines:L2.257.8.87.3",
+      "collectionId": "master-collection",
+      "reference": "L2.257.8.87.3",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-257-8-87-3-33cf8a-hero.png"
+    },
+    {
+      "watchId": "longines:L2.257.5.79.7",
+      "collectionId": "master-collection",
+      "reference": "L2.257.5.79.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-257-5-79-7-af1f7b-hero.png"
+    },
+    {
+      "watchId": "longines:L2.257.4.97.6",
+      "collectionId": "master-collection",
+      "reference": "L2.257.4.97.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-257-4-97-6-a0ac14-hero.png"
+    },
+    {
+      "watchId": "longines:L2.257.4.87.6",
+      "collectionId": "master-collection",
+      "reference": "L2.257.4.87.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-257-4-87-6-4d15c6-hero.png"
+    },
+    {
+      "watchId": "longines:L2.142.8.73.2",
+      "collectionId": "evidenza",
+      "reference": "L2.142.8.73.2",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-evidenza-l2-142-8-73-2-6448e1-hero.png"
+    },
+    {
+      "watchId": "longines:L2.142.0.70.6",
+      "collectionId": "evidenza",
+      "reference": "L2.142.0.70.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-evidenza-l2-142-0-70-6-a46377-hero.png"
+    },
+    {
+      "watchId": "longines:L2.128.4.78.6",
+      "collectionId": "master-collection",
+      "reference": "L2.128.4.78.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-128-4-78-6-3600ed-hero.png"
+    },
+    {
+      "watchId": "longines:L2.128.4.87.6",
+      "collectionId": "master-collection",
+      "reference": "L2.128.4.87.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-128-4-87-6-a5620b-hero.png"
+    },
+    {
+      "watchId": "longines:L2.128.4.97.6",
+      "collectionId": "master-collection",
+      "reference": "L2.128.4.97.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-128-4-97-6-5ae771-hero.png"
+    },
+    {
+      "watchId": "longines:L2.128.5.77.7",
+      "collectionId": "master-collection",
+      "reference": "L2.128.5.77.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-128-5-77-7-7b02d0-hero.png"
+    },
+    {
+      "watchId": "longines:L2.128.5.79.7",
+      "collectionId": "master-collection",
+      "reference": "L2.128.5.79.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-128-5-79-7-91ab39-hero.png"
+    },
+    {
+      "watchId": "longines:L2.128.5.89.7",
+      "collectionId": "master-collection",
+      "reference": "L2.128.5.89.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-128-5-89-7-4afebe-hero.png"
+    },
+    {
+      "watchId": "longines:L2.128.8.87.3",
+      "collectionId": "master-collection",
+      "reference": "L2.128.8.87.3",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-128-8-87-3-4184d9-hero.png"
+    },
+    {
+      "watchId": "longines:L2.175.0.71.6",
+      "collectionId": "evidenza",
+      "reference": "L2.175.0.71.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-evidenza-l2-175-0-71-6-ddfca1-hero.png"
+    },
+    {
+      "watchId": "longines:L2.175.4.71.6",
+      "collectionId": "evidenza",
+      "reference": "L2.175.4.71.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-evidenza-l2-175-4-71-6-fd7fe4-hero.png"
+    },
+    {
+      "watchId": "longines:L2.257.5.37.7",
+      "collectionId": "master-collection",
+      "reference": "L2.257.5.37.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-257-5-37-7-e718da-hero.png"
+    },
+    {
+      "watchId": "longines:L2.257.5.77.7",
+      "collectionId": "master-collection",
+      "reference": "L2.257.5.77.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-257-5-77-7-1b9dff-hero.png"
+    },
+    {
+      "watchId": "longines:L2.286.4.87.6",
+      "collectionId": "conquest-classic",
+      "reference": "L2.286.4.87.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-classic-l2-286-4-87-6-65c20c-hero.png"
+    },
+    {
+      "watchId": "longines:L2.286.4.88.6",
+      "collectionId": "conquest-classic",
+      "reference": "L2.286.4.88.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-classic-l2-286-4-88-6-fe0e09-hero.png"
+    },
+    {
+      "watchId": "longines:L2.286.4.92.6",
+      "collectionId": "conquest-classic",
+      "reference": "L2.286.4.92.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-classic-l2-286-4-92-6-4184ba-hero.png"
+    },
+    {
+      "watchId": "longines:L2.320.0.87.6",
+      "collectionId": "record",
+      "reference": "L2.320.0.87.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-record-l2-320-0-87-6-afd161-hero.png"
+    },
+    {
+      "watchId": "longines:L2.320.4.11.6",
+      "collectionId": "record",
+      "reference": "L2.320.4.11.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-record-l2-320-4-11-6-79c6dc-hero.png"
+    },
+    {
+      "watchId": "longines:L2.320.4.87.6",
+      "collectionId": "record",
+      "reference": "L2.320.4.87.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-record-l2-320-4-87-6-90f281-hero.png"
+    },
+    {
+      "watchId": "longines:L2.386.0.72.6",
+      "collectionId": "conquest-classic",
+      "reference": "L2.386.0.72.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-classic-l2-386-0-72-6-a2f372-hero.png"
+    },
+    {
+      "watchId": "longines:L2.386.0.87.6",
+      "collectionId": "conquest-classic",
+      "reference": "L2.386.0.87.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-classic-l2-386-0-87-6-a42c1f-hero.png"
+    },
+    {
+      "watchId": "longines:L2.386.4.52.6",
+      "collectionId": "conquest-classic",
+      "reference": "L2.386.4.52.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-classic-l2-386-4-52-6-5327ff-hero.png"
+    },
+    {
+      "watchId": "longines:L2.386.4.72.6",
+      "collectionId": "conquest-classic",
+      "reference": "L2.386.4.72.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-classic-l2-386-4-72-6-97e80c-hero.png"
+    },
+    {
+      "watchId": "longines:L2.386.4.87.6",
+      "collectionId": "conquest-classic",
+      "reference": "L2.386.4.87.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-classic-l2-386-4-87-6-b70204-hero.png"
+    },
+    {
+      "watchId": "longines:L2.386.4.88.6",
+      "collectionId": "conquest-classic",
+      "reference": "L2.386.4.88.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-classic-l2-386-4-88-6-f09ed9-hero.png"
+    },
+    {
+      "watchId": "longines:L2.386.4.92.6",
+      "collectionId": "conquest-classic",
+      "reference": "L2.386.4.92.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-classic-l2-386-4-92-6-99281f-hero.png"
+    },
+    {
+      "watchId": "longines:L2.713.4.13.0",
+      "collectionId": "heritage-avigation",
+      "reference": "L2.713.4.13.0",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-weems-second-setting-watch-l2-713-4-13-0-0aeb75-hero.png"
+    },
+    {
+      "watchId": "longines:L2.751.4.53.4",
+      "collectionId": "heritage-avigation",
+      "reference": "L2.751.4.53.4",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-twenty-four-hours-l2-751-4-53-4-44e1f9-hero.png"
+    },
+    {
+      "watchId": "longines:L2.759.4.78.6",
+      "collectionId": "master-collection-chronograph",
+      "reference": "L2.759.4.78.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-chronograph-l2-759-4-78-6-49d6b8-hero.png"
+    },
+    {
+      "watchId": "longines:L2.759.4.92.0",
+      "collectionId": "master-collection-chronograph",
+      "reference": "L2.759.4.92.0",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-chronograph-l2-759-4-92-0-c0cc4a-hero.png"
+    },
+    {
+      "watchId": "longines:L2.759.4.92.6",
+      "collectionId": "master-collection-chronograph",
+      "reference": "L2.759.4.92.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-chronograph-l2-759-4-92-6-d51949-hero.png"
+    },
+    {
+      "watchId": "longines:L2.773.8.78.3",
+      "collectionId": "master-collection-chronograph",
+      "reference": "L2.773.8.78.3",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-chrono-moonphase-l2-773-8-78-3-56ebb2-hero.png"
+    },
+    {
+      "watchId": "longines:L2.793.4.57.6",
+      "collectionId": "master-collection",
+      "reference": "L2.793.4.57.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-793-4-57-6-a27888-hero.png"
+    },
+    {
+      "watchId": "longines:L2.793.4.59.6",
+      "collectionId": "master-collection",
+      "reference": "L2.793.4.59.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-793-4-59-6-3eab21-hero.png"
+    },
+    {
+      "watchId": "longines:L2.793.5.97.7",
+      "collectionId": "master-collection",
+      "reference": "L2.793.5.97.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-793-5-97-7-3517a9-hero.png"
+    },
+    {
+      "watchId": "longines:L2.820.4.11.6",
+      "collectionId": "record",
+      "reference": "L2.820.4.11.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-record-l2-820-4-11-6-643ade-hero.png"
+    },
+    {
+      "watchId": "longines:L2.820.5.11.7",
+      "collectionId": "record",
+      "reference": "L2.820.5.11.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-record-l2-820-5-11-7-188445-hero.png"
+    },
+    {
+      "watchId": "longines:L2.820.5.72.7",
+      "collectionId": "record",
+      "reference": "L2.820.5.72.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-record-l2-820-5-72-7-18951e-hero.png"
+    },
+    {
+      "watchId": "longines:L2.820.8.92.2",
+      "collectionId": "record",
+      "reference": "L2.820.8.92.2",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-record-l2-820-8-92-2-e940d8-hero.png"
+    },
+    {
+      "watchId": "longines:L2.893.5.37.7",
+      "collectionId": "master-collection",
+      "reference": "L2.893.5.37.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-893-5-37-7-757d02-hero.png"
+    },
+    {
+      "watchId": "longines:L2.893.5.97.7",
+      "collectionId": "master-collection",
+      "reference": "L2.893.5.97.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-893-5-97-7-196aaa-hero.png"
+    },
+    {
+      "watchId": "longines:L2.909.4.57.6",
+      "collectionId": "master-collection-moonphase",
+      "reference": "L2.909.4.57.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-moonphase-l2-909-4-57-6-38ca72-hero.png"
+    },
+    {
+      "watchId": "longines:L3.410.4.53.6",
+      "collectionId": "spirit",
+      "reference": "L3.410.4.53.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-spirit-l3-410-4-53-6-43622c-hero.png"
+    },
+    {
+      "watchId": "longines:L4.209.2.11.2",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.209.2.11.2",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-2-11-2-d2e435-hero.png"
+    },
+    {
+      "watchId": "longines:L4.209.2.11.7",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.209.2.11.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-2-11-7-e476b9-hero.png"
+    },
+    {
+      "watchId": "longines:L4.209.2.87.7",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.209.2.87.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-2-87-7-73e199-hero.png"
+    },
+    {
+      "watchId": "longines:L4.209.4.11.2",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.209.4.11.2",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-4-11-2-c76b2a-hero.png"
+    },
+    {
+      "watchId": "longines:L4.209.4.58.6",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.209.4.58.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-4-58-6-cfc1c4-hero.png"
+    },
+    {
+      "watchId": "longines:L4.274.3.21.7",
+      "collectionId": "flagship",
+      "reference": "L4.274.3.21.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-274-3-21-7-1218de-hero.png"
+    },
+    {
+      "watchId": "longines:L4.274.3.27.7",
+      "collectionId": "flagship",
+      "reference": "L4.274.3.27.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-274-3-27-7-9478e6-hero.png"
+    },
+    {
+      "watchId": "longines:L4.274.3.37.7",
+      "collectionId": "flagship",
+      "reference": "L4.274.3.37.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-274-3-37-7-31c600-hero.png"
+    },
+    {
+      "watchId": "longines:L4.274.3.91.7",
+      "collectionId": "flagship",
+      "reference": "L4.274.3.91.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-274-3-91-7-7c4feb-hero.png"
+    },
+    {
+      "watchId": "longines:L4.274.3.92.7",
+      "collectionId": "flagship",
+      "reference": "L4.274.3.92.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-274-3-92-7-94a149-hero.png"
+    },
+    {
+      "watchId": "longines:L4.274.4.27.6",
+      "collectionId": "flagship",
+      "reference": "L4.274.4.27.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-274-4-27-6-a8a701-hero.png"
+    },
+    {
+      "watchId": "longines:L4.274.4.57.6",
+      "collectionId": "flagship",
+      "reference": "L4.274.4.57.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-274-4-57-6-37d074-hero.png"
+    },
+    {
+      "watchId": "longines:L4.274.4.72.6",
+      "collectionId": "flagship",
+      "reference": "L4.274.4.72.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-274-4-72-6-834a6a-hero.png"
+    },
+    {
+      "watchId": "longines:L4.274.4.87.6",
+      "collectionId": "flagship",
+      "reference": "L4.274.4.87.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-274-4-87-6-649262-hero.png"
+    },
+    {
+      "watchId": "longines:L4.341.0.11.6",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.341.0.11.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-341-0-11-6-3a68e4-hero.png"
+    },
+    {
+      "watchId": "longines:L4.341.0.80.6",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.341.0.80.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-341-0-80-6-f30173-hero.png"
+    },
+    {
+      "watchId": "longines:L4.341.0.97.6",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.341.0.97.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-341-0-97-6-ab1581-hero.png"
+    },
+    {
+      "watchId": "longines:L4.374.3.78.7",
+      "collectionId": "flagship",
+      "reference": "L4.374.3.78.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-374-3-78-7-89d4d1-hero.png"
+    },
+    {
+      "watchId": "longines:L4.512.1.67.7",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.512.1.67.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-1-67-7-c82d95-hero.png"
+    },
+    {
+      "watchId": "longines:L4.512.4.58.6",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.512.4.58.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-4-58-6-854c91-hero.png"
+    },
+    {
+      "watchId": "longines:L4.512.4.77.6",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.512.4.77.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-4-77-6-732095-hero.png"
+    },
+    {
+      "watchId": "longines:L4.512.4.92.6",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.512.4.92.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-4-92-6-90d2c9-hero.png"
+    },
+    {
+      "watchId": "longines:L4.523.0.11.6",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.523.0.11.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-523-0-11-6-3dc17e-hero.png"
+    },
+    {
+      "watchId": "longines:L4.523.0.87.6",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.523.0.87.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-523-0-87-6-5f3f5a-hero.png"
+    },
+    {
+      "watchId": "longines:L4.755.2.11.2",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.755.2.11.2",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-755-2-11-2-6c7869-hero.png"
+    },
+    {
+      "watchId": "longines:L4.755.2.11.7",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.755.2.11.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-755-2-11-7-e22f77-hero.png"
+    },
+    {
+      "watchId": "longines:L4.755.4.11.2",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.755.4.11.2",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-755-4-11-2-c28fd7-hero.png"
+    },
+    {
+      "watchId": "longines:L4.755.4.94.6",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.755.4.94.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-755-4-94-6-3e4b0f-hero.png"
+    },
+    {
+      "watchId": "longines:L4.787.8.11.4",
+      "collectionId": "elegant",
+      "reference": "L4.787.8.11.4",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-elegant-collection-l4-787-8-11-4-e50b14-hero.png"
+    },
+    {
+      "watchId": "longines:L4.866.4.94.6",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.866.4.94.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-866-4-94-6-46357a-hero.png"
+    },
+    {
+      "watchId": "longines:L4.908.4.51.6",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.908.4.51.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-908-4-51-6-c5fb63-hero.png"
+    },
+    {
+      "watchId": "longines:L4.908.4.97.6",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.908.4.97.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-908-4-97-6-ce7c0f-hero.png"
+    },
+    {
+      "watchId": "longines:L4.974.3.21.7",
+      "collectionId": "flagship",
+      "reference": "L4.974.3.21.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-974-3-21-7-435b66-hero.png"
+    },
+    {
+      "watchId": "longines:L4.974.3.27.7",
+      "collectionId": "flagship",
+      "reference": "L4.974.3.27.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-974-3-27-7-25f3a4-hero.png"
+    },
+    {
+      "watchId": "longines:L4.974.3.32.7",
+      "collectionId": "flagship",
+      "reference": "L4.974.3.32.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-974-3-32-7-008751-hero.png"
+    },
+    {
+      "watchId": "longines:L4.974.3.92.7",
+      "collectionId": "flagship",
+      "reference": "L4.974.3.92.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-974-3-92-7-60651b-hero.png"
+    },
+    {
+      "watchId": "longines:L4.974.3.99.7",
+      "collectionId": "flagship",
+      "reference": "L4.974.3.99.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-974-3-99-7-c40f1f-hero.png"
+    },
+    {
+      "watchId": "longines:L4.974.4.12.6",
+      "collectionId": "flagship",
+      "reference": "L4.974.4.12.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-974-4-12-6-7c5ee8-hero.png"
+    },
+    {
+      "watchId": "longines:L4.974.4.21.6",
+      "collectionId": "flagship",
+      "reference": "L4.974.4.21.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-974-4-21-6-c489fc-hero.png"
+    },
+    {
+      "watchId": "longines:L5.255.4.87.6",
+      "collectionId": "dolcevita",
+      "reference": "L5.255.4.87.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-255-4-87-6-7f0525-hero.png"
+    },
+    {
+      "watchId": "longines:L5.255.5.78.7",
+      "collectionId": "dolcevita",
+      "reference": "L5.255.5.78.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-255-5-78-7-6687d1-hero.png"
+    },
+    {
+      "watchId": "longines:L5.255.5.87.7",
+      "collectionId": "dolcevita",
+      "reference": "L5.255.5.87.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-255-5-87-7-107127-hero.png"
+    },
+    {
+      "watchId": "longines:L5.258.0.71.6",
+      "collectionId": "dolcevita",
+      "reference": "L5.258.0.71.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-258-0-71-6-9bb1d0-hero.png"
+    },
+    {
+      "watchId": "longines:L5.258.4.71.6",
+      "collectionId": "dolcevita",
+      "reference": "L5.258.4.71.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-258-4-71-6-fb46f5-hero.png"
+    },
+    {
+      "watchId": "longines:L5.258.5.71.7",
+      "collectionId": "dolcevita",
+      "reference": "L5.258.5.71.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-258-5-71-7-418749-hero.png"
+    },
+    {
+      "watchId": "longines:L5.258.5.79.7",
+      "collectionId": "dolcevita",
+      "reference": "L5.258.5.79.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-258-5-79-7-9938c6-hero.png"
+    },
+    {
+      "watchId": "longines:L5.258.8.71.0",
+      "collectionId": "dolcevita",
+      "reference": "L5.258.8.71.0",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-258-8-71-0-8cfbfb-hero.png"
+    },
+    {
+      "watchId": "longines:L5.258.8.87.0",
+      "collectionId": "dolcevita",
+      "reference": "L5.258.8.87.0",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-258-8-87-0-521479-hero.png"
+    },
+    {
+      "watchId": "longines:L5.757.4.71.0",
+      "collectionId": "dolcevita",
+      "reference": "L5.757.4.71.0",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-757-4-71-0-80be6e-hero.png"
+    },
+    {
+      "watchId": "longines:L5.757.4.71.6",
+      "collectionId": "dolcevita",
+      "reference": "L5.757.4.71.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-757-4-71-6-352bee-hero.png"
+    },
+    {
+      "watchId": "longines:L5.757.4.71.9",
+      "collectionId": "dolcevita",
+      "reference": "L5.757.4.71.9",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-757-4-71-9-384b8e-hero.png"
+    },
+    {
+      "watchId": "longines:L2.128.8.78.3",
+      "collectionId": "master-collection",
+      "reference": "L2.128.8.78.3",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-128-8-78-3-c5e4e6-hero.png"
+    },
+    {
+      "watchId": "longines:L2.286.3.92.7",
+      "collectionId": "conquest-classic",
+      "reference": "L2.286.3.92.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-classic-l2-286-3-92-7-418a41-hero.png"
+    },
+    {
+      "watchId": "longines:L2.357.5.87.7",
+      "collectionId": "master-collection",
+      "reference": "L2.357.5.87.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-master-collection-l2-357-5-87-7-e577cc-hero.png"
+    },
+    {
+      "watchId": "longines:L2.386.3.87.7",
+      "collectionId": "conquest-classic",
+      "reference": "L2.386.3.87.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-classic-l2-386-3-87-7-122f37-hero.png"
+    },
+    {
+      "watchId": "longines:L2.821.5.72.7",
+      "collectionId": "record",
+      "reference": "L2.821.5.72.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-record-l2-821-5-72-7-7ae5e3-hero.png"
+    },
+    {
+      "watchId": "longines:L4.374.3.17.7",
+      "collectionId": "flagship",
+      "reference": "L4.374.3.17.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-374-3-17-7-63b264-hero.png"
+    },
+    {
+      "watchId": "longines:L4.866.4.58.6",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.866.4.58.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-866-4-58-6-c47929-hero.png"
+    },
+    {
+      "watchId": "longines:L5.512.7.71.0",
+      "collectionId": "dolcevita",
+      "reference": "L5.512.7.71.0",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-dolcevita-l5-512-7-71-0-e8a05e-hero.png"
+    },
+    {
+      "watchId": "longines:L8.122.4.90.6",
+      "collectionId": "primaluna",
+      "reference": "L8.122.4.90.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-primaluna-l8-122-4-90-6-682d9b-hero.png"
+    },
+    {
+      "watchId": "longines:L8.122.4.99.6",
+      "collectionId": "primaluna",
+      "reference": "L8.122.4.99.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-primaluna-l8-122-4-99-6-e63bf0-hero.png"
     }
   ]
 }

@@ -1,0 +1,294 @@
+{
+  "brandId": "longines",
+  "marketCode": "JP",
+  "validatedAt": "2026-09-25T09:55:00Z",
+  "schemasUsed": [
+    "data/schemas/watch-market.schema.json (schemaVersion 3)",
+    "data/schemas/watch-price-history.schema.json (schemaVersion 3)"
+  ],
+  "validationMethodNote": "環境未安裝 jsonschema（Python）或 ajv-cli，且不得安裝依賴；以不依賴外部套件的 Python 驗證器實作兩份 Schema 實際使用的 draft 2020-12 關鍵字（$ref、type、const、enum、pattern、required、properties、additionalProperties、items、minItems、uniqueItems、minProperties、propertyNames、minimum、maximum、minLength、allOf/if/then、format date-time／uri），遇到未支援的關鍵字即報錯。驗證器程式碼僅存於本機暫存目錄（未納入版本控制），以刻意破壞的 history 副本（listed 搭配 null 價格；額外未宣告欄位）做反向測試，驗證器皆正確回報 FAIL 並指出確切錯誤路徑。此為手工實作，非官方驗證器輸出。本次任務範圍不含 data/catalog/longines-catalog.json（由統籌者事後合併），故未使用 watch-catalog.schema.json。",
+  "layer1_jsonAndSchema": {
+    "status": "PASS",
+    "checks": [
+      "嚴格 JSON 解析（攔重複 key、NaN/Infinity）：data/catalog、data/markets、data/history、data/schemas 與本次 data/evidence/longines/JP 共 77 份檔案通過",
+      "data/markets/longines-japan-market.json、data/history/JP/longines-price-history.json 通過對應 v3 Schema",
+      "對照組：data/markets/longines-taiwan-market.json、data/markets/omega-japan-market.json、data/history/JP/omega-price-history.json 以同一驗證器亦通過（確認驗證器與既有資料一致，無誤判）",
+      "反向測試：破壞後的 history 副本（listed+null price；額外欄位 extraField）皆被正確判為 FAIL"
+    ],
+    "errors": []
+  },
+  "layer2_crossFileRelations": {
+    "status": "PASS",
+    "checks": [
+      "market.watchCount(612) == market.watches.length(612)；history.collectionRuns[0].recordCount(612) == history.priceSeries 筆數(612)",
+      "612 個 reference 全部唯一；612 個 watchId 全部唯一；watchId 全部等於 'longines:' + reference",
+      "market 與 history 的 watchId 集合完全相同（無孤兒，對稱差集為空）",
+      "collectionRuns 僅 runId=1（新市場首次收集）；priceSeries 612 筆價格點的 runId 皆為 1、listingStatus 皆為 listed、price 皆為非負整數",
+      "market 的 31 個 collectionAliases key 與 observations.json 逐筆推導出的 31 個 collectionId 完全一致",
+      "本次任務範圍不含 data/catalog/longines-catalog.json，故未執行 catalog 對 market/history 的三方 watchId 集合比對；此項留待統籌者事後合併 catalog 時執行，已在 observations.json 完整保存 collectionId／imageUrl 供其使用",
+      "未執行 app/scripts/generate-watch-data.mjs 或 app 端 vitest：本次任務範圍限定於 data/markets、data/history/JP、data/evidence/longines/JP，不包含 app/ 或前端資料產生流程，且 Longines 尚未加入前端品牌清單（app/src/lib/brands.ts），標記 NOT RUN / out of scope"
+    ],
+    "errors": []
+  },
+  "layer3_sourceReconciliation": {
+    "status": "PASS",
+    "checks": [
+      "612 筆 market 的 productUrl、isNewModel、caseDescription、dialDescription、collectionName、modelName 逐筆回對 observations.json，0 筆差異",
+      "612 筆 history 價格逐筆回對 observations.json 的 priceValue，0 筆差異",
+      "612 筆價格文字 value_formatted（￥N,NNN,NNN）依逗號千分位解析，與結構化 base_price.value 完全一致（日圓無小數位）；special_price 全為 null",
+      "612 筆 currency 皆為 JPY；StoreConfig 為 JP／ja_JP／JPY",
+      "case_material（21 個相異 ID）與 dial_color（66 個相異 ID）全數可由 __NEXT_DATA__ fallback 的 ProductAttributes(jp) attributeMetadata 官方 ja 標籤對應，0 筆未對應",
+      "market 的 collectionAliases 與 nickname-research.json 的 acceptedCollectionAliases 一致（皆為空，0 採用）；localNicknames 全為空，與 acceptedNicknames 一致"
+    ],
+    "errors": []
+  },
+  "layer4_completenessAndSpotCheck": {
+    "status": "PASS",
+    "checks": [
+      "官方 total_count 612；26 頁皆 HTTP 200，每頁 24 筆、第 26 頁 12 筆；第 27 頁官方 GraphQL 回傳「currentPage value 27 specified is greater than the 26 page(s) available.」",
+      "5 個家族頁官方 total_count（114+69+155+229+45=612）與收集結果逐一相符（改用 category_uid 查詢 total_count 之獨立官方視圖，非僅重算收集結果）",
+      "31 個子系列官方 total_count 與收集結果逐一相符，且每筆恰屬一個子系列（612 筆逐一驗證，0 筆零命中或多重命中）",
+      "20 款以 SSR 商品頁（schema.org JSON-LD）獨立抽查全部 PASS，涵蓋最低價（3 款同價並列）、最高價（2 款同價並列）、5 個家族代表、2 組同基本型號不同配置、letter-suffix 參考號（L5.255.4.71.A）、NEW／BESTSELLER 標示、以及 JP 特有子系列 master-gmt"
+    ],
+    "errors": []
+  },
+  "layer5_changeSafety": {
+    "status": "PASS",
+    "checks": [
+      "本次為 Longines 全新市場（JP）：collection 前 data/markets/longines-japan-market.json、data/history/JP/longines-price-history.json 皆不存在，無既有價格序列可被覆寫；collectionRuns 從 runId=1 開始",
+      "執行前 git status --short 為 clean；執行後僅新增本次任務範圍內檔案（data/markets/longines-japan-market.json、data/history/JP/longines-price-history.json、data/evidence/longines/JP/2026-09-25/*），未修改任何既有已追蹤檔案",
+      "未修改或建立 data/catalog/longines-catalog.json；未修改 data/traveler-refund-policies.json；未修改任何 data/schemas/ 檔案",
+      "未讀寫 Rolex／Omega 或 Longines 其他市場（TW、HK、KR 等）的 market／history／evidence 檔案；瀏覽器中另有其他市場工作單元使用的 isolatedContext（longines-kr-market、longines-hk-market）與其產生的未提交檔案（data/evidence/longines/HK/、data/markets/longines-hong-kong-market.json、data/history/HK/longines-price-history.json、專案根目錄 kr-*.json），本次僅在 git status 中如實觀察到其存在，未讀取其內容、未互動、未介入、未代為驗證或合併",
+      "未派生其他 subagent／fork 處理本任務指派範圍以外的市場"
+    ],
+    "errors": []
+  },
+  "sourceReconciliation": {
+    "observedListingCount": 612,
+    "marketWatchCount": 612,
+    "priceSeriesCount": 612,
+    "duplicateReferenceCount": 0,
+    "collectionIdCount": 31
+  },
+  "priceStatistics": {
+    "currency": "JPY",
+    "listed": 612,
+    "priceUnavailable": 0,
+    "notListed": 0,
+    "min": {
+      "price": 137500,
+      "references": ["L3.759.4.58.6", "L3.759.4.76.6", "L3.759.4.96.6"]
+    },
+    "max": {
+      "price": 4094200,
+      "references": ["L5.200.7.71.6", "L5.200.9.71.6"]
+    },
+    "median": 396000
+  },
+  "marketComparisonWithTaiwan": {
+    "note": "僅供差異概況參考，不作為完整性停止條件或收集目標。",
+    "taiwanWatchCount": 544,
+    "japanWatchCount": 612,
+    "referenceIntersection": 453,
+    "japanOnlyReferenceCount": 159,
+    "taiwanOnlyReferenceCount": 91,
+    "taiwanCollectionCount": 30,
+    "japanCollectionCount": 31,
+    "japanOnlyCollections": ["master-gmt"],
+    "taiwanOnlyCollections": []
+  },
+  "independentSpotCheck": {
+    "count": 20,
+    "result": "PASS",
+    "coverage": "最低價（3 款同價，抽 2 款）、最高價（2 款同價，抽 2 款）、5 個家族代表（master／conquest／spirit／elegance／heritage）、2 組同基本型號不同配置、letter-suffix 參考號、NEW 標示、BESTSELLER 標示、JP 特有子系列 master-gmt、以及 hydroconquest-gmt／ultra-chron／evidenza／flagship-heritage／elegant 等系統抽樣",
+    "items": [
+      {
+        "reference": "L3.759.4.96.6",
+        "selectionReasons": ["lowest price"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-conquest-l3-759-4-96-6",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD（同源 fetch 取得 HTML 後解析，非透過批次 GraphQL 收集路徑）",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.759.4.76.6",
+        "selectionReasons": ["2nd lowest (tie)"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-conquest-l3-759-4-76-6",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L5.200.9.71.6",
+        "selectionReasons": ["highest price"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-longines-mini-dolcevita-l5-200-9-71-6",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L5.200.7.71.6",
+        "selectionReasons": ["2nd highest (tie)"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-longines-mini-dolcevita-l5-200-7-71-6",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.449.4.97.6",
+        "selectionReasons": ["family representative: master", "NEW tag"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-the-longines-master-collection-l2-449-4-97-6",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.962.4.73.2",
+        "selectionReasons": ["same base ref pair A"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-the-longines-master-collection-chronograph-l2-962-4-73-2",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.962.4.73.6",
+        "selectionReasons": ["same base ref pair A"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-the-longines-master-collection-chronograph-l2-962-4-73-6",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.949.4.99.2",
+        "selectionReasons": ["same base ref pair B"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-the-longines-master-collection-l2-949-4-99-2",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.949.4.99.6",
+        "selectionReasons": ["same base ref pair B"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-the-longines-master-collection-l2-949-4-99-6",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L5.255.4.71.A",
+        "selectionReasons": ["non-numeric suffix reference", "family representative: elegance (dolcevita)"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-longines-dolcevita-l5-255-4-71-a",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.430.4.92.6",
+        "selectionReasons": ["BESTSELLER tag", "family representative: conquest"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-conquest-l3-430-4-92-6",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.812.4.50.6",
+        "selectionReasons": ["family representative: spirit"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-longines-spirit-zulu-time-l3-812-4-50-6",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.764.4.06.9",
+        "selectionReasons": ["family representative: heritage", "NEW tag"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-longines-legend-diver-l3-764-4-06-9",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.838.1.53.2",
+        "selectionReasons": ["systematic sample: pilot-majetek"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-longines-pilot-majetek-l2-838-1-53-2",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.844.8.71.2",
+        "selectionReasons": ["JP-specific collection not present in TW: master-gmt"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-the-longines-master-collection-gmt-l2-844-8-71-2",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.890.4.96.9",
+        "selectionReasons": ["systematic sample: hydroconquest-gmt"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-hydroconquest-gmt-l3-890-4-96-9",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.937.4.72.6",
+        "selectionReasons": ["systematic sample: ultra-chron"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-ultra-chron-l2-937-4-72-6",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.142.4.70.6",
+        "selectionReasons": ["systematic sample: evidenza"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-longines-evidenza-l2-142-4-70-6",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L4.815.4.62.2",
+        "selectionReasons": ["systematic sample: flagship-heritage"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-flagship-heritage-l4-815-4-62-2",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      },
+      {
+        "reference": "L4.310.4.79.6",
+        "selectionReasons": ["systematic sample: elegant"],
+        "sourceUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-310-4-79-6",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "checks": {"httpStatus200": true, "referenceMatches": true, "priceMatches": true, "currencyJPY": true, "widthMatches": true, "materialMatches": true, "colorMatches": true, "nameMatches": true, "imageUrlMatches": true, "productUrlMatches": true},
+        "result": "PASS"
+      }
+    ]
+  },
+  "nicknameResearch": {
+    "status": "PASS",
+    "scope": "new-market",
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "evidence": "nickname-research.json"
+  },
+  "travelerRefundPolicy": {
+    "status": "PASS",
+    "evidence": "traveler-refund-policy.json",
+    "result": "既有 JP 市場級記錄經重新查核（觀光庁消費税免税店サイト）仍一致，未修改 data/traveler-refund-policies.json；建議統籌者無需更新正式檔。"
+  },
+  "readmeUpdate": {
+    "status": "NOT RUN",
+    "updated": false,
+    "sections": [],
+    "reason": "任務範圍限定於 data/markets/longines-japan-market.json、data/history/JP/longines-price-history.json 與 data/evidence/longines/JP/；README.md、watch-data-collection-guide.md 等人類文件的品牌/市場涵蓋範圍表格屬於跨市場彙總資訊，可能與其他並行進行的 Longines 市場工作單元（HK、KR）同時變更同一份文件而衝突，故未在本工作單元中修改，留待統籌者於彙整全部市場結果後一併更新。"
+  },
+  "limitations": [
+    "Longines 日本站商品頁未以文字明示價格含稅；tax-include 10% 依國稅廳消費稅法第 63 條總額表示法定義務（適用一般零售標價）與既有市場慣例記錄，非 Longines 官方逐字聲明。",
+    "612 筆商品的 stock_status／schema.org availability 觀察值皆為 OUT_OF_STOCK；仍記錄為 listed，因為官方目錄公開列出且提供公開價格，符合 listingStatus 定義（與現貨庫存無關）。",
+    "caseDescription 由官方 case_dimension 與 case_material 標籤組合（與商品頁 JSON-LD width、material 相同欄位）；非商品頁上的單一原文句子。",
+    "本次任務範圍不含 data/catalog/longines-catalog.json；catalog 合併（含 imageUrl、collectionId 寫入）留待統籌者事後執行，相關欄位已完整保存於 observations.json。",
+    "前端尚未加入 Longines 品牌頁（app/src/lib/brands.ts 未註冊 Longines），網站目前不會顯示日本市場資料；本次任務範圍亦不含 app/ 前端變更。",
+    "未執行 app/scripts/generate-watch-data.mjs 或 app 端 vitest：任務範圍未涵蓋 app/，標記 NOT RUN / out of scope（非能力限制）。",
+    "僅完成 JP；Longines 其餘市場（HK、KR 等）由其他工作單元平行處理，本工作單元未讀取、驗證或合併其產出。"
+  ]
+}

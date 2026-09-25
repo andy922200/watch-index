@@ -143,13 +143,16 @@ Omega 目前已收錄 13 個市場，各市場配置筆數不相同：
 
 ### Longines
 
-Longines 目前已收錄 1 個市場：
+Longines 目前已收錄 4 個市場：
 
 | 市場 | 代碼 | 語系 | 幣別 | 價格語意 | 配置筆數 |
 | --- | --- | --- | --- | --- | --- |
 | 台灣 | TW | `zh-Hant-TW` | TWD | 含稅（5%） | 544 |
+| 香港 | HK | `zh-Hant-HK` | HKD | 無消費稅（0%） | 493 |
+| 日本 | JP | `ja-JP` | JPY | 含稅（10%） | 612 |
+| 韓國 | KR | `ko-KR` | KRW | 含稅（10%） | 456 |
 
-Longines 的 `collectionId` 採官方子系列網址路徑的最後一段（例如 `hydroconquest`、`master-collection`），而非 Master、Conquest 等五大家族；網站前端尚未加入 Longines 頁面。
+Longines 的 `collectionId` 採官方子系列網址路徑的最後一段（例如 `hydroconquest`、`master-collection`），而非 Master、Conquest 等五大家族；網站前端尚未加入 Longines 頁面。各市場的官方子系列並非完全相同：例如 `master-gmt` 僅出現在 HK／JP／KR，`conquest-classic` 僅出現在 TW，`evidenza` 未出現在 KR，這是官方目錄的真實市場差異，非收集缺漏。
 
 實際的收集時間、來源、輪次與價格請讀取各市場的 history 與 evidence；本表不應用作下一次收集的筆數目標。
 

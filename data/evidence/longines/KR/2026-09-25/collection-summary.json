@@ -1,0 +1,196 @@
+{
+  "brandId": "longines",
+  "marketCode": "KR",
+  "locale": "ko-KR",
+  "collectedAt": "2026-09-25T09:30:00.000Z",
+  "entryUrl": "https://www.longines.com/kr/watches",
+  "attempts": [
+    {
+      "attempt": 1,
+      "at": "2026-09-25T09:05:00Z",
+      "method": "browser-web-data-discovery skill 依規範先以 chrome-devtools MCP 開啟 https://www.longines.com/（未指定語系路徑），觀察官方自動導向；再依 nav 選單「대한민국」連結確認實際 URL",
+      "scope": "確認官方入口與語系參數",
+      "result": "PASS",
+      "error": null
+    },
+    {
+      "attempt": 2,
+      "at": "2026-09-25T09:08:00Z",
+      "method": "直接嘗試 https://www.longines.com/kr-kr/watches 與 https://www.longines.com/kr/watches",
+      "scope": "確認正確官方韓國站路徑",
+      "result": "PARTIAL",
+      "error": "/kr-kr/watches 回傳「Page not found」；/kr/watches 才是官方實際使用的韓國站路徑（htmlLang=kr）。"
+    },
+    {
+      "attempt": 3,
+      "at": "2026-09-25T09:10:10Z",
+      "method": "chrome-devtools MCP：於官方頁面點擊「더 알아보기」，於 network 面板觀察到同源 ProductList GraphQL 請求；隨後在同一頁面 session 內以 fetch() 重放頁面自身的 query/variables，逐頁（pageSize=24）取得全部資料，直到官方回傳分頁錯誤",
+      "scope": "全部 19 頁 + 第 20 頁停止證據",
+      "result": "PASS",
+      "error": null
+    },
+    {
+      "attempt": 4,
+      "at": "2026-09-25T09:15:00Z",
+      "method": "chrome-devtools MCP fetch()：對 36 筆 preferred_category 為 null 的商品，改以 GraphQL categories 欄位查詢其官方子系列 url_path（發現皆屬 master-collection）",
+      "scope": "補齊 collectionId 判定缺口",
+      "result": "PASS",
+      "error": null
+    },
+    {
+      "attempt": 5,
+      "at": "2026-09-25T09:24:00Z",
+      "method": "chrome-devtools MCP：讀取 1 個商品頁 __NEXT_DATA__ 取得 ProductAttributes（ko-kr）case_material／dial_color 標籤對照表",
+      "scope": "屬性標籤對應",
+      "result": "PASS",
+      "error": null
+    },
+    {
+      "attempt": 6,
+      "at": "2026-09-25T09:24:30Z",
+      "method": "chrome-devtools MCP：導覽 5 個官方家族頁讀取 __NEXT_DATA__ total_count",
+      "scope": "家族總數對帳",
+      "result": "PASS",
+      "error": null
+    },
+    {
+      "attempt": 7,
+      "at": "2026-09-25T09:26:00Z",
+      "method": "chrome-devtools MCP fetch()：以 30 個代表 sku 取得各子系列 category_uid，再逐一查詢官方 total_count",
+      "scope": "30 個子系列總數對帳",
+      "result": "PASS",
+      "error": null
+    },
+    {
+      "attempt": 8,
+      "at": "2026-09-25T09:27:30Z",
+      "method": "手動導覽確認 evidenza 與 master-gmt 子系列頁存在與否",
+      "scope": "驗證與台灣站子系列集合差異",
+      "result": "PASS",
+      "error": null
+    },
+    {
+      "attempt": 9,
+      "at": "2026-09-25T09:29:00Z",
+      "method": "chrome-devtools MCP fetch()：對 21 款抽查標的直接抓取官方商品頁 HTML 並解析 schema.org JSON-LD",
+      "scope": "21 款獨立抽查",
+      "result": "PASS",
+      "error": null
+    }
+  ],
+  "sourceDiscovery": {
+    "method": "官方站為與台灣站相同的 Next.js + Magento GraphQL 架構；腕錶清單頁點擊「더 알아보기」後，於 network 觀察到同源 GET https://www.longines.com/api/graphql?operationName=ProductList，帶 store: ko_kr、lang: ko-kr 標頭，variables.currentPage 遞增、pageSize=24、filters.category_uid.eq=NA==（與台灣站相同的全站「腕錶」分類編碼，證實為全球共用 catalog）。",
+    "officialEndpoints": [
+      "https://www.longines.com/kr/watches",
+      "https://www.longines.com/api/graphql?operationName=ProductList",
+      "https://www.longines.com/kr/watches/{family}",
+      "https://www.longines.com/kr/watches/{family}/{subcategory}",
+      "https://www.longines.com/kr/p/{url_key}",
+      "https://www.longines.com/api/graphql?operationName=GetCat / GetCount（本次為判定 collectionId 與子系列總數手動組出的查詢，欄位與 filter 語法取自頁面既有 GraphQL schema，未新增任何官方未提供的欄位）"
+    ],
+    "structuredFieldsUsed": [
+      "products.total_count / page_info（官方總數與分頁）",
+      "items[].sku（完整點分參考號）",
+      "items[].url_key / name / tag（NEW/BESTSELLER/ONLINE_EXCLUSIVE）",
+      "items[].categories[].url_path（家族／子系列歸屬，取代對 36 筆為 null 的 preferred_category）",
+      "items[].case_dimension、case_material、dial_color（後兩者經 ProductAttributes ko-kr 標籤對應）",
+      "items[].base_price {value, value_formatted, currency} / special_price",
+      "items[].image.path（圖片以 https://api.ecom.longines.com/media/catalog/product 為前綴，與商品頁 JSON-LD image 完全一致）"
+    ]
+  },
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "available",
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "PASS",
+    "toolsAttempted": [
+      {
+        "tool": "chrome-devtools MCP (new_page / navigate_page / evaluate_script / list_network_requests / get_network_request)",
+        "result": "PASS",
+        "detail": "在 isolatedContext=longines-kr-market 中觀察 ProductList 請求、完成全量收集、屬性標籤、家族/子系列對帳與商品頁抽查。"
+      },
+      {
+        "tool": "WebSearch / WebFetch",
+        "result": "PASS",
+        "detail": "僅用於稅制查核、旅客退稅政策查核與俗稱研究，不作為逐筆商品資料來源。"
+      },
+      {
+        "tool": "claude-in-chrome MCP",
+        "result": "NOT RUN",
+        "detail": "chrome-devtools MCP 已足以完成 network 與 DOM 觀察。"
+      }
+    ],
+    "fallbackTool": "chrome-devtools MCP",
+    "notes": "檢視 network request 時工具輸出曾顯示請求 Cookie 標頭；未將任何 Cookie、token 或 session 值寫入 evidence。"
+  },
+  "pagination": {
+    "pageSize": 24,
+    "officialTotalCount": 456,
+    "pagesRequested": 19,
+    "perPageItemCounts": [
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24
+    ],
+    "allHttp200": true,
+    "stopEvidence": {
+      "lastPage": 19,
+      "lastPageItemCount": 24,
+      "requestBeyondLastPage": {
+        "pageNumber": 20,
+        "httpStatus": 200,
+        "itemCount": 0,
+        "errors": [
+          "currentPage value 20 specified is greater than the 19 page(s) available."
+        ]
+      },
+      "explanation": "19 頁 × 24 = 456，恰等於官方 total_count；第 20 頁官方 GraphQL 回傳錯誤「currentPage value 20 specified is greater than the 19 page(s) available.」，證實沒有更多頁。"
+    }
+  },
+  "multiMarketIsolationNote": "執行期間於同一瀏覽器實例觀察到其他 isolatedContext（longines-jp-market、longines-hk-market）已存在分頁，判斷為統籌者另行派工的日本、香港市場工作單元；本次僅使用 isolatedContext=longines-kr-market 進行操作，未讀取、修改或參考該等頁面內的任何資料，也未讀寫任何非 KR 的 market/history/evidence 檔案。",
+  "tax": {
+    "priceType": "tax-include",
+    "taxRatePercent": 10,
+    "basis": [
+      {
+        "source": "가격표시제 실시요령 (Price Display Implementation Guideline，前 지식경제부고시 제2009-137호，2009-10-01 施行，現由公平交易委員會維護)",
+        "url": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=65574",
+        "finding": "韓國一般消費品／服務之零售標示價格慣例為總額表示（含加值稅），與多數消費者保護規範一致；本次未能取得逐條原文（頁面內容需另開「本文」分頁），僅以行政規則存在與施行日期作輔助佐證。"
+      },
+      {
+        "source": "일반 부가가치세(VAT) 稅率慣例",
+        "url": "https://korea.acclime.com/guides/vat/",
+        "finding": "韓國標準加值稅稅率為 10%，為零售價格內含稅額之慣例基礎。"
+      },
+      {
+        "source": "LONGINES 韓國站 StoreConfig（商品頁 __NEXT_DATA__）",
+        "url": "https://www.longines.com/kr/p/watch-hydroconquest-l3-788-4-98-6",
+        "finding": "tax_sales_display_price=2、tax_display_shipping=2（Magento 設定值 2 通常代表含稅顯示），與台灣站、既有 Omega 韓國市場記錄的輔助觀察一致。僅作輔助觀察，非 Longines 官方逐字聲明。"
+      },
+      {
+        "source": "既有 data/evidence/omega/KR/2026-09-18/collection-summary.json 記錄的國稅廳書面解釋（국세청 서면인터넷방문상담3팀-2350, 2007-08-22，援引 서면3팀-1695/2006-08-04 及 부가46015-1797/2000-07-26）",
+        "url": null,
+        "finding": "該既有 evidence 引用國稅廳書面解釋：價格未另外標示稅額且無法判斷是否含稅時，視為含稅價格之 10/110。本次透過 WebSearch 嘗試獨立查證該具體文號原文未能直接取得可公開檢視的原文頁面，因此僅列為交叉參考，不作為唯一依據；本次 tax-include 10% 判定主要依據為前兩項稅制慣例與 Magento 輔助訊號的組合，與既有韓國市場（Rolex、Omega）記錄的稅制分類一致。"
+      }
+    ],
+    "limitation": "LONGINES 韓國商品頁未以文字明示「含稅」；本次依韓國加值稅慣例、公平交易委員會價格表示行政規則存在、Magento StoreConfig 輔助訊號，並與既有韓國市場（Rolex、Omega）稅制記錄一致性交叉比對後，記錄為 tax-include 10%，並非 Longines 官方逐字聲明。國稅廳特定文號書面解釋未能獨立取得原文核實，已如實記錄此限制。",
+    "checkedAt": "2026-09-25T09:35:00Z"
+  }
+}
