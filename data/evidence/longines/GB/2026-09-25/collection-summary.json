@@ -1,0 +1,573 @@
+{
+  "brandId": "longines",
+  "marketCode": "GB",
+  "locale": "en-gb",
+  "collectedAt": "2026-09-25T14:20:00.000Z",
+  "entryUrl": "https://www.longines.com/en-gb/watches",
+  "attempts": [
+    {
+      "attempt": 1,
+      "at": "2026-09-25T14:19:00.000Z",
+      "method": "chrome-devtools MCP new_page，開啟 https://www.longines.com/gb/watches",
+      "scope": "入口探索",
+      "result": "FAIL",
+      "error": "頁面回傳 'Page not found | LONGINES'（HTTP 層由 Next.js 404 頁面處理，非官方入口）"
+    },
+    {
+      "attempt": 2,
+      "at": "2026-09-25T14:20:00.000Z",
+      "method": "chrome-devtools MCP navigate_page，改為 https://www.longines.com/en-gb/watches",
+      "scope": "入口確認、market 條件（locale/store/currency）",
+      "result": "PASS",
+      "error": null
+    },
+    {
+      "attempt": 3,
+      "at": "2026-09-25T14:20:30.000Z",
+      "method": "chrome-devtools MCP evaluate_script，於官方頁面 session 內以同源 fetch 重放官方 ProductList GraphQL 操作原文（store: en_gb / lang: en-gb），先使用未精簡的完整片段集合",
+      "scope": "驗證原始 GraphQL 操作可否直接沿用",
+      "result": "FAIL",
+      "error": "伺服器回傳 GRAPHQL_VALIDATION_FAILED：'There can be only one fragment named \"ProductConfiguratorFragment\"'（第一次因複製時重複貼上片段），修正後仍回傳 3 筆 'Fragment ... is never used.' 驗證錯誤，導致 data 為空"
+    },
+    {
+      "attempt": 4,
+      "at": "2026-09-25T14:21:00.000Z",
+      "method": "chrome-devtools MCP evaluate_script，改用精簡後的 ProductListLite 查詢（移除未使用的 ProductConfiguratorFragment／WatchComparatorSummaryItem／ProductSummaryDescriptionFragment 片段與非必要重欄位）",
+      "scope": "全部 34 頁 + 第 35 頁停止證據",
+      "result": "PASS",
+      "error": null
+    },
+    {
+      "attempt": 4.1,
+      "at": "2026-09-25T14:22:00.000Z",
+      "method": "chrome-devtools MCP evaluate_script，單次呼叫嘗試逐頁請求全部 34 頁並寫入 filePath",
+      "scope": "一次性完成全部分頁收集",
+      "result": "FAIL",
+      "error": "Runtime.callFunctionOn timed out（單次呼叫執行時間超過 protocolTimeout），未產生輸出檔案"
+    },
+    {
+      "attempt": 4.2,
+      "at": "2026-09-25T14:23:00.000Z",
+      "method": "chrome-devtools MCP evaluate_script，改為每批 5-6 頁分 6 批執行（第 1-34 頁）並個別寫入 filePath，另加一批取得第 35 頁停止證據",
+      "scope": "全部 34 頁 + 第 35 頁停止證據",
+      "result": "PASS",
+      "error": null
+    },
+    {
+      "attempt": 5,
+      "at": "2026-09-25T14:38:30.000Z",
+      "method": "chrome-devtools MCP，導向一個官方商品頁讀取 __NEXT_DATA__.props.pageProps.fallback 中 ProductAttributes(en-gb) 取得 case_material／dial_color 選項標籤，並讀取該頁 schema.org Product JSON-LD",
+      "scope": "屬性標籤對應、單筆抽查基準",
+      "result": "PASS",
+      "error": null
+    },
+    {
+      "attempt": 6,
+      "at": "2026-09-25T14:39:30.000Z",
+      "method": "chrome-devtools MCP navigate_page + evaluate_script，逐一導向 5 個家族頁讀取 __NEXT_DATA__ total_count",
+      "scope": "5 個家族官方總數對帳",
+      "result": "PASS",
+      "error": null
+    },
+    {
+      "attempt": 7,
+      "at": "2026-09-25T14:40:30.000Z",
+      "method": "chrome-devtools MCP evaluate_script，於同一頁面 session 內以輕量 ProductListCount GraphQL（僅取 total_count）逐一以 category_uid 篩選 31 個子系列",
+      "scope": "31 個子系列官方總數對帳",
+      "result": "PASS",
+      "error": null
+    },
+    {
+      "attempt": 8,
+      "at": "2026-09-25T14:41:00.000Z",
+      "method": "gov.uk 與相關法規頁面（WebFetch／WebSearch）",
+      "scope": "稅制查核：VAT 標準稅率與零售標價須含稅之法規依據",
+      "result": "PASS",
+      "error": null
+    },
+    {
+      "attempt": 9,
+      "at": "2026-09-25T14:41:30.000Z",
+      "method": "WebSearch，5 組英文俗稱查詢（HydroConquest／Spirit Zulu Time／Legend Diver-Skin Diver／通用俗稱／Conquest／Master Collection／DolceVita-Flagship-PrimaLuna）",
+      "scope": "俗稱研究",
+      "result": "PASS",
+      "error": null
+    },
+    {
+      "attempt": 10,
+      "at": "2026-09-25T14:42:00.000Z",
+      "method": "chrome-devtools MCP，逐一導向 20 款官方商品頁讀取 SSR schema.org Product JSON-LD 與列表資料交叉核對",
+      "scope": "獨立抽查 20 款",
+      "result": "PASS",
+      "error": null
+    }
+  ],
+  "sourceDiscovery": {
+    "method": "英國官方站與既有 HK／TW 站共用同一 Next.js 前端與 Magento GraphQL 後端（僅 store/lang 不同：en_gb / en-gb）。/gb/watches 不是有效入口（回傳 404），實際入口為 /en-gb/watches。/en-gb/watches 的 SSR __NEXT_DATA__ 含 total_count=806 與第 1 頁 24 筆；htmlLang=en-gb；category_uid 篩選值沿用 'NA=='（與 TW/HK 相同的「腕錶」分類 uid，三個市場共用同一商品目錄樹，僅 store/lang 顯示不同語系與價格）。點擊「顯示更多結果」對應的官方請求為同源 GET https://www.longines.com/api/graphql?operationName=ProductList，帶 store: en_gb、lang: en-gb 標頭；本次先嘗試沿用既有 HK evidence 中記錄的完整 ProductList 查詢文字重放，因該文字含未被 ProductList 實際引用的片段（於 GB 站現行伺服器版本被判定為驗證錯誤）而失敗，改用精簡後僅含實際使用片段與所需欄位的 ProductListLite 查詢，欄位命名與 category_uid 篩選值仍完全取自官方頁面本身。",
+    "officialEndpoints": [
+      "https://www.longines.com/en-gb/watches",
+      "https://www.longines.com/api/graphql?operationName=ProductListLite",
+      "https://www.longines.com/en-gb/watches/{family}",
+      "https://www.longines.com/en-gb/p/{url_key}",
+      "https://www.longines.com/api/graphql (ProductAttributes／StoreConfig，經商品頁 __NEXT_DATA__.props.pageProps.fallback 讀取)",
+      "https://www.longines.com/api/graphql?operationName=ProductListCount（本次為子系列 total_count 對帳精簡查詢）"
+    ],
+    "structuredFieldsUsed": [
+      "products.total_count / page_info（官方總數與分頁）",
+      "items[].sku（完整點分參考號）",
+      "items[].url_key / name / tag（NEW／BESTSELLER 標示）",
+      "items[].categories[].url_path／uid（家族／子系列歸屬與 uid，供子系列 total_count 對帳）",
+      "items[].preferred_category{name,url_path}（家族／子系列官方顯示名稱與唯一歸屬）",
+      "items[].case_dimension、case_material、dial_color（後兩者經 ProductAttributes(en-gb) attributeMetadata.items 標籤對應）",
+      "items[].base_price {value, value_formatted, currency} / special_price",
+      "items[].stock_status（IN_STOCK／OUT_OF_STOCK，僅供觀察記錄，不影響 listingStatus 判定）"
+    ]
+  },
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "available",
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "PASS",
+    "toolsAttempted": [
+      {
+        "tool": "chrome-devtools MCP (new_page / navigate_page / evaluate_script / list_network_requests / get_network_request)",
+        "result": "PASS",
+        "detail": "於 isolatedContext=longines-gb-market 觀察 CartProductDetails 等請求的 store/lang 標頭與回應內容，並在頁面 session 內以 fetch 重放精簡後的 ProductListLite、家族頁與子系列 total_count 查詢，完成全量收集、屬性標籤對應、家族／子系列對帳與商品頁抽查。"
+      },
+      {
+        "tool": "WebFetch / WebSearch",
+        "result": "PASS",
+        "detail": "用於稅制法規（GOV.UK VAT 稅率頁、Price Marking Order 2004 相關說明）與俗稱研究，不作為逐筆商品資料來源。"
+      },
+      {
+        "tool": "claude-in-chrome MCP",
+        "result": "NOT RUN",
+        "detail": "chrome-devtools MCP 已足以完成 network 與 DOM 觀察。"
+      }
+    ],
+    "fallbackTool": null,
+    "notes": "檢視 network request 時工具輸出曾顯示請求 Cookie 標頭（例如 CartProductDetails 請求的 cookie 標頭）；未將任何 Cookie、token 或 session 值寫入 evidence。暫存的原始 GraphQL 回應與中繼正規化檔案僅存於專案內 .tmp-gb-collect/（本機工作目錄，非 data/ 正式路徑，不納入版本控制的正式資料範圍，且不含機敏資訊）。"
+  },
+  "pagination": {
+    "pageSize": 24,
+    "officialTotalCount": 806,
+    "pagesRequested": 34,
+    "allHttp200": true,
+    "stopEvidence": {
+      "lastPage": 34,
+      "lastPageItemCount": 14,
+      "requestBeyondLastPage": {
+        "pageNumber": 35,
+        "httpStatus": 200,
+        "itemCount": 0,
+        "errors": [
+          "currentPage value 35 specified is greater than the 34 page(s) available."
+        ]
+      },
+      "explanation": "34 頁：前 33 頁每頁 24 筆 + 第 34 頁 14 筆 = 806，與官方 total_count 806 相符；第 35 頁官方 GraphQL 回傳錯誤「currentPage value 35 specified is greater than the 34 page(s) available.」，證實沒有更多頁。"
+    }
+  },
+  "counts": {
+    "rawItemCount": 806,
+    "uniqueReferenceCount": 806,
+    "duplicateReferenceCount": 0,
+    "typenames": {
+      "SimpleProduct": 806
+    },
+    "listed": 806,
+    "priceUnavailable": 0,
+    "notListed": 0,
+    "newModelCount": 97,
+    "bestsellerCount": 72,
+    "specialPriceCount": 0,
+    "inStockCount": 770,
+    "outOfStockCount": 36
+  },
+  "familyReconciliation": [
+    {
+      "family": "conquest",
+      "url": "https://www.longines.com/en-gb/watches/conquest",
+      "officialTotal": 186,
+      "collectedCount": 186,
+      "matchesOfficialTotal": true
+    },
+    {
+      "family": "elegance",
+      "url": "https://www.longines.com/en-gb/watches/elegance",
+      "officialTotal": 331,
+      "collectedCount": 331,
+      "matchesOfficialTotal": true
+    },
+    {
+      "family": "heritage",
+      "url": "https://www.longines.com/en-gb/watches/heritage",
+      "officialTotal": 73,
+      "collectedCount": 73,
+      "matchesOfficialTotal": true
+    },
+    {
+      "family": "master",
+      "url": "https://www.longines.com/en-gb/watches/master",
+      "officialTotal": 158,
+      "collectedCount": 158,
+      "matchesOfficialTotal": true
+    },
+    {
+      "family": "spirit",
+      "url": "https://www.longines.com/en-gb/watches/spirit",
+      "officialTotal": 58,
+      "collectedCount": 58,
+      "matchesOfficialTotal": true
+    }
+  ],
+  "subcategoryReconciliation": [
+    {
+      "subcategoryPath": "master/master-collection",
+      "collectionId": "master-collection",
+      "url": "https://www.longines.com/en-gb/watches/master/master-collection",
+      "officialName": "THE LONGINES MASTER COLLECTION",
+      "officialTotal": 101,
+      "collectedCount": 101,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "conquest/conquest",
+      "collectionId": "conquest",
+      "url": "https://www.longines.com/en-gb/watches/conquest/conquest",
+      "officialName": "CONQUEST",
+      "officialTotal": 88,
+      "collectedCount": 88,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "elegance/la-grande-classique",
+      "collectionId": "la-grande-classique",
+      "url": "https://www.longines.com/en-gb/watches/elegance/la-grande-classique",
+      "officialName": "LA GRANDE CLASSIQUE DE LONGINES",
+      "officialTotal": 66,
+      "collectedCount": 66,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "elegance/dolcevita",
+      "collectionId": "dolcevita",
+      "url": "https://www.longines.com/en-gb/watches/elegance/dolcevita",
+      "officialName": "LONGINES DOLCEVITA",
+      "officialTotal": 60,
+      "collectedCount": 60,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "conquest/hydroconquest",
+      "collectionId": "hydroconquest",
+      "url": "https://www.longines.com/en-gb/watches/conquest/hydroconquest",
+      "officialName": "HYDROCONQUEST",
+      "officialTotal": 57,
+      "collectedCount": 57,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "elegance/flagship",
+      "collectionId": "flagship",
+      "url": "https://www.longines.com/en-gb/watches/elegance/flagship",
+      "officialName": "FLAGSHIP CLASSIC",
+      "officialTotal": 55,
+      "collectedCount": 55,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "elegance/primaluna",
+      "collectionId": "primaluna",
+      "url": "https://www.longines.com/en-gb/watches/elegance/primaluna",
+      "officialName": "LONGINES PRIMALUNA",
+      "officialTotal": 51,
+      "collectedCount": 51,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "elegance/elegant",
+      "collectionId": "elegant",
+      "url": "https://www.longines.com/en-gb/watches/elegance/elegant",
+      "officialName": "LONGINES ELEGANT COLLECTION",
+      "officialTotal": 42,
+      "collectedCount": 42,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "master/master-collection-chronograph",
+      "collectionId": "master-collection-chronograph",
+      "url": "https://www.longines.com/en-gb/watches/master/master-collection-chronograph",
+      "officialName": "THE LONGINES MASTER COLLECTION CHRONOGRAPH",
+      "officialTotal": 30,
+      "collectedCount": 30,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "heritage/conquest-heritage",
+      "collectionId": "conquest-heritage",
+      "url": "https://www.longines.com/en-gb/watches/heritage/conquest-heritage",
+      "officialName": "CONQUEST HERITAGE",
+      "officialTotal": 26,
+      "collectedCount": 26,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "spirit/spirit-zulu-time",
+      "collectionId": "spirit-zulu-time",
+      "url": "https://www.longines.com/en-gb/watches/spirit/spirit-zulu-time",
+      "officialName": "LONGINES SPIRIT ZULU TIME",
+      "officialTotal": 24,
+      "collectedCount": 24,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "elegance/mini-dolcevita",
+      "collectionId": "mini-dolcevita",
+      "url": "https://www.longines.com/en-gb/watches/elegance/mini-dolcevita",
+      "officialName": "LONGINES MINI DOLCEVITA",
+      "officialTotal": 23,
+      "collectedCount": 23,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "master/master-collection-moonphase",
+      "collectionId": "master-collection-moonphase",
+      "url": "https://www.longines.com/en-gb/watches/master/master-collection-moonphase",
+      "officialName": "THE LONGINES MASTER COLLECTION MOONPHASE",
+      "officialTotal": 23,
+      "collectedCount": 23,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "elegance/record",
+      "collectionId": "record",
+      "url": "https://www.longines.com/en-gb/watches/elegance/record",
+      "officialName": "RECORD",
+      "officialTotal": 21,
+      "collectedCount": 21,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "conquest/conquest-classic",
+      "collectionId": "conquest-classic",
+      "url": "https://www.longines.com/en-gb/watches/conquest/conquest-classic",
+      "officialName": "CONQUEST CLASSIC",
+      "officialTotal": 20,
+      "collectedCount": 20,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "heritage/legend-diver",
+      "collectionId": "legend-diver",
+      "url": "https://www.longines.com/en-gb/watches/heritage/legend-diver",
+      "officialName": "LONGINES LEGEND DIVER",
+      "officialTotal": 17,
+      "collectedCount": 17,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "elegance/evidenza",
+      "collectionId": "evidenza",
+      "url": "https://www.longines.com/en-gb/watches/elegance/evidenza",
+      "officialName": "LONGINES EVIDENZA",
+      "officialTotal": 13,
+      "collectedCount": 13,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "spirit/spirit",
+      "collectionId": "spirit",
+      "url": "https://www.longines.com/en-gb/watches/spirit/spirit",
+      "officialName": "LONGINES SPIRIT",
+      "officialTotal": 13,
+      "collectedCount": 13,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "conquest/hydroconquest-gmt",
+      "collectionId": "hydroconquest-gmt",
+      "url": "https://www.longines.com/en-gb/watches/conquest/hydroconquest-gmt",
+      "officialName": "HYDROCONQUEST GMT",
+      "officialTotal": 11,
+      "collectedCount": 11,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "conquest/conquest-chronograph",
+      "collectionId": "conquest-chronograph",
+      "url": "https://www.longines.com/en-gb/watches/conquest/conquest-chronograph",
+      "officialName": "CONQUEST CHRONOGRAPH",
+      "officialTotal": 10,
+      "collectedCount": 10,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "heritage/flagship-heritage",
+      "collectionId": "flagship-heritage",
+      "url": "https://www.longines.com/en-gb/watches/heritage/flagship-heritage",
+      "officialName": "FLAGSHIP HERITAGE",
+      "officialTotal": 8,
+      "collectedCount": 8,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "spirit/spirit-flyback",
+      "collectionId": "spirit-flyback",
+      "url": "https://www.longines.com/en-gb/watches/spirit/spirit-flyback",
+      "officialName": "LONGINES SPIRIT FLYBACK",
+      "officialTotal": 8,
+      "collectedCount": 8,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "heritage/heritage-avigation",
+      "collectionId": "heritage-avigation",
+      "url": "https://www.longines.com/en-gb/watches/heritage/heritage-avigation",
+      "officialName": "THE LONGINES AVIGATION",
+      "officialTotal": 7,
+      "collectedCount": 7,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "heritage/ultra-chron",
+      "collectionId": "ultra-chron",
+      "url": "https://www.longines.com/en-gb/watches/heritage/ultra-chron",
+      "officialName": "ULTRA‑CHRON",
+      "officialTotal": 7,
+      "collectedCount": 7,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "heritage/heritage-classic",
+      "collectionId": "heritage-classic",
+      "url": "https://www.longines.com/en-gb/watches/heritage/heritage-classic",
+      "officialName": "HERITAGE CLASSIC",
+      "officialTotal": 5,
+      "collectedCount": 5,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "spirit/spirit-pilot",
+      "collectionId": "spirit-pilot",
+      "url": "https://www.longines.com/en-gb/watches/spirit/spirit-pilot",
+      "officialName": "LONGINES SPIRIT PILOT",
+      "officialTotal": 5,
+      "collectedCount": 5,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "spirit/spirit-chronograph",
+      "collectionId": "spirit-chronograph",
+      "url": "https://www.longines.com/en-gb/watches/spirit/spirit-chronograph",
+      "officialName": "LONGINES SPIRIT CHRONOGRAPH",
+      "officialTotal": 4,
+      "collectedCount": 4,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "spirit/spirit-pilot-flyback",
+      "collectionId": "spirit-pilot-flyback",
+      "url": "https://www.longines.com/en-gb/watches/spirit/spirit-pilot-flyback",
+      "officialName": "LONGINES SPIRIT PILOT FLYBACK",
+      "officialTotal": 4,
+      "collectedCount": 4,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "heritage/pilot-majetek",
+      "collectionId": "pilot-majetek",
+      "url": "https://www.longines.com/en-gb/watches/heritage/pilot-majetek",
+      "officialName": "LONGINES PILOT MAJETEK",
+      "officialTotal": 3,
+      "collectedCount": 3,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "master/master-collection-chrono-monopusher",
+      "collectionId": "master-collection-chrono-monopusher",
+      "url": "https://www.longines.com/en-gb/watches/master/master-collection-chrono-monopusher",
+      "officialName": "THE LONGINES MASTER COLLECTION CHRONO MONOPUSHER",
+      "officialTotal": 2,
+      "collectedCount": 2,
+      "matchesOfficialTotal": true
+    },
+    {
+      "subcategoryPath": "master/master-gmt",
+      "collectionId": "master-gmt",
+      "url": "https://www.longines.com/en-gb/watches/master/master-gmt",
+      "officialName": "THE LONGINES MASTER COLLECTION GMT",
+      "officialTotal": 2,
+      "collectedCount": 2,
+      "matchesOfficialTotal": true
+    }
+  ],
+  "normalization": {
+    "reference": "官方 sku 逐字保存（點分、含英數後綴），watchId = 'longines:' + sku。",
+    "collectionId": "採官方子系列 URL 路徑最後一段（例如 watches/master/master-gmt → master-gmt）；每筆恰好屬於一個子系列（以 preferred_category.url_path 判定），31 個 collectionId 皆唯一。此欄位不在 market schema 中，僅記錄於本 evidence 供統籌者合併 catalog 使用。",
+    "collectionName": "官方子系列 en-gb 分類名稱（preferred_category.name），806 筆中每個 collectionId 對應名稱皆一致，無衝突。",
+    "modelName": "items[].name 原文。",
+    "caseDescription": "'<case_dimension>, <case_material 標籤>'，與商品頁 schema.org JSON-LD 的 width、material 同組欄位；20 筆獨立抽查全數一致。",
+    "dialDescription": "dial_color 官方標籤（與商品頁 JSON-LD color 相同）。",
+    "isNewModel": "tag == 'NEW'（清單卡片顯示「NEW」）；BESTSELLER 不視為新款，與既有 HK／TW 規則一致。",
+    "price": "value_formatted（例如 '£2,300.00'）以 '£' 前綴與逗號千分位、句點分隔小數解析為整數，並與結構化 base_price.value 比對一致；806 筆全數為整數（小數皆為 .00），無非零小數；special_price 全數為 null。"
+  },
+  "tax": {
+    "priceType": "tax-include",
+    "taxRatePercent": 20,
+    "basis": [
+      {
+        "source": "GOV.UK — VAT rates",
+        "url": "https://www.gov.uk/vat-rates",
+        "finding": "官方頁面明示英國標準 VAT 稅率為 20%（自 2011-01-04 生效）；「大多數商品與服務」適用標準稅率，手錶／珠寶未列於減免或零稅率清單，屬標準稅率商品。"
+      },
+      {
+        "source": "GOV.UK / Business Companion — Price Marking Order 2004 摘要（Providing price information）",
+        "url": "https://www.businesscompanion.info/en/quick-guides/pricing-and-payment/providing-price-information",
+        "finding": "英國《Price Marking Order 2004》規定：商品對消費者標示的售價（selling price）須為含 VAT 及其他稅之最終消費者實付價格；本次於商品頁未見逐字「VAT」聲明（搜尋 \\bVAT\\b 於商品頁內文為 0 筆），但依法規與零售慣例，官網對消費者顯示之價格應為含稅價。"
+      },
+      {
+        "source": "LONGINES 英國站 StoreConfig",
+        "url": "https://www.longines.com/en-gb/watches",
+        "finding": "tax_sales_display_price=2、tax_display_shipping=2（Magento 設定值，2 代表顯示含稅價），與既有 HK／TW 站相同設定欄位、且與既有 Omega GB 市場（tax-include, 20%）判定一致。"
+      }
+    ],
+    "limitation": "LONGINES 英國站商品頁未以逐字文字明示「VAT included」；本次依英國政府 VAT 標準稅率（20%）與《Price Marking Order 2004》要求零售標價含稅之法規，判定 tax-include、taxRatePercent 20，並與既有 Omega GB 市場的獨立判定結果一致（互為佐證但非直接引用）。",
+    "checkedAt": "2026-09-25T14:41:00.000Z"
+  },
+  "priceStatistics": {
+    "currency": "GBP",
+    "listed": 806,
+    "priceUnavailable": 0,
+    "notListed": 0,
+    "min": {
+      "price": 850,
+      "references": [
+        "L3.759.4.58.6",
+        "L3.759.4.76.6",
+        "L3.759.4.96.6"
+      ]
+    },
+    "max": {
+      "price": 22850,
+      "references": [
+        "L5.200.7.71.6",
+        "L5.200.9.71.6"
+      ]
+    },
+    "median": 2250.0
+  },
+  "scopeNotes": [
+    "收集範圍為官方「Watches」分類（category_uid NA==，與既有 TW/HK 共用同一分類 uid）；本次未收錄眼鏡等非腕錶商品。",
+    "806 筆皆為 SimpleProduct，無 ConfigurableProduct 變體需展開。",
+    "806 筆中 770 筆 stock_status=IN_STOCK、36 筆 OUT_OF_STOCK（官方線上庫存狀態）；OUT_OF_STOCK 款式仍為官方正式列出且提供公開價格，依規則記錄為 listed；本次未觀察到任何款式缺乏公開價格（price-unavailable）。",
+    "GB 站的 31 個子系列組成與既有 HK（30 個）、TW（30 個）不完全相同：GB 有 'conquest-classic'（20 筆，與 TW 相同但 HK 無）且同時有 'master-gmt'（2 筆，與 HK 相同但 TW 無），即 GB 同時涵蓋 HK 與 TW 個別獨有的子系列；此為市場官方陳列差異，非收集錯誤，實際差集需由統籌者於合併 catalog 時逐筆確認。",
+    "本次未逐一比對 806 筆與既有 TW(544)/HK(493)/JP(612)/KR(456) 完整參考號交集，因跨市場 reference 完全比對屬於統籌者合併 catalog 時的職責（C∩M／M−C／C−M 計算），非本工作單元範圍；下方 marketDiffNote 僅為子系列層級的初步觀察。"
+  ],
+  "marketDiffNote": {
+    "note": "與既有 Longines TW（544 筆，30 個 collectionId）、HK（493 筆，30 個 collectionId）比較的子系列層級初步觀察，僅供統籌者參考，不作為驗收依據：",
+    "watchCountDiff": "GB 806 筆，多於 TW 544 筆與 HK 493 筆；GB 官方陳列款式數量為既有三市場中最多。",
+    "collectionIdDiff": "GB 31 個 collectionId，含 TW 的 'conquest-classic'（TW 有、HK 無）與 HK 的 'master-gmt'（HK 有、TW 無），其餘 29 個 collectionId 名稱與既有市場相同。"
+  },
+  "tempFilesNote": "瀏覽器擷取的暫存原始回應與中繼正規化檔案存於專案內 .tmp-gb-collect/（本機工作目錄，非 data/ 正式路徑），未納入版本控制，且不含 Cookie、token 或個資。"
+}

@@ -1,0 +1,641 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "US",
+  "runId": "2026-09-25-us-imageurl-backfill",
+  "relatedObservationsRunPath": "data/evidence/longines/US/2026-09-25/observations.json",
+  "purpose": "Backfill imageUrl for 66 fully-new configurations (references not present in the pre-existing 725-item catalog and not observed with an image URL by the concurrently-collected Longines Switzerland market evidence) that the original US market/new-market collection run on 2026-09-25 recorded without an imageUrl field. This supplements observations.json; it does not modify or overwrite it.",
+  "scope": "imageUrl-field-backfill-only",
+  "notInScope": [
+    "price re-verification",
+    "listing status re-verification",
+    "nickname research",
+    "market/history file changes",
+    "catalog merge"
+  ],
+  "observationWindow": {
+    "start": "2026-09-25T15:20:00.000Z",
+    "end": "2026-09-25T15:28:47.000Z"
+  },
+  "collectionMethod": {
+    "tool": "chrome-devtools MCP (evaluate_script) against an active longines.com tab",
+    "technique": "In-page same-origin fetch() of each product URL's rendered HTML, followed by regex extraction of <meta property=\"og:image\" content=\"...\"> from the response body.",
+    "verificationSample": {
+      "reference": "L4.209.1.90.E",
+      "note": "Cross-checked via document.querySelector for og:image meta tag and JSON-LD script[type=application/ld+json] image field on the live rendered page (not just fetched HTML); both matched the same URL, confirming the extraction method is reliable for this site.",
+      "ogImage": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-1-90-e-276e01-hero.png",
+      "jsonLdImage": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-1-90-e-276e01-hero.png"
+    },
+    "rateLimiting": "Sequential fetches with a 300ms delay between requests, executed in 4 batches (15/17/17/17) within the same browser tab session; no concurrency increase, no retries needed (all requests returned HTTP 200 on first attempt).",
+    "priorAttempt": "Direct curl/HTTP fetch from the sandbox shell (non-browser) was attempted first for a single sample URL and failed with a TLS/HTTP2 connection reset (INTERNAL_ERROR), consistent with anti-bot protection; WebFetch tool succeeded but returns markdown-summarized content without a reliably labeled source field, so the real-browser chrome-devtools approach was used for all 66 records to keep the extraction method verifiable and consistent with browser-web-data-discovery skill guidance."
+  },
+  "requestedReferenceCount": 66,
+  "resultCounts": {
+    "success": 66,
+    "failed": 0,
+    "notFound": 0
+  },
+  "observations": [
+    {
+      "reference": "L4.209.1.90.E",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-1-90-e",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-1-90-e-276e01-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.1.91.B",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-1-91-b",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-1-91-b-ece791-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.1.91.D",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-1-91-d",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-1-91-d-7ba2e5-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.1.93.E",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-1-93-e",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-1-93-e-557413-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.1.97.D",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-1-97-d",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-1-97-d-646303-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.1.97.E",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-1-97-e",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-1-97-e-76dac0-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.2.11.B",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-2-11-b",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-2-11-b-d2e435-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.2.11.D",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-2-11-d",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-2-11-d-e476b9-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.2.11.E",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-2-11-e",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-2-11-e-99acde-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.2.33.E",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-2-33-e",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-2-33-e-69e448-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.2.37.E",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-2-37-e",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-2-37-e-e0780f-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.2.87.D",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-2-87-d",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-2-87-d-73e199-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.2.87.E",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-2-87-e",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-2-87-e-a82d8b-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.4.11.B",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-4-11-b",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-4-11-b-c76b2a-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.4.11.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-4-11-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-4-11-c-6e85ee-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.4.58.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-4-58-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-4-58-c-cfc1c4-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.4.70.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-4-70-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-4-70-c-17deac-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.4.71.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-4-71-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-4-71-c-fc46bf-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.4.74.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-4-74-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-4-74-c-f6aedd-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.4.81.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-4-81-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-4-81-c-93dae0-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.4.87.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-4-87-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-4-87-c-3fca3a-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.209.4.97.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-209-4-97-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-209-4-97-c-75c2d3-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.341.0.11.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-341-0-11-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-341-0-11-c-3a68e4-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.341.0.80.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-341-0-80-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-341-0-80-c-f30173-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.341.0.97.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-341-0-97-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-341-0-97-c-ab1581-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.1.08.D",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-1-08-d",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-1-08-d-66771d-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.1.57.D",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-1-57-d",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-1-57-d-b8fba5-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.1.67.D",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-1-67-d",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-1-67-d-c82d95-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.1.90.E",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-1-90-e",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-1-90-e-4ad570-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.1.91.B",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-1-91-b",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-1-91-b-543818-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.1.91.D",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-1-91-d",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-1-91-d-1a8323-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.1.93.E",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-1-93-e",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-1-93-e-557413-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.1.97.D",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-1-97-d",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-1-97-d-eec848-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.1.97.E",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-1-97-e",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-1-97-e-0ca4cf-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.2.11.B",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-2-11-b",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-2-11-b-1ee424-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.2.11.D",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-2-11-d",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-2-11-d-0b6905-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.2.33.E",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-2-33-e",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-2-33-e-69e448-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.2.37.E",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-2-37-e",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-2-37-e-dc54f7-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.2.87.D",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-2-87-d",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-2-87-d-9f0370-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.2.87.E",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-2-87-e",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-2-87-e-9ed245-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.4.11.B",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-4-11-b",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-4-11-b-cd12ca-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.4.11.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-4-11-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-4-11-c-107c75-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.4.58.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-4-58-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-4-58-c-854c91-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.4.70.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-4-70-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-4-70-c-11d531-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.4.74.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-4-74-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-4-74-c-b8ce99-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.4.77.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-4-77-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-4-77-c-732095-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.4.81.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-4-81-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-4-81-c-f02e61-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.4.87.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-4-87-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-4-87-c-b99193-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.4.91.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-4-91-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-4-91-c-1122ae-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.4.92.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-4-92-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-4-92-c-90d2c9-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.512.4.97.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-512-4-97-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-512-4-97-c-1c054a-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.523.0.11.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-523-0-11-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-523-0-11-c-3dc17e-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.523.0.87.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-523-0-87-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-523-0-87-c-5f3f5a-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.755.2.11.B",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-755-2-11-b",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-755-2-11-b-6c7869-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.755.2.11.D",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-755-2-11-d",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-755-2-11-d-e22f77-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.755.4.11.B",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-755-4-11-b",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-755-4-11-b-c28fd7-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.755.4.11.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-755-4-11-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-755-4-11-c-8e0145-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.755.4.51.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-755-4-51-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-755-4-51-c-3b94c9-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.755.4.94.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-755-4-94-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-755-4-94-c-3e4b0f-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.866.4.11.B",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-866-4-11-b",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-866-4-11-b-cd4a19-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.866.4.11.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-866-4-11-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-866-4-11-c-9e3bc4-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.866.4.58.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-866-4-58-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-866-4-58-c-c47929-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.866.4.92.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-866-4-92-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-866-4-92-c-fd84de-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.866.4.94.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-866-4-94-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-866-4-94-c-46357a-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L4.866.4.97.C",
+      "productUrl": "https://www.longines.com/en-us/p/watch-la-grande-classique-de-longines-l4-866-4-97-c",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-l4-866-4-97-c-0174b1-hero.png",
+      "failureReason": null
+    },
+    {
+      "reference": "L8.123.4.67.6",
+      "productUrl": "https://www.longines.com/en-us/p/watch-longines-primaluna-l8-123-4-67-6",
+      "observedAt": "2026-09-25T15:28:47.000Z",
+      "retrievalMethod": "og:image meta tag (same-origin fetch of rendered product page HTML from within an active Chrome tab on longines.com, verified against JSON-LD ImageObject.url on a sampled page)",
+      "status": "success",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-primaluna-l8-123-4-67-6-b2c221-hero.png",
+      "failureReason": null
+    }
+  ],
+  "summary": "PASS: 66/66 requested references returned HTTP 200 and yielded an og:image URL matching the https://api.ecom.longines.com/media/catalog/product/... pattern used elsewhere in this collection (e.g. CH market evidence imageUrl/imagePath format). 0 failures, 0 unavailable/delisted pages encountered.",
+  "limitations": [
+    "Only the primary hero image (og:image / JSON-LD ImageObject.url) was captured for each reference; alternate/detail images visible on the page (e.g. *-detailed-view-*.jpg) were not recorded, matching the single imageUrl field required by data/schemas/watch-catalog.schema.json.",
+    "Per-record observedAt timestamps were not captured individually inside the batch fetch script; all records in this run share the single observationWindow above rather than a unique per-item timestamp. This is acceptable for an image-URL-only backfill (not a price/listing observation) but is noted as a limitation.",
+    "This file does not re-verify price, listingStatus, or nickname data for these 66 references; those remain as recorded in the original observations.json from this same evidence run.",
+    "No market/history/catalog files were modified by this task; catalog merge and cross-market reconciliation remain the coordinator's responsibility."
+  ]
+}

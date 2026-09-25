@@ -1,0 +1,68 @@
+{
+  "brandId": "longines",
+  "marketCode": "GB",
+  "researchedAt": "2026-09-25T14:41:30.000Z",
+  "scope": "new-market",
+  "status": "PASS",
+  "languages": [
+    "en"
+  ],
+  "method": "以英文（英國市場語境）查詢英國市場流通的 Longines 俗稱，要求來源能把名稱明確對應到本輪 31 個官方子系列（collectionId）之一，或 806 個英國官方完整參考號中的單一配置。候選來源須為可驗證的英國／通用英語錶類媒體、零售商或論壇（以 .co.uk 網域、英國論壇語境或明確標註英國市場佐證優先；非英國英語來源僅在明確可唯一對應本輪配置且無更合適之英國來源時審慎考慮，本次未有此情形被採用）。官方名稱（如 CONQUEST、MASTER COLLECTION 為官網本身分類名稱）不視為俗稱。",
+  "queries": [
+    "Longines HydroConquest nickname UK watch enthusiasts",
+    "Longines Spirit Zulu Time nickname UK collectors forum",
+    "Longines Legend Diver nickname \"skin diver\" UK",
+    "\"Longines\" watch nickname UK forum \"we call it\" OR \"nicknamed\"",
+    "Longines Conquest nickname \"the office watch\" OR \"banker's watch\" collectors",
+    "Longines Master Collection nickname enthusiasts common name",
+    "Longines DolceVita OR Flagship OR PrimaLuna nickname watch collectors UK slang"
+  ],
+  "sourcesReviewed": [
+    {
+      "publisher": "Gear Patrol（美國，非英國市場來源）",
+      "title": "The Complete Buying Guide to Longines Watches",
+      "url": "https://www.gearpatrol.com/watches/g37024576/longines-watches/",
+      "finding": "提及一款霧面綠面盤 Longines Spirit 型號被暱稱為 'IKE'，但來源為美國媒體而非英國市場可驗證來源，且未指明精確對應本輪哪一個完整參考號或 collectionId（'IKE' 疑似指涉特定限量或已停產配置，本輪 806 筆中未能確認唯一對應項）。",
+      "accepted": false
+    },
+    {
+      "publisher": "WatchUSeek / Fratello Watches / Deployant（綜合英語錶類媒體）",
+      "title": "Skin Diver vs. Legend Diver 相關討論",
+      "url": "https://www.watchuseek.com/threads/skin-diver-vs-legend-diver.4868691/",
+      "finding": "'Skin Diver' 為 Longines 官方於 2018 年推出的獨立復刻產品官方名稱（1958-59 年 Nautilus Skin Diver 的現代復刻），並非 'Legend Diver' 的俗稱；本輪 806 筆官方列表中未發現名稱含 'Skin Diver' 的品項（可能目前未在英國官網上架），為避免將兩個不同官方產品混淆，不採用。",
+      "accepted": false
+    },
+    {
+      "publisher": "LONGINES 英國官方網站",
+      "title": "Conquest / Master Collection 家族頁",
+      "url": "https://www.longines.com/en-gb/watches/conquest",
+      "finding": "'CONQUEST'、'MASTER COLLECTION' 等為 LONGINES 官網本身的正式分類／型號名稱（preferred_category.name／items.name），非民間俗稱。",
+      "accepted": false
+    },
+    {
+      "publisher": "WebSearch 綜合摘要（多來源，含 UK Watch Forum thewatchforum.co.uk、Jura Watches 等英國零售商／論壇）",
+      "title": "Longines HydroConquest／Spirit Zulu Time／Conquest／DolceVita／Flagship／PrimaLuna 俗稱查詢",
+      "url": "https://www.thewatchforum.co.uk/threads/longines-hydroconquest.173016/",
+      "finding": "搜尋結果顯示英國論壇（The Watch Forum）與英國零售商（Jura Watches、Chisholm Hunter 等）對上述系列的討論與商品頁，但未發現英國錶友社群對這些系列使用特定、可唯一對應單一子系列或參考號的俗稱之可信報導或討論串內容；僅出現官方名稱與型號規格說明的重複引用。",
+      "accepted": false
+    }
+  ],
+  "candidateCount": 2,
+  "acceptedCollectionAliasCount": 0,
+  "acceptedLocalNicknameCount": 0,
+  "acceptedCollectionAliases": {},
+  "acceptedNicknames": [],
+  "rejectedCandidates": [
+    {
+      "name": "IKE",
+      "target": "Longines Spirit（霧面綠面盤特定配置，疑似限量或已停產）",
+      "reason": "來源非英國市場可驗證來源（美國 Gear Patrol），且無法在本輪 806 筆英國官方列表中唯一對應到單一完整參考號或 collectionId。"
+    },
+    {
+      "name": "Skin Diver",
+      "target": "Legend Diver 系列（heritage/legend-diver）",
+      "reason": "'Skin Diver' 實為官方另一個獨立復刻產品的正式名稱，而非 Legend Diver 的民間俗稱；兩者為不同官方產品，本輪列表未發現名稱含 Skin Diver 的品項，為避免混淆兩個不同官方產品不予採用。"
+    }
+  ],
+  "notes": "本次查詢 7 組英文關鍵字、檢視 4 組來源（含英國論壇與零售商），未找到能以英國市場可信來源精確、唯一對應到本輪 31 個 collectionId 或任一完整參考號的民間俗稱，故 collectionAliases 與 localNicknames 全部維持空陣列（PASS with 0 accepted results）。與既有 HK 市場（中文語境查得「浪鬼」對應 hydroconquest）不同，本次未在英語語境下找到對等的可信俗稱；此為市場差異的合理結果，非查詢不完整所致。"
+}

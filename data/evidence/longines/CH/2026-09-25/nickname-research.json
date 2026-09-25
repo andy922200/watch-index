@@ -1,0 +1,92 @@
+{
+  "brandId": "longines",
+  "marketCode": "CH",
+  "researchedAt": "2026-09-25T14:40:00.000Z",
+  "scope": "new-market",
+  "status": "PASS",
+  "languages": [
+    "de-CH/de-DE (Hochdeutsch，瑞士德語書面用字與德國書面用字未見顯著差異)"
+  ],
+  "method": "以德語（瑞士官方三大語言之一，且為本次選定的市場 locale de-ch）查詢瑞士／德語圈市場流通的 Longines 俗稱（Spitzname/Übername），要求來源能把俗稱明確對應到本輪 30 個官方子系列（collectionId）之一，或 805 個瑞士官方完整參考號中的單一配置。候選來源須為瑞士或德語圈可驗證的錶類媒體、經銷商或錶友論壇（如 uhrforum.de、watchtime.net、chrono24.ch 等），並排除單純轉述其他市場（如香港「浪鬼」）俗稱的中文內容，以及僅為官方系列名稱本身（如 CONQUEST、MASTER）而非民間俗稱的候選。",
+  "queries": [
+    "Longines HydroConquest Spitzname Uhrforum",
+    "Longines Spirit Zulu Time Spitzname Schweiz Uhr",
+    "Longines Uhr Spitzname Übername Sammler Schweiz",
+    "\"Longines Legend Diver\" Spitzname Skin Diver",
+    "Longines \"La Grande Classique\" Spitzname \"Papst\"",
+    "Longines Conquest Spitzname Uhrenszene",
+    "Longines DolceVita Spitzname Uhr",
+    "Longines Master Collection Spitzname Schweizer Uhrenforum"
+  ],
+  "sourcesReviewed": [
+    {
+      "publisher": "uhrforum.de（德語錶友論壇）",
+      "title": "Longines Hydroconquest - 2026 系列討論串",
+      "url": "https://uhrforum.de/threads/longines-hydroconquest-2026.617712/",
+      "finding": "多頁討論 HydroConquest 規格、價格與配戴心得，未出現任何德語俗稱／暱稱用法。",
+      "accepted": false
+    },
+    {
+      "publisher": "LONGINES 官方頁面（de/de-ch）+ WebSearch 綜合摘要",
+      "title": "LONGINES SPIRIT ZULU TIME 相關頁面",
+      "url": "https://www.longines.com/de-ch/p/watch-longines-spirit-zulu-time-l3-812-4-93-6",
+      "finding": "說明 Zulu Time 名稱源自 1925 年首款雙時區錶款搭配 Zulu 旗幟錶盤，為官方命名典故而非民間俗稱；搜尋未發現額外德語圈俗稱。",
+      "accepted": false
+    },
+    {
+      "publisher": "WebSearch 綜合摘要（Chrono24.at／Bucherer／WatchTime.net／watch-wiki.org 等）",
+      "title": "Longines 品牌與收藏概況（德語）",
+      "url": "https://watch-wiki.org/index.php?title=Longines%2Fde",
+      "finding": "內容涵蓋品牌歷史、13ZN 計時機芯等收藏話題，未提及任何系列或型號的德語俗稱。",
+      "accepted": false
+    },
+    {
+      "publisher": "watchuseek.com / fratellowatches.com / watchesbysjx.com 等英語錶評（WebSearch 摘要）",
+      "title": "Skin Diver vs. Legend Diver 相關文章",
+      "url": "https://www.watchuseek.com/threads/skin-diver-vs-legend-diver.4868691/",
+      "finding": "「Skin Diver」為 Longines 1959-60 年間的獨立官方歷史錶款名稱（Legend Diver 的前身原型），並非現行 Legend Diver 的民間俗稱，且與本輪瑞士官方目錄中任一完整參考號無對應關係，不符合「俗稱須對應本輪配置」的採用門檻。",
+      "accepted": false
+    },
+    {
+      "publisher": "WebSearch 綜合摘要（Chrono24.com／mediacenter.longines.com 等）",
+      "title": "La Grande Classique de Longines 系列概況",
+      "url": "https://mediacenter.longines.com/la-grande-classique-de-longines/",
+      "finding": "說明 1992 年推出背景與設計語彙，未發現「Papst」（教宗）或其他德語俗稱的佐證來源。",
+      "accepted": false
+    },
+    {
+      "publisher": "WebSearch 綜合摘要（chrono24.ch／longines.com 官方頁面）",
+      "title": "Longines Conquest 系列概況",
+      "url": "https://www.longines.com/de-ch/watches/conquest/conquest",
+      "finding": "說明 Conquest 為 1954 年首個受瑞士聯邦智慧財產局註冊保護名稱的系列，現為 Master/Conquest/Spirit/Elegance/Heritage 五大系列之一；未發現德語圈民間俗稱。",
+      "accepted": false
+    },
+    {
+      "publisher": "WebSearch 綜合摘要（chrono24.de／longines.com 官方頁面）",
+      "title": "Longines DolceVita 系列概況",
+      "url": "https://www.chrono24.de/longines/dolcevita--mod220.htm",
+      "finding": "「dolce vita」本身即為系列官方命名典故（義大利語「甜蜜生活」），非額外衍生的民間俗稱。",
+      "accepted": false
+    },
+    {
+      "publisher": "WebSearch 綜合摘要（forum.watchlounge.com／uhrforum.de／forum.watchtime.ch）",
+      "title": "Longines Master Collection 系列討論",
+      "url": "https://uhrforum.de/threads/longines-im-allgemeinen-und-im-speziellen.8383/",
+      "finding": "德語錶友論壇討論串聚焦選購建議與型號比較，未見任何統一俗稱用法。",
+      "accepted": false
+    }
+  ],
+  "candidateCount": 0,
+  "acceptedCollectionAliasCount": 0,
+  "acceptedLocalNicknameCount": 0,
+  "acceptedCollectionAliases": {},
+  "acceptedNicknames": [],
+  "rejectedCandidates": [
+    {
+      "name": "Skin Diver",
+      "target": "Legend Diver（heritage/legend-diver）",
+      "reason": "為 Longines 1959-60 年間的獨立官方歷史錶款名稱／後續復刻系列名稱，非現行 Legend Diver 的民間俗稱；且與本輪瑞士官方目錄任一完整參考號無對應關係。"
+    }
+  ],
+  "notes": "本次以德語（本輪選定 locale de-ch 之官方語言）查詢瑞士／德語圈市場流通的 Longines 系列或型號俗稱，共 8 組查詢涵蓋 HydroConquest、Spirit Zulu Time、Legend Diver、La Grande Classique、Conquest、DolceVita、Master Collection 及一般性查詢，檢視 8 個來源後未發現可信來源明確記錄、且能精確對應本輪完整配置或子系列的俗稱候選；HK evidence 中已採用的中文俗稱「浪鬼」（HydroConquest）為香港市場語境專屬，依規範不得逕行套用到瑞士德語市場。故本次 collectionAliases（30 個子系列）與全部 805 筆 watches 的 localNicknames 皆維持空陣列，記為 PASS with 0 accepted results。"
+}

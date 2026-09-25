@@ -1,0 +1,494 @@
+{
+  "brandId": "longines",
+  "marketCode": "CH",
+  "validatedAt": "2026-09-25T14:35:00.000Z",
+  "schemasUsed": [
+    "data/schemas/watch-market.schema.json (schemaVersion 3)",
+    "data/schemas/watch-price-history.schema.json (schemaVersion 3)"
+  ],
+  "validationMethodNote": "環境未安裝 ajv 或 python-jsonschema，且不得安裝依賴；以不依賴外部套件的 Python 逐項核對三份 Schema 實際使用的關鍵字（$ref、type、const、enum、pattern、required、additionalProperties、items、minItems、uniqueItems、minProperties、propertyNames、minimum/maximum、minLength、allOf/if/then、format date-time/uri）：market 與 history 檔案已逐欄核對通過。未修改 catalog schema 或 catalog 檔案，故本次不涉及 catalog 層驗證（catalog 合併為統籌者職責）。",
+  "layer1_jsonAndSchema": {
+    "status": "PASS",
+    "checks": [
+      "嚴格 JSON 解析（攔截重複 key、NaN/Infinity）：data/markets/longines-switzerland-market.json、data/history/CH/longines-price-history.json 與本目錄下 4 份 evidence 檔案共 6 份全數通過。",
+      "data/markets/longines-switzerland-market.json 通過 watch-market.schema.json（schemaVersion 3）全部必要欄位、型別、pattern、enum 與 additionalProperties=false 檢查（805 筆 watches 逐筆核對 watchId pattern、reference/collectionName/modelName minLength、isNewModel boolean、productUrl uri、localNicknames 結構）。",
+      "data/history/CH/longines-price-history.json 通過 watch-price-history.schema.json（schemaVersion 3）全部必要欄位、currencyCode pattern、priceType enum、taxRatePercent 範圍、collectionRuns/pricePoint allOf-if-then（listed 需整數價格、非 listed 需 null）檢查（805 筆 priceSeries 逐筆核對）。"
+    ]
+  },
+  "layer2_crossFile": {
+    "status": "PASS",
+    "checks": [
+      "market.watchCount(805) == len(market.watches)(805)。",
+      "history.collectionRuns[0].recordCount(805) == len(history.priceSeries)(805)。",
+      "market 805 個 watchId 與 history priceSeries 805 個 key 完全一致（集合相等，無孤兒）。",
+      "market.marketCode == history.marketCode == 'CH'；market.brandId == history.brandId == 'longines'。",
+      "805 個 reference 唯一、805 個 watchId 唯一，watchId 均等於 'longines:' + reference。",
+      "collectionAliases 30 個 key 均符合 slug pattern，且與 805 筆 watches 實際出現的 collectionId 完全對應（無多餘或缺漏的 key）。"
+    ]
+  },
+  "layer3_sourceReconciliation": {
+    "status": "PASS",
+    "checks": [
+      "805 筆 market/history 正式資料的 reference、price、caseDescription（trim 前）、dialDescription（trim 前）均可回對 observations.json 對應筆數的 sourceSku、parsedPrice、caseMaterialLabelRaw、dialColorLabelRaw（程式化全量比對，見下方 fullReconciliation）。",
+      "21 筆獨立抽查另以商品頁 SSR JSON-LD 交叉核對 sku/width/material/color/price/currency，21/21 全數一致，見 independentSpotCheck。"
+    ],
+    "fullReconciliation": {
+      "method": "程式化比對 data/markets/longines-switzerland-market.json 與 data/history/CH/longines-price-history.json 全部 805 筆記錄，與 data/evidence/longines/CH/2026-09-25/observations.json 805 筆 observations 依 reference 一對一核對 price、caseDimension 前綴、dialColor（trim 後）。",
+      "mismatchCount": 0,
+      "result": "PASS"
+    }
+  },
+  "layer4_completeness": {
+    "status": "PASS",
+    "checks": [
+      "分頁停止證據：34 頁（33×24+13=805）與官方 total_count 805 相符；第 35 頁官方回傳「超出可用頁數」錯誤。",
+      "家族總數對帳：5 個家族（conquest/master/spirit/elegance/heritage）collectedCount 與官方 category total_count 全數相符。",
+      "子系列總數對帳：30 個子系列 collectedCount 與官方 category total_count 全數相符（30/30）。",
+      "跨路徑獨立驗證：2 個官方頁面（pilot-majetek、elegance）之渲染後 DOM「X Produkte」文字與 GraphQL total_count 一致。",
+      "唯一 reference 數（805）等於原始擷取筆數（805），無重複、無遺漏。"
+    ]
+  },
+  "layer5_changeSafety": {
+    "status": "PASS",
+    "checks": [
+      "本次為新增市場（CH 為全新檔案），history 僅有 runId=1 的單一 collectionRun，無舊價格序列需保留前綴，符合 append-only 起點狀態。",
+      "未修改 data/catalog/longines-catalog.json（保持統籌者合併職責，本次僅產出差集分析供其參考）。",
+      "未修改 data/markets/、data/history/、data/evidence/longines/ 下任何非 CH 的既有檔案。",
+      "未修改 data/schemas/ 任何 Schema 檔案。",
+      "未修改 data/traveler-refund-policies.json（CH 記錄已存在，來源於 rolex 查核，本次不重複新增，見下方 travelerRefundPolicyCheck）。",
+      "git status 顯示工作區於本次任務開始前為 clean，本次僅新增 CH 相關檔案，未觸碰使用者既有未提交修改（因無既有未提交修改）。"
+    ]
+  },
+  "catalogDiffAnalysis": {
+    "note": "僅供統籌者合併 catalog 時參考，本次未寫入 data/catalog/longines-catalog.json。",
+    "existingCatalogUniqueReferenceCount": 725,
+    "chMarketUniqueReferenceCount": 805,
+    "intersectionCount": 723,
+    "newReferencesNotInCatalogCount": 82,
+    "catalogReferencesNotListedInChCount": 2,
+    "expectedUnionCount": 807,
+    "catalogReferencesNotListedInCh": [
+      "L2.773.8.78.3",
+      "L4.815.4.09.2"
+    ],
+    "sampleNewReferences": [
+      "L1.649.4.52.0",
+      "L1.650.4.52.2",
+      "L2.128.4.77.6",
+      "L2.128.5.87.7",
+      "L2.142.0.70.4",
+      "L2.155.4.71.5",
+      "L2.155.4.71.6",
+      "L2.257.4.77.6",
+      "L2.257.5.87.7",
+      "L2.257.8.78.3",
+      "L2.357.4.78.3",
+      "L2.386.3.72.7",
+      "L2.386.3.92.7",
+      "L2.759.4.78.3",
+      "L2.821.4.57.6",
+      "L2.821.4.72.6",
+      "L2.859.4.78.3",
+      "L2.859.4.78.6",
+      "L2.859.4.92.0",
+      "L2.859.4.92.6"
+    ]
+  },
+  "priceStats": {
+    "listedCount": 805,
+    "priceUnavailableCount": 0,
+    "notListedCount": 0,
+    "currency": "CHF",
+    "minPrice": 800,
+    "minPriceReference": [
+      "L3.759.4.96.6",
+      "L3.759.4.76.6",
+      "L3.759.4.58.6"
+    ],
+    "maxPrice": 23300,
+    "maxPriceReference": [
+      "L5.200.9.71.6",
+      "L5.200.7.71.6"
+    ],
+    "nonIntegerPriceCount": 0
+  },
+  "taxDetermination": {
+    "priceType": "tax-include",
+    "taxRatePercent": 8.1,
+    "basis": "官方頁面/結帳文案顯示含稅（'(MwSt. inbegriffen)'、'Gesamtsumme inkl. MwSt.'）+ Swiss Federal Tax Administration (ESTV) 官方頁面確認現行標準稅率 8.1%（2024-01-01 生效，2026-09-22 頁面更新仍為現行版本）。"
+  },
+  "independentSpotCheck": {
+    "targetRange": "19-21",
+    "actualCount": 21,
+    "coverage": "5 個系列代表款（master/conquest/elegance/spirit/heritage 均涵蓋，部分系列多筆）、2 組同基本型號不同配置（CONQUEST Ø34mm 一組、LA GRANDE CLASSIQUE Ø29mm 一組）、最低價 1 筆（CHF 800）、最高價 1 筆（CHF 23,300，同時為異常項目）、新款 1 筆以上（tag=NEW）、異常項目 1 筆（Mini DolceVita 小尺寸卻為全場最高單價）。CH 市場無 price-unavailable/not-listed 筆數，故無「無公開價」抽查樣本，已如實記錄於限制。",
+    "method": "以商品頁 SSR HTML 內嵌 schema.org JSON-LD 為獨立來源視圖（與主要收集路徑 GraphQL ProductList 為不同官方端點/資料格式），逐筆比對 sku/width/material/color/offers.price/offers.priceCurrency。",
+    "rows": [
+      {
+        "reference": "L2.449.4.97.6",
+        "role": "master 系列代表款",
+        "collectionId": "master-collection",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-the-longines-master-collection-l2-449-4-97-6",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.830.4.92.6",
+        "role": "conquest 系列代表款（同時為 conquest/conquest 34mm 配置對之一，BESTSELLER）",
+        "collectionId": "conquest",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-conquest-l3-830-4-92-6",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L4.512.4.81.6",
+        "role": "elegance/la-grande-classique 代表款",
+        "collectionId": "la-grande-classique",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-la-grande-classique-de-longines-l4-512-4-81-6",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L5.255.4.71.6",
+        "role": "elegance/dolcevita 代表款",
+        "collectionId": "dolcevita",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-longines-dolcevita-l5-255-4-71-6",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.788.4.90.6",
+        "role": "conquest/hydroconquest 代表款",
+        "collectionId": "hydroconquest",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-hydroconquest-l3-788-4-90-6",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L8.123.4.97.6",
+        "role": "elegance/primaluna 代表款",
+        "collectionId": "primaluna",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-longines-primaluna-l8-123-4-97-6",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L4.815.4.78.2",
+        "role": "heritage/flagship-heritage 代表款",
+        "collectionId": "flagship-heritage",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-flagship-heritage-l4-815-4-78-2",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L1.648.4.78.2",
+        "role": "heritage/conquest-heritage 代表款",
+        "collectionId": "conquest-heritage",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-conquest-heritage-l1-648-4-78-2",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.962.4.73.2",
+        "role": "master/master-collection-chronograph 代表款",
+        "collectionId": "master-collection-chronograph",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-the-longines-master-collection-chronograph-l2-962-4-73-2",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L2.409.8.87.2",
+        "role": "master/master-collection-moonphase 代表款（次高價區間）",
+        "collectionId": "master-collection-moonphase",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-the-longines-master-collection-moonphase-l2-409-8-87-2",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L5.200.7.71.6",
+        "role": "全市場最高價（CHF 23,300）暨異常項目（elegance/mini-dolcevita 小型錶款卻為全市場最高單價）",
+        "collectionId": "mini-dolcevita",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-longines-mini-dolcevita-l5-200-7-71-6",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.759.4.58.6",
+        "role": "全市場最低價（CHF 800）",
+        "collectionId": "conquest",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-conquest-l3-759-4-58-6",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.430.4.92.6",
+        "role": "同基本型號不同配置 Pair A之一（CONQUEST Ø34mm）",
+        "collectionId": "conquest",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-conquest-l3-430-4-92-6",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.460.4.92.6",
+        "role": "同基本型號不同配置 Pair A之二（CONQUEST Ø34mm，價格 CHF 1,250 vs 同型號 A之一 CHF 1,950）",
+        "collectionId": "conquest",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-conquest-l3-460-4-92-6",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L4.512.2.37.8",
+        "role": "同基本型號不同配置 Pair B之一（LA GRANDE CLASSIQUE Ø29mm）",
+        "collectionId": "la-grande-classique",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-la-grande-classique-de-longines-l4-512-2-37-8",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L4.512.1.68.7",
+        "role": "同基本型號不同配置 Pair B之二（LA GRANDE CLASSIQUE Ø29mm）",
+        "collectionId": "la-grande-classique",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-la-grande-classique-de-longines-l4-512-1-68-7",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.812.4.60.6",
+        "role": "spirit/spirit-zulu-time 代表款",
+        "collectionId": "spirit-zulu-time",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-longines-spirit-zulu-time-l3-812-4-60-6",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.810.4.93.6",
+        "role": "spirit/spirit 代表款",
+        "collectionId": "spirit",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-longines-spirit-l3-810-4-93-6",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L4.910.4.79.6",
+        "role": "elegance/elegant 代表款",
+        "collectionId": "elegant",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-longines-elegant-collection-l4-910-4-79-6",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.795.4.59.9",
+        "role": "heritage/legend-diver 代表款（新款 tag=NEW）",
+        "collectionId": "legend-diver",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-longines-legend-diver-l3-795-4-59-9",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      },
+      {
+        "reference": "L3.890.4.06.6",
+        "role": "conquest/hydroconquest-gmt 代表款",
+        "collectionId": "hydroconquest-gmt",
+        "sourceUrl": "https://www.longines.com/de-ch/p/watch-hydroconquest-gmt-l3-890-4-06-6",
+        "checkedAt": "2026-09-25T14:15:00.000Z",
+        "comparedFields": {
+          "sku": "match",
+          "width/caseDimension": "match",
+          "material/caseDescription": "match",
+          "color/dialDescription": "match",
+          "offers.price": "match",
+          "offers.priceCurrency": "match"
+        },
+        "result": "PASS"
+      }
+    ],
+    "summary": {
+      "total": 21,
+      "pass": 21,
+      "fail": 0
+    }
+  },
+  "nicknameResearch": {
+    "status": "PASS",
+    "scope": "new-market",
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "note": "詳見 nickname-research.json；本次 8 組德語查詢均未發現可信來源明確記錄之瑞士/德語市場 Longines 系列或型號俗稱，PASS with 0 accepted results。"
+  },
+  "travelerRefundPolicyCheck": {
+    "status": "SATISFIED_BY_EXISTING_RECORD",
+    "marketCode": "CH",
+    "existingRecordFound": true,
+    "existingRecordSource": "data/traveler-refund-policies.json 中 marketCode=CH 記錄，evidencePath=data/evidence/rolex/CH/2026-09-12/traveler-refund-policy.json",
+    "existingRecordAvailability": "available",
+    "existingRecordAssessedAt": "2026-09-11T17:00:00Z",
+    "existingRecordSourcePublisher": "Swiss Federal Tax Administration",
+    "observation": "既有記錄之 CHF 300 免稅門檻、旅客資格與商家／海關驗證要求敘述，與本次為稅率查核所查閱之 estv.admin.ch 現行（2026-09-22 更新）稅率頁面內容不衝突，未發現既有記錄明顯過時或有誤之處。旅客退稅制度為市場／國家層級法律事實，不因品牌而異，故本次新增市場未重新新增或修改 data/traveler-refund-policies.json，交由統籌者視需要處理。",
+    "actionTaken": "NONE - 依規範不得由單一品牌市場工作單元寫入此共用檔案"
+  },
+  "knownLimitations": [
+    "本次 CH 市場所有 805 筆均為 listingStatus=listed 且有公開價格，獨立抽查清單中無「無公開價」（price-unavailable）樣本可供比對，此為市場現況而非收集缺漏。",
+    "ProductList GraphQL 查詢文字為本次依頁面既有請求觀察到的欄位與 header 慣例自行組出的等效查詢，非直接擷取官方頁面本身發出的原始查詢字串（因該查詢屬 SSR 產生，未出現在瀏覽器 network 面板的 XHR/fetch 紀錄中）；已在 observations.json/collection-summary.json 如實記錄此差異，且查詢結果已通過官方頁面顯示總數、家族/子系列官方總數、跨路徑 DOM 渲染文字與 21 筆 JSON-LD 獨立抽查四重交叉驗證，實質內容未受影響。",
+    "瑞士市場官方存在 de-ch/fr-ch/it-ch 三個語言對等的官方 store view，市場 Schema 僅允許單一 locale 欄位；本次選定 de-ch，決策依據已記錄於 observations.json 的 localeDecision 區塊，fr-ch/it-ch 為同樣有效但本次未採用的替代選擇。",
+    "俗稱研究經 8 組德語查詢僅涵蓋主要系列與熱門討論方向，未能窮舉所有 30 個子系列，屬合理範圍內的查詢廣度限制，詳見 nickname-research.json。",
+    "本次未修改 data/catalog/longines-catalog.json；catalogDiffAnalysis 僅為分析結果，實際合併請由統籌者依全部市場工作單元完成後統一執行。"
+  ]
+}

@@ -45,3 +45,21 @@
 韓國完成官方「腕錶」分類 ProductList GraphQL 全部 19 頁（每頁 24 筆整除）後有 456 個唯一完整配置，第 20 頁官方回傳超出可用頁數錯誤。完整批次時間見 `data/evidence/longines/KR/2026-09-25/observations.json`。
 
 五大家族官方總數為 Master 91、Conquest 132、Spirit 43、Elegance 132、Heritage 58，合計 456，30 個子系列逐一相符。與台灣市場相比，KR 多出 `master-gmt`（2 筆：`L2.844.6.71.2`、`L2.844.8.71.2`），但沒有 `evidenza`（官方導覽回傳「頁面不存在」，已交叉驗證為真實市場差異）。完整拆分見 `data/evidence/longines/KR/2026-09-25/collection-summary.json`。
+
+## Longines — 瑞士（CH）2026-09-25
+
+瑞士完成官方 ProductList 全部 34 頁（每頁 24 筆，第 34 頁 13 筆）後有 805 個唯一完整配置，第 35 頁官方回傳超出可用頁數錯誤。完整批次時間見 `data/evidence/longines/CH/2026-09-25/observations.json`。
+
+5 個家族、30 個子系列官方總數與收集結果全數相符（35/35）。官方站台同時提供 `de-ch`／`fr-ch`／`it-ch` 三個對等語言 store view（皆為相同 805 筆目錄與 CHF 價格，僅語系不同），本次以 `de-ch` 為代表語系收錄，詳見 evidence 的 `localeDecision` 章節。稅制依 Swiss Federal Tax Administration 現行標準稅率記為 `tax-include`、8.1%。完整拆分見 `data/evidence/longines/CH/2026-09-25/collection-summary.json`。
+
+## Longines — 英國（GB）2026-09-25
+
+英國完成官方 ProductList 全部 34 頁（每頁 24 筆，第 34 頁 14 筆）後有 806 個唯一完整配置，第 35 頁官方回傳超出可用頁數錯誤。完整批次時間見 `data/evidence/longines/GB/2026-09-25/observations.json`。
+
+5 個家族官方總數為 conquest 186、elegance 331、heritage 73、master 158、spirit 58，合計 806；31 個子系列逐一相符。稅制依 GOV.UK VAT 標準稅率與 StoreConfig 含稅顯示設定記為 `tax-include`、20%；`data/traveler-refund-policies.json` 既有 GB 記錄已正確反映英國脫歐後大不列顛無隨身攜帶商品旅客退稅、僅北愛爾蘭有限提供的制度現況。完整拆分見 `data/evidence/longines/GB/2026-09-25/collection-summary.json`。
+
+## Longines — 美國（US）2026-09-25
+
+美國完成官方 ProductList 全部 34 頁（每頁 24 筆，第 34 頁 10 筆）後有 802 個唯一完整配置，第 35 頁官方回傳 HTTP 404。完整批次時間見 `data/evidence/longines/US/2026-09-25/observations.json`。
+
+5 個家族官方總數為 master 158、conquest 186、spirit 58、elegance 327、heritage 73，合計 802；31 個子系列逐一相符。美國無全國統一銷售稅，官方 FAQ 明確說明列表／商品頁標價為稅前價、實際稅額於結帳時依收件地址計算，因此記為 `tax-exclude`、`taxRatePercent: null`（不得以單一州稅率代表全國）。完整拆分見 `data/evidence/longines/US/2026-09-25/collection-summary.json`。

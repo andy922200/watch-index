@@ -1,0 +1,34 @@
+{
+  "task": "imageUrl backfill for single missing configuration ahead of cross-market catalog merge",
+  "brandId": "longines",
+  "marketCode": "GB",
+  "scope": "single-reference-backfill",
+  "referencesBackfilled": [
+    {
+      "reference": "L4.984.3.08.7",
+      "rawName": "FLAGSHIP CLASSIC",
+      "productUrl": "https://www.longines.com/en-gb/p/watch-flagship-classic-l4-984-3-08-7",
+      "sourceUrl": "https://www.longines.com/en-gb/p/watch-flagship-classic-l4-984-3-08-7",
+      "observedAt": "2026-09-25T15:22:45.000Z",
+      "retrievalMethod": "real-browser-render",
+      "tool": "mcp__chrome-devtools (isolated context: longines-gb-market)",
+      "extractionDetail": "Navigated to the official product page and evaluated an in-page script against the rendered DOM to read document.querySelector('meta[property=\"og:image\"]').content and the JSON-LD <script type=\"application/ld+json\"> block. Both sources returned the same imageUrl, and the JSON-LD Product.sku (L4.984.3.08.7) and offers.price (2200 GBP) matched the existing observation in observations.json line 18088-18108, corroborating this is the correct product page for this exact reference.",
+      "result": "SUCCESS",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-984-3-08-7-060bb8-hero.png",
+      "corroboratingSignals": {
+        "ogImageMetaTag": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-984-3-08-7-060bb8-hero.png",
+        "jsonLdProductImageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-flagship-classic-l4-984-3-08-7-060bb8-hero.png",
+        "jsonLdSku": "L4.984.3.08.7",
+        "jsonLdOfferPriceCurrency": "GBP",
+        "jsonLdOfferPrice": 2200,
+        "pageTitle": "FLAGSHIP CLASSIC | Ø 40.00 mm, Sunray Brown | L4.984.3.08.7 | LONGINES GB",
+        "matchesExistingObservation": true,
+        "existingObservationReference": "observations.json (reference L4.984.3.08.7, basePrice.value 2200, basePrice.currency GBP)"
+      },
+      "notes": "This backfill only records the imageUrl field for a configuration already present in the run's observations.json (2026-09-25). It does not add, modify, or duplicate any other observation, and it does not modify data/markets/longines-united-kingdom-market.json, data/history/GB/longines-price-history.json, or data/catalog/longines-catalog.json. Catalog merge is performed separately by the coordinator."
+    }
+  ],
+  "outOfScopeNotice": "This file is scoped strictly to GB market work for reference L4.984.3.08.7. No CH, US, or catalog files were read or written while producing this evidence.",
+  "generatedBy": "single-market-maintainer subagent (GB imageUrl backfill sub-task)",
+  "generatedAt": "2026-09-25T15:22:45.000Z"
+}

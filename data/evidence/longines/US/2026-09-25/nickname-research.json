@@ -1,0 +1,88 @@
+{
+  "brandId": "longines",
+  "marketCode": "US",
+  "researchedAt": "2026-09-25T15:20:00.000Z",
+  "scope": "new-market",
+  "status": "PASS",
+  "languages": [
+    "en"
+  ],
+  "method": "以英文查詢美國市場流通的 Longines 俗稱，要求來源能把名稱明確對應到本輪 31 個官方子系列（collectionId）之一，或 802 個美國官方完整參考號中的單一（或明確列舉之少數）配置。候選來源須為可驗證的美國錶類媒體、美國授權經銷商或美國評論者（以 .com 網域內容、美國地址／聯絡資訊或美國市場語境佐證）；官方分類名稱（如 'HYDROCONQUEST'、'SPIRIT'）不視為俗稱。",
+  "queries": [
+    "Longines HydroConquest nickname United States collectors \"Rolex\" watch community",
+    "Longines Spirit Zulu Time nickname collectors US forum",
+    "\"Triple B\" Longines Spirit Zulu Time reference number blue dial blue strap",
+    "Longines HydroConquest \"poor man's Submariner\" nickname",
+    "Longines Master Collection Moonphase nickname collectors United States",
+    "\"La Grande Classique\" Longines nickname \"the pencil\" OR \"flying saucer\""
+  ],
+  "sourcesReviewed": [
+    {
+      "publisher": "Exquisite Timepieces（美國佛羅里達州 Naples 授權經銷商，Longines 官方授權經銷商）",
+      "title": "Longines Spirit Zulu Time Review",
+      "url": "https://www.exquisitetimepieces.com/blog/longines-spirit-zulu-time-review/",
+      "finding": "原文：『We could nickname it the \"Triple-B\" for its blue bezel, blue dial, and blue leather strap with contrasting white stitching.』明確將『Triple-B』對應到藍色陶瓷圈口、藍色錶盤、藍色皮帶（白色縫線）之 39mm Spirit Zulu Time，並在文中對應到完整參考號 L3.802.4.93.2（本輪 collectionId=spirit-zulu-time）。發佈於 2024-08-30，美國本地授權經銷商網域內容，符合美國市場可驗證來源門檻。",
+      "accepted": true,
+      "acceptedAs": "watches[L3.802.4.93.2].localNicknames"
+    },
+    {
+      "publisher": "Teddy Baldassarre（美國伊利諾州零售商／評論者）",
+      "title": "Spirit Zulu Time 42mm - Blue on Strap（產品頁）",
+      "url": "https://teddybaldassarre.com/products/spirit-zulu-time-blue-dial-on-strap",
+      "finding": "頁面對應 42mm 藍面藍圈款（參考號 L3.812.4.93.2），與 Exquisite Timepieces 描述的配色相同，但頁面本身完全未出現『Triple-B』或『Triple B』字樣，無法獨立佐證此暱稱適用於 42mm 版本（L3.812.4.93.2）。",
+      "accepted": false
+    },
+    {
+      "publisher": "多方英文錶評／零售網站（Gear Patrol、Teddy Baldassarre、Two Broke Watch Snobs、hiconsumption 等）",
+      "title": "Longines HydroConquest 與 Rolex Submariner 相關比較文章",
+      "url": "https://www.gearpatrol.com/watches/longines-hydroconquest-2026/",
+      "finding": "多篇文章將 HydroConquest 與 Rolex Submariner 做外型／定位比較（例如『Rolex Submarinish』），但未發現英文語境下有明確、廣泛使用且可對應到單一完整參考號或單一 collectionId 的固定俗稱；『poor man's Submariner』僅見於西班牙語論壇（hablemosderelojes.com），非美國市場英文語境的可信獨立來源。",
+      "accepted": false
+    },
+    {
+      "publisher": "多方英文錶評／零售網站（各 Master Collection Moonphase 商品頁與經銷商頁面）",
+      "title": "Longines Master Collection Moonphase 相關頁面",
+      "url": "https://www.longines.com/en-us/watches/master/master-collection-moonphase",
+      "finding": "搜尋結果未發現美國錶友社群對 Master Collection Moonphase 使用特定俗稱的可信報導或討論，僅出現官方名稱與技術規格描述。",
+      "accepted": false
+    },
+    {
+      "publisher": "多方英文／錶評網站（含一筆 vintage Longines Admiral 之『flying saucer』描述，與本輪無關）",
+      "title": "La Grande Classique de Longines 相關頁面",
+      "url": "https://mediacenter.longines.com/la-grande-classique-de-longines/",
+      "finding": "未發現『the pencil』或『flying saucer』等俗稱適用於 La Grande Classique（現行 collectionId=la-grande-classique）；唯一出現『flying saucer』的結果指涉另一款已停產的 vintage Longines Admiral 錶款，與本輪收集的現行 68 筆 la-grande-classique 配置無關，不採用。",
+      "accepted": false
+    }
+  ],
+  "candidateCount": 3,
+  "acceptedCollectionAliasCount": 0,
+  "acceptedLocalNicknameCount": 1,
+  "acceptedCollectionAliases": {},
+  "acceptedNicknames": [
+    {
+      "watchId": "longines:L3.802.4.93.2",
+      "names": [
+        "Triple-B"
+      ],
+      "sources": [
+        {
+          "publisher": "Exquisite Timepieces",
+          "url": "https://www.exquisitetimepieces.com/blog/longines-spirit-zulu-time-review/"
+        }
+      ]
+    }
+  ],
+  "rejectedCandidates": [
+    {
+      "name": "Triple-B",
+      "target": "L3.812.4.93.2（42mm 同配色 Spirit Zulu Time）",
+      "reason": "來源網站（Exquisite Timepieces）明確將暱稱綁定於 39mm 版本 L3.802.4.93.2；Teddy Baldassarre 對應 42mm 版本 L3.812.4.93.2 的頁面未使用此暱稱，無法獨立佐證暱稱精確對應到 42mm 完整參考號，故不擴大採用。"
+    },
+    {
+      "name": "poor man's Submariner",
+      "target": "HydroConquest 家族",
+      "reason": "僅見於西班牙語論壇（非美國市場英文語境可信獨立來源），且指涉整個家族而非單一完整參考號或子系列。"
+    }
+  ],
+  "notes": "美國市場（英文語境）僅發現 1 個可精確對應到單一完整參考號的俗稱『Triple-B』（Exquisite Timepieces，美國授權經銷商），已採用至該筆 watches[].localNicknames；未發現任何可對應到整個 collectionId 的家族/系列層級俗稱，collectionAliases 全部維持空陣列。PASS with 1 accepted local nickname, 0 accepted collection aliases。"
+}
