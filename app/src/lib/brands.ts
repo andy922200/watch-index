@@ -147,6 +147,9 @@ export const brandDirectory: readonly BrandDirectoryEntry[] = [
       MarketCode.HongKong,
       MarketCode.Japan,
       MarketCode.SouthKorea,
+      MarketCode.Switzerland,
+      MarketCode.UnitedKingdom,
+      MarketCode.UnitedStates,
     ]),
     directory: {
       availability: 'available',
