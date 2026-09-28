@@ -1,0 +1,122 @@
+{
+  "brandId": "longines",
+  "marketCode": "DE",
+  "task": "new-market",
+  "layeredValidation": {
+    "1_strictJsonAndSchema": {
+      "status": "PASS",
+      "detail": "Ran strict JSON parsing (object_pairs_hook rejecting duplicate keys, parse_constant rejecting NaN/Infinity) on data/markets/longines-germany-market.json and data/history/DE/longines-price-history.json - both parsed cleanly. jsonschema Python package was not installed in this environment and pip install was blocked by the system's externally-managed-environment policy (no --break-system-packages permission requested/granted), so full JSON-Schema-Draft-2020-12 validation could not run via a standard validator library. Instead, a manual field-by-field script re-derived every constraint from data/schemas/watch-market.schema.json and data/schemas/watch-price-history.schema.json ($schema const, schemaVersion const, brandId/marketCode/watchId/reference patterns, required-field presence, collectionAliases/localNicknames names+sources shape, pricePoint listingStatus/price co-constraints) and asserted them against both files: 0 violations found.",
+      "limitation": "NOT RUN via an installed JSON-Schema validator library (capability unavailable in this sandboxed environment without breaking system Python packages); mitigated by an equivalent manual constraint check covering the same schema rules."
+    },
+    "2_watchCountIdentityRelational": {
+      "status": "PASS",
+      "detail": "watchCount (804) == market.watches.length (804) == unique watchId count (804) == unique reference count (804, 0 duplicates). Every watchId matches the required 'longines:' + reference form. history.priceSeries key set is set-equal to market watchId set (804 == 804, no orphans either direction). marketCode='DE' consistent across market and history top-level fields."
+    },
+    "3_priceListingStatusCombination": {
+      "status": "PASS",
+      "detail": "All 804 pricePoints have listingStatus='listed' with a non-negative integer price (verified programmatically: 0 fractional values, min=900, max=27100, all currency=EUR). No price-unavailable or not-listed records exist in this collection, because the German site's ProductList API returned a public base_price for every one of the 804 currently-listed configurations, including all 51 OUT_OF_STOCK ones (which show 'Benachrichtigen bei Verfügbarkeit' but still expose price and remain purchasable=listed per the schema's semantics that stock status is independent of listingStatus)."
+    },
+    "4_officialDataTraceableToEvidence": {
+      "status": "PASS",
+      "detail": "Every field in every data/markets/longines-germany-market.json watch entry and every price in data/history/DE/longines-price-history.json was derived directly and only from the raw GraphQL ProductList response captured in this run and recorded per-reference in data/evidence/longines/DE/2026-09-27/observations.json (no field was hand-typed or guessed). The one exception (L4.523.0.50.2's caseDescription/dialDescription) was derived from a directly-observed PDP text quote, which is itself recorded in observations.json's manualOverridesAndNotes[0]."
+    },
+    "5_completenessStopEvidenceAndIndependentSpotCheck": {
+      "status": "PASS",
+      "detail": "See data/evidence/longines/DE/2026-09-27/collection-summary.json for stop evidence (total_count==items.length==804, matching the independently-rendered PLP heading '804 Produkte' seen before any API replay). Independent spot check of 20 references performed via directly-opened product detail pages (a different official view than the bulk ProductList API used for collection) - see spotCheck below - all 20 PASS."
+    },
+    "6_appendOnlyAndProtectedScopeUnchanged": {
+      "status": "PASS",
+      "detail": "This is a brand-new brand+market file pair (data/history/DE/ previously only contained omega-price-history.json and rolex-price-history.json; no prior longines-price-history.json existed for DE), so there is no prior price series to accidentally overwrite; collectionRuns starts at runId=1 as required for a new history file. `git status --short` confirmed a clean working tree before this task began, and only the 3 newly-created paths in this task's allowed scope were written (see below) - no existing market/history/evidence/catalog/schema files for any brand or market, and no other longines market's files (CH/GB/HK/JP/KR/TW/US, or the SG/FR markets being collected in parallel by other subagents), were read for writing or modified."
+    }
+  },
+  "spotCheck": {
+    "targetRange": "19-21",
+    "actualCount": 20,
+    "method": "Each item was opened as its own product detail page (https://www.longines.com/de/p/<url_key>) directly in the browser - a different official view/rendering path than the bulk GraphQL ProductList API used for primary collection - and its rendered title/price/VAT-label/availability text was compared against the corresponding entry already written into data/markets/longines-germany-market.json and data/history/DE/longines-price-history.json.",
+    "items": [
+      {"reference": "L3.759.4.58.6", "category": "lowest price in market", "checkedAt": "2026-09-27T15:20:00.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-conquest-l3-759-4-58-6", "fieldsCompared": ["price", "vatLabel", "caseDescription", "dialDescription"], "result": "MATCH: price 900,00€ (=900), 'inkl. MwSt' present, case 'Ø 41.00 mm, Edelstahl', dial 'schwarz lackiert, poliert' (PDP adds 'mit swiss Super-LumiNova®' which the alt-text-derived market field omits, consistent with the same abbreviation convention already used in the committed CH market file for this exact reference)."},
+      {"reference": "L5.200.9.71.6", "category": "highest price in market", "checkedAt": "2026-09-27T15:21:00.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-longines-mini-dolcevita-l5-200-9-71-6", "fieldsCompared": ["price", "vatLabel", "caseDescription", "dialDescription"], "result": "MATCH: price 27.100,00€ (=27100), 'inkl. MwSt' present, dimension '21.50 X 29.00 mm' and dial 'silber mit \"Flinker\"-Dekor' both match."},
+      {"reference": "L2.450.4.97.6", "category": "same-base-model pair A, config 1", "checkedAt": "2026-09-27T15:22:00.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-the-longines-master-collection-l2-450-4-97-6", "fieldsCompared": ["price", "vatLabel", "caseDescription", "dialDescription"], "result": "MATCH: price 2.850,00€, 'Ø 34.00 mm, Frostblau Mit Sonnenstrahl-Dekor'."},
+      {"reference": "L2.450.4.87.6", "category": "same-base-model pair A, config 2", "checkedAt": "2026-09-27T15:22:30.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-the-longines-master-collection-l2-450-4-87-6", "fieldsCompared": ["price", "vatLabel", "caseDescription", "dialDescription"], "result": "MATCH: price 2.900,00€, 'Ø 34.00 mm, Weißes Perlmutt'."},
+      {"reference": "L2.962.4.73.2", "category": "same-base-model pair B, config 1", "checkedAt": "2026-09-27T15:23:00.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-the-longines-master-collection-chronograph-l2-962-4-73-2", "fieldsCompared": ["price", "vatLabel", "caseDescription", "dialDescription"], "result": "MATCH: price 4.050,00€, 'Ø 41.00 mm, Silber Mit Gerstenkorn-Muster'."},
+      {"reference": "L2.962.4.73.6", "category": "same-base-model pair B, config 2 / OUT_OF_STOCK anomaly", "checkedAt": "2026-09-27T15:23:30.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-the-longines-master-collection-chronograph-l2-962-4-73-6", "fieldsCompared": ["price", "vatLabel", "availability"], "result": "MATCH: price 4.050,00€ still publicly shown despite 'Benachrichtigen bei Verfügbarkeit' (out-of-stock) button, confirming listingStatus='listed' is correct independent of stock status."},
+      {"reference": "L3.809.4.93.9", "category": "new model (tag=NEW)", "checkedAt": "2026-09-27T15:24:00.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-longines-spirit-pilot-l3-809-4-93-9", "fieldsCompared": ["price", "vatLabel", "newBadge"], "result": "MATCH: price 2.550,00€; page text contains a 'Neu' badge string, confirming tag=='NEW' correctly maps to isNewModel=true."},
+      {"reference": "L4.523.0.50.2", "category": "anomaly: non-standard alt-text label format requiring manual PDP parsing", "checkedAt": "2026-09-27T15:14:00.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-la-grande-classique-de-longines-l4-523-0-50-2", "fieldsCompared": ["price", "vatLabel", "caseDescription", "dialDescription"], "result": "MATCH: price 3.950,00€, 'inkl. MwSt', spec text 'Ø 29.00 mm, Edelstahl.' and 'Zifferblatt: Schwarz lackiert, poliert.' exactly match the manually-set caseDescription/dialDescription recorded in observations.json."},
+      {"reference": "L3.430.4.90.9", "category": "anomaly: M-C configuration not yet in catalog (Germany-specific 'Sylt Edition')", "checkedAt": "2026-09-27T15:25:00.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-conquest-l3-430-4-90-9", "fieldsCompared": ["price", "vatLabel", "modelName", "availability"], "result": "MATCH: price 2.250,00€, model name 'CONQUEST SYLT EDITION' confirmed on PDP, out-of-stock/notify status confirmed, still listed with public price."},
+      {"reference": "L2.960.4.78.2", "category": "OUT_OF_STOCK anomaly (2nd example, different collection)", "checkedAt": "2026-09-27T15:25:30.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-the-longines-master-collection-chrono-monopusher-l2-960-4-78-2", "fieldsCompared": ["price", "vatLabel", "caseDescription", "dialDescription"], "result": "MATCH: price 3.700,00€, 'Ø 41.00 mm, Elfenbein Mit Gerstenkorn-Muster'."},
+      {"reference": "L1.648.4.92.6", "category": "collection representative: Heritage / Conquest Heritage", "checkedAt": "2026-09-27T15:26:00.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-conquest-heritage-l1-648-4-92-6", "fieldsCompared": ["price", "vatLabel", "caseDescription", "dialDescription"], "result": "MATCH: price 4.350,00€, 'Ø 38.00 mm, Hellblaues Opalin'."},
+      {"reference": "L3.720.4.02.6", "category": "collection representative: Conquest", "checkedAt": "2026-09-27T15:26:30.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-conquest-l3-720-4-02-6", "fieldsCompared": ["price", "vatLabel", "caseDescription", "dialDescription"], "result": "MATCH: price 2.250,00€, 'Ø 38.00 mm, Grün Mit Sonnenschliff'."},
+      {"reference": "L3.410.4.93.6", "category": "collection representative: Spirit", "checkedAt": "2026-09-27T15:27:00.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-longines-spirit-l3-410-4-93-6", "fieldsCompared": ["price", "vatLabel", "caseDescription", "dialDescription"], "result": "MATCH: price 2.750,00€, 'Ø 37.00 mm, Blau Mit \"Sonnenstrahl\" Dekor'."},
+      {"reference": "L2.821.4.72.6", "category": "collection representative: Elegance / Record", "checkedAt": "2026-09-27T15:27:30.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-record-l2-821-4-72-6", "fieldsCompared": ["price", "vatLabel", "caseDescription", "dialDescription"], "result": "MATCH: price 2.400,00€, 'Ø 40.00 mm, Silber Mit \"Sonnenstrahl\" Dekor'."},
+      {"reference": "L3.788.4.70.6", "category": "collection representative: Conquest / HydroConquest", "checkedAt": "2026-09-27T15:28:00.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-hydroconquest-l3-788-4-70-6", "fieldsCompared": ["price", "vatLabel", "caseDescription", "dialDescription"], "result": "MATCH: price 2.250,00€, 'Ø 42.00 mm, Schwarz Lackiert, Poliert'."},
+      {"reference": "L2.838.1.53.2", "category": "collection representative: Heritage / Pilot Majetek", "checkedAt": "2026-09-27T15:28:30.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-longines-pilot-majetek-l2-838-1-53-2", "fieldsCompared": ["price", "vatLabel", "collectionName", "modelName", "caseDescription", "dialDescription"], "result": "MATCH: price 5.250,00€, collectionName 'LONGINES PILOT MAJETEK' vs modelName 'LONGINES PILOT MAJETEK PIONEER EDITION' both confirmed distinct on PDP title, 'Ø 43.00 mm, Mattschwarz'."},
+      {"reference": "L2.816.1.93.2", "category": "collection representative: Heritage / Avigation", "checkedAt": "2026-09-27T15:29:00.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-the-longines-avigation-l2-816-1-93-2", "fieldsCompared": ["price", "vatLabel", "caseDescription", "dialDescription"], "result": "MATCH: price 4.150,00€, 'Ø 41.00 mm, Petrol'."},
+      {"reference": "L4.310.4.90.6", "category": "collection representative: Elegance / Elegant Collection", "checkedAt": "2026-09-27T15:29:30.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-longines-elegant-collection-l4-310-4-90-6", "fieldsCompared": ["price", "vatLabel", "caseDescription", "dialDescription"], "result": "MATCH: price 2.350,00€, 'Ø 29.00 mm, Blau Mit \"Sonnenstrahl\" Dekor'."},
+      {"reference": "L2.642.4.73.6", "category": "collection representative: Elegance / Evidenza", "checkedAt": "2026-09-27T15:30:00.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-longines-evidenza-l2-642-4-73-6", "fieldsCompared": ["price", "vatLabel", "caseDescription", "dialDescription"], "result": "MATCH: price 2.550,00€, '33.10 X 38.75 mm, Silber Mit \"Flinker\"-Dekor'."},
+      {"reference": "L3.803.5.53.6", "category": "collection representative: Spirit / Zulu Time", "checkedAt": "2026-09-27T15:30:30.000Z", "pdpUrl": "https://www.longines.com/de/p/watch-longines-spirit-zulu-time-l3-803-5-53-6", "fieldsCompared": ["price", "vatLabel", "caseDescription", "dialDescription"], "result": "MATCH: price 4.400,00€, 'Ø 39.00 mm, Mattschwarz' (this specific PDP additionally titled 'LONGINES SPIRIT ZULU TIME 1925', a sub-variant name folded into modelName)."}
+    ],
+    "categoryCoverageAchieved": ["lowest price", "highest price", "2x same-base-model different-configuration pairs (4 items)", "new model with confirmed 'Neu' badge", "label-format anomaly", "catalog-diff (M-C) anomaly", "2x out-of-stock-but-listed anomaly", "representative watches across Master/Conquest/Spirit/Elegance/Heritage top-level collection groups"],
+    "categoryNotAchievable": {
+      "category": "price-unavailable / no public price example",
+      "reason": "All 804 currently-listed German-market configurations (including all 51 out-of-stock ones) expose a public EUR price via the official API and PDP; none are listed with a hidden/POA price. This is a true property of the current catalog, not a collection gap - confirmed both by the bulk API response (0 items with base_price null) and by manually opening several out-of-stock PDPs above, which still displayed prices."
+    }
+  },
+  "catalogDiff": {
+    "catalogSizeBeforeMerge": 874,
+    "marketSize": 804,
+    "intersectionCM": 797,
+    "marketMinusCatalog": 7,
+    "catalogMinusMarket": 77,
+    "expectedUnionAfterMerge": 881,
+    "unionFormulaCheck": "|C ∪ M| = |C| + |M| - |C ∩ M| = 874 + 804 - 797 = 881",
+    "marketMinusCatalogList": [
+      {"reference": "L3.430.4.90.9", "collectionId": "conquest", "modelName": "CONQUEST SYLT EDITION", "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-sylt-edition-l3-430-4-90-9-88709b-hero.png", "productUrl": "https://www.longines.com/de/p/watch-conquest-l3-430-4-90-9"},
+      {"reference": "L3.779.4.19.6", "collectionId": "hydroconquest", "modelName": "HYDROCONQUEST SYLT EDITION", "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-hydroconquest-sylt-edition-l3-779-4-19-6-4e7398-hero.png", "productUrl": "https://www.longines.com/de/p/watch-hydroconquest-l3-779-4-19-6"},
+      {"reference": "L3.788.4.19.6", "collectionId": "hydroconquest", "modelName": "HYDROCONQUEST SYLT EDITION", "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-hydroconquest-sylt-edition-l3-788-4-19-6-2a27da-hero.png", "productUrl": "https://www.longines.com/de/p/watch-hydroconquest-l3-788-4-19-6"},
+      {"reference": "L3.830.4.90.6", "collectionId": "conquest", "modelName": "CONQUEST SYLT EDITION", "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-sylt-edition-l3-830-4-90-6-84a33b-hero.png", "productUrl": "https://www.longines.com/de/p/watch-conquest-l3-830-4-90-6"},
+      {"reference": "L4.523.0.50.2", "collectionId": "la-grande-classique", "modelName": "LA GRANDE CLASSIQUE DE LONGINES MONOCHROME", "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-monochrome-l4-523-0-50-2-77a63b-hero.png", "productUrl": "https://www.longines.com/de/p/watch-la-grande-classique-de-longines-l4-523-0-50-2"},
+      {"reference": "L4.810.4.12.6", "collectionId": "elegant", "modelName": "LONGINES ELEGANT COLLECTION", "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-elegant-collection-l4-810-4-12-6-5945b1-hero.png", "productUrl": "https://www.longines.com/de/p/watch-longines-elegant-collection-l4-810-4-12-6"},
+      {"reference": "L5.200.4.75.A", "collectionId": "mini-dolcevita", "modelName": "MINI DOLCEVITA SYLT EDITION", "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-mini-dolcevita-sylt-edition-l5-200-4-75-a-2da5ec-hero.png", "productUrl": "https://www.longines.com/de/p/watch-longines-mini-dolcevita-l5-200-4-75-a"}
+    ],
+    "note": "Four of the 7 M-C configurations are 'Sylt Edition' pieces (Sylt is a well-known German resort island) - a plausible Germany-market-specific limited variant not previously observed in the CH/GB/HK/JP/KR/TW/US markets already in the catalog. The other 3 (L4.523.0.50.2, L4.810.4.12.6) are otherwise-ordinary configurations simply not yet observed in any prior market collection. All 7 include an imageUrl and collectionId so the coordinator can add them to data/catalog/longines-catalog.json directly. This subagent did NOT write to data/catalog/longines-catalog.json (read-only per task scope)."
+  },
+  "taxDetermination": {
+    "priceType": "tax-include",
+    "taxRatePercent": 19,
+    "evidenceForPriceType": "Every product detail page opened in this session (21 distinct PDPs across the observations + spot-check) displayed the price immediately followed by the label 'inkl. MwSt' (= 'includes VAT'), e.g. '3.950,00 € inkl. MwSt,' on L4.523.0.50.2's PDP. No PDP showed 'zzgl. MwSt' (plus VAT) or any tax-exclusive framing.",
+    "evidenceForTaxRate": "Independently confirmed via German federal law text at https://www.gesetze-im-internet.de/ustg_1980/__12.html (UStG §12 Abs. 1: 'Die Steuer beträgt für jeden steuerpflichtigen Umsatz 19 Prozent der Bemessungsgrundlage'), accessed 2026-09-27. This is the current standard German VAT rate (Regelsteuersatz) and was not assumed from memory or copied from the sibling data/markets/omega-germany-market.json file (which independently uses the same 19% figure, corroborating rather than being the source of this determination)."
+  },
+  "readmeUpdate": {
+    "status": "NOT REQUIRED",
+    "updated": false,
+    "sections": [],
+    "reason": "This is one of three parallel single-market work units (DE only; SG and FR are being collected independently by other subagents under the same coordinator). Per AGENTS.md's multi-market collaboration rules, only the coordinator may merge the catalog and should synchronize README.md / watch-data-collection-guide.md coverage tables once all three markets are known-complete, to avoid a partial/inconsistent human-facing update from a single market's perspective."
+  },
+  "protectedScopeCheck": {
+    "status": "PASS",
+    "filesWrittenThisTask": [
+      "data/markets/longines-germany-market.json",
+      "data/history/DE/longines-price-history.json",
+      "data/evidence/longines/DE/2026-09-27/observations.json",
+      "data/evidence/longines/DE/2026-09-27/collection-summary.json",
+      "data/evidence/longines/DE/2026-09-27/validation-summary.json",
+      "data/evidence/longines/DE/2026-09-27/nickname-research.json",
+      "data/evidence/longines/DE/2026-09-27/traveler-refund-policy-check.json"
+    ],
+    "filesReadOnlyForReference": [
+      "data/catalog/longines-catalog.json",
+      "data/markets/longines-switzerland-market.json",
+      "data/history/CH/longines-price-history.json",
+      "data/markets/omega-germany-market.json",
+      "data/history/DE/omega-price-history.json",
+      "data/traveler-refund-policies.json",
+      "data/schemas/*.json",
+      "AGENTS.md",
+      "ai-data-maintenance-guide.md",
+      "examples/omega-taiwan-collection-workflow.md"
+    ],
+    "otherMarketsOrAgentsObserved": "While using Chrome DevTools MCP, other open browser tabs/pages belonging to other subagents' isolated contexts (isolatedContext=longines-sg-market, isolatedContext=longines-fr-market, isolatedContext=longines-sg-tax-check) were visible via list_pages/navigate_page results. These pages were never read, clicked, navigated, or otherwise interacted with; all of this subagent's own browser actions were scoped to its own isolatedContext='longines-de-market' pages only. This observation is recorded here purely as a factual note per AGENTS.md's instruction to report (not act on) any such incidental observations.",
+    "tempScratchFilesCleanedUp": true,
+    "tempScratchFilesNote": "A local .tmp-longines-de-scratch/ directory and a test-write.json probe file were created under the project root purely as MCP evaluate_script file-output targets (the tool's workspace-root restriction required paths inside the project directory) and were deleted before finishing this task; they were never part of any evidence or official-data deliverable."
+  }
+}

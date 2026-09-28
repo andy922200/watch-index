@@ -1,0 +1,56 @@
+{
+  "brandId": "longines",
+  "marketCode": "FR",
+  "checkedAt": "2026-09-27T15:12:00.000Z",
+  "purpose": "依 ai-data-maintenance-guide.md「旅客退稅政策」章節規定，新增市場任務須同時查核該市場旅客退稅政策。data/traveler-refund-policies.json 為跨品牌共用、以 marketCode 為單位的市場級法規事實檔，其中已存在 FR 記錄（availability=available，來源為法國海關總署 PABLO 系統，evidencePath 指向 data/evidence/rolex/FR/2026-09-12/traveler-refund-policy.json）。此記錄本身已滿足「新增市場需查核旅客退稅政策」的資料需求，本次不新增、不修改該共用檔案，僅以官方一手來源獨立覆核其現況是否仍正確有效，並將覆核過程記錄於本檔（longines 品牌、FR 市場專屬 evidence 目錄）。",
+  "existingRecordSnapshot": {
+    "marketCode": "FR",
+    "assessedAt": "2026-09-11T17:00:00Z",
+    "availability": "available",
+    "merchantParticipationRequired": true,
+    "exportValidationRequired": true,
+    "evidencePath": "data/evidence/rolex/FR/2026-09-12/traveler-refund-policy.json",
+    "existingSource": {
+      "publisher": "Direction générale des douanes et droits indirects",
+      "title": "La détaxe en France pour les touristes - PABLO",
+      "url": "https://www.douane.gouv.fr/fiche/la-detaxe-en-france-pour-les-touristes-pablo",
+      "accessedAt": "2026-09-11T17:00:00Z"
+    }
+  },
+  "independentReVerification": {
+    "method": "WebFetch 直接開啟既有記錄引用的同一官方 URL（法國海關總署 PABLO 系統頁面），閱讀當前線上內容並逐句核對既有記錄之 availability、merchantParticipationRequired、exportValidationRequired 與 eligibilitySummary 是否仍與官方頁面現況一致；未沿用既有 evidence 文字，而是重新獨立擷取當前頁面內容比對。",
+    "url": "https://www.douane.gouv.fr/fiche/la-detaxe-en-france-pour-les-touristes-pablo",
+    "accessedAt": "2026-09-27T15:12:00.000Z",
+    "pageLastUpdatedLabel": "Mise à jour le 04/06/2026",
+    "findings": {
+      "eligibility": "僅限「résident dans un État tiers à la date des achats」（購買時須為歐盟以外第三國居民，歐盟27國與摩納哥居民排除在外）；另需在法國停留少於六個月、年滿16歲，並提供護照或有效身分證件。",
+      "merchantParticipation": "非強制性，原文「tous les vendeurs ne pratiquent pas la vente en détaxe」（並非所有零售商都參與退稅），消費者須在參與的商店購買。",
+      "exportValidation": "必須，原文「Lors de votre sortie définitive de l'Union européenne, vous devez présenter...la marchandise et le bordereau au visa de la douane」（離開歐盟時須向海關出示商品及單據）。",
+      "minimumPurchaseAmount": "100 歐元（含稅），原文「le montant de vos achats toutes taxes comprises...doit être supérieur à 100 euros」。"
+    },
+    "comparisonWithExistingRecord": {
+      "availability": {
+        "existing": "available",
+        "reVerified": "available",
+        "match": true
+      },
+      "merchantParticipationRequired": {
+        "existing": true,
+        "reVerified": true,
+        "match": true
+      },
+      "exportValidationRequired": {
+        "existing": true,
+        "reVerified": true,
+        "match": true
+      },
+      "eligibilitySummary": {
+        "existing": "適用於通常居住在歐盟以外的旅客；須由商店開立退稅文件並在離開歐盟時完成海關出口驗證。退款由商家處理，海關不直接退款。",
+        "reVerified": "與上述現況一致，額外補充：需在法國停留少於六個月、年滿16歲、最低消費金額100歐元（既有摘要未列出金額門檻，但未與現況牴觸，屬摘要精簡而非錯誤）。",
+        "match": true
+      }
+    }
+  },
+  "conclusion": "PASS — 既有 data/traveler-refund-policies.json 中 FR 市場記錄（availability=available、merchantParticipationRequired=true、exportValidationRequired=true）經本次獨立覆核仍與法國海關總署 PABLO 系統官方頁面現況一致，頁面標示最後更新於 2026-06-04（早於既有記錄查核時間 2026-09-11，亦早於本次覆核時間），無需修改。本次未發現既有記錄有誤或過時之處，故未提出更正建議；未新增、未修改共用檔案 data/traveler-refund-policies.json。",
+  "note": "本檔為 longines 品牌、FR 市場專屬的獨立覆核記錄，與 data/traveler-refund-policies.json 內以 marketCode 為單位、evidencePath 指向 rolex 的既有記錄性質不同：後者是該市場政策記錄唯一的正式 evidence 連結（依規則以 marketCode 而非品牌區分，不重複建立），本檔僅補充本次覆核過程供統籌者與後續稽核參考。"
+}

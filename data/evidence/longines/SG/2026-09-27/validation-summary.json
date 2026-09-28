@@ -1,0 +1,632 @@
+{
+  "brandId": "longines",
+  "marketCode": "SG",
+  "validatedAt": "2026-09-27T00:20:00.000Z",
+  "schemasUsed": [
+    "data/schemas/watch-market.schema.json (schemaVersion 3)",
+    "data/schemas/watch-price-history.schema.json (schemaVersion 3)"
+  ],
+  "validationMethodNote": "環境未安裝 ajv 或 python-jsonschema，且不得安裝依賴；以不依賴外部套件的 Python 逐項核對兩份 Schema 實際使用的關鍵字（$ref、type、const、enum、pattern、required、additionalProperties、items、minItems、uniqueItems、minProperties、propertyNames、minimum/maximum、minLength、allOf/if/then、format date-time／uri）：market 與 history 檔案已逐欄核對通過；未修改 catalog schema 或 catalog 檔案，故本次不涉及 catalog 層驗證（catalog 合併為統籌者職責）。此為手工實作，非官方驗證器輸出，與既有 GB/HK evidence 採用相同方法論。",
+  "layer1_jsonAndSchema": {
+    "status": "PASS",
+    "checks": [
+      "嚴格 JSON 解析（攔重複 key、NaN/Infinity）：data/markets/longines-singapore-market.json、data/history/SG/longines-price-history.json 與 data/evidence/longines/SG/2026-09-27 下全部檔案逐一通過 json.loads(object_pairs_hook=unique_object, parse_constant=invalid_constant)",
+      "data/markets/longines-singapore-market.json 通過 watch-market.schema.json（schemaVersion 3）全部必要欄位、型別、pattern、enum 與 additionalProperties=false 檢查（含 755 筆 watches 逐筆 key 集合核對，marketWatch 允許鍵集合完全相符）",
+      "data/history/SG/longines-price-history.json 通過 watch-price-history.schema.json（schemaVersion 3）全部必要欄位、型別、pattern、enum、allOf/if-then（listed 需整數價格、非 listed 需 null）檢查",
+      "market 755 筆 watches 與 history priceSeries 755 筆逐一核對 additionalProperties=false（無多餘欄位）",
+      "collectionAliases 31 個 key 逐一符合 slug pattern，且每個值符合 namesWithSources 結構（names/sources 皆為空陣列，型別正確）"
+    ],
+    "errors": []
+  },
+  "layer2_crossFileRelations": {
+    "status": "PASS",
+    "checks": [
+      "market watchCount 755 == watches.length；history collectionRuns[0].recordCount 755 == priceSeries 筆數",
+      "755 個 reference 全部唯一；watchId 全部等於 'longines:' + reference",
+      "market／history 的 watchId 集合完全相同（差集為空，無孤兒）",
+      "collectionRuns 僅 runId 1；priceSeries 755 筆價格點的 runId 均為 1，存在於 collectionRuns；每個 watchId 僅 1 個價格點，無相鄰重複點需檢查",
+      "market 31 個 collectionAliases key 與 evidence（observations.json／collection-summary.json）記錄的 31 個 collectionId 完全一致",
+      "未修改 data/catalog/longines-catalog.json；本次未產生任何 catalog 相關檔案或欄位（catalog 合併留待統籌者執行）",
+      "未讀寫 data/markets/、data/history/、data/evidence/longines/ 下任何 DE、FR 或既有 TW/HK/JP/KR/CH/GB/US 市場的檔案"
+    ],
+    "errors": [],
+    "notRun": [
+      {
+        "item": "app/scripts/generate-watch-data.mjs 建置與 app vitest 測試",
+        "reason": "NOT RUN — 任務範圍限定為 SG 市場的 market/history/evidence 三類檔案，且本工作單元不涉及 catalog 合併與前端建置驗證，未獲授權執行涉及跨市場整體建置的驗證。"
+      },
+      {
+        "item": "data/catalog/longines-catalog.json 的正式合併與 sourceMarketCodes 更新",
+        "reason": "NOT RUN — 依任務範圍與 AGENTS.md 多市場協作規則，catalog 合併為統籌者職責；本次僅提供 C∩M=755／M−C=0 的比對結果供統籌者參考（見 collection-summary.json scopeNotes）。"
+      }
+    ]
+  },
+  "layer3_sourceReconciliation": {
+    "status": "PASS",
+    "checks": [
+      "755 筆 market 的 productUrl、isNewModel、caseDescription、dialDescription 逐筆回對 observations.json，無差異",
+      "755 筆 history 價格逐筆回對 observations.json 的 parsedPrice，無差異",
+      "755 筆價格文字 value_formatted（例如 '$3,600.00'）依 '$' 前綴、逗號千分位與句點小數點解析，與結構化 base_price.value 完全一致；無非零小數；special_price 全數為 null",
+      "755 筆 currency 皆為 SGD；StoreConfig 為 SG／en_SG／SGD／store_code=en_sg",
+      "case_material（21 個唯一 ID）與 dial_color（67 個唯一 ID）選項全部可由官方 ProductAttributes(en-sg) attributeMetadata.items 對應（0 筆未對應）",
+      "market 的 collectionAliases 與 nickname-research.json 的 acceptedCollectionAliases 一致（本次 0 個採用）；localNicknames 全為空，與 acceptedNicknames 一致",
+      "20 筆獨立抽查逐一以商品頁 schema.org JSON-LD 交叉核對 sku/width/material/color/price/priceCurrency/availability，20/20 完全一致（見 independentSpotCheck）"
+    ],
+    "errors": []
+  },
+  "layer4_completenessAndSpotCheck": {
+    "status": "PASS",
+    "checks": [
+      "官方 total_count 755；32 頁皆 HTTP 200，前 31 頁每頁 24 筆、第 32 頁 11 筆；第 33 頁官方回傳「currentPage value 33 specified is greater than the 32 page(s) available.」",
+      "5 個家族頁官方總數（conquest 180 + elegance 294 + heritage 70 + master 157 + spirit 54 = 755）與收集結果逐一相符",
+      "31 個子系列（以 preferred_category.url_path 判定歸屬）官方總數與收集結果逐一相符，且每筆恰屬一個子系列（見 collection-summary.json subcategoryReconciliation，全數 matchesOfficialTotal=true，總和 755）",
+      "20 款以 SSR 商品頁 schema.org JSON-LD 獨立抽查全部 PASS（見 independentSpotCheck）"
+    ],
+    "errors": []
+  },
+  "layer5_changeSafety": {
+    "status": "PASS",
+    "checks": [
+      "本次為 Longines 新增市場：SG 的 market、history、evidence 先前皆不存在（data/history/SG/ 僅有既有 rolex-price-history.json），無既有 longines 價格序列可被覆寫",
+      "未修改 Rolex／Omega／Longines 任何既有品牌或市場的 catalog、market、history 或 evidence，包括 data/history/SG/rolex-price-history.json",
+      "未修改 data/schemas/；未修改 data/traveler-refund-policies.json（該檔案已存在 SG 記錄，來源為既有 Rolex SG 查核，本次僅於 traveler-refund-policy-check.json 中如實記錄獨立覆核結果，未自行編輯共用檔案）",
+      "未修改 data/catalog/longines-catalog.json（catalog 合併為統籌者職責，非本次範圍）",
+      "執行前 git status --short 顯示工作區為 clean；執行過程中 chrome-devtools MCP 觀察到 DE／FR 子代理各自開啟的分頁（isolatedContext=longines-de-market／longines-fr-market），本工作單元僅在頁面清單層級觀察其存在，未讀取、未使用、未修改、未關閉這些非 SG 分頁或其對應的正式資料與 evidence 檔案",
+      "執行後新增 data/markets/longines-singapore-market.json、data/history/SG/longines-price-history.json 與 data/evidence/longines/SG/2026-09-27/ 下 5 份檔案；未觸碰 DE、FR 或其他市場正在進行的工作"
+    ],
+    "errors": []
+  },
+  "sourceReconciliation": {
+    "observedListingCount": 755,
+    "marketWatchCount": 755,
+    "priceSeriesCount": 755,
+    "duplicateReferenceCount": 0,
+    "collectionIdCount": 31
+  },
+  "priceStatistics": {
+    "currency": "SGD",
+    "listed": 755,
+    "priceUnavailable": 0,
+    "notListed": 0,
+    "min": {
+      "price": 1270,
+      "references": [
+        "L3.759.4.58.6",
+        "L3.759.4.76.6",
+        "L3.759.4.96.6"
+      ]
+    },
+    "max": {
+      "price": 35000,
+      "references": [
+        "L5.200.7.71.6",
+        "L5.200.9.71.6"
+      ]
+    },
+    "median": 3600
+  },
+  "taxDetermination": {
+    "priceType": "tax-include",
+    "taxRatePercent": 9,
+    "basis": "IRAS 官方現行 GST 稅率 9%（自 2024-01-01 生效，2026-09-27 查核當下無更新公告）+ IRAS「Displaying and quoting prices」規定 GST 註冊商家須以含稅價格對消費者標示、廣告及網站展示；與既有 Rolex SG 市場（含稅 9%，見 watch-data-collection-guide.md）判定一致（互為佐證，非直接引用）。詳見 collection-summary.json tax 區塊。"
+  },
+  "catalogDiff": {
+    "note": "與 data/catalog/longines-catalog.json（唯讀，874 筆聯集）比對，僅供統籌者參考，不作為驗收依據，本工作單元未寫入 catalog：",
+    "existingCatalogWatchCount": 874,
+    "marketWatchCount": 755,
+    "intersectionCM": 755,
+    "newMinusC": 0,
+    "newMinusCList": []
+  },
+  "travelerRefundPolicyCheck": {
+    "status": "SATISFIED_BY_EXISTING_RECORD_INDEPENDENTLY_RECHECKED",
+    "finding": "data/traveler-refund-policies.json 已存在 marketCode=SG 的記錄（assessedAt 2026-09-10T16:29:36Z，availability=available，evidencePath 指向 data/evidence/rolex/SG/2026-09-11/traveler-refund-policy.json，來源 IRAS Tourist Refund Scheme）。本工作單元以 chrome-devtools MCP 實際重新開啟並讀取該 IRAS 頁面渲染後文字，獨立確認 eTRS 制度、資格條件（16 歲以上、非公民/PR、非機組員、非 Specified Person）、SGD100 消費門檻、零售商參與與機場出境核驗要求均與既有記錄描述一致，未發現過時或錯誤之處。",
+    "action": "未自行新增或修改 data/traveler-refund-policies.json；獨立覆核過程與結果記錄於 data/evidence/longines/SG/2026-09-27/traveler-refund-policy-check.json。"
+  },
+  "independentSpotCheck": {
+    "count": 20,
+    "result": "PASS",
+    "coverage": "最低價（3 款同價並列，含 3 款完整同基本型號配對）、最高價（2 款同價並列，含同基本型號配對）、5 個家族代表（conquest／elegance／heritage／master／spirit）、5 組同基本型號不同配置配對（conquest 低價組、mini-dolcevita 高價組、conquest-heritage、master-collection-chrono-monopusher、spirit-zulu-time、conquest-classic）、6 個新款（tag=NEW）、3 個暢銷標示（tag=BESTSELLER）、3 個稀有子系列代表（master-gmt 僅 2 筆、master-collection-chrono-monopusher 僅 2 筆、pilot-majetek 僅 3 筆）、2 款異常命名案例（Pilot Majetek 'Pioneer Edition'、HydroConquest 'Exclusive Edition'），共 20 款；本市場無「無公開價」款式可抽查（755 筆全數 listed 且有公開價格）；755 筆全數 stock_status=OUT_OF_STOCK，20 筆抽查之 schema.org availability 亦全數為 OutOfStock，與列表資料一致，非擷取錯誤。",
+    "items": [
+      {
+        "reference": "L2.449.4.97.6",
+        "reasons": [
+          "family representative: master (master-collection)",
+          "new model (tag=NEW)"
+        ],
+        "jsonLd": {
+          "sku": "L2.449.4.97.6",
+          "width": "Ø 30.00 mm",
+          "material": "Stainless steel",
+          "color": "Frosted Blue sunray",
+          "price": 3600,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "Ø 30.00 mm, Stainless steel",
+          "dialDescription": "Frosted Blue sunray",
+          "price": 3600
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-the-longines-master-collection-l2-449-4-97-6",
+        "observedAt": "2026-09-27T00:09:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.759.4.58.6",
+        "reasons": [
+          "lowest price (3-way tie)"
+        ],
+        "jsonLd": {
+          "sku": "L3.759.4.58.6",
+          "width": "Ø 41.00 mm",
+          "material": "Stainless steel",
+          "color": "Black lacquered polished",
+          "price": 1270,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "Ø 41.00 mm, Stainless steel",
+          "dialDescription": "Black lacquered polished",
+          "price": 1270
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-conquest-l3-759-4-58-6",
+        "observedAt": "2026-09-27T00:10:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.759.4.76.6",
+        "reasons": [
+          "lowest price (3-way tie)",
+          "same base model as L3.759.4.58.6, different dial config"
+        ],
+        "jsonLd": {
+          "sku": "L3.759.4.76.6",
+          "width": "Ø 41.00 mm",
+          "material": "Stainless steel",
+          "color": "Sunray silver",
+          "price": 1270,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "Ø 41.00 mm, Stainless steel",
+          "dialDescription": "Sunray silver",
+          "price": 1270
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-conquest-l3-759-4-76-6",
+        "observedAt": "2026-09-27T00:10:30.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.759.4.96.6",
+        "reasons": [
+          "lowest price (3-way tie)",
+          "same base model as L3.759.4.58.6, different dial config"
+        ],
+        "jsonLd": {
+          "sku": "L3.759.4.96.6",
+          "width": "Ø 41.00 mm",
+          "material": "Stainless steel",
+          "color": "Sunray blue",
+          "price": 1270,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "Ø 41.00 mm, Stainless steel",
+          "dialDescription": "Sunray blue",
+          "price": 1270
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-conquest-l3-759-4-96-6",
+        "observedAt": "2026-09-27T00:11:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L5.200.7.71.6",
+        "reasons": [
+          "highest price (tie)"
+        ],
+        "jsonLd": {
+          "sku": "L5.200.7.71.6",
+          "width": "21.50 X 29.00 mm",
+          "material": "18 karat yellow gold",
+          "color": "Silver \"flinqué\"",
+          "price": 35000,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "21.50 X 29.00 mm, 18 karat yellow gold",
+          "dialDescription": "Silver \"flinqué\"",
+          "price": 35000
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-longines-mini-dolcevita-l5-200-7-71-6",
+        "observedAt": "2026-09-27T00:11:30.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L5.200.9.71.6",
+        "reasons": [
+          "highest price (tie)",
+          "same base model as L5.200.7.71.6, different case metal"
+        ],
+        "jsonLd": {
+          "sku": "L5.200.9.71.6",
+          "width": "21.50 X 29.00 mm",
+          "material": "18 karat rose gold",
+          "color": "Silver \"flinqué\"",
+          "price": 35000,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "21.50 X 29.00 mm, 18 karat rose gold",
+          "dialDescription": "Silver \"flinqué\"",
+          "price": 35000
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-longines-mini-dolcevita-l5-200-9-71-6",
+        "observedAt": "2026-09-27T00:12:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.860.4.92.6",
+        "reasons": [
+          "family representative: conquest (conquest)",
+          "new model (tag=NEW)"
+        ],
+        "jsonLd": {
+          "sku": "L3.860.4.92.6",
+          "width": "Ø 41.00 mm",
+          "material": "Stainless steel",
+          "color": "Blue sandblasted",
+          "price": 1850,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "Ø 41.00 mm, Stainless steel",
+          "dialDescription": "Blue sandblasted",
+          "price": 1850
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-conquest-l3-860-4-92-6",
+        "observedAt": "2026-09-27T00:12:30.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L5.512.4.70.6",
+        "reasons": [
+          "family representative: elegance (dolcevita)",
+          "new model (tag=NEW)"
+        ],
+        "jsonLd": {
+          "sku": "L5.512.4.70.6",
+          "width": "23.30 X 37.00 mm",
+          "material": "Stainless steel",
+          "color": "Silver \"flinqué\"",
+          "price": 2250,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "23.30 X 37.00 mm, Stainless steel",
+          "dialDescription": "Silver \"flinqué\"",
+          "price": 2250
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-longines-dolcevita-l5-512-4-70-6",
+        "observedAt": "2026-09-27T00:13:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L1.648.4.92.6",
+        "reasons": [
+          "family representative: heritage (conquest-heritage)",
+          "new model (tag=NEW)"
+        ],
+        "jsonLd": {
+          "sku": "L1.648.4.92.6",
+          "width": "Ø 38.00 mm",
+          "material": "Stainless steel",
+          "color": "Light Blue opaline",
+          "price": 5950,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "Ø 38.00 mm, Stainless steel",
+          "dialDescription": "Light Blue opaline",
+          "price": 5950
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-conquest-heritage-l1-648-4-92-6",
+        "observedAt": "2026-09-27T00:13:30.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L1.648.4.92.2",
+        "reasons": [
+          "same base model as L1.648.4.92.6, different bracelet/strap config"
+        ],
+        "jsonLd": {
+          "sku": "L1.648.4.92.2",
+          "width": "Ø 38.00 mm",
+          "material": "Stainless steel",
+          "color": "Light Blue opaline",
+          "price": 5810,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "Ø 38.00 mm, Stainless steel",
+          "dialDescription": "Light Blue opaline",
+          "price": 5810
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-conquest-heritage-l1-648-4-92-2",
+        "observedAt": "2026-09-27T00:14:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.812.4.50.6",
+        "reasons": [
+          "family representative: spirit (spirit-zulu-time)"
+        ],
+        "jsonLd": {
+          "sku": "L3.812.4.50.6",
+          "width": "Ø 42.00 mm",
+          "material": "Stainless steel and ceramic bezel",
+          "color": "Black matt",
+          "price": 4790,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "Ø 42.00 mm, Stainless steel and ceramic bezel",
+          "dialDescription": "Black matt",
+          "price": 4790
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-longines-spirit-zulu-time-l3-812-4-50-6",
+        "observedAt": "2026-09-27T00:14:30.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.802.4.50.6",
+        "reasons": [
+          "same base model family as L3.812.4.50.6 (Spirit Zulu Time), different case size (39mm vs 42mm)"
+        ],
+        "jsonLd": {
+          "sku": "L3.802.4.50.6",
+          "width": "Ø 39.00 mm",
+          "material": "Stainless steel and ceramic bezel",
+          "color": "Black matt",
+          "price": 4790,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "Ø 39.00 mm, Stainless steel and ceramic bezel",
+          "dialDescription": "Black matt",
+          "price": 4790
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-longines-spirit-zulu-time-l3-802-4-50-6",
+        "observedAt": "2026-09-27T00:15:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.844.8.71.2",
+        "reasons": [
+          "subcategory representative: master-gmt (rare subcategory, 2 items)"
+        ],
+        "jsonLd": {
+          "sku": "L2.844.8.71.2",
+          "width": "Ø 40.00 mm",
+          "material": "18 karat rose gold",
+          "color": "Opaline Ivory",
+          "price": 22630,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "Ø 40.00 mm, 18 karat rose gold",
+          "dialDescription": "Opaline Ivory",
+          "price": 22630
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-the-longines-master-collection-gmt-l2-844-8-71-2",
+        "observedAt": "2026-09-27T00:15:30.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.960.4.78.2",
+        "reasons": [
+          "subcategory representative: master-collection-chrono-monopusher (rare subcategory, 2 items)",
+          "new model (tag=NEW)"
+        ],
+        "jsonLd": {
+          "sku": "L2.960.4.78.2",
+          "width": "Ø 41.00 mm",
+          "material": "Stainless steel",
+          "color": "Ivory \"barleycorn\"",
+          "price": 5000,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "Ø 41.00 mm, Stainless steel",
+          "dialDescription": "Ivory \"barleycorn\"",
+          "price": 5000
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-the-longines-master-collection-chrono-monopusher-l2-960-4-78-2",
+        "observedAt": "2026-09-27T00:16:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.960.4.93.2",
+        "reasons": [
+          "same base model as L2.960.4.78.2, different dial config",
+          "new model (tag=NEW)"
+        ],
+        "jsonLd": {
+          "sku": "L2.960.4.93.2",
+          "width": "Ø 41.00 mm",
+          "material": "Stainless steel",
+          "color": "Frosted Blue \"barleycorn\"",
+          "price": 5000,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "Ø 41.00 mm, Stainless steel",
+          "dialDescription": "Frosted Blue \"barleycorn\"",
+          "price": 5000
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-the-longines-master-collection-chrono-monopusher-l2-960-4-93-2",
+        "observedAt": "2026-09-27T00:16:30.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.838.1.53.2",
+        "reasons": [
+          "subcategory representative: pilot-majetek (rare subcategory, 3 items)",
+          "anomaly: 'Pioneer Edition' variant naming"
+        ],
+        "jsonLd": {
+          "sku": "L2.838.1.53.2",
+          "width": "Ø 43.00 mm",
+          "material": "Titanium",
+          "color": "Black matt",
+          "price": 7010,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "Ø 43.00 mm, Titanium",
+          "dialDescription": "Black matt",
+          "price": 7010
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-longines-pilot-majetek-l2-838-1-53-2",
+        "observedAt": "2026-09-27T00:17:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.386.3.87.7",
+        "reasons": [
+          "bestseller tag (tag=BESTSELLER)",
+          "subcategory representative: conquest-classic"
+        ],
+        "jsonLd": {
+          "sku": "L2.386.3.87.7",
+          "width": "Ø 34.00 mm",
+          "material": "Stainless steel and red PVD coating",
+          "color": "White mother-of-pearl",
+          "price": 2460,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "Ø 34.00 mm, Stainless steel and red PVD coating",
+          "dialDescription": "White mother-of-pearl",
+          "price": 2460
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-conquest-classic-l2-386-3-87-7",
+        "observedAt": "2026-09-27T00:17:30.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.286.3.72.7",
+        "reasons": [
+          "same base model family as L2.386.3.87.7 (Conquest Classic), different case size (29.50mm)"
+        ],
+        "jsonLd": {
+          "sku": "L2.286.3.72.7",
+          "width": "Ø 29.50 mm",
+          "material": "Stainless steel and red PVD coating",
+          "color": "Sunray silver",
+          "price": 1780,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "Ø 29.50 mm, Stainless steel and red PVD coating",
+          "dialDescription": "Sunray silver",
+          "price": 1780
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-conquest-classic-l2-286-3-72-7",
+        "observedAt": "2026-09-27T00:18:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.773.4.61.6",
+        "reasons": [
+          "bestseller tag (tag=BESTSELLER)",
+          "subcategory representative: master-collection-chronograph"
+        ],
+        "jsonLd": {
+          "sku": "L2.773.4.61.6",
+          "width": "Ø 42.00 mm",
+          "material": "Stainless steel",
+          "color": "Anthracite",
+          "price": 5780,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "Ø 42.00 mm, Stainless steel",
+          "dialDescription": "Anthracite",
+          "price": 5780
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-the-longines-master-collection-chronograph-l2-773-4-61-6",
+        "observedAt": "2026-09-27T00:18:30.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.779.4.98.6",
+        "reasons": [
+          "anomaly: 'HYDROCONQUEST EXCLUSIVE EDITION' variant naming (boutique-exclusive)",
+          "new model (tag=NEW)"
+        ],
+        "jsonLd": {
+          "sku": "L3.779.4.98.6",
+          "width": "Ø 39.00 mm",
+          "material": "Stainless steel and ceramic bezel",
+          "color": "Frosted Blue sunray",
+          "price": 2800,
+          "priceCurrency": "SGD",
+          "availability": "OutOfStock"
+        },
+        "listing": {
+          "caseDescription": "Ø 39.00 mm, Stainless steel and ceramic bezel",
+          "dialDescription": "Frosted Blue sunray",
+          "price": 2800
+        },
+        "sourceUrl": "https://www.longines.com/en-sg/p/watch-hydroconquest-l3-779-4-98-6",
+        "observedAt": "2026-09-27T00:19:00.000Z",
+        "officialView": "SSR 商品頁 schema.org Product JSON-LD",
+        "result": "MATCH"
+      }
+    ]
+  },
+  "marketDiffFromExisting": {
+    "note": "與既有 Longines GB（806 筆，31 個 collectionId）、CH（805 筆）、US（802 筆）、TW（544 筆）、HK（493 筆）比較的初步觀察，僅供統籌者參考，不作為驗收依據：",
+    "watchCountDiff": "SG 755 筆，介於 HK(493)/TW(544) 與 US(802)/CH(805)/GB(806) 之間",
+    "collectionIdDiff": "SG 31 個 collectionId，與既有 GB（31 個）完全相同（名稱與 collectionId 均一致）",
+    "catalogOverlap": "SG 755 筆完整參考號全數已存在於既有 874 筆聯集 catalog 中（C∩M=755，M−C=0），未發現本市場獨有的新配置"
+  }
+}

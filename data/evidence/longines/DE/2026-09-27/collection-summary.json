@@ -1,0 +1,65 @@
+{
+  "brandId": "longines",
+  "marketCode": "DE",
+  "task": "new-market",
+  "locale": "de-DE",
+  "salesRegion": "Germany",
+  "entryPoint": {
+    "startedFrom": "https://www.longines.com/ (redirected by browser default locale to https://www.longines.com/zh-tw)",
+    "resolvedViaCountrySelector": "Clicked/confirmed the site's own language/country navigation link labelled 'Deutschland' -> https://www.longines.com/de",
+    "confirmedProductListingUrl": "https://www.longines.com/de/watches",
+    "confirmedByPageTitle": "\"Longines Uhren | Schweizer Uhren | LONGINES DE\"",
+    "note": "https://www.longines.com/de-de/watches returned a 'Page not found' (404-style SPA page); the site's actual German-market path is https://www.longines.com/de/watches (no region suffix), confirmed only after opening the real country selector menu and reading the rendered 'Deutschland' link href, not guessed."
+  },
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "not-applicable",
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "PASS",
+    "fallbackTool": null,
+    "notes": "Used Chrome DevTools MCP (mcp__chrome-devtools__*). Captured live network requests on https://www.longines.com/de/watches and on its 'Mehr Ergebnisse anzeigen' (load-more) interaction, identified the underlying Magento-style GraphQL endpoint https://www.longines.com/api/graphql with operationName=ProductList (reqid 427), and replayed the identical query in-page via fetch() with variables {currentPage:1, pageSize:900, url:'watches', filters:{category_uid:{eq:'NA=='}}, sort:{}, sizeRanges:{}, cache_buster_store:'de_de', cache_buster_lang:'de-de'} and request headers lang=de-de, store=de_de (matching the site's own request headers) to retrieve the entire catalog in one authoritative response rather than paging 24 items at a time."
+  },
+  "collectionPath": [
+    "1. Opened https://www.longines.com/de/watches in an isolated browser context (isolatedContext=longines-de-market) separate from other in-progress market subagents' contexts/pages.",
+    "2. Accepted the site's cookie/consent dialog to unblock further interaction.",
+    "3. Read the rendered PLP: heading '804 Produkte', a 'Nur auf Lager' (in-stock only) toggle left OFF (default, so out-of-stock/backorder items with public prices remain included), and a 'Mehr Ergebnisse anzeigen' load-more control with progressbar text '24 items seen and 804 in total'.",
+    "4. Clicked 'Mehr Ergebnisse anzeigen' once to force the page to make its real paginated GraphQL ProductList request (URL changed client-side to ?page=2) and captured that exact request/response via list_network_requests + get_network_request.",
+    "5. Replayed the captured ProductList GraphQL query via evaluate_script/fetch() with pageSize=900 and currentPage=1, first without locale headers (returned English/GBP data - rejected, not used) and then with headers lang=de-de/store=de_de matching the original captured request (returned German/EUR data with total_count=804, items.length=804 - used as the authoritative dataset)."
+  ],
+  "stopEvidence": {
+    "officialTotalCount": 804,
+    "itemsReturnedInSingleCall": 804,
+    "uniqueSkusReturned": 804,
+    "matchesRenderedPlpHeading": "804 Produkte (confirmed both at initial page load and via the GraphQL total_count field)",
+    "paginationExhausted": true,
+    "reasoning": "pageSize (900) exceeds total_count (804); the API returned page_info.current_page=1 with all 804 items in the single response and total_count===items.length, so there is no further page/cursor to fetch. No infinite-scroll or DOM-only completeness signal was relied upon; the stop condition is the structured API's own total_count field matching the returned item count, cross-checked against the independently-rendered PLP heading text observed before any API replay."
+  },
+  "recordCounts": {
+    "rawItemsReturned": 804,
+    "uniqueReferences": 804,
+    "duplicatesFound": 0
+  },
+  "conflictsFound": "None. Each SKU appeared exactly once in the ProductList response.",
+  "attempts": [
+    {
+      "attemptNumber": 1,
+      "time": "2026-09-27T15:04:xx.xxxZ (approx, see reqid 427 response Date header)",
+      "method": "In-page fetch() replay of captured ProductList GraphQL query, pageSize=900, currentPage=1, NO custom lang/store headers",
+      "result": "HTTP 200, total_count=806, currency=GBP, category names in English -- locale resolved incorrectly (fell back to a prior session/geo default, not the German store view). NOT used for official data.",
+      "discardedReason": "Locale/currency did not match the German market being collected; superseded by attempt 2."
+    },
+    {
+      "attemptNumber": 2,
+      "time": "2026-09-27T15:04:58.000Z",
+      "method": "Same fetch() replay, this time with request headers lang=de-de and store=de_de matching the original browser-issued request's headers",
+      "result": "HTTP 200, total_count=804, currency=EUR, category names in German (e.g. 'Uhren', 'HYDROCONQUEST'), prices in German number format (comma decimal, e.g. '2.550,00 €'). Used as the sole authoritative dataset for all official data below.",
+      "discardedReason": null
+    }
+  ],
+  "errors": [],
+  "priceFormatNote": "German de-DE price strings use a comma as the decimal separator and a period as the thousands separator (e.g. '2.550,00 €' = two thousand five hundred fifty euros). The GraphQL base_price.value field returns this same amount as a plain integer number of whole euros (e.g. 2550), with zero fractional/cent components across all 804 items (verified programmatically), so it was used directly as the schema's integer price without any string parsing, multiplication, or rounding.",
+  "collectionsFound": 31,
+  "collectionsMatchCatalog": true,
+  "collectionsNote": "The 31 collection slugs derived from each item's preferred_category.url_path last path segment exactly match the 31 distinct collectionId values already present in data/catalog/longines-catalog.json (no extra, none missing)."
+}

@@ -63,3 +63,21 @@
 美國完成官方 ProductList 全部 34 頁（每頁 24 筆，第 34 頁 10 筆）後有 802 個唯一完整配置，第 35 頁官方回傳 HTTP 404。完整批次時間見 `data/evidence/longines/US/2026-09-25/observations.json`。
 
 5 個家族官方總數為 master 158、conquest 186、spirit 58、elegance 327、heritage 73，合計 802；31 個子系列逐一相符。美國無全國統一銷售稅，官方 FAQ 明確說明列表／商品頁標價為稅前價、實際稅額於結帳時依收件地址計算，因此記為 `tax-exclude`、`taxRatePercent: null`（不得以單一州稅率代表全國）。完整拆分見 `data/evidence/longines/US/2026-09-25/collection-summary.json`。
+
+## Longines — 德國（DE）2026-09-27
+
+德國官方站台實際入口為 `https://www.longines.com/de/watches`（無 `-de` 地區後綴；`/de-de/watches` 回傳 404，經開啟站內語系選單確認實際路徑）。以 Chrome DevTools MCP 側錄同源 GraphQL ProductList 請求後，改以 `pageSize=900` 單次重放取得全部資料，`total_count=804` 與 `items.length=804`相符，並與獨立渲染的 PLP 標題「804 Produkte」一致；無下一頁／cursor 需求。完整批次時間約 `2026-09-27T15:04:58.000Z`。
+
+31 個系列 slug 與既有 catalog 的 31 個 `collectionId` 完全一致。與既有 874 筆聯集 catalog 比對：交集 797、德國市場新發現 7 筆（`L3.430.4.90.9`、`L3.779.4.19.6`、`L3.788.4.19.6`、`L3.830.4.90.6`、`L4.523.0.50.2`、`L4.810.4.12.6`、`L5.200.4.75.A`），其中 4 筆為「Sylt Edition」（Sylt 為知名德國度假島），疑似德國市場限定款式，已併入共用 catalog。稅制依聯邦司法部 UStG §12(1) 現行標準稅率記為 `tax-include`、19%。完整拆分見 `data/evidence/longines/DE/2026-09-27/collection-summary.json` 與 `validation-summary.json`。
+
+## Longines — 法國（FR）2026-09-27
+
+法國官方站台實際入口為 `https://www.longines.com/fr/watches`（無 `-fr` 地區後綴；`/fr-fr/watches` 回傳 404）。完成官方 ProductList 全部 33 頁（每頁 24 筆，第 33 頁 8 筆）後有 776 個唯一完整配置，第 34 頁官方回傳「currentPage value 34 specified is greater than the 33 page(s) available.」。完整批次時間為 `2026-09-27T15:23:03.000Z`。
+
+5 個家族官方總數為 conquest 186、elegance 301、heritage 73、master 158、spirit 58，合計 776；31 個子系列（另有 1 個次要重疊分類 `watches/elegance/agassiz/all`）逐一相符，並以兩個獨立渲染頁面（pilot-majetek「3 produits」、elegance「301 produits」）交叉驗證一致。與既有 catalog 比對：776 筆全數已存在於既有聯集（交集＝776，無新配置）。稅制依法國經濟財政部 TVA 稅率頁面（鐘錶不在 10%／5.5%／2.1% 優惠稅率列舉範圍）記為 `tax-include`、20%；官方稅務網站對直接 HTTP 請求（WebFetch）回傳 403，改以瀏覽器實際開啟頁面確認。完整拆分見 `data/evidence/longines/FR/2026-09-27/collection-summary.json`。
+
+## Longines — 新加坡（SG）2026-09-27
+
+新加坡官方站台入口 `https://www.longines.com/en-sg/watches` 首次嘗試即有效。完成官方 ProductList 全部 32 頁（前 31 頁每頁 24 筆＋第 32 頁 11 筆）後有 755 個唯一完整配置，第 33 頁官方回傳「currentPage value 33 specified is greater than the 32 page(s) available.」。完整批次時間見 `data/evidence/longines/SG/2026-09-27/observations.json`。
+
+5 個家族官方總數為 conquest 180、elegance 294、heritage 70、master 157、spirit 54，合計 755；31 個子系列逐一相符。與既有 catalog 比對：755 筆全數已存在於既有聯集（交集＝755，無新配置），與瑞士（805）、英國（806）等既有市場高度重疊。稅制依 IRAS 現行 GST 稅率（2024-01-01 起 9%）與「Displaying and quoting prices」含稅標示規定記為 `tax-include`、9%，與既有 Rolex SG 市場稅率判定一致（各自獨立查核，互為佐證）。755 筆商品官方 `stock_status` 全數為 `OUT_OF_STOCK`（與多數其他市場以 `IN_STOCK` 為主不同），已以 20 款商品頁 JSON-LD 交叉核對排除擷取錯誤，但未能查證確切原因，列為已知限制。完整拆分見 `data/evidence/longines/SG/2026-09-27/collection-summary.json`。

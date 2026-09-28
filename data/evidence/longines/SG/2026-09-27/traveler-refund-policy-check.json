@@ -1,0 +1,39 @@
+{
+  "brandId": "longines",
+  "marketCode": "SG",
+  "purpose": "新增市場（Longines SG）旅客退稅政策獨立覆核；依 AGENTS.md／ai-data-maintenance-guide.md 規定，旅客退稅制度為市場（非品牌）層級的法律事實，data/traveler-refund-policies.json 已存在 marketCode=SG 記錄，本次不重複新增，僅獨立覆核其現時正確性並記錄查核過程。",
+  "existingRecord": {
+    "marketCode": "SG",
+    "assessedAt": "2026-09-10T16:29:36Z",
+    "availability": "available",
+    "evidencePath": "data/evidence/rolex/SG/2026-09-11/traveler-refund-policy.json",
+    "priorSource": {
+      "publisher": "Inland Revenue Authority of Singapore",
+      "title": "IRAS | Tourist Refund Scheme",
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/consumers/tourist-refund-scheme",
+      "accessedAt": "2026-09-10T16:29:36Z"
+    }
+  },
+  "independentRecheck": {
+    "method": "以 chrome-devtools MCP 開啟獨立瀏覽器分頁（isolatedContext=longines-sg-tax-check），實際導向並讀取渲染後頁面文字，而非僅依賴 WebSearch 摘要或既有記錄的轉述。",
+    "checkedAt": "2026-09-27T00:07:00.000Z",
+    "sources": [
+      {
+        "publisher": "Inland Revenue Authority of Singapore",
+        "title": "IRAS | Tourist Refund Scheme",
+        "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/consumers/tourist-refund-scheme",
+        "accessedAt": "2026-09-27T00:07:00.000Z"
+      }
+    ],
+    "renderedTextExcerpt": "Tourists buying goods from retailers who participate in the electronic Tourist Refund Scheme (eTRS) may claim a refund of the GST paid on purchases made in Singapore. ... To be eligible for GST refund, you must be a tourist. You have to meet the following criteria: You are 16 years of age or above on the date of the purchase; You are not a citizen or a permanent resident of Singapore; ... You may qualify for tourist refund if the following conditions are satisfied: Purchase the goods and request the retailer to capture your information for tourist refund; Spend at least SGD100 (including GST) ...; Present original passport in person to the retailer ...; Apply for your GST refund at the eTRS self-help kiosk at the air[port]...",
+    "findings": [
+      "eTRS（electronic Tourist Refund Scheme）制度現行仍存在，退稅對象限定符合資格之旅客（16 歲以上、非新加坡公民／PR、非機組人員、非 Specified Person 等），與既有記錄 eligibilitySummary 描述的資格條件一致。",
+      "現行規定明確要求零售商須參與 eTRS（merchantParticipationRequired，與既有記錄一致）、旅客須現場出示護照供零售商數位擷取資訊，並於機場 eTRS 自助服務機／海關辦理出境核驗與申請（exportValidationRequired，與既有記錄一致）。",
+      "現行最低消費門檻為 SGD 100（可累計同日同一 GST 註冊號及店名最多 3 張發票／收據），與既有記錄「消費門檻」描述相符，未發現金額變動。",
+      "未發現任何顯示此制度已停止、暫停或大幅變更資格條件的官方公告；頁面內容與既有記錄查核時（2026-09-10）相比未見實質性差異。"
+    ]
+  },
+  "conclusion": "PASS — 既有 SG 記錄（availability: available，assessedAt 2026-09-10）經本次獨立覆核確認現時仍為正確、有效，未發現過時或錯誤之處。",
+  "action": "依規範，本次新增市場（Longines SG）的旅客退稅政策查核要求已由既有 SG 記錄滿足，未自行新增或修改 data/traveler-refund-policies.json，亦未產生會與既有記錄衝突的新結論；本檔案僅作為本次獨立覆核過程與結果的 evidence 記錄。",
+  "limitation": "本次覆核未逐一查證 Longines 新加坡官方精品店／授權經銷商（如 The Hour Glass、Cortina Watch 等）是否實際參與 eTRS（merchantParticipationRequired=true 為制度層級要求，非逐店家查證），此與既有 Rolex SG evidence 的查核範圍一致，非本次新增限制。"
+}

@@ -1,0 +1,38 @@
+{
+  "purpose": "Independent re-verification (not a new policy entry) of the existing data/traveler-refund-policies.json record for marketCode=DE, performed as part of the Longines DE new-market task. This market-level policy record is shared across brands (keyed by marketCode, not brandId) and already exists with evidencePath pointing at data/evidence/omega/DE/2026-09-20/traveler-refund-policy.json. Per task instructions, no new/duplicate DE policy entry was added to data/traveler-refund-policies.json; this file only records the independent recheck of whether that existing record is still accurate.",
+  "existingRecordChecked": {
+    "marketCode": "DE",
+    "availability": "available",
+    "assessedAt": "2026-09-20T15:40:00Z",
+    "evidencePathReferenced": "data/evidence/omega/DE/2026-09-20/traveler-refund-policy.json",
+    "claimedEligibilitySummaryEnUs": "Available to travelers domiciled outside the EU; the total value of the supply including VAT must exceed EUR 50, the goods must be exported in personal luggage before the end of the third calendar month following the month of supply, and a customs-certified export and purchaser certificate must be obtained. Passing the VAT relief to the traveler is the seller's decision and not all shops offer it.",
+    "claimedMerchantParticipationRequired": true,
+    "claimedExportValidationRequired": true
+  },
+  "recheckMethod": "Independently queried two official/government sources via WebFetch on 2026-09-27 (one of them the same publisher already cited by the existing record, one of them a different official legal-text source not previously cited in the omega evidence) to confirm the record's cited facts are still current and accurate.",
+  "recheckQueries": [
+    {
+      "sourceUrl": "https://www.germany.info/us-de/service/steuern/mwst-rueckerstattung-1217014",
+      "publisher": "German Federal Foreign Office (Auswärtiges Amt, germany.info)",
+      "accessedAt": "2026-09-27T00:00:00Z",
+      "findings": "Confirms residency-outside-EU requirement; confirms 19% VAT is embedded in German retail prices; confirms export must occur within three calendar months of purchase; confirms an export/purchaser certificate (Ausfuhr- und Abnehmerbescheinigung) or 'Tax Free Shopping Check' must be obtained from the merchant and presented with passport and goods, in original condition, to German customs on departure; explicitly states merchant participation is voluntary ('Eine Verpflichtung hierzu besteht allerdings nicht').",
+      "matchesExistingRecord": true
+    },
+    {
+      "sourceUrl": "https://www.gesetze-im-internet.de/ustg_1980/__6.html",
+      "publisher": "Bundesministerium der Justiz / juris GmbH (gesetze-im-internet.de) - official consolidated federal law text, UStG § 6 Abs. 3a",
+      "accessedAt": "2026-09-27T00:00:00Z",
+      "findings": "Quotes the statutory minimum-value threshold verbatim: 'der Gesamtwert der Lieferung einschließlich Umsatzsteuer 50 Euro übersteigt' (total value of the supply including VAT must exceed EUR 50), and the statutory export deadline verbatim: goods must be 'vor Ablauf des dritten Kalendermonats, der auf den Monat der Lieferung folgt, ausgeführt' (exported before the end of the third calendar month following the month of supply).",
+      "matchesExistingRecord": true
+    },
+    {
+      "sourceUrl": "https://www.gesetze-im-internet.de/ustg_1980/__12.html",
+      "publisher": "Bundesministerium der Justiz / juris GmbH (gesetze-im-internet.de) - official consolidated federal law text, UStG § 12",
+      "accessedAt": "2026-09-27T00:00:00Z",
+      "findings": "Confirms the current standard VAT rate is still 19% ('Die Steuer beträgt für jeden steuerpflichtigen Umsatz 19 Prozent der Bemessungsgrundlage'), consistent with the 19% figure used both in the existing traveler-refund-policies.json narrative and in this task's own longines-price-history.json taxRatePercent.",
+      "matchesExistingRecord": true
+    }
+  ],
+  "conclusion": "PASS - the existing data/traveler-refund-policies.json DE record (availability=available, EUR 50 threshold, 3-calendar-month export deadline, voluntary merchant participation, export/purchaser certificate + customs validation required) remains accurate and current as of 2026-09-27 based on two independent official government sources (Auswärtiges Amt and the official federal law database). No discrepancy was found. No changes to data/traveler-refund-policies.json were made or are recommended; it correctly applies at the marketCode level regardless of brand.",
+  "limitations": "This recheck verifies the general statutory/administrative facts (VAT rate, EUR 50 threshold, 3-month export window, voluntary merchant participation) but does not verify whether any specific Longines boutique or authorized retailer in Germany currently offers this tax-free service in practice; the existing record itself does not claim brand- or retailer-specific participation, and neither does this recheck."
+}

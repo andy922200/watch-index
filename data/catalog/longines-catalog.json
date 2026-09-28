@@ -2,7 +2,7 @@
   "$schema": "../schemas/watch-catalog.schema.json",
   "schemaVersion": 3,
   "brandId": "longines",
-  "collectedAt": "2026-09-25T15:32:21.956Z",
+  "collectedAt": "2026-09-27T15:40:00.000Z",
   "sourceMarketCodes": [
     "TW",
     "HK",
@@ -10,9 +10,12 @@
     "KR",
     "CH",
     "GB",
-    "US"
+    "US",
+    "DE",
+    "FR",
+    "SG"
   ],
-  "watchCount": 874,
+  "watchCount": 881,
   "watches": [
     {
       "watchId": "longines:L1.648.4.52.2",
@@ -5257,6 +5260,48 @@
       "collectionId": "primaluna",
       "reference": "L8.123.4.67.6",
       "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-primaluna-l8-123-4-67-6-b2c221-hero.png"
+    },
+    {
+      "watchId": "longines:L3.430.4.90.9",
+      "collectionId": "conquest",
+      "reference": "L3.430.4.90.9",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-sylt-edition-l3-430-4-90-9-88709b-hero.png"
+    },
+    {
+      "watchId": "longines:L3.779.4.19.6",
+      "collectionId": "hydroconquest",
+      "reference": "L3.779.4.19.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-hydroconquest-sylt-edition-l3-779-4-19-6-4e7398-hero.png"
+    },
+    {
+      "watchId": "longines:L3.788.4.19.6",
+      "collectionId": "hydroconquest",
+      "reference": "L3.788.4.19.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-hydroconquest-sylt-edition-l3-788-4-19-6-2a27da-hero.png"
+    },
+    {
+      "watchId": "longines:L3.830.4.90.6",
+      "collectionId": "conquest",
+      "reference": "L3.830.4.90.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-conquest-sylt-edition-l3-830-4-90-6-84a33b-hero.png"
+    },
+    {
+      "watchId": "longines:L4.523.0.50.2",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.523.0.50.2",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-la-grande-classique-de-longines-monochrome-l4-523-0-50-2-77a63b-hero.png"
+    },
+    {
+      "watchId": "longines:L4.810.4.12.6",
+      "collectionId": "elegant",
+      "reference": "L4.810.4.12.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-longines-elegant-collection-l4-810-4-12-6-5945b1-hero.png"
+    },
+    {
+      "watchId": "longines:L5.200.4.75.A",
+      "collectionId": "mini-dolcevita",
+      "reference": "L5.200.4.75.A",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-mini-dolcevita-sylt-edition-l5-200-4-75-a-2da5ec-hero.png"
     }
   ]
 }

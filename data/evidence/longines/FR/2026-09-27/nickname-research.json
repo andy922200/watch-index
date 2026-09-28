@@ -1,0 +1,100 @@
+{
+  "brandId": "longines",
+  "marketCode": "FR",
+  "researchedAt": "2026-09-27T15:23:03.000Z",
+  "scope": "new-market",
+  "status": "PASS",
+  "languages": [
+    "fr-FR（本輪選定的市場 locale，且為法國本土通行語言）"
+  ],
+  "method": "以法語查詢法國/法語圈市場流通的 Longines 系列或型號俗稱（surnom/petit nom），要求來源能把俗稱明確對應到本輪 31 個官方子系列（collectionId）之一，或 776 個法國官方完整參考號中的單一配置，並排除：(a) 官方命名典故本身（如 DolceVita 源自義大利語「甜蜜生活」、Zulu Time 源自 1925 年錶款的 Zulu 旗幟錶盤）而非民間衍生俗稱；(b) 僅單一論壇使用者的個人玩笑／吐槽用語，未見其他來源或使用者附和；(c) WebSearch 模型自行推論但未附具體可查證出處句子的候選。候選來源以法語錶類論壇（forumamontres.forumactif.com、lallement.com 等）、法語錶評媒體（lesrhabilleurs.com、commeuncamion.com、masculin.com 等）與官方頁面為主。",
+  "queries": [
+    "Longines HydroConquest surnom forum montre français",
+    "\"La Grande Classique\" Longines surnom \"montre du pape\"",
+    "Longines Spirit Zulu Time surnom collectionneur montre",
+    "Longines Legend Diver surnom \"montre plongée\" forumamontres",
+    "Longines DolceVita surnom \"la petite\" OR \"la rectangulaire\" montre femme",
+    "Longines Master Collection surnom \"la Master\" forumamontres",
+    "Longines Conquest Heritage \"central power reserve\" surnom collectionneur français",
+    "\"Longines\" montre surnom argot forumamontres -pape -bofbof",
+    "Longines Flagship Heritage surnom \"petit prince\" OR \"médaillon\" caravelle"
+  ],
+  "sourcesReviewed": [
+    {
+      "publisher": "lallement.com（法語錶友論壇「Les Epicuriens du Tout」）",
+      "title": "[Revue] LONGINES Hydroconquest 43mm",
+      "url": "https://www.lallement.com/Montres/viewtopic.php?f=12&t=21127",
+      "finding": "發帖者自行將所評測的「LONGINES Hydroconquest 43mm Bleue Automatique」戲稱為「Bofbof」（法語俚語，意指「馬馬虎虎、不太好」），原句：「Il s'agit donc de la LONGINES Hydroconquest 43mm Bleue Automatique, gentiment surnommée \"Bofbof\"!」。經進一步查證，此暱稱源自發帖者對錶帶噪音／設計缺陷的吐槽，整串討論僅該發帖者一人使用，非廣泛流通的俗稱，且該暱稱是對評測當下手上那支個體錶款的戲稱，未指向可還原的單一完整參考號，不符合「可信來源＋精確對應完整配置」的採用門檻。",
+      "accepted": false
+    },
+    {
+      "publisher": "forumamontres.forumactif.com（法語最大錶類論壇之一）",
+      "title": "Longines Legend Diver 討論串（多頁）",
+      "url": "https://forumamontres.forumactif.com/t27726p780-longines-legend-diver",
+      "finding": "多頁長期討論 Legend Diver 錶款規格、配戴與交易，未見任何統一法語俗稱用法。",
+      "accepted": false
+    },
+    {
+      "publisher": "WebSearch 綜合摘要（chrono24.fr／longines.com 官方頁面）",
+      "title": "Longines DolceVita / Mini DolceVita 系列概況",
+      "url": "https://www.longines.com/fr/watches/elegance/mini-dolcevita",
+      "finding": "「la petite」「la rectangulaire」為 WebSearch 模型依 Mini DolceVita 官方尺寸描述（21.50mm x 29mm 矩形錶殼）自行推論的用語，未附具體法語論壇或媒體的原文引用句，不符合「可查證出處」門檻。",
+      "accepted": false
+    },
+    {
+      "publisher": "WebSearch 綜合摘要（lofficiel.com／worldtempus.com／chrono24.fr 等）",
+      "title": "Longines Master Collection 系列概況",
+      "url": "https://www.chrono24.fr/longines/master-collection--mod217.htm",
+      "finding": "WebSearch 摘要聲稱「la Master」是法語錶評圈常見簡稱，但未附具體 forumamontres 或其他來源的原文引用句佐證，僅為模型推論，不符合「可查證出處」門檻。",
+      "accepted": false
+    },
+    {
+      "publisher": "fratellowatches.com／gearpatrol.com／monochrome-watches.com（英語錶評，WebSearch 摘要）",
+      "title": "Longines Conquest Heritage Central Power Reserve 系列概況",
+      "url": "https://www.fratellowatches.com/refreshed-longines-conquest-heritage-central-power-reserve/",
+      "finding": "說明 1959 年原型典故與現行復刻款技術規格，未發現法語圈民間俗稱。",
+      "accepted": false
+    },
+    {
+      "publisher": "longines.com 官方頁面 + mediacenter.longines.com",
+      "title": "La Grande Classique de Longines 系列概況",
+      "url": "https://mediacenter.longines.com/la-grande-classique-de-longines/",
+      "finding": "說明 1992 年推出背景，未發現「montre du pape」（教宗的錶）或其他法語俗稱的佐證來源。",
+      "accepted": false
+    },
+    {
+      "publisher": "lesrhabilleurs.com／commeuncamion.com／masculin.com（法語錶評媒體，WebSearch 摘要）",
+      "title": "Longines Spirit Zulu Time 系列概況",
+      "url": "https://www.lesrhabilleurs.com/2022/03/longines-spirit-zulu-time/",
+      "finding": "說明 Zulu Time 名稱源自 1925 年首款雙時區錶款搭配 Zulu 旗幟錶盤，為官方命名典故而非民間俗稱；未發現額外法語圈俗稱。",
+      "accepted": false
+    },
+    {
+      "publisher": "forumamontres.forumactif.com",
+      "title": "「Argot !」討論串（一般性錶類論壇用語討論）",
+      "url": "https://forumamontres.forumactif.com/t20938-argot",
+      "finding": "為一般性錶類論壇黑話討論串，內容未提及任何 Longines 系列或型號專屬俗稱。",
+      "accepted": false
+    },
+    {
+      "publisher": "longines.com（法國官方頁面）+ WebSearch 綜合摘要",
+      "title": "Flagship Heritage 系列概況（caravelle 金質獎章典故）",
+      "url": "https://www.longines.com/en-us/landing-page/flagship-heritage",
+      "finding": "說明錶殼背蓋上的 18K 金質「caravelle」（帆船）獎章為 Flagship 系列自 1957 年起的官方標誌典故，非額外衍生的民間俗稱；未發現「petit prince」等候選俗稱的佐證來源。",
+      "accepted": false
+    }
+  ],
+  "candidateCount": 1,
+  "acceptedCollectionAliasCount": 0,
+  "acceptedLocalNicknameCount": 0,
+  "acceptedCollectionAliases": {},
+  "acceptedNicknames": [],
+  "rejectedCandidates": [
+    {
+      "name": "Bofbof",
+      "target": "LONGINES Hydroconquest 43mm Bleue Automatique（hydroconquest 子系列，未還原至單一完整參考號）",
+      "reason": "為單一論壇使用者（lallement.com「Les Epicuriens du Tout」發帖者）對錶帶噪音／設計缺陷的個人戲稱式吐槽，整串討論僅一人使用，非廣泛流通於法語錶友社群的俗稱，且未明確對應本輪任一完整參考號，不符合採用門檻。"
+    }
+  ],
+  "notes": "本次以法語（本輪市場 locale fr-FR 之官方語言）查詢法國/法語圈市場流通的 Longines 系列或型號俗稱，共 9 組查詢涵蓋 HydroConquest、La Grande Classique、Spirit Zulu Time、Legend Diver、DolceVita、Master Collection、Conquest Heritage、Flagship Heritage 及一般性查詢，檢視 9 個來源後僅發現 1 個候選（Bofbof），經進一步查證為單一使用者的個人玩笑用語而非廣泛流通俗稱，予以拒絕。CH evidence 中已查證拒絕的候選（如 Skin Diver）與其他市場（如 HK 的中文俗稱「浪鬼」）依規範不得逕行套用到法國市場。故本次 collectionAliases（31 個子系列）與全部 776 筆 watches 的 localNicknames 皆維持空陣列，記為 PASS with 0 accepted results。"
+}

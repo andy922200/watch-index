@@ -1,0 +1,35 @@
+{
+  "nicknameResearch": {
+    "status": "PASS with 0 accepted results",
+    "scope": "new-market",
+    "languages": ["de"],
+    "queries": [
+      "Longines Hydroconquest Spitzname Uhrenforum",
+      "Longines \"La Grande Classique\" Spitzname umgangssprachlich",
+      "Longines Master Collection Spitzname Uhrenforum Deutschland",
+      "Longines Conquest Spitzname Uhrenforum \"genannt\"",
+      "Longines Spirit Zulu Time Spitzname uhrforum.de"
+    ],
+    "sourcesReviewed": 5,
+    "sourcesReviewedList": [
+      {"url": "https://sinn-uhrenforum.de/forum/thread/30139-neue-vs-alte-longines-hydroconquest/", "note": "Members refer to older/newer dial generations as 'alte'/'neue' HydroConquest; no stable nickname for a specific configuration."},
+      {"url": "https://sinn-uhrenforum.de/index.php?page=Thread&postID=173735", "note": "Uses the initialism 'LHC' informally for HydroConquest as a whole collection, not tied to a single reference/configuration."},
+      {"url": "https://uhrforum.de/threads/the-longines-master-collection.219624/", "note": "Buying-advice thread; watches referred to by full official model name / reference, no colloquial nickname used."},
+      {"url": "https://uhrforum.de/threads/longines-master-collection-2026.622364/", "note": "Same forum, model discussed by full name and reference only."},
+      {"url": "https://uhrforum.de/threads/alternative-zur-longines-spirit-zulu-time.575280/", "note": "Explains 'Zulu' as aviation jargon for UTC/'Zulu time', which is the brand's own official naming rationale, not a fan-coined nickname; no additional community nickname found."}
+    ],
+    "candidateCount": 1,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [
+      {
+        "candidate": "LHC",
+        "collectionOrReference": "hydroconquest (collection-level, all configurations)",
+        "language": "de",
+        "sourceUrl": "https://sinn-uhrenforum.de/index.php?page=Thread&postID=173735",
+        "rejectionReason": "Single forum post using an informal initialism for the HydroConquest collection as a whole; not corroborated by any second independent source, and does not precisely correspond to any single complete watchId/reference configuration as required for localNicknames/collectionAliases acceptance. Too weak/ambiguous to accept as an established German-market nickname."
+      }
+    ],
+    "notes": "Searched via WebSearch for German-language colloquial nicknames ('Spitzname') across the five most prominent Longines collections sold in the German market (Master Collection, Conquest/HydroConquest, La Grande Classique, Spirit Zulu Time). German watch-forum discussions (uhrforum.de, sinn-uhrenforum.de) consistently refer to Longines models by their full official collection/model name and reference number rather than by informal nicknames; the only informal shorthand found ('LHC') was a single-source, collection-level initialism that did not meet the exact-configuration-match/corroboration bar, so 0 candidates were accepted. All collectionAliases entries in data/markets/longines-germany-market.json were therefore left as empty names/sources arrays, matching the convention already used in the committed data/markets/longines-switzerland-market.json."
+  }
+}

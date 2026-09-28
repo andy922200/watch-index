@@ -1,0 +1,88 @@
+{
+  "brandId": "longines",
+  "marketCode": "SG",
+  "researchedAt": "2026-09-27T00:09:00.000Z",
+  "scope": "new-market",
+  "status": "PASS",
+  "languages": [
+    "en",
+    "zh"
+  ],
+  "method": "以英文（新加坡市場語境，本次官方收集 locale 為 en-sg）與中文（新加坡具有相當比例華語使用族群，且既有 TW/HK 市場曾發現中文俗稱如「浪鬼」）雙語查詢新加坡市場流通的 Longines 俗稱，要求來源能把名稱明確對應到本輪 31 個官方子系列（collectionId）之一，或 755 個新加坡官方完整參考號中的單一配置，且候選來源須能佐證該用語確實在新加坡（而非僅台灣／香港）市場的零售商、論壇或社群中流通，因為本次官方市場收集本身為英文（en-sg），若採用僅見於其他市場語言社群的用語，將無法建立可信的新加坡在地對應關係。官方名稱（如 CONQUEST、MASTER COLLECTION 為官網本身分類名稱）不視為俗稱。",
+  "queries": [
+    "Longines HydroConquest nickname Singapore watch enthusiasts forum",
+    "Longines Spirit Zulu Time nickname Singapore collectors",
+    "Longines Legend Diver nickname \"skin diver\" Singapore",
+    "浪琴 HydroConquest 綽號 新加坡",
+    "\"Longines\" watch nickname Singapore forum \"we call it\" OR \"nicknamed\"",
+    "\"浪鬼\" 新加坡 OR Singapore Longines HydroConquest",
+    "hardwarezone OR EDMW Longines HydroConquest 浪鬼",
+    "Longines Conquest nickname \"banker's watch\" OR \"office watch\" Singapore collectors",
+    "Longines La Grande Classique nickname Singapore \"the coin edge\" OR slang"
+  ],
+  "sourcesReviewed": [
+    {
+      "publisher": "WebSearch 綜合摘要（Cortina Watch SG、WatchUSeek、Omega Forums、Longines SG 官網、Christopher Ward Forum、Watch Talk Forums 等）",
+      "title": "Longines HydroConquest 新加坡零售與論壇討論查詢",
+      "url": "https://www.watchuseek.com/threads/longines-hydroconquest-store-price-sg.5220185/",
+      "finding": "WatchUSeek 上確有新加坡相關的 HydroConquest 討論串（如詢問 SG 門市定價），但未發現任何將 HydroConquest 冠上特定俗稱、且可唯一對應本輪配置或 collectionId 的討論內容。",
+      "accepted": false
+    },
+    {
+      "publisher": "horoguides.com（台灣）／hwkwatch.com（台灣經銷商）／YouTube 中文錶評",
+      "title": "浪琴表 HydroConquest「浪鬼」俗稱查詢",
+      "url": "https://horoguides.com/tw/a/%E7%82%BA%E4%BB%80%E9%BA%BC%E6%BD%9B%E6%B0%B4%E9%8C%B6%E8%BF%B7%E9%83%BD%E6%84%9B%E6%B5%AA%E9%AC%BC%EF%BC%9F%E5%BF%85%E8%B2%B7%E6%B5%AA%E7%90%B4%E8%A1%A8hydroconquest%E7%9A%84%E4%BA%94%E5%80%8B%E7%90%86%E7%94%B1",
+      "finding": "確認 HydroConquest 在台灣（及部分 HK）中文錶友社群中被廣泛暱稱為「浪鬼」（浪琴水鬼），與既有 HK 市場俗稱研究結果一致。但本次額外查詢「浪鬼 新加坡」「hardwarezone/EDMW 浪鬼」等組合，所有結果來源仍全部指向台灣／香港媒體與經銷商網站，未發現任何新加坡本地零售商、論壇（如 HardwareZone、EDMW、Singapore Rolex Club、watchexchange.sg）採用「浪鬼」一詞的實際討論或頁面內容；亦未發現新加坡英語論壇使用對應音譯或直譯詞。由於本次官方市場收集 locale 為 en-sg（英文），且無新加坡本地來源佐證此中文俗稱確實在新加坡市場流通，故不採用。",
+      "accepted": false
+    },
+    {
+      "publisher": "Gear Patrol／WatchUSeek（綜合英語錶類媒體，非新加坡專屬）",
+      "title": "Longines Legend Diver／Skin Diver 相關討論",
+      "url": "https://www.watchuseek.com/threads/skin-diver-vs-legend-diver.4868691/",
+      "finding": "'Skin Diver' 為 Longines 官方於 2018 年推出的獨立復刻產品官方名稱，並非 'Legend Diver' 的俗稱；本輪 755 筆官方列表中未發現名稱含 'Skin Diver' 的品項，為避免混淆兩個不同官方產品，不採用（與既有 GB 市場查核結論一致）。",
+      "accepted": false
+    },
+    {
+      "publisher": "Omega Forums",
+      "title": "Longines 'Coin Edge' 相關討論",
+      "url": "https://omegaforums.net/threads/help-longines-coin-edge.114254/",
+      "finding": "搜尋出現一則名為 'Longines \"Coin Edge\"' 的討論串標題，疑似指涉 La Grande Classique 或其他型號的錶殼邊緣設計特徵，但討論串內容未能取得以確認其與本輪任一完整參考號或 collectionId 的唯一對應關係，亦非新加坡市場來源，故不採用。",
+      "accepted": false
+    },
+    {
+      "publisher": "LONGINES 新加坡官方網站",
+      "title": "Conquest / Master Collection / Spirit 等子系列頁",
+      "url": "https://www.longines.com/en-sg/watches/conquest",
+      "finding": "'CONQUEST'、'MASTER COLLECTION' 等為 LONGINES 官網本身的正式分類／型號名稱（preferred_category.name／items.name），非民間俗稱。",
+      "accepted": false
+    }
+  ],
+  "candidateCount": 4,
+  "acceptedCollectionAliasCount": 0,
+  "acceptedLocalNicknameCount": 0,
+  "acceptedCollectionAliases": {},
+  "acceptedNicknames": [],
+  "rejectedCandidates": [
+    {
+      "name": "浪鬼（浪琴水鬼）",
+      "target": "HydroConquest 系列（hydroconquest）",
+      "reason": "確認為台灣／香港中文錶友社群廣泛使用的俗稱，但本次查詢未發現任何新加坡本地零售商、論壇或社群使用此詞的證據；本次官方市場收集 locale 為 en-sg，無新加坡在地來源可佐證此中文俗稱在新加坡市場流通，故不採用於本市場的 collectionAliases。"
+    },
+    {
+      "name": "Skin Diver",
+      "target": "Legend Diver 系列（heritage/legend-diver）",
+      "reason": "'Skin Diver' 實為官方另一個獨立復刻產品的正式名稱，而非 Legend Diver 的民間俗稱；兩者為不同官方產品，本輪列表未發現名稱含 Skin Diver 的品項，為避免混淆兩個不同官方產品不予採用。"
+    },
+    {
+      "name": "Coin Edge",
+      "target": "疑似 La Grande Classique 系列（elegance/la-grande-classique）",
+      "reason": "僅見單一論壇討論串標題，內容未能確認其與任一完整參考號或 collectionId 的唯一對應關係，亦非新加坡市場來源，證據不足不予採用。"
+    },
+    {
+      "name": "\"banker's watch\" / \"office watch\"",
+      "target": "Conquest 系列",
+      "reason": "查詢結果未發現任何來源將此詞實際用於稱呼 Longines Conquest，屬查詢假設落空，非真實候選。"
+    }
+  ],
+  "notes": "本次查詢 9 組中英文關鍵字、檢視 5 組來源，未找到能以新加坡市場可信來源精確、唯一對應到本輪 31 個 collectionId 或任一完整參考號的民間俗稱，故 collectionAliases 與 localNicknames 全部維持空陣列（PASS with 0 accepted results）。與既有 HK 市場（中文語境查得「浪鬼」對應 hydroconquest）不同，本次確認「浪鬼」一詞雖在中文錶友圈廣泛流通，但缺乏新加坡本地來源佐證其在新加坡市場的實際使用，故未採用；此為市場差異下的合理查核結果，非查詢不完整所致。"
+}
