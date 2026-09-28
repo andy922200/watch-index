@@ -35,6 +35,7 @@ import {
   type MarketCode,
 } from '@/lib/markets'
 import { getBrandPageLanguagePaths, getPriceCompareUrl } from '@/lib/pageUrls'
+import { hasPublicPrice } from '@/lib/watchPriceComparison'
 import { Locale } from '@/plugins/i18n'
 import type { BaseWatch } from '@/types/watch-data'
 
@@ -121,8 +122,8 @@ const sortedWatches = computed<TWatch[]>(() => {
 
   const priceDirection = selectedPriceSort.value === 'price-ascending' ? 1 : -1
   return [...filteredWatches.value].sort((left, right) => {
-    const leftPrice = left.priceStatus === 'listed' ? left.price : null
-    const rightPrice = right.priceStatus === 'listed' ? right.price : null
+    const leftPrice = hasPublicPrice(left.priceStatus) ? left.price : null
+    const rightPrice = hasPublicPrice(right.priceStatus) ? right.price : null
 
     if (leftPrice === null || rightPrice === null) {
       if (leftPrice === rightPrice) return left.reference.localeCompare(right.reference)
@@ -157,7 +158,7 @@ const priceLabel = computed(() => {
 })
 const watchCards = computed<WatchCardView[]>(() =>
   visibleWatches.value.map((watch) => {
-    const listedPrice = watch.priceStatus === 'listed' ? watch.price : null
+    const listedPrice = hasPublicPrice(watch.priceStatus) ? watch.price : null
     const priceMarket = catalog.value?.priceMarket
     const convertedAmount =
       listedPrice !== null &&

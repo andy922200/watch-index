@@ -29,6 +29,7 @@ export const PriceComparisonMode: {
 
 export type PriceComparisonLabel =
   | 'official-price'
+  | 'retailer-only-price'
   | 'refund-policy-reference'
   | 'tax-exclusive-reference'
   | 'traveler-refund-unavailable'
@@ -44,6 +45,7 @@ export type PriceComparisonLabel =
  */
 export const PriceComparisonLabelKeys: Record<PriceComparisonLabel, string> = {
   'official-price': 'site.watchPriceComparison.officialPriceLabel',
+  'retailer-only-price': 'site.watchPriceComparison.retailerOnlyPriceLabel',
   'refund-policy-reference': 'site.watchPriceComparison.refundPolicyReference',
   'tax-exclusive-reference': 'site.watchPriceComparison.taxExclusiveReference',
   'traveler-refund-unavailable': 'site.watchPriceComparison.travelerRefundUnavailable',
@@ -92,6 +94,16 @@ const getUnavailablePrice = (priceStatus: PriceStatus): ResolvedPrice => ({
 })
 
 /**
+ * `listed` 與 `retailer-only` 都有官方公開價格，差異只在購買通路
+ * （官方線上結帳 vs. 僅提供經銷商導購），比價邏輯上一視同仁。
+ */
+export const hasPublicPrice = (priceStatus: PriceStatus): boolean =>
+  priceStatus === 'listed' || priceStatus === 'retailer-only'
+
+const getOfficialPriceLabel = (priceStatus: PriceStatus): PriceComparisonLabel =>
+  priceStatus === 'retailer-only' ? 'retailer-only-price' : 'official-price'
+
+/**
  * 稅務居民身分是否讓這個市場失去退稅資格：本人是該市場的稅務居民，
  * 或者該市場是歐盟成員國且本人在任一歐盟市場具稅務居民身分——
  * 歐盟旅客退稅制度通常要求申請人「非歐盟居民」，因此喪失資格會擴及整個歐盟，
@@ -120,7 +132,7 @@ const resolveRefundEstimate = ({
   price: ComparisonPrice
   taxResidencyMarketCodes: readonly string[]
 }): ResolvedPrice => {
-  if (price.priceStatus !== 'listed' || price.price === null) {
+  if (!hasPublicPrice(price.priceStatus) || price.price === null) {
     return getUnavailablePrice(price.priceStatus)
   }
 
@@ -178,11 +190,15 @@ const resolvePrice = ({
     return resolveRefundEstimate({ market, price, taxResidencyMarketCodes })
   }
 
-  if (price.priceStatus !== 'listed' || price.price === null) {
+  if (!hasPublicPrice(price.priceStatus) || price.price === null) {
     return getUnavailablePrice(price.priceStatus)
   }
 
-  return { amount: price.price, label: 'official-price', priceStatus: price.priceStatus }
+  return {
+    amount: price.price,
+    label: getOfficialPriceLabel(price.priceStatus),
+    priceStatus: price.priceStatus,
+  }
 }
 
 const getSlider = ({

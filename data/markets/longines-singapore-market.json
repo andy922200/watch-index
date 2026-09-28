@@ -1,6 +1,6 @@
 {
   "$schema": "../schemas/watch-market.schema.json",
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "brandId": "longines",
   "collectedAt": "2026-09-27T00:00:00.000Z",
   "salesRegion": "Singapore",

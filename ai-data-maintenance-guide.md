@@ -69,9 +69,12 @@ watchId === brandId + ":" + reference
 
 | `listingStatus` | `price` | 使用時機 |
 | --- | --- | --- |
-| `listed` | 非負整數 | 官方列出且取得公開價格 |
+| `listed` | 非負整數 | 官方列出且取得公開價格，且官方頁面本身提供線上加入購物車／結帳等直購路徑 |
+| `retailer-only` | 非負整數 | 官方列出且取得公開價格，但官方頁面的購買動線僅提供「尋找經銷商」（Find a Retailer）之類的導購連結，不提供線上直接下單／結帳 |
 | `price-unavailable` | `null` | 官方列出，但沒有公開價格 |
 | `not-listed` | `null` | 已完成全量確認，可證實目標市場未列出 |
+
+`listed` 與 `retailer-only` 的差異僅在於購買通路，不在於價格是否公開；只要官方頁面本身顯示了公開價格，就不得因為沒有線上結帳而記為 `price-unavailable`。判斷購買通路前必須實際查看該市場官方商品頁的 CTA／購買按鈕文字或行為，不得用其他市場的通路慣例推定。
 
 解析失敗、逾時、第一頁未出現或工具不可用，都不是 `price-unavailable` 或 `not-listed` 的證據。不得用匯率、其他市場或同系列款式推算價格。
 

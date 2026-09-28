@@ -1,6 +1,6 @@
 {
   "$schema": "../schemas/watch-market.schema.json",
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "brandId": "rolex",
   "collectedAt": "2026-08-31T21:17:28+08:00",
   "salesRegion": "Taiwan",

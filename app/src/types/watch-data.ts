@@ -23,7 +23,7 @@ export interface BaseWatch {
   priceStatus: PriceStatus
 }
 
-export type PriceStatus = 'listed' | 'price-unavailable' | 'not-listed'
+export type PriceStatus = 'listed' | 'retailer-only' | 'price-unavailable' | 'not-listed'
 
 export type PriceType = 'tax-include' | 'tax-exclude' | 'no-tax'
 

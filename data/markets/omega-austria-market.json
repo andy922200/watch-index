@@ -1,6 +1,6 @@
 {
   "$schema": "../schemas/watch-market.schema.json",
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "brandId": "omega",
   "collectedAt": "2026-09-24T10:56:15.731Z",
   "salesRegion": "Austria",

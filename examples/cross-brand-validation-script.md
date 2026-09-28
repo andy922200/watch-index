@@ -66,9 +66,9 @@ for (const file of fs.readdirSync('data/markets').filter(name => name.endsWith('
     let previous
     for (const point of points) {
       fail(runIds.has(point.runId), `${file}: unknown runId ${watchId}`)
-      fail(['listed', 'price-unavailable', 'not-listed'].includes(point.listingStatus),
+      fail(['listed', 'retailer-only', 'price-unavailable', 'not-listed'].includes(point.listingStatus),
         `${file}: invalid status ${watchId}`)
-      fail(point.listingStatus === 'listed'
+      fail(point.listingStatus === 'listed' || point.listingStatus === 'retailer-only'
         ? Number.isSafeInteger(point.price) && point.price >= 0
         : point.price === null, `${file}: price/status mismatch ${watchId}`)
       if (previous) {

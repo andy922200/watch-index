@@ -143,6 +143,7 @@
       "difference": "相較基準 {difference}",
       "differenceUnavailable": "無法與基準比較",
       "officialPriceLabel": "官方定價",
+      "retailerOnlyPriceLabel": "官方定價（此市場無線上購買，需洽授權經銷商）",
       "refundPolicyReference": "已查核退稅制度的未稅參考價",
       "taxExclusiveReference": "未稅參考價",
       "travelerRefundUnavailable": "不適用旅客退稅",

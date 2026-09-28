@@ -1,6 +1,6 @@
 {
   "$schema": "../schemas/watch-catalog.schema.json",
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "brandId": "longines",
   "collectedAt": "2026-09-27T15:40:00.000Z",
   "sourceMarketCodes": [

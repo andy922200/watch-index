@@ -42,6 +42,7 @@ export const isBaseWatch = (value: unknown): value is BaseWatch =>
   value.localNicknames.every((nickname) => typeof nickname === 'string') &&
   (typeof value.price === 'number' || value.price === null) &&
   (value.priceStatus === 'listed' ||
+    value.priceStatus === 'retailer-only' ||
     value.priceStatus === 'price-unavailable' ||
     value.priceStatus === 'not-listed')
 
@@ -67,7 +68,8 @@ const isComparisonMarket = (value: unknown): value is ComparisonMarket =>
 
 const isComparisonPrice = (value: unknown): value is ComparisonPrice =>
   isRecord(value) &&
-  ((value.priceStatus === 'listed' && typeof value.price === 'number') ||
+  (((value.priceStatus === 'listed' || value.priceStatus === 'retailer-only') &&
+    typeof value.price === 'number') ||
     ((value.priceStatus === 'price-unavailable' || value.priceStatus === 'not-listed') &&
       value.price === null))
 

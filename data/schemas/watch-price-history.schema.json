@@ -7,7 +7,7 @@
   "required": ["$schema", "schemaVersion", "brandId", "marketCode", "currencyCode", "priceType", "taxRatePercent", "collectionRuns", "priceSeries"],
   "properties": {
     "$schema": { "const": "../../schemas/watch-price-history.schema.json" },
-    "schemaVersion": { "const": 3 },
+    "schemaVersion": { "const": 4 },
     "brandId": { "$ref": "#/$defs/slug" },
     "marketCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
     "currencyCode": { "type": "string", "pattern": "^[A-Z]{3}$" },
@@ -48,12 +48,12 @@
       "required": ["runId", "listingStatus", "price"],
       "properties": {
         "runId": { "type": "integer", "minimum": 1 },
-        "listingStatus": { "enum": ["listed", "price-unavailable", "not-listed"] },
+        "listingStatus": { "enum": ["listed", "retailer-only", "price-unavailable", "not-listed"] },
         "price": { "type": ["integer", "null"], "minimum": 0 }
       },
       "allOf": [
         {
-          "if": { "properties": { "listingStatus": { "const": "listed" } } },
+          "if": { "properties": { "listingStatus": { "enum": ["listed", "retailer-only"] } } },
           "then": { "properties": { "price": { "type": "integer", "minimum": 0 } } }
         },
         {

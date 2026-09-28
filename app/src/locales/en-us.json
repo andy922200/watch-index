@@ -143,6 +143,7 @@
       "difference": "{difference} from baseline",
       "differenceUnavailable": "Not comparable with the baseline",
       "officialPriceLabel": "Official price",
+      "retailerOnlyPriceLabel": "Official price (no online purchase — contact an authorized retailer)",
       "refundPolicyReference": "Pre-tax reference with a verified refund policy",
       "taxExclusiveReference": "Pre-tax reference",
       "travelerRefundUnavailable": "No traveler refund",
