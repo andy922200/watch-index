@@ -1,6 +1,10 @@
 import { describe, expect, it } from 'vitest'
 
-import { createMarketComparisonRows, PriceComparisonMode } from '@/lib/watchPriceComparison'
+import {
+  createMarketComparisonRows,
+  hasPublicPrice,
+  PriceComparisonMode,
+} from '@/lib/watchPriceComparison'
 import type { WatchPriceComparisonPayload } from '@/types/watch-data'
 
 const createPayload = (): WatchPriceComparisonPayload => ({
@@ -98,6 +102,15 @@ const convertToTwd = (amount: number, sourceCurrency: string): number | null => 
 
   return null
 }
+
+describe('public price status', () => {
+  it('includes listed and retailer-only prices but excludes unavailable states', () => {
+    expect(hasPublicPrice('listed')).toBe(true)
+    expect(hasPublicPrice('retailer-only')).toBe(true)
+    expect(hasPublicPrice('price-unavailable')).toBe(false)
+    expect(hasPublicPrice('not-listed')).toBe(false)
+  })
+})
 
 describe('createMarketComparisonRows', () => {
   it('calculates a tax-exclusive reference by removing embedded tax', () => {

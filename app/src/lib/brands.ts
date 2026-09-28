@@ -145,8 +145,11 @@ export const brandDirectory: readonly BrandDirectoryEntry[] = [
     marketOptions: getMarketOptions([
       MarketCode.Taiwan,
       MarketCode.HongKong,
+      MarketCode.Singapore,
       MarketCode.Japan,
       MarketCode.SouthKorea,
+      MarketCode.Germany,
+      MarketCode.France,
       MarketCode.Switzerland,
       MarketCode.UnitedKingdom,
       MarketCode.UnitedStates,

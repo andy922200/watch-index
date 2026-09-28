@@ -53,10 +53,14 @@ export const useWatchCatalog = <TWatch extends BaseWatch>({
   const displayCurrencies = ref<readonly string[]>([])
   const error = ref<unknown>(null)
   const isLoading = ref(false)
+  let latestRequestId = 0
 
   const loadCatalog = async (market: MarketCode = DEFAULT_MARKET): Promise<void> => {
+    const requestId = ++latestRequestId
     isLoading.value = true
     error.value = null
+    catalog.value = null
+    displayCurrencies.value = []
 
     try {
       const response = await fetchCatalog(brandId, market)
@@ -64,13 +68,22 @@ export const useWatchCatalog = <TWatch extends BaseWatch>({
       if (!isCatalog(response.catalog)) {
         throw new Error('Watch catalog has an invalid format')
       }
+      if (response.catalog.brandId !== brandId || response.catalog.priceMarket.code !== market) {
+        throw new Error('Watch catalog does not match the requested brand and market')
+      }
 
-      catalog.value = response.catalog
-      displayCurrencies.value = response.currencies
+      if (requestId === latestRequestId) {
+        catalog.value = response.catalog
+        displayCurrencies.value = response.currencies
+      }
     } catch (requestError) {
-      error.value = requestError
+      if (requestId === latestRequestId) {
+        error.value = requestError
+      }
     } finally {
-      isLoading.value = false
+      if (requestId === latestRequestId) {
+        isLoading.value = false
+      }
     }
   }
 

@@ -73,7 +73,7 @@ const usePriceSortFixture = async (page: Page): Promise<void> => {
 }
 
 test('changes the Rolex index page language', async ({ page }) => {
-  await page.goto('en-us/')
+  await page.goto('/rolex/en-us/')
 
   await expect(page.getByRole('heading', { name: 'Global Rolex Watches Index' })).toBeVisible()
   await expect(page.getByText('Price data updated Sep 14, 2026')).toBeVisible()
@@ -88,7 +88,7 @@ test('changes the Rolex index page language', async ({ page }) => {
 
 test('sorts all matching watches by price before applying pagination', async ({ page }) => {
   await usePriceSortFixture(page)
-  await page.goto('en-us/')
+  await page.goto('/rolex/en-us/')
 
   const sortSelect = page.getByRole('combobox', { name: 'Sort watches' })
   const watchCards = page.locator('[data-slot="card"]')
@@ -119,7 +119,7 @@ test('uses the more menu for language and theme controls below the desktop break
   page,
 }) => {
   await page.setViewportSize({ width: 1023, height: 900 })
-  await page.goto('en-us/')
+  await page.goto('/rolex/en-us/')
 
   await expect(page.getByRole('combobox', { name: 'Language' })).not.toBeVisible()
   await page.getByRole('button', { name: 'More options' }).click()
@@ -129,7 +129,7 @@ test('uses the more menu for language and theme controls below the desktop break
 
 test('closes navigation popovers when the viewport is resized', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 })
-  await page.goto('en-us/')
+  await page.goto('/rolex/en-us/')
 
   const marketSelect = page.getByRole('combobox', { name: 'Market' })
   await marketSelect.click()
@@ -147,7 +147,7 @@ test('closes navigation popovers when the viewport is resized', async ({ page })
 })
 
 test('keeps the selected market when changing the page language', async ({ page }) => {
-  await page.goto('en-us/')
+  await page.goto('/rolex/en-us/')
 
   const marketSelect = page.getByRole('combobox', { name: 'Market' })
 
@@ -167,7 +167,7 @@ test('uses market_code over the saved market and preserves it across language pa
   await page.addInitScript(() => {
     localStorage.setItem('selected-market', 'TW')
   })
-  await page.goto('en-us/?market_code=JP')
+  await page.goto('/rolex/en-us/?market_code=JP')
 
   await expect(page.getByRole('combobox', { name: 'Market' })).toContainText('Japan')
 
@@ -179,7 +179,7 @@ test('uses market_code over the saved market and preserves it across language pa
 })
 
 test('switches the displayed prices to the selected market', async ({ page }) => {
-  await page.goto('en-us/')
+  await page.goto('/rolex/en-us/')
 
   const marketSelect = page.getByRole('combobox', { name: 'Market' })
   await expect(marketSelect).toContainText('Taiwan')
@@ -192,7 +192,7 @@ test('switches the displayed prices to the selected market', async ({ page }) =>
 })
 
 test('switches the displayed prices to the China market', async ({ page }) => {
-  await page.goto('en-us/')
+  await page.goto('/rolex/en-us/')
 
   const marketSelect = page.getByRole('combobox', { name: 'Market' })
   await marketSelect.click()
@@ -203,7 +203,7 @@ test('switches the displayed prices to the China market', async ({ page }) => {
 })
 
 test('switches the displayed prices to the Thailand and Spain markets', async ({ page }) => {
-  await page.goto('en-us/')
+  await page.goto('/rolex/en-us/')
 
   const marketSelect = page.getByRole('combobox', { name: 'Market' })
   await marketSelect.click()
@@ -220,7 +220,7 @@ test('switches the displayed prices to the Thailand and Spain markets', async ({
 })
 
 test('switches the displayed prices to the Korea and Italy markets', async ({ page }) => {
-  await page.goto('en-us/')
+  await page.goto('/rolex/en-us/')
 
   const marketSelect = page.getByRole('combobox', { name: 'Market' })
   await marketSelect.click()
@@ -245,7 +245,7 @@ test('shows an approximate price in the selected display currency', async ({ pag
       ],
     })
   })
-  await page.goto('en-us/')
+  await page.goto('/rolex/en-us/')
 
   await page.getByRole('combobox', { name: 'Display currency' }).click()
   await page.getByRole('option', { name: 'Japanese yen (JPY)' }).click()
@@ -255,7 +255,7 @@ test('shows an approximate price in the selected display currency', async ({ pag
 })
 
 test('filters watches with a partial model reference', async ({ page }) => {
-  await page.goto('en-us/')
+  await page.goto('/rolex/en-us/')
 
   const search = page.getByRole('combobox', { name: 'Search watches' })
   await search.fill('m12406')
@@ -265,7 +265,7 @@ test('filters watches with a partial model reference', async ({ page }) => {
 })
 
 test('offers a model-name option for a complete model name', async ({ page }) => {
-  await page.goto('en-us/?market_code=TW')
+  await page.goto('/rolex/en-us/?market_code=TW')
 
   const search = page.getByRole('combobox', { name: 'Search watches' })
   await search.fill('Oyster Perpetual 34')
@@ -285,7 +285,7 @@ test('offers a model-name option for a complete model name', async ({ page }) =>
 })
 
 test('offers partial model-name candidates without a broader collection', async ({ page }) => {
-  await page.goto('en-us/?market_code=TW')
+  await page.goto('/rolex/en-us/?market_code=TW')
 
   const search = page.getByRole('combobox', { name: 'Search watches' })
   await search.fill('Oyster Perpetual 3')
@@ -307,7 +307,7 @@ test('offers partial model-name candidates without a broader collection', async 
 })
 
 test('closes search suggestions after selection and clicking outside', async ({ page }) => {
-  await page.goto('en-us/')
+  await page.goto('/rolex/en-us/')
 
   const search = page.getByRole('combobox', { name: 'Search watches' })
   await search.fill('m12406')
@@ -324,7 +324,7 @@ test('closes search suggestions after selection and clicking outside', async ({ 
 })
 
 test('shows twelve watches at first and loads more on demand', async ({ page }) => {
-  await page.goto('en-us/')
+  await page.goto('/rolex/en-us/')
 
   const watchCards = page.locator('[data-slot="card"]')
   await expect(watchCards).toHaveCount(12)
@@ -337,7 +337,7 @@ test('shows twelve watches at first and loads more on demand', async ({ page }) 
 test('keeps specification buttons aligned in cards with and without nicknames', async ({
   page,
 }) => {
-  await page.goto('en-us/')
+  await page.goto('/rolex/en-us/')
 
   const watchCards = page.locator('[data-slot="card"]')
   await expect(watchCards).toHaveCount(12)
@@ -358,7 +358,7 @@ test('keeps specification buttons aligned in cards with and without nicknames', 
 })
 
 test('shows a selected watch’s complete specifications in a dialog', async ({ page }) => {
-  await page.goto('en-us/')
+  await page.goto('/rolex/en-us/')
 
   await page.getByRole('button', { name: 'View specifications' }).first().click()
 
@@ -372,7 +372,7 @@ test('shows a selected watch’s complete specifications in a dialog', async ({ 
 })
 
 test('resets the visible watches when searching', async ({ page }) => {
-  await page.goto('en-us/')
+  await page.goto('/rolex/en-us/')
 
   await page.getByRole('button', { name: 'Load more watches' }).click()
   await expect(page.locator('[data-slot="card"]')).toHaveCount(24)
@@ -391,7 +391,7 @@ test('uses the requested responsive watch grid columns', async ({ page }) => {
     [1024, 6],
   ]) {
     await page.setViewportSize({ width, height: 900 })
-    await page.goto('en-us/')
+    await page.goto('/rolex/en-us/')
     await expect(grid).toBeVisible()
 
     const columnCount = await grid.evaluate(

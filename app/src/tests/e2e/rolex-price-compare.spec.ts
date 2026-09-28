@@ -1,6 +1,7 @@
 import { expect, type Page, test } from '@playwright/test'
 
-const comparisonUrl = 'en-us/watch-price-compare.html?market_code=TW&watch_id=rolex%3Am124060-0001'
+const comparisonUrl =
+  '/rolex/en-us/watch-price-compare.html?market_code=TW&watch_id=rolex%3Am124060-0001'
 
 const mockExchangeRates = async (page: Page): Promise<void> => {
   await page.route('https://api.frankfurter.dev/v2/rates*', async (route) => {
@@ -15,7 +16,7 @@ const mockExchangeRates = async (page: Page): Promise<void> => {
 }
 
 test('links an index card to its matching market comparison', async ({ page }) => {
-  await page.goto('en-us/')
+  await page.goto('/rolex/en-us/')
 
   const comparisonLink = page.getByRole('link', { name: 'Compare markets' }).first()
 
