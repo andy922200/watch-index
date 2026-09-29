@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ArrowRight, Plus, X } from '@lucide/vue'
-import { useElementSize, useScroll, useStorage } from '@vueuse/core'
-import { computed, onUnmounted, ref, watch } from 'vue'
+import { Plus, X } from '@lucide/vue'
+import { useScroll, useStorage } from '@vueuse/core'
+import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import AppBreadcrumb from '@/components/layout/AppBreadcrumb.vue'
@@ -41,6 +41,7 @@ import ExplorerDialColorFilter from './components/ExplorerDialColorFilter.vue'
 import ExplorerMarketSelect from './components/ExplorerMarketSelect.vue'
 import ExplorerPriceRangeFilter from './components/ExplorerPriceRangeFilter.vue'
 import ExplorerSearchBox from './components/ExplorerSearchBox.vue'
+import ExplorerSelectionBar, { type SelectionBarItem } from './components/ExplorerSelectionBar.vue'
 import ExplorerSortSelect from './components/ExplorerSortSelect.vue'
 import ExplorerWatchImage from './components/ExplorerWatchImage.vue'
 import { useCrossBrandCatalogs } from './composables/useCrossBrandCatalogs'
@@ -105,12 +106,6 @@ const sort = ref<ExplorerSort>('default')
 const visibleCount = ref(PAGE_SIZE)
 const announcement = ref('')
 const resultsSection = ref<HTMLElement | null>(null)
-const selectionBar = ref<HTMLElement | null>(null)
-
-// 需在 selectionBar 宣告後才能傳入 useElementSize。
-const { height: selectionBarHeight } = useElementSize(selectionBar, undefined, {
-  box: 'border-box',
-})
 
 const pageLanguage = computed(() => (locale.value === Locale.enUs ? Locale.enUs : Locale.zhTw))
 const availableBrandIds = computed(() =>
@@ -161,6 +156,12 @@ const resultsGridColsClass = computed(() => {
   return ''
 })
 const watchById = computed(() => new Map(watches.value.map((item) => [item.watch.watchId, item])))
+const selectionItems = computed<SelectionBarItem[]>(() =>
+  selectedIds.value.map((id) => {
+    const item = watchById.value.get(id)
+    return { id, reference: item?.watch.reference ?? id, missing: !item }
+  }),
+)
 const compareHref = computed(() =>
   selectedMarket.value
     ? `${getSitePageUrl({ language: pageLanguage.value, page: 'watch-compare' })}?${buildCompareSearch('', selectedMarket.value, selectedIds.value)}`
@@ -250,18 +251,6 @@ watch(
   },
   { immediate: true },
 )
-
-/** 選取列固定在底部時，把高度告知「回到頂端」按鈕，避免兩者重疊。 */
-watch(
-  () => (selectedIds.value.length ? selectionBarHeight.value : 0),
-  (height) => {
-    document.documentElement.style.setProperty('--floating-bar-offset', `${height}px`)
-  },
-  { immediate: true },
-)
-onUnmounted(() => {
-  document.documentElement.style.removeProperty('--floating-bar-offset')
-})
 </script>
 
 <template>
@@ -455,51 +444,12 @@ onUnmounted(() => {
       </template>
     </div>
     <div class="sr-only" aria-live="polite">{{ announcement }}</div>
-    <aside
+    <ExplorerSelectionBar
       v-if="selectedIds.length"
-      ref="selectionBar"
-      class="bg-background/95 border-border fixed inset-x-0 bottom-0 z-40 border-t shadow-lg backdrop-blur"
-      :aria-label="t('site.explorer.selected', { count: selectedIds.length })"
-    >
-      <div class="mx-auto flex max-w-6xl flex-wrap items-center gap-3 p-3 sm:p-4">
-        <span class="font-mono text-xs font-semibold tracking-wider uppercase">
-          {{ t('site.explorer.selected', { count: selectedIds.length }) }}
-        </span>
-        <div class="flex min-w-0 flex-1 gap-2 overflow-x-auto">
-          <span
-            v-for="id in selectedIds"
-            :key="id"
-            class="bg-muted flex shrink-0 items-center gap-2 rounded-sm px-2 py-1 text-xs"
-          >
-            <span class="max-w-28 truncate">{{ watchById.get(id)?.watch.reference ?? id }}</span>
-            <span v-if="!watchById.has(id)" class="text-destructive">
-              {{ t('site.explorer.missingLocal') }}
-            </span>
-            <button
-              type="button"
-              class="focus-visible:ring-ring cursor-pointer rounded p-1 focus-visible:ring-2"
-              :aria-label="
-                t('site.explorer.removeWatch', {
-                  reference: watchById.get(id)?.watch.reference ?? id,
-                })
-              "
-              @click="toggleWatch(id)"
-            >
-              <X class="size-3" aria-hidden="true" />
-            </button>
-          </span>
-        </div>
-        <Button variant="ghost" size="sm" @click="clearSelection">
-          {{ t('site.explorer.clear') }}
-        </Button>
-        <Button v-if="selectedIds.length >= 2" as-child size="sm">
-          <a :href="compareHref">
-            {{ t('site.explorer.compare') }}
-            <ArrowRight aria-hidden="true" />
-          </a>
-        </Button>
-        <Button v-else size="sm" disabled>{{ t('site.explorer.compare') }}</Button>
-      </div>
-    </aside>
+      :items="selectionItems"
+      :compare-href="compareHref"
+      @remove="toggleWatch"
+      @clear="clearSelection"
+    />
   </AppLayout>
 </template>
