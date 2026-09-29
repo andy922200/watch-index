@@ -6,6 +6,8 @@ import {
   getBrandPagePublicPath,
   getSiteIndexFilePath,
   getSiteIndexPublicPath,
+  getSitePageFilePath,
+  getSitePagePublicPath,
   PageLanguage,
   toLanguagePathname,
 } from '@/lib/pageRoutes'
@@ -54,6 +56,17 @@ describe('site index paths', () => {
     expect(getSiteIndexPublicPath({ language: PageLanguage.zhTw })).toBe('')
     expect(getSiteIndexFilePath({ language: PageLanguage.enUs })).toBe('en-us/index.html')
     expect(getSiteIndexPublicPath({ language: PageLanguage.enUs })).toBe('en-us/')
+  })
+})
+
+describe('site feature paths', () => {
+  it('keeps both languages at the site level', () => {
+    expect(getSitePageFilePath({ language: PageLanguage.zhTw, page: 'collection-explorer' })).toBe(
+      'collection-explorer.html',
+    )
+    expect(getSitePagePublicPath({ language: PageLanguage.enUs, page: 'watch-compare' })).toBe(
+      'en-us/watch-compare.html',
+    )
   })
 })
 

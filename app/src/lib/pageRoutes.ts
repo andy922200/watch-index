@@ -66,6 +66,35 @@ export const getSiteIndexFilePath = ({ language }: SiteIndexLocation): `${string
 export const getSiteIndexPublicPath = ({ language }: SiteIndexLocation): string =>
   language === PageLanguage.enUs ? `${PageLanguage.enUs}/` : ''
 
+/** 與品牌目錄同層的站台功能頁。 */
+export type SitePage = 'collection-explorer' | 'watch-compare'
+
+export interface SitePageLocation {
+  language: PageLanguageCode
+  page: SitePage
+}
+
+/**
+ * 站台功能頁靜態 HTML 的輸出檔案路徑。
+ *
+ * 預設繁中放在輸出根目錄；英文放在 `en-us/` 子目錄，與 {@link getSiteIndexFilePath} 同規則。
+ *
+ * @param location - 目標語言與頁面種類，見 {@link SitePageLocation}。
+ * @returns 不以斜線開頭、必定以 `.html` 結尾的輸出檔案路徑。
+ */
+export const getSitePageFilePath = ({ language, page }: SitePageLocation): `${string}.html` =>
+  language === PageLanguage.enUs ? `en-us/${page}.html` : `${page}.html`
+
+/**
+ * 站台功能頁對外公開的網址路徑；目前與 {@link getSitePageFilePath} 相同（皆為檔名形式，
+ * 不像品牌首頁那樣有目錄形式的特例）。
+ *
+ * @param location - 目標語言與頁面種類，見 {@link SitePageLocation}。
+ * @returns 不以斜線開頭的網址路徑。
+ */
+export const getSitePagePublicPath = (location: SitePageLocation): string =>
+  getSitePageFilePath(location)
+
 /**
  * 品牌底下的頁面種類。與品牌無關：每個品牌都有相同的這幾種頁面。
  *

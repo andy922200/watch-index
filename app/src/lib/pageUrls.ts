@@ -14,7 +14,9 @@ import {
   type BrandPage,
   getBrandPagePublicPath,
   getSiteIndexPublicPath,
+  getSitePagePublicPath,
   type PageLanguageCode,
+  type SitePage,
 } from '@/lib/pageRoutes'
 import { Locale } from '@/plugins/i18n'
 
@@ -104,6 +106,31 @@ const getSiteIndexUrl = ({ language }: { language: PageLanguageCode }): string =
 export const getSiteIndexLanguagePaths = (): SiteIndexLanguagePaths => ({
   enUs: getSiteIndexUrl({ language: Locale.enUs }),
   zhTw: getSiteIndexUrl({ language: Locale.zhTw }),
+})
+
+/**
+ * 組出可直接放進 `href` 的站台功能頁（非品牌目錄下）網址，例如 `collection-explorer`。
+ *
+ * @param options - 目標語系與頁面種類。
+ * @returns 以 base path 起始的完整頁面網址。
+ */
+export const getSitePageUrl = ({
+  language,
+  page,
+}: {
+  language: PageLanguageCode
+  page: SitePage
+}): string => `${getBaseUrl()}${getSitePagePublicPath({ language, page })}`
+
+/**
+ * 取得站台功能頁的繁中與英文完整網址，供該頁的語言切換連結使用。
+ *
+ * @param page - 目標頁面種類。
+ * @returns 該頁面的各語言完整網址。
+ */
+export const getSitePageLanguagePaths = (page: SitePage): SiteIndexLanguagePaths => ({
+  enUs: getSitePageUrl({ language: Locale.enUs, page }),
+  zhTw: getSitePageUrl({ language: Locale.zhTw, page }),
 })
 
 /**
