@@ -21,7 +21,7 @@ const scrollToTop = (): void => {
 <template>
   <Button
     v-if="isVisible"
-    class="fixed right-4 bottom-4 z-50 rounded-full shadow-lg lg:hidden"
+    class="fixed right-4 bottom-[calc(1rem+var(--floating-bar-offset,0px))] z-50 rounded-full shadow-lg lg:hidden"
     size="icon"
     :aria-label="t('site.scrollToTop')"
     @click="scrollToTop"
