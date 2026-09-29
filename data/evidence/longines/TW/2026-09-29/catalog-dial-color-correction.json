@@ -1,0 +1,32 @@
+{
+  "correctionDate": "2026-09-29",
+  "watchId": "longines:L3.764.4.96.6",
+  "field": "dialColors",
+  "previousValue": [
+    "brown"
+  ],
+  "correctedValue": [
+    "brown",
+    "red"
+  ],
+  "basis": [
+    {
+      "evidencePath": "data/evidence/longines/TW/2026-09-24/observations.json",
+      "sourceText": "赤土色",
+      "productUrl": "https://www.longines.com/zh-tw/p/watch-longines-legend-diver-l3-764-4-96-6"
+    },
+    {
+      "evidencePath": "data/evidence/longines/US/2026-09-25/observations.json",
+      "sourceText": "Terracotta",
+      "productUrl": "https://www.longines.com/en-us/p/watch-longines-legend-diver-l3-764-4-96-6"
+    }
+  ],
+  "reason": "依既有官方錶盤描述與使用者對赤土色的分類判斷，保留 brown 並增列 red；本次沒有重新收集價格或更動歷史 evidence。",
+  "validation": {
+    "strictJson": "PASS：catalog 與本更正紀錄均可嚴格解析，無重複 key 或非法常數",
+    "catalogInvariants": "PASS：881 筆、watchId 唯一且符合 brandId 與 reference，dialColors 無重複值",
+    "dataGeneration": "PASS：前端資料產生流程成功，10 個 Longines 市場輸出均包含 brown 與 red",
+    "jsonSchema": "NOT RUN：環境未安裝 JSON Schema 驗證器",
+    "liveSourceCheck": "NOT RUN：本次是既有官方觀察的顏色分類更正，未重新擷取官網"
+  }
+}

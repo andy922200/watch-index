@@ -1,0 +1,32 @@
+{
+  "correctionDate": "2026-09-29",
+  "watchId": "omega:220.10.38.20.13.003",
+  "field": "dialColors",
+  "previousValue": [
+    "brown"
+  ],
+  "correctedValue": [
+    "brown",
+    "red"
+  ],
+  "basis": [
+    {
+      "evidencePath": "data/evidence/omega/TW/2026-09-18/observations.json",
+      "sourceText": "赤 土色",
+      "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-shades-co-axial-master-chronometer-38-mm-22010382013003"
+    },
+    {
+      "evidencePath": "data/evidence/omega/US/2026-09-20/observations.json",
+      "sourceText": "Terracotta",
+      "productUrl": "https://www.omegawatches.com/en-us/watch-omega-seamaster-aqua-terra-shades-co-axial-master-chronometer-38-mm-22010382013003"
+    }
+  ],
+  "reason": "依既有官方錶盤描述與使用者對赤土色的分類判斷，保留 brown 並增列 red；本次沒有重新收集價格或更動歷史 evidence。",
+  "validation": {
+    "strictJson": "PASS：catalog 與本更正紀錄均可嚴格解析，無重複 key 或非法常數",
+    "catalogInvariants": "PASS：586 筆、watchId 唯一且符合 brandId 與 reference，dialColors 無重複值",
+    "dataGeneration": "PASS：前端資料產生流程成功，13 個 Omega 市場輸出均包含 brown 與 red",
+    "jsonSchema": "NOT RUN：環境未安裝 JSON Schema 驗證器",
+    "liveSourceCheck": "NOT RUN：本次是既有官方觀察的顏色分類更正，未重新擷取官網"
+  }
+}
