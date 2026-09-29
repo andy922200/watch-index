@@ -16,7 +16,7 @@ Watch Index 將品牌官方公開的腕錶配置、各市場的在地化資訊�
 
 ## Data：官方配置與多市場價格
 
-`data/` 保存四類正式資料：跨市場共用的腕錶配置目錄、各市場的在地化資訊、不可回寫的價格歷史，以及來源可追溯的旅客退稅政策。Catalog、market 與 price history 使用 brand-neutral v3 Schema；每份資料以 `brandId` 識別品牌，並以品牌官方完整參考號 `reference` 組成跨品牌唯一鍵 `watchId = brandId + ":" + reference`，例如 `rolex:m126500ln-0001`。
+`data/` 保存四類正式資料：跨市場共用的腕錶配置目錄、各市場的在地化資訊、不可回寫的價格歷史，以及來源可追溯的旅客退稅政策。Catalog、market 與 price history 使用 brand-neutral Schema，各自維護獨立的 `schemaVersion`（見下方「[Schema Releases](#schema-releases)」）；每份資料以 `brandId` 識別品牌，並以品牌官方完整參考號 `reference` 組成跨品牌唯一鍵 `watchId = brandId + ":" + reference`，例如 `rolex:m126500ln-0001`。
 
 各品牌目前涵蓋的市場與配置筆數（唯一參考編號數）如下，「—」表示尚未收錄：
 
@@ -48,9 +48,19 @@ Longines 已加入網站頁面，可在台灣、香港、新加坡、日本、�
 
 ### Schema Releases
 
-已發布的資料契約可從 [GitHub Releases](https://github.com/andy922200/watch-index/releases) 查閱及下載；每個版本均保留原始 Schema 與 SHA-256 校驗檔。目前 catalog、market 與 price history 的正式版本是 [`data-schema-v3`](https://github.com/andy922200/watch-index/releases/tag/data-schema-v3)，旅客退稅政策的正式版本是 [`traveler-refund-schema-v1`](https://github.com/andy922200/watch-index/releases/tag/traveler-refund-schema-v1)。
+已發布的資料契約可從 [GitHub Releases](https://github.com/andy922200/watch-index/releases) 查閱及下載；每個版本均保留原始 Schema 與 SHA-256 校驗檔。
 
-核心資料契約使用 `data-schema-vN` 版本線，三份 Schema 同步升版；旅客退稅政策則使用獨立的 `traveler-refund-schema-vN` 版本線。歷史版本以對應的 annotated tag 與 Release 為準，不會覆寫既有 tag 或附件。
+核心資料契約（catalog、market、price history）使用 `data-schema-vN` 發布線。三份 Schema 的 `schemaVersion` 各自獨立，只有契約實際改變的那一份才會升版；`data-schema-vN` 的 N 則是**發布序號**，只要任一份 Schema 升版就遞增，因此 N 不一定等於各 Schema 的 `schemaVersion`。每個 Release 說明都會列出當次三份 Schema 的版本。旅客退稅政策使用獨立的 `traveler-refund-schema-vN` 發布線。歷史版本以對應的 annotated tag 與 Release 為準，不會覆寫既有 tag 或附件。
+
+| 發布 | Catalog | Market | Price history | 原始生效日 | 說明 |
+| --- | :---: | :---: | :---: | --- | --- |
+| [`data-schema-v1`](https://github.com/andy922200/watch-index/releases/tag/data-schema-v1) | 1 | 1 | 1 | 2026-09-02 | 初版，僅涵蓋勞力士 |
+| [`data-schema-v2`](https://github.com/andy922200/watch-index/releases/tag/data-schema-v2) | 2 | 2 | 2 | 2026-09-10 | 新增 `brandId`（v2 Schema 仍接受 v1 資料） |
+| [`data-schema-v3`](https://github.com/andy922200/watch-index/releases/tag/data-schema-v3) | 3 | 3 | 3 | 2026-09-17 | 改為 brand-neutral，並以官方完整參考號組成 `watchId` |
+| [`data-schema-v4`](https://github.com/andy922200/watch-index/releases/tag/data-schema-v4) | 4 | 4 | 4 | 2026-09-28 | 已發布的最新版本 |
+| `data-schema-v5` | 5 | 4 | 4 | — | 尚未發布；catalog 新增必填的 `dialColors` 錶盤標準色 |
+
+旅客退稅政策的正式版本是 [`traveler-refund-schema-v1`](https://github.com/andy922200/watch-index/releases/tag/traveler-refund-schema-v1)。
 
 ## 專案導覽
 

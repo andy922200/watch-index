@@ -28,7 +28,7 @@ data/
 └── schemas/
 ```
 
-各份 Schema 位於 `data/schemas/`，是正式資料欄位與型別的唯一依據。Catalog、market 與 price history 分別使用 `watch-catalog.schema.json`、`watch-market.schema.json` 與 `watch-price-history.schema.json`。目前核心資料契約是 [`data-schema-v3`](https://github.com/andy922200/watch-index/releases/tag/data-schema-v3)，旅客退稅政策契約是 [`traveler-refund-schema-v1`](https://github.com/andy922200/watch-index/releases/tag/traveler-refund-schema-v1)。
+各份 Schema 位於 `data/schemas/`，是正式資料欄位與型別的唯一依據。Catalog、market 與 price history 分別使用 `watch-catalog.schema.json`、`watch-market.schema.json` 與 `watch-price-history.schema.json`。旅客退稅政策契約是 [`traveler-refund-schema-v1`](https://github.com/andy922200/watch-index/releases/tag/traveler-refund-schema-v1)。
 
 歷史 Schema 應從 [GitHub Releases](https://github.com/andy922200/watch-index/releases) 的對應版本下載，或透過同名 annotated tag 查閱當時的原始路徑；Release 同時提供原始 Schema 與 `SHA256SUMS.txt`。舊 Schema 名稱若出現在既有 evidence，代表當次驗證所使用的歷史契約，不得改用現行 Schema 重新詮釋，也不得回頭修改 evidence。
 

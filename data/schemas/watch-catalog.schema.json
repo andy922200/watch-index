@@ -7,7 +7,7 @@
   "required": ["$schema", "schemaVersion", "brandId", "collectedAt", "sourceMarketCodes", "watchCount", "watches"],
   "properties": {
     "$schema": { "const": "../schemas/watch-catalog.schema.json" },
-    "schemaVersion": { "const": 4 },
+    "schemaVersion": { "const": 5 },
     "brandId": { "$ref": "#/$defs/slug" },
     "collectedAt": { "type": "string", "format": "date-time" },
     "sourceMarketCodes": {
@@ -33,16 +33,27 @@
     "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
     "marketCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
     "reference": { "type": "string", "minLength": 1 },
+    "dialColor": {
+      "type": "string",
+      "enum": ["white", "silver", "black", "grey", "blue", "green", "red", "pink", "purple", "brown", "yellow", "beige", "gold", "multicolor", "other"]
+    },
     "watchId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*:.+$" },
     "watch": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["watchId", "collectionId", "reference", "imageUrl"],
+      "required": ["watchId", "collectionId", "reference", "imageUrl", "dialColors"],
       "properties": {
         "watchId": { "$ref": "#/$defs/watchId" },
         "collectionId": { "$ref": "#/$defs/slug" },
         "reference": { "$ref": "#/$defs/reference" },
-        "imageUrl": { "type": "string", "format": "uri" }
+        "imageUrl": { "type": "string", "format": "uri" },
+        "dialColors": {
+          "description": "Market-independent, locale-neutral dial color slugs used for filtering. List only the dial's base colors; omit accent colors of counter rings and subdials. Use 'other' for dials with no reportable color, such as diamond-paved dials.",
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/dialColor" }
+        }
       }
     }
   }

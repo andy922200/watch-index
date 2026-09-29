@@ -91,7 +91,7 @@ watchId === brandId + ":" + reference
 
 ## Schema 發布流程
 
-Catalog、market 與 price history 共用 `data-schema-vN` 版本線並同步升版；旅客退稅政策使用獨立的 `traveler-refund-schema-vN` 版本線。欄位、型別、必填條件、識別規則或 Schema 路徑約束改變時，必須提升對應的 `schemaVersion`。僅修改 `description`、`$comment` 或文件文字且未改變契約時，不升版。
+Catalog、market 與 price history 各自維護獨立的 `schemaVersion`，只有契約實際改變的那份 Schema 及其資料檔需要升版，其餘不隨之升版；三者的發布合併為 `data-schema-vN` 契約發布，任一份 Schema 升版即遞增 N（N 是發布序號，不等於各 Schema 的 `schemaVersion`），Release 說明須列出當次各 Schema 的 `schemaVersion`。旅客退稅政策使用獨立的 `traveler-refund-schema-vN` 版本線。欄位、型別、必填條件、識別規則或 Schema 路徑約束改變時，必須提升對應的 `schemaVersion`。僅修改 `description`、`$comment` 或文件文字且未改變契約時，不升版。
 
 發布新版本時固定執行：
 
@@ -183,6 +183,8 @@ JSON 或 Schema 通過，只代表結構合法，不代表來源正確或收集�
 - `M − C`：取得所有穩定欄位後加入 catalog。
 - `C − M`：保留；本次未觀察到不是下架證據。
 - 更新後集合為 `C ∪ M`，並確認 `|C ∪ M| = |C| + |M| − |C ∩ M|`。
+
+Catalog 每筆配置必須帶 `dialColors`（市場無關的標準色 slug 陣列，允許值見 `data/schemas/watch-catalog.schema.json` 的 `dialColor` enum）。新增配置時，依市場 `dialDescription` 判讀錶盤底色，優先參考英文市場文字：複色以多值表示；「counter rings」「subdial」等點綴色不列入；鑲鑽、全鑽等無可報告顏色者用 `other`；粉紅金／玫瑰金色調歸 `pink`，香檳色、金色歸 `gold`，象牙色歸 `beige`。無法判讀時列為待查，不得猜測填值。
 
 穩定欄位衝突、缺少官方圖片、未知完整配置或市場資料無法對應 catalog 時，停止宣稱完整，先列為待查。保留既有 JSON 的順序、兩格縮排、UTF-8 與尾端換行，避免無意義的全檔重排。
 
