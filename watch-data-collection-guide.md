@@ -13,18 +13,18 @@
 - 不知道價格不等於零；無法取得資料不等於 `not-listed`。
 - 正式資料只保存已驗證的事實；來源觀察、收集路徑與驗證結果保留在 evidence，而非塞入正式 Schema。
 - 價格歷史採追加式保存。不得修改或刪除既有輪次與價格點；無變化時不重複新增價格點。
-- Evidence commit 後即不可變更。新一輪結果與先前不一致時保留原記錄，不回頭修改、刪除或壓縮既有 evidence；同一輪尚未 commit 的多次嘗試可整併，但須保留嘗試紀錄。
+- Evidence commit 後即不可變更；新一輪結果與先前不一致時保留原記錄。完整規則與例外見「Evidence 證據層」的「保存期限與不可變更」。
 - 官方市場文字保持原文。俗稱必須可對應到特定完整配置與可信來源，不能因同系列或舊世代名稱相近而套用。
 
 ## 目前資料結構
 
 ```text
 data/
-├── catalog/[catalog].json
-├── markets/[market].json
-├── history/[marketCode]/[price-history].json
+├── catalog/<brandId>-catalog.json
+├── markets/<brandId>-<market-name>-market.json
+├── history/<marketCode>/<brandId>-price-history.json
 ├── traveler-refund-policies.json
-├── evidence/[marketCode]/[YYYY-MM-DD]/
+├── evidence/<brandId>/<marketCode>/<YYYY-MM-DD>/
 └── schemas/
 ```
 
@@ -34,15 +34,15 @@ data/
 
 ### Schema 版本規則
 
-- Catalog、market 與 price history 共用 `data-schema-vN` 版本線，三份 Schema 必須同步提升版本與發布。
-- 旅客退稅政策使用獨立的 `traveler-refund-schema-vN` 版本線。
+- Catalog、market 與 price history 共用 `data-schema-vN` 發布線；N 是發布序號，只要任一份 Schema 升版就遞增。三份 Schema 的 `schemaVersion` 各自獨立，只有契約實際改變的那一份才升版，因此 N 不一定等於各 Schema 的 `schemaVersion`。各發布對應的 Schema 版本見 [README.md](README.md) 的「Schema Releases」。
+- 旅客退稅政策使用獨立的 `traveler-refund-schema-vN` 發布線。
 - 欄位、型別、必填條件、識別規則或 Schema 路徑約束改變時，必須提升對應的 `schemaVersion` 並建立 annotated tag、GitHub Release、原始 Schema 附件與 SHA-256 校驗檔。
 - 僅修改 `description`、`$comment` 或文件文字而未改變契約時，不提升資料契約版本。
 - 已發布的 tag、Release 附件與歷史 evidence 一律不覆寫；需要修正時發布新版本，並在說明中指出前版問題與遷移影響。
 
 ### 共用配置目錄
 
-`data/catalog/` 中的配置目錄是所有已收集市場的配置聯集。每份品牌目錄以 `brandId` 識別；每筆腕錶只存跨市場穩定的欄位，包括 `watchId`、`reference`、系列 ID 與官方圖片。它不放價格、當地名稱、稅率或俗稱。
+`data/catalog/` 中的配置目錄是所有已收集市場的配置聯集。每份品牌目錄以 `brandId` 識別；每筆腕錶只存跨市場穩定的欄位，包括 `watchId`、`reference`、系列 ID、官方圖片與 `dialColors`（市場無關的錶盤標準色，允許值與判讀規則見 `data/schemas/watch-catalog.schema.json` 與 [ai-data-maintenance-guide.md](ai-data-maintenance-guide.md)）。它不放價格、當地名稱、稅率或俗稱。
 
 ### 市場在地化資料
 
@@ -96,72 +96,66 @@ Evidence 是「某個時間點從某個來源觀察到什麼」的快照，一�
 
 ## 現況
 
-各品牌收錄的市場數量與每個市場的配置筆數彼此獨立，不假設一致；新增品牌或市場時，在下方新增對應小節與表格即可，不必比照既有品牌的市場數或筆數。
+各品牌收錄的市場範圍與每個市場的配置筆數彼此獨立，不假設一致；新增品牌或市場時，在下方新增對應小節與表格即可，不必比照既有品牌的市場範圍。各品牌的市場數與配置筆數請見 [README.md](README.md)，本節只保留 README 沒有的語系、幣別與價格語意。
 
 ### 勞力士
 
-勞力士目前已收錄 15 個市場：
-
-| 市場 | 代碼 | 語系 | 幣別 | 價格語意 | 配置筆數 |
-| --- | --- | --- | --- | --- | --- |
-| 奧地利 | AT | `de-AT` | EUR | 含稅（20%） | 1,465 |
-| 中國 | CN | `zh-Hans-CN` | CNY | 含稅（增值稅 13%） | 1,465 |
-| 瑞士 | CH | `de-CH` | CHF | 含稅（8.1%） | 1,465 |
-| 德國 | DE | `de-DE` | EUR | 含稅（19%） | 1,465 |
-| 西班牙 | ES | `es` | EUR | 含稅（IVA 21%） | 1,465 |
-| 法國 | FR | `fr-FR` | EUR | 含稅（20%） | 1,465 |
-| 英國 | GB | `en-GB` | GBP | 含稅（20%） | 1,465 |
-| 香港 | HK | `zh-Hant-HK` | HKD | 無消費稅（0%） | 1,465 |
-| 義大利 | IT | `it-IT` | EUR | 含稅（22%） | 1,465 |
-| 日本 | JP | `ja-JP` | JPY | 含稅（10%） | 1,465 |
-| 韓國 | KR | `ko-KR` | KRW | 含稅（10%） | 1,465 |
-| 新加坡 | SG | `en-SG` | SGD | 含稅（9%） | 1,465 |
-| 泰國 | TH | `th` | THB | 含稅（VAT 7%） | 1,465 |
-| 台灣 | TW | `zh-Hant-TW` | TWD | 含稅（5%） | 1,465 |
-| 美國 | US | `en-US` | USD | 未稅（依州別而異） | 1,465 |
+| 市場 | 代碼 | 語系 | 幣別 | 價格語意 |
+| --- | --- | --- | --- | --- |
+| 奧地利 | AT | `de-AT` | EUR | 含稅（20%） |
+| 中國 | CN | `zh-Hans-CN` | CNY | 含稅（增值稅 13%） |
+| 瑞士 | CH | `de-CH` | CHF | 含稅（8.1%） |
+| 德國 | DE | `de-DE` | EUR | 含稅（19%） |
+| 西班牙 | ES | `es` | EUR | 含稅（IVA 21%） |
+| 法國 | FR | `fr-FR` | EUR | 含稅（20%） |
+| 英國 | GB | `en-GB` | GBP | 含稅（20%） |
+| 香港 | HK | `zh-Hant-HK` | HKD | 無消費稅（0%） |
+| 義大利 | IT | `it-IT` | EUR | 含稅（22%） |
+| 日本 | JP | `ja-JP` | JPY | 含稅（10%） |
+| 韓國 | KR | `ko-KR` | KRW | 含稅（10%） |
+| 新加坡 | SG | `en-SG` | SGD | 含稅（9%） |
+| 泰國 | TH | `th` | THB | 含稅（VAT 7%） |
+| 台灣 | TW | `zh-Hant-TW` | TWD | 含稅（5%） |
+| 美國 | US | `en-US` | USD | 未稅（依州別而異） |
 
 中國市場官網為 `rolex.cn`（非 `rolex.com`），採用另一套 API 網域與語系代碼（`zh-hans`），但仍是相同的 `watchgrid` 結構化端點模式；標示的稅率僅為官方揭露的增值稅部分，不含進口環節消費稅（詳見 `data/evidence/rolex/CN/` 的限制說明）。
 
 ### Omega
 
-Omega 目前已收錄 13 個市場，各市場配置筆數不相同：
-
-| 市場 | 代碼 | 語系 | 幣別 | 價格語意 | 配置筆數 |
-| --- | --- | --- | --- | --- | --- |
-| 中國 | CN | `zh-Hans-CN` | CNY | 含稅（增值稅 13%） | 579 |
-| 日本 | JP | `ja-JP` | JPY | 含稅（10%） | 552 |
-| 韓國 | KR | `ko-KR` | KRW | 含稅（10%） | 554 |
-| 瑞士 | CH | `de-CH` | CHF | 含稅（8.1%） | 552 |
-| 香港 | HK | `zh-HK` | HKD | 未稅（0%） | 551 |
-| 台灣 | TW | `zh-Hant-TW` | TWD | 含稅（5%） | 551 |
-| 美國 | US | `en-US` | USD | 未稅（依州別而異） | 548 |
-| 德國 | DE | `de-DE` | EUR | 含稅（19%） | 552 |
-| 法國 | FR | `fr-FR` | EUR | 含稅（20%） | 552 |
-| 西班牙 | ES | `es-ES` | EUR | 含稅（21%） | 552 |
-| 英國 | GB | `en-GB` | GBP | 含稅（VAT 20%） | 549 |
-| 義大利 | IT | `it-IT` | EUR | 含稅（22%） | 552 |
-| 奧地利 | AT | `de-AT` | EUR | 含稅（20%） | 552 |
+| 市場 | 代碼 | 語系 | 幣別 | 價格語意 |
+| --- | --- | --- | --- | --- |
+| 中國 | CN | `zh-Hans-CN` | CNY | 含稅（增值稅 13%） |
+| 日本 | JP | `ja-JP` | JPY | 含稅（10%） |
+| 韓國 | KR | `ko-KR` | KRW | 含稅（10%） |
+| 瑞士 | CH | `de-CH` | CHF | 含稅（8.1%） |
+| 香港 | HK | `zh-HK` | HKD | 無消費稅（0%） |
+| 台灣 | TW | `zh-Hant-TW` | TWD | 含稅（5%） |
+| 美國 | US | `en-US` | USD | 未稅（依州別而異） |
+| 德國 | DE | `de-DE` | EUR | 含稅（19%） |
+| 法國 | FR | `fr-FR` | EUR | 含稅（20%） |
+| 西班牙 | ES | `es-ES` | EUR | 含稅（21%） |
+| 英國 | GB | `en-GB` | GBP | 含稅（VAT 20%） |
+| 義大利 | IT | `it-IT` | EUR | 含稅（22%） |
+| 奧地利 | AT | `de-AT` | EUR | 含稅（20%） |
 
 ### Longines
 
-Longines 目前已收錄 10 個市場：
-
-| 市場 | 代碼 | 語系 | 幣別 | 價格語意 | 配置筆數 |
-| --- | --- | --- | --- | --- | --- |
-| 台灣 | TW | `zh-Hant-TW` | TWD | 含稅（5%） | 544 |
-| 香港 | HK | `zh-Hant-HK` | HKD | 無消費稅（0%） | 493 |
-| 日本 | JP | `ja-JP` | JPY | 含稅（10%） | 612 |
-| 韓國 | KR | `ko-KR` | KRW | 含稅（10%） | 456 |
-| 瑞士 | CH | `de-CH` | CHF | 含稅（8.1%） | 805 |
-| 英國 | GB | `en-GB` | GBP | 含稅（VAT 20%） | 806 |
-| 美國 | US | `en-US` | USD | 未稅（依州別而異） | 802 |
-| 德國 | DE | `de-DE` | EUR | 含稅（19%） | 804 |
-| 法國 | FR | `fr-FR` | EUR | 含稅（20%） | 776 |
-| 新加坡 | SG | `en-SG` | SGD | 含稅（9%） | 755 |
+| 市場 | 代碼 | 語系 | 幣別 | 價格語意 |
+| --- | --- | --- | --- | --- |
+| 台灣 | TW | `zh-Hant-TW` | TWD | 含稅（5%） |
+| 香港 | HK | `zh-Hant-HK` | HKD | 無消費稅（0%） |
+| 日本 | JP | `ja-JP` | JPY | 含稅（10%） |
+| 韓國 | KR | `ko-KR` | KRW | 含稅（10%） |
+| 瑞士 | CH | `de-CH` | CHF | 含稅（8.1%） |
+| 英國 | GB | `en-GB` | GBP | 含稅（VAT 20%） |
+| 美國 | US | `en-US` | USD | 未稅（依州別而異） |
+| 德國 | DE | `de-DE` | EUR | 含稅（19%） |
+| 法國 | FR | `fr-FR` | EUR | 含稅（20%） |
+| 新加坡 | SG | `en-SG` | SGD | 含稅（9%） |
 
 Longines 的 `collectionId` 採官方子系列網址路徑的最後一段（例如 `hydroconquest`、`master-collection`），而非 Master、Conquest 等五大家族；各市場的官方子系列並非完全相同，這是官方目錄的真實市場差異，非收集缺漏。例如：`master-gmt` 未出現在 TW；`conquest-classic` 未出現在 HK；`evidenza` 未出現在 KR。瑞士市場的官方站台以德、法、義三個對等語言 store view 並存（皆為相同目錄與價格，僅語系不同），本次收錄以 `de-CH` 為代表語系，詳見 `data/evidence/longines/CH/2026-09-25/observations.json` 的 `localeDecision` 說明。德國市場另有 7 款目錄尚未收錄的配置（其中 4 款為「Sylt Edition」德國限定款），已併入共用目錄，詳見 `data/evidence/longines/DE/2026-09-27/validation-summary.json` 的 `catalogDiff`。
 
-實際的收集時間、來源、輪次與價格請讀取各市場的 history 與 evidence；本表不應用作下一次收集的筆數目標。
+實際的收集時間、來源、輪次與價格請讀取各市場的 history 與 evidence；README 的筆數不應用作下一次收集的筆數目標。
 
 ## 更新流程
 
