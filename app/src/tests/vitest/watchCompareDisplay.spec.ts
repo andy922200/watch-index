@@ -22,6 +22,7 @@ const makeWatch = (overrides: Partial<BaseWatch> = {}): BaseWatch => ({
   collectionId: 'submariner',
   reference: '124060',
   imageUrl: 'https://example.com/watch.jpg',
+  dialColors: ['blue'],
   modelName: 'Submariner',
   caseDescription: '41mm Oystersteel',
   dialDescription: 'Black dial',

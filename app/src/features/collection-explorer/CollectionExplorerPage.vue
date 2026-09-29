@@ -14,6 +14,7 @@ import {
   getCommonDefaultMarket,
   getMarketBrands,
 } from '@/lib/commonMarkets'
+import { DIAL_COLORS, type DialColor } from '@/lib/dialColors'
 import {
   buildExplorerCollectionOptions,
   type ExplorerSort,
@@ -36,6 +37,7 @@ import { Locale } from '@/plugins/i18n'
 
 import ExplorerBrandFilter from './components/ExplorerBrandFilter.vue'
 import ExplorerCollectionSelect from './components/ExplorerCollectionSelect.vue'
+import ExplorerDialColorFilter from './components/ExplorerDialColorFilter.vue'
 import ExplorerMarketSelect from './components/ExplorerMarketSelect.vue'
 import ExplorerPriceRangeFilter from './components/ExplorerPriceRangeFilter.vue'
 import ExplorerSearchBox from './components/ExplorerSearchBox.vue'
@@ -96,6 +98,7 @@ const query = ref('')
 const selectedBrands = ref<string[]>([])
 const filtersExpanded = ref(false)
 const selectedCollection = ref('')
+const selectedDialColors = ref<DialColor[]>([])
 const priceRange = ref<number[]>([0, 0])
 const priceFilterActive = ref(false)
 const sort = ref<ExplorerSort>('default')
@@ -130,6 +133,10 @@ const watches = computed<ExplorerWatch[]>(() => {
     })),
   )
 })
+const dialColorOptions = computed<DialColor[]>(() => {
+  const present = new Set(watches.value.flatMap((item) => item.watch.dialColors))
+  return DIAL_COLORS.filter((color) => present.has(color))
+})
 const priceDomain = computed<PriceDomain | null>(() => getExplorerPriceDomain(watches.value))
 const collectionOptions = computed(() =>
   buildExplorerCollectionOptions(watches.value, selectedBrands.value),
@@ -139,6 +146,7 @@ const filteredWatches = computed(() =>
     query: query.value,
     brandIds: selectedBrands.value,
     collectionKey: selectedCollection.value === 'all' ? '' : selectedCollection.value,
+    dialColors: selectedDialColors.value,
     minPrice: priceFilterActive.value ? (priceRange.value[0] ?? null) : null,
     maxPrice: priceFilterActive.value ? (priceRange.value[1] ?? null) : null,
     sort: sort.value,
@@ -193,7 +201,16 @@ const scrollResultsIntoView = (): void => {
 /* 工具函式包裝 End */
 
 watch(
-  [selectedMarket, query, selectedBrands, selectedCollection, priceRange, priceFilterActive, sort],
+  [
+    selectedMarket,
+    query,
+    selectedBrands,
+    selectedCollection,
+    selectedDialColors,
+    priceRange,
+    priceFilterActive,
+    sort,
+  ],
   () => {
     visibleCount.value = PAGE_SIZE
     scrollResultsIntoView()
@@ -214,6 +231,9 @@ watch(selectedBrands, () => {
     !collectionOptions.value.some(([key]) => key === selectedCollection.value)
   )
     selectedCollection.value = ''
+})
+watch(dialColorOptions, (options) => {
+  selectedDialColors.value = selectedDialColors.value.filter((color) => options.includes(color))
 })
 watch(availableBrandIds, (brandIds) => {
   selectedBrands.value = selectedBrands.value.filter((brandId) => brandIds.includes(brandId))
@@ -288,6 +308,11 @@ onUnmounted(() => {
               <ExplorerCollectionSelect
                 v-model="selectedCollection"
                 :options="collectionOptions"
+                :filters-expanded="filtersExpanded"
+              />
+              <ExplorerDialColorFilter
+                v-model="selectedDialColors"
+                :options="dialColorOptions"
                 :filters-expanded="filtersExpanded"
               />
               <ExplorerPriceRangeFilter

@@ -50,6 +50,7 @@ const makeItem = (
     collectionId: 'heritage',
     reference,
     imageUrl: '',
+    dialColors: ['blue'],
     modelName: 'Classic',
     caseDescription: '',
     dialDescription: '',
@@ -126,6 +127,7 @@ describe('explorer filters', () => {
     query: '',
     brandIds: [],
     collectionKey: '',
+    dialColors: [],
     minPrice: null,
     maxPrice: null,
     sort: 'price-asc',
@@ -151,6 +153,17 @@ describe('explorer filters', () => {
         collectionKey: getCollectionKey('omega', 'heritage'),
       }).map((item) => item.brandId),
     ).toEqual(['omega'])
+  })
+
+  it('keeps watches matching any selected dial color', () => {
+    const multi = makeItem('rolex', 'D', 100, 'listed')
+    multi.watch.dialColors = ['black', 'gold']
+    const all = [...items, multi]
+    expect(
+      filterExplorerWatches(all, { ...base, dialColors: ['gold'] }).map((i) => i.watch.reference),
+    ).toEqual(['D'])
+    expect(filterExplorerWatches(all, { ...base, dialColors: ['gold', 'blue'] })).toHaveLength(4)
+    expect(filterExplorerWatches(all, { ...base, dialColors: ['red'] })).toHaveLength(0)
   })
 
   it('does not numerically compare prices when currencies disagree', () => {

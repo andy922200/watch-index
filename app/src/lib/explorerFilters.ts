@@ -1,3 +1,4 @@
+import type { DialColor } from '@/lib/dialColors'
 import { includesSearchText, normalizeSearchText } from '@/lib/searchText'
 import { hasPublicPrice } from '@/lib/watchPriceComparison'
 import type { BaseWatch, PriceType } from '@/types/watch-data'
@@ -18,6 +19,7 @@ export interface ExplorerFilterOptions {
   query: string
   brandIds: readonly string[]
   collectionKey: string
+  dialColors: readonly DialColor[]
   minPrice: number | null
   maxPrice: number | null
   sort: ExplorerSort
@@ -103,7 +105,7 @@ export const buildExplorerCollectionOptions = (
 }
 
 /**
- * 依搜尋文字、品牌、系列與（可選的）價格範圍篩選跨品牌腕錶清單，並依 `options.sort` 排序。
+ * 依搜尋文字、品牌、系列、錶盤顏色（多選，命中任一色即保留）與（可選的）價格範圍篩選跨品牌腕錶清單，並依 `options.sort` 排序。
  *
  * 價格篩選與排序只在 `allowPriceComparison` 為真時生效（例如目前市場沒有可比價資料時應關閉）；
  * 依價格排序時，沒有公開價格的項目一律排到最後。
@@ -122,6 +124,11 @@ export const filterExplorerWatches = (
     if (
       options.collectionKey &&
       getCollectionKey(item.brandId, item.watch.collectionId) !== options.collectionKey
+    )
+      return false
+    if (
+      options.dialColors.length > 0 &&
+      !item.watch.dialColors.some((color) => options.dialColors.includes(color))
     )
       return false
     if (

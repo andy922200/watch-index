@@ -11,6 +11,7 @@ const createPriceSortWatch = ({ reference, price, priceStatus }: PriceSortWatchI
   collectionId: 'submariner',
   reference,
   imageUrl: `https://example.com/${reference}.jpg`,
+  dialColors: ['blue'],
   modelName: `Test ${reference}`,
   caseDescription: 'Test case',
   dialDescription: 'Test dial',

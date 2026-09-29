@@ -1,3 +1,4 @@
+import { isDialColor } from '@/lib/dialColors'
 import { isRecord } from '@/lib/validation/shared'
 import { isTravelerRefundPolicy } from '@/lib/validation/travelerRefundPolicy'
 import type {
@@ -35,6 +36,9 @@ export const isBaseWatch = (value: unknown): value is BaseWatch =>
   typeof value.collectionId === 'string' &&
   typeof value.reference === 'string' &&
   typeof value.imageUrl === 'string' &&
+  Array.isArray(value.dialColors) &&
+  value.dialColors.length > 0 &&
+  value.dialColors.every(isDialColor) &&
   typeof value.modelName === 'string' &&
   typeof value.caseDescription === 'string' &&
   typeof value.dialDescription === 'string' &&

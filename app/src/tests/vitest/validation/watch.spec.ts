@@ -12,6 +12,7 @@ const baseWatch = {
   collectionId: 'datejust',
   reference: 'm126234-0001',
   imageUrl: 'https://example.com/watch.png',
+  dialColors: ['blue'],
   modelName: 'Datejust 36',
   caseDescription: 'Oyster, 36 mm, Oystersteel',
   dialDescription: 'Bright blue',

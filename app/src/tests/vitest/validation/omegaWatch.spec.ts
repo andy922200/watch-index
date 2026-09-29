@@ -7,6 +7,7 @@ const omegaWatch = {
   collectionId: 'seamaster',
   reference: '220.10.28.60.54.001',
   imageUrl: 'https://example.com/watch.png',
+  dialColors: ['blue'],
   modelName: 'Seamaster Aqua Terra 150M',
   caseDescription: 'Steel',
   dialDescription: 'Green',

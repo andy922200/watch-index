@@ -29,6 +29,7 @@ vi.mock('@/composables/useWatchCatalog', async () => {
             collectionId: 'submariner',
             reference: 'm124060-0001',
             imageUrl: 'https://example.com/m124060-0001',
+            dialColors: ['blue'],
             modelName: 'Submariner',
             caseDescription: 'Oystersteel',
             dialDescription: 'Black',

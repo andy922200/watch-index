@@ -1,3 +1,4 @@
+import type { DialColor } from '@/lib/dialColors'
 import type { TravelerRefundPolicy } from '@/types/traveler-refund-policy'
 
 export interface WatchCollection {
@@ -15,6 +16,7 @@ export interface BaseWatch {
   collectionId: string
   reference: string
   imageUrl: string
+  dialColors: readonly DialColor[]
   modelName: string
   caseDescription: string
   dialDescription: string
