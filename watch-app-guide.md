@@ -4,12 +4,13 @@
 
 ## 這個網站做什麼
 
-網站將 `data/` 中的腕錶資料呈現為可瀏覽的索引。目前網站顯示勞力士、Omega 與 Longines 的正式資料；前端應維持品牌可擴充性，以支援日後加入其他品牌。使用者可：
+網站將 `data/` 中的腕錶資料呈現為可瀏覽的索引。目前網站顯示勞力士、Omega 與 Longines 的正式資料，各品牌涵蓋的市場見 [README.md](README.md)；前端應維持品牌可擴充性，以支援日後加入其他品牌。網站分為三層頁面：
 
-- 依品牌在已完成整合的市場之間切換：勞力士涵蓋 15 個市場；Omega 涵蓋台灣、中國、日本、韓國、香港、瑞士、奧地利、德國、法國、義大利、西班牙、英國與美國共 13 個市場；Longines 涵蓋台灣、香港、新加坡、日本、韓國、德國、法國、瑞士、英國與美國共 10 個市場。
-- 以系列名稱、型號、完整配置碼與俗稱搜尋腕錶；搜尋輸入會短暫延遲，並提供系列與錶款建議。
-- 查看腕錶圖片、型號、當地建議零售價與俗稱；開啟詳細視窗可讀取錶殼與面盤描述。
-- 切換繁體中文／英文與明暗色模式。
+- **站台首頁**：品牌目錄，列出已上線與即將推出的品牌。
+- **品牌頁**：每個品牌各自一組頁面。使用者可在該品牌已整合的市場之間切換，以系列名稱、型號、完整配置碼與俗稱搜尋腕錶（輸入會短暫延遲，並提供系列與錶款建議），查看圖片、型號、當地建議零售價與俗稱，開啟詳細視窗讀取錶殼與面盤描述，以及進入該品牌的單錶跨市場行情比較頁。
+- **跨品牌功能頁**：Collection Explorer 依所選市場跨品牌探索錶款，支援品牌、系列、錶盤顏色與官方價格範圍篩選、搜尋與排序，並能挑選錶款（有數量上限）進入錶款比較頁（`watch-compare`）。
+
+所有頁面皆可切換繁體中文／英文與明暗色模式。
 
 預設市場是台灣。市場選擇會寫入瀏覽器的 `localStorage`；網址加入 `?market_code=JP` 等有效代碼時，會優先採用網址指定的市場。
 
@@ -20,15 +21,18 @@
 ```text
 app/
 ├── src/
-│   ├── pages/                       # 主頁、搜尋邏輯與詳細資料視窗
+│   ├── pages/                       # 各頁面的進入點（index、rolex、omega、longines、collection-explorer、watch-compare）
+│   ├── features/                    # 頁面功能實作（watch-index、price-compare、collection-explorer、watch-compare）
 │   ├── components/                  # 導覽、搜尋框與共用 UI 元件
 │   ├── composables/                 # 資料載入、深色模式與共用請求邏輯
 │   ├── api/                         # watch-data 靜態檔存取與請求快取
+│   ├── plugins/                     # i18n、axios 初始化
 │   ├── locales/                     # 繁中、英文介面字串
-│   ├── lib/                         # 市場、資料驗證與多頁輸出設定
-│   └── types/                       # 前端資料型別
+│   ├── lib/                         # 品牌與市場設定、網址結構、資料驗證與多頁輸出設定
+│   ├── types/                       # 前端資料型別
+│   └── tests/                       # Vitest 與 Playwright 測試
 ├── scripts/generate-watch-data.mjs  # 由 data/ 產生網站用靜態資料
-├── [page].html                      # 多頁網站的 HTML 範本
+├── watch.html                       # 多頁網站共用的 HTML 範本
 ├── vite.config.ts                   # Vite、路徑與測試設定
 └── playwright.config.ts             # 端對端測試設定
 ```
@@ -51,9 +55,19 @@ Vue 頁面、搜尋、清單、詳細視窗與單錶跨市場比較
 
 ## 語言、網址與部署
 
-網站以多頁方式輸出獨立 HTML：首頁的繁中預設頁在 `/`、英文頁在 `/en-us/`；單錶行情比較頁則是 `/watch-price-compare.html` 與 `/en-us/watch-price-compare.html`，以 `watch_id` query 指定跨市場唯一配置。語言由網址路徑決定，而非單純在瀏覽器內切換，讓不執行 JavaScript 的搜尋與分享服務也能取得相應的標題、描述與 Open Graph 資訊。
+網站以多頁方式輸出獨立 HTML。以下路徑相對於 base；繁中為預設語言，不帶語言路徑段，英文加上 `en-us/`：
 
-正式環境使用 GitHub Pages 的 `/<儲存庫名稱>/app/rolex/` 基底路徑；本機開發則使用 `/rolex/`。這些路徑與語言頁的重寫規則都集中在 `src/lib/mpa-build.ts` 和 `vite.config.ts`，調整儲存庫名稱或部署位置時應一併檢查。
+| 頁面 | 繁中 | 英文 |
+| --- | --- | --- |
+| 站台首頁（品牌目錄） | `/` | `/en-us/` |
+| Collection Explorer | `/collection-explorer.html` | `/en-us/collection-explorer.html` |
+| 錶款比較 | `/watch-compare.html` | `/en-us/watch-compare.html` |
+| 品牌首頁 | `/<brandId>/` | `/<brandId>/en-us/` |
+| 品牌單錶行情比較 | `/<brandId>/watch-price-compare.html` | `/<brandId>/en-us/watch-price-compare.html` |
+
+品牌單錶行情比較以 `watch_id` query 指定跨市場唯一配置。語言由網址路徑決定，而非單純在瀏覽器內切換，讓不執行 JavaScript 的搜尋與分享服務也能取得相應的標題、描述與 Open Graph 資訊。
+
+base 在本機開發為 `/`，正式環境（GitHub Pages）為 `/<儲存庫名稱>/app/`，目前即 `/watch-index/app/`。網址結構的唯一定義來源是 `src/lib/pageRoutes.ts`，建置期的輸出檔名、OG 網址與執行期的頁面連結都由它組出；語言頁的重寫規則與 base 設定集中在 `src/lib/mpa-build.ts` 和 `vite.config.ts`。新增頁面或調整儲存庫名稱、部署位置時，應一併檢查這三處。
 
 ## 開始開發
 
@@ -87,6 +101,8 @@ pnpm test:e2e        # 執行 Playwright 端對端測試
 - 新增品牌前，確認 generic source schema 能無損表達其 `brandId`、`reference` 與 `watchId`，再完成品牌隔離的產生流程、前端資料型別、搜尋索引與頁面文案；不得把現有勞力士的型號規則或顯示文字套用到其他品牌。
 - 修改前端資料欄位時，同步調整 `src/types/` 的資料型別、`src/lib/validation/` 的對應 guard 與產生腳本，並補上測試。跨品牌共用欄位放在 `watch-data.ts` 與 `validation/watch.ts`；只有來源確實存在品牌專屬欄位時才擴充品牌型別，品牌 guard 仍可負責 `watchId` 等品牌不變條件。
 - 搜尋功能的規則與頁面狀態位於 `src/pages/` 的產品頁目錄；修改搜尋行為時請測試鍵盤操作與無結果狀態。
-- 首頁顯示的是每個市場價格歷史中的最後一個狀態；比較頁會以頁面載入時的 Frankfurter 匯率將各市場值換算成使用者所選幣別，並逐列標示官方價格與匯率日期。退稅估算只能作為未稅／制度條件參考，不是可保證退款。退稅估算頁的稅務居住地設定只存於瀏覽器 `localStorage`，刻意不同步進網址查詢字串（與市場代碼不同）——這是隱私考量下的決定，調整比較頁的狀態管理時應維持此區隔。資料語意有變更時，先依資料指南更新正式資料與證據。
+- 品牌首頁顯示的是每個市場價格歷史中的最後一個狀態；比較頁會以頁面載入時的 Frankfurter 匯率將各市場值換算成使用者所選幣別，並逐列標示官方價格與匯率日期。資料語意有變更時，先依資料指南更新正式資料與證據。
+- 退稅估算只能作為未稅／制度條件參考，不是可保證退款。
+- 退稅估算頁的稅務居住地設定只存於瀏覽器 `localStorage`，刻意不同步進網址查詢字串（與市場代碼不同）；這是隱私考量下的決定，調整比較頁的狀態管理時應維持此區隔。
 - 正式建置前至少執行 `pnpm build`；變更互動、導覽、語言或市場切換時，也應執行相應的 Vitest 與 Playwright 測試。
 - 執行 `pnpm exec vitest run` 或 `pnpm test:e2e` 等單元測試、E2E 測試時，一定要開 sub-agent 執行，以免測試輸出造成 context 過長。
