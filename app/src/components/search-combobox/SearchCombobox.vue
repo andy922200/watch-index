@@ -160,13 +160,13 @@ onClickOutside(searchRoot, closeSuggestions)
         >
           <span class="flex min-w-0 flex-col">
             <span class="text-sm">{{ option.label }}</span>
-            <span v-if="option.description" class="text-muted-foreground font-mono text-xs">{{
-              option.description
-            }}</span>
+            <span v-if="option.description" class="text-muted-foreground font-mono text-xs">
+              {{ option.description }}
+            </span>
           </span>
-          <span v-if="option.trailing" class="text-muted-foreground ml-2 shrink-0 text-xs">{{
-            option.trailing
-          }}</span>
+          <span v-if="option.trailing" class="text-muted-foreground ml-2 shrink-0 text-xs">
+            {{ option.trailing }}
+          </span>
         </button>
       </div>
     </div>

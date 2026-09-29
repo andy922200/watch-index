@@ -279,22 +279,22 @@ watchSource([debouncedSearchQuery, selectedPriceSort], () => {
       <h2 id="watch-list-heading" class="sr-only">{{ t('site.watchList.heading') }}</h2>
       <div class="mb-6 flex justify-end">
         <Select v-model="selectedPriceSort">
-          <SelectTrigger class="w-52 cursor-pointer" :aria-label="t('site.watchList.sortLabel')"
-            ><SelectValue :placeholder="t('site.watchList.sortDefault')"
-          /></SelectTrigger>
-          <SelectContent class="w-(--reka-select-trigger-width)" :side-offset="4"
-            ><SelectGroup>
-              <SelectItem class="cursor-pointer" :value="DEFAULT_PRICE_SORT">{{
-                t('site.watchList.sortDefault')
-              }}</SelectItem>
-              <SelectItem class="cursor-pointer" value="price-ascending">{{
-                t('site.watchList.sortPriceLowToHigh')
-              }}</SelectItem>
-              <SelectItem class="cursor-pointer" value="price-descending">{{
-                t('site.watchList.sortPriceHighToLow')
-              }}</SelectItem>
-            </SelectGroup></SelectContent
-          >
+          <SelectTrigger class="w-52 cursor-pointer" :aria-label="t('site.watchList.sortLabel')">
+            <SelectValue :placeholder="t('site.watchList.sortDefault')" />
+          </SelectTrigger>
+          <SelectContent class="w-(--reka-select-trigger-width)" :side-offset="4">
+            <SelectGroup>
+              <SelectItem class="cursor-pointer" :value="DEFAULT_PRICE_SORT">
+                {{ t('site.watchList.sortDefault') }}
+              </SelectItem>
+              <SelectItem class="cursor-pointer" value="price-ascending">
+                {{ t('site.watchList.sortPriceLowToHigh') }}
+              </SelectItem>
+              <SelectItem class="cursor-pointer" value="price-descending">
+                {{ t('site.watchList.sortPriceHighToLow') }}
+              </SelectItem>
+            </SelectGroup>
+          </SelectContent>
         </Select>
       </div>
       <p
@@ -314,8 +314,8 @@ watchSource([debouncedSearchQuery, selectedPriceSort], () => {
           :key="card.watch.watchId"
           class="h-full gap-0 overflow-hidden py-0"
         >
-          <CardContent class="p-0"
-            ><button
+          <CardContent class="p-0">
+            <button
               type="button"
               class="block aspect-square w-full cursor-pointer p-4"
               :aria-label="t('site.watchList.viewDetails')"
@@ -326,15 +326,16 @@ watchSource([debouncedSearchQuery, selectedPriceSort], () => {
                 :src="card.watch.imageUrl"
                 :alt="card.imageAlt"
                 loading="lazy"
-              /></button
-          ></CardContent>
-          <CardHeader class="flex-1 px-4 py-4"
-            ><CardTitle class="min-h-11 text-base leading-snug">{{
-              card.watch.modelName
-            }}</CardTitle
-            ><CardDescription class="h-4 truncate font-mono text-xs">{{
-              card.watch.reference
-            }}</CardDescription>
+              />
+            </button>
+          </CardContent>
+          <CardHeader class="flex-1 px-4 py-4">
+            <CardTitle class="min-h-11 text-base leading-snug">
+              {{ card.watch.modelName }}
+            </CardTitle>
+            <CardDescription class="h-4 truncate font-mono text-xs">
+              {{ card.watch.reference }}
+            </CardDescription>
             <div class="mt-2 min-h-14">
               <p class="text-muted-foreground text-xs">{{ card.priceLabel }}</p>
               <p class="font-medium tabular-nums">{{ card.price }}</p>
@@ -342,28 +343,27 @@ watchSource([debouncedSearchQuery, selectedPriceSort], () => {
                 {{ card.convertedPrice }}
               </p>
             </div>
-            <CardDescription
-              v-if="card.watch.localNicknames.length > 0"
-              class="line-clamp-2 h-10"
-              >{{ card.watch.localNicknames.join('、') }}</CardDescription
-            ><CardDescription v-else aria-hidden="true" class="invisible h-10"
-          /></CardHeader>
-          <CardFooter class="flex-col gap-2 px-4 pt-0 pb-4"
-            ><Button class="w-full" variant="outline" @click="openWatchDetails(card.watch)">{{
-              t('site.watchList.viewDetails')
-            }}</Button
-            ><Button as-child class="w-full" variant="outline"
-              ><a :href="getWatchPriceCompareUrl(card.watch)">{{
-                t('site.watchList.compareMarkets')
-              }}</a></Button
-            ></CardFooter
-          >
+            <CardDescription v-if="card.watch.localNicknames.length > 0" class="line-clamp-2 h-10">
+              {{ card.watch.localNicknames.join('、') }}
+            </CardDescription>
+            <CardDescription v-else aria-hidden="true" class="invisible h-10" />
+          </CardHeader>
+          <CardFooter class="flex-col gap-2 px-4 pt-0 pb-4">
+            <Button class="w-full" variant="outline" @click="openWatchDetails(card.watch)">
+              {{ t('site.watchList.viewDetails') }}
+            </Button>
+            <Button as-child class="w-full" variant="outline">
+              <a :href="getWatchPriceCompareUrl(card.watch)">
+                {{ t('site.watchList.compareMarkets') }}
+              </a>
+            </Button>
+          </CardFooter>
         </Card>
       </div>
       <div v-if="hasMoreWatches" class="mt-8 flex justify-center">
-        <Button variant="outline" @click="loadMoreWatches">{{
-          t('site.watchList.loadMore')
-        }}</Button>
+        <Button variant="outline" @click="loadMoreWatches">
+          {{ t('site.watchList.loadMore') }}
+        </Button>
       </div>
     </section>
     <WatchDetailsDialog v-model:open="isWatchDetailsOpen" :watch="selectedWatch" />
