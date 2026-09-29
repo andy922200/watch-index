@@ -8,8 +8,15 @@ import {
   getBrandPagePublicPath,
   getSiteIndexFilePath,
   getSiteIndexPublicPath,
+  getSitePageFilePath,
+  getSitePagePublicPath,
   PageLanguage,
+  type PageLanguageCode,
+  type SitePage,
 } from './pageRoutes.ts'
+
+const sitePages: readonly SitePage[] = ['collection-explorer', 'watch-compare']
+const pageLanguages: readonly PageLanguageCode[] = [PageLanguage.zhTw, PageLanguage.enUs]
 
 interface CreateMpaConfigOptions {
   isProd: boolean
@@ -111,6 +118,56 @@ export const createMpaConfig = ({
         ogLocaleAlternate: 'zh_TW',
       },
     },
+    ...sitePages.flatMap((page) => {
+      const content =
+        page === 'collection-explorer'
+          ? {
+              zhTw: {
+                title: 'Collection Explorer｜跨品牌探索腕錶',
+                description: '探索 Rolex、Omega、Longines 腕錶，依市場與官方價格尋找心儀款式。',
+              },
+              enUs: {
+                title: 'Collection Explorer | Watch Index',
+                description:
+                  'Explore Rolex, Omega, and Longines watches by market and official price.',
+              },
+            }
+          : {
+              zhTw: {
+                title: '心儀錶款比較｜Watch Index',
+                description: '並排比較心儀腕錶的官方定價與現有資料。',
+              },
+              enUs: {
+                title: 'Compare Watches | Watch Index',
+                description:
+                  'Compare selected watches side by side using official prices and available details.',
+              },
+            }
+      const zhTwUrl = getAbsoluteUrl(getSitePagePublicPath({ language: PageLanguage.zhTw, page }))
+      const enUsUrl = getAbsoluteUrl(getSitePagePublicPath({ language: PageLanguage.enUs, page }))
+
+      return pageLanguages.map((language): Page => ({
+        name: `${page}-${language}`,
+        filename: getSitePageFilePath({ language, page }),
+        entry:
+          page === 'collection-explorer'
+            ? '/src/pages/collection-explorer/main.ts'
+            : '/src/pages/watch-compare/main.ts',
+        data: {
+          lang: language,
+          siteName: 'Watch Index',
+          title: content[language === PageLanguage.zhTw ? 'zhTw' : 'enUs'].title,
+          description: content[language === PageLanguage.zhTw ? 'zhTw' : 'enUs'].description,
+          url: language === PageLanguage.zhTw ? zhTwUrl : enUsUrl,
+          alternateLang: language === PageLanguage.zhTw ? PageLanguage.enUs : PageLanguage.zhTw,
+          alternateUrl: language === PageLanguage.zhTw ? enUsUrl : zhTwUrl,
+          defaultUrl: zhTwUrl,
+          ogImage,
+          ogLocale: language === PageLanguage.zhTw ? 'zh_TW' : 'en_US',
+          ogLocaleAlternate: language === PageLanguage.zhTw ? 'en_US' : 'zh_TW',
+        },
+      }))
+    }),
     ...brands.flatMap((brand) => {
       const brandId = brand.id
       const indexZhTwUrl = getAbsoluteUrl(

@@ -5,12 +5,23 @@ import { useI18n } from 'vue-i18n'
 
 import AppLayout from '@/components/layout/AppLayout.vue'
 import AppNav from '@/components/layout/AppNav.vue'
+import { Button } from '@/components/ui/button'
 import { brandDirectory, isAvailableBrand } from '@/lib/brands'
-import { getBrandPageLanguagePaths, getSiteIndexLanguagePaths } from '@/lib/pageUrls'
+import {
+  getBrandPageLanguagePaths,
+  getSiteIndexLanguagePaths,
+  getSitePageUrl,
+} from '@/lib/pageUrls'
 import { Locale } from '@/plugins/i18n'
 
 const { locale, t } = useI18n()
 const languagePaths = getSiteIndexLanguagePaths()
+const explorerHref = computed(() =>
+  getSitePageUrl({
+    language: locale.value === Locale.enUs ? Locale.enUs : Locale.zhTw,
+    page: 'collection-explorer',
+  }),
+)
 
 type BrandDirectoryRowStyle = CSSProperties & {
   '--directory-accent-dark': string
@@ -78,16 +89,16 @@ const brandRows = computed<BrandDirectoryRow[]>(() =>
         <a
           v-if="brand.isAvailable && brand.href"
           :href="brand.href"
-          class="group border-foreground/30 focus-visible:ring-offset-background relative block cursor-pointer py-9 pr-5 pl-6 transition duration-300 ease-out outline-none hover:translate-x-1 hover:bg-[color-mix(in_oklab,var(--directory-accent)_8%,transparent)] focus-visible:translate-x-1 focus-visible:bg-[color-mix(in_oklab,var(--directory-accent)_10%,transparent)] focus-visible:ring-2 focus-visible:ring-[var(--directory-accent)] focus-visible:ring-offset-4 sm:py-12 sm:pr-7 sm:pl-8"
+          class="group border-foreground/30 focus-visible:ring-offset-background relative block cursor-pointer py-9 pr-5 pl-6 transition duration-300 ease-out outline-none hover:translate-x-1 hover:bg-[color-mix(in_oklab,var(--directory-accent)_8%,transparent)] focus-visible:translate-x-1 focus-visible:bg-[color-mix(in_oklab,var(--directory-accent)_10%,transparent)] focus-visible:ring-2 focus-visible:ring-(--directory-accent) focus-visible:ring-offset-4 sm:py-12 sm:pr-7 sm:pl-8"
         >
           <span
-            class="absolute inset-y-0 left-0 w-px bg-[var(--directory-accent)] transition-[width] duration-300 ease-out group-hover:w-1 group-focus-visible:w-1"
+            class="absolute inset-y-0 left-0 w-px bg-(--directory-accent) transition-[width] duration-300 ease-out group-hover:w-1 group-focus-visible:w-1"
             aria-hidden="true"
           />
           <div class="grid gap-7 sm:grid-cols-[4rem_minmax(0,1fr)_auto] sm:gap-6">
-            <span class="font-mono text-xs tracking-widest text-[var(--directory-accent)]">{{
-              brand.number
-            }}</span>
+            <span class="font-mono text-xs tracking-widest text-(--directory-accent)">
+              {{ brand.number }}
+            </span>
             <div class="min-w-0">
               <p
                 class="text-3xl font-medium tracking-tight uppercase group-hover:translate-x-2 motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-out sm:text-4xl lg:text-5xl"
@@ -99,7 +110,7 @@ const brandRows = computed<BrandDirectoryRow[]>(() =>
               </p>
             </div>
             <ArrowRight
-              class="size-7 self-start text-[var(--directory-accent)] group-hover:translate-x-2 motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-out"
+              class="size-7 self-start text-(--directory-accent) group-hover:translate-x-2 motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-out"
               aria-hidden="true"
             />
           </div>
@@ -109,14 +120,11 @@ const brandRows = computed<BrandDirectoryRow[]>(() =>
           class="border-foreground/30 relative py-9 pr-5 pl-6 opacity-60 sm:py-12 sm:pr-7 sm:pl-8"
           aria-disabled="true"
         >
-          <span
-            class="absolute inset-y-0 left-0 w-px bg-[var(--directory-accent)]"
-            aria-hidden="true"
-          />
+          <span class="absolute inset-y-0 left-0 w-px bg-(--directory-accent)" aria-hidden="true" />
           <div class="grid gap-7 sm:grid-cols-[4rem_minmax(0,1fr)_auto] sm:gap-6">
-            <span class="font-mono text-xs tracking-widest text-[var(--directory-accent)]">{{
-              brand.number
-            }}</span>
+            <span class="font-mono text-xs tracking-widest text-(--directory-accent)">
+              {{ brand.number }}
+            </span>
             <div class="min-w-0">
               <p class="text-3xl font-medium tracking-tight uppercase sm:text-4xl lg:text-5xl">
                 {{ brand.name }}
@@ -128,6 +136,36 @@ const brandRows = computed<BrandDirectoryRow[]>(() =>
             </p>
           </div>
         </div>
+      </div>
+    </section>
+    <section
+      class="border-border mt-20 mb-24 w-full max-w-5xl border-t pt-10 sm:mt-28 sm:pt-14"
+      aria-labelledby="explore-title"
+    >
+      <div class="grid gap-8 sm:grid-cols-[1fr_auto] sm:items-end">
+        <div>
+          <p class="text-muted-foreground font-mono text-xs tracking-[0.2em] uppercase">
+            {{ t('home.exploreEyebrow') }}
+          </p>
+          <h2
+            id="explore-title"
+            class="mt-5 max-w-2xl text-3xl font-medium tracking-tight sm:text-5xl"
+          >
+            {{ t('home.exploreTitle') }}
+          </h2>
+          <p class="text-muted-foreground mt-5 max-w-xl">{{ t('home.exploreDescription') }}</p>
+        </div>
+        <Button
+          as-child
+          variant="outline"
+          size="lg"
+          class="h-auto min-h-12 w-full justify-between gap-8 px-5 py-4 sm:w-auto sm:min-w-64"
+        >
+          <a :href="explorerHref">
+            {{ t('home.exploreAction') }}
+            <ArrowRight data-icon="inline-end" aria-hidden="true" />
+          </a>
+        </Button>
       </div>
     </section>
   </AppLayout>

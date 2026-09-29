@@ -17,6 +17,10 @@ describe('MPA build configuration', () => {
       expect.arrayContaining([
         'site-index-zh-tw',
         'site-index-en-us',
+        'collection-explorer-zh-tw',
+        'collection-explorer-en-us',
+        'watch-compare-zh-tw',
+        'watch-compare-en-us',
         'rolex-zh-tw',
         'rolex-en-us',
         'omega-zh-tw',
