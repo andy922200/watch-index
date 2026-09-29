@@ -71,7 +71,14 @@ base 在本機開發為 `/`，正式環境（GitHub Pages）為 `/<儲存庫名�
 
 ## 開始開發
 
-前提是 Node.js `>=24.20.0` 與 npm `>=11.19.0`；專案使用 pnpm。從專案根目錄執行：
+前提是 Node.js `>=24.20.0` 與 npm `>=11.19.0`；專案使用 pnpm。從專案根目錄執行 `init.sh`，它會檢查 Node 與 pnpm、必要時建立 `app/.env.dev.local`、安裝依賴並產生 `app/public/watch-data/`；加上 `--dev` 則接著啟動開發伺服器：
+
+```bash
+./init.sh          # 只準備環境
+./init.sh --dev    # 準備環境並啟動開發伺服器
+```
+
+也可以手動執行：
 
 ```bash
 pnpm --dir app install
@@ -105,4 +112,3 @@ pnpm test:e2e        # 執行 Playwright 端對端測試
 - 退稅估算只能作為未稅／制度條件參考，不是可保證退款。
 - 退稅估算頁的稅務居住地設定只存於瀏覽器 `localStorage`，刻意不同步進網址查詢字串（與市場代碼不同）；這是隱私考量下的決定，調整比較頁的狀態管理時應維持此區隔。
 - 正式建置前至少執行 `pnpm build`；變更互動、導覽、語言或市場切換時，也應執行相應的 Vitest 與 Playwright 測試。
-- 執行 `pnpm exec vitest run` 或 `pnpm test:e2e` 等單元測試、E2E 測試時，一定要開 sub-agent 執行，以免測試輸出造成 context 過長。
