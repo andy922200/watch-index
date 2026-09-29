@@ -39,6 +39,14 @@ interface UseWatchComparisonResult<TWatch extends BaseWatch> {
   loadComparison: (options: LoadComparisonOptions) => Promise<void>
 }
 
+/**
+ * 讀取指定品牌／市場的 catalog manifest，並依 manifest 決定要下載的 catalog 檔名
+ * （市場專屬檔案，若無則退回全品牌市場聯集檔案），同時一併下載跨市場比價資料。
+ *
+ * @param brandId - 品牌代碼。
+ * @param market - 目標市場代碼。
+ * @returns 尚未驗證格式的 catalog／比價原始資料，以及可能的聯集 catalog 檔名。
+ */
 const fetchComparison = async (
   brandId: BrandId,
   market: MarketCode,

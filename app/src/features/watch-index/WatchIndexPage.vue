@@ -35,7 +35,7 @@ import {
   type MarketCode,
 } from '@/lib/markets'
 import { getBrandPageLanguagePaths, getPriceCompareUrl } from '@/lib/pageUrls'
-import { hasPublicPrice } from '@/lib/watchPriceComparison'
+import { hasPublicPrice, PriceTypeLabelKeys } from '@/lib/watchPriceComparison'
 import { Locale } from '@/plugins/i18n'
 import type { BaseWatch } from '@/types/watch-data'
 
@@ -150,12 +150,9 @@ interface WatchCardView {
   watch: TWatch
 }
 
-const priceLabel = computed(() => {
-  const priceType = catalog.value?.priceMarket.priceType
-  if (priceType === 'tax-exclude') return t('site.watchList.priceLabelExcludingTax')
-  if (priceType === 'no-tax') return t('site.watchList.priceLabelNoTax')
-  return t('site.watchList.priceLabelIncludingTax')
-})
+const priceLabel = computed(() =>
+  t(PriceTypeLabelKeys[catalog.value?.priceMarket.priceType ?? 'tax-include']),
+)
 const watchCards = computed<WatchCardView[]>(() =>
   visibleWatches.value.map((watch) => {
     const listedPrice = hasPublicPrice(watch.priceStatus) ? watch.price : null
