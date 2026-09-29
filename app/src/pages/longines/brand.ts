@@ -7,7 +7,7 @@ import type { LonginesWatch } from '@/types/longines-watch'
 /** 本頁面群組對應的品牌；同時決定網址子路徑與載入的資料檔。 */
 export const BRAND_ID: BrandId = 'longines'
 
-const LONGINES_WATCH_ID_PATTERN = /^longines:L\d\.\d{3}\.\d\.\d{2}\.[0-9A]$/
+const LONGINES_WATCH_ID_PATTERN = /^longines:L\d\.\d{3}\.\d\.\d{2}\.[0-9A-Z]$/
 
 const longinesBrand = brands.find((brand) => brand.id === BRAND_ID)
 

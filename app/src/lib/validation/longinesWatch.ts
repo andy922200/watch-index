@@ -10,7 +10,7 @@ import type { WatchCatalog } from '@/types/watch-data'
  */
 export const isLonginesWatch = (value: unknown): value is LonginesWatch =>
   isBaseWatch(value) &&
-  /^longines:L\d\.\d{3}\.\d\.\d{2}\.[0-9A]$/.test(value.watchId) &&
+  /^longines:L\d\.\d{3}\.\d\.\d{2}\.[0-9A-Z]$/.test(value.watchId) &&
   value.watchId === `longines:${value.reference}`
 
 /**
