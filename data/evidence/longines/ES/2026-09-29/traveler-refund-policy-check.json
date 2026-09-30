@@ -1,0 +1,29 @@
+{
+  "purpose": "新增 Longines ES 市場時，重新查核 data/traveler-refund-policies.json 既有的 ES 市場記錄（該記錄以 marketCode 為鍵、跨品牌共用）。本檔只記錄重新查核結果，未新增或修改政策記錄；格式比照 data/evidence/longines/DE/2026-09-27/traveler-refund-policy-check.json。",
+  "existingRecordChecked": {
+    "marketCode": "ES",
+    "availability": "available",
+    "assessedAt": "2026-09-15T09:32:53Z",
+    "evidencePath": "data/evidence/rolex/ES/2026-09-15/traveler-refund-policy.json",
+    "merchantParticipationRequired": true,
+    "exportValidationRequired": true
+  },
+  "recheckQueries": [
+    {
+      "sourceUrl": "https://sede.agenciatributaria.gob.es/Sede/viajeros-trabajadores-desplazados-fronterizos/devoluciones-iva-compras-viajeros.html",
+      "publisher": "Agencia Estatal de Administración Tributaria (AEAT)",
+      "accessedAt": "約 2026-09-29T10:55Z（未記錄秒級時間）",
+      "findings": "頁面說明「if you reside in a country not belonging to the European Union and make purchases in Spain (EU) you can recover the VAT paid for them」並提供 DER（Documento Electrónico de Reembolso）提交服務；細節連至下方一般資訊頁。",
+      "matchesExistingRecord": true
+    },
+    {
+      "sourceUrl": "https://sede.agenciatributaria.gob.es/Sede/viajeros-trabajadores-desplazados-fronterizos/devoluciones-iva-compras-viajeros/informacion-general-sobre-devolucion-iva-viajeros.html",
+      "publisher": "Agencia Estatal de Administración Tributaria (AEAT)",
+      "accessedAt": "約 2026-09-29T10:56Z（未記錄秒級時間）",
+      "findings": "「Podrán obtener la devolución IVA viajeros las personas residentes en un país que no pertenezca a la UE, así como los residentes en Canarias, Ceuta y Melilla.」「El establecimiento emitirá el Documento Electrónico de Reembolso」「Tienes un plazo máximo de tres meses desde la compra para abandonar la UE con los bienes adquiridos.」出境時於港口、機場或邊境點以電子機台驗證（綠色自動核可、紅色須交海關審查）；「Los bienes adquiridos no pueden constituir una expedición comercial」。未提及最低購買金額，與既有記錄未列門檻一致。",
+      "matchesExistingRecord": true
+    }
+  ],
+  "conclusion": "PASS：既有 ES 記錄（availability=available、需零售商參與、需出口核驗）與 2026-09-29 查得的官方來源一致，未發現差異，不需變更 data/traveler-refund-policies.json。",
+  "limitations": "僅重新查核市場級制度事實；未查證任何特定 Longines 精品店或經銷商實際是否提供退稅服務，既有記錄本身亦未作此主張。"
+}

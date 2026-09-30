@@ -1,0 +1,49 @@
+{
+  "nicknameResearch": {
+    "status": "PASS with 0 accepted results",
+    "scope": "new-market",
+    "languages": [
+      "es"
+    ],
+    "queries": [
+      "Longines apodo reloj foro relojes-especiales HydroConquest",
+      "Longines Conquest \"apodado\" OR \"conocido como\" reloj foro"
+    ],
+    "sourcesReviewed": 2,
+    "sourcesReviewedList": [
+      {
+        "url": "https://relojes-especiales.com/threads/longines-hydroconquest-2026.598917/",
+        "note": "討論串以「HC」與「Hydro」泛稱 HydroConquest 系列（例如「el Hydro antiguo」），未指向任何單一完整配置。"
+      },
+      {
+        "url": "https://relojes-especiales.com/threads/longines-conquest-o-hydroconquest.603153/",
+        "note": "以「Hydro」「HC」「Conquest」比較兩個系列（「voto por el Hydro」），屬系列名稱縮寫。"
+      }
+    ],
+    "sourcesUnreachable": [],
+    "searchResultsNotOpened": [
+      "https://relojes-especiales.com/threads/longines-hydroconquest-l3-788-4-06-6.603596/",
+      "https://www.1stdibs.com/es/joyer%C3%ADa/relojes/relojes-de-pulsera/longines-conquest-l37014566/id-j_24586622"
+    ],
+    "candidateCount": 2,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [
+      {
+        "candidate": "Hydro",
+        "collectionOrReference": "hydroconquest（系列層級）",
+        "language": "es",
+        "sourceUrl": "https://relojes-especiales.com/threads/longines-conquest-o-hydroconquest.603153/",
+        "rejectionReason": "官方系列名稱 HydroConquest 的截短口語，不是獨立俗稱，且不對應任何單一完整配置。"
+      },
+      {
+        "candidate": "HC",
+        "collectionOrReference": "hydroconquest（系列層級）",
+        "language": "es",
+        "sourceUrl": "https://relojes-especiales.com/threads/longines-hydroconquest-2026.598917/",
+        "rejectionReason": "系列名稱縮寫，不對應單一完整配置；比照 DE 2026-09-27 對「LHC」的拒絕理由。"
+      }
+    ],
+    "notes": "以 WebSearch 查詢當地語言俗稱並以 WebFetch 開啟可取得的來源。當地論壇與評測以官方系列名稱與完整參考號指稱款式；找到的只有系列名稱截短或縮寫，未達「精確對應完整配置並有可信來源」門檻，因此 collectionAliases 與 localNicknames 全數維持空陣列，與 DE、CH 市場檔一致。"
+  }
+}

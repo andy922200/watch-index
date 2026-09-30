@@ -1,0 +1,622 @@
+{
+  "brandId": "longines",
+  "marketCode": "ES",
+  "task": "new-market",
+  "validatedAt": "2026-09-29T11:17:05Z",
+  "layeredValidation": {
+    "1_strictJsonAndSchema": {
+      "status": "PASS",
+      "detail": "嚴格 JSON 解析（拒絕重複 key 與 NaN/Infinity）通過 96 個檔案（data/catalog、markets、history、schemas、traveler-refund-policies.json 與本次 IT/ES evidence）。Schema：以 app/node_modules 既有的 ajv 6.15.0（未安裝新依賴）驗證 data/catalog/longines-catalog.json、本市場的 market 與 history 檔皆 PASS；負向對照（listed 搭配 null 價格、marketWatch 額外欄位）均被拒絕，確認驗證器確實執行 if/then 與 additionalProperties。",
+      "limitation": "ajv 6 實作 draft-07，Schema 宣告為 draft 2020-12；本 Schema 使用的關鍵字（$ref 指向 $defs、if/then、additionalProperties、pattern、format date-time/uri、const、enum）皆為 draft-07 可執行子集，但未以正式 2020-12 驗證器執行。Python jsonschema 未安裝。"
+    },
+    "2_watchCountIdentityRelational": {
+      "status": "PASS",
+      "detail": "examples/cross-brand-validation-script.md 的 Node 腳本對全部 40 個市場檔 PASS。本市場 watchCount=808=watches.length=唯一 watchId=唯一 reference；watchId 皆為 \"longines:\"+reference；history.priceSeries 鍵集合與 market watchId 集合相同；808 筆皆存在於 catalog；marketCode=ES 於 market／history／目錄一致。另執行 app/scripts/generate-watch-data.mjs（輸出至 gitignored 的 app/dist/watch-data）成功，Longines manifest 產出含 ES 在內 12 個市場的 catalog。"
+    },
+    "3_priceListingStatusCombination": {
+      "status": "PASS",
+      "detail": "808 個價格點皆為 listingStatus=listed 搭配非負整數 EUR 價格（最低 950、最高 27500、中位數 2650）；無非零小數、無 special_price、無 price-unavailable／not-listed。購買通路判定見 collection-summary.json purchaseChannel。"
+    },
+    "4_officialDataTraceableToEvidence": {
+      "status": "PASS",
+      "detail": "逐筆比對市場檔 collectionName、modelName、caseDescription、dialDescription、isNewModel、productUrl 與 history 價格／狀態，全部等於本次 observations.json 對應欄位（0 差異）；caseDescription 皆可由 caseDimensionRaw + 錶殼材質官方標籤重現。正式資料由 evidence 產生，非反向補造。"
+    },
+    "5_completenessStopEvidenceAndIndependentSpotCheck": {
+      "status": "PASS",
+      "detail": "停止證據：官方 total_count=808、34 頁累積唯一 808、第 35 頁官方超出頁數錯誤、渲染列表頁標題亦為 808（見 collection-summary.json stopEvidence）。獨立抽查 20 款：每款即時重新請求官方商品頁（與主要收集路徑 ProductList 不同的官方視圖），讀取其伺服器端 ProductPageDocument 比對 8 個欄位，結果 20/20 MATCH，涵蓋 5 個家族（conquest, elegance, heritage, master, spirit）。"
+    },
+    "6_appendOnlyAndProtectedScopeUnchanged": {
+      "status": "PASS",
+      "detail": "data/history/ES/longines-price-history.json 為新檔（寫入腳本若檔案已存在即中止），runId 從 1 開始；git diff 顯示既有追蹤檔只有 data/catalog/longines-catalog.json 變更（新增 2 筆於陣列尾端、sourceMarketCodes 追加 IT/ES、watchCount 881→883、collectedAt 更新），其餘 881 筆既有配置、所有既有 market／history／schema／退稅政策／app 檔案未變動。開工前 git status 為乾淨工作區。"
+    }
+  },
+  "spotCheck": {
+    "targetRange": "19-21",
+    "actualCount": 20,
+    "method": "在瀏覽器頁面內以同源 fetch 即時請求官方商品頁 HTML，解析 __NEXT_DATA__ 內該商品的 ProductPageDocument，比對型號、名稱、價格、標籤、錶殼尺寸、錶殼材質（short_description）、錶盤標籤（meta_title）與加入購物車字串；另以實際渲染方式開啟 ES L3.809.4.93.9（「Añadir al carrito」）與 ES L3.788.4.06.6（purchasable=0，「Avisarme」）確認購買按鈕。",
+    "items": [
+      {
+        "reference": "L3.759.4.96.6",
+        "category": "最低價",
+        "family": "conquest",
+        "checkedAt": "2026-09-29T11:07:18.367Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-conquest-l3-759-4-96-6",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "CONQUEST | Ø 41.00 mm, Azul Con Efecto \"rayos De Sol\" | L3.759.4.96.6 | LONGINES ES",
+          "price": "950,00 €",
+          "tag": "UNDEFINED",
+          "caseDimension": "Ø 41.00 mm",
+          "metaTitle": "CONQUEST | Ø 41.00 mm, azul con efecto \"rayos de sol\" | L3.759.4.96.6",
+          "shortDescription": "Reloj cuarzo, Ø 41.00 mm, Acero inoxidable, L3.759.4.96.6"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L5.200.9.71.6",
+        "category": "最高價",
+        "family": "elegance",
+        "checkedAt": "2026-09-29T11:07:23.002Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-longines-mini-dolcevita-l5-200-9-71-6",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "LONGINES MINI DOLCEVITA | 21.50 x 29.00 mm, Plateada \"flinqué\" | L5.200.9.71.6 | LONGINES ES",
+          "price": "27.500,00 €",
+          "tag": "UNDEFINED",
+          "caseDimension": "21.50 X 29.00 mm",
+          "metaTitle": "LONGINES MINI DOLCEVITA | 21.50 x 29.00 mm, plateada \"flinqué\" | L5.200.9.71.6",
+          "shortDescription": "Reloj cuarzo, 21.50 X 29.00 mm, Oro rosa de 18 quilates, L5.200.9.71.6"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.450.4.97.6",
+        "category": "同基本型號組 A-1",
+        "family": "master",
+        "checkedAt": "2026-09-29T11:07:29.684Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-the-longines-master-collection-l2-450-4-97-6",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "THE LONGINES MASTER COLLECTION | Ø 34.00 mm, Azul Helado Con Efecto \"rayos De Sol\" | L2.450.4.97.6 | LONGINES ES",
+          "price": "2.900,00 €",
+          "tag": "NEW",
+          "caseDimension": "Ø 34.00 mm",
+          "metaTitle": "THE LONGINES MASTER COLLECTION | Ø 34.00 mm, azul helado con efecto \"rayos de sol\" | L2.450.4.97.6",
+          "shortDescription": "Reloj automático, Ø 34.00 mm, Acero inoxidable, L2.450.4.97.6"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.450.4.87.6",
+        "category": "同基本型號組 A-2",
+        "family": "master",
+        "checkedAt": "2026-09-29T11:07:38.451Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-the-longines-master-collection-l2-450-4-87-6",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "THE LONGINES MASTER COLLECTION | Ø 34.00 mm, Blanca Nacarada | L2.450.4.87.6 | LONGINES ES",
+          "price": "2.950,00 €",
+          "tag": "NEW",
+          "caseDimension": "Ø 34.00 mm",
+          "metaTitle": "THE LONGINES MASTER COLLECTION | Ø 34.00 mm, blanca nacarada | L2.450.4.87.6",
+          "shortDescription": "Reloj automático, Ø 34.00 mm, Acero inoxidable, L2.450.4.87.6"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.962.4.73.2",
+        "category": "同基本型號組 B-1",
+        "family": "master",
+        "checkedAt": "2026-09-29T11:07:43.884Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-the-longines-master-collection-chronograph-l2-962-4-73-2",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "THE LONGINES MASTER COLLECTION CHRONO MOONPHASE | Ø 41.00 mm, Plateada Con Motivo \"grano De Cebada\" | L2.962.4.73.2 | LONGINES ES",
+          "price": "4.150,00 €",
+          "tag": "NEW",
+          "caseDimension": "Ø 41.00 mm",
+          "metaTitle": "THE LONGINES MASTER COLLECTION CHRONO MOONPHASE | Ø 41.00 mm, plateada con motivo \"grano de cebada\" | L2.962.4.73.2",
+          "shortDescription": "Reloj automático, Ø 41.00 mm, Acero inoxidable, L2.962.4.73.2"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.962.4.73.6",
+        "category": "同基本型號組 B-2（缺貨）",
+        "family": "master",
+        "checkedAt": "2026-09-29T11:07:47.967Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-the-longines-master-collection-chronograph-l2-962-4-73-6",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "THE LONGINES MASTER COLLECTION CHRONO MOONPHASE | Ø 41.00 mm, Plateada Con Motivo \"grano De Cebada\" | L2.962.4.73.6 | LONGINES ES",
+          "price": "4.150,00 €",
+          "tag": "NEW",
+          "caseDimension": "Ø 41.00 mm",
+          "metaTitle": "THE LONGINES MASTER COLLECTION CHRONO MOONPHASE | Ø 41.00 mm, plateada con motivo \"grano de cebada\" | L2.962.4.73.6",
+          "shortDescription": "Reloj automático, Ø 41.00 mm, Acero inoxidable, L2.962.4.73.6"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.369.4.12.6",
+        "category": "共用 catalog 新增配置",
+        "family": "conquest",
+        "checkedAt": "2026-09-29T11:07:52.398Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-hydroconquest-l3-369-4-12-6",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "HYDROCONQUEST | Ø 30.00 mm, Blanco Mate | L3.369.4.12.6 | LONGINES ES",
+          "price": "1.500,00 €",
+          "tag": "NEW",
+          "caseDimension": "Ø 30.00 mm",
+          "metaTitle": "HYDROCONQUEST | Ø 30.00 mm, blanco mate | L3.369.4.12.6",
+          "shortDescription": "Reloj cuarzo, Ø 30.00 mm, Acero inoxidable, L3.369.4.12.6"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.369.4.09.6",
+        "category": "共用 catalog 新增配置",
+        "family": "conquest",
+        "checkedAt": "2026-09-29T11:07:57.059Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-hydroconquest-l3-369-4-09-6",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "HYDROCONQUEST | Ø 30.00 mm, Sunray Green | L3.369.4.09.6 | LONGINES ES",
+          "price": "1.500,00 €",
+          "tag": "NEW",
+          "caseDimension": "Ø 30.00 mm",
+          "metaTitle": "HYDROCONQUEST | Ø 30.00 mm, sunray green | L3.369.4.09.6",
+          "shortDescription": "Reloj cuarzo, Ø 30.00 mm, Acero inoxidable, L3.369.4.09.6"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.788.4.06.6",
+        "category": "異常：purchasable=0",
+        "family": "conquest",
+        "checkedAt": "2026-09-29T11:08:01.802Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-hydroconquest-l3-788-4-06-6",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "HYDROCONQUEST | Ø 42.00 mm, Verde Pulida Negra | L3.788.4.06.6 | LONGINES ES",
+          "price": "2.200,00 €",
+          "tag": "UNDEFINED",
+          "caseDimension": "Ø 42.00 mm",
+          "metaTitle": "HYDROCONQUEST | Ø 42.00 mm, verde pulida negra | L3.788.4.06.6",
+          "shortDescription": "Reloj automático, Ø 42.00 mm, Acero inoxidable y cerámica, L3.788.4.06.6"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.788.4.70.6",
+        "category": "異常：purchasable=0",
+        "family": "conquest",
+        "checkedAt": "2026-09-29T11:08:06.985Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-hydroconquest-l3-788-4-70-6",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "HYDROCONQUEST | Ø 42.00 mm, Lacada Pulida Negra | L3.788.4.70.6 | LONGINES ES",
+          "price": "2.300,00 €",
+          "tag": "UNDEFINED",
+          "caseDimension": "Ø 42.00 mm",
+          "metaTitle": "HYDROCONQUEST | Ø 42.00 mm, lacada pulida negra | L3.788.4.70.6",
+          "shortDescription": "Reloj automático, Ø 42.00 mm, Acero inoxidable y cerámica, L3.788.4.70.6"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.779.4.98.6",
+        "category": "異常：purchasable=0（缺貨）",
+        "family": "conquest",
+        "checkedAt": "2026-09-29T11:08:11.219Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-hydroconquest-l3-779-4-98-6",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "HYDROCONQUEST EDICIÓN EXCLUSIVA | Ø 39.00 mm, Azul Helado Con Efecto \"rayos De Sol\" | L3.779.4.98.6 | LONGINES ES",
+          "price": "2.200,00 €",
+          "tag": "NEW",
+          "caseDimension": "Ø 39.00 mm",
+          "metaTitle": "HYDROCONQUEST EDICIÓN EXCLUSIVA | Ø 39.00 mm, azul helado con efecto \"rayos de sol\" | L3.779.4.98.6",
+          "shortDescription": "Reloj automático, Ø 39.00 mm, Acero inoxidable y cerámica, L3.779.4.98.6"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.809.4.93.9",
+        "category": "家族代表款／新款（NEW）",
+        "family": "spirit",
+        "checkedAt": "2026-09-29T11:08:16.730Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-longines-spirit-pilot-l3-809-4-93-9",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "LONGINES SPIRIT PILOT | Ø 39.00 mm, Azul Mate | L3.809.4.93.9 | LONGINES ES",
+          "price": "2.600,00 €",
+          "tag": "NEW",
+          "caseDimension": "Ø 39.00 mm",
+          "metaTitle": "LONGINES SPIRIT PILOT | Ø 39.00 mm, azul mate | L3.809.4.93.9",
+          "shortDescription": "Reloj automático, Ø 39.00 mm, Acero inoxidable, L3.809.4.93.9"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.449.4.97.6",
+        "category": "家族代表款／新款（NEW）",
+        "family": "master",
+        "checkedAt": "2026-09-29T11:08:21.610Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-the-longines-master-collection-l2-449-4-97-6",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "THE LONGINES MASTER COLLECTION | Ø 30.00 mm, Azul Helado Con Efecto \"rayos De Sol\" | L2.449.4.97.6 | LONGINES ES",
+          "price": "2.700,00 €",
+          "tag": "NEW",
+          "caseDimension": "Ø 30.00 mm",
+          "metaTitle": "THE LONGINES MASTER COLLECTION | Ø 30.00 mm, azul helado con efecto \"rayos de sol\" | L2.449.4.97.6",
+          "shortDescription": "Reloj automático, Ø 30.00 mm, Acero inoxidable, L2.449.4.97.6"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L8.123.4.67.6",
+        "category": "家族代表款／新款（NEW）",
+        "family": "elegance",
+        "checkedAt": "2026-09-29T11:08:26.735Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-longines-primaluna-l8-123-4-67-6",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "LONGINES PRIMALUNA | Ø 30.00 mm, Burdeos | L8.123.4.67.6 | LONGINES ES",
+          "price": "2.700,00 €",
+          "tag": "NEW",
+          "caseDimension": "Ø 30.00 mm",
+          "metaTitle": "LONGINES PRIMALUNA | Ø 30.00 mm, burdeos | L8.123.4.67.6",
+          "shortDescription": "Reloj automático, Ø 30.00 mm, Acero inoxidable, L8.123.4.67.6"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L1.648.4.92.6",
+        "category": "家族代表款／新款（NEW）",
+        "family": "heritage",
+        "checkedAt": "2026-09-29T11:08:32.054Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-conquest-heritage-l1-648-4-92-6",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "CONQUEST HERITAGE CENTRAL POWER RESERVE | Ø 38.00 mm, Azul Claro Opalina | L1.648.4.92.6 | LONGINES ES",
+          "price": "4.450,00 €",
+          "tag": "NEW",
+          "caseDimension": "Ø 38.00 mm",
+          "metaTitle": "CONQUEST HERITAGE CENTRAL POWER RESERVE | Ø 38.00 mm, azul claro opalina | L1.648.4.92.6",
+          "shortDescription": "Reloj automático, Ø 38.00 mm, Acero inoxidable, L1.648.4.92.6"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.769.4.96.6",
+        "category": "家族代表款／新款（NEW）",
+        "family": "conquest",
+        "checkedAt": "2026-09-29T11:08:37.463Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-hydroconquest-l3-769-4-96-6",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "HYDROCONQUEST | Ø 42.00 mm, Azul Arenado | L3.769.4.96.6 | LONGINES ES",
+          "price": "1.550,00 €",
+          "tag": "NEW",
+          "caseDimension": "Ø 42.00 mm",
+          "metaTitle": "HYDROCONQUEST | Ø 42.00 mm, azul arenado | L3.769.4.96.6",
+          "shortDescription": "Reloj cuarzo, Ø 42.00 mm, Acero inoxidable, L3.769.4.96.6"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.809.4.93.6",
+        "category": "家族代表款／新款（NEW）",
+        "family": "spirit",
+        "checkedAt": "2026-09-29T11:08:44.305Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-longines-spirit-pilot-l3-809-4-93-6",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "LONGINES SPIRIT PILOT | Ø 39.00 mm, Azul Mate | L3.809.4.93.6 | LONGINES ES",
+          "price": "2.950,00 €",
+          "tag": "NEW",
+          "caseDimension": "Ø 39.00 mm",
+          "metaTitle": "LONGINES SPIRIT PILOT | Ø 39.00 mm, azul mate | L3.809.4.93.6",
+          "shortDescription": "Reloj automático, Ø 39.00 mm, Acero inoxidable, L3.809.4.93.6"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L3.721.4.93.9",
+        "category": "家族代表款／新款（NEW）",
+        "family": "spirit",
+        "checkedAt": "2026-09-29T11:08:49.331Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-longines-spirit-pilot-flyback-l3-721-4-93-9",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "LONGINES SPIRIT PILOT FLYBACK | Ø 39.50 mm, Azul Mate | L3.721.4.93.9 | LONGINES ES",
+          "price": "5.100,00 €",
+          "tag": "NEW",
+          "caseDimension": "Ø 39.50 mm",
+          "metaTitle": "LONGINES SPIRIT PILOT FLYBACK | Ø 39.50 mm, azul mate | L3.721.4.93.9",
+          "shortDescription": "Reloj manual, Ø 39.50 mm, Acero inoxidable y cerámica, L3.721.4.93.9"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L4.815.4.78.2",
+        "category": "BESTSELLER 標籤",
+        "family": "heritage",
+        "checkedAt": "2026-09-29T11:08:55.935Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-flagship-heritage-l4-815-4-78-2",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "FLAGSHIP HERITAGE MOONPHASE | Ø 38.50 mm, Marfil Opalino | L4.815.4.78.2 | LONGINES ES",
+          "price": "3.450,00 €",
+          "tag": "BESTSELLER",
+          "caseDimension": "Ø 38.50 mm",
+          "metaTitle": "FLAGSHIP HERITAGE MOONPHASE | Ø 38.50 mm, marfil opalino | L4.815.4.78.2",
+          "shortDescription": "Reloj automático, Ø 38.50 mm, Acero inoxidable, L4.815.4.78.2"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      },
+      {
+        "reference": "L2.449.5.87.7",
+        "category": "缺貨（OUT_OF_STOCK, purchasable=1）",
+        "family": "master",
+        "checkedAt": "2026-09-29T11:09:05.266Z",
+        "pdpUrl": "https://www.longines.com/es/p/watch-the-longines-master-collection-l2-449-5-87-7",
+        "httpStatus": 200,
+        "pdpObserved": {
+          "pageTitle": "THE LONGINES MASTER COLLECTION | Ø 30.00 mm, Blanca Nacarada | L2.449.5.87.7 | LONGINES ES",
+          "price": "4.150,00 €",
+          "tag": "NEW",
+          "caseDimension": "Ø 30.00 mm",
+          "metaTitle": "THE LONGINES MASTER COLLECTION | Ø 30.00 mm, blanca nacarada | L2.449.5.87.7",
+          "shortDescription": "Reloj automático, Ø 30.00 mm, Acero inoxidable y lámina 200 micras de oro amarillo de 18 quilates, L2.449.5.87.7"
+        },
+        "fieldsCompared": [
+          "reference",
+          "modelName",
+          "price",
+          "isNewModel(tag)",
+          "caseDimension",
+          "caseMaterialInShortDescription",
+          "dialLabelInMetaTitle",
+          "addToCartTextInHtml"
+        ],
+        "result": "MATCH"
+      }
+    ]
+  },
+  "catalogDiff": {
+    "catalogBefore": 881,
+    "marketCount": 808,
+    "intersection": 806,
+    "newToCatalog": [
+      "L3.369.4.09.6",
+      "L3.369.4.12.6"
+    ],
+    "catalogAfter": 883,
+    "formula": "|C ∪ M| = 881 + 808 − 806 = 883",
+    "newEntryDetail": "HYDROCONQUEST 30.00 mm 石英款兩筆，collectionId=hydroconquest（官方 preferred_category 路徑 watches/conquest/hydroconquest）；imageUrl 取官方 image.path，已以 HTTP 200 image/png 確認可取得；dialColors 依錶盤文字判讀：L3.369.4.12.6「Blanco mate／Bianco mat」→ white，L3.369.4.09.6「Sunray green」→ green。IT 與 ES 對兩筆的穩定欄位一致。",
+    "crossMarketNote": "IT 與 ES 的 808 個參考號集合完全相同；價格有 386 筆不同（IT 對照僅供差異概況，未用於推算）。",
+    "collectionIds": "31 個系列 slug 皆為既有 catalog collectionId，無新增。"
+  },
+  "priceStatistics": {
+    "currency": "EUR",
+    "min": 950,
+    "max": 27500,
+    "median": 2650,
+    "count": 808,
+    "priceType": "tax-include",
+    "taxRatePercent": 21
+  },
+  "nicknameResearch": "PASS with 0 accepted results（見 nickname-research.json）",
+  "travelerRefundPolicy": "PASS：既有市場記錄經官方來源重新查核仍正確，未變更 data/traveler-refund-policies.json（見 traveler-refund-policy-check.json）。",
+  "readmeUpdate": {
+    "status": "PASS",
+    "updated": true,
+    "sections": [
+      "README.md「Data：官方配置與多市場價格」表格與 Longines 說明段落",
+      "watch-data-collection-guide.md「Longines」市場表",
+      "ai-data-maintenance-guide.md 市場涵蓋表",
+      "examples/regression-cases.md 新增 Longines IT／ES 小節"
+    ],
+    "reason": "Longines 市場數由 10 增為 12、跨市場聯集由 881 增為 883，長期描述受影響。"
+  },
+  "limitations": [
+    "官方 GraphQL 後端在收集期間間歇性回傳 \"Unexpected error.\"（ES 48 次、IT 72 次），皆以有限次數重試補齊；未觀察到 HTTP 429 或 Retry-After。",
+    "IT 官方列表頁 /it/watches 在收集開始時回傳 HTTP 500，收集完成後才恢復渲染；IT 的渲染總數交叉確認因此發生在 API 收集之後（11:11Z）。",
+    "部分 evidence 的來源存取時間只記錄到分鐘等級（標示「約」），未補造秒級時間。",
+    "前端網站 app/src/lib/brands.ts 的 Longines marketOptions 尚未加入 IT／ES；本次僅新增資料，未修改前端。"
+  ]
+}

@@ -152,8 +152,10 @@ Evidence 是「某個時間點從某個來源觀察到什麼」的快照，一�
 | 德國 | DE | `de-DE` | EUR | 含稅（19%） |
 | 法國 | FR | `fr-FR` | EUR | 含稅（20%） |
 | 新加坡 | SG | `en-SG` | SGD | 含稅（9%） |
+| 義大利 | IT | `it-IT` | EUR | 含稅（22%） |
+| 西班牙 | ES | `es-ES` | EUR | 含稅（21%） |
 
-Longines 的 `collectionId` 採官方子系列網址路徑的最後一段（例如 `hydroconquest`、`master-collection`），而非 Master、Conquest 等五大家族；各市場的官方子系列並非完全相同，這是官方目錄的真實市場差異，非收集缺漏。例如：`master-gmt` 未出現在 TW；`conquest-classic` 未出現在 HK；`evidenza` 未出現在 KR。瑞士市場的官方站台以德、法、義三個對等語言 store view 並存（皆為相同目錄與價格，僅語系不同），本次收錄以 `de-CH` 為代表語系，詳見 `data/evidence/longines/CH/2026-09-25/observations.json` 的 `localeDecision` 說明。德國市場另有 7 款目錄尚未收錄的配置（其中 4 款為「Sylt Edition」德國限定款），已併入共用目錄，詳見 `data/evidence/longines/DE/2026-09-27/validation-summary.json` 的 `catalogDiff`。
+Longines 的 `collectionId` 採官方子系列網址路徑的最後一段（例如 `hydroconquest`、`master-collection`），而非 Master、Conquest 等五大家族；各市場的官方子系列並非完全相同，這是官方目錄的真實市場差異，非收集缺漏。例如：`master-gmt` 未出現在 TW；`conquest-classic` 未出現在 HK；`evidenza` 未出現在 KR。瑞士市場的官方站台以德、法、義三個對等語言 store view 並存（皆為相同目錄與價格，僅語系不同），本次收錄以 `de-CH` 為代表語系，詳見 `data/evidence/longines/CH/2026-09-25/observations.json` 的 `localeDecision` 說明。德國市場另有 7 款目錄尚未收錄的配置（其中 4 款為「Sylt Edition」德國限定款），已併入共用目錄，詳見 `data/evidence/longines/DE/2026-09-27/validation-summary.json` 的 `catalogDiff`。義大利與西班牙市場的參考號集合相同，另有 2 款 HydroConquest 石英款為目錄新增配置，詳見 `data/evidence/longines/IT/2026-09-29/validation-summary.json` 的 `catalogDiff`。
 
 實際的收集時間、來源、輪次與價格請讀取各市場的 history 與 evidence；README 的筆數不應用作下一次收集的筆數目標。
 

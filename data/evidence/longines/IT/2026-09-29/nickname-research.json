@@ -1,0 +1,49 @@
+{
+  "nicknameResearch": {
+    "status": "PASS with 0 accepted results",
+    "scope": "new-market",
+    "languages": [
+      "it"
+    ],
+    "queries": [
+      "Longines HydroConquest soprannome forum orologi",
+      "Longines Master Collection \"chiamato\" soprannome orologiko forum",
+      "Longines \"Legend Diver\" OR \"Spirit Zulu Time\" soprannome italiano orologio \"detto\""
+    ],
+    "sourcesReviewed": 3,
+    "sourcesReviewedList": [
+      {
+        "url": "https://cicala.it/longines-conquest-spirit-master-collection-quale-scegliere/",
+        "note": "比較 Conquest、Spirit、Master Collection，全文只使用官方系列名稱，無俗稱。"
+      },
+      {
+        "url": "https://www.recensioniorologi.it/longines-hydroconquest.html",
+        "note": "僅有官方名稱大小寫差異（Hydroconquest），以完整參考號指稱款式，無俗稱。"
+      },
+      {
+        "url": "https://www.watchrules.it/viewtopic.php?t=3500",
+        "note": "擷取內容與 Longines 無關（頁面內容為賭場廣告），無法作為來源。"
+      }
+    ],
+    "sourcesUnreachable": [
+      {
+        "url": "https://www.fh24.it/forum/viewtopic.php?t=202",
+        "error": "getaddrinfo ENOTFOUND"
+      },
+      {
+        "url": "http://www.forumorologi.eu/phpBB3/viewtopic.php?t=32101",
+        "error": "getaddrinfo ENOTFOUND"
+      },
+      {
+        "url": "https://orologi.forumfree.it/?t=74828270",
+        "error": "302 轉址至登入頁，未登入不讀取"
+      }
+    ],
+    "searchResultsNotOpened": [],
+    "candidateCount": 0,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [],
+    "notes": "以 WebSearch 查詢當地語言俗稱並以 WebFetch 開啟可取得的來源。當地論壇與評測以官方系列名稱與完整參考號指稱款式；找到的只有系列名稱截短或縮寫，未達「精確對應完整配置並有可信來源」門檻，因此 collectionAliases 與 localNicknames 全數維持空陣列，與 DE、CH 市場檔一致。"
+  }
+}

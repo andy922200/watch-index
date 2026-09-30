@@ -2,7 +2,7 @@
   "$schema": "../schemas/watch-catalog.schema.json",
   "schemaVersion": 5,
   "brandId": "longines",
-  "collectedAt": "2026-09-27T15:40:00.000Z",
+  "collectedAt": "2026-09-29T11:05:55.000Z",
   "sourceMarketCodes": [
     "TW",
     "HK",
@@ -13,9 +13,11 @@
     "US",
     "DE",
     "FR",
-    "SG"
+    "SG",
+    "IT",
+    "ES"
   ],
-  "watchCount": 881,
+  "watchCount": 883,
   "watches": [
     {
       "watchId": "longines:L1.648.4.52.2",
@@ -7950,6 +7952,24 @@
       "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-mini-dolcevita-sylt-edition-l5-200-4-75-a-2da5ec-hero.png",
       "dialColors": [
         "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L3.369.4.09.6",
+      "collectionId": "hydroconquest",
+      "reference": "L3.369.4.09.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-hydroconquest-l3-369-4-09-6-e482f8-hero.png",
+      "dialColors": [
+        "green"
+      ]
+    },
+    {
+      "watchId": "longines:L3.369.4.12.6",
+      "collectionId": "hydroconquest",
+      "reference": "L3.369.4.12.6",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-hydroconquest-l3-369-4-12-6-191873-hero.png",
+      "dialColors": [
+        "white"
       ]
     }
   ]

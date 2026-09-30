@@ -81,3 +81,15 @@
 新加坡官方站台入口 `https://www.longines.com/en-sg/watches` 首次嘗試即有效。完成官方 ProductList 全部 32 頁（前 31 頁每頁 24 筆＋第 32 頁 11 筆）後有 755 個唯一完整配置，第 33 頁官方回傳「currentPage value 33 specified is greater than the 32 page(s) available.」。完整批次時間見 `data/evidence/longines/SG/2026-09-27/observations.json`。
 
 5 個家族官方總數為 conquest 180、elegance 294、heritage 70、master 157、spirit 54，合計 755；31 個子系列逐一相符。與既有 catalog 比對：755 筆全數已存在於既有聯集（交集＝755，無新配置），與瑞士（805）、英國（806）等既有市場高度重疊。稅制依 IRAS 現行 GST 稅率（2024-01-01 起 9%）與「Displaying and quoting prices」含稅標示規定記為 `tax-include`、9%，與既有 Rolex SG 市場稅率判定一致（各自獨立查核，互為佐證）。755 筆商品官方 `stock_status` 全數為 `OUT_OF_STOCK`（與多數其他市場以 `IN_STOCK` 為主不同），已以 20 款商品頁 JSON-LD 交叉核對排除擷取錯誤，但未能查證確切原因，列為已知限制。完整拆分見 `data/evidence/longines/SG/2026-09-27/collection-summary.json`。
+
+## Longines — 西班牙（ES）2026-09-29
+
+西班牙官方站台入口為 `https://www.longines.com/es/watches`（官網國家選單「España」）。以 `pageSize=900` 單次重放（DE 作法）時官方回傳 GraphQL「Unexpected error.」，改回官網自身的每頁 24 筆：完成全部 34 頁（前 33 頁每頁 24 筆、第 34 頁 16 筆）後有 808 個唯一完整配置，第 35 頁官方回傳「currentPage value 35 specified is greater than the 34 page(s) available.」，並與渲染列表頁標題「808 productos」一致。收集期間官方後端對部分頁面間歇性回傳「Unexpected error.」（同一頁重試後即成功，非特定商品損壞），失敗頁以第二輪重試補齊。完整批次時間見 `data/evidence/longines/ES/2026-09-29/observations.json`。
+
+依 `preferred_category` 統計的 5 個家族為 conquest 188、elegance 331、heritage 73、master 158、spirit 58，合計 808；31 個系列 slug 皆為既有 `collectionId`。與既有 catalog 比對：交集 806、新增 2 筆（`L3.369.4.09.6`、`L3.369.4.12.6`，HydroConquest 30 mm 石英款）。稅制依官方銷售條款「incluyen el IVA local」與 AEAT 一般稅率記為 `tax-include`、21%。完整拆分見 `data/evidence/longines/ES/2026-09-29/collection-summary.json`。
+
+## Longines — 義大利（IT）2026-09-29
+
+義大利官方站台入口為 `https://www.longines.com/it/watches`（官網國家選單「Italia」），但收集開始時該頁與 `/it/watches/master` 回傳 HTTP 500，因此由正常渲染的子系列頁 `/it/watches/master/master-collection`（「101 prodotti」）側錄 `store: it_it`／`lang: it-it` 的 ProductList 請求，再改用全腕錶分類 `category_uid = NA==`。完成全部 34 頁（前 33 頁每頁 24 筆、第 34 頁 16 筆）後有 808 個唯一完整配置，第 35 頁官方回傳超出可用頁數錯誤；收集完成後列表頁恢復渲染並顯示「808 prodotti」。間歇性「Unexpected error.」比 ES 更頻繁，失敗頁同樣以第二輪重試補齊。
+
+參考號集合與 ES 完全相同（808 筆，含相同的 2 筆目錄新增配置），但有 386 筆價格不同，屬真實市場差異。稅制依官方銷售條款「includono l'IVA locale」與 Normattiva 所載 D.P.R. 633/1972 第 16 條記為 `tax-include`、22%；Agenzia delle Entrate 網站對 WebFetch 與瀏覽器皆拒絕存取，未嘗試繞過。完整拆分見 `data/evidence/longines/IT/2026-09-29/collection-summary.json`。

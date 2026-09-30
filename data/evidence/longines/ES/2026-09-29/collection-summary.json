@@ -1,0 +1,1348 @@
+{
+  "brandId": "longines",
+  "marketCode": "ES",
+  "task": "new-market",
+  "locale": "es-ES",
+  "salesRegion": "Spain",
+  "entryPoint": {
+    "startedFrom": "https://www.longines.com/（瀏覽器預設語系導向 https://www.longines.com/zh-tw）",
+    "resolvedViaCountrySelector": "官網國家選單「España」→ https://www.longines.com/es",
+    "confirmedProductListingUrl": "https://www.longines.com/es/watches",
+    "note": "由 https://www.longines.com/ （瀏覽器預設語系導向 /zh-tw）讀取官網自身國家選單，「España」連結指向 https://www.longines.com/es；列表頁 https://www.longines.com/es/watches 正常渲染。"
+  },
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "not-applicable",
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "PASS",
+    "fallbackTool": null,
+    "notes": "以 Chrome DevTools MCP list_network_requests／get_network_request 讀取官網自身 ProductList 請求（reqid 635，點擊官方列表頁「Mostrar más resultados」，頁面網址隨之變為 ?page=2），確認端點、變數與 lang／store 標頭後重放。Cookie 等標頭僅在工具輸出中出現，未寫入 evidence。"
+  },
+  "stopEvidence": {
+    "officialTotalCount": 808,
+    "uniqueSkusCollected": 808,
+    "pagesCollected": 34,
+    "lastPageItemCount": 16,
+    "beyondLastPageResponse": {
+      "page": 35,
+      "pageSize": 24,
+      "message": [
+        "currentPage value 35 specified is greater than the 34 page(s) available."
+      ]
+    },
+    "independentRenderedTotal": {
+      "text": "808 productos",
+      "url": "https://www.longines.com/es/watches",
+      "observedAt": "約 2026-09-29T10:32Z（早於官網自身 page=2 請求 reqid 635 的回應時間 10:32:28Z；未記錄秒級時間）",
+      "note": "於任何 API 重放前，瀏覽器首次渲染官方列表頁時讀到的標題文字；「Solo en stock」篩選維持預設關閉。"
+    },
+    "reasoning": "官方 total_count=808 與 34 頁累積唯一 SKU 數 808 一致（33×24+16），第 35 頁官方明確回傳超出可用頁數；各頁 total_count 皆為 808，無重複、無缺頁。另以瀏覽器渲染之官方列表頁標題總數交叉確認。"
+  },
+  "recordCounts": {
+    "rawItemsReturned": 808,
+    "uniqueReferences": 808,
+    "duplicatesFound": 0
+  },
+  "conflictsFound": "無。各頁僅採用第一次成功回應；ES 第 1 頁另以 pageSize=1 逐位置抓取 17 個位置（位置 11、13、15、16、17、20、22 當次失敗），SKU 順序與第 1 頁完全一致。",
+  "attempts": {
+    "preCollection": [
+      {
+        "time": "2026-09-29T10:33:05.055Z",
+        "method": "以相同查詢與標頭，將 pageSize 改為 900、currentPage=1 單次重放（仿 DE 2026-09-27 作法）",
+        "result": "HTTP 200，但 GraphQL 回傳 errors[0].message = \"Unexpected error.\"（extensions.code = INTERNAL_SERVER_ERROR），data.products = null。未採用。"
+      },
+      {
+        "time": "2026-09-29T10:33:24Z–10:33:49Z",
+        "method": "pageSize=24 逐頁迴圈（第一版腳本），第 1 頁重試 4 次",
+        "result": "4 次皆為 \"Unexpected error.\"；腳本在第 1 頁放棄。未取得資料。"
+      },
+      {
+        "time": "約 2026-09-29T10:34Z–10:36Z",
+        "method": "第二版逐頁腳本（同步 await 整個迴圈）",
+        "result": "Chrome DevTools MCP 回報 Runtime.callFunctionOn timed out（協定逾時），腳本回傳值遺失，未落盤任何觀察；改為在頁面內背景執行並以 window 變數作 checkpoint。此次嘗試的請求結果無法取得，未用於正式資料。"
+      },
+      {
+        "time": "約 2026-09-29T10:37Z",
+        "method": "診斷：以官網原始 page=2 請求 URL 不變重放（有／無 x-akamai-fallback-tags 標頭各一次），再以字串替換只改 currentPage 為 1、2、3、34",
+        "result": "原始 URL 兩次皆成功（24 筆，total_count=808）；currentPage=1 失敗，2、3 成功，34 回傳 16 筆（33×24+16=808）。後續於 10:44 對單筆位置 11、13 重試改為成功，判定為官方後端間歇性錯誤，而非特定商品損壞。"
+      }
+    ],
+    "pagedRequests": [
+      {
+        "pass": 1,
+        "page": 2,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:38:23.119Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:38:24 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 3,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:38:24.647Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:38:27 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 4,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:38:28.235Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:38:30 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 5,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:38:31.065Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:38:32 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 6,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:38:32.766Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:38:36 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 6,
+        "pageSize": 24,
+        "try": 2,
+        "started": "2026-09-29T10:38:37.985Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:38:41 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 6,
+        "pageSize": 24,
+        "try": 3,
+        "started": "2026-09-29T10:38:44.804Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:38:46 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 7,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:38:51.974Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:38:55 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 8,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:38:55.681Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:38:56 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 9,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:38:57.428Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:38:58 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 10,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:38:59.259Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:39:00 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 11,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:39:01.078Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:39:03 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 12,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:39:03.755Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:39:04 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 13,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:39:05.297Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:39:07 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 14,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:39:07.819Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:39:09 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 15,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:39:10.440Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:39:12 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 15,
+        "pageSize": 24,
+        "try": 2,
+        "started": "2026-09-29T10:39:14.331Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:39:17 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 15,
+        "pageSize": 24,
+        "try": 3,
+        "started": "2026-09-29T10:39:20.837Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:39:23 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 16,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:39:29.487Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:39:31 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 17,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:39:32.024Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:39:33 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 17,
+        "pageSize": 24,
+        "try": 2,
+        "started": "2026-09-29T10:39:35.015Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:39:38 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 17,
+        "pageSize": 24,
+        "try": 3,
+        "started": "2026-09-29T10:39:41.668Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:39:42 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 18,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:39:48.034Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:39:51 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 18,
+        "pageSize": 24,
+        "try": 2,
+        "started": "2026-09-29T10:39:52.652Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:39:54 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 18,
+        "pageSize": 24,
+        "try": 3,
+        "started": "2026-09-29T10:39:58.228Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:40:00 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 19,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:40:05.896Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:40:07 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 20,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:40:08.713Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:40:11 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 21,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:40:12.302Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:40:14 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 22,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:40:15.037Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:40:18 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 22,
+        "pageSize": 24,
+        "try": 2,
+        "started": "2026-09-29T10:40:19.746Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:40:22 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 22,
+        "pageSize": 24,
+        "try": 3,
+        "started": "2026-09-29T10:40:26.417Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:40:28 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 23,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:40:34.410Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:40:36 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 24,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:40:36.963Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:40:38 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 24,
+        "pageSize": 24,
+        "try": 2,
+        "started": "2026-09-29T10:40:40.077Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:40:41 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 24,
+        "pageSize": 24,
+        "try": 3,
+        "started": "2026-09-29T10:40:44.426Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:40:46 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 25,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:40:52.107Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:40:53 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 26,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:40:53.612Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:40:55 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 26,
+        "pageSize": 24,
+        "try": 2,
+        "started": "2026-09-29T10:40:57.374Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:40:59 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 26,
+        "pageSize": 24,
+        "try": 3,
+        "started": "2026-09-29T10:41:02.685Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:41:03 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 27,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:41:09.184Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:41:10 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 28,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:41:10.739Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:41:12 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 29,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:41:13.380Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:41:14 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 29,
+        "pageSize": 24,
+        "try": 2,
+        "started": "2026-09-29T10:41:16.018Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:41:17 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 29,
+        "pageSize": 24,
+        "try": 3,
+        "started": "2026-09-29T10:41:20.293Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:41:21 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 30,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:41:26.865Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:41:28 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 30,
+        "pageSize": 24,
+        "try": 2,
+        "started": "2026-09-29T10:41:31.042Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:41:32 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 30,
+        "pageSize": 24,
+        "try": 3,
+        "started": "2026-09-29T10:41:35.228Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:41:38 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 31,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:41:43.913Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:41:46 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 32,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:41:47.394Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:41:50 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 33,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:41:50.950Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:41:53 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 1,
+        "page": 34,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:41:54.444Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:41:55 GMT",
+        "errors": null,
+        "items": 16
+      },
+      {
+        "pass": 1,
+        "page": 35,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:41:56.184Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:41:57 GMT",
+        "errors": [
+          "currentPage value 35 specified is greater than the 34 page(s) available."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 1,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:41:57.234Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:42:00 GMT",
+        "errors": null,
+        "items": 1
+      },
+      {
+        "pass": 1,
+        "page": 2,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:42:00.763Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:42:03 GMT",
+        "errors": null,
+        "items": 1
+      },
+      {
+        "pass": 1,
+        "page": 3,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:42:04.429Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:42:07 GMT",
+        "errors": null,
+        "items": 1
+      },
+      {
+        "pass": 1,
+        "page": 4,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:42:07.975Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:42:11 GMT",
+        "errors": null,
+        "items": 1
+      },
+      {
+        "pass": 1,
+        "page": 5,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:42:11.711Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:42:13 GMT",
+        "errors": null,
+        "items": 1
+      },
+      {
+        "pass": 1,
+        "page": 6,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:42:14.357Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:42:17 GMT",
+        "errors": null,
+        "items": 1
+      },
+      {
+        "pass": 1,
+        "page": 7,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:42:18.101Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:42:21 GMT",
+        "errors": null,
+        "items": 1
+      },
+      {
+        "pass": 1,
+        "page": 8,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:42:21.794Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:42:22 GMT",
+        "errors": null,
+        "items": 1
+      },
+      {
+        "pass": 1,
+        "page": 9,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:42:23.462Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:42:26 GMT",
+        "errors": null,
+        "items": 1
+      },
+      {
+        "pass": 1,
+        "page": 10,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:42:27.120Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:42:28 GMT",
+        "errors": null,
+        "items": 1
+      },
+      {
+        "pass": 1,
+        "page": 11,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:42:28.640Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:42:31 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 11,
+        "pageSize": 1,
+        "try": 2,
+        "started": "2026-09-29T10:42:33.323Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:42:36 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 11,
+        "pageSize": 1,
+        "try": 3,
+        "started": "2026-09-29T10:42:39.666Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:42:40 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 12,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:42:45.987Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:42:47 GMT",
+        "errors": null,
+        "items": 1
+      },
+      {
+        "pass": 1,
+        "page": 13,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:42:47.833Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:42:50 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 13,
+        "pageSize": 1,
+        "try": 2,
+        "started": "2026-09-29T10:42:52.567Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:42:53 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 13,
+        "pageSize": 1,
+        "try": 3,
+        "started": "2026-09-29T10:42:56.882Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:42:57 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 14,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:43:03.731Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:43:04 GMT",
+        "errors": null,
+        "items": 1
+      },
+      {
+        "pass": 1,
+        "page": 15,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:43:05.389Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:43:07 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 15,
+        "pageSize": 1,
+        "try": 2,
+        "started": "2026-09-29T10:43:09.735Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:43:10 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 15,
+        "pageSize": 1,
+        "try": 3,
+        "started": "2026-09-29T10:43:14.190Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:43:17 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 16,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:43:22.708Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:43:25 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 16,
+        "pageSize": 1,
+        "try": 2,
+        "started": "2026-09-29T10:43:27.415Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:43:29 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 16,
+        "pageSize": 1,
+        "try": 3,
+        "started": "2026-09-29T10:43:32.609Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:43:35 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 17,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:43:40.660Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:43:41 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 17,
+        "pageSize": 1,
+        "try": 2,
+        "started": "2026-09-29T10:43:43.913Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:43:46 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 17,
+        "pageSize": 1,
+        "try": 3,
+        "started": "2026-09-29T10:43:50.156Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:43:52 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 18,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:43:57.610Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:43:58 GMT",
+        "errors": null,
+        "items": 1
+      },
+      {
+        "pass": 1,
+        "page": 19,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:43:59.275Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:44:01 GMT",
+        "errors": null,
+        "items": 1
+      },
+      {
+        "pass": 1,
+        "page": 20,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:44:01.828Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:44:02 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 20,
+        "pageSize": 1,
+        "try": 2,
+        "started": "2026-09-29T10:44:04.527Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:44:07 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 20,
+        "pageSize": 1,
+        "try": 3,
+        "started": "2026-09-29T10:44:10.737Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:44:12 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 21,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:44:18.323Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:44:21 GMT",
+        "errors": null,
+        "items": 1
+      },
+      {
+        "pass": 1,
+        "page": 22,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:44:22.072Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:44:24 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 22,
+        "pageSize": 1,
+        "try": 2,
+        "started": "2026-09-29T10:44:26.131Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:44:27 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 22,
+        "pageSize": 1,
+        "try": 3,
+        "started": "2026-09-29T10:44:30.725Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:44:33 GMT",
+        "errors": [
+          "Unexpected error."
+        ],
+        "items": null
+      },
+      {
+        "pass": 1,
+        "page": 23,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:44:39.142Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:44:41 GMT",
+        "errors": null,
+        "items": 1
+      },
+      {
+        "pass": 1,
+        "page": 24,
+        "pageSize": 1,
+        "try": 1,
+        "started": "2026-09-29T10:44:41.740Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:44:44 GMT",
+        "errors": null,
+        "items": 1
+      },
+      {
+        "pass": 2,
+        "page": 1,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:45:24.737Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:45:28 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 2,
+        "page": 6,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:45:29.524Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:45:34 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 2,
+        "page": 15,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:45:35.652Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:45:36 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 2,
+        "page": 17,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:45:37.924Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:45:40 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 2,
+        "page": 18,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:45:41.570Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:45:44 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 2,
+        "page": 22,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:45:45.205Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:45:49 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 2,
+        "page": 24,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:45:50.607Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:45:52 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 2,
+        "page": 26,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:45:53.586Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:45:55 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 2,
+        "page": 29,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:45:56.458Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:46:02 GMT",
+        "errors": null,
+        "items": 24
+      },
+      {
+        "pass": 2,
+        "page": 30,
+        "pageSize": 24,
+        "try": 1,
+        "started": "2026-09-29T10:46:03.066Z",
+        "status": 200,
+        "date": "Tue, 29 Sep 2026 10:46:05 GMT",
+        "errors": null,
+        "items": 24
+      }
+    ],
+    "summary": "逐頁請求共 100 次（含第 1 頁 pageSize=1 的 24 個位置探測），其中官方 'Unexpected error.' 48 次；無 HTTP 429、無 5xx HTTP 狀態、無 Retry-After。所有失敗頁於第二輪重試成功。"
+  },
+  "collectionsFound": 31,
+  "collectionCounts": {
+    "conquest": 88,
+    "conquest-chronograph": 10,
+    "conquest-classic": 20,
+    "conquest-heritage": 26,
+    "dolcevita": 60,
+    "elegant": 42,
+    "evidenza": 13,
+    "flagship": 54,
+    "flagship-heritage": 8,
+    "heritage-avigation": 7,
+    "heritage-classic": 5,
+    "hydroconquest": 59,
+    "hydroconquest-gmt": 11,
+    "la-grande-classique": 66,
+    "legend-diver": 17,
+    "master-collection": 101,
+    "master-collection-chrono-monopusher": 2,
+    "master-collection-chronograph": 30,
+    "master-collection-moonphase": 23,
+    "master-gmt": 2,
+    "mini-dolcevita": 23,
+    "pilot-majetek": 3,
+    "primaluna": 52,
+    "record": 21,
+    "spirit": 13,
+    "spirit-chronograph": 4,
+    "spirit-flyback": 8,
+    "spirit-pilot": 5,
+    "spirit-pilot-flyback": 4,
+    "spirit-zulu-time": 24,
+    "ultra-chron": 7
+  },
+  "familyCounts": {
+    "conquest": 188,
+    "elegance": 331,
+    "heritage": 73,
+    "master": 158,
+    "spirit": 58
+  },
+  "stockStatusCounts": {
+    "IN_STOCK": 765,
+    "OUT_OF_STOCK": 43
+  },
+  "purchaseChannel": {
+    "decision": "listed",
+    "evidence": "ES：實際渲染商品頁 L3.809.4.93.9 顯示「Añadir al carrito」按鈕與預計到貨日。IT：商品頁 HTML 含「Aggiungi al carrello」字串、站台頂部有「Carrello」購物車連結（未另行渲染 IT 商品頁點擊按鈕）。兩市場 20 款抽查的商品頁 HTML 皆含對應加入購物車字串；官方銷售條款說明價格含當地增值稅及預設運費並以線上下單付款。purchasable=0 的少數款式（ES 3 款、IT 3 款）於商品頁顯示公開價格與「Avisarme」到貨通知按鈕（ES L3.788.4.06.6 實際渲染確認），屬暫時缺貨，比照 DE 2026-09-27 對缺貨款仍記為 listed 的判定。"
+  },
+  "tax": {
+    "currencyCode": "EUR",
+    "priceType": "tax-include",
+    "taxRatePercent": 21,
+    "sources": [
+      {
+        "publisher": "LONGINES España（官方站台）",
+        "title": "Condiciones de venta",
+        "url": "https://www.longines.com/es/legal/conditions-of-sale",
+        "accessedAt": "約 2026-09-29T11:02Z（未記錄秒級時間）",
+        "observedFact": "「Los precios de este sitio web se indican en EUROS e incluyen el IVA local, así como los gastos de envío por defecto (tal y como se especifica en la página de salida y en la confirmación del pedido).」",
+        "method": "以瀏覽器實際開啟頁面讀取渲染文字。"
+      },
+      {
+        "publisher": "Agencia Estatal de Administración Tributaria (AEAT)",
+        "title": "Tipos impositivos en el IVA",
+        "url": "https://sede.agenciatributaria.gob.es/Sede/iva/calculo-iva-repercutido-clientes/tipos-impositivos-iva.html",
+        "accessedAt": "約 2026-09-29T10:37Z（未記錄秒級時間）",
+        "observedFact": "「El tipo general de IVA es el 21%.」另列 10%、4% 兩個優惠稅率；腕錶未屬優惠稅率適用品項。",
+        "method": "WebFetch。"
+      }
+    ],
+    "sourceFailures": []
+  },
+  "errors": [],
+  "priceFormatNote": "價格字串為歐陸格式（點為千分位、逗號為小數，例如 '2.600,00 €'，其中數字與 € 之間為不換行空白）；GraphQL base_price.value 已是整數歐元，808 筆皆無非零小數，直接作為整數價格，未解析字串、未乘除或四捨五入。special_price 全為 null。"
+}
