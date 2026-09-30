@@ -70,6 +70,8 @@ describe('common markets', () => {
       'KR',
       'DE',
       'FR',
+      'IT',
+      'ES',
       'CH',
       'GB',
       'US',

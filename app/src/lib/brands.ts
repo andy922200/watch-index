@@ -150,6 +150,8 @@ export const brandDirectory: readonly BrandDirectoryEntry[] = [
       MarketCode.SouthKorea,
       MarketCode.Germany,
       MarketCode.France,
+      MarketCode.Italy,
+      MarketCode.Spain,
       MarketCode.Switzerland,
       MarketCode.UnitedKingdom,
       MarketCode.UnitedStates,

@@ -14,6 +14,8 @@ describe('brand market options', () => {
       'KR',
       'DE',
       'FR',
+      'IT',
+      'ES',
       'CH',
       'GB',
       'US',

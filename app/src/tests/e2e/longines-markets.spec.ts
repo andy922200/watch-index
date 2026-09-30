@@ -6,9 +6,9 @@ test('loads the newly available Longines markets', async ({ page }) => {
   const marketSelect = page.getByRole('combobox', { name: 'Market' })
   await expect(page.getByRole('heading', { name: 'Longines Watch Index' })).toBeVisible()
   await marketSelect.click()
-  await expect(page.getByRole('option')).toHaveCount(10)
+  await expect(page.getByRole('option')).toHaveCount(12)
 
-  for (const marketName of ['Singapore', 'Germany', 'France']) {
+  for (const marketName of ['Singapore', 'Germany', 'France', 'Italy', 'Spain']) {
     await page.getByRole('option', { name: marketName }).click()
     await expect(marketSelect).toContainText(marketName)
     await expect(page.getByTestId('watch-grid').locator('[data-slot="card"]')).toHaveCount(12)
