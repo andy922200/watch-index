@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ArrowLeft } from '@lucide/vue'
+import { ArrowLeft, Check, Link } from '@lucide/vue'
+import { useClipboard } from '@vueuse/core'
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -32,6 +33,7 @@ import {
 
 const { locale, t, te } = useI18n()
 const localSelection = useWatchCompareSelection()
+const { copied: isLinkCopied, copy: copyText } = useClipboard({ copiedDuring: 2000 })
 const { catalogs, currencyMismatch, failedBrandIds, isLoading, loadCatalogs, missingGuards } =
   useCrossBrandCatalogs(brands)
 const languagePaths = getSitePageLanguagePaths('watch-compare')
@@ -99,6 +101,7 @@ const removeWatch = (id: string): void =>
       if (selectedMarket.value) syncCompareUrl(selectedMarket.value, selectedIds.value)
     },
   })
+const copyShareLink = (): Promise<void> => copyText(window.location.href)
 /* 工具函式包裝 End */
 
 watch(
@@ -134,12 +137,19 @@ watch(requestedBrandIds, () => {
         <p class="text-muted-foreground mt-6 max-w-2xl text-base leading-relaxed sm:text-lg">
           {{ t('site.explorer.compareDescription') }}
         </p>
-        <div class="mt-8 flex flex-wrap items-end gap-5">
+        <div class="mt-8 flex flex-wrap items-end justify-between gap-5">
           <Button variant="outline" as-child class="h-11">
             <a :href="explorerHref">
               <ArrowLeft aria-hidden="true" />
               {{ t('site.explorer.backToExplorer') }}
             </a>
+          </Button>
+          <Button variant="outline" class="h-11 cursor-pointer" @click="copyShareLink">
+            <Check v-if="isLinkCopied" aria-hidden="true" />
+            <Link v-else aria-hidden="true" />
+            <span aria-live="polite">
+              {{ t(isLinkCopied ? 'site.explorer.shareLinkCopied' : 'site.explorer.shareLink') }}
+            </span>
           </Button>
         </div>
       </header>

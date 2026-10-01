@@ -237,3 +237,18 @@ test('scrolls back to the results top after a filter change only when it is off 
   const headingTop = (await resultsHeading.boundingBox())?.y ?? Number.NaN
   expect(headingTop).toBeLessThan(400)
 })
+
+test('copies the current comparison URL from the share link button', async ({ context, page }) => {
+  await context.grantPermissions(['clipboard-read', 'clipboard-write'])
+  await page.goto(
+    '/watch-compare.html?market_code=TW&watch_id=rolex%3Am124060-0001&watch_id=longines%3AL1.648.4.52.2',
+  )
+  await expect(page.getByRole('table', { name: '腕錶比較' })).toBeVisible()
+
+  const shareButton = page.getByRole('button', { name: '複製分享連結' })
+  await shareButton.click()
+
+  await expect(page.getByRole('button', { name: '已複製連結' })).toBeVisible()
+  expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(page.url())
+  await expect(shareButton).toBeVisible()
+})

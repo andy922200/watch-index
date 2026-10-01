@@ -85,6 +85,8 @@
       "compareTitle": "Put your choices side by side.",
       "compareDescription": "One market, one perspective. Only available details are shown; missing specifications are not inferred.",
       "backToExplorer": "Back to Explorer",
+      "shareLink": "Copy share link",
+      "shareLinkCopied": "Link copied",
       "incomplete": "Select at least two watches to compare.",
       "tooMany": "This URL contains more than three watches. Remove the extras.",
       "invalidIds": "Unrecognized watches: {ids}",

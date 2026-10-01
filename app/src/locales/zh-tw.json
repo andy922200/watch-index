@@ -85,6 +85,8 @@
       "compareTitle": "讓選擇並排展開。",
       "compareDescription": "同一市場、同一視角。以下僅呈現現有資料，不推測未提供的規格。",
       "backToExplorer": "返回探索",
+      "shareLink": "複製分享連結",
+      "shareLinkCopied": "已複製連結",
       "incomplete": "請先選擇至少兩支腕錶。",
       "tooMany": "網址包含超過三支腕錶，請移除多餘項目。",
       "invalidIds": "無法辨識的腕錶：{ids}",
