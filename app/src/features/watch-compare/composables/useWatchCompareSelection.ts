@@ -1,8 +1,15 @@
-import { ref } from 'vue'
+import { type Ref, ref } from 'vue'
 
 import { MAX_COMPARE_WATCHES } from '@/lib/watchCompareUrl'
 
 export const COMPARE_SELECTION_STORAGE_KEY = 'watch-compare-selection-v1'
+
+export interface UseWatchCompareSelectionResult {
+  selectedIds: Ref<string[]>
+  add: (id: string) => boolean
+  remove: (id: string) => void
+  clear: () => void
+}
 
 /**
  * 將任意來源（如 localStorage JSON.parse 的結果）解析為合法的比較清單 id 陣列：
@@ -35,7 +42,7 @@ const readSelection = (): string[] => {
  *
  * @returns 目前選取的 id 清單，以及 `add`／`remove`／`clear` 操作函式。
  */
-export const useWatchCompareSelection = () => {
+export const useWatchCompareSelection = (): UseWatchCompareSelectionResult => {
   const selectedIds = ref<string[]>(readSelection())
   const persist = (): void => {
     try {

@@ -8,6 +8,14 @@ import AppBreadcrumb from '@/components/layout/AppBreadcrumb.vue'
 import AppLayout from '@/components/layout/AppLayout.vue'
 import AppNav from '@/components/layout/AppNav.vue'
 import { Button } from '@/components/ui/button'
+import WatchSelectionBar, {
+  type SelectionBarItem,
+} from '@/features/watch-compare/components/WatchSelectionBar.vue'
+import { useWatchCompareSelection } from '@/features/watch-compare/composables/useWatchCompareSelection'
+import {
+  clearWatchSelection,
+  toggleWatchSelection,
+} from '@/features/watch-compare/utils/watchSelectionActions'
 import { brands } from '@/lib/brands'
 import {
   getAvailableMarketOptions,
@@ -31,7 +39,7 @@ import {
   replaceMarketQuery,
 } from '@/lib/markets'
 import { getSitePageLanguagePaths, getSitePageUrl } from '@/lib/pageUrls'
-import { buildCompareSearch } from '@/lib/watchCompareUrl'
+import { buildCompareSearch, MAX_COMPARE_WATCHES } from '@/lib/watchCompareUrl'
 import { PriceTypeLabelKeys } from '@/lib/watchPriceComparison'
 import { Locale } from '@/plugins/i18n'
 
@@ -41,18 +49,15 @@ import ExplorerDialColorFilter from './components/ExplorerDialColorFilter.vue'
 import ExplorerMarketSelect from './components/ExplorerMarketSelect.vue'
 import ExplorerPriceRangeFilter from './components/ExplorerPriceRangeFilter.vue'
 import ExplorerSearchBox from './components/ExplorerSearchBox.vue'
-import ExplorerSelectionBar, { type SelectionBarItem } from './components/ExplorerSelectionBar.vue'
 import ExplorerSortSelect from './components/ExplorerSortSelect.vue'
 import ExplorerWatchImage from './components/ExplorerWatchImage.vue'
 import { useCrossBrandCatalogs } from './composables/useCrossBrandCatalogs'
-import { useWatchCompareSelection } from './composables/useWatchCompareSelection'
 import {
   getBrandName,
   getCollectionLabel,
   getExplorerPriceText,
   getSingleWatchCompareHref,
 } from './utils/explorerDisplay'
-import { clearWatchSelection, toggleWatchSelection } from './utils/watchSelectionActions'
 
 const MARKET_STORAGE_KEY = 'collection-explorer-market'
 const PAGE_SIZE = 36
@@ -364,12 +369,12 @@ watch(
             >
               {{ t('site.explorer.empty') }}
             </p>
-            <div v-else class="bg-border grid gap-px" :class="resultsGridColsClass">
+            <div v-else class="border-border grid border-t border-l" :class="resultsGridColsClass">
               <article
                 v-for="item in visibleWatches"
                 :key="item.watch.watchId"
                 :data-watch-id="item.watch.watchId"
-                class="bg-background flex min-w-0 flex-col p-5 sm:p-6"
+                class="bg-background border-border flex min-w-0 flex-col border-r border-b p-5 sm:p-6"
               >
                 <ExplorerWatchImage
                   :view="{
@@ -415,7 +420,10 @@ watch(
                     variant="outline"
                     class="mt-5 w-full justify-between"
                     :aria-pressed="selectedIds.includes(item.watch.watchId)"
-                    :disabled="selectedIds.length >= 3 && !selectedIds.includes(item.watch.watchId)"
+                    :disabled="
+                      selectedIds.length >= MAX_COMPARE_WATCHES &&
+                      !selectedIds.includes(item.watch.watchId)
+                    "
                     @click="toggleWatch(item.watch.watchId)"
                   >
                     {{
@@ -444,7 +452,7 @@ watch(
       </template>
     </div>
     <div class="sr-only" aria-live="polite">{{ announcement }}</div>
-    <ExplorerSelectionBar
+    <WatchSelectionBar
       v-if="selectedIds.length"
       :items="selectionItems"
       :compare-href="compareHref"

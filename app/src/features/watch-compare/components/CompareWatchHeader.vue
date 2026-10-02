@@ -50,7 +50,7 @@ const markFailed = (id: string): void => markImageFailed(id, failedImages)
   </div>
   <div
     v-if="column.watch"
-    class="bg-muted/40 relative mt-3 grid aspect-square max-h-48 place-items-center overflow-hidden"
+    class="bg-muted/40 relative mx-auto mt-3 grid aspect-square w-full max-w-72 place-items-center overflow-hidden"
   >
     <div
       v-if="!loadedImages.has(column.id)"
@@ -65,7 +65,7 @@ const markFailed = (id: string): void => markImageFailed(id, failedImages)
       v-if="!failedImages.has(column.id)"
       :src="column.watch.imageUrl"
       :alt="`${column.brandLabel} ${column.referenceLabel}`"
-      class="bg-muted/40 absolute inset-0 h-full w-full object-contain p-3 transition-opacity duration-300"
+      class="bg-muted/40 absolute inset-0 h-full w-full object-contain p-2 transition-opacity duration-300"
       :class="loadedImages.has(column.id) ? 'opacity-100' : 'opacity-0'"
       @load="markLoaded(column.id)"
       @error="markFailed(column.id)"

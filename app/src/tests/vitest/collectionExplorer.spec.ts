@@ -2,19 +2,19 @@ import { describe, expect, it, vi } from 'vitest'
 import { ref } from 'vue'
 
 import {
-  parseStoredSelection,
-  useWatchCompareSelection,
-} from '@/features/collection-explorer/composables/useWatchCompareSelection'
-import {
   getBrandName,
   getCollectionLabel,
   getExplorerPriceText,
   getSingleWatchCompareHref,
 } from '@/features/collection-explorer/utils/explorerDisplay'
 import {
+  parseStoredSelection,
+  useWatchCompareSelection,
+} from '@/features/watch-compare/composables/useWatchCompareSelection'
+import {
   clearWatchSelection,
   toggleWatchSelection,
-} from '@/features/collection-explorer/utils/watchSelectionActions'
+} from '@/features/watch-compare/utils/watchSelectionActions'
 import { brands } from '@/lib/brands'
 import {
   getAvailableMarketOptions,

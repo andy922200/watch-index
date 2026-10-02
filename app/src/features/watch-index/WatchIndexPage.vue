@@ -1,4 +1,5 @@
 <script setup lang="ts" generic="TWatch extends BaseWatch">
+import { ArrowLeftRight, X } from '@lucide/vue'
 import { useStorage } from '@vueuse/core'
 import { computed, ref, watch as watchSource } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -26,6 +27,14 @@ import {
 } from '@/components/ui/select'
 import { useExchangeRates } from '@/composables/useExchangeRates'
 import { useWatchCatalog } from '@/composables/useWatchCatalog'
+import WatchSelectionBar, {
+  type SelectionBarItem,
+} from '@/features/watch-compare/components/WatchSelectionBar.vue'
+import { useWatchCompareSelection } from '@/features/watch-compare/composables/useWatchCompareSelection'
+import {
+  clearWatchSelection,
+  toggleWatchSelection,
+} from '@/features/watch-compare/utils/watchSelectionActions'
 import { getBrandDisplayCurrencyStorageKey, isCurrencyCode } from '@/lib/displayCurrencies'
 import { formatCurrency, formatMediumDate, getIntlLocale } from '@/lib/formatters'
 import {
@@ -34,7 +43,8 @@ import {
   isMarketInOptions,
   type MarketCode,
 } from '@/lib/markets'
-import { getBrandPageLanguagePaths, getPriceCompareUrl } from '@/lib/pageUrls'
+import { getBrandPageLanguagePaths, getPriceCompareUrl, getSitePageUrl } from '@/lib/pageUrls'
+import { buildCompareSearch, MAX_COMPARE_WATCHES } from '@/lib/watchCompareUrl'
 import { hasPublicPrice, PriceTypeLabelKeys } from '@/lib/watchPriceComparison'
 import { Locale } from '@/plugins/i18n'
 import type { BaseWatch } from '@/types/watch-data'
@@ -54,6 +64,7 @@ const DEFAULT_PRICE_SORT: PriceSort = 'default'
 
 const props = defineProps<Props>()
 const { locale, t } = useI18n()
+const { selectedIds, add, remove, clear } = useWatchCompareSelection()
 const languagePaths = getBrandPageLanguagePaths({ brandId: props.config.brandId, page: 'index' })
 const selectedWatch = ref<TWatch | null>(null)
 const isWatchDetailsOpen = ref(false)
@@ -82,6 +93,7 @@ const selectedDisplayCurrency = useStorage(
     },
   },
 )
+const announcement = ref('')
 const marketFromQuery = getMarketFromQuery(
   window.location.search,
   props.config.marketOptions,
@@ -143,8 +155,10 @@ const intlLocale = computed(() => getIntlLocale(locale.value))
 const displayCurrencyRateDate = computed(() => getExchangeRateDate(selectedDisplayCurrency.value))
 
 interface WatchCardView {
+  compareDisabled: boolean
   convertedPrice: string | null
   imageAlt: string
+  isSelected: boolean
   price: string
   priceLabel: string
   watch: TWatch
@@ -155,6 +169,7 @@ const priceLabel = computed(() =>
 )
 const watchCards = computed<WatchCardView[]>(() =>
   visibleWatches.value.map((watch) => {
+    const isSelected = selectedIds.value.includes(watch.watchId)
     const listedPrice = hasPublicPrice(watch.priceStatus) ? watch.price : null
     const priceMarket = catalog.value?.priceMarket
     const convertedAmount =
@@ -165,6 +180,7 @@ const watchCards = computed<WatchCardView[]>(() =>
         : null
 
     return {
+      compareDisabled: selectedIds.value.length >= MAX_COMPARE_WATCHES && !isSelected,
       convertedPrice:
         convertedAmount === null
           ? null
@@ -176,6 +192,7 @@ const watchCards = computed<WatchCardView[]>(() =>
               }),
             }),
       imageAlt: t('site.watchList.imageAlt', { modelName: watch.modelName }),
+      isSelected,
       price:
         listedPrice !== null && priceMarket
           ? formatCurrency({
@@ -191,6 +208,25 @@ const watchCards = computed<WatchCardView[]>(() =>
   }),
 )
 
+const pageLanguage = computed(() => (locale.value === Locale.enUs ? Locale.enUs : Locale.zhTw))
+const selectionItems = computed<SelectionBarItem[]>(() => {
+  const watchesById = new Map(
+    (catalog.value ? Object.values(catalog.value.watchesById) : []).map((watch) => [
+      watch.watchId,
+      watch,
+    ]),
+  )
+
+  return selectedIds.value.map((id) => {
+    const watch = watchesById.get(id)
+    return { id, reference: watch?.reference ?? id, missing: !watch }
+  })
+})
+const compareHref = computed(
+  () =>
+    `${getSitePageUrl({ language: pageLanguage.value, page: 'watch-compare' })}?${buildCompareSearch('', selectedMarket.value, selectedIds.value)}`,
+)
+
 const formatPriceUpdatedAt = (): string =>
   catalog.value ? formatMediumDate(catalog.value.priceUpdatedAt, intlLocale.value) : ''
 const formatExchangeRateUpdatedAt = (): string =>
@@ -204,6 +240,16 @@ const getWatchPriceCompareUrl = (watch: TWatch): string =>
     market: selectedMarket.value,
     watchId: watch.watchId,
   })
+const toggleWatch = (id: string): void => {
+  announcement.value = toggleWatchSelection(
+    id,
+    { selectedIds, add, remove },
+    { changed: t('site.explorer.selectionChanged'), full: t('site.explorer.selectionFull') },
+  )
+}
+const clearSelection = (): void => {
+  announcement.value = clearWatchSelection(clear, t('site.explorer.selectionChanged'))
+}
 const openWatchDetails = (watch: TWatch): void => {
   selectedWatch.value = watch
   isWatchDetailsOpen.value = true
@@ -272,7 +318,11 @@ watchSource([debouncedSearchQuery, selectedPriceSort], () => {
         <p v-else role="alert">{{ t('site.watchList.error') }}</p>
       </div>
     </section>
-    <section v-if="!isLoading && !error" class="mt-12 w-full" aria-labelledby="watch-list-heading">
+    <section
+      v-if="!isLoading && !error"
+      class="mt-12 w-full pb-40"
+      aria-labelledby="watch-list-heading"
+    >
       <h2 id="watch-list-heading" class="sr-only">{{ t('site.watchList.heading') }}</h2>
       <div class="mb-6 flex justify-end">
         <Select v-model="selectedPriceSort">
@@ -301,17 +351,14 @@ watchSource([debouncedSearchQuery, selectedPriceSort], () => {
       >
         {{ t('site.watchSearch.empty') }}
       </p>
-      <div
-        v-else
-        data-testid="watch-grid"
-        class="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6"
-      >
+      <div v-else data-testid="watch-grid" class="grid grid-cols-2 gap-4 md:grid-cols-4">
         <Card
           v-for="card in watchCards"
           :key="card.watch.watchId"
+          :data-watch-id="card.watch.watchId"
           class="h-full gap-0 overflow-hidden py-0"
         >
-          <CardContent class="p-0">
+          <CardContent class="relative p-0">
             <button
               type="button"
               class="block aspect-square w-full cursor-pointer p-4"
@@ -325,6 +372,26 @@ watchSource([debouncedSearchQuery, selectedPriceSort], () => {
                 loading="lazy"
               />
             </button>
+            <Button
+              size="icon"
+              variant="outline"
+              class="group bg-background/90 hover:bg-background absolute top-2 right-2 z-10 rounded-full backdrop-blur transition-transform duration-200 ease-out hover:scale-105 active:scale-90 disabled:pointer-events-auto disabled:hover:scale-100 disabled:active:scale-100 motion-reduce:transition-none motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
+              :aria-label="t(card.isSelected ? 'site.explorer.remove' : 'site.explorer.add')"
+              :aria-pressed="card.isSelected"
+              :disabled="card.compareDisabled"
+              @click="toggleWatch(card.watch.watchId)"
+            >
+              <X
+                v-if="card.isSelected"
+                class="transition-transform duration-200 group-hover:scale-110 motion-reduce:transition-none"
+                aria-hidden="true"
+              />
+              <ArrowLeftRight
+                v-else
+                class="transition-transform duration-200 group-hover:scale-110 motion-reduce:transition-none"
+                aria-hidden="true"
+              />
+            </Button>
           </CardContent>
           <CardHeader class="flex-1 px-4 py-4">
             <CardTitle class="min-h-11 text-base leading-snug">
@@ -363,6 +430,14 @@ watchSource([debouncedSearchQuery, selectedPriceSort], () => {
         </Button>
       </div>
     </section>
+    <div class="sr-only" aria-live="polite">{{ announcement }}</div>
+    <WatchSelectionBar
+      v-if="selectedIds.length"
+      :items="selectionItems"
+      :compare-href="compareHref"
+      @remove="toggleWatch"
+      @clear="clearSelection"
+    />
     <WatchDetailsDialog v-model:open="isWatchDetailsOpen" :watch="selectedWatch" />
   </AppLayout>
 </template>

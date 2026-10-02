@@ -389,7 +389,7 @@ test('uses the requested responsive watch grid columns', async ({ page }) => {
   for (const [width, expectedColumnCount] of [
     [375, 2],
     [768, 4],
-    [1024, 6],
+    [1024, 4],
   ]) {
     await page.setViewportSize({ width, height: 900 })
     await page.goto('/rolex/en-us/')

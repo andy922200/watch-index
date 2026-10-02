@@ -9,7 +9,6 @@ import AppLayout from '@/components/layout/AppLayout.vue'
 import AppNav from '@/components/layout/AppNav.vue'
 import { Button } from '@/components/ui/button'
 import { useCrossBrandCatalogs } from '@/features/collection-explorer/composables/useCrossBrandCatalogs'
-import { useWatchCompareSelection } from '@/features/collection-explorer/composables/useWatchCompareSelection'
 import { brands } from '@/lib/brands'
 import { getIntlLocale } from '@/lib/formatters'
 import { DEFAULT_MARKET, getMarketFromQuery, type MarketCode, marketOptions } from '@/lib/markets'
@@ -24,6 +23,7 @@ import { Locale } from '@/plugins/i18n'
 
 import CompareStatusBanners from './components/CompareStatusBanners.vue'
 import WatchCompareTable from './components/WatchCompareTable.vue'
+import { useWatchCompareSelection } from './composables/useWatchCompareSelection'
 import { removeCompareWatch } from './utils/watchCompareActions'
 import {
   buildColumnDisplays,

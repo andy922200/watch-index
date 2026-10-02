@@ -95,7 +95,7 @@ onUnmounted(() => {
           <ArrowRight aria-hidden="true" />
         </a>
       </Button>
-      <Button v-else size="sm" class="order-5 w-full sm:w-auto" disabled>
+      <Button v-else size="sm" class="order-5 w-full sm:order-5 sm:w-auto" disabled>
         {{ t('site.explorer.compare') }}
       </Button>
     </div>

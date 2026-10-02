@@ -77,7 +77,7 @@ const CARD_HIDDEN_ROW_KEYS: ReadonlySet<string> = new Set(['brand', 'reference']
     </table>
   </div>
   <ul
-    class="mt-5 grid list-none gap-4 p-0 sm:grid-cols-2 lg:hidden"
+    class="mt-5 grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 lg:hidden"
     :aria-label="t('site.explorer.compareTable')"
   >
     <li

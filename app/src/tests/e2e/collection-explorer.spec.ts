@@ -112,6 +112,9 @@ test('shows comparison cards at 375px without horizontal overflow and names miss
     '/watch-compare.html?market_code=TW&watch_id=rolex%3Am124060-0001&watch_id=longines%3Aunknown',
   )
   await expect(page.locator('[data-compare-card]')).toHaveCount(2)
+  const compareImage = page.locator('[data-compare-card]').first().locator('img')
+  await expect(compareImage).toBeVisible()
+  expect((await compareImage.boundingBox())?.width ?? 0).toBeGreaterThanOrEqual(260)
   await expect(
     page.locator('[data-compare-card]').getByText('此市場無當地展示資料').first(),
   ).toBeVisible()
