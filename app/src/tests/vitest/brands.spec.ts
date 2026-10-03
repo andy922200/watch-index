@@ -8,10 +8,12 @@ describe('brand market options', () => {
 
     expect(longines?.marketOptions.map((market) => market.code)).toEqual([
       'TW',
+      'CN',
       'HK',
       'SG',
       'JP',
       'KR',
+      'AT',
       'DE',
       'FR',
       'IT',
@@ -19,6 +21,7 @@ describe('brand market options', () => {
       'CH',
       'GB',
       'US',
+      'TH',
     ])
   })
 })

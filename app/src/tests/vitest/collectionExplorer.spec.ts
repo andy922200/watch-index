@@ -65,9 +65,11 @@ describe('common markets', () => {
     const options = getCommonMarketOptions(brands)
     expect(options.map((option) => option.code)).toEqual([
       'TW',
+      'CN',
       'HK',
       'JP',
       'KR',
+      'AT',
       'DE',
       'FR',
       'IT',
