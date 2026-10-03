@@ -1,0 +1,22 @@
+{
+  "purpose": "新增 Longines CN 市場時，重新查核 data/traveler-refund-policies.json 既有的 CN 市場記錄（該記錄以 marketCode 為鍵、跨品牌共用）。本檔只記錄重新查核結果，未新增或修改政策記錄；格式比照 data/evidence/longines/IT/2026-09-29/traveler-refund-policy-check.json。",
+  "existingRecordChecked": {
+    "marketCode": "CN",
+    "availability": "available",
+    "assessedAt": "2026-09-11T17:00:00Z",
+    "evidencePath": "data/evidence/rolex/CN/2026-09-12/traveler-refund-policy.json",
+    "merchantParticipationRequired": true,
+    "exportValidationRequired": true
+  },
+  "recheckQueries": [
+    {
+      "sourceUrl": "https://www.chinatax.gov.cn/eng/c101276/c102444/c5240901/content.html",
+      "publisher": "State Taxation Administration of the People's Republic of China（國家稅務總局）",
+      "accessedAt": "2026-10-03（未記錄精確時間）",
+      "findings": "「Overseas visitors refer to foreigners and compatriots from Hong Kong, Macau and Taiwan Regions of China who reside in China's mainland for no more than 183 consecutive days before the date of departure.」；須於退稅商店（tax-free stores）購買；提供「Refund-upon-purchase」（信用卡預授權後於店內即買即退）與離境口岸辦理兩種方式；頁面標示更新日期 2025-06-03。該頁未載明最低購買金額。",
+      "matchesExistingRecord": true
+    }
+  ],
+  "conclusion": "PASS：既有 CN 記錄（availability=available、需零售商參與、需出口核驗）與 2026-10-03 查得的官方來源一致，未發現差異，不需變更 data/traveler-refund-policies.json。",
+  "limitations": "僅重新查核市場級制度事實；該頁面未載明最低購買金額，既有記錄亦未記載金額門檻，故無差異。未查證任何特定 Longines 專賣店是否為退稅商店，既有記錄本身亦未作此主張。"
+}

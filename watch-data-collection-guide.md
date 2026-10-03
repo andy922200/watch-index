@@ -154,8 +154,11 @@ Evidence 是「某個時間點從某個來源觀察到什麼」的快照，一�
 | 新加坡 | SG | `en-SG` | SGD | 含稅（9%） |
 | 義大利 | IT | `it-IT` | EUR | 含稅（22%） |
 | 西班牙 | ES | `es-ES` | EUR | 含稅（21%） |
+| 奧地利 | AT | `de-AT` | EUR | 含稅（20%） |
+| 中國 | CN | `zh-Hans-CN` | CNY | 含稅（增值稅 13%） |
+| 泰國 | TH | `th-TH` | THB | 含稅（VAT 7%，依據有限，見下） |
 
-Longines 的 `collectionId` 採官方子系列網址路徑的最後一段（例如 `hydroconquest`、`master-collection`），而非 Master、Conquest 等五大家族；各市場的官方子系列並非完全相同，這是官方目錄的真實市場差異，非收集缺漏。例如：`master-gmt` 未出現在 TW；`conquest-classic` 未出現在 HK；`evidenza` 未出現在 KR。瑞士市場的官方站台以德、法、義三個對等語言 store view 並存（皆為相同目錄與價格，僅語系不同），本次收錄以 `de-CH` 為代表語系，詳見 `data/evidence/longines/CH/2026-09-25/observations.json` 的 `localeDecision` 說明。德國市場另有 7 款目錄尚未收錄的配置（其中 4 款為「Sylt Edition」德國限定款），已併入共用目錄，詳見 `data/evidence/longines/DE/2026-09-27/validation-summary.json` 的 `catalogDiff`。義大利與西班牙市場的參考號集合相同，另有 2 款 HydroConquest 石英款為目錄新增配置，詳見 `data/evidence/longines/IT/2026-09-29/validation-summary.json` 的 `catalogDiff`。
+Longines 的 `collectionId` 採官方子系列網址路徑的最後一段（例如 `hydroconquest`、`master-collection`），而非 Master、Conquest 等五大家族；各市場的官方子系列並非完全相同，這是官方目錄的真實市場差異，非收集缺漏。例如：`master-gmt` 未出現在 TW；`conquest-classic` 未出現在 HK；`evidenza` 未出現在 KR。瑞士市場的官方站台以德、法、義三個對等語言 store view 並存（皆為相同目錄與價格，僅語系不同），本次收錄以 `de-CH` 為代表語系，詳見 `data/evidence/longines/CH/2026-09-25/observations.json` 的 `localeDecision` 說明。德國市場另有 7 款目錄尚未收錄的配置（其中 4 款為「Sylt Edition」德國限定款），已併入共用目錄，詳見 `data/evidence/longines/DE/2026-09-27/validation-summary.json` 的 `catalogDiff`。義大利與西班牙市場的參考號集合相同，另有 2 款 HydroConquest 石英款為目錄新增配置，詳見 `data/evidence/longines/IT/2026-09-29/validation-summary.json` 的 `catalogDiff`。奧地利與泰國的參考號皆已存在於共用目錄；泰國官方頁面只提供「尋找零售商」而無線上購物車，因此全部記為 `retailer-only`，且官方站未逐字說明標價含稅，`priceType` 的依據與限制見 `data/evidence/longines/TH/2026-10-03/collection-summary.json` 的 `tax`（已由使用者確認維持含稅 7%）。中國市場使用獨立官方網域 `longines.cn`（國際站國家選單的「中國」仍指向台灣站），資料來自官網自身的 REST 列表與商品頁內嵌狀態；另有 166 款 CN 專屬配置已併入共用目錄，其錶盤顏色與 `collectionId` 的判讀規則、待覆核項目見 `data/evidence/longines/CN/2026-10-03/collection-summary.json` 與 `validation-summary.json`。
 
 實際的收集時間、來源、輪次與價格請讀取各市場的 history 與 evidence；README 的筆數不應用作下一次收集的筆數目標。
 

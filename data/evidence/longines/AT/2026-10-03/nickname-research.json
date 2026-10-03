@@ -1,0 +1,46 @@
+{
+  "nicknameResearch": {
+    "status": "PASS with 0 accepted results",
+    "scope": "new-market",
+    "languages": [
+      "de"
+    ],
+    "queries": [
+      "Longines HydroConquest Spitzname Uhrenforum \"genannt\" Taucheruhr Longines Modell Spitzname",
+      "Longines Spirit Zulu Time Legend Diver Spitzname Uhrforum Österreich Sammler Beiname"
+    ],
+    "sourcesReviewed": 1,
+    "sourcesReviewedList": [
+      {
+        "url": "https://www.altherr.de/magazin/longines-hydroconquest-modelle",
+        "note": "實際開啟（WebFetch）：三款 HydroConquest（L3.790.4.66.6、L3.780.4.96.6、L3.781.4.06.6）皆只用官方名稱與完整參考號，無俗稱。"
+      }
+    ],
+    "sourcesUnreachable": [
+      {
+        "url": "https://uhrforum.de/threads/longines-hydroconquest-2026.617712/page-19",
+        "error": "HTTP 403 Forbidden"
+      }
+    ],
+    "searchResultsNotOpened": [
+      {
+        "url": "https://www.theuerer.at/longines-hydroconquest-2026/",
+        "note": "奧地利零售商商品頁，搜尋摘要未顯示俗稱，未開啟。"
+      },
+      {
+        "url": "https://uhrforum.de/threads/longines-legend-diver.592077/",
+        "note": "搜尋摘要未顯示俗稱，未開啟（uhrforum.de 對 WebFetch 回傳 403）。"
+      }
+    ],
+    "candidateCount": 1,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [
+      {
+        "name": "LHC",
+        "reason": "搜尋結果摘要稱論壇以「LHC」縮寫 Longines HydroConquest，屬系列名稱縮寫而非可精確對應完整配置的俗稱，且未能開啟論壇原文核實（403）。"
+      }
+    ],
+    "notes": "以 WebSearch 查詢德語俗稱並開啟可取得的來源。奧地利當地論壇與零售商內容以官方系列名稱與完整參考號指稱款式，未達「精確對應完整配置並有可信來源」門檻，因此 collectionAliases 與 localNicknames 全數維持空陣列，與 DE、IT、ES 市場檔一致。"
+  }
+}

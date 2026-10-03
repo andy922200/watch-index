@@ -1,0 +1,84 @@
+{
+  "nicknameResearch": {
+    "status": "PASS",
+    "scope": "new-market",
+    "languages": [
+      "zh-Hans"
+    ],
+    "queries": [
+      "浪琴 康卡斯 军旗 名匠 俗称 绰号 外号 表友 叫法",
+      "浪琴表 黛绰维纳 嘉岚 心月 昵称 \"又称\" 表款 别称",
+      "Longines 浪琴 深海征服者 潜水 水鬼 俗称 绿水鬼 蓝水鬼 表友",
+      "浪琴 康卡斯潜水 浪鬼 大陆 表友 称为 \"浪鬼\" 浪琴深海征服者 水鬼 平替",
+      "浪琴开创者 五星上将 型号 L2.820 为什么叫五星上将 表盘 五颗星"
+    ],
+    "sourcesReviewed": 3,
+    "sourcesReviewedList": [
+      {
+        "url": "https://www.xbiao.com/20200925/59970.html",
+        "publisher": "腕表之家 xbiao.com",
+        "note": "以瀏覽器實際開啟並讀取原文（2020-09-25，作者邱小铖）。原文：「这款腕表就是浪琴康卡斯潜水系列黑色陶瓷款（型号：L3.784.4.56.9）」，並說明「浪鬼」之稱；作者本人表示不認同此叫法。原文明確以完整參考號指稱單一款式。"
+      },
+      {
+        "url": "https://www.xbiao.com/longines/78045.html",
+        "publisher": "腕表之家 xbiao.com",
+        "note": "以瀏覽器實際開啟並讀取原文（2024-06-27 起）。原文：「浪琴康卡斯潜水表，被表友们戏称为“浪琴水鬼”」，指康卡斯潜水系列整體（含多種尺寸、GMT 款），為系列層級稱呼。"
+      },
+      {
+        "url": "https://www.altherr.de/magazin/longines-hydroconquest-modelle",
+        "publisher": "ALTHERR",
+        "note": "（與 AT 市場研究共用查詢，非中文來源，與 CN 無關，不計入 CN 採用判斷）"
+      }
+    ],
+    "sourcesUnreachable": [
+      {
+        "url": "https://www.zhihu.com/question/339587534/answer/2434417751",
+        "error": "HTTP 403 Forbidden（WebFetch）"
+      }
+    ],
+    "searchResultsNotOpened": [
+      {
+        "url": "https://www.sohu.com/a/1078503356_122471764",
+        "note": "搜尋結果，未開啟。"
+      },
+      {
+        "url": "https://www.ctime.com/article/longines/1520.html",
+        "note": "搜尋結果，未開啟。"
+      }
+    ],
+    "candidateCount": 4,
+    "acceptedCollectionAliasCount": 1,
+    "acceptedLocalNicknameCount": 1,
+    "accepted": [
+      {
+        "type": "collectionAlias",
+        "collectionId": "hydroconquest",
+        "name": "浪琴水鬼",
+        "source": "https://www.xbiao.com/longines/78045.html",
+        "reason": "原文以「康卡斯潜水表」整個系列指稱，屬系列層級別名，採用於 hydroconquest 的 collectionAliases。"
+      },
+      {
+        "type": "localNickname",
+        "reference": "L3.784.4.56.9",
+        "name": "浪鬼",
+        "source": "https://www.xbiao.com/20200925/59970.html",
+        "reason": "原文明確以完整參考號 L3.784.4.56.9 指稱「浪鬼」，且該參考號在 CN 官網列表中存在；採用於該參考號的 localNicknames（僅限此款，不擴張到整個系列）。"
+      }
+    ],
+    "rejectedCandidates": [
+      {
+        "name": "黑武士",
+        "reason": "僅出現在 xbiao 文章下方網友留言（「它的别名 黑武士」），非文章作者或可信出版方的說明，且未指向完整參考號。"
+      },
+      {
+        "name": "五星上将（開創者系列）",
+        "reason": "僅見搜尋結果摘要，來源（知乎）回傳 403 無法開啟；另外查詢「五星上将」與 L2.820 的結果未出現任何來源說明此稱呼，無法驗證對應的完整配置，拒絕採用。"
+      },
+      {
+        "name": "浪鬼（系列層級）",
+        "reason": "2020 年文章中的「浪鬼」明確只對應單一參考號，不採用為整個 hydroconquest 系列的別名（系列層級別名採用 2024 年文章的「浪琴水鬼」）。HK／TW 市場檔雖以其他來源採用「浪鬼」作為系列別名，但 CN 本次依本次可驗證的來源範圍處理。"
+      }
+    ],
+    "notes": "以 WebSearch 查詢簡體中文俗稱並以瀏覽器開啟可取得的來源。其他系列名稱（军旗、名匠、康卡斯、黛绰维纳、嘉岚、心月）在搜尋結果中只見官方名稱與系列介紹，沒有可精確對應的別名。"
+  }
+}

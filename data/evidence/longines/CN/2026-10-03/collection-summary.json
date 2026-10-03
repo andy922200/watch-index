@@ -1,0 +1,1996 @@
+{
+  "brandId": "longines",
+  "marketCode": "CN",
+  "task": "new-market",
+  "locale": "zh-Hans-CN",
+  "salesRegion": "China",
+  "entryPoint": {
+    "startedFrom": "https://www.longines.com/（瀏覽器預設語系導向 https://www.longines.com/zh-tw）",
+    "resolvedViaCountrySelector": "國際站國家選單「中國」→ /zh-tw（台灣站），不是中國大陸站；改以官方域名 https://www.longines.cn/ 作為中國大陸官方站（國家選單中的「中国」位於該站自己的選單）。",
+    "confirmedProductListingUrl": "https://www.longines.cn/watches",
+    "note": "longines.cn 為官方獨立網域（商標、頁尾版權「© Longines Watch Co. Francillon Ltd.」、沪ICP备號與營業執照連結），入口 URL 由首頁導覽「腕表选购」連結取得，非猜測。"
+  },
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "not-applicable",
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "PASS",
+    "fallbackTool": null,
+    "notes": "Chrome DevTools MCP list_network_requests 讀取官網自身 productList 請求（reqid 85）後，以同源 fetch 重放。商品頁資料來自 SSR 內嵌狀態，無獨立 JSON API；Cookie 等僅出現在工具輸出，未寫入 evidence。"
+  },
+  "stopEvidence": {
+    "officialTotalNum": 666,
+    "uniqueSkusCollected": 666,
+    "pagesCollected": 56,
+    "totalPage": 56,
+    "beyondLastPageResponse": {
+      "page": 57,
+      "products": 0,
+      "hasMore": false,
+      "totalNum": 666
+    },
+    "lastPageItemCount": 10,
+    "apiPageTotals": [
+      666
+    ],
+    "independentChecks": [
+      {
+        "name": "第二輪完整列表",
+        "result": "pass 2 重新取得 56 頁，唯一 SKU 666，與 pass 1 的 SKU 集合完全相同（0 差異），價格 0 差異。"
+      },
+      {
+        "name": "API 分面計數",
+        "result": "同一 API 第 1 頁回應的分面（性別、機芯、鑽石裝飾、表殼形狀、防水深度）選項計數加總皆為 666。",
+        "facets": [
+          {
+            "code": "bracelet_interchangeability",
+            "label": "快速更换系统",
+            "optionCountSum": 59
+          },
+          {
+            "code": "dial_specificities",
+            "label": "特别功能",
+            "optionCountSum": 126
+          },
+          {
+            "code": "case_specificities",
+            "label": "表壳特点",
+            "optionCountSum": 153
+          },
+          {
+            "code": "filter_gender",
+            "label": "性别",
+            "optionCountSum": 666
+          },
+          {
+            "code": "filter_movement",
+            "label": "机芯",
+            "optionCountSum": 666
+          },
+          {
+            "code": "filter_bracelet",
+            "label": "表带材质",
+            "optionCountSum": 665
+          },
+          {
+            "code": "filter_case_width",
+            "label": "尺寸",
+            "optionCountSum": 651
+          },
+          {
+            "code": "filter_dial_color",
+            "label": "表盘颜色",
+            "optionCountSum": 661
+          },
+          {
+            "code": "filter_has_diamonds",
+            "label": "钻石装饰",
+            "optionCountSum": 666
+          },
+          {
+            "code": "filter_case",
+            "label": "表壳形状",
+            "optionCountSum": 666
+          },
+          {
+            "code": "filter_case_material",
+            "label": "表壳材质",
+            "optionCountSum": 663
+          },
+          {
+            "code": "filter_water_resistance",
+            "label": "防水深度",
+            "optionCountSum": 666
+          },
+          {
+            "code": "filter_color",
+            "label": "颜色",
+            "optionCountSum": 5
+          },
+          {
+            "code": "filter_is_novelty",
+            "label": "最新表款",
+            "optionCountSum": 0
+          }
+        ]
+      },
+      {
+        "name": "商品頁價格",
+        "result": "666 個商品頁內嵌價格與列表價格 666/666 完全一致。"
+      }
+    ],
+    "discrepancy": {
+      "summary": "列表頁 SSR／渲染文字顯示「664 件作品」（Nuxt content.totalNum=664），但 productList API 每一頁的 totalNum 皆為 666，且兩輪收集各得 666 個唯一 SKU。",
+      "ssrObservedAt": "2026-10-03T00:29:12.289Z",
+      "ssrPage1Skus": [
+        "L3.788.4.99.6",
+        "L8.115.4.87.6",
+        "L2.449.5.89.7",
+        "L2.449.5.87.7",
+        null,
+        "L2.449.4.97.6",
+        "L2.960.4.93.2",
+        "L2.962.4.73.2",
+        "L8.142.4.07.6",
+        "L2.960.4.78.2",
+        "L2.950.4.99.6"
+      ],
+      "apiPage1Skus": [
+        "L3.788.4.99.6",
+        "L8.115.4.87.6",
+        "L2.449.5.89.7",
+        "L2.449.5.87.7",
+        "L2.449.4.97.6",
+        "L2.960.4.93.2",
+        "L2.962.4.73.2",
+        "L8.142.4.07.6",
+        "L2.950.4.99.2",
+        "L2.960.4.78.2"
+      ],
+      "observations": "SSR 第 1 頁商品清單含一個 sku 為 null 的廣告版位（adMaps position 1 size 2），且最後一款為 L2.950.4.99.6，而 API 第 1 頁為 L2.950.4.99.2（兩者皆存在於 666 款中）。差 2 與廣告版位 size=2 吻合，但官方未說明，本次不能證實此為原因。",
+      "resolution": "以 API 的 666（兩輪唯一 SKU 與分面計數皆一致）為準；SSR 的 664 記為未解釋的官方口徑差異，不影響本次唯一配置的完整性判定。"
+    },
+    "reasoning": "官方 API totalNum=666、56 頁累積唯一 SKU 666、第 57 頁官方回傳空清單且 hasMore=false；第二輪獨立重新收集得到相同集合；API 分面加總 666。"
+  },
+  "recordCounts": {
+    "rawItemsReturned": 666,
+    "uniqueReferences": 666,
+    "duplicatesFound": 0
+  },
+  "conflictsFound": "價格與狀態無衝突：pass 1、pass 2、商品頁（666/666）與獨立渲染抽查（21 款）的價格完全一致。SSR 總數 664 與 API 666 的差異見 stopEvidence.discrepancy。",
+  "attempts": {
+    "preCollection": [
+      {
+        "time": "約 2026-10-02T23:41Z（未記錄秒級時間）",
+        "method": "開啟 https://www.longines.com/ 並列出國家選單全部連結",
+        "result": "「中國」連結指向 /zh-tw（與「台湾地区」相同），無獨立中國大陸 store；選單另有 /th、/de-at。"
+      },
+      {
+        "time": "約 2026-10-02T23:41Z（未記錄秒級時間）",
+        "method": "開啟 https://www.longines.cn/ 與 https://www.longines.cn/watches",
+        "result": "成功；列表頁渲染「664 件作品」。"
+      },
+      {
+        "time": "2026-10-02T23:43:08Z",
+        "method": "點擊載入更多後以 list_network_requests／get_network_request 讀取 productList?page=2（reqid 85）",
+        "result": "200，回應 totalNum=666、totalPage=56。"
+      },
+      {
+        "time": "約 2026-10-02T23:44Z（未記錄秒級時間）",
+        "method": "以單次 evaluate_script 在頁面內同步迴圈抓取全部頁面並直接回傳",
+        "result": "失敗：Runtime.callFunctionOn 逾時（工具層級 protocolTimeout），未取得任何資料也未寫入任何檔案；改為在頁面內背景執行、輪詢進度、最後分批落盤。"
+      }
+    ],
+    "pass1": {
+      "startedAt": "2026-10-02T23:47:33.408Z",
+      "finishedAt": "2026-10-02T23:51:07.294Z",
+      "pagedRequests": [
+        {
+          "page": 1,
+          "try": 1,
+          "started": "2026-10-02T23:47:33.408Z",
+          "status": 200,
+          "code": 0,
+          "products": 10,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 2,
+          "try": 1,
+          "started": "2026-10-02T23:47:35.889Z",
+          "status": 200,
+          "code": 0,
+          "products": 10,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 3,
+          "try": 1,
+          "started": "2026-10-02T23:47:38.613Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 4,
+          "try": 1,
+          "started": "2026-10-02T23:47:41.609Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 5,
+          "try": 1,
+          "started": "2026-10-02T23:47:44.126Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 6,
+          "try": 1,
+          "started": "2026-10-02T23:47:46.906Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 7,
+          "try": 1,
+          "started": "2026-10-02T23:47:48.744Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 8,
+          "try": 1,
+          "started": "2026-10-02T23:47:51.167Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 9,
+          "try": 1,
+          "started": "2026-10-02T23:47:53.989Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 10,
+          "try": 1,
+          "started": "2026-10-02T23:47:56.857Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 11,
+          "try": 1,
+          "started": "2026-10-02T23:48:00.032Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 12,
+          "try": 1,
+          "started": "2026-10-02T23:48:03.785Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 13,
+          "try": 1,
+          "started": "2026-10-02T23:48:12.027Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 14,
+          "try": 1,
+          "started": "2026-10-02T23:48:17.246Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 15,
+          "try": 1,
+          "started": "2026-10-02T23:48:23.281Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 16,
+          "try": 1,
+          "started": "2026-10-02T23:48:26.705Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 17,
+          "try": 1,
+          "started": "2026-10-02T23:48:30.039Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 18,
+          "try": 1,
+          "started": "2026-10-02T23:48:33.956Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 19,
+          "try": 1,
+          "started": "2026-10-02T23:48:37.681Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 20,
+          "try": 1,
+          "started": "2026-10-02T23:48:41.071Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 21,
+          "try": 1,
+          "started": "2026-10-02T23:48:44.214Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 22,
+          "try": 1,
+          "started": "2026-10-02T23:48:47.206Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 23,
+          "try": 1,
+          "started": "2026-10-02T23:48:50.391Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 24,
+          "try": 1,
+          "started": "2026-10-02T23:48:52.981Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 25,
+          "try": 1,
+          "started": "2026-10-02T23:48:55.773Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 26,
+          "try": 1,
+          "started": "2026-10-02T23:48:59.157Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 27,
+          "try": 1,
+          "started": "2026-10-02T23:49:02.489Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 28,
+          "try": 1,
+          "started": "2026-10-02T23:49:11.314Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 29,
+          "try": 1,
+          "started": "2026-10-02T23:49:15.789Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 30,
+          "try": 1,
+          "started": "2026-10-02T23:49:22.864Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 31,
+          "try": 1,
+          "started": "2026-10-02T23:49:27.019Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 32,
+          "try": 1,
+          "started": "2026-10-02T23:49:30.489Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 33,
+          "try": 1,
+          "started": "2026-10-02T23:49:33.902Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 34,
+          "try": 1,
+          "started": "2026-10-02T23:49:37.163Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 35,
+          "try": 1,
+          "started": "2026-10-02T23:49:39.714Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 36,
+          "try": 1,
+          "started": "2026-10-02T23:49:42.106Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 37,
+          "try": 1,
+          "started": "2026-10-02T23:49:44.472Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 38,
+          "try": 1,
+          "started": "2026-10-02T23:49:47.350Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 39,
+          "try": 1,
+          "started": "2026-10-02T23:49:50.332Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 40,
+          "try": 1,
+          "started": "2026-10-02T23:49:52.856Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 41,
+          "try": 1,
+          "started": "2026-10-02T23:49:55.972Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 42,
+          "try": 1,
+          "started": "2026-10-02T23:49:59.422Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 43,
+          "try": 1,
+          "started": "2026-10-02T23:50:02.163Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 44,
+          "try": 1,
+          "started": "2026-10-02T23:50:11.989Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 45,
+          "try": 1,
+          "started": "2026-10-02T23:50:23.236Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 46,
+          "try": 1,
+          "started": "2026-10-02T23:50:29.306Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 47,
+          "try": 1,
+          "started": "2026-10-02T23:50:35.281Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 48,
+          "try": 1,
+          "started": "2026-10-02T23:50:38.249Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 49,
+          "try": 1,
+          "started": "2026-10-02T23:50:42.355Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 50,
+          "try": 1,
+          "started": "2026-10-02T23:50:45.603Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 51,
+          "try": 1,
+          "started": "2026-10-02T23:50:47.851Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 52,
+          "try": 1,
+          "started": "2026-10-02T23:50:50.208Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 53,
+          "try": 1,
+          "started": "2026-10-02T23:50:52.184Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 54,
+          "try": 1,
+          "started": "2026-10-02T23:50:55.598Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 55,
+          "try": 1,
+          "started": "2026-10-02T23:50:57.806Z",
+          "status": 200,
+          "code": 0,
+          "products": 12,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": true,
+          "retryAfter": null
+        },
+        {
+          "page": 56,
+          "try": 1,
+          "started": "2026-10-02T23:51:01.829Z",
+          "status": 200,
+          "code": 0,
+          "products": 10,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": false,
+          "retryAfter": null
+        },
+        {
+          "page": 57,
+          "try": 1,
+          "started": "2026-10-02T23:51:05.412Z",
+          "status": 200,
+          "code": 0,
+          "products": 0,
+          "totalNum": 666,
+          "totalPage": 56,
+          "hasMore": false,
+          "retryAfter": null
+        }
+      ]
+    },
+    "pass2List": {
+      "attempts": [
+        {
+          "page": 1,
+          "try": 1,
+          "started": "2026-10-02T23:53:24.565Z",
+          "status": 200,
+          "code": 0,
+          "n": 10,
+          "totalNum": 666
+        },
+        {
+          "page": 2,
+          "try": 1,
+          "started": "2026-10-02T23:53:27.284Z",
+          "status": 200,
+          "code": 0,
+          "n": 10,
+          "totalNum": 666
+        },
+        {
+          "page": 3,
+          "try": 1,
+          "started": "2026-10-02T23:53:30.036Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 4,
+          "try": 1,
+          "started": "2026-10-02T23:53:34.603Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 5,
+          "try": 1,
+          "started": "2026-10-02T23:53:36.734Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 6,
+          "try": 1,
+          "started": "2026-10-02T23:53:39.086Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 7,
+          "try": 1,
+          "started": "2026-10-02T23:53:41.103Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 8,
+          "try": 1,
+          "started": "2026-10-02T23:53:43.002Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 9,
+          "try": 1,
+          "started": "2026-10-02T23:53:51.004Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 10,
+          "try": 1,
+          "started": "2026-10-02T23:53:53.854Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 11,
+          "try": 1,
+          "started": "2026-10-02T23:53:56.244Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 12,
+          "try": 1,
+          "started": "2026-10-02T23:53:58.919Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 13,
+          "try": 1,
+          "started": "2026-10-02T23:54:02.003Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 14,
+          "try": 1,
+          "started": "2026-10-02T23:54:06.384Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 15,
+          "try": 1,
+          "started": "2026-10-02T23:54:12.504Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 16,
+          "try": 1,
+          "started": "2026-10-02T23:54:16.653Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 17,
+          "try": 1,
+          "started": "2026-10-02T23:54:20.670Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 18,
+          "try": 1,
+          "started": "2026-10-02T23:54:29.340Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 19,
+          "try": 1,
+          "started": "2026-10-02T23:54:34.121Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 20,
+          "try": 1,
+          "started": "2026-10-02T23:54:37.102Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 21,
+          "try": 1,
+          "started": "2026-10-02T23:54:40.269Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 22,
+          "try": 1,
+          "started": "2026-10-02T23:54:43.885Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 23,
+          "try": 1,
+          "started": "2026-10-02T23:54:47.585Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 24,
+          "try": 1,
+          "started": "2026-10-02T23:54:50.020Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 25,
+          "try": 1,
+          "started": "2026-10-02T23:54:53.236Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 26,
+          "try": 1,
+          "started": "2026-10-02T23:54:56.462Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 27,
+          "try": 1,
+          "started": "2026-10-02T23:54:59.403Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 28,
+          "try": 1,
+          "started": "2026-10-02T23:55:03.269Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 29,
+          "try": 1,
+          "started": "2026-10-02T23:55:07.473Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 30,
+          "try": 1,
+          "started": "2026-10-02T23:55:16.133Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 31,
+          "try": 1,
+          "started": "2026-10-02T23:55:21.683Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 32,
+          "try": 1,
+          "started": "2026-10-02T23:55:25.336Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 33,
+          "try": 1,
+          "started": "2026-10-02T23:55:29.520Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 34,
+          "try": 1,
+          "started": "2026-10-02T23:55:37.387Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 35,
+          "try": 1,
+          "started": "2026-10-02T23:55:40.269Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 36,
+          "try": 1,
+          "started": "2026-10-02T23:55:43.388Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 37,
+          "try": 1,
+          "started": "2026-10-02T23:55:45.883Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 38,
+          "try": 1,
+          "started": "2026-10-02T23:55:48.669Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 39,
+          "try": 1,
+          "started": "2026-10-02T23:55:51.235Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 40,
+          "try": 1,
+          "started": "2026-10-02T23:55:53.842Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 41,
+          "try": 1,
+          "started": "2026-10-02T23:55:56.486Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 42,
+          "try": 1,
+          "started": "2026-10-02T23:55:59.069Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 43,
+          "try": 1,
+          "started": "2026-10-02T23:56:01.620Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 44,
+          "try": 1,
+          "started": "2026-10-02T23:56:05.736Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 45,
+          "try": 1,
+          "started": "2026-10-02T23:56:18.036Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 46,
+          "try": 1,
+          "started": "2026-10-02T23:56:21.484Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 47,
+          "try": 1,
+          "started": "2026-10-02T23:56:24.695Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 48,
+          "try": 1,
+          "started": "2026-10-02T23:56:26.836Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 49,
+          "try": 1,
+          "started": "2026-10-02T23:56:29.369Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 50,
+          "try": 1,
+          "started": "2026-10-02T23:56:32.152Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 51,
+          "try": 1,
+          "started": "2026-10-02T23:56:34.902Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 52,
+          "try": 1,
+          "started": "2026-10-02T23:56:37.069Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 53,
+          "try": 1,
+          "started": "2026-10-02T23:56:38.669Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 54,
+          "try": 1,
+          "started": "2026-10-02T23:56:41.708Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 55,
+          "try": 1,
+          "started": "2026-10-02T23:56:44.772Z",
+          "status": 200,
+          "code": 0,
+          "n": 12,
+          "totalNum": 666
+        },
+        {
+          "page": 56,
+          "try": 1,
+          "started": "2026-10-02T23:56:47.771Z",
+          "status": 200,
+          "code": 0,
+          "n": 10,
+          "totalNum": 666
+        }
+      ]
+    },
+    "pdpRequests": {
+      "total": 669,
+      "startedAt": "2026-10-02T23:53:24.565Z",
+      "finishedAt": "2026-10-03T00:15:50.585Z",
+      "failedOrRetried": [
+        {
+          "sku": "L3.821.4.53.2",
+          "try": 1,
+          "started": "2026-10-03T00:00:04.044Z",
+          "status": 524,
+          "err": "no nuxt"
+        },
+        {
+          "sku": "L3.430.4.92.9",
+          "try": 1,
+          "started": "2026-10-03T00:07:59.267Z",
+          "status": 524,
+          "err": "no nuxt"
+        },
+        {
+          "sku": "L2.257.5.87.7",
+          "try": 1,
+          "started": "2026-10-03T00:15:00.409Z",
+          "status": 524,
+          "err": "no nuxt"
+        }
+      ],
+      "note": "3 次 HTTP 524（逾時閘道）皆於下一次嘗試成功，666 個商品頁全部取得。"
+    }
+  },
+  "collectionsFound": 31,
+  "collectionCounts": {
+    "1832": 3,
+    "conquest": 45,
+    "conquest-chronograph": 7,
+    "conquest-classic": 1,
+    "conquest-heritage": 13,
+    "dolcevita": 40,
+    "elegant": 71,
+    "evidenza": 14,
+    "flagship": 47,
+    "flagship-heritage": 8,
+    "heritage-classic": 3,
+    "hydroconquest": 55,
+    "hydroconquest-gmt": 10,
+    "la-grande-classique": 29,
+    "legend-diver": 9,
+    "lyre": 1,
+    "master-collection": 95,
+    "master-collection-chrono-monopusher": 2,
+    "master-collection-chronograph": 12,
+    "master-collection-moonphase": 26,
+    "mini-dolcevita": 19,
+    "pilot-majetek": 3,
+    "presence": 39,
+    "primaluna": 56,
+    "record": 23,
+    "spirit": 6,
+    "spirit-chronograph": 3,
+    "spirit-flyback": 6,
+    "spirit-pilot-flyback": 4,
+    "spirit-zulu-time": 15,
+    "ultra-chron": 1
+  },
+  "collectionIdDerivation": {
+    "rule": "（1）既有 catalog 已有的參考號沿用 catalog 的 collectionId（500 款）；（2）新配置先以「去除【线上专供】／【直营专供】前綴後的 productCollection 名稱」對照既有 catalog 的對應表（該對應表在既有 500 款上為 100% 單一對應，30 個名稱無例外）取得 collectionId（119 款）；（3）對照表查無的 47 款，採 CN 官方分類路徑 /watches/<family>/<sub-collection>/... 的第三段作為 collectionId；其中 3 款（L1.651.4.09.2、L2.330.4.93.0、L4.785.8.73.2）的路徑為 CN 專有上層分類名稱，依使用者指示改歸入 heritage-classic（见 userDecisions）。",
+    "stats": {
+      "collectionId existing-catalog": 500,
+      "collectionId name-match": 119,
+      "collectionId cn-category-path": 44,
+      "collectionId user-directed": 3
+    },
+    "pendingReview": [
+      {
+        "reference": "L4.921.4.52.2",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.921.4.11.2",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.321.4.11.2",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.921.4.12.6",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.322.4.11.2",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.922.4.11.2",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.921.4.92.6",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.921.4.52.6",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.321.4.12.6",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.322.4.12.6",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.905.4.11.2",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.904.4.11.2",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.922.4.52.6",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.922.4.12.6",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.321.2.11.2",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.922.4.92.6",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence/presence-exclusive)"
+      },
+      {
+        "reference": "L4.322.4.11.6",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.921.4.72.6",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.921.4.11.6",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.321.4.11.6",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.322.2.11.2",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.960.4.11.6",
+        "collectionId": "lyre",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/lyre)"
+      },
+      {
+        "reference": "L4.325.4.92.2",
+        "collectionId": "1832",
+        "basis": "CN-official-category-path-segment-3 (/watches/heritage/1832)"
+      },
+      {
+        "reference": "L4.922.4.11.6",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.905.4.11.6",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.322.1.11.7",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.922.2.11.2",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.322.4.92.6",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.905.1.11.2",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.322.1.12.7",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.922.4.72.6",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.321.1.12.7",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.921.2.12.7",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.905.2.11.2",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.922.2.32.7",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.922.2.11.7",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.321.1.11.7",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.922.2.12.7",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.325.4.87.2",
+        "collectionId": "1832",
+        "basis": "CN-official-category-path-segment-3 (/watches/heritage/1832)"
+      },
+      {
+        "reference": "L4.825.4.52.0",
+        "collectionId": "1832",
+        "basis": "CN-official-category-path-segment-3 (/watches/heritage/1832)"
+      },
+      {
+        "reference": "L4.322.2.12.7",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L3.836.4.52.9",
+        "collectionId": "conquest-chronograph",
+        "basis": "CN-official-category-path-segment-3 (/watches/conquest2/conquest-chronograph/conquest-chronograph-exclusive)"
+      },
+      {
+        "reference": "L4.322.2.11.7",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      },
+      {
+        "reference": "L4.922.1.11.7",
+        "collectionId": "presence",
+        "basis": "CN-official-category-path-segment-3 (/watches/elegance/presence)"
+      }
+    ],
+    "note": "第（3）類中 presence（39）、1832（3）、lyre（1）、conquest-chronograph（1）為 CN 官方分類的子系列，其前端多語系名稱尚未建立。原先 heritage-collection（1）與 more-heritage（2）已由使用者指示歸類為 heritage-classic（见 userDecisions）。"
+  },
+  "newCatalogAdditions": {
+    "count": 166,
+    "basis": "這 166 款參考號不在既有 catalog 聯集（12 個市場）中，且以 zh_tw、de_at、en_int 三個國際站 store 的 GraphQL 以 sku 查詢皆回傳 total_count=0（抽查 L4.921.4.52.2、L1.651.4.09.2、L2.793.4.96.6），推定為 CN 專屬配置（部分為【线上专供】【直营专供】【全球限量】）。",
+    "dialColorsRule": "依指南規則逐字判讀 CN 官方錶盤文字（見 observations 的 catalogAddition.dialColorsBasis）。需覆核：「复古放射波纹」5 款無任何顏色字，依指南「無可報告顏色用 other」暫列 other（既有 38 款同文字款式在 catalog 皆為 silver）；「银色」8 款依字面列 silver（既有 28 款同文字款式在 catalog 為 beige，來源為國際站其他文字如 Opaline Ivory）；「碳黑色」1 款依字面列 black（既有 8 款同文字款式在 catalog 為 grey，對應 Anthracite）。",
+    "imageUrlRule": "採 PDP content.image（官網實際提供的 1024px cache 版本）。官網原圖（去除 /cache/<hash>）為 2000px 且體積最大約 4.6 MB，已驗證可取得但不採用。"
+  },
+  "purchaseChannel": {
+    "decision": "listed",
+    "evidence": "商品頁實際渲染（iframe）共 32 款不重複 SKU（通路抽樣 16 款 + 獨立抽查 21 款，兩組有重疊；含【直营专供】、【线上专供】款）：31 款顯示「加入购物车」（預售款顯示「预售购买」），1 款（L5.255.4.28.2）顯示「到货提醒」而無加入購物車（暫時缺貨，公開價格仍在，比照 IT／ES 對缺貨款仍記為 listed）。所有款式皆另有「预约门店鉴赏」。官方條款亦說明在網站購買時按顯示價格付款。未對全部 666 筆逐頁渲染，其餘款式的通路由抽樣涵蓋推定，列為限制。",
+    "purchaseChannelSample": {
+      "L3.350.4.09.6": {
+        "observedAt": "2026-10-03T00:06:48.566Z",
+        "addToCart": true,
+        "buyNow": true,
+        "reserve": true,
+        "soldOut": false,
+        "priceCtx": "00 mm | ¥ 11,000.00 | 加入购物车 | 立即选购 | 预约门店鉴赏 | 探索更多免息商品 | 购",
+        "btns": [
+          "表带选购",
+          "加入购物车",
+          "立即选购",
+          "预约发货",
+          "腕表选购"
+        ]
+      },
+      "L3.779.4.98.6": {
+        "observedAt": "2026-10-03T00:06:57.580Z",
+        "addToCart": true,
+        "buyNow": true,
+        "reserve": true,
+        "soldOut": false,
+        "priceCtx": "00 mm | ¥ 16,300.00 | 加入购物车 | 立即选购 | 预约门店鉴赏 | 探索更多免息商品 | 购",
+        "btns": [
+          "表带选购",
+          "加入购物车",
+          "立即选购",
+          "预约发货",
+          "腕表选购"
+        ]
+      },
+      "L5.255.4.08.2": {
+        "observedAt": "2026-10-03T00:07:06.596Z",
+        "addToCart": true,
+        "buyNow": true,
+        "reserve": true,
+        "soldOut": false,
+        "priceCtx": "00 mm | ¥ 12,400.00 | 加入购物车 | 立即选购 | 预约门店鉴赏 | 探索更多免息商品 | 购",
+        "btns": [
+          "表带选购",
+          "加入购物车",
+          "立即选购",
+          "预约发货",
+          "腕表选购"
+        ]
+      },
+      "L3.788.4.98.6": {
+        "observedAt": "2026-10-03T00:07:15.609Z",
+        "addToCart": true,
+        "buyNow": true,
+        "reserve": true,
+        "soldOut": false,
+        "priceCtx": "00 mm | ¥ 16,300.00 | 加入购物车 | 立即选购 | 预约门店鉴赏 | 6款相似推荐 | 【直营",
+        "btns": [
+          "表带选购",
+          "加入购物车",
+          "立即选购",
+          "腕表选购"
+        ]
+      },
+      "L5.255.4.28.2": {
+        "observedAt": "2026-10-03T00:07:24.616Z",
+        "addToCart": false,
+        "buyNow": true,
+        "reserve": true,
+        "soldOut": false,
+        "priceCtx": "00 mm | ¥ 12,400.00 | 到货提醒 | 预约门店鉴赏 | 探索更多免息商品 | 购表解锁终身售",
+        "btns": [
+          "表带选购",
+          "到货提醒",
+          "预约发货",
+          "立即选购",
+          "腕表选购"
+        ]
+      },
+      "L5.255.4.71.4": {
+        "observedAt": "2026-10-03T00:07:33.630Z",
+        "addToCart": true,
+        "buyNow": true,
+        "reserve": true,
+        "soldOut": false,
+        "priceCtx": "00 mm | ¥ 12,000.00 | 加入购物车 | 立即选购 | 预约门店鉴赏 | 探索更多免息商品 | 购",
+        "btns": [
+          "表带选购",
+          "加入购物车",
+          "立即选购",
+          "预约发货",
+          "¥ 1,770.00 添加到购物车",
+          "腕表选购"
+        ]
+      },
+      "L4.523.0.90.2": {
+        "observedAt": "2026-10-03T00:07:42.642Z",
+        "addToCart": true,
+        "buyNow": true,
+        "reserve": true,
+        "soldOut": false,
+        "priceCtx": " | 6期免息 | ¥ 30,100.00 | 加入购物车 | 立即选购 | 预约门店鉴赏 | 探索更多免息商品 | 购",
+        "btns": [
+          "表带选购",
+          "加入购物车",
+          "立即选购",
+          "预约发货",
+          "¥ 1,770.00 添加到购物车",
+          "腕表选购"
+        ]
+      },
+      "L2.386.4.92.6": {
+        "observedAt": "2026-10-03T00:07:51.655Z",
+        "addToCart": true,
+        "buyNow": true,
+        "reserve": true,
+        "soldOut": false,
+        "priceCtx": "00 mm | ¥ 8,000.00 | 加入购物车 | 立即选购 | 预约门店鉴赏 | 探索更多免息商品 | 购表",
+        "btns": [
+          "表带选购",
+          "加入购物车",
+          "立即选购",
+          "预约发货",
+          "腕表选购"
+        ]
+      },
+      "L5.255.4.61.2": {
+        "observedAt": "2026-10-03T00:08:00.669Z",
+        "addToCart": true,
+        "buyNow": true,
+        "reserve": true,
+        "soldOut": false,
+        "priceCtx": " | 6期免息 | ¥ 12,000.00 | 加入购物车 | 立即选购 | 预约门店鉴赏 | 探索更多免息商品 | 购",
+        "btns": [
+          "表带选购",
+          "加入购物车",
+          "立即选购",
+          "预约发货",
+          "腕表选购"
+        ]
+      },
+      "L2.960.4.93.2": {
+        "observedAt": "2026-10-03T00:08:09.680Z",
+        "addToCart": true,
+        "buyNow": true,
+        "reserve": true,
+        "soldOut": false,
+        "priceCtx": "12期免息 | ¥ 28,300.00 | 加入购物车 | 预售购买 | 预约门店鉴赏 | 探索更多免息商品 | 购",
+        "btns": [
+          "表带选购",
+          "加入购物车",
+          "预售购买",
+          "预约发货",
+          "¥ 1,420.00 添加到购物车",
+          "立即选购",
+          "腕表选购"
+        ]
+      },
+      "L3.350.4.02.6": {
+        "observedAt": "2026-10-03T00:08:18.695Z",
+        "addToCart": true,
+        "buyNow": true,
+        "reserve": true,
+        "soldOut": false,
+        "priceCtx": "00 mm | ¥ 11,000.00 | 加入购物车 | 立即选购 | 预约门店鉴赏 | 探索更多免息商品 | 购",
+        "btns": [
+          "表带选购",
+          "加入购物车",
+          "立即选购",
+          "预约发货",
+          "腕表选购"
+        ]
+      },
+      "L3.779.4.90.6": {
+        "observedAt": "2026-10-03T00:08:27.710Z",
+        "addToCart": true,
+        "buyNow": true,
+        "reserve": true,
+        "soldOut": false,
+        "priceCtx": "00 mm | ¥ 17,200.00 | 加入购物车 | 立即选购 | 预约门店鉴赏 | 探索更多免息商品 | 购",
+        "btns": [
+          "表带选购",
+          "加入购物车",
+          "立即选购",
+          "预约发货",
+          "腕表选购"
+        ]
+      },
+      "L2.950.4.93.6": {
+        "observedAt": "2026-10-03T00:08:36.726Z",
+        "addToCart": true,
+        "buyNow": true,
+        "reserve": true,
+        "soldOut": false,
+        "priceCtx": "00 mm | ¥ 19,900.00 | 加入购物车 | 立即选购 | 预约门店鉴赏 | 探索更多免息商品 | 购",
+        "btns": [
+          "表带选购",
+          "加入购物车",
+          "立即选购",
+          "预约发货",
+          "腕表选购"
+        ]
+      },
+      "L3.812.4.63.6": {
+        "observedAt": "2026-10-03T00:08:45.739Z",
+        "addToCart": true,
+        "buyNow": true,
+        "reserve": true,
+        "soldOut": false,
+        "priceCtx": "00 mm | ¥ 26,100.00 | 加入购物车 | 立即选购 | 预约门店鉴赏 | 探索更多免息商品 | 购",
+        "btns": [
+          "表带选购",
+          "加入购物车",
+          "立即选购",
+          "预约发货",
+          "¥ 2,220.00 添加到购物车",
+          "腕表选购"
+        ]
+      },
+      "L3.812.4.50.6": {
+        "observedAt": "2026-10-03T00:08:54.751Z",
+        "addToCart": true,
+        "buyNow": true,
+        "reserve": true,
+        "soldOut": false,
+        "priceCtx": "00 mm | ¥ 26,100.00 | 加入购物车 | 立即选购 | 预约门店鉴赏 | 探索更多免息商品 | 购",
+        "btns": [
+          "表带选购",
+          "加入购物车",
+          "立即选购",
+          "预约发货",
+          "¥ 2,130.00 添加到购物车",
+          "腕表选购"
+        ]
+      },
+      "L1.651.4.09.2": {
+        "observedAt": "2026-10-03T00:09:03.765Z",
+        "addToCart": true,
+        "buyNow": true,
+        "reserve": true,
+        "soldOut": false,
+        "priceCtx": " | 了解更多 | ¥ 25,200.00 | 加入购物车 | 立即选购 | 预约门店鉴赏 | 探索更多免息商品 | 购",
+        "btns": [
+          "表带选购",
+          "加入购物车",
+          "立即选购",
+          "预约发货",
+          "¥ 1,770.00 添加到购物车",
+          "腕表选购"
+        ]
+      }
+    }
+  },
+  "tax": {
+    "currencyCode": "CNY",
+    "priceType": "tax-include",
+    "taxRatePercent": 13,
+    "sources": [
+      {
+        "publisher": "LONGINES 中国官网",
+        "title": "法律条款，4.1",
+        "url": "https://www.longines.cn/articles-of-law",
+        "accessedAt": "2026-10-03（未記錄精確時間）",
+        "observedFact": "「任何产品的价格均以本网站中不时显示的价格为准（但有明显错误的除外）。当您从本网站购买产品时，您须要按显示的价格付款（该价格中已包含按现行税率计算的相关税款）。」",
+        "method": "以官網頁面同源 fetch 取得條款頁 HTML，解析內嵌 Nuxt 狀態中的條款文字。"
+      },
+      {
+        "publisher": "国家税务总局上海市税务局",
+        "title": "中华人民共和国增值税法，第十条",
+        "url": "https://shanghai.chinatax.gov.cn/zcfw/zcfgk/zzs/202412/t474694.html",
+        "accessedAt": "2026-10-03（未記錄精確時間）",
+        "observedFact": "「纳税人销售货物、加工修理修配服务、有形动产租赁服务，进口货物，除本条第二项、第四项、第五项规定外，税率为百分之十三。」頁面發布時間 2024-12-30；「自2026年1月1日起施行」。",
+        "method": "WebFetch。"
+      }
+    ],
+    "sourceFailures": [
+      {
+        "url": "https://www.longines.cn/articles-of-law",
+        "tool": "WebFetch",
+        "result": "回傳空內容（頁面為前端渲染），改以瀏覽器同源 fetch 取得"
+      }
+    ],
+    "limitation": "官方條款說明標價已包含按現行稅率計算的相關稅款，但未逐款拆分各項稅費。13% 是稅法可直接確認的一般銷售貨物增值稅率，不表示含稅售價只含此一項稅費（可能另含進口環節稅費），與既有 Rolex／Omega CN 的處理一致。未以此稅率推測任何旅客退款金額。"
+  },
+  "errors": [
+    "第一次整批抓取因工具層級 protocolTimeout 失敗，已改用背景執行（見 attempts.preCollection）。",
+    "PDP 抓取過程共 3 次 HTTP 524，皆於重試成功。",
+    "WebFetch 對 longines.cn 法律條款頁回傳空內容，改以瀏覽器同源 fetch 讀取。"
+  ],
+  "priceFormatNote": "人民幣格式 \"17,200.00\"（逗號為千分位、小數點兩位）；666 筆皆符合 ^\\d{1,3}(,\\d{3})*\\.00$，小數部分皆為 .00，直接轉為整數元，未乘除或四捨五入。",
+  "userDecisions": [
+    {
+      "decidedAt": "2026-10-03",
+      "topic": "collectionId／collectionName",
+      "decision": "使用者於 2026-10-03 指示：heritage-collection 與 more-heritage 皆歸類為「复刻系列」，沿用既有 collectionId heritage-classic（前端已有對應名稱），CN 市場檔 collectionName 使用簡體「复刻系列」。",
+      "references": [
+        "L1.651.4.09.2",
+        "L2.330.4.93.0",
+        "L4.785.8.73.2"
+      ]
+    },
+    {
+      "decidedAt": "2026-10-03",
+      "topic": "dialColors",
+      "decision": "使用者確認「复古放射波纹」5 款 dialColors 維持 other。"
+    },
+    {
+      "decidedAt": "2026-10-03",
+      "topic": "imageUrl",
+      "decision": "使用者確認 CN 新配置 imageUrl 使用 longines.cn 網域的 cache 版本 URL。"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "purpose": "新增 Longines AT 市場時，重新查核 data/traveler-refund-policies.json 既有的 AT 市場記錄（該記錄以 marketCode 為鍵、跨品牌共用）。本檔只記錄重新查核結果，未新增或修改政策記錄；格式比照 data/evidence/longines/IT/2026-09-29/traveler-refund-policy-check.json。",
+  "existingRecordChecked": {
+    "marketCode": "AT",
+    "availability": "available",
+    "assessedAt": "2026-09-11T17:00:00Z",
+    "evidencePath": "data/evidence/rolex/AT/2026-09-12/traveler-refund-policy.json",
+    "merchantParticipationRequired": true,
+    "exportValidationRequired": true
+  },
+  "recheckQueries": [
+    {
+      "sourceUrl": "https://www.bmf.gv.at/en/topics/customs/travellers/vat-refund.html",
+      "publisher": "Austrian Federal Ministry of Finance（奧地利聯邦財政部）",
+      "accessedAt": "2026-10-03（未記錄精確時間）",
+      "findings": "「Travellers not domiciled in the EU」可申請；護照或跨境旅行證件須顯示歐盟以外住所；「The invoiced amount (possibly including VAT) must exceed EUR 75.」；須「before the end of the third calendar month following the month in which the purchase was made」隨身行李出口；須向賣方證明出口，自 2021-09-01 起維也納國際機場採數位出口驗證（DEV）；退稅先由賣方處理，部分口岸的民間清算機構會收取費用代辦。頁面無明確「最後更新」日期。",
+      "matchesExistingRecord": true
+    }
+  ],
+  "conclusion": "PASS：既有 AT 記錄（availability=available、需零售商參與、需出口核驗）與 2026-10-03 查得的官方來源一致，未發現差異，不需變更 data/traveler-refund-policies.json。",
+  "limitations": "僅重新查核市場級制度事實；未查證任何特定 Longines 精品店或經銷商實際是否提供退稅服務，既有記錄本身亦未作此主張。"
+}

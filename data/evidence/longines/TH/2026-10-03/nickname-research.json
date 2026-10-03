@@ -1,0 +1,42 @@
+{
+  "nicknameResearch": {
+    "status": "PASS with 0 accepted results",
+    "scope": "new-market",
+    "languages": [
+      "th"
+    ],
+    "queries": [
+      "Longines HydroConquest ฉายา ชื่อเรียก นาฬิกา โลกินส์ ไฮโดรคอนเควส เรียกกันว่า",
+      "Longines Master Collection Spirit Conquest ชื่อเล่น นาฬิกา ลองจินส์ รุ่น คนเล่นนาฬิกา เรียก",
+      "pantip Longines นาฬิกา รีวิว Conquest HydroConquest Spirit ชื่อเรียก"
+    ],
+    "sourcesReviewed": 1,
+    "sourcesReviewedList": [
+      {
+        "url": "https://pantip.com/topic/40363920",
+        "note": "實際開啟（WebFetch）：泰國 Pantip 論壇「longines spirit กับ longines hydroconquest」討論串，全程只使用官方系列名稱，無俗稱。"
+      }
+    ],
+    "sourcesUnreachable": [],
+    "searchResultsNotOpened": [
+      {
+        "url": "https://pantip.com/topic/41419680",
+        "note": "Pantip 討論串，搜尋摘要僅見規格與價格討論，未開啟。"
+      },
+      {
+        "url": "https://pantip.com/topic/39015642",
+        "note": "Pantip 開箱串，搜尋摘要僅見規格討論，未開啟。"
+      }
+    ],
+    "candidateCount": 1,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [
+      {
+        "name": "IKE（Longines Spirit 綠色霧面錶盤、五顆星款）",
+        "reason": "搜尋結果摘要（英文來源 bestdamnwatchforum／gearpatrol）稱該款被稱為「IKE」，為英語社群稱呼而非泰語在地俗稱，且未開啟原文核對對應的完整參考號，不符合「精確對應完整配置」門檻。"
+      }
+    ],
+    "notes": "以 WebSearch 查詢泰語俗稱（含 Pantip 論壇）並開啟可取得的來源。泰國論壇討論以官方系列名稱與規格指稱款式，未達採用門檻，因此 collectionAliases 與 localNicknames 全數維持空陣列。"
+  }
+}

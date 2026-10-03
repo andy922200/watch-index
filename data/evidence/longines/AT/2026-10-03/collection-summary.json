@@ -1,0 +1,498 @@
+{
+  "brandId": "longines",
+  "marketCode": "AT",
+  "task": "new-market",
+  "locale": "de-at",
+  "salesRegion": "Austria",
+  "entryPoint": {
+    "startedFrom": "https://www.longines.com/（瀏覽器預設語系導向 https://www.longines.com/zh-tw）",
+    "resolvedViaCountrySelector": "官網國家選單（Österreich）→ https://www.longines.com/de-at",
+    "confirmedProductListingUrl": "https://www.longines.com/de-at/watches",
+    "note": "以真實瀏覽器開啟國際站首頁，列出國家選單全部連結後確認入口路徑；入口 URL 非猜測。"
+  },
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "not-applicable",
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "PASS",
+    "fallbackTool": null,
+    "notes": "Chrome DevTools MCP list_network_requests／get_network_request 讀取官網自身 ProductList 請求（reqid 278，確認 lang: de-at、store: de_at 標頭與完整 query／variables；）後重放。Cookie 等標頭僅在工具輸出中出現，未寫入 evidence。"
+  },
+  "stopEvidence": {
+    "officialTotalCount": 804,
+    "uniqueSkusCollected": 804,
+    "pagesCollected": 34,
+    "lastPageItemCount": 12,
+    "beyondLastPageResponse": {
+      "page": 35,
+      "pageSize": 24,
+      "message": [
+        "currentPage value 35 specified is greater than the 34 page(s) available."
+      ]
+    },
+    "independentRenderedTotal": {
+      "text": "804 Produkte",
+      "url": "https://www.longines.com/de-at/watches",
+      "observedAt": "2026-10-03T00:28:37.042Z",
+      "note": "主要收集完成後，瀏覽器重新載入官方列表頁，讀取渲染文字中的商品總數。"
+    },
+    "reasoning": "官方 total_count=804 與 34 頁累積唯一 SKU 數 804 一致（33×24+12），第 35 頁官方明確回傳超出可用頁數；各頁 total_count 皆為 804，無重複、無缺頁；渲染頁文字總數相同。"
+  },
+  "recordCounts": {
+    "rawItemsReturned": 804,
+    "uniqueReferences": 804,
+    "duplicatesFound": 0
+  },
+  "conflictsFound": "無。每頁僅採用第一次成功回應；失敗嘗試未取得資料，沒有同頁多次成功而價格或狀態不同的情形。",
+  "attempts": {
+    "preCollection": [
+      {
+        "time": "約 2026-10-02T23:47Z（未記錄秒級時間）",
+        "method": "開啟 https://www.longines.com/ 並列出國家選單全部連結",
+        "result": "找到 https://www.longines.com/de-at 入口（連結文字：Österreich）。"
+      },
+      {
+        "time": "2026-10-02T23:48:23.605Z",
+        "method": "開啟 https://www.longines.com/de-at/watches 並取得該站 ProductList 查詢文字與變數",
+        "result": "成功；StoreConfig 與請求標頭符合預定市場。"
+      }
+    ],
+    "pagedRequests": [
+      {
+        "page": 1,
+        "try": 1,
+        "started": "2026-10-02T23:48:23.605Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 2,
+        "try": 1,
+        "started": "2026-10-02T23:48:28.793Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 3,
+        "try": 1,
+        "started": "2026-10-02T23:48:33.774Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 4,
+        "try": 1,
+        "started": "2026-10-02T23:48:37.426Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 5,
+        "try": 1,
+        "started": "2026-10-02T23:48:45.039Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 6,
+        "try": 1,
+        "started": "2026-10-02T23:48:50.187Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 7,
+        "try": 1,
+        "started": "2026-10-02T23:48:56.586Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 8,
+        "try": 1,
+        "started": "2026-10-02T23:49:01.072Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 9,
+        "try": 1,
+        "started": "2026-10-02T23:49:08.151Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 10,
+        "try": 1,
+        "started": "2026-10-02T23:49:15.426Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 11,
+        "try": 1,
+        "started": "2026-10-02T23:49:19.226Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 12,
+        "try": 1,
+        "started": "2026-10-02T23:49:25.020Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 13,
+        "try": 1,
+        "started": "2026-10-02T23:49:29.818Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 14,
+        "try": 1,
+        "started": "2026-10-02T23:49:33.440Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 15,
+        "try": 1,
+        "started": "2026-10-02T23:49:40.444Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 16,
+        "try": 1,
+        "started": "2026-10-02T23:49:44.116Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 17,
+        "try": 1,
+        "started": "2026-10-02T23:49:47.958Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 18,
+        "try": 1,
+        "started": "2026-10-02T23:49:51.656Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 19,
+        "try": 1,
+        "started": "2026-10-02T23:49:56.872Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 20,
+        "try": 1,
+        "started": "2026-10-02T23:49:59.906Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 21,
+        "try": 1,
+        "started": "2026-10-02T23:50:06.782Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 22,
+        "try": 1,
+        "started": "2026-10-02T23:50:11.048Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 23,
+        "try": 1,
+        "started": "2026-10-02T23:50:14.335Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 24,
+        "try": 1,
+        "started": "2026-10-02T23:50:18.085Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 25,
+        "try": 1,
+        "started": "2026-10-02T23:50:21.826Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 26,
+        "try": 1,
+        "started": "2026-10-02T23:50:25.710Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 27,
+        "try": 1,
+        "started": "2026-10-02T23:50:28.152Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 28,
+        "try": 1,
+        "started": "2026-10-02T23:50:31.956Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 29,
+        "try": 1,
+        "started": "2026-10-02T23:50:39.719Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 30,
+        "try": 1,
+        "started": "2026-10-02T23:50:46.735Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 31,
+        "try": 1,
+        "started": "2026-10-02T23:50:53.730Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 32,
+        "try": 1,
+        "started": "2026-10-02T23:51:00.343Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 33,
+        "try": 1,
+        "started": "2026-10-02T23:51:07.559Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 34,
+        "try": 1,
+        "started": "2026-10-02T23:51:14.265Z",
+        "status": 200,
+        "errors": null,
+        "items": 12,
+        "total_count": 804,
+        "retryAfter": null
+      },
+      {
+        "page": 35,
+        "try": 1,
+        "started": "2026-10-02T23:51:18.424Z",
+        "status": 200,
+        "errors": [
+          "currentPage value 35 specified is greater than the 34 page(s) available."
+        ],
+        "items": null,
+        "total_count": null,
+        "retryAfter": null
+      }
+    ]
+  },
+  "collectionsFound": 31,
+  "collectionCounts": {
+    "conquest": 87,
+    "conquest-chronograph": 10,
+    "conquest-classic": 20,
+    "conquest-heritage": 26,
+    "dolcevita": 60,
+    "elegant": 42,
+    "evidenza": 13,
+    "flagship": 53,
+    "flagship-heritage": 8,
+    "heritage-avigation": 7,
+    "heritage-classic": 5,
+    "hydroconquest": 59,
+    "hydroconquest-gmt": 11,
+    "la-grande-classique": 66,
+    "legend-diver": 17,
+    "master-collection": 101,
+    "master-collection-chrono-monopusher": 2,
+    "master-collection-chronograph": 30,
+    "master-collection-moonphase": 23,
+    "master-gmt": 2,
+    "mini-dolcevita": 23,
+    "pilot-majetek": 3,
+    "primaluna": 50,
+    "record": 21,
+    "spirit": 13,
+    "spirit-chronograph": 4,
+    "spirit-flyback": 8,
+    "spirit-pilot": 5,
+    "spirit-pilot-flyback": 4,
+    "spirit-zulu-time": 24,
+    "ultra-chron": 7
+  },
+  "familyCounts": {
+    "conquest": 187,
+    "elegance": 328,
+    "heritage": 73,
+    "master": 158,
+    "spirit": 58
+  },
+  "stockStatusCounts": {
+    "IN_STOCK": 739,
+    "OUT_OF_STOCK": 65
+  },
+  "listingSignalCounts": {
+    "purchasable=1,find_retailer=0": 804
+  },
+  "purchaseChannel": {
+    "decision": "listed",
+    "evidence": "20 款獨立抽查商品頁（iframe 實際渲染）皆顯示「In den Warenkorb legen」加入購物車按鈕（另有「Bei einem Händler anfragen」），20/20 有購物車；列表資料 804 筆 purchasable 皆為 1，其中 stock_status=OUT_OF_STOCK 共 65 款，比照 IT／ES 對暫時缺貨款仍記為 listed 的判定（官方仍公開價格且購買動線為線上加入購物車）。官方銷售條款亦說明價格含當地增值稅與預設運費並以線上下單付款。"
+  },
+  "tax": {
+    "currencyCode": "EUR",
+    "priceType": "tax-include",
+    "taxRatePercent": 20,
+    "sources": [
+      {
+        "publisher": "LONGINES Österreich（官方站台）",
+        "title": "Verkaufs- und Lieferbedingungen",
+        "url": "https://www.longines.com/de-at/legal/conditions-of-sale",
+        "accessedAt": "2026-10-03（未記錄精確時間）",
+        "observedFact": "「Die Preise auf dieser Website sind in EURO und beinhalten die lokale Mehrwertsteuer sowie die Standard-Liefergebühren (wie auf der Checkout-Seite und in der Auftragsbestätigung angegeben).」",
+        "method": "以官網頁面同源 fetch 取得條款頁 HTML，解析 __NEXT_DATA__ 內條款文字。"
+      },
+      {
+        "publisher": "Unternehmensserviceportal（奧地利政府企業服務入口 USP）",
+        "title": "Steuersätze und Steuerbefreiungen der Umsatzsteuer",
+        "url": "https://www.usp.gv.at/themen/steuern-finanzen/umsatzsteuer-ueberblick/steuersaetze-und-steuerbefreiungen-der-umsatzsteuer.html",
+        "accessedAt": "2026-10-03（未記錄精確時間）",
+        "observedFact": "「Der 20-prozentige Steuersatz ist der Normalsteuersatz in Österreich.」；頁面標示「Letzte Aktualisierung: 1. Juli 2026」。",
+        "method": "WebFetch。"
+      }
+    ],
+    "sourceFailures": [],
+    "limitation": "官方條款說明標價含當地增值稅與預設運費，但未逐款拆分稅費；20% 為一般銷售貨物的標準稅率，未查證個別款式是否適用其他稅率（腕錶無已知優惠稅率）。"
+  },
+  "errors": [
+    "第 35 頁（超出最後一頁）的 GraphQL 錯誤：currentPage value 35 specified is greater than the 34 page(s) available.（預期的停止證據，非收集失敗）。",
+    "WebFetch 對 longines.com 法律條款頁回傳內容被截斷、無法讀取價格段落，改以瀏覽器同源 fetch 讀取。"
+  ],
+  "priceFormatNote": "歐陸格式（點為千分位、逗號為小數，例如 \"2.300,00 €\"）；GraphQL base_price.value 已是整數歐元，804 筆皆無非零小數，直接作為整數價格，未解析字串、未乘除或四捨五入。special_price 全為 null。"
+}

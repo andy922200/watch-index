@@ -1,0 +1,725 @@
+{
+  "brandId": "longines",
+  "marketCode": "CN",
+  "task": "new-market",
+  "validatedAt": "2026-10-03T00:38:40Z",
+  "layeredValidation": {
+    "1_strictJsonAndSchema": {
+      "status": "PASS",
+      "detail": "嚴格 JSON 解析（拒絕重複 key 與 NaN/Infinity）通過 106 個檔案（data/catalog、markets、history、schemas、traveler-refund-policies.json 與本次 AT／CN／TH 已寫入的 12 個 evidence 檔，不含本 validation-summary.json 自身）。Schema：以 app/node_modules 既有的 ajv 6.15.0（未安裝新依賴）驗證 catalog、全部 market 與 history 共 101 項 PASS、0 項 FAIL（含 5 項負向對照：listed 搭配 null 價格、非整數價格、market 額外欄位、catalog 缺 dialColors、無效 dialColor 列舉，全部被正確拒絕）。",
+      "limitation": "ajv 6 實作 draft-07，Schema 宣告為 draft 2020-12；本 Schema 使用的關鍵字（$ref 指向 $defs、if/then、additionalProperties、pattern、format date-time/uri、const、enum）皆為 draft-07 可執行子集（驗證時移除 $schema 宣告），但未以正式 2020-12 驗證器執行。Python jsonschema 未安裝。"
+    },
+    "2_watchCountIdentityRelational": {
+      "status": "PASS",
+      "detail": "examples/cross-brand-validation-script.md 的 Node 腳本對全部 43 個市場檔 PASS。本市場 watchCount=666=watches.length=唯一 watchId=唯一 reference；watchId 皆為 \"longines:\"+reference；history.priceSeries 鍵集合與 market watchId 集合相同且順序一致；每筆皆存在於 catalog；marketCode=CN 於 market／history／目錄一致；market.collectionAliases 鍵集合等於本市場使用的 collectionId 集合。另執行 app/scripts/generate-watch-data.mjs（輸出至暫存目錄，未寫入專案）成功，Longines manifest 產出含 AT、CN、TH 在內共 15 個市場的 catalog。"
+    },
+    "3_priceListingStatusCombination": {
+      "status": "PASS",
+      "detail": "666 個價格點皆為 listingStatus=listed 搭配非負整數 CNY 價格（最低 8000、最高 194300、中位數 18600.0）；無非零小數、無 special_price、無 price-unavailable／not-listed；每個價格序列只有 runId=1 的一個價格點，無冗餘相鄰價格點。購買通路判定見 collection-summary.json purchaseChannel。"
+    },
+    "4_officialDataTraceableToEvidence": {
+      "status": "PASS",
+      "detail": "逐筆比對市場檔 collectionName、modelName、caseDescription、dialDescription、isNewModel、productUrl 與 history 價格／狀態，全部等於本次 observations.json 對應欄位（0 差異），且價格、錶殼描述、錶盤描述皆可由 observations 內的原始字串（basePriceRaw／priceRaw、caseDimensionRaw＋材質標籤）獨立重現。正式資料由 evidence 產生，非反向補造；evidence 先寫入、正式資料後寫入。"
+    },
+    "5_completenessStopEvidenceAndIndependentSpotCheck": {
+      "status": "PASS",
+      "detail": "停止證據：官方 API totalNum=666、56 頁累積唯一 666、第 57 頁官方回傳空清單且 hasMore=false；第二輪獨立收集得到完全相同的 SKU 集合與價格；API 分面計數加總 666；666 個商品頁內嵌價格與列表 100% 一致（見 collection-summary.json stopEvidence）。獨立抽查 21 款：以 iframe 實際渲染官方商品頁（渲染後 DOM 文字，與主要收集路徑不同的官方視圖），比對價格、參考號、錶殼材質、錶盤顏色與 CTA，結果 21/21 MATCH，涵蓋 5 個家族、最低價、最高價、新款、同基本型號不同配置、缺屬性、缺貨與網址不含參考號等異常項目。列表頁 SSR 顯示的 664 與 API 的 666 差 2 屬未解釋的官方口徑差異（見 stopEvidence.discrepancy）。"
+    },
+    "6_appendOnlyAndProtectedScopeUnchanged": {
+      "status": "PASS",
+      "detail": "data/history/CN/longines-price-history.json 為新檔，runId 從 1 開始；git status 顯示既有追蹤檔被修改的只有 data/catalog/longines-catalog.json（既有 883 筆原樣不動、僅附加新配置並更新 collectedAt／sourceMarketCodes／watchCount）與四份人類文件（README.md、ai-data-maintenance-guide.md、watch-data-collection-guide.md、examples/regression-cases.md）；其他品牌與市場、Schema、app/、data/traveler-refund-policies.json 皆未被修改，也未讀寫其他市場的 evidence。"
+    }
+  },
+  "spotCheck": {
+    "targetRange": "19-21",
+    "actualCount": 21,
+    "matched": 21,
+    "coversMinPrice": true,
+    "coversMaxPrice": false,
+    "coversNew": true,
+    "sameBaseModelPairs": [
+      "L2.142",
+      "L2.950",
+      "L3.764",
+      "L3.812"
+    ],
+    "noPublicPriceItems": "無（全部 666 款皆有公開價格）",
+    "method": "以 iframe 實際渲染官方商品頁（與主要收集路徑的列表 API／商品頁內嵌狀態不同的官方視圖：渲染後的 DOM 文字），讀取價格、參考號、規格區（表壳材质、表盘颜色）與 CTA，與正式 market／history 比對。",
+    "familyCoverageNote": "先依 CN 官方分類路徑取 master／conquest／elegance／heritage／spirit 五個家族各 3 款，再加最低價、最高價、缺屬性、缺貨、網址不含參考號、俗稱款、CN 專屬新配置、新款與同基本型號配對。",
+    "items": [
+      {
+        "reference": "L3.779.4.90.6",
+        "categories": [
+          "新款"
+        ],
+        "productUrl": "https://www.longines.cn/watch-hydroconquest-l3-779-4-90-6",
+        "checkedAt": "2026-10-03T00:24:31.958Z",
+        "collectionId": "hydroconquest",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 17,200.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 材质 | 精钢及陶瓷 | 表镜 | 抗磨损合成蓝宝石镜面，两面带多层防反光涂层 | 表背 | 旋入式 | 尺寸 | 39.00 mm | 防水性能 | 防水深度30巴 | 表耳阔度 | 20 mm | 表壳厚度 | 11.70 mm | 表盘和指针 | 颜色 | 黑色漆",
+        "renderedDialBlock": "| 颜色 | 黑色漆面抛光 | 运行时标 | 镶嵌时标 | 指针 | 镀银抛光指针 | 机芯和功能 "
+      },
+      {
+        "reference": "L3.860.4.12.6",
+        "categories": [
+          "新款"
+        ],
+        "productUrl": "https://www.longines.cn/watch-conquest-yuedong-l3-860-4-12-6",
+        "checkedAt": "2026-10-03T00:24:40.486Z",
+        "collectionId": "conquest",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 11,000.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 材质 | 精钢 | 表镜 | 抗磨损合成蓝宝石镜面，两面带多层防反光涂层 | 尺寸 | 41.00 mm | 防水性能 | 防水深度10巴 | 表耳阔度 | 21 mm | 表壳厚度 | 9.50 mm | 表盘和指针 | 颜色 | 白色喷砂 | 运行时标 | 镶嵌时标",
+        "renderedDialBlock": "| 颜色 | 白色喷砂 | 运行时标 | 镶嵌时标 | 指针 | 镀银抛光指针 | 机芯和功能 | "
+      },
+      {
+        "reference": "L3.320.5.72.6",
+        "categories": [],
+        "productUrl": "https://www.longines.cn/watch-conquest-yuedong-l3-320-5-72-6",
+        "checkedAt": "2026-10-03T00:24:49.019Z",
+        "collectionId": "conquest",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 25,200.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 材质 | 精钢表壳/200微米 18K包金玫瑰金表圈 | 表镜 | 抗磨损合成蓝宝石镜面，两面带多层防反光涂层 | 表背 | 旋入式透明合成蓝宝石表盖 | 尺寸 | 30.00 mm | 防水性能 | 防水深度10巴 | 表耳阔度 | 15 mm | 表壳厚度 | 9.",
+        "renderedDialBlock": "| 颜色 | 银色太阳饰纹 | 运行时标 | 镶嵌时标 | 指针 | 粉色指针 | 机芯和功能 | "
+      },
+      {
+        "reference": "L2.142.4.73.6",
+        "categories": [
+          "同基本型號不同配置"
+        ],
+        "productUrl": "https://www.longines.cn/watch-longines-evidenza-l2-142-4-73-6",
+        "checkedAt": "2026-10-03T00:24:57.553Z",
+        "collectionId": "evidenza",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 18,200.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 酒桶形 | 材质 | 精钢 | 表镜 | 抗磨损合成蓝宝石，内侧带多层防反光涂层 | 尺寸 | 26.00 X 30.60 mm | 防水性能 | 防水深度3巴 | 表耳阔度 | 14 mm | 表壳厚度 | 8.60 mm | 表盘和指针 | 颜色 | 复古放射波纹 | 运行时",
+        "renderedDialBlock": "| 颜色 | 复古放射波纹 | 运行时标 | 漆绘阿拉伯数字 | 指针 | 蓝钢指针 | 机芯和功能"
+      },
+      {
+        "reference": "L2.142.8.73.2",
+        "categories": [
+          "同基本型號不同配置"
+        ],
+        "productUrl": "https://www.longines.cn/watch-longines-evidenza-l2-142-8-73-2",
+        "checkedAt": "2026-10-03T00:25:06.085Z",
+        "collectionId": "evidenza",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 61,400.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 酒桶形 | 材质 | 18K玫瑰金 | 表镜 | 抗磨损合成蓝宝石，内侧带多层防反光涂层 | 尺寸 | 26.00 X 30.60 mm | 防水性能 | 防水深度3巴 | 表耳阔度 | 14 mm | 表壳厚度 | 8.50 mm | 表盘和指针 | 颜色 | 复古放射波纹 |",
+        "renderedDialBlock": "| 颜色 | 复古放射波纹 | 运行时标 | 漆绘阿拉伯数字 | 指针 | 蓝钢指针 | 机芯和功能"
+      },
+      {
+        "reference": "L4.330.4.11.2",
+        "categories": [],
+        "productUrl": "https://www.longines.cn/watch-longines-elegant-collection-exclusive-l4-330-4-11-2",
+        "checkedAt": "2026-10-03T00:25:14.616Z",
+        "collectionId": "elegant",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 10,600.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 材质 | 精钢 | 表镜 | 抗磨损合成蓝宝石镜面，两面带多层防反光涂层 | 尺寸 | 30.00 mm | 防水性能 | 防水深度3巴 | 表耳阔度 | 14 mm | 表壳厚度 | 8.50 mm | 表盘和指针 | 颜色 | 白色哑光 | 运行时标 | 漆绘罗马数",
+        "renderedDialBlock": "| 颜色 | 白色哑光 | 运行时标 | 漆绘罗马数字 | 指针 | 镀银抛光指针 | 机芯和功能 "
+      },
+      {
+        "reference": "L2.628.8.77.3",
+        "categories": [],
+        "productUrl": "https://www.longines.cn/watch-longines-master-collection-l2-628-8-77-3",
+        "checkedAt": "2026-10-03T00:25:23.151Z",
+        "collectionId": "master-collection",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 71,100.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 材质 | 18K玫瑰金 | 表镜 | 抗磨损合成蓝宝石 | 表背 | 透明合成蓝宝石表盖 | 尺寸 | 38.50 mm | 防水性能 | 防水深度3巴 | 表耳阔度 | 20 mm | 表壳厚度 | 9.20 mm | 表盘和指针 | 颜色 | 银色\"麦粒\"饰纹 | ",
+        "renderedDialBlock": "| 颜色 | 银色\"麦粒\"饰纹 | 运行时标 | 钻石时标 | 指针 | 粉色指针 | 钻石 | 表"
+      },
+      {
+        "reference": "L2.773.4.92.6",
+        "categories": [],
+        "productUrl": "https://www.longines.cn/watch-longines-master-collection-chronograph-l2-773-4-92-6",
+        "checkedAt": "2026-10-03T00:25:31.717Z",
+        "collectionId": "master-collection-chronograph",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 31,000.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 材质 | 精钢 | 表镜 | 抗磨损合成蓝宝石 | 表背 | 透明合成蓝宝石表盖 | 尺寸 | 42.00 mm | 防水性能 | 防水深度3巴 | 表耳阔度 | 21 mm | 表壳厚度 | 14.20 mm | 表盘和指针 | 颜色 | 蓝色太阳饰纹 | 运行时标 ",
+        "renderedDialBlock": "| 颜色 | 蓝色太阳饰纹 | 运行时标 | 镶嵌时标 | 指针 | 镀银抛光指针 | 机芯和功能 "
+      },
+      {
+        "reference": "L2.950.4.93.2",
+        "categories": [
+          "新款",
+          "同基本型號不同配置"
+        ],
+        "productUrl": "https://www.longines.cn/watch-longines-master-collection-l2-950-4-93-2",
+        "checkedAt": "2026-10-03T00:25:40.257Z",
+        "collectionId": "master-collection",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 19,900.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 材质 | 精钢 | 表镜 | 抗磨损合成蓝宝石镜面，两面带多层防反光涂层 | 表背 | 透明合成蓝宝石表盖 | 尺寸 | 41.00 mm | 防水性能 | 防水深度3巴 | 表耳阔度 | 21 mm | 表壳厚度 | 9.50 mm | 表盘和指针 | 颜色 | 蓝色",
+        "renderedDialBlock": "| 颜色 | 蓝色\"麦粒\"纹饰 | 运行时标 | 镶嵌阿拉伯数字 | 指针 | 镀银抛光指针 | 机"
+      },
+      {
+        "reference": "L1.650.4.72.2",
+        "categories": [],
+        "productUrl": "https://www.longines.cn/watch-conquest-heritage-l1-650-4-72-2",
+        "checkedAt": "2026-10-03T00:25:48.789Z",
+        "collectionId": "conquest-heritage",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 23,000.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 材质 | 精钢 | 表镜 | 抗磨损合成蓝宝石镜面，两面带多层防反光涂层 | 表背 | 旋入式 | 尺寸 | 40.00 mm | 防水性能 | 防水深度5巴 | 表耳阔度 | 20 mm | 表壳厚度 | 10.80 mm | 表盘和指针 | 颜色 | 银色 | 运行",
+        "renderedDialBlock": "| 颜色 | 银色 | 运行时标 | 镶嵌时标 | 指针 | 镀金指针 | 机芯和功能 | 机芯类型"
+      },
+      {
+        "reference": "L3.764.4.16.6",
+        "categories": [
+          "同基本型號不同配置"
+        ],
+        "productUrl": "https://www.longines.cn/watch-longines-legend-diver-l3-764-4-16-6",
+        "checkedAt": "2026-10-03T00:25:57.407Z",
+        "collectionId": "legend-diver",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 28,300.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 材质 | 精钢 | 表镜 | 抗磨损合成蓝宝石镜面，两面带多层防反光涂层 | 表背 | 旋入式 | 尺寸 | 39.00 mm | 防水性能 | 防水深度30巴 | 表耳阔度 | 20 mm | 表壳厚度 | 12.70 mm | 表盘和指针 | 颜色 | 白色哑光 |",
+        "renderedDialBlock": "| 颜色 | 白色哑光 | 运行时标 | 漆绘阿拉伯数字和时标 | 指针 | 黑色指针 | 机芯和功"
+      },
+      {
+        "reference": "L3.774.1.50.2",
+        "categories": [],
+        "productUrl": "https://www.longines.cn/watch-the-longines-legend-diver-watch-l3-774-1-50-2",
+        "checkedAt": "2026-10-03T00:26:05.926Z",
+        "collectionId": "legend-diver",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 25,700.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 材质 | 青铜配钛金属底盖 | 表镜 | 抗磨损合成蓝宝石，内侧带多层防反光涂层 | 表背 | 旋入式 | 尺寸 | 42.00 mm | 防水性能 | 防水深度30巴 | 表耳阔度 | 22 mm | 表壳厚度 | 12.70 mm | 表盘和指针 | 颜色 | 绿色",
+        "renderedDialBlock": "| 颜色 | 绿色 | 运行时标 | 漆绘阿拉伯数字和时标 | 指针 | 粉色指针 | 机芯和功能 "
+      },
+      {
+        "reference": "L3.812.5.53.2",
+        "categories": [
+          "同基本型號不同配置"
+        ],
+        "productUrl": "https://www.longines.cn/watch-longines-spirit-zulu-time-l3-812-5-53-2",
+        "checkedAt": "2026-10-03T00:26:14.462Z",
+        "collectionId": "spirit-zulu-time",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 37,100.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 材质 | 精钢表壳/200微米 18K包金黄金表圈 | 表镜 | 抗磨损合成蓝宝石镜面，两面带多层防反光涂层 | 尺寸 | 42.00 mm | 防水性能 | 防水深度10巴 | 表耳阔度 | 22 mm | 表壳厚度 | 13.90 mm | 表盘和指针 | 颜色 |",
+        "renderedDialBlock": "| 颜色 | 碳黑色 | 运行时标 | 镶嵌阿拉伯数字 | 指针 | 镀金指针 | 机芯和功能 | "
+      },
+      {
+        "reference": "L3.820.4.73.6",
+        "categories": [],
+        "productUrl": "https://www.longines.cn/watch-longines-spirit-l3-820-4-73-6",
+        "checkedAt": "2026-10-03T00:26:23.000Z",
+        "collectionId": "spirit-chronograph",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 26,600.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 材质 | 精钢 | 表镜 | 抗磨损合成蓝宝石镜面，两面带多层防反光涂层 | 尺寸 | 42.00 mm | 防水性能 | 防水深度10巴 | 表耳阔度 | 22 mm | 表壳厚度 | 16.30 mm | 表盘和指针 | 颜色 | 银色 | 运行时标 | 镶嵌阿拉伯",
+        "renderedDialBlock": "| 颜色 | 银色 | 运行时标 | 镶嵌阿拉伯数字 | 指针 | 夜光指针 | 机芯和功能 | 机"
+      },
+      {
+        "reference": "L3.812.4.63.6",
+        "categories": [
+          "同基本型號不同配置"
+        ],
+        "productUrl": "https://www.longines.cn/watch-longines-spirit-zulu-time-l3-812-4-63-6",
+        "checkedAt": "2026-10-03T00:26:31.541Z",
+        "collectionId": "spirit-zulu-time",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 26,100.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 材质 | 精钢及陶瓷 | 表镜 | 抗磨损合成蓝宝石镜面，两面带多层防反光涂层 | 尺寸 | 42.00 mm | 防水性能 | 防水深度10巴 | 表耳阔度 | 22 mm | 表壳厚度 | 13.90 mm | 表盘和指针 | 颜色 | 碳黑色 | 运行时标 | 镶",
+        "renderedDialBlock": "| 颜色 | 碳黑色 | 运行时标 | 镶嵌阿拉伯数字 | 指针 | 抛光金质指针 | 机芯和功能 "
+      },
+      {
+        "reference": "L2.386.4.92.6",
+        "categories": [
+          "最低價"
+        ],
+        "productUrl": "https://www.longines.cn/watch-conquest-classic-exclusive-l2-386-4-92-6",
+        "checkedAt": "2026-10-03T00:26:40.121Z",
+        "collectionId": "conquest-classic",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 8,000.00 加入购",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 材质 | 精钢 | 表镜 | 抗磨损合成蓝宝石，内侧带多层防反光涂层 | 尺寸 | 34.00 mm | 防水性能 | 防水深度5巴 | 表耳阔度 | 17 mm | 表壳厚度 | 8.90 mm | 表盘和指针 | 颜色 | 蓝色 | 运行时标 | 镶嵌时标 | 指针",
+        "renderedDialBlock": "| 颜色 | 蓝色 | 运行时标 | 镶嵌时标 | 指针 | 粉色指针 | 机芯和功能 | 机芯类型"
+      },
+      {
+        "reference": "L3.764.4.96.6",
+        "categories": [
+          "同基本型號不同配置",
+          "異常：缺少官方屬性"
+        ],
+        "productUrl": "https://www.longines.cn/watch-longines-legend-diver-l3-764-4-96-6",
+        "checkedAt": "2026-10-03T00:26:48.641Z",
+        "collectionId": "legend-diver",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 28,300.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 材质 | 精钢 | 表镜 | 抗磨损合成蓝宝石镜面，两面带多层防反光涂层 | 表背 | 旋入式 | 尺寸 | 39.00 mm | 防水性能 | 防水深度30巴 | 表耳阔度 | 20 mm | 表壳厚度 | 12.70 mm | 表盘和指针 | 运行时标 | 漆绘阿拉",
+        "renderedDialBlock": null
+      },
+      {
+        "reference": "L2.836.4.52.2",
+        "categories": [
+          "異常：缺少官方屬性"
+        ],
+        "productUrl": "https://www.longines.cn/watch-longines-ultra-chron-l2-836-4-52-2",
+        "checkedAt": "2026-10-03T00:26:57.166Z",
+        "collectionId": "ultra-chron",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 30,500.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 表镜 | 抗磨损合成蓝宝石镜面，两面带多层防反光涂层 | 表背 | 旋入式 | 尺寸 | 43.00 mm | 防水性能 | 防水深度30巴 | 表耳阔度 | 22 | 表壳厚度 | 13.60 | 表盘和指针 | 颜色 | 黑色 | 运行时标 | 镶嵌时标 | 指针 ",
+        "renderedDialBlock": "| 颜色 | 黑色 | 运行时标 | 镶嵌时标 | 指针 | 镀银抛光指针 | 机芯和功能 | 机芯"
+      },
+      {
+        "reference": "L5.255.4.28.2",
+        "categories": [
+          "新款",
+          "異常：缺貨（到货提醒）"
+        ],
+        "productUrl": "https://www.longines.cn/watch-longines-dolcevita-l5-255-4-28-2",
+        "checkedAt": "2026-10-03T00:27:05.709Z",
+        "collectionId": "dolcevita",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 12,400.00 到货",
+        "renderedCaseBlock": "表壳 | 形状 | 长方形 | 材质 | 精钢 | 表镜 | 抗磨损合成蓝宝石 | 尺寸 | 20.80 X 32.00 mm | 防水性能 | 防水深度3巴 | 表耳阔度 | 15 mm | 表壳厚度 | 6.90 mm | 表盘和指针 | 颜色 | 象牙玫瑰色复古放射波纹 | 运行时标 | 镶嵌",
+        "renderedDialBlock": "| 颜色 | 象牙玫瑰色复古放射波纹 | 运行时标 | 镶嵌罗马数字 | 指针 | 粉色指针 | 机"
+      },
+      {
+        "reference": "L2.950.4.93.6",
+        "categories": [
+          "新款",
+          "同基本型號不同配置",
+          "異常：網址不含參考號"
+        ],
+        "productUrl": "https://www.longines.cn/watch-longines-master-collection",
+        "checkedAt": "2026-10-03T00:27:14.230Z",
+        "collectionId": "master-collection",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 19,900.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 材质 | 精钢 | 表镜 | 抗磨损合成蓝宝石镜面，两面带多层防反光涂层 | 表背 | 透明合成蓝宝石表盖 | 尺寸 | 41.00 mm | 防水性能 | 防水深度3巴 | 表耳阔度 | 21 mm | 表壳厚度 | 9.50 mm | 表盘和指针 | 颜色 | 蓝色",
+        "renderedDialBlock": "| 颜色 | 蓝色\"麦粒\"纹饰 | 运行时标 | 镶嵌阿拉伯数字 | 指针 | 镀银抛光指针 | 机"
+      },
+      {
+        "reference": "L3.784.4.56.9",
+        "categories": [
+          "俗稱款"
+        ],
+        "productUrl": "https://www.longines.cn/watch-hydroconquest-l3-784-4-56-9",
+        "checkedAt": "2026-10-03T00:27:22.756Z",
+        "collectionId": "hydroconquest",
+        "checks": {
+          "renderedPrice": true,
+          "skuInRenderedPage": true,
+          "caseMaterialInRenderedSpec": true,
+          "dialColorInRenderedSpec": true,
+          "ctaConsistent": true
+        },
+        "result": "MATCH",
+        "renderedPrice": "¥ 34,500.00 加入",
+        "renderedCaseBlock": "表壳 | 形状 | 圆形 | 材质 | 黑色陶瓷 | 表镜 | 抗磨损合成蓝宝石镜面，两面带多层防反光涂层 | 尺寸 | 43.00 mm | 防水性能 | 防水深度30巴 | 表耳阔度 | 21 mm | 表壳厚度 | 13.00 mm | 表盘和指针 | 颜色 | 哑光黑陶瓷 | 运行时标 | ",
+        "renderedDialBlock": "| 颜色 | 哑光黑陶瓷 | 运行时标 | 镶嵌阿拉伯数字和时标 | 指针 | 镀银抛光指针 | 机"
+      }
+    ]
+  },
+  "catalogDiff": {
+    "catalogBefore": 883,
+    "marketCount": 666,
+    "intersection": 500,
+    "newToCatalog": [
+      "L1.651.4.09.2",
+      "L2.128.4.78.3",
+      "L2.142.4.09.2",
+      "L2.142.4.56.2",
+      "L2.142.4.66.2",
+      "L2.142.4.96.2",
+      "L2.257.4.96.6",
+      "L2.257.4.97.0",
+      "L2.320.4.11.2",
+      "L2.321.4.11.2",
+      "L2.321.4.57.6",
+      "L2.321.4.96.6",
+      "L2.321.5.11.7",
+      "L2.330.4.93.0",
+      "L2.357.4.73.6",
+      "L2.357.5.70.2",
+      "L2.357.5.70.7",
+      "L2.409.4.97.0",
+      "L2.628.4.77.6",
+      "L2.628.4.78.3",
+      "L2.628.4.97.6",
+      "L2.628.5.77.7",
+      "L2.628.8.77.3",
+      "L2.628.8.78.3",
+      "L2.793.4.59.2",
+      "L2.793.4.77.3",
+      "L2.793.4.92.0",
+      "L2.793.4.96.6",
+      "L2.821.4.76.2",
+      "L2.821.4.96.4",
+      "L2.821.4.96.6",
+      "L2.838.4.53.9",
+      "L2.893.4.77.3",
+      "L2.893.4.97.0",
+      "L2.893.5.59.7",
+      "L2.909.4.92.0",
+      "L2.909.4.97.0",
+      "L2.919.4.92.0",
+      "L2.919.4.97.0",
+      "L2.921.4.56.2",
+      "L2.921.4.56.6",
+      "L3.369.3.12.7",
+      "L3.369.3.18.7",
+      "L3.369.3.88.7",
+      "L3.369.4.87.6",
+      "L3.374.4.40.2",
+      "L3.774.4.50.6",
+      "L3.781.3.56.9",
+      "L3.781.3.98.9",
+      "L3.782.3.06.7",
+      "L3.782.3.58.7",
+      "L3.811.4.03.2",
+      "L3.811.4.93.0",
+      "L3.820.4.73.2",
+      "L3.820.4.73.6",
+      "L3.836.4.52.9",
+      "L4.209.1.93.8",
+      "L4.209.4.74.6",
+      "L4.309.0.87.6",
+      "L4.309.4.11.6",
+      "L4.309.4.12.6",
+      "L4.309.4.77.6",
+      "L4.309.4.87.6",
+      "L4.309.4.97.6",
+      "L4.309.5.11.7",
+      "L4.309.5.12.7",
+      "L4.309.5.87.7",
+      "L4.309.5.88.7",
+      "L4.310.0.87.6",
+      "L4.310.4.11.6",
+      "L4.310.4.12.6",
+      "L4.310.4.57.6",
+      "L4.310.4.77.6",
+      "L4.310.4.87.6",
+      "L4.310.4.97.6",
+      "L4.310.5.11.7",
+      "L4.310.5.12.7",
+      "L4.310.5.88.7",
+      "L4.312.4.11.6",
+      "L4.312.4.87.6",
+      "L4.312.5.87.7",
+      "L4.321.1.11.7",
+      "L4.321.1.12.7",
+      "L4.321.2.11.2",
+      "L4.321.4.11.2",
+      "L4.321.4.11.6",
+      "L4.321.4.12.6",
+      "L4.322.1.11.7",
+      "L4.322.1.12.7",
+      "L4.322.2.11.2",
+      "L4.322.2.11.7",
+      "L4.322.2.12.7",
+      "L4.322.4.11.2",
+      "L4.322.4.11.6",
+      "L4.322.4.12.6",
+      "L4.322.4.92.6",
+      "L4.325.4.87.2",
+      "L4.325.4.92.2",
+      "L4.341.0.11.2",
+      "L4.374.3.27.7",
+      "L4.374.3.91.7",
+      "L4.374.4.27.6",
+      "L4.374.4.92.6",
+      "L4.378.9.87.4",
+      "L4.512.1.93.8",
+      "L4.512.4.74.6",
+      "L4.512.4.87.0",
+      "L4.523.0.90.2",
+      "L4.523.0.91.2",
+      "L4.785.8.73.2",
+      "L4.825.4.52.0",
+      "L4.904.4.11.2",
+      "L4.905.1.11.2",
+      "L4.905.2.11.2",
+      "L4.905.4.11.2",
+      "L4.905.4.11.6",
+      "L4.910.4.11.6",
+      "L4.910.4.12.6",
+      "L4.910.4.57.6",
+      "L4.910.4.72.6",
+      "L4.910.4.92.6",
+      "L4.910.4.97.6",
+      "L4.910.5.11.7",
+      "L4.911.4.77.6",
+      "L4.921.2.12.7",
+      "L4.921.4.11.2",
+      "L4.921.4.11.6",
+      "L4.921.4.12.6",
+      "L4.921.4.52.2",
+      "L4.921.4.52.6",
+      "L4.921.4.72.6",
+      "L4.921.4.92.6",
+      "L4.922.1.11.7",
+      "L4.922.2.11.2",
+      "L4.922.2.11.7",
+      "L4.922.2.12.7",
+      "L4.922.2.32.7",
+      "L4.922.4.11.2",
+      "L4.922.4.11.6",
+      "L4.922.4.12.6",
+      "L4.922.4.52.6",
+      "L4.922.4.72.6",
+      "L4.922.4.92.6",
+      "L4.960.4.11.6",
+      "L4.984.3.92.7",
+      "L4.984.3.99.7",
+      "L4.984.4.21.6",
+      "L4.984.4.57.6",
+      "L5.200.0.05.2",
+      "L5.200.0.79.2",
+      "L5.200.0.95.2",
+      "L5.200.4.71.D",
+      "L5.255.4.61.2",
+      "L5.255.4.71.3",
+      "L5.255.4.71.4",
+      "L5.255.4.93.2",
+      "L5.255.4.98.2",
+      "L5.255.4.99.2",
+      "L5.255.6.95.2",
+      "L5.512.4.71.3",
+      "L5.512.4.71.4",
+      "L5.512.4.93.6",
+      "L8.110.4.87.6",
+      "L8.110.4.98.6",
+      "L8.112.4.98.6",
+      "L8.113.4.98.6"
+    ],
+    "catalogAfter": 1049,
+    "formula": "|C ∪ M| = 883 + 666 − 500 = 1049",
+    "newEntryDetail": "新增 166 筆 CN 專屬配置：collectionId 依 collection-summary.json collectionIdDerivation 規則；imageUrl 取 PDP content.image（官網實際提供的 1024px cache URL）；dialColors 依指南規則逐字判讀 CN 官方錶盤文字。每筆新增項目皆可由 observations.json 的 catalogAddition 欄位重現（0 差異）。",
+    "collectionIdsNewToCatalog": [
+      "1832",
+      "lyre",
+      "presence"
+    ],
+    "newEntriesByCollectionId": {
+      "1832": 3,
+      "conquest-chronograph": 1,
+      "dolcevita": 10,
+      "elegant": 32,
+      "evidenza": 4,
+      "flagship": 8,
+      "heritage-classic": 3,
+      "hydroconquest": 8,
+      "la-grande-classique": 8,
+      "legend-diver": 2,
+      "lyre": 1,
+      "master-collection": 19,
+      "master-collection-moonphase": 5,
+      "mini-dolcevita": 4,
+      "pilot-majetek": 1,
+      "presence": 39,
+      "primaluna": 4,
+      "record": 10,
+      "spirit": 2,
+      "spirit-chronograph": 2
+    },
+    "newEntriesByDialColors": {
+      "beige": 3,
+      "black": 19,
+      "blue": 31,
+      "gold": 2,
+      "green": 5,
+      "grey": 3,
+      "other": 5,
+      "red": 7,
+      "silver": 22,
+      "white": 69
+    },
+    "pendingReview": {
+      "collectionIdFromCnCategoryPath": [],
+      "dialColorsOther": [
+        "L5.200.4.71.D",
+        "L5.255.4.71.3",
+        "L5.255.4.71.4",
+        "L5.512.4.71.3",
+        "L5.512.4.71.4"
+      ],
+      "note": "原待覆核項目已由使用者於 2026-10-03 決定：heritage-collection／more-heritage 的 3 款歸類為 heritage-classic（collectionName 为简体「复刻系列」）；dialColors=other 的 5 款（「复古放射波纹」）維持 other；CN imageUrl 採 longines.cn cache URL。"
+    }
+  },
+  "priceStatistics": {
+    "currency": "CNY",
+    "min": 8000,
+    "max": 194300,
+    "median": 18600.0,
+    "count": 666,
+    "priceType": "tax-include",
+    "taxRatePercent": 13
+  },
+  "nicknameResearch": "PASS（採用 1 筆系列別名「浪琴水鬼」與 1 筆單款俗稱「浪鬼」，見 nickname-research.json）",
+  "travelerRefundPolicy": "PASS：既有 CN 市場記錄經國家稅務總局頁面重新查核仍正確，未變更 data/traveler-refund-policies.json（見 traveler-refund-policy-check.json）。",
+  "readmeUpdate": {
+    "status": "PASS",
+    "updated": true,
+    "sections": [
+      "README.md「Data：官方配置與多市場價格」表格與 Longines 說明段落",
+      "watch-data-collection-guide.md「Longines」市場表與說明",
+      "ai-data-maintenance-guide.md 市場涵蓋表",
+      "examples/regression-cases.md 新增 Longines AT／TH／CN 小節"
+    ],
+    "reason": "Longines 市場數由 12 增為 15、跨市場聯集由 883 增為 1,049，長期描述受影響。"
+  },
+  "limitations": [
+    "未使用任何 sub-agent 或背景工作單元處理市場資料；AT、CN、TH 三個市場由同一個流程依序、各自獨立保存 evidence，並由同一流程合併 catalog。",
+    "本任務依指示未修改 app/（畫面呈現）；網站市場選單、collectionId 多語系名稱等前端項目尚未納入（見最終回報）。",
+    "國際站國家選單的「中國」指向台灣站，因此以官方獨立網域 longines.cn 作為中國大陸官方站；未能由國際站驗證兩者的官方從屬關係，僅依網域備案資訊、頁尾版權與頁面內容判定。",
+    "通路判定（listed）依 37 款實際渲染商品頁；未對全部 666 筆逐頁渲染。",
+    "列表頁 SSR 顯示 664 與 API 的 666 差 2，原因未證實（見 collection-summary.json stopEvidence.discrepancy）。",
+    "稅制 13% 只代表增值稅法一般稅率，不代表含稅售價只含此一項稅費。",
+    "CN 市場檔的 collectionName／modelName 皆採官方列表顯示的 productCollection 原文（含【线上专供】等前綴），與國際站的分類名稱與商品名稱語意不同。",
+    "CN 專屬 166 款新配置：collectionId／dialColors 規則見 collection-summary.json collectionIdDerivation；3 款依使用者指示歸入 heritage-classic，5 款 other 與 imageUrl 來源已由使用者確認（userDecisions）。presence、1832、lyre 的前端多語系名稱尚未建立。"
+  ],
+  "userPostValidationChange": {
+    "at": "2026-10-03",
+    "change": "使用者於 2026-10-03 指示：heritage-collection 與 more-heritage 皆歸類為「复刻系列」，沿用既有 collectionId heritage-classic（前端已有對應名稱），CN 市場檔 collectionName 使用簡體「复刻系列」。 變更後重新執行：ajv Schema、指南跨檔腳本、market／catalog／evidence 一致性檢查（原始擷取暫存檔已清理，故未重跑依賴瀏覽器擷取的抽查項目，抽查結果不受影響：3 款皆非抽查樣本）。"
+  }
+}

@@ -93,3 +93,21 @@
 義大利官方站台入口為 `https://www.longines.com/it/watches`（官網國家選單「Italia」），但收集開始時該頁與 `/it/watches/master` 回傳 HTTP 500，因此由正常渲染的子系列頁 `/it/watches/master/master-collection`（「101 prodotti」）側錄 `store: it_it`／`lang: it-it` 的 ProductList 請求，再改用全腕錶分類 `category_uid = NA==`。完成全部 34 頁（前 33 頁每頁 24 筆、第 34 頁 16 筆）後有 808 個唯一完整配置，第 35 頁官方回傳超出可用頁數錯誤；收集完成後列表頁恢復渲染並顯示「808 prodotti」。間歇性「Unexpected error.」比 ES 更頻繁，失敗頁同樣以第二輪重試補齊。
 
 參考號集合與 ES 完全相同（808 筆，含相同的 2 筆目錄新增配置），但有 386 筆價格不同，屬真實市場差異。稅制依官方銷售條款「includono l'IVA locale」與 Normattiva 所載 D.P.R. 633/1972 第 16 條記為 `tax-include`、22%；Agenzia delle Entrate 網站對 WebFetch 與瀏覽器皆拒絕存取，未嘗試繞過。完整拆分見 `data/evidence/longines/IT/2026-09-29/collection-summary.json`。
+
+## Longines — 奧地利（AT）2026-10-03
+
+奧地利官方站台入口為 `https://www.longines.com/de-at/watches`（官網國家選單「Österreich」）。側錄官網自身的 ProductList 請求（`store: de_at`／`lang: de-at`）後以同源 fetch 重放，完成全部 34 頁（前 33 頁每頁 24 筆、第 34 頁 12 筆）共 804 個唯一完整配置，第 35 頁官方回傳「currentPage value 35 specified is greater than the 34 page(s) available.」，並與渲染列表頁「804 Produkte」一致。收集期間無任何頁面失敗或重試。
+
+5 個家族依 `preferred_category` 統計為 conquest 187、elegance 328、heritage 73、master 158、spirit 58，合計 804；31 個系列 slug 皆為既有 `collectionId`。與既有 catalog 比對：804 筆全數已存在（無新配置）；與 DE（804 筆）比對，各有 11 筆互不重疊，屬真實市場差異。全部 804 筆為 `listed`（最低 900、最高 27,300 歐元，中位數 2,600），其中 65 款官方 `stock_status` 為 `OUT_OF_STOCK` 但仍公開價格。稅制依官方銷售條款「beinhalten die lokale Mehrwertsteuer」與奧地利 USP 的 20% 標準稅率記為 `tax-include`、20%。完整拆分見 `data/evidence/longines/AT/2026-10-03/collection-summary.json`。
+
+## Longines — 泰國（TH）2026-10-03
+
+泰國官方站台入口為 `https://www.longines.com/th/watches`（國家選單項目指向 `/th`）。完成全部 34 頁（前 33 頁每頁 24 筆、第 34 頁 14 筆）共 806 個唯一完整配置，第 35 頁官方回傳超出可用頁數錯誤，並與渲染列表頁「806 ผลิตภัณฑ์」一致。
+
+5 個家族為 conquest 188、elegance 329、heritage 73、master 158、spirit 58，合計 806；與既有 catalog 比對全數已存在（無新配置），與 GB（806 筆）有 803 筆相同。全部 806 筆為 `retailer-only`（最低 30,500、最高 908,700 泰銖，中位數 87,800）：官方商品頁公開建議零售價，但購買動線只有「ค้นหาร้านค้าปลีก」（尋找零售商），以 35 款實際渲染商品頁（涵蓋 `purchasable`／`find_retailer` 四種欄位組合）確認沒有加入購物車按鈕，欄位本身不足以判定通路。稅制記為 `tax-include`、7%，但官方站未逐字說明標價含稅，泰國 7% 減徵稅率目前延長至 2027-09-30 的依據為二手來源，皆列為限制，詳見 `data/evidence/longines/TH/2026-10-03/collection-summary.json` 的 `tax`。
+
+## Longines — 中國（CN）2026-10-03
+
+中國大陸官方站為獨立網域 `https://www.longines.cn/watches`；國際站國家選單的「中國」與「台湾地區」都指向 `/zh-tw`，因此不能用國際站代表中國大陸。以官網自身的 `productList` REST（`category_id=4`）逐頁取得 56 頁（第 57 頁空清單且 `hasMore=false`）共 666 個唯一完整配置；列表頁渲染／SSR 顯示「664 件作品」，與 API 的 `totalNum=666` 差 2，疑與頁面廣告版位有關但官方未說明，記為未解釋的口徑差異，以兩輪獨立收集（各 666 個唯一 SKU、集合相同）與分面計數加總 666 為準。每個 SKU 另取商品頁內嵌狀態以取得錶殼材質與錶盤顏色，666 筆價格與列表 100% 一致。
+
+與既有 catalog 比對：交集 500、CN 專屬新配置 166 筆（含【线上专供】【直营专供】【全球限量】款，國際站三個 store 以 SKU 查詢皆無結果）已併入共用目錄。全部 666 筆為 `listed`（最低 8,000、最高 194,300 人民幣，中位數 18,600）。稅制依官方條款「价格中已包含按现行税率计算的相关税款」與增值稅法第十條 13% 記為 `tax-include`、13%（不代表含稅價只含此一項稅費）。俗稱研究採用 2 筆（系列別名「浪琴水鬼」與 L3.784.4.56.9 的「浪鬼」）。完整拆分、`collectionId` 判讀規則與待覆核項目見 `data/evidence/longines/CN/2026-10-03/collection-summary.json` 與 `validation-summary.json`。

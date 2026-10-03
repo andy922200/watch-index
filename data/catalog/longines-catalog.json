@@ -2,7 +2,7 @@
   "$schema": "../schemas/watch-catalog.schema.json",
   "schemaVersion": 5,
   "brandId": "longines",
-  "collectedAt": "2026-09-29T11:05:55.000Z",
+  "collectedAt": "2026-10-03T00:15:50.585Z",
   "sourceMarketCodes": [
     "TW",
     "HK",
@@ -15,9 +15,12 @@
     "FR",
     "SG",
     "IT",
-    "ES"
+    "ES",
+    "AT",
+    "CN",
+    "TH"
   ],
-  "watchCount": 883,
+  "watchCount": 1049,
   "watches": [
     {
       "watchId": "longines:L1.648.4.52.2",
@@ -7970,6 +7973,1500 @@
       "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-hydroconquest-l3-369-4-12-6-191873-hero.png",
       "dialColors": [
         "white"
+      ]
+    },
+    {
+      "watchId": "longines:L1.651.4.09.2",
+      "collectionId": "heritage-classic",
+      "reference": "L1.651.4.09.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_small-image_l1.651.4.09.2.png",
+      "dialColors": [
+        "red"
+      ]
+    },
+    {
+      "watchId": "longines:L2.128.4.78.3",
+      "collectionId": "master-collection",
+      "reference": "L2.128.4.78.3",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.128.4.78.3_7.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L2.142.4.09.2",
+      "collectionId": "evidenza",
+      "reference": "L2.142.4.09.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.142.4.09.2_4.png",
+      "dialColors": [
+        "red"
+      ]
+    },
+    {
+      "watchId": "longines:L2.142.4.56.2",
+      "collectionId": "evidenza",
+      "reference": "L2.142.4.56.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.142.4.56.2_4.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L2.142.4.66.2",
+      "collectionId": "evidenza",
+      "reference": "L2.142.4.66.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.142.4.66.2_4.png",
+      "dialColors": [
+        "gold"
+      ]
+    },
+    {
+      "watchId": "longines:L2.142.4.96.2",
+      "collectionId": "evidenza",
+      "reference": "L2.142.4.96.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.142.4.96.2_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L2.257.4.96.6",
+      "collectionId": "master-collection",
+      "reference": "L2.257.4.96.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/l/q/lqlpjwdfdkr-avpnb9dnb9cwidqig7q51ocjhwvvkybaaa_2000_2000_1.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L2.257.4.97.0",
+      "collectionId": "master-collection",
+      "reference": "L2.257.4.97.0",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.257.4.97.0_6.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L2.320.4.11.2",
+      "collectionId": "record",
+      "reference": "L2.320.4.11.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.320.4.11.2_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L2.321.4.11.2",
+      "collectionId": "record",
+      "reference": "L2.321.4.11.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.321.4.11.2.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L2.321.4.57.6",
+      "collectionId": "record",
+      "reference": "L2.321.4.57.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.321.4.57.6_1.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L2.321.4.96.6",
+      "collectionId": "record",
+      "reference": "L2.321.4.96.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.321.4.96.6_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L2.321.5.11.7",
+      "collectionId": "record",
+      "reference": "L2.321.5.11.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.321.5.11.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L2.330.4.93.0",
+      "collectionId": "heritage-classic",
+      "reference": "L2.330.4.93.0",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.330.4.93.0_5.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L2.357.4.73.6",
+      "collectionId": "master-collection",
+      "reference": "L2.357.4.73.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.357.4.73.6.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L2.357.5.70.2",
+      "collectionId": "master-collection",
+      "reference": "L2.357.5.70.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.357.5.70.2.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L2.357.5.70.7",
+      "collectionId": "master-collection",
+      "reference": "L2.357.5.70.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.357.5.70.7.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L2.409.4.97.0",
+      "collectionId": "master-collection-moonphase",
+      "reference": "L2.409.4.97.0",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.409.4.97.0_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L2.628.4.77.6",
+      "collectionId": "master-collection",
+      "reference": "L2.628.4.77.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.628.4.77.6_5.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L2.628.4.78.3",
+      "collectionId": "master-collection",
+      "reference": "L2.628.4.78.3",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.628.4.78.3_5.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L2.628.4.97.6",
+      "collectionId": "master-collection",
+      "reference": "L2.628.4.97.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.628.4.97.6_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L2.628.5.77.7",
+      "collectionId": "master-collection",
+      "reference": "L2.628.5.77.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.628.5.77.7_5.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L2.628.8.77.3",
+      "collectionId": "master-collection",
+      "reference": "L2.628.8.77.3",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.628.8.77.3_5.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L2.628.8.78.3",
+      "collectionId": "master-collection",
+      "reference": "L2.628.8.78.3",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.628.8.78.3_5.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L2.793.4.59.2",
+      "collectionId": "master-collection",
+      "reference": "L2.793.4.59.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.793.4.59.2_6.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L2.793.4.77.3",
+      "collectionId": "master-collection",
+      "reference": "L2.793.4.77.3",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.793.4.77.3_5.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L2.793.4.92.0",
+      "collectionId": "master-collection",
+      "reference": "L2.793.4.92.0",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.793.4.92.0_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L2.793.4.96.6",
+      "collectionId": "master-collection",
+      "reference": "L2.793.4.96.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/l/q/lqlpjyh8extair_nb9dnb9cw6popae6ie2qjeyxt9lzhaq_2000_2000.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L2.821.4.76.2",
+      "collectionId": "record",
+      "reference": "L2.821.4.76.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.821.4.76.2_5.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L2.821.4.96.4",
+      "collectionId": "record",
+      "reference": "L2.821.4.96.4",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.821.4.96.4_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L2.821.4.96.6",
+      "collectionId": "record",
+      "reference": "L2.821.4.96.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.821.4.96.6_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L2.838.4.53.9",
+      "collectionId": "pilot-majetek",
+      "reference": "L2.838.4.53.9",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.838.4.53.9_6.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L2.893.4.77.3",
+      "collectionId": "master-collection",
+      "reference": "L2.893.4.77.3",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.893.4.77.3_5.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L2.893.4.97.0",
+      "collectionId": "master-collection",
+      "reference": "L2.893.4.97.0",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.893.4.97.0_4.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L2.893.5.59.7",
+      "collectionId": "master-collection",
+      "reference": "L2.893.5.59.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base-design_l2.893.5.59.7.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L2.909.4.92.0",
+      "collectionId": "master-collection-moonphase",
+      "reference": "L2.909.4.92.0",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.909.4.92.0_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L2.909.4.97.0",
+      "collectionId": "master-collection-moonphase",
+      "reference": "L2.909.4.97.0",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.909.4.97.0_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L2.919.4.92.0",
+      "collectionId": "master-collection-moonphase",
+      "reference": "L2.919.4.92.0",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.919.4.92.0_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L2.919.4.97.0",
+      "collectionId": "master-collection-moonphase",
+      "reference": "L2.919.4.97.0",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.919.4.97.0_4.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L2.921.4.56.2",
+      "collectionId": "record",
+      "reference": "L2.921.4.56.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.921.4.56.2_4.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L2.921.4.56.6",
+      "collectionId": "record",
+      "reference": "L2.921.4.56.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l2.921.4.56.6_5.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L3.369.3.12.7",
+      "collectionId": "hydroconquest",
+      "reference": "L3.369.3.12.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_small-image-design_l3.369.3.12.7.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L3.369.3.18.7",
+      "collectionId": "hydroconquest",
+      "reference": "L3.369.3.18.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_small-image-design_l3.369.3.18.7.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L3.369.3.88.7",
+      "collectionId": "hydroconquest",
+      "reference": "L3.369.3.88.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_small-image-design_l3.369.3.88.7.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L3.369.4.87.6",
+      "collectionId": "hydroconquest",
+      "reference": "L3.369.4.87.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_small-image-design_l3.369.4.87.6.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L3.374.4.40.2",
+      "collectionId": "legend-diver",
+      "reference": "L3.374.4.40.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l3.374.4.40.2_1.png",
+      "dialColors": [
+        "red"
+      ]
+    },
+    {
+      "watchId": "longines:L3.774.4.50.6",
+      "collectionId": "legend-diver",
+      "reference": "L3.774.4.50.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l3.774.4.50.6_6.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L3.781.3.56.9",
+      "collectionId": "hydroconquest",
+      "reference": "L3.781.3.56.9",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l3.781.3.56.9_5.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L3.781.3.98.9",
+      "collectionId": "hydroconquest",
+      "reference": "L3.781.3.98.9",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l3.781.3.98.9_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L3.782.3.06.7",
+      "collectionId": "hydroconquest",
+      "reference": "L3.782.3.06.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l3.782.3.06.7_4.png",
+      "dialColors": [
+        "green"
+      ]
+    },
+    {
+      "watchId": "longines:L3.782.3.58.7",
+      "collectionId": "hydroconquest",
+      "reference": "L3.782.3.58.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l3.782.3.58.7_4.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L3.811.4.03.2",
+      "collectionId": "spirit",
+      "reference": "L3.811.4.03.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l3.811.4.03.2_5.png",
+      "dialColors": [
+        "green"
+      ]
+    },
+    {
+      "watchId": "longines:L3.811.4.93.0",
+      "collectionId": "spirit",
+      "reference": "L3.811.4.93.0",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l3.811.4.93.0_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L3.820.4.73.2",
+      "collectionId": "spirit-chronograph",
+      "reference": "L3.820.4.73.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l3.820.4.73.2_5.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L3.820.4.73.6",
+      "collectionId": "spirit-chronograph",
+      "reference": "L3.820.4.73.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l3.820.4.73.6_5.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L3.836.4.52.9",
+      "collectionId": "conquest-chronograph",
+      "reference": "L3.836.4.52.9",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_thumbnail_l3.836.4.52.9.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L4.209.1.93.8",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.209.1.93.8",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base-design_l4.209.1.93.8.png",
+      "dialColors": [
+        "red"
+      ]
+    },
+    {
+      "watchId": "longines:L4.209.4.74.6",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.209.4.74.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base-design_l4.209.4.74.6.png",
+      "dialColors": [
+        "grey"
+      ]
+    },
+    {
+      "watchId": "longines:L4.309.0.87.6",
+      "collectionId": "elegant",
+      "reference": "L4.309.0.87.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.309.0.87.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.309.4.11.6",
+      "collectionId": "elegant",
+      "reference": "L4.309.4.11.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.309.4.11.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.309.4.12.6",
+      "collectionId": "elegant",
+      "reference": "L4.309.4.12.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.309.4.12.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.309.4.77.6",
+      "collectionId": "elegant",
+      "reference": "L4.309.4.77.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.309.4.77.6_5.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L4.309.4.87.6",
+      "collectionId": "elegant",
+      "reference": "L4.309.4.87.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.309.4.87.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.309.4.97.6",
+      "collectionId": "elegant",
+      "reference": "L4.309.4.97.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.309.4.97.6_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L4.309.5.11.7",
+      "collectionId": "elegant",
+      "reference": "L4.309.5.11.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.309.5.11.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.309.5.12.7",
+      "collectionId": "elegant",
+      "reference": "L4.309.5.12.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.309.5.12.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.309.5.87.7",
+      "collectionId": "elegant",
+      "reference": "L4.309.5.87.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.309.5.87.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.309.5.88.7",
+      "collectionId": "elegant",
+      "reference": "L4.309.5.88.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.309.5.88.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.310.0.87.6",
+      "collectionId": "elegant",
+      "reference": "L4.310.0.87.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.310.0.87.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.310.4.11.6",
+      "collectionId": "elegant",
+      "reference": "L4.310.4.11.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.310.4.11.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.310.4.12.6",
+      "collectionId": "elegant",
+      "reference": "L4.310.4.12.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.310.4.12.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.310.4.57.6",
+      "collectionId": "elegant",
+      "reference": "L4.310.4.57.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.310.4.57.6_5.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L4.310.4.77.6",
+      "collectionId": "elegant",
+      "reference": "L4.310.4.77.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.310.4.77.6_5.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L4.310.4.87.6",
+      "collectionId": "elegant",
+      "reference": "L4.310.4.87.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.310.4.87.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.310.4.97.6",
+      "collectionId": "elegant",
+      "reference": "L4.310.4.97.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.310.4.97.6_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L4.310.5.11.7",
+      "collectionId": "elegant",
+      "reference": "L4.310.5.11.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.310.5.11.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.310.5.12.7",
+      "collectionId": "elegant",
+      "reference": "L4.310.5.12.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.310.5.12.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.310.5.88.7",
+      "collectionId": "elegant",
+      "reference": "L4.310.5.88.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.310.5.88.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.312.4.11.6",
+      "collectionId": "elegant",
+      "reference": "L4.312.4.11.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.312.4.11.6_4.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.312.4.87.6",
+      "collectionId": "elegant",
+      "reference": "L4.312.4.87.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.312.4.87.6_4.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.312.5.87.7",
+      "collectionId": "elegant",
+      "reference": "L4.312.5.87.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.312.5.87.7_4.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.321.1.11.7",
+      "collectionId": "presence",
+      "reference": "L4.321.1.11.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.321.1.11.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.321.1.12.7",
+      "collectionId": "presence",
+      "reference": "L4.321.1.12.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.321.1.12.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.321.2.11.2",
+      "collectionId": "presence",
+      "reference": "L4.321.2.11.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.321.2.11.2_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.321.4.11.2",
+      "collectionId": "presence",
+      "reference": "L4.321.4.11.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.321.4.11.2_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.321.4.11.6",
+      "collectionId": "presence",
+      "reference": "L4.321.4.11.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.321.4.11.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.321.4.12.6",
+      "collectionId": "presence",
+      "reference": "L4.321.4.12.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.321.4.12.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.322.1.11.7",
+      "collectionId": "presence",
+      "reference": "L4.322.1.11.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.322.1.11.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.322.1.12.7",
+      "collectionId": "presence",
+      "reference": "L4.322.1.12.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.322.1.12.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.322.2.11.2",
+      "collectionId": "presence",
+      "reference": "L4.322.2.11.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.322.2.11.2_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.322.2.11.7",
+      "collectionId": "presence",
+      "reference": "L4.322.2.11.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.322.2.11.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.322.2.12.7",
+      "collectionId": "presence",
+      "reference": "L4.322.2.12.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.322.2.12.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.322.4.11.2",
+      "collectionId": "presence",
+      "reference": "L4.322.4.11.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.322.4.11.2_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.322.4.11.6",
+      "collectionId": "presence",
+      "reference": "L4.322.4.11.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.322.4.11.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.322.4.12.6",
+      "collectionId": "presence",
+      "reference": "L4.322.4.12.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.322.4.12.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.322.4.92.6",
+      "collectionId": "presence",
+      "reference": "L4.322.4.92.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.322.4.92.6_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L4.325.4.87.2",
+      "collectionId": "1832",
+      "reference": "L4.325.4.87.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.325.4.87.2_5.png",
+      "dialColors": [
+        "beige"
+      ]
+    },
+    {
+      "watchId": "longines:L4.325.4.92.2",
+      "collectionId": "1832",
+      "reference": "L4.325.4.92.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.325.4.92.2_5.png",
+      "dialColors": [
+        "beige"
+      ]
+    },
+    {
+      "watchId": "longines:L4.341.0.11.2",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.341.0.11.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.341.0.11.2_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.374.3.27.7",
+      "collectionId": "flagship",
+      "reference": "L4.374.3.27.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.374.3.27.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.374.3.91.7",
+      "collectionId": "flagship",
+      "reference": "L4.374.3.91.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.374.3.91.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.374.4.27.6",
+      "collectionId": "flagship",
+      "reference": "L4.374.4.27.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.374.4.27.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.374.4.92.6",
+      "collectionId": "flagship",
+      "reference": "L4.374.4.92.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.374.4.92.6_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L4.378.9.87.4",
+      "collectionId": "elegant",
+      "reference": "L4.378.9.87.4",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.378.9.87.4_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.512.1.93.8",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.512.1.93.8",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base-design_l4.512.1.93.8_1.png",
+      "dialColors": [
+        "red"
+      ]
+    },
+    {
+      "watchId": "longines:L4.512.4.74.6",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.512.4.74.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base-design_l4.512.4.74.6_1.png",
+      "dialColors": [
+        "grey"
+      ]
+    },
+    {
+      "watchId": "longines:L4.512.4.87.0",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.512.4.87.0",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.512.4.87.0_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.523.0.90.2",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.523.0.90.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.523.0.90.2_4.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L4.523.0.91.2",
+      "collectionId": "la-grande-classique",
+      "reference": "L4.523.0.91.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.523.0.91.2_4.png",
+      "dialColors": [
+        "red"
+      ]
+    },
+    {
+      "watchId": "longines:L4.785.8.73.2",
+      "collectionId": "heritage-classic",
+      "reference": "L4.785.8.73.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.785.8.73.2_5.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L4.825.4.52.0",
+      "collectionId": "1832",
+      "reference": "L4.825.4.52.0",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.825.4.52.0_5.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L4.904.4.11.2",
+      "collectionId": "presence",
+      "reference": "L4.904.4.11.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.904.4.11.2_4.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.905.1.11.2",
+      "collectionId": "presence",
+      "reference": "L4.905.1.11.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.905.1.11.2_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.905.2.11.2",
+      "collectionId": "presence",
+      "reference": "L4.905.2.11.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.905.2.11.2_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.905.4.11.2",
+      "collectionId": "presence",
+      "reference": "L4.905.4.11.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.905.4.11.2_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.905.4.11.6",
+      "collectionId": "presence",
+      "reference": "L4.905.4.11.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.905.4.11.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.910.4.11.6",
+      "collectionId": "elegant",
+      "reference": "L4.910.4.11.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.910.4.11.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.910.4.12.6",
+      "collectionId": "elegant",
+      "reference": "L4.910.4.12.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.910.4.12.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.910.4.57.6",
+      "collectionId": "elegant",
+      "reference": "L4.910.4.57.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.910.4.57.6_5.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L4.910.4.72.6",
+      "collectionId": "elegant",
+      "reference": "L4.910.4.72.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.910.4.72.6_5.png",
+      "dialColors": [
+        "grey"
+      ]
+    },
+    {
+      "watchId": "longines:L4.910.4.92.6",
+      "collectionId": "elegant",
+      "reference": "L4.910.4.92.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.910.4.92.6_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L4.910.4.97.6",
+      "collectionId": "elegant",
+      "reference": "L4.910.4.97.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.910.4.97.6_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L4.910.5.11.7",
+      "collectionId": "elegant",
+      "reference": "L4.910.5.11.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.910.5.11.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.911.4.77.6",
+      "collectionId": "elegant",
+      "reference": "L4.911.4.77.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.911.4.77.6_5.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L4.921.2.12.7",
+      "collectionId": "presence",
+      "reference": "L4.921.2.12.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.921.2.12.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.921.4.11.2",
+      "collectionId": "presence",
+      "reference": "L4.921.4.11.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.921.4.11.2_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.921.4.11.6",
+      "collectionId": "presence",
+      "reference": "L4.921.4.11.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.921.4.11.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.921.4.12.6",
+      "collectionId": "presence",
+      "reference": "L4.921.4.12.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.921.4.12.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.921.4.52.2",
+      "collectionId": "presence",
+      "reference": "L4.921.4.52.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.921.4.52.2_5.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L4.921.4.52.6",
+      "collectionId": "presence",
+      "reference": "L4.921.4.52.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.921.4.52.6_5.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L4.921.4.72.6",
+      "collectionId": "presence",
+      "reference": "L4.921.4.72.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.921.4.72.6_5.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L4.921.4.92.6",
+      "collectionId": "presence",
+      "reference": "L4.921.4.92.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.921.4.92.6_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L4.922.1.11.7",
+      "collectionId": "presence",
+      "reference": "L4.922.1.11.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_small-image_l4.922.1.11.7_1.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.922.2.11.2",
+      "collectionId": "presence",
+      "reference": "L4.922.2.11.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.922.2.11.2_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.922.2.11.7",
+      "collectionId": "presence",
+      "reference": "L4.922.2.11.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.922.2.11.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.922.2.12.7",
+      "collectionId": "presence",
+      "reference": "L4.922.2.12.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.922.2.12.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.922.2.32.7",
+      "collectionId": "presence",
+      "reference": "L4.922.2.32.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.922.2.32.7_5.png",
+      "dialColors": [
+        "gold"
+      ]
+    },
+    {
+      "watchId": "longines:L4.922.4.11.2",
+      "collectionId": "presence",
+      "reference": "L4.922.4.11.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.922.4.11.2_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.922.4.11.6",
+      "collectionId": "presence",
+      "reference": "L4.922.4.11.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.922.4.11.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.922.4.12.6",
+      "collectionId": "presence",
+      "reference": "L4.922.4.12.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.922.4.12.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.922.4.52.6",
+      "collectionId": "presence",
+      "reference": "L4.922.4.52.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.922.4.52.6_5.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L4.922.4.72.6",
+      "collectionId": "presence",
+      "reference": "L4.922.4.72.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.922.4.72.6_5.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "longines:L4.922.4.92.6",
+      "collectionId": "presence",
+      "reference": "L4.922.4.92.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.922.4.92.6_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L4.960.4.11.6",
+      "collectionId": "lyre",
+      "reference": "L4.960.4.11.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.960.4.11.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.984.3.92.7",
+      "collectionId": "flagship",
+      "reference": "L4.984.3.92.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.984.3.92.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.984.3.99.7",
+      "collectionId": "flagship",
+      "reference": "L4.984.3.99.7",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.984.3.99.7_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.984.4.21.6",
+      "collectionId": "flagship",
+      "reference": "L4.984.4.21.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.984.4.21.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L4.984.4.57.6",
+      "collectionId": "flagship",
+      "reference": "L4.984.4.57.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l4.984.4.57.6_5.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "longines:L5.200.0.05.2",
+      "collectionId": "mini-dolcevita",
+      "reference": "L5.200.0.05.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l5.200.0.05.2.png",
+      "dialColors": [
+        "green"
+      ]
+    },
+    {
+      "watchId": "longines:L5.200.0.79.2",
+      "collectionId": "mini-dolcevita",
+      "reference": "L5.200.0.79.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l5.200.0.79.2.png",
+      "dialColors": [
+        "beige"
+      ]
+    },
+    {
+      "watchId": "longines:L5.200.0.95.2",
+      "collectionId": "mini-dolcevita",
+      "reference": "L5.200.0.95.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l5.200.0.95.2.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L5.200.4.71.D",
+      "collectionId": "mini-dolcevita",
+      "reference": "L5.200.4.71.D",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_thumbnail-design_l5.200.4.71.d.png",
+      "dialColors": [
+        "other"
+      ]
+    },
+    {
+      "watchId": "longines:L5.255.4.61.2",
+      "collectionId": "dolcevita",
+      "reference": "L5.255.4.61.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base-design_l5.255.4.61.2_1.png",
+      "dialColors": [
+        "green"
+      ]
+    },
+    {
+      "watchId": "longines:L5.255.4.71.3",
+      "collectionId": "dolcevita",
+      "reference": "L5.255.4.71.3",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l5.255.4.71.3_5.png",
+      "dialColors": [
+        "other"
+      ]
+    },
+    {
+      "watchId": "longines:L5.255.4.71.4",
+      "collectionId": "dolcevita",
+      "reference": "L5.255.4.71.4",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_small-image_l5.255.4.71.4.png",
+      "dialColors": [
+        "other"
+      ]
+    },
+    {
+      "watchId": "longines:L5.255.4.93.2",
+      "collectionId": "dolcevita",
+      "reference": "L5.255.4.93.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l5.255.4.93.2_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L5.255.4.98.2",
+      "collectionId": "dolcevita",
+      "reference": "L5.255.4.98.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base-design_l5.255.4.98.2_1.png",
+      "dialColors": [
+        "red"
+      ]
+    },
+    {
+      "watchId": "longines:L5.255.4.99.2",
+      "collectionId": "dolcevita",
+      "reference": "L5.255.4.99.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base-design_l5.255.4.99.2_1.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L5.255.6.95.2",
+      "collectionId": "dolcevita",
+      "reference": "L5.255.6.95.2",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l5.255.6.95.2.png",
+      "dialColors": [
+        "green"
+      ]
+    },
+    {
+      "watchId": "longines:L5.512.4.71.3",
+      "collectionId": "dolcevita",
+      "reference": "L5.512.4.71.3",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l5.512.4.71.3_5.png",
+      "dialColors": [
+        "other"
+      ]
+    },
+    {
+      "watchId": "longines:L5.512.4.71.4",
+      "collectionId": "dolcevita",
+      "reference": "L5.512.4.71.4",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_small-image_l5.512.4.71.4.png",
+      "dialColors": [
+        "other"
+      ]
+    },
+    {
+      "watchId": "longines:L5.512.4.93.6",
+      "collectionId": "dolcevita",
+      "reference": "L5.512.4.93.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l5.512.4.93.6_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L8.110.4.87.6",
+      "collectionId": "primaluna",
+      "reference": "L8.110.4.87.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l8.110.4.87.6_5.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L8.110.4.98.6",
+      "collectionId": "primaluna",
+      "reference": "L8.110.4.98.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l8.110.4.98.6_4.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L8.112.4.98.6",
+      "collectionId": "primaluna",
+      "reference": "L8.112.4.98.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l8.112.4.98.6_5.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "longines:L8.113.4.98.6",
+      "collectionId": "primaluna",
+      "reference": "L8.113.4.98.6",
+      "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_hero-base_l8.113.4.98.6_4.png",
+      "dialColors": [
+        "blue"
       ]
     }
   ]

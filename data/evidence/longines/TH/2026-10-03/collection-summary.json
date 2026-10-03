@@ -1,0 +1,733 @@
+{
+  "brandId": "longines",
+  "marketCode": "TH",
+  "task": "new-market",
+  "locale": "th-th",
+  "salesRegion": "Thailand",
+  "entryPoint": {
+    "startedFrom": "https://www.longines.com/（瀏覽器預設語系導向 https://www.longines.com/zh-tw）",
+    "resolvedViaCountrySelector": "官網國家選單（ไทย（/th））→ https://www.longines.com/th",
+    "confirmedProductListingUrl": "https://www.longines.com/th/watches",
+    "note": "以真實瀏覽器開啟國際站首頁，列出國家選單全部連結後確認入口路徑；入口 URL 非猜測。"
+  },
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "not-applicable",
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "PASS",
+    "fallbackTool": null,
+    "notes": "Chrome DevTools MCP list_network_requests／get_network_request 讀取官網自身 ProductList 請求（該請求由 PerformanceResourceTiming 解析 query／variables，未另以 get_network_request 讀取標頭，lang／store 取自請求變數 cache_buster_lang／cache_buster_store 與 StoreConfig；）後重放。Cookie 等標頭僅在工具輸出中出現，未寫入 evidence。"
+  },
+  "stopEvidence": {
+    "officialTotalCount": 806,
+    "uniqueSkusCollected": 806,
+    "pagesCollected": 34,
+    "lastPageItemCount": 14,
+    "beyondLastPageResponse": {
+      "page": 35,
+      "pageSize": 24,
+      "message": [
+        "currentPage value 35 specified is greater than the 34 page(s) available."
+      ]
+    },
+    "independentRenderedTotal": {
+      "text": "806 ผลิตภัณฑ์",
+      "url": "https://www.longines.com/th/watches",
+      "observedAt": "2026-10-03T00:28:37.154Z",
+      "note": "主要收集完成後，瀏覽器重新載入官方列表頁，讀取渲染文字中的商品總數。"
+    },
+    "reasoning": "官方 total_count=806 與 34 頁累積唯一 SKU 數 806 一致（33×24+14），第 35 頁官方明確回傳超出可用頁數；各頁 total_count 皆為 806，無重複、無缺頁；渲染頁文字總數相同。"
+  },
+  "recordCounts": {
+    "rawItemsReturned": 806,
+    "uniqueReferences": 806,
+    "duplicatesFound": 0
+  },
+  "conflictsFound": "無。每頁僅採用第一次成功回應；失敗嘗試未取得資料，沒有同頁多次成功而價格或狀態不同的情形。",
+  "attempts": {
+    "preCollection": [
+      {
+        "time": "約 2026-10-02T23:47Z（未記錄秒級時間）",
+        "method": "開啟 https://www.longines.com/ 並列出國家選單全部連結",
+        "result": "找到 https://www.longines.com/th 入口（連結文字：ไทย）。"
+      },
+      {
+        "time": "2026-10-02T23:52:10.758Z",
+        "method": "開啟 https://www.longines.com/th/watches 並取得該站 ProductList 查詢文字與變數",
+        "result": "成功；StoreConfig 與請求標頭符合預定市場。"
+      }
+    ],
+    "pagedRequests": [
+      {
+        "page": 1,
+        "try": 1,
+        "started": "2026-10-02T23:52:10.758Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 2,
+        "try": 1,
+        "started": "2026-10-02T23:52:15.453Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 3,
+        "try": 1,
+        "started": "2026-10-02T23:52:19.934Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 4,
+        "try": 1,
+        "started": "2026-10-02T23:52:24.516Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 5,
+        "try": 1,
+        "started": "2026-10-02T23:52:30.103Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 6,
+        "try": 1,
+        "started": "2026-10-02T23:52:36.028Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 7,
+        "try": 1,
+        "started": "2026-10-02T23:52:43.276Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 8,
+        "try": 1,
+        "started": "2026-10-02T23:52:47.708Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 9,
+        "try": 1,
+        "started": "2026-10-02T23:52:54.370Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 10,
+        "try": 1,
+        "started": "2026-10-02T23:53:03.197Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 11,
+        "try": 1,
+        "started": "2026-10-02T23:53:10.794Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 12,
+        "try": 1,
+        "started": "2026-10-02T23:53:17.852Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 13,
+        "try": 1,
+        "started": "2026-10-02T23:53:25.245Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 14,
+        "try": 1,
+        "started": "2026-10-02T23:53:32.519Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 15,
+        "try": 1,
+        "started": "2026-10-02T23:53:39.244Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 16,
+        "try": 1,
+        "started": "2026-10-02T23:53:42.574Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 17,
+        "try": 1,
+        "started": "2026-10-02T23:53:48.439Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 18,
+        "try": 1,
+        "started": "2026-10-02T23:53:55.302Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 19,
+        "try": 1,
+        "started": "2026-10-02T23:53:58.935Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 20,
+        "try": 1,
+        "started": "2026-10-02T23:54:05.648Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 21,
+        "try": 1,
+        "started": "2026-10-02T23:54:11.436Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 22,
+        "try": 1,
+        "started": "2026-10-02T23:54:18.785Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 23,
+        "try": 1,
+        "started": "2026-10-02T23:54:24.686Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 24,
+        "try": 1,
+        "started": "2026-10-02T23:54:32.378Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 25,
+        "try": 1,
+        "started": "2026-10-02T23:54:38.108Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 26,
+        "try": 1,
+        "started": "2026-10-02T23:54:44.642Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 27,
+        "try": 1,
+        "started": "2026-10-02T23:54:50.507Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 28,
+        "try": 1,
+        "started": "2026-10-02T23:54:57.499Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 29,
+        "try": 1,
+        "started": "2026-10-02T23:55:03.497Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 30,
+        "try": 1,
+        "started": "2026-10-02T23:55:09.356Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 31,
+        "try": 1,
+        "started": "2026-10-02T23:55:15.707Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 32,
+        "try": 1,
+        "started": "2026-10-02T23:55:22.534Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 33,
+        "try": 1,
+        "started": "2026-10-02T23:55:29.336Z",
+        "status": 200,
+        "errors": null,
+        "items": 24,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 34,
+        "try": 1,
+        "started": "2026-10-02T23:55:35.793Z",
+        "status": 200,
+        "errors": null,
+        "items": 14,
+        "total_count": 806,
+        "retryAfter": null
+      },
+      {
+        "page": 35,
+        "try": 1,
+        "started": "2026-10-02T23:55:41.621Z",
+        "status": 200,
+        "errors": [
+          "currentPage value 35 specified is greater than the 34 page(s) available."
+        ],
+        "items": null,
+        "total_count": null,
+        "retryAfter": null
+      }
+    ]
+  },
+  "collectionsFound": 31,
+  "collectionCounts": {
+    "conquest": 88,
+    "conquest-chronograph": 10,
+    "conquest-classic": 20,
+    "conquest-heritage": 26,
+    "dolcevita": 60,
+    "elegant": 42,
+    "evidenza": 13,
+    "flagship": 54,
+    "flagship-heritage": 8,
+    "heritage-avigation": 7,
+    "heritage-classic": 5,
+    "hydroconquest": 59,
+    "hydroconquest-gmt": 11,
+    "la-grande-classique": 66,
+    "legend-diver": 17,
+    "master-collection": 101,
+    "master-collection-chrono-monopusher": 2,
+    "master-collection-chronograph": 30,
+    "master-collection-moonphase": 23,
+    "master-gmt": 2,
+    "mini-dolcevita": 23,
+    "pilot-majetek": 3,
+    "primaluna": 50,
+    "record": 21,
+    "spirit": 13,
+    "spirit-chronograph": 4,
+    "spirit-flyback": 8,
+    "spirit-pilot": 5,
+    "spirit-pilot-flyback": 4,
+    "spirit-zulu-time": 24,
+    "ultra-chron": 7
+  },
+  "familyCounts": {
+    "conquest": 188,
+    "elegance": 329,
+    "heritage": 73,
+    "master": 158,
+    "spirit": 58
+  },
+  "stockStatusCounts": {
+    "OUT_OF_STOCK": 806
+  },
+  "listingSignalCounts": {
+    "purchasable=0,find_retailer=0": 96,
+    "purchasable=0,find_retailer=1": 591,
+    "purchasable=1,find_retailer=0": 110,
+    "purchasable=1,find_retailer=1": 9
+  },
+  "purchaseChannel": {
+    "decision": "retailer-only",
+    "evidence": "依 purchasable／find_retailer 欄位無法判定（列表資料四種組合並存：purchasable=0/find_retailer=0=96款、purchasable=0/find_retailer=1=591款、purchasable=1/find_retailer=0=110款、purchasable=1/find_retailer=1=9款；且 806 筆 stock_status 皆為 OUT_OF_STOCK）。因此改以實際渲染商品頁的 CTA 判定：四種欄位組合各抽 4 款共 15 款（evidence 見本檔 purchaseChannelSample）及 20 款獨立抽查商品頁，共 35 款渲染結果全部只有「ค้นหาร้านค้าปลีก」（尋找零售商）按鈕，沒有任何加入購物車按鈕（頁面無「ตะกร้า」字樣）；部分款式另有「จองชิ้นงานในบูติค」（預約精品店）。商品頁公開價格並附註「ราคาขายปลีกแนะนำ - ผู้ค้าปลีกที่ได้รับอนุญาตของเรายังคงมีอิสระในการกำหนดราคาของตนเอง」（建議零售價；授權零售商可自行訂價）。因此全部 806 筆依指南定義記為 retailer-only（有公開價格但官方頁面只導向經銷商）。未對全部 806 筆逐頁渲染，其餘款式的通路由抽樣結果與四種欄位組合涵蓋推定，列為限制。",
+    "purchaseChannelSample": {
+      "L2.449.4.87.6": {
+        "combo": "10",
+        "observedAt": "2026-10-02T23:56:28.472Z",
+        "findRetailer": true,
+        "cartWord": false,
+        "priceCtx": "mm | 34 mm | ฿91,700.00 | ราคาขายปลีกแนะนำ - ผู้ค้าปลีกที่ได้รับอนุญาตของเรายังคงมีอิสระในการกำหนดราคาของตนเอง | ค้นหาร้านค้าปลีก | มีให้เลือก 3 |  รูปแบบ | หน",
+        "btns": [
+          "ติดต่อเรา",
+          "เปรียบเทียบ",
+          "ค้นหาร้านค้าปลีก"
+        ]
+      },
+      "L2.950.4.73.2": {
+        "combo": "10",
+        "observedAt": "2026-10-02T23:56:37.483Z",
+        "findRetailer": true,
+        "cartWord": false,
+        "priceCtx": "mm | 41 mm | ฿87,800.00 | ราคาขายปลีกแนะนำ - ผู้ค้าปลีกที่ได้รับอนุญาตของเรายังคงมีอิสระในการกำหนดราคาของตนเอง | ค้นหาร้านค้าปลีก | มีให้เลือก 7 |  รูปแบบ | หน",
+        "btns": [
+          "ติดต่อเรา",
+          "เปรียบเทียบ",
+          "ค้นหาร้านค้าปลีก",
+          "ค้นหาร้านค้า"
+        ]
+      },
+      "L3.779.4.99.6": {
+        "combo": "10",
+        "observedAt": "2026-10-02T23:56:46.496Z",
+        "findRetailer": true,
+        "cartWord": false,
+        "priceCtx": "mm | 42 mm | ฿76,100.00 | ราคาขายปลีกแนะนำ - ผู้ค้าปลีกที่ได้รับอนุญาตของเรายังคงมีอิสระในการกำหนดราคาของตนเอง | ค้นหาร้านค้าปลีก | มีให้เลือก 6 |  รูปแบบ | หน",
+        "btns": [
+          "ติดต่อเรา",
+          "เปรียบเทียบ",
+          "ค้นหาร้านค้าปลีก",
+          "ค้นหาร้านค้า"
+        ]
+      },
+      "L3.750.3.98.7": {
+        "combo": "10",
+        "observedAt": "2026-10-02T23:56:55.509Z",
+        "findRetailer": true,
+        "cartWord": false,
+        "priceCtx": "mm | 41 mm | ฿56,600.00 | ราคาขายปลีกแนะนำ - ผู้ค้าปลีกที่ได้รับอนุญาตของเรายังคงมีอิสระในการกำหนดราคาของตนเอง | ค้นหาร้านค้าปลีก | มีให้เลือก 1 |  รูปแบบ | หน",
+        "btns": [
+          "ติดต่อเรา",
+          "เปรียบเทียบ",
+          "ค้นหาร้านค้าปลีก",
+          "ค้นหาร้านค้า"
+        ]
+      },
+      "L3.759.4.96.6": {
+        "combo": "11",
+        "observedAt": "2026-10-02T23:57:04.514Z",
+        "findRetailer": true,
+        "cartWord": false,
+        "priceCtx": "mm | 43 mm | ฿30,500.00 | ราคาขายปลีกแนะนำ - ผู้ค้าปลีกที่ได้รับอนุญาตของเรายังคงมีอิสระในการกำหนดราคาของตนเอง | ค้นหาร้านค้าปลีก | มีให้เลือก 2 |  รูปแบบ | หน",
+        "btns": [
+          "ติดต่อเรา",
+          "เปรียบเทียบ",
+          "ค้นหาร้านค้าปลีก",
+          "ค้นหาร้านค้า"
+        ]
+      },
+      "L3.830.4.97.6": {
+        "combo": "11",
+        "observedAt": "2026-10-02T23:57:13.529Z",
+        "findRetailer": true,
+        "cartWord": false,
+        "priceCtx": "mm | 41 mm | ฿93,600.00 | ราคาขายปลีกแนะนำ - ผู้ค้าปลีกที่ได้รับอนุญาตของเรายังคงมีอิสระในการกำหนดราคาของตนเอง | จองชิ้นงานในบูติค | ค้นหาร้านค้าปลีก | มีให้เ",
+        "btns": [
+          "ติดต่อเรา",
+          "เปรียบเทียบ",
+          "จองชิ้นงานในบูติค",
+          "ค้นหาร้านค้าปลีก",
+          "ค้นหาร้านค้า"
+        ]
+      },
+      "L3.759.4.76.6": {
+        "combo": "11",
+        "observedAt": "2026-10-02T23:57:22.544Z",
+        "findRetailer": true,
+        "cartWord": false,
+        "priceCtx": "mm | 43 mm | ฿30,500.00 | ราคาขายปลีกแนะนำ - ผู้ค้าปลีกที่ได้รับอนุญาตของเรายังคงมีอิสระในการกำหนดราคาของตนเอง | ค้นหาร้านค้าปลีก | มีให้เลือก 2 |  รูปแบบ | หน",
+        "btns": [
+          "ติดต่อเรา",
+          "เปรียบเทียบ",
+          "ค้นหาร้านค้าปลีก",
+          "ค้นหาร้านค้า"
+        ]
+      },
+      "L3.759.4.58.6": {
+        "combo": "11",
+        "observedAt": "2026-10-02T23:57:31.560Z",
+        "findRetailer": true,
+        "cartWord": false,
+        "priceCtx": ": | 41 mm | ฿30,500.00 | ราคาขายปลีกแนะนำ - ผู้ค้าปลีกที่ได้รับอนุญาตของเรายังคงมีอิสระในการกำหนดราคาของตนเอง | ค้นหาร้านค้าปลีก | มีให้เลือก 2 |  รูปแบบ | หน",
+        "btns": [
+          "ติดต่อเรา",
+          "เปรียบเทียบ",
+          "ค้นหาร้านค้าปลีก",
+          "ค้นหาร้านค้า"
+        ]
+      },
+      "L4.309.5.18.7": {
+        "combo": "00",
+        "observedAt": "2026-10-02T23:57:40.573Z",
+        "findRetailer": true,
+        "cartWord": false,
+        "priceCtx": "mm | 29 mm | ฿91,700.00 | ราคาขายปลีกแนะนำ - ผู้ค้าปลีกที่ได้รับอนุญาตของเรายังคงมีอิสระในการกำหนดราคาของตนเอง | ค้นหาร้านค้าปลีก | มีให้เลือก 4 |  รูปแบบ | หน",
+        "btns": [
+          "ติดต่อเรา",
+          "เปรียบเทียบ",
+          "ค้นหาร้านค้าปลีก",
+          "ค้นหาร้านค้า"
+        ]
+      },
+      "L2.937.4.72.6": {
+        "combo": "00",
+        "observedAt": "2026-10-02T23:57:49.589Z",
+        "findRetailer": true,
+        "cartWord": false,
+        "priceCtx": "mm | 40 mm | ฿128,700.00 | ราคาขายปลีกแนะนำ - ผู้ค้าปลีกที่ได้รับอนุญาตของเรายังคงมีอิสระในการกำหนดราคาของตนเอง | ค้นหาร้านค้าปลีก | มีให้เลือก 1 |  รูปแบบ | ห",
+        "btns": [
+          "ติดต่อเรา",
+          "เปรียบเทียบ",
+          "ค้นหาร้านค้าปลีก",
+          "ค้นหาร้านค้า"
+        ]
+      },
+      "L1.650.4.72.0": {
+        "combo": "00",
+        "observedAt": "2026-10-02T23:57:58.599Z",
+        "findRetailer": true,
+        "cartWord": false,
+        "priceCtx": "mm | 40 mm | ฿107,300.00 | ราคาขายปลีกแนะนำ - ผู้ค้าปลีกที่ได้รับอนุญาตของเรายังคงมีอิสระในการกำหนดราคาของตนเอง | ค้นหาร้านค้าปลีก | มีให้เลือก 9 |  รูปแบบ | ห",
+        "btns": [
+          "ติดต่อเรา",
+          "เปรียบเทียบ",
+          "ค้นหาร้านค้าปลีก",
+          "ค้นหาร้านค้า"
+        ]
+      },
+      "L1.650.4.72.6": {
+        "combo": "00",
+        "observedAt": "2026-10-02T23:58:07.615Z",
+        "findRetailer": true,
+        "cartWord": false,
+        "priceCtx": "mm | 40 mm | ฿111,200.00 | ราคาขายปลีกแนะนำ - ผู้ค้าปลีกที่ได้รับอนุญาตของเรายังคงมีอิสระในการกำหนดราคาของตนเอง | ค้นหาร้านค้าปลีก | มีให้เลือก 9 |  รูปแบบ | ห",
+        "btns": [
+          "ติดต่อเรา",
+          "เปรียบเทียบ",
+          "ค้นหาร้านค้าปลีก",
+          "ค้นหาร้านค้า"
+        ]
+      },
+      "L3.802.4.63.6": {
+        "combo": "01",
+        "observedAt": "2026-10-02T23:58:16.629Z",
+        "findRetailer": true,
+        "cartWord": false,
+        "priceCtx": "mm | 42 mm | ฿115,700.00 | ราคาขายปลีกแนะนำ - ผู้ค้าปลีกที่ได้รับอนุญาตของเรายังคงมีอิสระในการกำหนดราคาของตนเอง | ค้นหาร้านค้าปลีก | มีให้เลือก 7 |  รูปแบบ | ห",
+        "btns": [
+          "ติดต่อเรา",
+          "เปรียบเทียบ",
+          "ค้นหาร้านค้าปลีก",
+          "ค้นหาร้านค้า"
+        ]
+      },
+      "L2.920.4.78.6": {
+        "combo": "01",
+        "observedAt": "2026-10-02T23:58:25.643Z",
+        "findRetailer": true,
+        "cartWord": false,
+        "priceCtx": "mm | 42 mm | ฿93,000.00 | ราคาขายปลีกแนะนำ - ผู้ค้าปลีกที่ได้รับอนุญาตของเรายังคงมีอิสระในการกำหนดราคาของตนเอง | ค้นหาร้านค้าปลีก | มีให้เลือก 1 |  รูปแบบ | หน",
+        "btns": [
+          "ติดต่อเรา",
+          "เปรียบเทียบ",
+          "ค้นหาร้านค้าปลีก",
+          "ค้นหาร้านค้า"
+        ]
+      },
+      "L3.430.4.92.9": {
+        "combo": "01",
+        "observedAt": "2026-10-02T23:58:34.656Z",
+        "findRetailer": true,
+        "cartWord": false,
+        "priceCtx": "mm | 41 mm | ฿72,200.00 | ราคาขายปลีกแนะนำ - ผู้ค้าปลีกที่ได้รับอนุญาตของเรายังคงมีอิสระในการกำหนดราคาของตนเอง | ค้นหาร้านค้าปลีก | มีให้เลือก 10 |  รูปแบบ | ห",
+        "btns": [
+          "ติดต่อเรา",
+          "เปรียบเทียบ",
+          "ค้นหาร้านค้าปลีก",
+          "ค้นหาร้านค้า"
+        ]
+      },
+      "L2.893.4.78.6": {
+        "combo": "01",
+        "observedAt": "2026-10-02T23:58:43.663Z",
+        "findRetailer": true,
+        "cartWord": false,
+        "priceCtx": "mm | 42 mm | ฿83,200.00 | ราคาขายปลีกแนะนำ - ผู้ค้าปลีกที่ได้รับอนุญาตของเรายังคงมีอิสระในการกำหนดราคาของตนเอง | ค้นหาร้านค้าปลีก | มีให้เลือก 9 |  รูปแบบ | หน",
+        "btns": [
+          "ติดต่อเรา",
+          "เปรียบเทียบ",
+          "ค้นหาร้านค้าปลีก",
+          "ค้นหาร้านค้า"
+        ]
+      }
+    }
+  },
+  "tax": {
+    "currencyCode": "THB",
+    "priceType": "tax-include",
+    "taxRatePercent": 7,
+    "sources": [
+      {
+        "publisher": "The Revenue Department, Thailand（泰國稅務局 กรมสรรพากร）",
+        "title": "Value Added Tax",
+        "url": "https://www.rd.go.th/english/6043.html",
+        "accessedAt": "2026-10-03（未記錄精確時間）",
+        "observedFact": "「Currently, the rate is 7 percent.」；頁面標示最後更新 23.11.2020，未提及減徵稅率的期限。",
+        "method": "WebFetch。"
+      },
+      {
+        "publisher": "二手佐證（非政府一手來源）：lookuptax.com 與多家稅務／媒體報導",
+        "title": "Thailand Royal Decree No. 807 B.E. 2569 extends the 7% VAT rate",
+        "url": "https://lookuptax.com/tax-changes/thailand/vat-7pc-extended-decree-807-2026",
+        "accessedAt": "2026-10-03（未記錄精確時間）",
+        "observedFact": "報導稱泰國 7% 減徵稅率原定至 2026-09-30，皇家法令第 807 號（2026-08-23 刊登）延長至 2027-09-30（法定稅率 10%）；另有 Orbitax 等來源稱稅務局於 2026-08-02 發布延長通知。",
+        "method": "WebSearch 與 WebFetch。未取得泰國政府公報（Royal Gazette）或稅務局對該法令的一手頁面，WebSearch 限定 rd.go.th 等政府網域時未查得第 807 號法令。"
+      },
+      {
+        "publisher": "LONGINES 泰國站 StoreConfig",
+        "title": "tax_sales_display_price",
+        "url": "https://www.longines.com/th/watches",
+        "accessedAt": "2026-10-03（未記錄精確時間）",
+        "observedFact": "th_th StoreConfig：tax_sales_display_price=2、tax_display_shipping=2（Magento 設定值，2 代表顯示含稅價），與 AT 站台相同設定。",
+        "method": "讀取列表頁 __NEXT_DATA__ 內 StoreConfig。"
+      }
+    ],
+    "sourceFailures": [
+      {
+        "url": "https://www.longines.com/th/legal/conditions-of-sale",
+        "tool": "瀏覽器同源 fetch",
+        "result": "HTTP 404（泰國站無此銷售條款頁）"
+      },
+      {
+        "url": "https://www.longines.com/th/legal/terms-of-use",
+        "tool": "瀏覽器同源 fetch",
+        "result": "HTTP 200，標題「ข้อกำหนดและเงื่อนไขของร้านค้า」，但未含任何標價是否含增值稅的文字"
+      }
+    ],
+    "limitation": "LONGINES 泰國站未逐字說明標價含增值稅（商品頁只標示「ราคาขายปลีกแนะนำ」＝建議零售價，並說明授權零售商可自行訂價；站內只有購物車元件的通用文字「(รวมภาษีมูลค่าเพิ่ม)」）。priceType=tax-include 的依據僅為 StoreConfig 的含稅顯示設定，並未取得泰國標價須含稅的一手法規條文；7% 稅率的二手佐證未對照一手法令。未驗證實際零售商標價是否含稅。此為本市場稅制判定的已知限制，需人工覆核。",
+    "userConfirmation": {
+      "confirmedAt": "2026-10-03",
+      "statement": "使用者確認 TH 稅制（含稅、7%）維持現狀；理由：泰國市場所有錶款適用同一稅率。此為使用者的業務判斷，並未補足官方站逐字含稅聲明或一手法令。"
+    }
+  },
+  "errors": [
+    "第 35 頁（超出最後一頁）的 GraphQL 錯誤：currentPage value 35 specified is greater than the 34 page(s) available.（預期的停止證據，非收集失敗）。",
+    "WebFetch 對 longines.com 法律條款頁回傳內容被截斷、無法讀取價格段落，改以瀏覽器同源 fetch 讀取。"
+  ],
+  "priceFormatNote": "泰銖格式（逗號為千分位、小數點兩位，例如 \"฿85,800.00\"）；GraphQL base_price.value 已是整數泰銖，806 筆皆無非零小數，直接作為整數價格，未解析字串、未乘除或四捨五入。special_price 全為 null。"
+}

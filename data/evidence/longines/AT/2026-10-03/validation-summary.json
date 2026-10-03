@@ -1,0 +1,656 @@
+{
+  "brandId": "longines",
+  "marketCode": "AT",
+  "task": "new-market",
+  "validatedAt": "2026-10-03T00:38:40Z",
+  "layeredValidation": {
+    "1_strictJsonAndSchema": {
+      "status": "PASS",
+      "detail": "嚴格 JSON 解析（拒絕重複 key 與 NaN/Infinity）通過 106 個檔案（data/catalog、markets、history、schemas、traveler-refund-policies.json 與本次 AT／CN／TH 已寫入的 12 個 evidence 檔，不含本 validation-summary.json 自身）。Schema：以 app/node_modules 既有的 ajv 6.15.0（未安裝新依賴）驗證 catalog、全部 market 與 history 共 101 項 PASS、0 項 FAIL（含 5 項負向對照：listed 搭配 null 價格、非整數價格、market 額外欄位、catalog 缺 dialColors、無效 dialColor 列舉，全部被正確拒絕）。",
+      "limitation": "ajv 6 實作 draft-07，Schema 宣告為 draft 2020-12；本 Schema 使用的關鍵字（$ref 指向 $defs、if/then、additionalProperties、pattern、format date-time/uri、const、enum）皆為 draft-07 可執行子集（驗證時移除 $schema 宣告），但未以正式 2020-12 驗證器執行。Python jsonschema 未安裝。"
+    },
+    "2_watchCountIdentityRelational": {
+      "status": "PASS",
+      "detail": "examples/cross-brand-validation-script.md 的 Node 腳本對全部 43 個市場檔 PASS。本市場 watchCount=804=watches.length=唯一 watchId=唯一 reference；watchId 皆為 \"longines:\"+reference；history.priceSeries 鍵集合與 market watchId 集合相同且順序一致；每筆皆存在於 catalog；marketCode=AT 於 market／history／目錄一致；market.collectionAliases 鍵集合等於本市場使用的 collectionId 集合。另執行 app/scripts/generate-watch-data.mjs（輸出至暫存目錄，未寫入專案）成功，Longines manifest 產出含 AT、CN、TH 在內共 15 個市場的 catalog。"
+    },
+    "3_priceListingStatusCombination": {
+      "status": "PASS",
+      "detail": "804 個價格點皆為 listingStatus=listed 搭配非負整數 EUR 價格（最低 900、最高 27300、中位數 2600.0）；無非零小數、無 special_price、無 price-unavailable／not-listed；每個價格序列只有 runId=1 的一個價格點，無冗餘相鄰價格點。購買通路判定見 collection-summary.json purchaseChannel。"
+    },
+    "4_officialDataTraceableToEvidence": {
+      "status": "PASS",
+      "detail": "逐筆比對市場檔 collectionName、modelName、caseDescription、dialDescription、isNewModel、productUrl 與 history 價格／狀態，全部等於本次 observations.json 對應欄位（0 差異），且價格、錶殼描述、錶盤描述皆可由 observations 內的原始字串（basePriceRaw／priceRaw、caseDimensionRaw＋材質標籤）獨立重現。正式資料由 evidence 產生，非反向補造；evidence 先寫入、正式資料後寫入。"
+    },
+    "5_completenessStopEvidenceAndIndependentSpotCheck": {
+      "status": "PASS",
+      "detail": "停止證據：官方 total_count=804、34 頁累積唯一 804、第 35 頁官方超出頁數錯誤、渲染列表頁文字「804 Produkte」（見 collection-summary.json stopEvidence）。獨立抽查 20 款：每款即時請求官方商品頁並解析其伺服器端產品資料，比對 7 個欄位，另以 iframe 實際渲染比對價格文字與購物車 CTA，結果 20/20 MATCH，涵蓋 5 個家族（conquest, elegance, heritage, master, spirit）、最低價、最高價、新款與同基本型號不同配置。"
+    },
+    "6_appendOnlyAndProtectedScopeUnchanged": {
+      "status": "PASS",
+      "detail": "data/history/AT/longines-price-history.json 為新檔，runId 從 1 開始；git status 顯示既有追蹤檔被修改的只有 data/catalog/longines-catalog.json（既有 883 筆原樣不動、僅附加新配置並更新 collectedAt／sourceMarketCodes／watchCount）與四份人類文件（README.md、ai-data-maintenance-guide.md、watch-data-collection-guide.md、examples/regression-cases.md）；其他品牌與市場、Schema、app/、data/traveler-refund-policies.json 皆未被修改，也未讀寫其他市場的 evidence。"
+    }
+  },
+  "spotCheck": {
+    "targetRange": "19-21",
+    "actualCount": 20,
+    "matched": 20,
+    "familiesCovered": [
+      "conquest",
+      "elegance",
+      "heritage",
+      "master",
+      "spirit"
+    ],
+    "coversMinPrice": true,
+    "coversMaxPrice": true,
+    "coversNew": true,
+    "sameBaseModelPairs": [
+      "L2.759",
+      "L3.430"
+    ],
+    "noPublicPriceItems": "無（全部配置皆有公開價格）",
+    "anomalyItems": "無",
+    "method": "在瀏覽器頁面內以同源 fetch 即時請求官方商品頁 HTML，解析 __NEXT_DATA__ 內該商品的伺服器端產品資料，與正式 market／history 逐欄比對（名稱、網址、錶殼描述、錶盤描述、新款標示、價格、幣別）；另以 iframe 實際渲染商品頁讀取價格文字與 CTA 按鈕。與主要收集路徑（ProductList）不同的官方視圖。",
+    "items": [
+      {
+        "reference": "L2.357.4.78.6",
+        "categories": [
+          "master"
+        ],
+        "family": "master",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-the-longines-master-collection-l2-357-4-78-6",
+        "checkedAt": "2026-10-03T00:23:41.128Z",
+        "renderedAt": "2026-10-03T00:25:05.837Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Bei einem Händler anfragen"
+        ]
+      },
+      {
+        "reference": "L2.673.4.71.6",
+        "categories": [
+          "master"
+        ],
+        "family": "master",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-the-longines-master-collection-chronograph-l2-673-4-71-6",
+        "checkedAt": "2026-10-03T00:23:44.843Z",
+        "renderedAt": "2026-10-03T00:25:14.060Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L2.793.4.77.6",
+        "categories": [
+          "master"
+        ],
+        "family": "master",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-the-longines-master-collection-l2-793-4-77-6",
+        "checkedAt": "2026-10-03T00:23:48.859Z",
+        "renderedAt": "2026-10-03T00:25:22.127Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Bei einem Händler anfragen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L3.430.5.02.9",
+        "categories": [
+          "conquest",
+          "同基本型號不同配置"
+        ],
+        "family": "conquest",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-conquest-l3-430-5-02-9",
+        "checkedAt": "2026-10-03T00:23:54.241Z",
+        "renderedAt": "2026-10-03T00:25:30.156Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Bei einem Händler anfragen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L3.320.4.97.6",
+        "categories": [
+          "conquest"
+        ],
+        "family": "conquest",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-conquest-l3-320-4-97-6",
+        "checkedAt": "2026-10-03T00:23:57.736Z",
+        "renderedAt": "2026-10-03T00:25:38.215Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Bei einem Händler anfragen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L3.430.5.72.6",
+        "categories": [
+          "conquest",
+          "同基本型號不同配置"
+        ],
+        "family": "conquest",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-conquest-l3-430-5-72-6",
+        "checkedAt": "2026-10-03T00:24:02.113Z",
+        "renderedAt": "2026-10-03T00:25:46.297Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Bei einem Händler anfragen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L2.820.8.92.2",
+        "categories": [
+          "elegance"
+        ],
+        "family": "elegance",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-record-l2-820-8-92-2",
+        "checkedAt": "2026-10-03T00:24:07.605Z",
+        "renderedAt": "2026-10-03T00:25:54.498Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Bei einem Händler anfragen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L5.255.8.71.0",
+        "categories": [
+          "elegance"
+        ],
+        "family": "elegance",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-longines-dolcevita-l5-255-8-71-0",
+        "checkedAt": "2026-10-03T00:24:10.203Z",
+        "renderedAt": "2026-10-03T00:26:02.724Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Bei einem Händler anfragen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L4.341.0.97.6",
+        "categories": [
+          "elegance"
+        ],
+        "family": "elegance",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-la-grande-classique-de-longines-l4-341-0-97-6",
+        "checkedAt": "2026-10-03T00:24:16.046Z",
+        "renderedAt": "2026-10-03T00:26:10.757Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L3.802.5.53.9",
+        "categories": [
+          "spirit"
+        ],
+        "family": "spirit",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-longines-spirit-zulu-time-l3-802-5-53-9",
+        "checkedAt": "2026-10-03T00:24:20.079Z",
+        "renderedAt": "2026-10-03T00:26:18.793Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L3.721.4.53.2",
+        "categories": [
+          "spirit",
+          "新款"
+        ],
+        "family": "spirit",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-longines-spirit-pilot-flyback-l3-721-4-53-2",
+        "checkedAt": "2026-10-03T00:24:24.427Z",
+        "renderedAt": "2026-10-03T00:26:26.904Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L3.820.4.53.0",
+        "categories": [
+          "spirit"
+        ],
+        "family": "spirit",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-longines-spirit-chronograph-l3-820-4-53-0",
+        "checkedAt": "2026-10-03T00:24:28.240Z",
+        "renderedAt": "2026-10-03T00:26:34.957Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Bei einem Händler anfragen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L1.648.4.92.2",
+        "categories": [
+          "heritage",
+          "新款"
+        ],
+        "family": "heritage",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-conquest-heritage-l1-648-4-92-2",
+        "checkedAt": "2026-10-03T00:24:32.583Z",
+        "renderedAt": "2026-10-03T00:26:43.186Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L3.795.4.59.9",
+        "categories": [
+          "heritage",
+          "新款"
+        ],
+        "family": "heritage",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-longines-legend-diver-l3-795-4-59-9",
+        "checkedAt": "2026-10-03T00:24:37.039Z",
+        "renderedAt": "2026-10-03T00:26:51.215Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L1.649.4.72.2",
+        "categories": [
+          "heritage"
+        ],
+        "family": "heritage",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-conquest-heritage-l1-649-4-72-2",
+        "checkedAt": "2026-10-03T00:24:40.452Z",
+        "renderedAt": "2026-10-03T00:26:59.273Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L3.759.4.96.6",
+        "categories": [
+          "conquest",
+          "最低價"
+        ],
+        "family": "conquest",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-conquest-l3-759-4-96-6",
+        "checkedAt": "2026-10-03T00:24:44.054Z",
+        "renderedAt": "2026-10-03T00:27:07.321Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "Benachrichtigen bei Verfügbarkeit",
+          "Bei einem Händler anfragen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L5.200.7.71.6",
+        "categories": [
+          "elegance",
+          "最高價"
+        ],
+        "family": "elegance",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-longines-mini-dolcevita-l5-200-7-71-6",
+        "checkedAt": "2026-10-03T00:24:49.566Z",
+        "renderedAt": "2026-10-03T00:27:15.411Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Bei einem Händler anfragen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L3.860.3.52.7",
+        "categories": [
+          "conquest",
+          "新款"
+        ],
+        "family": "conquest",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-conquest-l3-860-3-52-7",
+        "checkedAt": "2026-10-03T00:24:52.864Z",
+        "renderedAt": "2026-10-03T00:27:23.440Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L2.759.4.78.6",
+        "categories": [
+          "master",
+          "同基本型號不同配置"
+        ],
+        "family": "master",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-the-longines-master-collection-chronograph-l2-759-4-78-6",
+        "checkedAt": "2026-10-03T00:24:57.270Z",
+        "renderedAt": "2026-10-03T00:27:31.468Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Bei einem Händler anfragen",
+          "Boutique finden"
+        ]
+      },
+      {
+        "reference": "L2.759.4.78.3",
+        "categories": [
+          "master",
+          "同基本型號不同配置"
+        ],
+        "family": "master",
+        "pdpUrl": "https://www.longines.com/de-at/p/watch-the-longines-master-collection-chronograph-l2-759-4-78-3",
+        "checkedAt": "2026-10-03T00:25:01.433Z",
+        "renderedAt": "2026-10-03T00:27:39.525Z",
+        "checks": {
+          "modelName": true,
+          "productUrl": true,
+          "caseDescription": true,
+          "dialDescription": true,
+          "isNewModel": true,
+          "price": true,
+          "currency": true,
+          "renderedPrice": true,
+          "renderedCta": true
+        },
+        "result": "MATCH",
+        "renderedButtons": [
+          "Gehe zu Warenkorb",
+          "In den Warenkorb legen",
+          "Bei einem Händler anfragen",
+          "Boutique finden"
+        ]
+      }
+    ]
+  },
+  "catalogDiff": {
+    "catalogBefore": 883,
+    "marketCount": 804,
+    "intersection": 804,
+    "newToCatalog": [],
+    "catalogAfter": 1049,
+    "formula": "|C ∪ M| 無新增（本市場 804 筆全數已在既有聯集中）；本次因 CN 新增 166 筆，catalog 總數由 883 增為 1049（見 CN evidence）",
+    "collectionIds": "31 個系列 slug 皆為既有 collectionId，與 catalog 完全一致；imageUrl 與既有 catalog 完全一致（0 差異）。",
+    "crossMarketNote": "與 DE（804 筆）各有 11 筆互不重疊（AT 獨有：L1.650.4.52.2、L2.773.4.61.2、L3.369.4.09.6、L3.369.4.12.6、L4.209.4.70.6、L4.209.4.81.6、L4.512.4.70.6、L4.512.4.81.6、L4.866.4.58.6、L4.866.4.97.6、L8.113.4.90.6）。僅作差異概況，未用於推算。"
+  },
+  "priceStatistics": {
+    "currency": "EUR",
+    "min": 900,
+    "max": 27300,
+    "median": 2600.0,
+    "count": 804,
+    "priceType": "tax-include",
+    "taxRatePercent": 20
+  },
+  "nicknameResearch": "PASS with 0 accepted results（見 nickname-research.json）",
+  "travelerRefundPolicy": "PASS：既有 AT 市場記錄經奧地利聯邦財政部頁面重新查核仍正確，未變更 data/traveler-refund-policies.json（見 traveler-refund-policy-check.json）。",
+  "readmeUpdate": {
+    "status": "PASS",
+    "updated": true,
+    "sections": [
+      "README.md「Data：官方配置與多市場價格」表格與 Longines 說明段落",
+      "watch-data-collection-guide.md「Longines」市場表與說明",
+      "ai-data-maintenance-guide.md 市場涵蓋表",
+      "examples/regression-cases.md 新增 Longines AT／TH／CN 小節"
+    ],
+    "reason": "Longines 市場數由 12 增為 15、跨市場聯集由 883 增為 1,049，長期描述受影響。"
+  },
+  "limitations": [
+    "未使用任何 sub-agent 或背景工作單元處理市場資料；AT、CN、TH 三個市場由同一個流程依序、各自獨立保存 evidence，並由同一流程合併 catalog。",
+    "本任務依指示未修改 app/（畫面呈現）；網站市場選單、collectionId 多語系名稱等前端項目尚未納入（見最終回報）。",
+    "奧地利 WebFetch 對 longines.com 條款頁內容被截斷，稅制文字改以瀏覽器同源 fetch 取得；稅務來源時間未記錄到秒。",
+    "uhrforum.de 對 WebFetch 回傳 403，俗稱研究未能讀取該論壇原文（已於 nickname-research.json 記錄）。"
+  ]
+}
