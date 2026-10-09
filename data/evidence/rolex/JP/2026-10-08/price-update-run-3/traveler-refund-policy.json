@@ -1,0 +1,70 @@
+{
+  "evidenceFormatVersion": 1,
+  "marketCode": "JP",
+  "reviewStatus": "NOT RUN (price-only update; policy not reassessed)",
+  "consolidationDate": "2026-10-09",
+  "currentFormalPolicy": {
+    "sourceFile": "data/traveler-refund-policies.json",
+    "record": {
+      "marketCode": "JP",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-10T16:29:36Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "適用於個別取得許可的免稅店；非居住者與個人使用等資格條件依官方規定，商品須帶離日本。",
+        "enUs": "Available through individually authorized tax-free shops, subject to non-resident and personal-use conditions; goods must leave Japan."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/rolex/JP/2026-09-11/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "Japan Tourism Agency",
+          "title": "免税店とは｜消費税免税店サイト",
+          "url": "https://www.mlit.go.jp/kankocho/tax-free/about.html",
+          "accessedAt": "2026-09-10T16:29:36Z"
+        },
+        {
+          "publisher": "Japan Tourism Agency",
+          "title": "免税店になったら｜消費税免税店サイト",
+          "url": "https://www.mlit.go.jp/kankocho/tax-free/after.html",
+          "accessedAt": "2026-09-10T16:29:36Z"
+        }
+      ]
+    }
+  },
+  "priorPolicyEvidence": {
+    "sourceFile": "data/evidence/rolex/JP/2026-09-11/traveler-refund-policy.json",
+    "sha256": "11bc42f68fed28ebca696647386753aa25c032e439425d37bd5172fe05b10696",
+    "content": {
+      "marketCode": "JP",
+      "observedAt": "2026-09-10T16:29:36Z",
+      "status": "PASS",
+      "scope": "Jurisdiction-level foreign-visitor consumption-tax exemption only; this does not establish Rolex authorized-dealer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+      "sources": [
+        {
+          "publisher": "Japan Tourism Agency",
+          "title": "免税店とは｜消費税免税店サイト",
+          "url": "https://www.mlit.go.jp/kankocho/tax-free/about.html",
+          "accessedAt": "2026-09-10T16:29:36Z"
+        },
+        {
+          "publisher": "Japan Tourism Agency",
+          "title": "免税店になったら｜消費税免税店サイト",
+          "url": "https://www.mlit.go.jp/kankocho/tax-free/after.html",
+          "accessedAt": "2026-09-10T16:29:36Z"
+        }
+      ],
+      "observedFacts": [
+        "Tax-free shops are authorized export-goods sales places under the Consumption Tax Act, and authorization is granted store by store.",
+        "The programme describes non-resident eligibility and personal-use conditions, with purchase thresholds and restrictions on use in Japan.",
+        "Goods must be taken out of Japan."
+      ],
+      "limitations": [
+        "The source supports a point-of-sale tax-free programme, not a current refund-method amount.",
+        "Rolex retailer participation and any operator fee are not established by this evidence."
+      ]
+    }
+  }
+}

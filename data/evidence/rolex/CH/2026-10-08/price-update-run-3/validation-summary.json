@@ -1,0 +1,158 @@
+{
+  "validationCompletedAt": "2026-10-08T14:44:00Z",
+  "brandId": "rolex",
+  "marketCode": "CH",
+  "runId": 3,
+  "checks": {
+    "strictJsonAndDuplicateKeys": {
+      "status": "PASS",
+      "detail": "Parsed target CH market/history and all run 3 evidence JSON with duplicate-key rejection and invalid-constant rejection."
+    },
+    "marketContract": {
+      "status": "PASS",
+      "detail": "CH, de-CH, watchCount 1465, 1465 unique watchIds; market file exactly unchanged from HEAD."
+    },
+    "historyContract": {
+      "status": "PASS",
+      "detail": "History has 3 monotonic collectionRuns; 1465 price series join the CH market; all run 3 points refer to runId 3."
+    },
+    "historyAppendOnlyPrefix": {
+      "status": "PASS",
+      "detail": "All previous collectionRuns and price points remain exact prefixes of current CH history."
+    },
+    "apiUiAndMarketReferences": {
+      "status": "PASS",
+      "detail": "API, UI, and CH market reference sets all contain the same 1465 references."
+    },
+    "currencyAndPriceParsing": {
+      "status": "PASS",
+      "detail": "All 1465 API formattedPrice and rendered UI prices match; CHF grouped thousands format strictly parsed to integer prices."
+    },
+    "priceHistoryChanges": {
+      "status": "PASS",
+      "detail": "0 prices changed. No duplicate price points added."
+    },
+    "statusEvidence": {
+      "status": "PASS",
+      "detail": "Six cross-family official CH PDPs all expose CHF public offers and official dealer contact/store-locator CTAs, with no online cart/checkout; retailer-only status points appended for all 1465 records."
+    },
+    "sourceStopSignals": {
+      "status": "PASS",
+      "detail": "API terminal request firstResult=1465 returned 0 of total 1465. UI rendered 1465 cards and the Mehr ansehen button disappeared."
+    },
+    "independentOfficialSpotchecks": {
+      "status": "PASS",
+      "detail": "Six distinct reference PDPs checked for CHF price, structured Offer currency, and CTA semantics."
+    },
+    "schemaValidationEngine": {
+      "status": "NOT RUN",
+      "detail": "Python jsonschema package is unavailable in the execution environment. Schemas were read and relevant contract checks were performed manually; no dependency installed."
+    },
+    "catalogCrossJoin": {
+      "status": "NOT RUN",
+      "detail": "Outside this single-market CH assignment; do not read catalog."
+    },
+    "nicknameResearch": {
+      "status": "NOT RUN (out of scope)",
+      "detail": "Pure price/status update only."
+    },
+    "travelerRefundPolicy": {
+      "status": "NOT RUN (out of scope)",
+      "detail": "Pure price/status update only; policy files untouched."
+    },
+    "gitDiffWhitespace": {
+      "status": "PASS",
+      "detail": "git diff --check passed for CH history and run 3 evidence."
+    },
+    "scope": {
+      "status": "PASS",
+      "detail": "Only data/history/CH/rolex-price-history.json and new data/evidence/rolex/CH/2026-10-08/price-update-run-3/ files were written; CH market file unchanged."
+    }
+  },
+  "knownLimitations": [
+    "PLP rendered counter remained at 1,400 Ergebnisse while DOM/API contain 1,465 matched watches; full model references and price elements were reconciled and both API terminal offset and UI button state indicate completion.",
+    "The website inferred Taiwan as the browser location in selector recommendations, but the explicit official Schweiz link, de-CH page URL/title/footer, de-ch language cookie metadata, and CHF price rendering establish the selected CH market.",
+    "Coveo search analytics OPTIONS/POST requests returned ERR_NAME_NOT_RESOLVED; official listing/API and PDP requests succeeded, so no collection rows were affected."
+  ],
+  "evidenceFiles": [
+    "collection-summary.json",
+    "market-selector-observation.json",
+    "network-requests.json",
+    "source-api-pages.json",
+    "ui-enumeration.json",
+    "observations.json",
+    "independent-pdp-samples.json",
+    "run-change-summary.json",
+    "validation-summary.json"
+  ],
+  "consolidatedArtifacts": [
+    {
+      "originalFileName": "run-change-summary.json",
+      "originalSha256": "8d47d10aaa58a671edf19a029814bc979c97b956f60c8bf48845b5af28758d46",
+      "content": {
+        "runId": 3,
+        "comparedWith": "latest previously recorded price/status points (runId 1; runId 2 has no per-watch points)",
+        "recordCount": 1465,
+        "priceChangedCount": 0,
+        "listingStatusChangedCount": 1465,
+        "pricePointAction": "No duplicate price points added; all CHF prices equal previous recorded prices.",
+        "statusPointAction": "A point will be appended for every watch because previous status listed differs from current retailer-only.",
+        "statusEvidenceSampleCount": 6,
+        "sampledPDPReferences": [
+          "m127334-0001",
+          "m228236-0018",
+          "m126506-0001",
+          "m126613lb-0002",
+          "m224270-0001",
+          "m52508-0008"
+        ],
+        "apiUiReferenceSetsEqual": true,
+        "apiBaselineReferenceSetEqual": true,
+        "collectionRunWillBeAdded": true
+      }
+    }
+  ],
+  "consolidation": {
+    "performedAtDate": "2026-10-09",
+    "sourceCommit": "6d22af6",
+    "preservedOriginalEvidenceInGitHistory": true,
+    "originalSeparateFilesIntegrated": [
+      {
+        "fileName": "independent-pdp-samples.json",
+        "sha256": "8d298981f1ead432b71d559d1a41c80a332b936ff5428174b4d5699974ee47b9",
+        "integratedInto": "observations.json"
+      },
+      {
+        "fileName": "market-selector-observation.json",
+        "sha256": "815126549c17a95ee5bf0f9b996737334d1e8989d743971c8cd964a1a779c1e3",
+        "integratedInto": "collection-summary.json"
+      },
+      {
+        "fileName": "network-requests.json",
+        "sha256": "2c9a5470c4708eb3e4bf9eaa85b4f4c339045da27b73a9a7a5d87aa5ce0d7abf",
+        "integratedInto": "collection-summary.json"
+      },
+      {
+        "fileName": "run-change-summary.json",
+        "sha256": "8d47d10aaa58a671edf19a029814bc979c97b956f60c8bf48845b5af28758d46",
+        "integratedInto": "validation-summary.json"
+      },
+      {
+        "fileName": "source-api-pages.json",
+        "sha256": "ea8e39edc31cb4bf03700f6431b978d1ad26d2ab5ea995bd4dc0bd72ec8e1864",
+        "integratedInto": "collection-summary.json"
+      },
+      {
+        "fileName": "ui-enumeration.json",
+        "sha256": "79e680e9b5ccd533c3e9e376d40d458269d5fc335c7d77254e3ac9e74be371be",
+        "integratedInto": "collection-summary.json"
+      }
+    ],
+    "finalFilesInRunDirectory": [
+      "collection-summary.json",
+      "observations.json",
+      "validation-summary.json",
+      "traveler-refund-policy.json"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "evidenceFormatVersion": 1,
+  "marketCode": "HK",
+  "reviewStatus": "NOT RUN (price-only update; policy not reassessed)",
+  "consolidationDate": "2026-10-09",
+  "currentFormalPolicy": {
+    "sourceFile": "data/traveler-refund-policies.json",
+    "record": {
+      "marketCode": "HK",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-11T17:00:00Z",
+      "availability": "unavailable",
+      "eligibilitySummary": {
+        "zhTw": "香港沒有增值稅或銷售稅，因此沒有可適用於本市場的旅客 VAT／銷售稅退稅制度。",
+        "enUs": "Hong Kong has no value-added or sales tax, so no traveler VAT or sales-tax refund scheme applies to this market."
+      },
+      "merchantParticipationRequired": null,
+      "exportValidationRequired": null,
+      "evidencePath": "data/evidence/rolex/HK/2026-09-12/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "Financial Services and the Treasury Bureau, Hong Kong SAR Government",
+          "title": "Prevailing Tax Policy",
+          "url": "https://www.fstb.gov.hk/en/treasury/general/prevailing-tax-policy.htm",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ]
+    }
+  },
+  "priorPolicyEvidence": {
+    "sourceFile": "data/evidence/rolex/HK/2026-09-12/traveler-refund-policy.json",
+    "sha256": "6affa0fd9ce29d7ec9ea3d64b70162505a8c2758acb95bc1342abb7c394c7409",
+    "content": {
+      "marketCode": "HK",
+      "observedAt": "2026-09-11T17:00:00Z",
+      "status": "PASS",
+      "scope": "Jurisdiction-level traveler consumption-tax policy only; this does not establish Rolex retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+      "sources": [
+        {
+          "publisher": "Financial Services and the Treasury Bureau, Hong Kong SAR Government",
+          "title": "Prevailing Tax Policy",
+          "url": "https://www.fstb.gov.hk/en/treasury/general/prevailing-tax-policy.htm",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ],
+      "observedFacts": [
+        "Hong Kong's prevailing tax policy states that there is no value-added or sales tax.",
+        "Accordingly, no jurisdiction-level traveler VAT or sales-tax refund scheme is identified for this market."
+      ],
+      "limitations": [
+        "This finding does not address customs duty, retailer promotions, or taxes payable after import into another jurisdiction.",
+        "It does not establish any retailer-specific pricing or benefit."
+      ]
+    }
+  }
+}

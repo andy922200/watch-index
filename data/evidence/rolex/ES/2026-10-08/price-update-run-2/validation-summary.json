@@ -1,0 +1,136 @@
+{
+  "marketCode": "ES",
+  "runId": 2,
+  "overallStatus": "PASS WITH NOT RUN LIMITATIONS",
+  "checks": [
+    {
+      "name": "strict-json",
+      "status": "PASS",
+      "details": "Strict parser rejected duplicate keys and illegal JSON constants across the ES market, ES history, relevant schemas, and all run evidence (13 files)."
+    },
+    {
+      "name": "schema-validation",
+      "status": "NOT RUN",
+      "details": "No JSON Schema validator is installed (Python jsonschema and Node Ajv unavailable). Manual target contract checks passed; formal Schema engine validation remains for the coordinator/environment with a validator."
+    },
+    {
+      "name": "market-history-identity",
+      "status": "PASS",
+      "details": "ES market/history brandId and marketCode agree; 1,465 unique market references/watchIds match all 1,465 priceSeries keys."
+    },
+    {
+      "name": "price-and-listing-status",
+      "status": "PASS",
+      "details": "All 1,465 official ES catalogue entries render and return integer EUR prices; all remain listed. API numeric prices, API formattedPrice, rendered UI prices and run 1 prices agree for every reference; 0 changes."
+    },
+    {
+      "name": "source-to-evidence-mapping",
+      "status": "PASS",
+      "details": "API and rendered UI each contain the same 1,465 unique references as the ES market file, with 0 price mismatches; all UI entries have the price/availability information CTA."
+    },
+    {
+      "name": "collection-stop-condition",
+      "status": "PASS",
+      "details": "Official UI rendered 1,465 unique references and removed Ver más; explicit official API terminal request firstResult=1465 returned totalCount=1465 and 0 results."
+    },
+    {
+      "name": "independent-official-samples",
+      "status": "PASS",
+      "details": "Six independently opened official product pages across six collections matched their API/UI EUR prices and showed dealer-contact CTA; no direct purchase CTA."
+    },
+    {
+      "name": "history-append-only",
+      "status": "PASS",
+      "details": "Run 2 appended after run 1. Original collectionRuns and every historical priceSeries point are exact prefixes; no redundant unchanged points were added."
+    },
+    {
+      "name": "catalog-join",
+      "status": "NOT RUN",
+      "details": "Single-market scope forbids reading Rolex catalog. Coordinator must complete catalog/history relationship validation."
+    },
+    {
+      "name": "protected-scope",
+      "status": "PASS",
+      "details": "No Rolex ES market-file change; only ES history and ES run evidence changed. No catalog, policy, or non-ES market files were read or changed."
+    },
+    {
+      "name": "git-diff-check",
+      "status": "PASS",
+      "details": "Tracked diff and saved evidence whitespace checks passed."
+    }
+  ],
+  "differences": {
+    "priceChanges": 0,
+    "listingStatusChanges": 0,
+    "newPricePoints": 0,
+    "collectionRunAdded": true,
+    "recordCount": 1465
+  },
+  "limitations": [
+    "The UI result-count label initially read 56 Resultados and did not track progressive card expansion; completion used unique rendered product links (1,465), disappearance of Ver más, API totalCount, and explicit empty terminal response.",
+    "Formal JSON Schema engine and catalog join remain NOT RUN for the reasons recorded above.",
+    "Observation start time was not captured precisely; completion timestamp is 2026-10-08T16:02:59+02:00."
+  ],
+  "consolidatedArtifacts": [
+    {
+      "originalFileName": "run-change-summary.json",
+      "originalSha256": "71a93765ddebf0fb75713d52e67af089d1c866dee8e9f142bcefdeb8b3852f78",
+      "content": {
+        "marketCode": "ES",
+        "runId": 2,
+        "previousRunId": 1,
+        "collectedAt": "2026-10-08T16:02:59+02:00",
+        "apiResultCount": 1465,
+        "uiRenderedUniqueReferenceCount": 1465,
+        "priceChanges": [],
+        "listingStatusChanges": [],
+        "priceSeriesPointsAdded": 0,
+        "collectionRunAdded": true,
+        "notes": "Prices and listing statuses matched run 1 for all 1,465 configurations; no duplicate price points added."
+      }
+    }
+  ],
+  "consolidation": {
+    "performedAtDate": "2026-10-09",
+    "sourceCommit": "6d22af6",
+    "preservedOriginalEvidenceInGitHistory": true,
+    "originalSeparateFilesIntegrated": [
+      {
+        "fileName": "independent-product-page-samples.json",
+        "sha256": "4ecbc4376066770273d2be9c7f9b7e580a761e2df58ec4e4861a3794353eb23b",
+        "integratedInto": "observations.json"
+      },
+      {
+        "fileName": "price-policy-and-availability-modal.json",
+        "sha256": "d1b66c86f7bdeb76174e901c685e787126ed483a0ea4837e3086ae6678867150",
+        "integratedInto": "collection-summary.json"
+      },
+      {
+        "fileName": "rendered-ui-full-enumeration.json",
+        "sha256": "acd514d25f0baf0cb6ee81c4ec105bfe3e037e7cd39a8049973c53ec06d0b5f8",
+        "integratedInto": "collection-summary.json"
+      },
+      {
+        "fileName": "run-change-summary.json",
+        "sha256": "71a93765ddebf0fb75713d52e67af089d1c866dee8e9f142bcefdeb8b3852f78",
+        "integratedInto": "validation-summary.json"
+      },
+      {
+        "fileName": "terminal-page-response.json",
+        "sha256": "e2b28000729ee7ed36db7af16ecfe27d256341d6bcf98ca79f76f95896282d6f",
+        "integratedInto": "collection-summary.json"
+      },
+      {
+        "fileName": "watchgrid-primary-source.json",
+        "sha256": "a2f330c6d13a3c0d7ea86249e01de83f4181fae52bdde445c35daca6397fa48e",
+        "integratedInto": "collection-summary.json"
+      }
+    ],
+    "finalFilesInRunDirectory": [
+      "collection-summary.json",
+      "observations.json",
+      "traveler-refund-policy.json",
+      "validation-summary.json"
+    ]
+  }
+}

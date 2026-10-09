@@ -1,0 +1,322 @@
+{
+  "marketCode": "ES",
+  "runId": 2,
+  "collectedAt": "2026-10-08T16:02:59+02:00",
+  "source": "https://www.rolex.com/es-es/watches/find-rolex?group=0",
+  "marketConditions": {
+    "country": "España",
+    "countryCode": "ES",
+    "locale": "es",
+    "currencyCode": "EUR",
+    "renderedExample": "16 100 €",
+    "initialWrongConditionExcluded": "International Spanish page rendered NTD and was excluded; official market chooser selection España switched to /es-es/ and EUR."
+  },
+  "fullEnumeration": {
+    "apiTotalCount": 1465,
+    "apiUniqueReferences": 1465,
+    "uiUniqueReferences": 1465,
+    "referenceSetMatchesMarketFile": true,
+    "apiUiReferenceDifference": 0,
+    "apiUiPriceMismatches": 0,
+    "terminalFirstResult": 1465,
+    "terminalResponseCount": 0,
+    "loadMoreControlAbsent": true
+  },
+  "statusInterpretation": "All configurations remained listed in the official catalogue; product page states availability can be limited and directs customers to official retailers. No claim of individual stock availability is made.",
+  "priceChangeCount": 0,
+  "listingStatusChangeCount": 0,
+  "independentSamples": [
+    {
+      "family": "Land-Dweller",
+      "url": "https://www.rolex.com/es-es/watches/land-dweller/m127334-0001",
+      "title": "Reloj Rolex Land-Dweller 40: acero Oystersteel y oro blanco - m127334-0001 (ES)",
+      "lang": "es",
+      "reference": "m127334-0001",
+      "renderedPrice": "16 100 €",
+      "headline": [
+        "Buscar",
+        "Localizador de distribuidores",
+        "Favoritos",
+        "Todos los relojes Rolex",
+        "Land-Dweller",
+        "Añadir a favoritos",
+        "Land-Dweller 40"
+      ],
+      "priceAvailabilityButton": "información sobre el precio y la disponibilidad",
+      "retailerCta": {
+        "label": "Buscar un distribuidor",
+        "href": "https://www.rolex.com/es-es/store-locator"
+      },
+      "directPurchaseCta": false
+    },
+    {
+      "family": "Cosmograph Daytona",
+      "url": "https://www.rolex.com/es-es/watches/cosmograph-daytona/m126506-0001",
+      "title": "Reloj Rolex Cosmograph Daytona: platino - m126506-0001 (ES)",
+      "lang": "es",
+      "reference": "m126506-0001",
+      "renderedPrice": "82 900 €",
+      "headline": [
+        "Buscar",
+        "Localizador de distribuidores",
+        "Favoritos",
+        "Todos los relojes Rolex",
+        "Cosmograph Daytona",
+        "Añadir a favoritos",
+        "Cosmograph Daytona"
+      ],
+      "priceAvailabilityButton": "información sobre el precio y la disponibilidad",
+      "retailerCta": {
+        "label": "Buscar un distribuidor",
+        "href": "https://www.rolex.com/es-es/store-locator"
+      },
+      "directPurchaseCta": false
+    },
+    {
+      "family": "Datejust",
+      "url": "https://www.rolex.com/es-es/watches/datejust/m126334-0033",
+      "title": "Reloj Rolex Datejust 41: acero Oystersteel y oro blanco - m126334-0033 (ES)",
+      "lang": "es",
+      "reference": "m126334-0033",
+      "renderedPrice": "11 450 €",
+      "headline": [
+        "Buscar",
+        "Localizador de distribuidores",
+        "Favoritos",
+        "Todos los relojes Rolex",
+        "Datejust",
+        "Modelo nuevo",
+        "Añadir a favoritos"
+      ],
+      "priceAvailabilityButton": "información sobre el precio y la disponibilidad",
+      "retailerCta": {
+        "label": "Buscar un distribuidor",
+        "href": "https://www.rolex.com/es-es/store-locator"
+      },
+      "directPurchaseCta": false
+    },
+    {
+      "family": "Submariner",
+      "url": "https://www.rolex.com/es-es/watches/submariner/m126613lb-0002",
+      "title": "Reloj Rolex Submariner Date: acero Oystersteel y oro amarillo - m126613lb-0002 (ES)",
+      "lang": "es",
+      "reference": "m126613lb-0002",
+      "renderedPrice": "19 000 €",
+      "headline": [
+        "Buscar",
+        "Localizador de distribuidores",
+        "Favoritos",
+        "Todos los relojes Rolex",
+        "Submariner",
+        "Añadir a favoritos",
+        "Submariner Date"
+      ],
+      "priceAvailabilityButton": "información sobre el precio y la disponibilidad",
+      "retailerCta": {
+        "label": "Buscar un distribuidor",
+        "href": "https://www.rolex.com/es-es/store-locator"
+      },
+      "directPurchaseCta": false
+    },
+    {
+      "family": "Explorer",
+      "url": "https://www.rolex.com/es-es/watches/explorer/m224270-0001",
+      "title": "Reloj Rolex Explorer 40: acero Oystersteel - m224270-0001 (ES)",
+      "lang": "es",
+      "reference": "m224270-0001",
+      "renderedPrice": "8 200 €",
+      "headline": [
+        "Buscar",
+        "Localizador de distribuidores",
+        "Favoritos",
+        "Todos los relojes Rolex",
+        "Explorer",
+        "Añadir a favoritos",
+        "Explorer 40"
+      ],
+      "priceAvailabilityButton": "información sobre el precio y la disponibilidad",
+      "retailerCta": {
+        "label": "Buscar un distribuidor",
+        "href": "https://www.rolex.com/es-es/store-locator"
+      },
+      "directPurchaseCta": false
+    },
+    {
+      "family": "1908",
+      "url": "https://www.rolex.com/es-es/watches/1908/m52508-0008",
+      "title": "Reloj Rolex 1908: oro amarillo de 18 quilates - m52508-0008 (ES)",
+      "lang": "es",
+      "reference": "m52508-0008",
+      "renderedPrice": "40 100 €",
+      "headline": [
+        "Buscar",
+        "Localizador de distribuidores",
+        "Favoritos",
+        "Todos los relojes Rolex",
+        "1908",
+        "Añadir a favoritos",
+        "1908"
+      ],
+      "priceAvailabilityButton": "información sobre el precio y la disponibilidad",
+      "retailerCta": {
+        "label": "Buscar un distribuidor",
+        "href": "https://www.rolex.com/es-es/store-locator"
+      },
+      "directPurchaseCta": false
+    }
+  ],
+  "consolidatedArtifacts": [
+    {
+      "originalFileName": "independent-product-page-samples.json",
+      "originalSha256": "4ecbc4376066770273d2be9c7f9b7e580a761e2df58ec4e4861a3794353eb23b",
+      "content": {
+        "capturedAt": "2026-10-08",
+        "marketCode": "ES",
+        "locale": "es",
+        "countryCode": "ES",
+        "currencyCode": "EUR",
+        "method": "Six independently opened official ES product pages spanning six collections",
+        "samples": [
+          {
+            "family": "Land-Dweller",
+            "url": "https://www.rolex.com/es-es/watches/land-dweller/m127334-0001",
+            "title": "Reloj Rolex Land-Dweller 40: acero Oystersteel y oro blanco - m127334-0001 (ES)",
+            "lang": "es",
+            "reference": "m127334-0001",
+            "renderedPrice": "16 100 €",
+            "headline": [
+              "Buscar",
+              "Localizador de distribuidores",
+              "Favoritos",
+              "Todos los relojes Rolex",
+              "Land-Dweller",
+              "Añadir a favoritos",
+              "Land-Dweller 40"
+            ],
+            "priceAvailabilityButton": "información sobre el precio y la disponibilidad",
+            "retailerCta": {
+              "label": "Buscar un distribuidor",
+              "href": "https://www.rolex.com/es-es/store-locator"
+            },
+            "directPurchaseCta": false
+          },
+          {
+            "family": "Cosmograph Daytona",
+            "url": "https://www.rolex.com/es-es/watches/cosmograph-daytona/m126506-0001",
+            "title": "Reloj Rolex Cosmograph Daytona: platino - m126506-0001 (ES)",
+            "lang": "es",
+            "reference": "m126506-0001",
+            "renderedPrice": "82 900 €",
+            "headline": [
+              "Buscar",
+              "Localizador de distribuidores",
+              "Favoritos",
+              "Todos los relojes Rolex",
+              "Cosmograph Daytona",
+              "Añadir a favoritos",
+              "Cosmograph Daytona"
+            ],
+            "priceAvailabilityButton": "información sobre el precio y la disponibilidad",
+            "retailerCta": {
+              "label": "Buscar un distribuidor",
+              "href": "https://www.rolex.com/es-es/store-locator"
+            },
+            "directPurchaseCta": false
+          },
+          {
+            "family": "Datejust",
+            "url": "https://www.rolex.com/es-es/watches/datejust/m126334-0033",
+            "title": "Reloj Rolex Datejust 41: acero Oystersteel y oro blanco - m126334-0033 (ES)",
+            "lang": "es",
+            "reference": "m126334-0033",
+            "renderedPrice": "11 450 €",
+            "headline": [
+              "Buscar",
+              "Localizador de distribuidores",
+              "Favoritos",
+              "Todos los relojes Rolex",
+              "Datejust",
+              "Modelo nuevo",
+              "Añadir a favoritos"
+            ],
+            "priceAvailabilityButton": "información sobre el precio y la disponibilidad",
+            "retailerCta": {
+              "label": "Buscar un distribuidor",
+              "href": "https://www.rolex.com/es-es/store-locator"
+            },
+            "directPurchaseCta": false
+          },
+          {
+            "family": "Submariner",
+            "url": "https://www.rolex.com/es-es/watches/submariner/m126613lb-0002",
+            "title": "Reloj Rolex Submariner Date: acero Oystersteel y oro amarillo - m126613lb-0002 (ES)",
+            "lang": "es",
+            "reference": "m126613lb-0002",
+            "renderedPrice": "19 000 €",
+            "headline": [
+              "Buscar",
+              "Localizador de distribuidores",
+              "Favoritos",
+              "Todos los relojes Rolex",
+              "Submariner",
+              "Añadir a favoritos",
+              "Submariner Date"
+            ],
+            "priceAvailabilityButton": "información sobre el precio y la disponibilidad",
+            "retailerCta": {
+              "label": "Buscar un distribuidor",
+              "href": "https://www.rolex.com/es-es/store-locator"
+            },
+            "directPurchaseCta": false
+          },
+          {
+            "family": "Explorer",
+            "url": "https://www.rolex.com/es-es/watches/explorer/m224270-0001",
+            "title": "Reloj Rolex Explorer 40: acero Oystersteel - m224270-0001 (ES)",
+            "lang": "es",
+            "reference": "m224270-0001",
+            "renderedPrice": "8 200 €",
+            "headline": [
+              "Buscar",
+              "Localizador de distribuidores",
+              "Favoritos",
+              "Todos los relojes Rolex",
+              "Explorer",
+              "Añadir a favoritos",
+              "Explorer 40"
+            ],
+            "priceAvailabilityButton": "información sobre el precio y la disponibilidad",
+            "retailerCta": {
+              "label": "Buscar un distribuidor",
+              "href": "https://www.rolex.com/es-es/store-locator"
+            },
+            "directPurchaseCta": false
+          },
+          {
+            "family": "1908",
+            "url": "https://www.rolex.com/es-es/watches/1908/m52508-0008",
+            "title": "Reloj Rolex 1908: oro amarillo de 18 quilates - m52508-0008 (ES)",
+            "lang": "es",
+            "reference": "m52508-0008",
+            "renderedPrice": "40 100 €",
+            "headline": [
+              "Buscar",
+              "Localizador de distribuidores",
+              "Favoritos",
+              "Todos los relojes Rolex",
+              "1908",
+              "Añadir a favoritos",
+              "1908"
+            ],
+            "priceAvailabilityButton": "información sobre el precio y la disponibilidad",
+            "retailerCta": {
+              "label": "Buscar un distribuidor",
+              "href": "https://www.rolex.com/es-es/store-locator"
+            },
+            "directPurchaseCta": false
+          }
+        ]
+      }
+    }
+  ]
+}

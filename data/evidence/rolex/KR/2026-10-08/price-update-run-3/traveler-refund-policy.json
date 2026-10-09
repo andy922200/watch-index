@@ -1,0 +1,69 @@
+{
+  "evidenceFormatVersion": 1,
+  "marketCode": "KR",
+  "reviewStatus": "NOT RUN (price-only update; policy not reassessed)",
+  "consolidationDate": "2026-10-09",
+  "currentFormalPolicy": {
+    "sourceFile": "data/traveler-refund-policies.json",
+    "record": {
+      "marketCode": "KR",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-10T16:29:36Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "韓國海關說明的退稅程序適用於免稅店購入商品；非韓國居民須攜帶未使用商品、銷售證明與護照，在離境時接受確認。",
+        "enUs": "The Korea Customs Service procedure applies to goods bought at duty-free shops; non-Korean residents present unused goods, a certificate of sale, and a passport for departure confirmation."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/rolex/KR/2026-09-11/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "Korea Tourism Organization",
+          "title": "Duty Free & Tax Refunds",
+          "url": "https://english.visitkorea.or.kr/svc/contents/infoBscView.do?vcontsId=140736",
+          "accessedAt": "2026-09-10T16:29:36Z"
+        },
+        {
+          "publisher": "Korea Customs Service",
+          "title": "Tax Refund",
+          "url": "https://www.customs.go.kr/english/cm/cntnts/cntntsView.do?mi=10803&cntntsId=5504",
+          "accessedAt": "2026-09-10T16:29:36Z"
+        }
+      ]
+    }
+  },
+  "priorPolicyEvidence": {
+    "sourceFile": "data/evidence/rolex/KR/2026-09-11/traveler-refund-policy.json",
+    "sha256": "9d5d279bc29dd2cdabe24ff2b319fc58df96dc03f3adeed04a1657831b82ddd4",
+    "content": {
+      "marketCode": "KR",
+      "observedAt": "2026-09-10T16:29:36Z",
+      "status": "PASS",
+      "scope": "Jurisdiction-level departure tax-refund procedure only; this does not establish Rolex authorized-dealer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+      "sources": [
+        {
+          "publisher": "Korea Tourism Organization",
+          "title": "Duty Free & Tax Refunds",
+          "url": "https://english.visitkorea.or.kr/svc/contents/infoBscView.do?vcontsId=140736",
+          "accessedAt": "2026-09-10T16:29:36Z"
+        },
+        {
+          "publisher": "Korea Customs Service",
+          "title": "Tax Refund",
+          "url": "https://www.customs.go.kr/english/cm/cntnts/cntntsView.do?mi=10803&cntntsId=5504",
+          "accessedAt": "2026-09-10T16:29:36Z"
+        }
+      ],
+      "observedFacts": [
+        "The Customs Service describes a tax-refund drawback process for eligible non-Korean residents buying goods at duty-free shops.",
+        "The goods, certificate of sale, and passport are inspected for Customs confirmation at departure, and the goods must be unused and leave the country within three months of purchase."
+      ],
+      "limitations": [
+        "The source applies to goods bought at duty-free shops and does not show that every retailer participates.",
+        "Rolex retailer participation and any exact refund amount are not established by this evidence."
+      ]
+    }
+  }
+}

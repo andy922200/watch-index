@@ -1,0 +1,171 @@
+{
+  "evidenceFormatVersion": 2,
+  "marketCode": "GB",
+  "runId": 3,
+  "validationCompletedAt": "2026-10-08T14:52:00Z",
+  "evidencePath": "data/evidence/rolex/GB/2026-10-08/price-update-run-3",
+  "fiveLayerValidation": {
+    "syntaxAndSchema": {
+      "status": "NOT RUN",
+      "strictJson": {
+        "status": "PASS",
+        "method": "Python JSON parser with duplicate-key and invalid-constant rejection for the target GB market/history and all run evidence."
+      },
+      "jsonSchema": {
+        "status": "NOT RUN",
+        "reason": "Environment has no installed Draft 2020-12 jsonschema validator; no dependency installed."
+      }
+    },
+    "crossFileConsistency": {
+      "status": "PASS",
+      "marketWatchCount": 1465,
+      "historyPriceSeriesCount": 1465,
+      "evidenceObservationCount": 1465,
+      "apiUiReferenceDifferenceCount": 0,
+      "marketHistoryDifferenceCount": 0,
+      "runId": 3,
+      "runRecordCount": 1465
+    },
+    "sourceReconciliation": {
+      "status": "PASS",
+      "primaryObservationCount": 1465,
+      "primarySourceMismatchCount": 0,
+      "priceParseFailureCount": 0,
+      "apiTerminalFirstResult": 1465,
+      "apiTerminalResultCount": 0,
+      "uiRenderedWatchCount": 1465,
+      "uiLoadMorePresentAtEnd": false,
+      "independentPdpSampleCount": 6
+    },
+    "historyAppendOnly": {
+      "status": "PASS",
+      "oldCollectionRunsPreservedAsPrefix": true,
+      "oldPricePointsPreservedAsPrefix": true,
+      "pricePointsAdded": 0,
+      "statusPointsAdded": 1465
+    },
+    "marketSelectorAndCurrency": {
+      "status": "PASS",
+      "selectedMarket": "United Kingdom",
+      "locale": "en-GB",
+      "currencyCode": "GBP",
+      "priceExamples": [
+        "£13,700",
+        "£57,400",
+        "£54,200"
+      ]
+    },
+    "listingStatus": {
+      "status": "PASS",
+      "result": "retailer-only",
+      "evidence": "Six independent official GB PDPs show visible GBP price, GBP Product Offer, Find/Contact a retailer links, and no online cart/checkout."
+    },
+    "scope": {
+      "status": "PASS",
+      "marketFileUnchanged": true,
+      "onlyGBRolexHistoryAndNewGBRolexEvidenceWritten": true
+    },
+    "diffWhitespace": {
+      "status": "PASS",
+      "method": "git diff --check plus strict trailing-whitespace scan of untracked evidence."
+    },
+    "catalogJoin": {
+      "status": "NOT RUN",
+      "reason": "Out of assigned scope; parent handles catalog."
+    },
+    "nicknameResearch": {
+      "status": "NOT RUN (out of scope)",
+      "reason": "Pure price update."
+    },
+    "travelerRefundPolicy": {
+      "status": "NOT RUN (out of scope)",
+      "reason": "Pure price update; policy file untouched."
+    }
+  },
+  "knownLimitations": [
+    "PLP result counter remained at 1,456 although the DOM/API contain 1,465 one-to-one matched references. The load-more control disappeared and API terminal offset returned 0.",
+    "Rolex inferred Taiwan as the browser location in selector recommendations; the official United Kingdom selector link was explicitly clicked, and en-GB URL, (GB) title, United Kingdom footer, and GBP prices confirm selected GB market.",
+    "Coveo analytics OPTIONS/POST search events failed DNS resolution; the official listing/API and PDP content requests succeeded and no watch data was affected."
+  ],
+  "evidenceFiles": [
+    "collection-summary.json",
+    "market-selector-observation.json",
+    "network-requests.json",
+    "source-api-pages.json",
+    "ui-enumeration.json",
+    "observations.json",
+    "independent-pdp-samples.json",
+    "run-change-summary.json",
+    "validation-summary.json"
+  ],
+  "consolidatedArtifacts": [
+    {
+      "originalFileName": "run-change-summary.json",
+      "originalSha256": "09320791fdd68e772afb697c6c1348f602f4c961c1585bead24c172013487934",
+      "content": {
+        "marketCode": "GB",
+        "runId": 3,
+        "collectedAt": "2026-10-08T14:47:04.422Z",
+        "recordCount": 1465,
+        "priceChangedCount": 0,
+        "listingStatusChangedCount": 1465,
+        "pricePointAction": "No price points added: all current GBP prices equal existing points.",
+        "statusPointAction": "Append run 3 status point for all watches: existing listed status differs from retailer-only confirmed in all six official PDP samples.",
+        "statusEvidenceSampleCount": 6,
+        "sampledPDPReferences": [
+          "m127334-0001",
+          "m228236-0018",
+          "m126506-0001",
+          "m126613lb-0002",
+          "m224270-0001",
+          "m52508-0008"
+        ],
+        "apiUiReferenceSetsEqual": true,
+        "apiMarketReferenceSetEqual": true
+      }
+    }
+  ],
+  "consolidation": {
+    "performedAtDate": "2026-10-09",
+    "sourceCommit": "6d22af6",
+    "preservedOriginalEvidenceInGitHistory": true,
+    "originalSeparateFilesIntegrated": [
+      {
+        "fileName": "independent-pdp-samples.json",
+        "sha256": "b1f17c645843b1c8bbdff6331fc7a8aa78ce251adf6791a08c4fdbbd1fddd64b",
+        "integratedInto": "observations.json"
+      },
+      {
+        "fileName": "market-selector-observation.json",
+        "sha256": "55504c558eb8cac8364cce06e3cc38afcf25c352502daa605e79c3eaa89ae158",
+        "integratedInto": "collection-summary.json"
+      },
+      {
+        "fileName": "network-requests.json",
+        "sha256": "cd3dc1216974560e1901f9bd8bbe79178cd1dc70458350a806f2f6770b7d2fb7",
+        "integratedInto": "collection-summary.json"
+      },
+      {
+        "fileName": "run-change-summary.json",
+        "sha256": "09320791fdd68e772afb697c6c1348f602f4c961c1585bead24c172013487934",
+        "integratedInto": "validation-summary.json"
+      },
+      {
+        "fileName": "source-api-pages.json",
+        "sha256": "84a06b95d762d61d1d9eca34c4b8e8aa20efff17d0b6c356eb11bdfb7614c3b5",
+        "integratedInto": "collection-summary.json"
+      },
+      {
+        "fileName": "ui-enumeration.json",
+        "sha256": "7b3616ac4748fb3a1e892aac84d50661ca133b23bf383e13da4dc68485011b83",
+        "integratedInto": "collection-summary.json"
+      }
+    ],
+    "finalFilesInRunDirectory": [
+      "collection-summary.json",
+      "observations.json",
+      "traveler-refund-policy.json",
+      "validation-summary.json"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "evidenceFormatVersion": 1,
+  "marketCode": "AT",
+  "reviewStatus": "NOT RUN (price-only update; policy not reassessed)",
+  "consolidationDate": "2026-10-09",
+  "currentFormalPolicy": {
+    "sourceFile": "data/traveler-refund-policies.json",
+    "record": {
+      "marketCode": "AT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-11T17:00:00Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "適用於居住地在歐盟以外的旅客；發票金額須超過 75 歐元，商品須於購買後第三個曆月結束前隨身出口，並將出口證明交回賣方。",
+        "enUs": "Available to travelers domiciled outside the EU; the invoice must exceed EUR 75, goods must be exported in personal luggage by the end of the third calendar month after purchase, and export proof must be returned to the seller."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/rolex/AT/2026-09-12/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "Austrian Federal Ministry of Finance",
+          "title": "VAT Refund",
+          "url": "https://www.bmf.gv.at/en/topics/customs/travellers/vat-refund.html",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ]
+    }
+  },
+  "priorPolicyEvidence": {
+    "sourceFile": "data/evidence/rolex/AT/2026-09-12/traveler-refund-policy.json",
+    "sha256": "0aceb45cc777bbdc6824923adc971cb83541ef0532d9bc91544e66967abe039d",
+    "content": {
+      "marketCode": "AT",
+      "observedAt": "2026-09-11T17:00:00Z",
+      "status": "PASS",
+      "scope": "Jurisdiction-level traveler consumption-tax policy only; this does not establish Rolex retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+      "sources": [
+        {
+          "publisher": "Austrian Federal Ministry of Finance",
+          "title": "VAT Refund",
+          "url": "https://www.bmf.gv.at/en/topics/customs/travellers/vat-refund.html",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ],
+      "observedFacts": [
+        "Travellers not domiciled in the EU may apply to the seller for a VAT refund on goods bought in Austria.",
+        "The invoice amount must exceed EUR 75, the goods must be exported in personal luggage by the end of the third calendar month after purchase, and export must be proven to the seller.",
+        "Austria uses export confirmation procedures, including Digital Export Validation at Vienna International Airport."
+      ],
+      "limitations": [
+        "The source describes a seller refund and export-confirmation process; it does not establish that every retailer participates.",
+        "Rolex retailer participation and any processing fee are not established by this evidence."
+      ]
+    }
+  }
+}

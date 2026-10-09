@@ -1,0 +1,70 @@
+{
+  "evidenceFormatVersion": 1,
+  "marketCode": "DE",
+  "reviewStatus": "NOT RUN (price-only update; policy not reassessed)",
+  "consolidationDate": "2026-10-09",
+  "currentFormalPolicy": {
+    "sourceFile": "data/traveler-refund-policies.json",
+    "record": {
+      "marketCode": "DE",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-20T15:40:00Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "適用於居住地在歐盟以外的旅客；含增值稅之交易總額須超過 50 歐元，商品須於交付月份之後第三個曆月結束前以個人行李出口，並取得經德國海關確認的出口及買方證明。退稅是否轉付給旅客由賣方決定，並非所有商店都提供。",
+        "enUs": "Available to travelers domiciled outside the EU; the total value of the supply including VAT must exceed EUR 50, the goods must be exported in personal luggage before the end of the third calendar month following the month of supply, and a customs-certified export and purchaser certificate must be obtained. Passing the VAT relief to the traveler is the seller's decision and not all shops offer it."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/omega/DE/2026-09-20/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "German Federal Foreign Office",
+          "title": "Mehrwertsteuer-Rückerstattung",
+          "url": "https://www.germany.info/us-de/service/steuern/mwst-rueckerstattung-1217014",
+          "accessedAt": "2026-09-20T00:00:00Z"
+        },
+        {
+          "publisher": "Bundesministerium der Justiz / juris (gesetze-im-internet.de)",
+          "title": "§ 6 UStG – Ausfuhrlieferung",
+          "url": "https://www.gesetze-im-internet.de/ustg_1980/__6.html",
+          "accessedAt": "2026-09-20T00:00:00Z"
+        },
+        {
+          "publisher": "Generalzolldirektion / Zoll online",
+          "title": "Umsatzsteuererstattung (nichtkommerzieller Reiseverkehr)",
+          "url": "https://www.zoll.de/DE/Fachthemen/Steuern/Umsatzsteuererstattung/umsatzsteuererstattung_node.html",
+          "accessedAt": "2026-09-20T00:00:00Z"
+        }
+      ]
+    }
+  },
+  "priorPolicyEvidence": {
+    "sourceFile": "data/evidence/rolex/DE/2026-09-12/traveler-refund-policy.json",
+    "sha256": "fd418e9a19e3de7286b4c267e6bded874ea21435bf53dc5a1db0a6b245c4a43e",
+    "content": {
+      "marketCode": "DE",
+      "observedAt": "2026-09-11T17:00:00Z",
+      "status": "PASS",
+      "scope": "Jurisdiction-level traveler consumption-tax policy only; this does not establish Rolex retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+      "sources": [
+        {
+          "publisher": "German Federal Foreign Office",
+          "title": "Mehrwertsteuer-Rückerstattung",
+          "url": "https://www.germany.info/us-de/service/steuern/mwst-rueckerstattung-1217014",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ],
+      "observedFacts": [
+        "Goods purchased in Germany by customers resident outside the EU and exported can qualify for a refund of German VAT.",
+        "The customer must notify the seller at purchase so an export and purchaser certificate can be issued.",
+        "The state tax relief is granted to the seller and most, but not all, shops pass it on to the customer."
+      ],
+      "limitations": [
+        "The source does not establish that every retailer offers or passes through a VAT refund.",
+        "Rolex retailer participation and any processing fee are not established by this evidence."
+      ]
+    }
+  }
+}

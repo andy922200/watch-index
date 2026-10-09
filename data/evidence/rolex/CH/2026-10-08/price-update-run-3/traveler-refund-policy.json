@@ -1,0 +1,58 @@
+{
+  "evidenceFormatVersion": 1,
+  "marketCode": "CH",
+  "reviewStatus": "NOT RUN (price-only update; policy not reassessed)",
+  "consolidationDate": "2026-10-09",
+  "currentFormalPolicy": {
+    "sourceFile": "data/traveler-refund-policies.json",
+    "record": {
+      "marketCode": "CH",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-11T17:00:00Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "適用於居住在瑞士境外的旅客；含稅零售價須至少 CHF 300，離境時須向瑞士海關出示商品與出口文件。退款由賣方依交易關係處理。",
+        "enUs": "Available to travelers domiciled outside Switzerland when the VAT-inclusive retail price is at least CHF 300; goods and the export document must be presented to Swiss Customs on exit. Any reimbursement is handled by the seller under the sales relationship."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/rolex/CH/2026-09-12/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "Swiss Federal Tax Administration",
+          "title": "Tax free for tourists",
+          "url": "https://www.estv.admin.ch/en/tax-free-for-tourists",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ]
+    }
+  },
+  "priorPolicyEvidence": {
+    "sourceFile": "data/evidence/rolex/CH/2026-09-12/traveler-refund-policy.json",
+    "sha256": "4e92548f78fbda834efa171779e9cfc3441808e27934449cfc582d9a19a9e9cc",
+    "content": {
+      "marketCode": "CH",
+      "observedAt": "2026-09-11T17:00:00Z",
+      "status": "PASS",
+      "scope": "Jurisdiction-level traveler consumption-tax policy only; this does not establish Rolex retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+      "sources": [
+        {
+          "publisher": "Swiss Federal Tax Administration",
+          "title": "Tax free for tourists",
+          "url": "https://www.estv.admin.ch/en/tax-free-for-tourists",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ],
+      "observedFacts": [
+        "Tax exemption for tourist purchases applies only when all stated conditions are met, including a buyer domiciled outside Switzerland and a retail price of at least CHF 300 including VAT.",
+        "The traveler must present the goods and completed export document to Swiss customs when leaving Swiss territory.",
+        "The buyer cannot claim Swiss VAT from the authorities; any reimbursement is handled by the supplier under the sales relationship."
+      ],
+      "limitations": [
+        "The source does not establish that every retailer offers a refund after export confirmation.",
+        "Rolex retailer participation and any processing fee are not established by this evidence."
+      ]
+    }
+  }
+}

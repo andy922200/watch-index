@@ -1,0 +1,58 @@
+{
+  "evidenceFormatVersion": 1,
+  "marketCode": "IT",
+  "reviewStatus": "NOT RUN (price-only update; policy not reassessed)",
+  "consolidationDate": "2026-10-09",
+  "currentFormalPolicy": {
+    "sourceFile": "data/traveler-refund-policies.json",
+    "record": {
+      "marketCode": "IT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-11T17:00:00Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "適用於居住或住所位於歐盟以外、每張發票金額超過 70 歐元的旅客；商品須於發票開立後第三個月內離開歐盟並完成海關驗證。退款由賣方或其退稅服務商處理，可能扣除費用。",
+        "enUs": "Available to travelers resident or domiciled outside the EU when each invoice exceeds EUR 70; goods must leave the EU within the third month after invoicing and receive customs endorsement. The seller or its tax-free provider handles the refund and may deduct a fee."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/rolex/IT/2026-09-12/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "Agenzia delle Dogane e dei Monopoli",
+          "title": "OTELLO - The procedure",
+          "url": "https://www.adm.gov.it/portale/-/the-procedure",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ]
+    }
+  },
+  "priorPolicyEvidence": {
+    "sourceFile": "data/evidence/rolex/IT/2026-09-12/traveler-refund-policy.json",
+    "sha256": "263c07365affb19ad5d8f84c96e578514c255ff1eaff096dbab8f9fcc7bdc3d2",
+    "content": {
+      "marketCode": "IT",
+      "observedAt": "2026-09-11T17:00:00Z",
+      "status": "PASS",
+      "scope": "Jurisdiction-level traveler consumption-tax policy only; this does not establish Rolex retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+      "sources": [
+        {
+          "publisher": "Agenzia delle Dogane e dei Monopoli",
+          "title": "OTELLO - The procedure",
+          "url": "https://www.adm.gov.it/portale/-/the-procedure",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ],
+      "observedFacts": [
+        "VAT direct relief or refund is available for qualifying personal or family-use goods when each invoice exceeds EUR 70 and the traveler resides or is domiciled outside the EU.",
+        "The goods must leave the EU within the third month after the invoice date, with customs endorsement of the tax-free invoice.",
+        "The refund is made by the Italian seller or a tax-free company acting for that seller; a service fee may be deducted."
+      ],
+      "limitations": [
+        "The source does not establish that every retailer participates in the tax-free process.",
+        "Rolex retailer participation and any transaction-specific refund amount are not established by this evidence."
+      ]
+    }
+  }
+}

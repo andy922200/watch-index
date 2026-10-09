@@ -1,0 +1,57 @@
+{
+  "evidenceFormatVersion": 1,
+  "marketCode": "US",
+  "reviewStatus": "NOT RUN (price-only update; policy not reassessed)",
+  "consolidationDate": "2026-10-09",
+  "currentFormalPolicy": {
+    "sourceFile": "data/traveler-refund-policies.json",
+    "record": {
+      "marketCode": "US",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-11T17:00:00Z",
+      "availability": "unavailable",
+      "eligibilitySummary": {
+        "zhTw": "美國的銷售稅由州與地方政府分別課徵，稅率及課稅品項皆可能不同；沒有可作為全國市場政策的統一旅客消費稅退稅制度。",
+        "enUs": "Sales taxes in the United States are imposed separately by state and local governments, with varying rates and taxable goods; there is no unified traveler consumption-tax refund scheme that can serve as a nationwide market policy."
+      },
+      "merchantParticipationRequired": null,
+      "exportValidationRequired": null,
+      "evidencePath": "data/evidence/rolex/US/2026-09-12/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "USAGov",
+          "title": "How to pay and get help with state and local taxes",
+          "url": "https://www.usa.gov/state-taxes",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ]
+    }
+  },
+  "priorPolicyEvidence": {
+    "sourceFile": "data/evidence/rolex/US/2026-09-12/traveler-refund-policy.json",
+    "sha256": "d9df7b76a35b795de766849e1e00c6dfca524e201833abd4139818ecfe80f47f",
+    "content": {
+      "marketCode": "US",
+      "observedAt": "2026-09-11T17:00:00Z",
+      "status": "PASS",
+      "scope": "Jurisdiction-level traveler consumption-tax policy only; this does not establish Rolex retailer participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+      "sources": [
+        {
+          "publisher": "USAGov",
+          "title": "How to pay and get help with state and local taxes",
+          "url": "https://www.usa.gov/state-taxes",
+          "accessedAt": "2026-09-11T17:00:00Z"
+        }
+      ],
+      "observedFacts": [
+        "USAGov states that sales tax is imposed by most states and municipalities, with rates and taxable goods varying by jurisdiction.",
+        "No nationwide traveler consumption-tax refund policy can be established from this federal guidance because sales-tax rules are state and local."
+      ],
+      "limitations": [
+        "This national-market finding does not determine whether a particular state, city, retailer, or airport has a separate programme.",
+        "It does not establish retailer-specific pricing, sales-tax treatment, or any refund."
+      ]
+    }
+  }
+}

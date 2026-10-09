@@ -1,0 +1,58 @@
+{
+  "evidenceFormatVersion": 1,
+  "marketCode": "TW",
+  "reviewStatus": "NOT RUN (price-only update; policy not reassessed)",
+  "consolidationDate": "2026-10-09",
+  "currentFormalPolicy": {
+    "sourceFile": "data/traveler-refund-policies.json",
+    "record": {
+      "marketCode": "TW",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "assessedAt": "2026-09-10T16:29:36Z",
+      "availability": "available",
+      "eligibilitySummary": {
+        "zhTw": "外籍旅客須在顯示 Taiwan Tax Refund 標誌的指定商店達到同日同店消費門檻，並在期限內攜帶商品離境及完成海關核准。",
+        "enUs": "Foreign travelers must meet the same-day, same-designated-store threshold at a retailer displaying the Taiwan Tax Refund label, then take the goods out and obtain Customs approval in time."
+      },
+      "merchantParticipationRequired": true,
+      "exportValidationRequired": true,
+      "evidencePath": "data/evidence/rolex/TW/2026-09-11/traveler-refund-policy.json",
+      "sources": [
+        {
+          "publisher": "Tourism Administration, Republic of China (Taiwan)",
+          "title": "VAT Refund Guidelines for Foreign Travelers",
+          "url": "https://eng.taiwan.net.tw/m1.aspx?sNo=0024567",
+          "accessedAt": "2026-09-10T16:29:36Z"
+        }
+      ]
+    }
+  },
+  "priorPolicyEvidence": {
+    "sourceFile": "data/evidence/rolex/TW/2026-09-11/traveler-refund-policy.json",
+    "sha256": "1d07f8afa855c709dae1d70e8b4a925646f52ed72c4865cbd23665b165d13773",
+    "content": {
+      "marketCode": "TW",
+      "observedAt": "2026-09-10T16:29:36Z",
+      "status": "PASS",
+      "scope": "Jurisdiction-level VAT refund guidance for foreign travelers only; this does not establish Rolex designated-store participation, an individual purchaser's eligibility, or a guaranteed refund amount.",
+      "sources": [
+        {
+          "publisher": "Tourism Administration, Republic of China (Taiwan)",
+          "title": "VAT Refund Guidelines for Foreign Travelers",
+          "url": "https://eng.taiwan.net.tw/m1.aspx?sNo=0024567",
+          "accessedAt": "2026-09-10T16:29:36Z"
+        }
+      ],
+      "observedFacts": [
+        "The guidance sets foreign-traveler entry-document and stay-duration conditions.",
+        "Purchases must reach the stated same-day threshold at the same designated store displaying the Taiwan Tax Refund label.",
+        "The traveler must apply within the stated period, take the goods out, and receive Customs approval before departure."
+      ],
+      "limitations": [
+        "Rolex designated-store participation is not established by this evidence.",
+        "No exact transaction-specific refund amount is represented in the comparison."
+      ]
+    }
+  }
+}
