@@ -5,6 +5,7 @@ dist/
 build/
 .output/
 .cache/
+.playwright-mcp/
 app/public/watch-data/
 
 .env
