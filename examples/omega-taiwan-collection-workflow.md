@@ -1,6 +1,6 @@
 # Omega Taiwan 收集流程範例
 
-本檔案是 [ai-data-maintenance-guide.md](../ai-data-maintenance-guide.md)「來源發現與完整性」章節所指的具體範例，套用範圍與限制以該章節為準：下列 Omega Taiwan 步驟是本專案所有品牌與市場的具體範例，不是 Omega 專用例外。其他國家／地區均應套用相同原則：先由目標市場的官方站與真實瀏覽器發現來源，再確認實際分頁或 cursor、以來源明示的停止條件完成全量對帳、保存不可變更的 observations 與驗證結果，最後才更新 brand-isolated catalog、market 與 history。不得直接複製 Omega 的 URL、AJAX 參數、欄位名稱、語系、幣別或稅別；那些必須在每個品牌、每個市場重新確認。
+本檔案是 [ai-data-maintenance-guide.md](../ai-data-maintenance-guide.md)「來源發現與完整性」章節所指的市場專屬範例。跨品牌、跨市場的共同步驟見該指南「標準執行流程」；本範例只描述 Omega Taiwan 的官方入口、分頁與欄位觀察。不得直接複製 Omega 的 URL、AJAX 參數、欄位名稱、語系、幣別或稅別；那些必須在每個品牌、每個市場重新確認。
 
 以下細節適用於更新 Omega Taiwan（`brandId: omega`、`marketCode: TW`）的官方在售目錄；以本次收集日期與官方頁面實況為準，任何端點或欄位改變都要重新經由真實瀏覽器確認。
 

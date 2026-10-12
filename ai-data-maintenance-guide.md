@@ -81,11 +81,12 @@ watchId === brandId + ":" + reference
 ## 標準執行流程
 
 1. 讀取基準，記錄輸入版本、最後 `runId` 與保護範圍。
-2. 找到官方資料來源與完整的分頁／cursor 停止條件。
-3. 先把原始來源事實保存到 evidence。
-4. 再正規化並更新 catalog、market 與 history。
-5. 執行驗證，將 PASS、FAIL、NOT RUN 與限制寫入 evidence。
-6. 檢查人類文件的長期描述是否需同步；單次收集細節只留在 evidence。
+2. 找到目標市場的官方資料來源。若任務涵蓋完整市場清單，逐一走訪官方分類與分頁／cursor，直到來源明示的停止條件成立；將觀察結果與既有完整參考號對帳。單次清單未出現的舊表款先保留，不可直接刪除或當作下架。
+3. 對本輪需更新價格或狀態的表款，以及每個新發現候選，逐筆核對完整官方參考號與目標市場。依任務指定的官方來源記錄在地價格；若需判定 `listed` 或 `retailer-only`，必須開啟該市場官方商品頁並檢查主要購買 CTA。價格與 CTA 若都在商品頁上，就在同次查核中記錄；不得從其他市場推定。
+4. 收集時將原始來源事實保存到 evidence。若同一輪有多次未提交的嘗試，保留各次嘗試範圍與結果，依 Evidence 規則整併後再更新正式資料，並讓 `runId` 指向整併後的 evidence。
+5. evidence 準備完成後，才正規化並更新 catalog、market 與 history。保留未列於本次完整清單的舊表款；只為實際價格或狀態變化新增歷史點，不重複寫入相鄰且相同的價格／狀態。
+6. 執行嚴格 JSON、Schema、跨檔、來源回對與完整性驗證；確認停止證據、獨立官方抽查及舊歷史保留。將各項 PASS、FAIL、NOT RUN 與限制寫入 evidence；工具不可用時如實標記，不得宣稱通過。
+7. 檢查人類文件的長期描述是否需同步；單次收集細節只留在 evidence。
 
 不得先改正式 JSON，再由正式 JSON 補造 evidence。
 
@@ -114,7 +115,7 @@ Browser、CDP 或 network 工具不可用，不代表官方沒有結構化來源
 
 ### 可套用的官方收集流程：Omega Taiwan 範例
 
-下列 Omega Taiwan 步驟是本專案所有品牌與市場的具體範例，不是 Omega 專用例外，套用範圍與限制以本節為準；不得直接複製 Omega 的 URL、AJAX 參數、欄位名稱、語系、幣別或稅別，那些必須在每個品牌、每個市場重新確認。完整步驟見 [examples/omega-taiwan-collection-workflow.md](examples/omega-taiwan-collection-workflow.md)。
+共通執行順序以「標準執行流程」為準。以下 Omega Taiwan 流程只補充一個市場的來源探索實例，供理解如何套用，不是 Omega 專用例外；不得直接複製 Omega 的 URL、AJAX 參數、欄位名稱、語系、幣別或稅別，那些必須在每個品牌、每個市場重新確認。完整市場細節見 [examples/omega-taiwan-collection-workflow.md](examples/omega-taiwan-collection-workflow.md)。
 
 ## Evidence：最低內容與保存規則
 
