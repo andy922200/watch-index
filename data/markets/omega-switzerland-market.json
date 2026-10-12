@@ -2,11 +2,11 @@
   "$schema": "../schemas/watch-market.schema.json",
   "schemaVersion": 4,
   "brandId": "omega",
-  "collectedAt": "2026-09-19T14:35:36.199Z",
+  "collectedAt": "2026-10-11T07:55:23.159Z",
   "salesRegion": "Switzerland",
   "marketCode": "CH",
   "locale": "de-CH",
-  "watchCount": 552,
+  "watchCount": 565,
   "source": {
     "name": "OMEGA Switzerland Official Website",
     "url": "https://www.omegawatches.com/de-ch/watches"
@@ -2033,6 +2033,34 @@
       }
     },
     {
+      "watchId": "omega:210.30.42.20.01.023",
+      "reference": "210.30.42.20.01.023",
+      "collectionName": "Seamaster Diver 300M",
+      "modelName": "Diver 300M",
+      "caseDescription": "42 mm, Stahl mit Stahlarmband",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:210.30.42.20.01.029",
+      "reference": "210.30.42.20.01.029",
+      "collectionName": "Seamaster Diver 300M",
+      "modelName": "Diver 300M",
+      "caseDescription": "42 mm, Stahl mit Stahlarmband",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
       "watchId": "omega:210.30.42.20.03.001",
       "reference": "210.30.42.20.03.001",
       "collectionName": "Seamaster Diver 300M",
@@ -2069,6 +2097,34 @@
       "dialDescription": "Blau",
       "isNewModel": false,
       "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003003",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:210.30.42.20.03.004",
+      "reference": "210.30.42.20.03.004",
+      "collectionName": "Seamaster Diver 300M",
+      "modelName": "Diver 300M",
+      "caseDescription": "42 mm, Stahl mit Stahlarmband",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003004",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:210.30.42.20.03.005",
+      "reference": "210.30.42.20.03.005",
+      "collectionName": "Seamaster Diver 300M",
+      "modelName": "Diver 300M",
+      "caseDescription": "42 mm, Stahl mit Stahlarmband",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005",
       "localNicknames": {
         "names": [],
         "sources": []
@@ -2475,6 +2531,34 @@
       "dialDescription": "Schwarz",
       "isNewModel": false,
       "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-chronograph-44-mm-21062445101001",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:210.83.42.20.01.001",
+      "reference": "210.83.42.20.01.001",
+      "collectionName": "Seamaster Diver 300M",
+      "modelName": "Diver 300M",
+      "caseDescription": "42 mm, Platingold mit Alligator",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:210.83.42.20.03.001",
+      "reference": "210.83.42.20.03.001",
+      "collectionName": "Seamaster Diver 300M",
+      "modelName": "Diver 300M",
+      "caseDescription": "42 mm, Platingold mit Alligator",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001",
       "localNicknames": {
         "names": [],
         "sources": []
@@ -3083,6 +3167,20 @@
       }
     },
     {
+      "watchId": "omega:220.10.38.20.02.004",
+      "reference": "220.10.38.20.02.004",
+      "collectionName": "Seamaster Aqua Terra 150M",
+      "modelName": "Aqua Terra 150M",
+      "caseDescription": "38 mm, Stahl mit Stahlarmband",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
       "watchId": "omega:220.10.38.20.03.001",
       "reference": "220.10.38.20.03.001",
       "collectionName": "Seamaster Aqua Terra 150M",
@@ -3133,6 +3231,20 @@
       "dialDescription": "Türkis",
       "isNewModel": false,
       "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003005",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:220.10.38.20.03.006",
+      "reference": "220.10.38.20.03.006",
+      "collectionName": "Seamaster Aqua Terra 150M",
+      "modelName": "Aqua Terra 150M",
+      "caseDescription": "38 mm, Stahl mit Stahlarmband",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006",
       "localNicknames": {
         "names": [],
         "sources": []
@@ -3265,6 +3377,20 @@
       }
     },
     {
+      "watchId": "omega:220.10.41.21.01.003",
+      "reference": "220.10.41.21.01.003",
+      "collectionName": "Seamaster Aqua Terra 150M",
+      "modelName": "Aqua Terra 150M",
+      "caseDescription": "41 mm, Stahl mit Stahlarmband",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
       "watchId": "omega:220.10.41.21.02.001",
       "reference": "220.10.41.21.02.001",
       "collectionName": "Seamaster Aqua Terra 150M",
@@ -3301,6 +3427,20 @@
       "dialDescription": "Silber",
       "isNewModel": false,
       "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-small-seconds-41-mm-22010412102004",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:220.10.41.21.02.005",
+      "reference": "220.10.41.21.02.005",
+      "collectionName": "Seamaster Aqua Terra 150M",
+      "modelName": "Aqua Terra 150M",
+      "caseDescription": "41 mm, Stahl mit Stahlarmband",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005",
       "localNicknames": {
         "names": [],
         "sources": []
@@ -3349,6 +3489,20 @@
       }
     },
     {
+      "watchId": "omega:220.10.41.21.03.007",
+      "reference": "220.10.41.21.03.007",
+      "collectionName": "Seamaster Aqua Terra 150M",
+      "modelName": "Aqua Terra 150M",
+      "caseDescription": "41 mm, Stahl mit Stahlarmband",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
       "watchId": "omega:220.10.41.21.10.001",
       "reference": "220.10.41.21.10.001",
       "collectionName": "Seamaster Aqua Terra 150M",
@@ -3357,6 +3511,20 @@
       "dialDescription": "Grün",
       "isNewModel": false,
       "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110001",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:220.10.41.21.10.002",
+      "reference": "220.10.41.21.10.002",
+      "collectionName": "Seamaster Aqua Terra 150M",
+      "modelName": "Aqua Terra 150M",
+      "caseDescription": "41 mm, Stahl mit Stahlarmband",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002",
       "localNicknames": {
         "names": [],
         "sources": []
@@ -4001,6 +4169,20 @@
       "dialDescription": "Pink",
       "isNewModel": false,
       "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-aqua-terra-shades-co-axial-master-chronometer-38-mm-22050382010001",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:220.50.41.21.02.004",
+      "reference": "220.50.41.21.02.004",
+      "collectionName": "Seamaster Aqua Terra 150M",
+      "modelName": "Aqua Terra 150M",
+      "caseDescription": "41 mm, Moonshine™-Gold mit Moonshine™-Gold",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com/de-ch/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004",
       "localNicknames": {
         "names": [],
         "sources": []

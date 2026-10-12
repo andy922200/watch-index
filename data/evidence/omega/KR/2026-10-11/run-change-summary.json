@@ -1,0 +1,55 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "KR",
+  "collectionDate": "2026-10-11",
+  "sourceReportCount": 1,
+  "note": "Original run-change reports are preserved verbatim by attempt; different run IDs remain distinct.",
+  "runChangeReports": [
+    {
+      "attemptId": "candidate-additions-run-1",
+      "originalRunDirectory": "data/evidence/omega/KR/2026-10-11/candidate-additions-run-1",
+      "runChangeSummary": {
+        "marketCode": "KR",
+        "runId": 3,
+        "collectedAt": "2026-10-11T06:34:24Z",
+        "recordCount": 567,
+        "changedPriceOrStatusCount": 13,
+        "changedWatchIds": [
+          "omega:210.30.42.20.01.023",
+          "omega:210.30.42.20.01.029",
+          "omega:210.30.42.20.03.004",
+          "omega:210.30.42.20.03.005",
+          "omega:210.83.42.20.01.001",
+          "omega:210.83.42.20.03.001",
+          "omega:220.10.38.20.02.004",
+          "omega:220.10.38.20.03.006",
+          "omega:220.10.41.21.01.003",
+          "omega:220.10.41.21.02.005",
+          "omega:220.10.41.21.03.007",
+          "omega:220.10.41.21.10.002",
+          "omega:220.50.41.21.02.004"
+        ],
+        "unchangedPriceOrStatusCount": 554,
+        "marketAddedWatchIds": [
+          "omega:210.30.42.20.01.023",
+          "omega:210.30.42.20.01.029",
+          "omega:210.30.42.20.03.004",
+          "omega:210.30.42.20.03.005",
+          "omega:210.83.42.20.01.001",
+          "omega:210.83.42.20.03.001",
+          "omega:220.10.38.20.02.004",
+          "omega:220.10.38.20.03.006",
+          "omega:220.10.41.21.01.003",
+          "omega:220.10.41.21.02.005",
+          "omega:220.10.41.21.03.007",
+          "omega:220.10.41.21.10.002",
+          "omega:220.50.41.21.02.004"
+        ],
+        "marketAddedCount": 13,
+        "notes": "由正式 market/history 與 HEAD 基準逐筆比較產生；價格／狀態變更指向本 run 的追加點。完整原始市場觀察保留於本資料夾 observations.json。",
+        "priorRunId": 2
+      }
+    }
+  ]
+}

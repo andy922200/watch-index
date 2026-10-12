@@ -1,0 +1,153 @@
+{
+  "brandId": "omega",
+  "marketCode": "JP",
+  "runId": 2,
+  "validatedAt": "2026-10-08T14:02:46.455Z",
+  "overall": "PARTIAL: the 552-ref base update and one PDP-verified candidate are represented in the 553-ref JP market/history. Twelve prior-absent refs are confirmed in complete official category evidence but remain category-only pending reference-specific PDP checks; candidate source-to-market completion is NOT PASS.",
+  "checks": {
+    "strictJson": {
+      "status": "PASS",
+      "details": "Market and history JSON parsed with duplicate-key detection and invalid-constant rejection."
+    },
+    "jsonSchema": {
+      "status": "NOT RUN",
+      "details": "No Python jsonschema/fastjsonschema or Node Ajv/check-jsonschema validator is available in the current environment; dependencies were not installed."
+    },
+    "manualContractChecks": {
+      "status": "PASS",
+      "details": "History schemaVersion/brand/market/currency, collection run shape, valid statuses, integer-or-null prices, runId references, required root keys, 553 unique JP market refs, and each market record watchId/reference relation manually verified."
+    },
+    "marketHistoryWatchIds": {
+      "status": "PASS",
+      "watchCount": 553,
+      "uniqueWatchIds": 553,
+      "marketHistoryEvidenceIdSetsMatch": true,
+      "details": "All 553 formal JP market refs have corresponding history entries; 552 are the original refs and one is the PDP-verified candidate 210.30.42.20.03.004. The other 12 newly observed category refs are intentionally excluded from market/history until reference-specific PDP status is verified."
+    },
+    "historyAppendOnlyPrefix": {
+      "status": "PASS",
+      "details": "All original price-series entries and points are retained unchanged; the one candidate-specific run 2 point was added to the existing uncommitted run using its same-run 2026-10-08 PDP observation."
+    },
+    "historyPoints": {
+      "status": "PASS",
+      "newRunId": 2,
+      "newPriceOrStatusPoints": 278,
+      "recordCount": 553,
+      "countsByStatus": {
+        "listed": 275,
+        "retailer-only": 272,
+        "not-listed": 6
+      },
+      "adjacentDuplicatePoints": 0,
+      "invalidPriceStatusPairs": 0,
+      "details": "Existing run 2 price/status points are preserved; one reference-specific verified retailer-only point was added for 210.30.42.20.03.004. Twelve other new market refs remain without history points."
+    },
+    "evidenceBackMatch": {
+      "status": "PASS",
+      "details": "All 553 formal market refs reconcile to 547 refs in complete official category observations plus 6 individually checked PDP-discontinued refs. Twelve additional prior-absent refs remain category-only candidates and are not formal market rows pending PDP checks."
+    },
+    "prices": {
+      "status": "PARTIAL",
+      "details": "The original 546 category prices and six discontinued transitions remain supported; 210.30.42.20.03.004 adds a PDP-confirmed JPY 1,287,000 price. Twelve other candidates have observed category-card prices/CTAs retained as evidence only, without formal history entries/statuses."
+    },
+    "categoryCompleteness": {
+      "status": "PASS",
+      "categoryCount": 16,
+      "categoryUniqueSum": 559,
+      "globalUniqueCount": 559,
+      "duplicateOrConflictingRefs": 0,
+      "terminalSignal": "No visible next/load-more after final successful batch for every category; Prestige was retried after an earlier timeout."
+    },
+    "pdpStatusAndCtaChecks": {
+      "status": "PARTIAL",
+      "discontinuedRefsCheckedIndividually": 6,
+      "discontinuedPdpExplicitSignalCount": 6,
+      "buyNowRoutePdpSamples": 2,
+      "wishlistPdpSamples": 2,
+      "detailsPdpSamples": 3,
+      "candidatePdpStatusEvidence": {
+        "verified": 1,
+        "notVerified": 12,
+        "verifiedReference": "210.30.42.20.03.004",
+        "verifiedStatus": "retailer-only",
+        "details": "The verified PDP explicitly states no online availability and offers wishlist, restock notification, and boutique contact. Category-card CTAs were not treated as formal listingStatus evidence."
+      },
+      "details": "Existing market status checks remain supported. Of the 13 prior-absent category candidates, only 210.30.42.20.03.004 has reference-specific PDP status/price evidence; the other 12 remain category-only and their card CTAs do not establish formal history status."
+    },
+    "sourceFamilyReconciliation": {
+      "status": "NOT PASS",
+      "details": "Official Japan landing family total for Seamaster is 203; sum of its 5 fully traversed subcategories is 209. Aqua Terra landing tile 107 vs category 108; Diver 300M tile 61 vs category 66. Other family totals match. No false global reconciliation claim."
+    },
+    "scopeProtection": {
+      "status": "PASS",
+      "details": "Only Omega JP market, history, and its existing uncommitted evidence were updated. No catalog, schema, refund policy, or other market was modified."
+    },
+    "readmeImpact": {
+      "status": "NOT RUN / coordinator documentation scope",
+      "details": "README Omega JP count may require coordinator synchronization after the market count is finalized. This single-market agent did not edit README."
+    },
+    "nicknameResearch": {
+      "status": "NOT RUN (out of scope)",
+      "details": "Pure-price update; existing nickname data retained."
+    },
+    "candidateSourceToMarketCompletion": {
+      "status": "NOT PASS",
+      "candidateCount": 13,
+      "formalMarketAndHistoryCount": 1,
+      "categoryOnlyPendingPdpCount": 12,
+      "details": "The complete 2026-10-08 JP category capture confirms all 13 prior-absent candidates, but only 210.30.42.20.03.004 has reference-specific PDP evidence and is retained in market/history. The other 12 remain in category evidence only until PDP price and CTA/status are verified; category presence alone does not supply formal listingStatus/history."
+    }
+  },
+  "limitations": [
+    "Sitewide landing totals and child-category totals for Seamaster differ by 6; the tracked 552-ref update is complete but sitewide aggregation is NOT PASS.",
+    "Full JSON Schema validation was not run because the validator packages/commands are unavailable.",
+    "The 210.83 material text conflict remains unresolved; both caseDescription values are null. Dial descriptions remain null for all 13 candidates because no reliable dial-color text was present in the reviewed JP evidence.",
+    "The 13 additions are not in the shared catalog; coordinator catalog merge awaits official imageUrl/dialColors evidence. README still shows 552 Omega JP watches; coordinator synchronization is pending.",
+    "Twelve of 13 candidates absent from the prior full capture remain category-only evidence; reference-specific JP PDP price and CTA/status checks are pending, so candidate source-to-market completion is NOT PASS.",
+    "Only 210.30.42.20.03.004 is retained as a formal candidate market row/history point, supported by its PDP at JPY 1,287,000 and retailer-only status. Category prices/CTAs for the other 12 remain evidence-only.",
+    "The two 210.83 category observations retain conflicting case/strap text. Image URLs and reliable dial-color text are missing for the candidates; do not infer those catalog fields."
+  ],
+  "candidateAdditionReview": {
+    "status": "PARTIAL",
+    "evidenceFile": "candidate-additions-review.json",
+    "priorVsCurrentPresence": {
+      "status": "PASS",
+      "previousFullCaptureDate": "2026-09-19",
+      "previousAbsentCount": 13,
+      "currentCategoryPresentCount": 13,
+      "details": "Every candidate reference is absent from the previous full JP observation and present in the current JP category observations."
+    },
+    "pdpListingStatus": {
+      "status": "PARTIAL",
+      "referenceSpecificPdpVerifiedCount": 1,
+      "referenceSpecificPdpNotVerifiedCount": 12,
+      "verifiedReference": "210.30.42.20.03.004",
+      "verifiedEvidence": "Current JP PDP says unavailable online and offers wishlist/re-stock notification/boutique contact; category-card CTAs for the other candidates were not used as formal listingStatus evidence."
+    },
+    "candidateMaterialConsistency": {
+      "status": "FAIL / unresolved for two refs",
+      "references": [
+        "210.83.42.20.01.001",
+        "210.83.42.20.03.001"
+      ],
+      "details": "Category rawText states stainless steel for case and bracelet, while CTA text states platinum-gold and alligator."
+    },
+    "liveMarketRetry": {
+      "status": "NOT RUN to JP PDP / capability-location limitation",
+      "details": "A live request for the official JP Aqua Terra category redirected to the TW domain and zh-Hant-TW locale; no TW observations were attributed to JP."
+    },
+    "formalMarketHistoryPromotion": {
+      "status": "PARTIAL",
+      "marketRowsAdded": 1,
+      "historyPricePointsAdded": 1,
+      "historyRunId": 2,
+      "details": "Only 210.30.42.20.03.004 remains in formal market/history, with one PDP-supported retailer-only point. The other 12 candidates remain category-only in evidence pending reference-specific PDP price and CTA/status checks."
+    }
+  },
+  "evidenceConsolidation": {
+    "status": "PASS",
+    "itemsPreserved": 8,
+    "targetFile": "observations.json",
+    "integrity": "Each embedded item carries its source filename and SHA-256."
+  }
+}

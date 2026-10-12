@@ -1,0 +1,30 @@
+{
+  "brandId": "omega",
+  "marketCode": "GB",
+  "runId": 2,
+  "overall": "PARTIAL — no formal market/history changes",
+  "checks": {
+    "officialTargetMarket": "NOT RUN: official en-GB entry did not render, so current locale/country/currency signals were not verified.",
+    "networkDiscovery": "FAIL: two GET requests to official GB entry, both net::ERR_HTTP2_PROTOCOL_ERROR; no response body.",
+    "fullListingAndPagination": "NOT RUN: 0/16 current categories collected; no stop signals.",
+    "currentPricesAndListingStatus": "NOT RUN: no current observations and no inference from older run.",
+    "PdpCtaValidation": "NOT RUN.",
+    "currentReferenceReconciliation": "NOT RUN.",
+    "schemaAndHistoryCandidate": "NOT RUN because no candidate or formal file mutation was created.",
+    "strictJsonEvidence": "PASS for all three current evidence documents using duplicate-key and invalid-constant rejection.",
+    "baselineProtection": "PASS: GB market/history/catalog hashes unchanged."
+  },
+  "limitations": [
+    "Official site inaccessible after the single retry following a 10-second cooldown.",
+    "No current price, status, or completeness claims.",
+    "Historical 2026-09-22 data is not used as current evidence."
+  ],
+  "evidenceDirectory": "data/evidence/omega/GB/2026-10-08/price-update-run-2/",
+  "readmeUpdate": "NOT REQUIRED for pure price update.",
+  "evidenceConsolidation": {
+    "status": "PASS",
+    "itemsPreserved": 1,
+    "targetFile": "collection-summary.json",
+    "integrity": "Each embedded item carries its source filename and SHA-256."
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "CH",
+  "collectionDate": "2026-10-11",
+  "sourceAttemptCount": 2,
+  "note": "Original validation results are preserved verbatim by attempt. This bundle does not promote any PARTIAL or NOT RUN result to PASS.",
+  "attemptValidations": [
+    {
+      "attemptId": "entry-retry-run-1",
+      "originalRunDirectory": "data/evidence/omega/CH/2026-10-11/entry-retry-run-1",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "CH",
+        "overall": "PARTIAL — official entry now renders; market completeness, current prices and PDP listing status have not been revalidated.",
+        "checks": {
+          "renderedOfficialEntry": "PASS",
+          "localeAndRegionalTitle": "PASS: URL locale, document language/title indicate target regional storefront.",
+          "currencyStoreConfig": "NOT RUN",
+          "fullCategoriesAndTerminalSignals": "NOT RUN",
+          "currentPriceAndListingStatus": "NOT RUN",
+          "formalMarketHistoryWrite": "NOT WRITTEN"
+        },
+        "limitations": [
+          "This entry retry is not a full market refresh and does not resolve the prior PARTIAL source-completeness validation.",
+          "Current visible family total is retained for comparison only; no category or product count reconciliation was performed."
+        ]
+      }
+    },
+    {
+      "attemptId": "full-category-price-validation-run-2",
+      "originalRunDirectory": "data/evidence/omega/CH/2026-10-11/full-category-price-validation-run-2",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "CH",
+        "runId": 2,
+        "overall": "PARTIAL — full category/current card-price reconciliation completed; differential status facts written.",
+        "checks": {
+          "strictJson": "PASS: duplicate-key-aware parser, market/history link integrity and price/status checks.",
+          "jsonSchema": "NOT RUN: Python jsonschema module is unavailable in this environment.",
+          "marketCategoryTraversal": "PASS: all 16 official watch categories reached a terminal page; 559 unique product codes/URLs and family counts sum to 559",
+          "priceReconciliation": "PASS for 546 category-matched references: all had a public CHF card price and matched prior history; 0 price deltas",
+          "newMarketAdditions": "PASS for 13 exact references already present in global Omega catalog; each direct PDP showed public CHF price and retailer-only purchase path",
+          "notListedClassification": "PASS for 6 previously tracked references absent from the complete current 16-category set; their formal market records were retained and current history set to not-listed",
+          "independentPdpSpotChecks": "PASS: 19 distinct individual official PDPs opened, covering all new references, all series, low/high price and direct-buy/contact-only CTA patterns",
+          "historicalPricePoints": "PASS: differential run 2 appended 21 points, preserving run 1 as a prefix; no redundant adjacent point",
+          "networkDiscovery": "PARTIAL: requests inspected; StoreConfig was not found. Locale, currency and market are corroborated by rendered regional page and CHF price evidence.",
+          "statusCoverageForAll546MatchedItems": "NOT RUN at individual PDP level; existing statuses on those items were not changed based on category card CTA alone."
+        },
+        "limitations": [
+          "The 546 already tracked category-matched items had current category prices fully compared, but their PDP purchase controls were not individually re-opened; existing listingStatus points were retained.",
+          "Official page category-product cards did not expose dialDescription for 13 new market records; field is null rather than inferred.",
+          "No StoreConfig payload was captured."
+        ],
+        "scopeProtection": "Only CH Omega market, CH Omega history, README CH count, and CH Omega evidence were modified; global catalog, schema, traveler policy, and every other market were left untouched."
+      }
+    }
+  ]
+}

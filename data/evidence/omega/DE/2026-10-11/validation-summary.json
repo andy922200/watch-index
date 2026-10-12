@@ -1,0 +1,60 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "DE",
+  "collectionDate": "2026-10-11",
+  "sourceAttemptCount": 2,
+  "note": "Original validation results are preserved verbatim by attempt. This bundle does not promote any PARTIAL or NOT RUN result to PASS.",
+  "attemptValidations": [
+    {
+      "attemptId": "entry-retry-run-1",
+      "originalRunDirectory": "data/evidence/omega/DE/2026-10-11/entry-retry-run-1",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "DE",
+        "overall": "PARTIAL — official entry now renders; market completeness, current prices and PDP listing status have not been revalidated.",
+        "checks": {
+          "renderedOfficialEntry": "PASS",
+          "localeAndRegionalTitle": "PASS: URL locale, document language/title indicate target regional storefront.",
+          "currencyStoreConfig": "NOT RUN",
+          "fullCategoriesAndTerminalSignals": "NOT RUN",
+          "currentPriceAndListingStatus": "NOT RUN",
+          "formalMarketHistoryWrite": "NOT WRITTEN"
+        },
+        "limitations": [
+          "This entry retry is not a full market refresh and does not resolve the prior PARTIAL source-completeness validation.",
+          "Current visible family total is retained for comparison only; no category or product count reconciliation was performed."
+        ]
+      }
+    },
+    {
+      "attemptId": "full-category-price-validation-run-2",
+      "originalRunDirectory": "data/evidence/omega/DE/2026-10-11/full-category-price-validation-run-2",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "DE",
+        "runId": 2,
+        "overall": "PARTIAL — complete category/current price reconciliation with explicit PDP retry limitations.",
+        "checks": {
+          "categoryTraversal": "PASS: all 16 terminal category pages successful; 559 unique references/product URLs, no missing next-page link",
+          "priceReconciliation": "PASS for 546 existing category matches: all public EUR prices matched prior history; no price deltas",
+          "newMarketCandidates": "PASS: 13 exact references present in global catalog; direct PDP exact refs and public prices verified, retailer-only CTA observed",
+          "absentReferences": "PASS: 6 existing market refs absent from complete category traversal; entries retained and run history marked not-listed",
+          "pdpSpotCheck": "PARTIAL: 16 distinct direct PDP pages succeeded (13 additions and 3 existing products); 3 additional existing-product page opens failed ERR_HTTP2_PROTOCOL_ERROR",
+          "independentHomepageTotal": "NOT RUN: rendered landing-page navigation retry failed ERR_HTTP2_PROTOCOL_ERROR",
+          "networkDiscovery": "PARTIAL: requests inspected; StoreConfig was not captured",
+          "strictJson": "PASS: duplicate-key-aware parser, market/history link integrity and price/status checks.",
+          "jsonSchema": "NOT RUN: Python jsonschema module unavailable in this environment.",
+          "statusCoverageFor546Matches": "NOT RUN individually; existing per-item status values retained.",
+          "READMECount": "PASS: README Omega Germany count updated to 565."
+        },
+        "limitations": [
+          "Three direct PDP checks failed with ERR_HTTP2_PROTOCOL_ERROR; their prior statuses were not modified.",
+          "Rendered landing-page family total was not available for independent comparison; full category counts sum to 559.",
+          "13 new market dialDescription fields are null where no precise dial wording was captured; no color inference was made."
+        ],
+        "scopeProtection": "Only DE Omega market/history/evidence and README DE count were modified; catalog, schema, traveler policy, and all other markets were untouched."
+      }
+    }
+  ]
+}

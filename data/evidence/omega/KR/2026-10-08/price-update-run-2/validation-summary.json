@@ -1,0 +1,51 @@
+{
+  "brandId": "omega",
+  "marketCode": "KR",
+  "runId": 2,
+  "validatedAt": "2026-10-11",
+  "checks": {
+    "strictJson": {
+      "result": "PASS",
+      "detail": "49 owned KR evidence, market, history and schema JSON files parsed with duplicate-key and invalid-constant rejection."
+    },
+    "schema": {
+      "result": "NOT RUN",
+      "detail": "A Draft 2020-12 JSON Schema validator is unavailable in the environment. History contract properties, required keys, enum/status-price rules, timestamps, run IDs and additional-field shape were checked directly against the schema."
+    },
+    "marketHistoryIntegrity": {
+      "result": "PASS",
+      "detail": "554 unique KR market watch IDs equal 554 unique KR history series; brand/market/currency fields agree."
+    },
+    "statusPriceAndEvidence": {
+      "result": "PASS",
+      "detail": "Run-2 listing status and price points are supported by KR category and sampled exact-PDP evidence; category cards were not used to infer PDP listingStatus."
+    },
+    "sourceCompleteness": {
+      "result": "PASS with reconciliation limit",
+      "detail": "16 terminal categories reconcile 561 unique refs, 0 duplicates. 548 refs match the tracked KR market, 6 tracked refs are individually discontinued by direct PDP, and 13 official refs are outside current market scope."
+    },
+    "independentOfficialPdpSampling": {
+      "result": "PASS",
+      "detail": "14 PDP CTA/status samples across four families pass the recorded sample checks; the boutique contact route was exercised and Seoul KR boutiques returned."
+    },
+    "appendOnlyHistory": {
+      "result": "PASS",
+      "detail": "Appended 225 run-2 listing-status change points and no price changes. Previous run and all earlier price points remain an exact prefix."
+    },
+    "marketFileChange": {
+      "result": "PASS",
+      "detail": "Run-2 KR market file retained its 554 tracked references; no candidate additions were applied in the 2026-10-08 collection run."
+    }
+  },
+  "limits": [
+    "Individual PDP was not opened for every current category listing; retailer-only mapping is based on a 14-PDP sample across all four families, and the remaining card CTA groups follow the same observed behavior.",
+    "Boutique contact widget initially used detected Taiwan location; searching 서울 returned Korean boutique results.",
+    "Formal JSON Schema validator unavailable; structural contract checks were performed directly against the applicable schema."
+  ],
+  "evidenceConsolidation": {
+    "status": "PASS",
+    "itemsPreserved": 43,
+    "targetFile": "observations.json",
+    "integrity": "Each embedded item carries its source filename and SHA-256."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "brandId": "omega",
+  "marketCode": "DE",
+  "runId": 2,
+  "overall": "PARTIAL — NOT COMPLETE; no formal history write",
+  "checks": {
+    "marketAndHistoryBaselines": "PASS: baseline files still match initial hashes; no history write.",
+    "officialMarketConditions": "PASS: OMEGA DE rendered page, de-DE language and actual StoreConfig identify DE/EUR.",
+    "networkDiscovery": "PASS: actual GraphQL StoreConfig response and category fetch observed in browser before later network errors.",
+    "completedCategoryData": "PASS for 7/16 only: 248 unique refs, all captured page requests HTTP 200, each terminal response had no official next-page link.",
+    "fullSourceCompleteness": "FAIL / NOT COMPLETE: 9 categories remain; no full unique market reconciliation or official terminal coverage. Landing and category counts differ for Aqua Terra (107 landing /108 category) and Diver (60 landing /65 category); not resolved.",
+    "listingStatusPriceMapping": "NOT RUN: full market list and representative PDP CTA verification unavailable.",
+    "independentPdpPriceSpotChecks": "NOT RUN.",
+    "historyAppendValidation": "NOT RUN: no candidate generated and no history write.",
+    "schemaValidation": "NOT RUN for updated history; no formal JSON was modified.",
+    "browserRecovery": "FAIL: direct category navigation and fresh official entry both failed net::ERR_HTTP2_PROTOCOL_ERROR; no further retries attempted."
+  },
+  "evidencePath": "data/evidence/omega/DE/2026-10-08/price-update-run-2/",
+  "limitations": [
+    "Category traversal stopped after 7/16 categories and 248 refs.",
+    "No price/status result can be safely produced for all 552 tracked references.",
+    "StoreConfig page had unrelated browser geo-detected TW analytics/InformationMessages; DE StoreConfig and paths were used and verified.",
+    "Some initial category tool failures did not retain individual detailed error text; later reproduction and recovery failure were saved."
+  ],
+  "readmeUpdate": "NOT REQUIRED for price-only task.",
+  "evidenceConsolidation": {
+    "status": "PASS",
+    "itemsPreserved": 10,
+    "targetFile": "observations.json",
+    "integrity": "Each embedded item carries its source filename and SHA-256."
+  }
+}

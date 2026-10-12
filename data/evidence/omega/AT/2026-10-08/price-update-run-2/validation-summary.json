@@ -1,0 +1,46 @@
+{
+  "brandId": "omega",
+  "marketCode": "AT",
+  "runId": 2,
+  "validatedAt": "2026-10-08T15:15:28.278Z",
+  "overall": "PASS_WITH_DOCUMENTED_SOURCE_LIMITATIONS",
+  "checks": {
+    "strictJson": "PASS: duplicate-key and invalid-constant parser; 20 scoped data/schema/evidence JSON documents, including this summary.",
+    "schema": "NOT RUN: Draft 2020-12 validation engine unavailable; direct allowed/required fields, types, enums and status-price contract PASS",
+    "marketHistoryCatalogLinkage": "PASS: 552 unique market watchIds equal history and observations; every target ID exists in Omega catalog; marketCode AT",
+    "historyAppendOnly": "PASS: previous run and every old point remain exact prefixes; run2 added only 79 necessary points; 473 series unchanged; no redundant adjacent points",
+    "statusAndPrice": "PASS: 473 listed + 73 retailer-only with EUR price; 6 not-listed with null price; all 552 latest history entries equal evidence",
+    "priceParsing": "PASS: 546 current category listing prices parsed from official EUR text; all equal prior listed price; no actual public price change; 11 sampled PDP prices equal matching category observation",
+    "officialCoverage": "PASS for tracked 552: 16 categories terminal/no next link, 559 unique category refs, 546 exact product URL matches and 6 individually confirmed unavailable PDPs; 13 category refs out of tracked market scope",
+    "sourceCountReconciliation": "NOT PASS: official family landing counters total 558 while child categories/unique official refs total 559; Aqua Terra landing 107 vs its category 108. Retained as unresolved official-source discrepancy; no tracked refs left unmapped.",
+    "independentOfficialPdpChecks": "PASS: 6 missing refs individually checked; 11 CTA PDP samples across all 4 families, including price pairing",
+    "boutiqueCtaClickBehavior": "NOT RUN: one Playwright exact-text click timed out; no retry per coordinator direction; direct CTA text and no-cart observation retained",
+    "marketCatalogUnchanged": "PASS: only Omega AT history and its evidence changed; market/catalog baseline hashes unchanged"
+  },
+  "candidateAttemptNote": "The first candidate validator attempt failed because its assertion incorrectly expected every tracked series to append a point. This was a validator defect: unchanged prices/statuses must not create redundant points. Corrected validation passed with 79 status changes and 473 unchanged series; no formal data was written by the failed attempt.",
+  "limitations": [
+    "Landing/category count discrepancy of one remains unresolved.",
+    "Category-card observedAt uses persisted batch time; individual per-card timestamps were not serialized.",
+    "Boutique contact interaction behavior not observed; direct CTA text was observed.",
+    "A 2026-10-11 direct-product attempt for a candidate resolved to the official TW storefront rather than de-AT; no Taiwan response was treated as AT evidence. The 13 candidate additions remain unresolved for formal history status until target-market PDP CTAs can be confirmed."
+  ],
+  "evidenceDirectory": "data/evidence/omega/AT/2026-10-08/price-update-run-2/",
+  "candidateAdditions": {
+    "result": "PARTIAL / NOT WRITTEN",
+    "checks": {
+      "comparisonToPriorOfficialATObservations": "PASS: all 13 absent from 2026-09-24 set and present in 2026-10-08 official categories",
+      "categoryCardRawPriceAndCta": "PASS: all 13 captured in candidate-additions-review.json",
+      "directATProductPageCta": "NOT RUN / market mismatch: real-browser attempt redirected to Taiwan storefront; no AT status inferred",
+      "officialImageUrl": "NOT RUN / not present in saved AT category-card fields; direct page could not remain in AT market",
+      "marketHistoryWrite": "NOT RUN: insufficient PDP CTA evidence to assign listingStatus and append history points"
+    },
+    "formalChanges": [],
+    "evidence": "candidate-additions-review.json"
+  },
+  "evidenceConsolidation": {
+    "status": "PASS",
+    "itemsPreserved": 12,
+    "targetFile": "observations.json",
+    "integrity": "Each embedded item carries its source filename and SHA-256."
+  }
+}

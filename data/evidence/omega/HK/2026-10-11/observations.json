@@ -1,0 +1,643 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "HK",
+  "collectionDate": "2026-10-11",
+  "sourceAttemptCount": 1,
+  "note": "Original observation documents are preserved verbatim by attempt; observations are not deduplicated or reconciled.",
+  "attemptObservations": [
+    {
+      "attemptId": "candidate-additions-run-1",
+      "originalRunDirectory": "data/evidence/omega/HK/2026-10-11/candidate-additions-run-1",
+      "observations": {
+        "brandId": "omega",
+        "marketCode": "HK",
+        "locale": "zh-HK",
+        "runId": 3,
+        "purpose": "補納前次完整官方分類清單未出現、於 2026-10-08 香港完整分類中出現的 13 個 Omega 配置；2026-10-11 逐款重開官方商品頁核對完整 reference、價格與購買 CTA。",
+        "observations": [
+          {
+            "reference": "210.30.42.20.01.023",
+            "sourceCategoryPath": "watches/seamaster/diver-300-m/catalog",
+            "sourceCategoryUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023",
+            "productUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023-72e2b8.png?w=210",
+            "sourceCardEvidence": {
+              "evidencePath": "data/evidence/omega/HK/2026-10-08/price-update-run-2/observations.json",
+              "observedAtUtc": "2026-10-08T13:34:52.782Z",
+              "rawProductCardText": "SPECTRE特別版腕表\n新品\n- 海馬系列 潛水300米 42毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 210.30.42.20.01.023\n\n海馬系列 潛水300米\n\n42毫米, 不銹鋼 配襯 不銹鋼表鏈帶",
+              "rawPrice": "HKD60,300",
+              "parsedPrice": 60300,
+              "isNewModel": true
+            },
+            "followUpPdpEvidence": {
+              "observedAtUtc": "2026-10-11T06:17:06.015Z",
+              "httpPageLoaded": true,
+              "pageTitleReferenceMatch": true,
+              "renderedReference": "210.30.42.20.01.023",
+              "renderedPrice": 60300,
+              "renderedPriceMatchesCategoryCard": true,
+              "primaryCta": "聯絡專賣店",
+              "onlineDirectOrderAvailable": false,
+              "excerpt": "210.30.42.20.01.023; HKD 60,300; CTA「聯絡專賣店」；正文顯示暫時未能提供網購。"
+            },
+            "priceScope": "individual watch product price",
+            "dialDescriptionStatus": "Official localized category/PDP text does not state this dial color; market dialDescription is null and catalog dialColors is left unresolved for the coordinator."
+          },
+          {
+            "reference": "210.30.42.20.01.029",
+            "sourceCategoryPath": "watches/seamaster/diver-300-m/catalog",
+            "sourceCategoryUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029",
+            "productUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029-22b45a.png?w=210",
+            "sourceCardEvidence": {
+              "evidencePath": "data/evidence/omega/HK/2026-10-08/price-update-run-2/observations.json",
+              "observedAtUtc": "2026-10-08T13:34:53.754Z",
+              "rawProductCardText": "SPECTRE限量版套裝\n新品\n- 海馬系列 潛水300米 42毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 210.30.42.20.01.029\n\n海馬系列 潛水300米\n\n42毫米, 不銹鋼 配襯 不銹鋼表鏈帶\n\nHKD630,000\n\n詳情\n詳情 - 海馬系列 42毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 210.30.42.20.01.029",
+              "rawPrice": "HKD630,000",
+              "parsedPrice": 630000,
+              "isNewModel": true
+            },
+            "followUpPdpEvidence": {
+              "observedAtUtc": "2026-10-11T06:17:16.332Z",
+              "httpPageLoaded": true,
+              "pageTitleReferenceMatch": true,
+              "renderedReference": "210.30.42.20.01.029",
+              "renderedPrice": 630000,
+              "renderedPriceMatchesCategoryCard": true,
+              "primaryCta": "聯絡專賣店",
+              "onlineDirectOrderAvailable": false,
+              "excerpt": "210.30.42.20.01.029; HKD 630,000; CTA「聯絡專賣店」；正文標示限量套裝，包含兩枚腕錶及配件。"
+            },
+            "priceScope": "limited-set bundle price",
+            "dialDescriptionStatus": "Official localized category/PDP text does not state this dial color; market dialDescription is null and catalog dialColors is left unresolved for the coordinator."
+          },
+          {
+            "reference": "210.30.42.20.03.004",
+            "sourceCategoryPath": "watches/seamaster/diver-300-m/catalog",
+            "sourceCategoryUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003004",
+            "productUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003004",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003004-68cc39.png?w=210",
+            "sourceCardEvidence": {
+              "evidencePath": "data/evidence/omega/HK/2026-10-08/price-update-run-2/observations.json",
+              "observedAtUtc": "2026-10-08T13:34:52.782Z",
+              "rawProductCardText": "占士邦版腕表\n新品\n- 海馬系列 潛水300米 42毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 210.30.42.20.03.004\n\n海馬系列 潛水300米\n\n42毫米, 不銹鋼 配襯 不銹鋼表鏈帶",
+              "rawPrice": "HKD60,300",
+              "parsedPrice": 60300,
+              "isNewModel": true
+            },
+            "followUpPdpEvidence": {
+              "observedAtUtc": "2026-10-11T06:17:25.957Z",
+              "httpPageLoaded": true,
+              "pageTitleReferenceMatch": true,
+              "renderedReference": "210.30.42.20.03.004",
+              "renderedPrice": 60300,
+              "renderedPriceMatchesCategoryCard": true,
+              "primaryCta": "聯絡專賣店",
+              "onlineDirectOrderAvailable": false,
+              "excerpt": "210.30.42.20.03.004; HKD 60,300; CTA「聯絡專賣店」；正文顯示暫時未能提供網購。"
+            },
+            "priceScope": "individual watch product price",
+            "dialDescriptionStatus": "Official localized category/PDP text does not state this dial color; market dialDescription is null and catalog dialColors is left unresolved for the coordinator."
+          },
+          {
+            "reference": "210.30.42.20.03.005",
+            "sourceCategoryPath": "watches/seamaster/diver-300-m/catalog",
+            "sourceCategoryUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005",
+            "productUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005-18104a.png?w=210",
+            "sourceCardEvidence": {
+              "evidencePath": "data/evidence/omega/HK/2026-10-08/price-update-run-2/observations.json",
+              "observedAtUtc": "2026-10-08T13:34:53.754Z",
+              "rawProductCardText": "占士邦限量版套裝\n新品\n- 海馬系列 潛水300米 42毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 210.30.42.20.03.005\n\n海馬系列 潛水300米\n\n42毫米, 不銹鋼 配襯 不銹鋼表鏈帶\n\nHKD630,000\n\n詳情\n詳情 - 海馬系列 42毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 210.30.42.20.03.005",
+              "rawPrice": "HKD630,000",
+              "parsedPrice": 630000,
+              "isNewModel": true
+            },
+            "followUpPdpEvidence": {
+              "observedAtUtc": "2026-10-11T06:17:35.810Z",
+              "httpPageLoaded": true,
+              "pageTitleReferenceMatch": true,
+              "renderedReference": "210.30.42.20.03.005",
+              "renderedPrice": 630000,
+              "renderedPriceMatchesCategoryCard": true,
+              "primaryCta": "聯絡專賣店",
+              "onlineDirectOrderAvailable": false,
+              "excerpt": "210.30.42.20.03.005; HKD 630,000; CTA「聯絡專賣店」；正文標示限量套裝，包含兩枚腕錶及配件。"
+            },
+            "priceScope": "limited-set bundle price",
+            "dialDescriptionStatus": "Official localized category/PDP text does not state this dial color; market dialDescription is null and catalog dialColors is left unresolved for the coordinator."
+          },
+          {
+            "reference": "210.83.42.20.01.001",
+            "sourceCategoryPath": "watches/seamaster/diver-300-m/catalog",
+            "sourceCategoryUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001",
+            "productUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001-a545d5.png?w=210",
+            "sourceCardEvidence": {
+              "evidencePath": "data/evidence/omega/HK/2026-10-08/price-update-run-2/observations.json",
+              "observedAtUtc": "2026-10-08T13:34:53.754Z",
+              "rawProductCardText": "SPECTRE限量版套裝\n新品\n- 海馬系列 潛水300米 42毫米, platinum‑gold表殼 配襯 鱷魚皮表帶 - 210.83.42.20.01.001\n\n海馬系列 潛水300米\n\n42毫米, platinum‑gold表殼 配襯 鱷魚皮表帶\n\nHKD630,000\n\n詳情\n詳情 - 海馬系列 潛水300米 42毫米, platinum‑gold表殼 配襯 鱷魚皮表帶 - 21083422001001",
+              "rawPrice": "HKD630,000",
+              "parsedPrice": 630000,
+              "isNewModel": true
+            },
+            "followUpPdpEvidence": {
+              "observedAtUtc": "2026-10-11T06:17:43.444Z",
+              "httpPageLoaded": true,
+              "pageTitleReferenceMatch": true,
+              "renderedReference": "210.83.42.20.01.001",
+              "renderedPrice": 630000,
+              "renderedPriceMatchesCategoryCard": true,
+              "primaryCta": "聯絡專賣店",
+              "onlineDirectOrderAvailable": false,
+              "excerpt": "210.83.42.20.01.001; HKD 630,000; CTA「聯絡專賣店」；正文標示限量套裝，包含兩枚腕錶及配件。"
+            },
+            "priceScope": "limited-set bundle price",
+            "dialDescriptionStatus": "Official localized category/PDP text does not state this dial color; market dialDescription is null and catalog dialColors is left unresolved for the coordinator."
+          },
+          {
+            "reference": "210.83.42.20.03.001",
+            "sourceCategoryPath": "watches/seamaster/diver-300-m/catalog",
+            "sourceCategoryUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001",
+            "productUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001-ce2f28.png?w=210",
+            "sourceCardEvidence": {
+              "evidencePath": "data/evidence/omega/HK/2026-10-08/price-update-run-2/observations.json",
+              "observedAtUtc": "2026-10-08T13:34:53.754Z",
+              "rawProductCardText": "占士邦限量版套裝\n新品\n- 海馬系列 潛水300米 42毫米, platinum‑gold表殼 配襯 鱷魚皮表帶 - 210.83.42.20.03.001\n\n海馬系列 潛水300米\n\n42毫米, platinum‑gold表殼 配襯 鱷魚皮表帶\n\nHKD630,000\n\n詳情\n詳情 - 海馬系列 42毫米, platinum‑gold表殼 配襯 鱷魚皮表帶 - 210.83.42.20.03.001",
+              "rawPrice": "HKD630,000",
+              "parsedPrice": 630000,
+              "isNewModel": true
+            },
+            "followUpPdpEvidence": {
+              "observedAtUtc": "2026-10-11T06:17:53.081Z",
+              "httpPageLoaded": true,
+              "pageTitleReferenceMatch": true,
+              "renderedReference": "210.83.42.20.03.001",
+              "renderedPrice": 630000,
+              "renderedPriceMatchesCategoryCard": true,
+              "primaryCta": "聯絡專賣店",
+              "onlineDirectOrderAvailable": false,
+              "excerpt": "210.83.42.20.03.001; HKD 630,000; CTA「聯絡專賣店」；正文標示限量套裝，包含兩枚腕錶及配件。"
+            },
+            "priceScope": "limited-set bundle price",
+            "dialDescriptionStatus": "Official localized category/PDP text does not state this dial color; market dialDescription is null and catalog dialColors is left unresolved for the coordinator."
+          },
+          {
+            "reference": "220.10.38.20.02.004",
+            "sourceCategoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "sourceCategoryUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004",
+            "productUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004-3f46bb.png?w=210",
+            "sourceCardEvidence": {
+              "evidencePath": "data/evidence/omega/HK/2026-10-08/price-update-run-2/observations.json",
+              "observedAtUtc": "2026-10-08T13:33:20.162Z",
+              "rawProductCardText": "新品\n- 海馬系列 Aqua Terra 150米 38毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 220.10.38.20.02.004\n\n海馬系列 AQUA TERRA 150米\n\n38毫米, 不銹鋼 配襯 不銹鋼表鏈帶\n\nHKD52,200\n\n 喜愛清單\n喜愛清單 - 海馬系列 38毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 220.10.38.20.02.004",
+              "rawPrice": "HKD52,200",
+              "parsedPrice": 52200,
+              "isNewModel": true
+            },
+            "followUpPdpEvidence": {
+              "observedAtUtc": "2026-10-11T06:14:33.396Z",
+              "httpPageLoaded": true,
+              "pageTitleReferenceMatch": true,
+              "renderedReference": "220.10.38.20.02.004",
+              "renderedPrice": 52200,
+              "renderedPriceMatchesCategoryCard": true,
+              "primaryCta": "聯絡專賣店",
+              "onlineDirectOrderAvailable": false,
+              "excerpt": "220.10.38.20.02.004; HKD 52,200; CTA「聯絡專賣店」；正文顯示暫時未能提供網購。"
+            },
+            "priceScope": "individual watch product price",
+            "dialDescriptionStatus": "Official localized category/PDP text does not state this dial color; market dialDescription is null and catalog dialColors is left unresolved for the coordinator."
+          },
+          {
+            "reference": "220.10.38.20.03.006",
+            "sourceCategoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "sourceCategoryUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006",
+            "productUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006-68ee4a.png?w=210",
+            "sourceCardEvidence": {
+              "evidencePath": "data/evidence/omega/HK/2026-10-08/price-update-run-2/observations.json",
+              "observedAtUtc": "2026-10-08T13:33:20.162Z",
+              "rawProductCardText": "新品\n- 海馬系列 Aqua Terra 150米 38毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 220.10.38.20.03.006\n\n海馬系列 AQUA TERRA 150米\n\n38毫米, 不銹鋼 配襯 不銹鋼表鏈帶\n\nHKD52,200\n\n 喜愛清單\n喜愛清單 - 海馬系列 38毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 220.10.38.20.03.006",
+              "rawPrice": "HKD52,200",
+              "parsedPrice": 52200,
+              "isNewModel": true
+            },
+            "followUpPdpEvidence": {
+              "observedAtUtc": "2026-10-11T06:14:44.878Z",
+              "httpPageLoaded": true,
+              "pageTitleReferenceMatch": true,
+              "renderedReference": "220.10.38.20.03.006",
+              "renderedPrice": 52200,
+              "renderedPriceMatchesCategoryCard": true,
+              "primaryCta": "聯絡專賣店",
+              "onlineDirectOrderAvailable": false,
+              "excerpt": "220.10.38.20.03.006; HKD 52,200; CTA「聯絡專賣店」；正文顯示暫時未能提供網購。"
+            },
+            "priceScope": "individual watch product price",
+            "dialDescriptionStatus": "Official localized category/PDP text does not state this dial color; market dialDescription is null and catalog dialColors is left unresolved for the coordinator."
+          },
+          {
+            "reference": "220.10.41.21.01.003",
+            "sourceCategoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "sourceCategoryUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003",
+            "productUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003-b80381.png?w=210",
+            "sourceCardEvidence": {
+              "evidencePath": "data/evidence/omega/HK/2026-10-08/price-update-run-2/observations.json",
+              "observedAtUtc": "2026-10-08T13:33:20.162Z",
+              "rawProductCardText": "新品\n- 海馬系列 Aqua Terra 150米 41毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 220.10.41.21.01.003\n\n海馬系列 AQUA TERRA 150米\n\n41毫米, 不銹鋼 配襯 不銹鋼表鏈帶\n\nHKD52,200\n\n 喜愛清單\n喜愛清單 - 海馬系列 41毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 220.10.41.21.01.003",
+              "rawPrice": "HKD52,200",
+              "parsedPrice": 52200,
+              "isNewModel": true
+            },
+            "followUpPdpEvidence": {
+              "observedAtUtc": "2026-10-11T06:14:08.424Z",
+              "httpPageLoaded": true,
+              "pageTitleReferenceMatch": true,
+              "renderedReference": "220.10.41.21.01.003",
+              "renderedPrice": 52200,
+              "renderedPriceMatchesCategoryCard": true,
+              "primaryCta": "聯絡專賣店",
+              "onlineDirectOrderAvailable": false,
+              "excerpt": "220.10.41.21.01.003; HKD 52,200; CTA「聯絡專賣店」；正文顯示暫時未能提供網購。"
+            },
+            "priceScope": "individual watch product price",
+            "dialDescriptionStatus": "Official localized category/PDP text does not state this dial color; market dialDescription is null and catalog dialColors is left unresolved for the coordinator."
+          },
+          {
+            "reference": "220.10.41.21.02.005",
+            "sourceCategoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "sourceCategoryUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005",
+            "productUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005-f92917.png?w=210",
+            "sourceCardEvidence": {
+              "evidencePath": "data/evidence/omega/HK/2026-10-08/price-update-run-2/observations.json",
+              "observedAtUtc": "2026-10-08T13:33:20.162Z",
+              "rawProductCardText": "新品\n- 海馬系列 Aqua Terra 150米 41毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 220.10.41.21.02.005\n\n海馬系列 AQUA TERRA 150米\n\n41毫米, 不銹鋼 配襯 不銹鋼表鏈帶\n\nHKD52,200\n\n 喜愛清單\n喜愛清單 - 海馬系列 41毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 220.10.41.21.02.005",
+              "rawPrice": "HKD52,200",
+              "parsedPrice": 52200,
+              "isNewModel": true
+            },
+            "followUpPdpEvidence": {
+              "observedAtUtc": "2026-10-11T06:14:52.137Z",
+              "httpPageLoaded": true,
+              "pageTitleReferenceMatch": true,
+              "renderedReference": "220.10.41.21.02.005",
+              "renderedPrice": 52200,
+              "renderedPriceMatchesCategoryCard": true,
+              "primaryCta": "聯絡專賣店",
+              "onlineDirectOrderAvailable": false,
+              "excerpt": "220.10.41.21.02.005; HKD 52,200; CTA「聯絡專賣店」；正文顯示暫時未能提供網購。"
+            },
+            "priceScope": "individual watch product price",
+            "dialDescriptionStatus": "Official localized category/PDP text does not state this dial color; market dialDescription is null and catalog dialColors is left unresolved for the coordinator."
+          },
+          {
+            "reference": "220.10.41.21.03.007",
+            "sourceCategoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "sourceCategoryUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007",
+            "productUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007-3d64c3.png?w=210",
+            "sourceCardEvidence": {
+              "evidencePath": "data/evidence/omega/HK/2026-10-08/price-update-run-2/observations.json",
+              "observedAtUtc": "2026-10-08T13:33:20.162Z",
+              "rawProductCardText": "新品\n- 海馬系列 Aqua Terra 150米 41毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 220.10.41.21.03.007\n\n海馬系列 AQUA TERRA 150米\n\n41毫米, 不銹鋼 配襯 不銹鋼表鏈帶\n\nHKD52,200\n\n 喜愛清單\n喜愛清單 - 海馬系列 41毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 220.10.41.21.03.007",
+              "rawPrice": "HKD52,200",
+              "parsedPrice": 52200,
+              "isNewModel": true
+            },
+            "followUpPdpEvidence": {
+              "observedAtUtc": "2026-10-11T06:15:03.434Z",
+              "httpPageLoaded": true,
+              "pageTitleReferenceMatch": true,
+              "renderedReference": "220.10.41.21.03.007",
+              "renderedPrice": 52200,
+              "renderedPriceMatchesCategoryCard": true,
+              "primaryCta": "聯絡專賣店",
+              "onlineDirectOrderAvailable": false,
+              "excerpt": "220.10.41.21.03.007; HKD 52,200; CTA「聯絡專賣店」；正文顯示暫時未能提供網購。"
+            },
+            "priceScope": "individual watch product price",
+            "dialDescriptionStatus": "Official localized category/PDP text does not state this dial color; market dialDescription is null and catalog dialColors is left unresolved for the coordinator."
+          },
+          {
+            "reference": "220.10.41.21.10.002",
+            "sourceCategoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "sourceCategoryUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002",
+            "productUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002-abd92c.png?w=210",
+            "sourceCardEvidence": {
+              "evidencePath": "data/evidence/omega/HK/2026-10-08/price-update-run-2/observations.json",
+              "observedAtUtc": "2026-10-08T13:33:20.162Z",
+              "rawProductCardText": "新品\n- 海馬系列 Aqua Terra 150米 41毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 220.10.41.21.10.002\n\n海馬系列 AQUA TERRA 150米\n\n41毫米, 不銹鋼 配襯 不銹鋼表鏈帶\n\nHKD52,200\n\n 喜愛清單\n喜愛清單 - 海馬系列 41毫米, 不銹鋼 配襯 不銹鋼表鏈帶 - 220.10.41.21.10.002",
+              "rawPrice": "HKD52,200",
+              "parsedPrice": 52200,
+              "isNewModel": true
+            },
+            "followUpPdpEvidence": {
+              "observedAtUtc": "2026-10-11T06:15:12.775Z",
+              "httpPageLoaded": true,
+              "pageTitleReferenceMatch": true,
+              "renderedReference": "220.10.41.21.10.002",
+              "renderedPrice": 52200,
+              "renderedPriceMatchesCategoryCard": true,
+              "primaryCta": "聯絡專賣店",
+              "onlineDirectOrderAvailable": false,
+              "excerpt": "220.10.41.21.10.002; HKD 52,200; CTA「聯絡專賣店」；正文顯示暫時未能提供網購。"
+            },
+            "priceScope": "individual watch product price",
+            "dialDescriptionStatus": "Official localized category/PDP text does not state this dial color; market dialDescription is null and catalog dialColors is left unresolved for the coordinator."
+          },
+          {
+            "reference": "220.50.41.21.02.004",
+            "sourceCategoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "sourceCategoryUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004",
+            "productUrl": "https://www.omegawatches.com.hk/zh-hk/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004-635a8d.png?w=210",
+            "sourceCardEvidence": {
+              "evidencePath": "data/evidence/omega/HK/2026-10-08/price-update-run-2/observations.json",
+              "observedAtUtc": "2026-10-08T13:33:20.162Z",
+              "rawProductCardText": "新品\n- 海馬系列 Aqua Terra 150米 41毫米, Moonshine™金 配襯 Moonshine™金 - 220.50.41.21.02.004\n\n海馬系列 AQUA TERRA 150米\n\n41毫米, Moonshine™金 配襯 Moonshine™金\n\nHKD326,300\n\n 喜愛清單\n喜愛清單 - 海馬系列 41毫米, Moonshine™金 配襯 Moonshine™金 - 220.50.41.21.02.004",
+              "rawPrice": "HKD326,300",
+              "parsedPrice": 326300,
+              "isNewModel": true
+            },
+            "followUpPdpEvidence": {
+              "observedAtUtc": "2026-10-11T06:15:25.447Z",
+              "httpPageLoaded": true,
+              "pageTitleReferenceMatch": true,
+              "renderedReference": "220.50.41.21.02.004",
+              "renderedPrice": 326300,
+              "renderedPriceMatchesCategoryCard": true,
+              "primaryCta": "聯絡專賣店",
+              "onlineDirectOrderAvailable": false,
+              "excerpt": "220.50.41.21.02.004; HKD 326,300; CTA「聯絡專賣店」；正文顯示暫時未能提供網購。"
+            },
+            "priceScope": "individual watch product price",
+            "dialDescriptionStatus": "Official localized category/PDP text does not state this dial color; market dialDescription is null and catalog dialColors is left unresolved for the coordinator."
+          }
+        ],
+        "coordinatorCatalogCandidateFacts": [
+          {
+            "reference": "210.30.42.20.01.023",
+            "watchId": "omega:210.30.42.20.01.023",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/diver-300-m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023-72e2b8.png?w=210",
+            "dialColors": [
+              "black"
+            ],
+            "dialColorsStatus": "圖片判讀：black；錶盤底色清楚為黑色。"
+          },
+          {
+            "reference": "210.30.42.20.01.029",
+            "watchId": "omega:210.30.42.20.01.029",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/diver-300-m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029-22b45a.png?w=210",
+            "dialColors": [
+              "black"
+            ],
+            "dialColorsStatus": "圖片判讀：black；錶盤底色清楚為黑色。"
+          },
+          {
+            "reference": "210.30.42.20.03.004",
+            "watchId": "omega:210.30.42.20.03.004",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/diver-300-m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003004-68cc39.png?w=210",
+            "dialColors": [
+              "blue"
+            ],
+            "dialColorsStatus": "圖片判讀：blue；錶盤底色清楚為藍色。"
+          },
+          {
+            "reference": "210.30.42.20.03.005",
+            "watchId": "omega:210.30.42.20.03.005",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/diver-300-m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005-18104a.png?w=210",
+            "dialColors": [
+              "blue"
+            ],
+            "dialColorsStatus": "圖片判讀：blue；錶盤底色清楚為藍色；以此完整 reference 對應官方圖片。"
+          },
+          {
+            "reference": "210.83.42.20.01.001",
+            "watchId": "omega:210.83.42.20.01.001",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/diver-300-m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001-a545d5.png?w=210",
+            "dialColors": [
+              "black"
+            ],
+            "dialColorsStatus": "圖片判讀：black；錶盤底色清楚為黑色。"
+          },
+          {
+            "reference": "210.83.42.20.03.001",
+            "watchId": "omega:210.83.42.20.03.001",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/diver-300-m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001-ce2f28.png?w=210",
+            "dialColors": [
+              "blue"
+            ],
+            "dialColorsStatus": "圖片判讀：blue；錶盤底色清楚為藍色。"
+          },
+          {
+            "reference": "220.10.38.20.02.004",
+            "watchId": "omega:220.10.38.20.02.004",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004-3f46bb.png?w=210",
+            "dialColors": null,
+            "dialColorsStatus": "圖片判讀待查：錶盤呈淺色金屬／白色；僅憑圖片無法可靠區分 white 與 silver，保留待查。"
+          },
+          {
+            "reference": "220.10.38.20.03.006",
+            "watchId": "omega:220.10.38.20.03.006",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006-68ee4a.png?w=210",
+            "dialColors": [
+              "blue"
+            ],
+            "dialColorsStatus": "圖片判讀：blue；錶盤底色清楚為藍色。"
+          },
+          {
+            "reference": "220.10.41.21.01.003",
+            "watchId": "omega:220.10.41.21.01.003",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003-b80381.png?w=210",
+            "dialColors": [
+              "black"
+            ],
+            "dialColorsStatus": "圖片判讀：black；錶盤底色清楚為黑色。"
+          },
+          {
+            "reference": "220.10.41.21.02.005",
+            "watchId": "omega:220.10.41.21.02.005",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005-f92917.png?w=210",
+            "dialColors": null,
+            "dialColorsStatus": "圖片判讀待查：錶盤呈淺色金屬／白色；僅憑圖片無法可靠區分 white 與 silver，保留待查。"
+          },
+          {
+            "reference": "220.10.41.21.03.007",
+            "watchId": "omega:220.10.41.21.03.007",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007-3d64c3.png?w=210",
+            "dialColors": [
+              "blue"
+            ],
+            "dialColorsStatus": "圖片判讀：blue；錶盤底色清楚為藍色。"
+          },
+          {
+            "reference": "220.10.41.21.10.002",
+            "watchId": "omega:220.10.41.21.10.002",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002-abd92c.png?w=210",
+            "dialColors": [
+              "green"
+            ],
+            "dialColorsStatus": "圖片判讀：green；錶盤底色清楚為綠色／橄欖綠。"
+          },
+          {
+            "reference": "220.50.41.21.02.004",
+            "watchId": "omega:220.50.41.21.02.004",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004-635a8d.png?w=210",
+            "dialColors": null,
+            "dialColorsStatus": "圖片判讀待查：錶盤呈淺色金屬／白色；僅憑圖片無法可靠區分 white 與 silver，保留待查。"
+          }
+        ],
+        "imageReview": {
+          "reviewedOn": "2026-10-11",
+          "observationTime": "具體時分未記錄；不得據此推定更精確時間。",
+          "method": "逐一開啟 coordinatorCatalogCandidateFacts 中的 Omega 香港官方 imageUrl，在瀏覽器直接查看原始官方產品圖（去除縮圖寬度參數以查看原圖，2000×2000）；只判讀錶盤底色，忽略錶殼、外圈、指針與錶帶。顏色清楚時映射至 catalog dialColors slug；反光或淺色無法辨別 white/silver 時保留 null，不以 other 代未知。",
+          "sourceScope": "本 run facts 所列 Omega 香港官方商品圖；未以第三方商品圖補足。",
+          "limitation": "官方網站文字未提供這些候選的錶盤顏色名稱；白／銀色候選僅依圖片不足以區分，官方站搜尋曾受 robots.txt 阻擋，故不作推測。",
+          "results": [
+            {
+              "reference": "210.30.42.20.01.023",
+              "officialImageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023-72e2b8.png?w=210",
+              "dialColors": [
+                "black"
+              ],
+              "result": "錶盤底色清楚為黑色。"
+            },
+            {
+              "reference": "210.30.42.20.01.029",
+              "officialImageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029-22b45a.png?w=210",
+              "dialColors": [
+                "black"
+              ],
+              "result": "錶盤底色清楚為黑色。"
+            },
+            {
+              "reference": "210.30.42.20.03.004",
+              "officialImageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003004-68cc39.png?w=210",
+              "dialColors": [
+                "blue"
+              ],
+              "result": "錶盤底色清楚為藍色。"
+            },
+            {
+              "reference": "210.30.42.20.03.005",
+              "officialImageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005-18104a.png?w=210",
+              "dialColors": [
+                "blue"
+              ],
+              "result": "錶盤底色清楚為藍色；以此完整 reference 對應官方圖片。"
+            },
+            {
+              "reference": "210.83.42.20.01.001",
+              "officialImageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001-a545d5.png?w=210",
+              "dialColors": [
+                "black"
+              ],
+              "result": "錶盤底色清楚為黑色。"
+            },
+            {
+              "reference": "210.83.42.20.03.001",
+              "officialImageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001-ce2f28.png?w=210",
+              "dialColors": [
+                "blue"
+              ],
+              "result": "錶盤底色清楚為藍色。"
+            },
+            {
+              "reference": "220.10.38.20.02.004",
+              "officialImageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004-3f46bb.png?w=210",
+              "dialColors": null,
+              "result": "錶盤呈淺色金屬／白色；僅憑圖片無法可靠區分 white 與 silver，保留待查。"
+            },
+            {
+              "reference": "220.10.38.20.03.006",
+              "officialImageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006-68ee4a.png?w=210",
+              "dialColors": [
+                "blue"
+              ],
+              "result": "錶盤底色清楚為藍色。"
+            },
+            {
+              "reference": "220.10.41.21.01.003",
+              "officialImageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003-b80381.png?w=210",
+              "dialColors": [
+                "black"
+              ],
+              "result": "錶盤底色清楚為黑色。"
+            },
+            {
+              "reference": "220.10.41.21.02.005",
+              "officialImageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005-f92917.png?w=210",
+              "dialColors": null,
+              "result": "錶盤呈淺色金屬／白色；僅憑圖片無法可靠區分 white 與 silver，保留待查。"
+            },
+            {
+              "reference": "220.10.41.21.03.007",
+              "officialImageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007-3d64c3.png?w=210",
+              "dialColors": [
+                "blue"
+              ],
+              "result": "錶盤底色清楚為藍色。"
+            },
+            {
+              "reference": "220.10.41.21.10.002",
+              "officialImageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002-abd92c.png?w=210",
+              "dialColors": [
+                "green"
+              ],
+              "result": "錶盤底色清楚為綠色／橄欖綠。"
+            },
+            {
+              "reference": "220.50.41.21.02.004",
+              "officialImageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004-635a8d.png?w=210",
+              "dialColors": null,
+              "result": "錶盤呈淺色金屬／白色；僅憑圖片無法可靠區分 white 與 silver，保留待查。"
+            }
+          ]
+        },
+        "catalogColorNormalization": {
+          "decision": "The schema requires at least one dialColors slug. Pale metallic dials that are visually white/silver ambiguous were mapped to silver for filtering; this is a best-fit normalization, not an official localized color name.",
+          "references": [
+            "220.10.38.20.02.004",
+            "220.10.41.21.02.005",
+            "220.50.41.21.02.004"
+          ],
+          "basis": "Official Hong Kong images reviewed at full resolution. The Austria category title explicitly calls 220.10.38.20.02.004 “Silber”; the other two remain visually ambiguous between white and silver. No Moonshine Gold case/bracelet material was used to infer dial color.",
+          "limitation": "Treat these three catalog colors as a best-fit filter mapping; preserve white/silver ambiguity in the original imageReview results."
+        }
+      }
+    }
+  ]
+}

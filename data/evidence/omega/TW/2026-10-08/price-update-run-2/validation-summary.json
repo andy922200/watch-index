@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "formalDataWrite": "NOT WRITTEN: parent coordinator instructed to wait until remaining 111 wishlist PDP statuses can be verified; history file was not changed.",
+  "checks": {
+    "strictJsonEvidence": "PASS",
+    "strictJsonTargetHistory": "PASS",
+    "schemaValidation": "NOT RUN / no schema-validation package available; no dependencies installed",
+    "baselineHistoryContract": "PASS / schemaVersion, brandId, marketCode, currency, tax semantics, 551 unique series, unique runId sequence and watch associations checked against Omega TW catalog/market only",
+    "priceObservationMapping": "PASS / all 560 category card references have integer TWD price values; 547 overlap the 551 existing TW market references and 13 are out of scope; 4 remaining existing refs have direct PDP no-longer-supplied text",
+    "existingMarketCoverage": "PASS / 551 existing refs accounted for as 547 card-observed plus 4 directly checked missing PDPs",
+    "officialPdpChannelVerification": "PARTIAL / 35 details PDPs verified (33 dealer route, 2 no-longer-supplied); one wishlist CTA sample and 8 supplemental PDP bodies recorded; among 120 wishlist CTA refs, 9 PDPs loaded, 51 initial loads failed with ERR_HTTP2_PROTOCOL_ERROR, 1 cool-down retry failed, and 60 not attempted",
+    "stateClassification": "NOT PASS / pending 111 wishlist PDP checks; candidate state totals are 391 listed, 154 retailer-only, 6 not-listed",
+    "sourceAggregation": "NOT PASS / landing total552, 16 detailed categories sum558, rendered unique refs560; Aqua Terra displays108 but has110 rendered refs, of which two PDPs explicitly say no longer supplied",
+    "historyAppendPrefix": "NOT RUN / no history append was made",
+    "nicknameResearch": "NOT RUN (pure price update; existing nicknames preserved)",
+    "taxSemantics": "NOT RUN (unchanged existing history semantics; pure price update)",
+    "protectedScope": "PASS / no catalog, market, non-TW market/history/evidence, or traveler refund policy files changed"
+  },
+  "priceChangesObserved": 0,
+  "candidateListingCounts": {
+    "listed": 391,
+    "retailer-only": 154,
+    "not-listed": 6
+  },
+  "evidencePath": "data/evidence/omega/TW/2026-10-08/price-update-run-2/",
+  "observedNetworkFailure": "Playwright page navigation to official Omega TW product pages returned net::ERR_HTTP2_PROTOCOL_ERROR; one retry after 30-second cool-down reproduced it.",
+  "prospectiveRunId": 2
+}

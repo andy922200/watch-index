@@ -1,0 +1,743 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "AT",
+  "collectionDate": "2026-10-11",
+  "sourceAttemptCount": 2,
+  "note": "Original observation documents are preserved verbatim by attempt; observations are not deduplicated or reconciled.",
+  "attemptObservations": [
+    {
+      "attemptId": "candidate-additions-run-1",
+      "originalRunDirectory": "data/evidence/omega/AT/2026-10-11/candidate-additions-run-1",
+      "observations": {
+        "brandId": "omega",
+        "marketCode": "AT",
+        "locale": "de-AT",
+        "currencyCode": "EUR",
+        "collectionRunId": 3,
+        "scope": "13 previously absent configurations confirmed in complete official AT category evidence; one PDP independently verified on 2026-10-11",
+        "sourceEvidence": [
+          "data/evidence/omega/AT/2026-10-08/price-update-run-2/category-capture-batch-1.json",
+          "data/evidence/omega/AT/2026-10-08/price-update-run-2/candidate-additions-review.json"
+        ],
+        "observations": [
+          {
+            "reference": "210.30.42.20.01.023",
+            "watchId": "omega:210.30.42.20.01.023",
+            "category": "Diver 300M",
+            "categoryUrl": "https://www.omegawatches.com/de-at/watches/seamaster/diver-300-m/catalog",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023",
+            "categoryEvidenceSource": "data/evidence/omega/AT/2026-10-08/price-update-run-2/category-capture-batch-1.json",
+            "categoryCaptureObservedDate": "2026-10-08",
+            "rawVisibleText": "SPECTRE EDITION\nNEU\n- Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.01.023\n\nSEAMASTER DIVER 300M\n\n42 mm, Stahl mit Stahlarmband\n\n€ 8.400\n\n Wunschliste\nWunschliste - Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 21030422001023",
+            "categoryCardPrice": {
+              "rawText": "€ 8.400",
+              "currencyCode": "EUR",
+              "parsedInteger": 8400
+            },
+            "categoryCardCta": {
+              "text": "Wunschliste",
+              "code": "details",
+              "rawText": "Wunschliste\nWunschliste - Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 21030422001023"
+            },
+            "newBadgeObserved": true,
+            "normalizedMarketFields": {
+              "collectionName": "Seamaster Diver 300M",
+              "modelName": "42 mm, Stahl mit Stahlarmband",
+              "caseDescription": "Stahl",
+              "dialDescription": null,
+              "isNewModel": true,
+              "localNicknames": {
+                "names": [],
+                "sources": []
+              }
+            },
+            "pdpPriceHistoryDecision": "verified",
+            "pdpObservation": {
+              "requestedUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023",
+              "observedDate": "2026-10-11",
+              "observedTimePrecision": "date only; browser capture did not preserve a clock time",
+              "pageTitle": "Seamaster Spectre Edition Uhr 210.30.42.20.01.023 | OMEGA AT®",
+              "locale": "de-AT",
+              "storeRegion": "Österreich",
+              "currencyCode": "EUR",
+              "priceText": "€ 8.400",
+              "price": 8400,
+              "reference": "210.30.42.20.01.023",
+              "visibleProductText": "SPECTRE EDITION; NEU; SEAMASTER DIVER 300M 42 mm, Stahl mit Stahlarmband",
+              "availabilityText": "Online momentan nicht verfügbar. Bitte setzen Sie das Produkt auf die Wunschliste.",
+              "primaryCtaText": "EINE BOUTIQUE KONTAKTIEREN",
+              "listingStatusInterpretation": "retailer-only",
+              "listingStatusReason": "The public price is displayed and the direct online order path is unavailable; the PDP directs the customer to contact a boutique."
+            }
+          },
+          {
+            "reference": "210.30.42.20.01.029",
+            "watchId": "omega:210.30.42.20.01.029",
+            "category": "Diver 300M",
+            "categoryUrl": "https://www.omegawatches.com/de-at/watches/seamaster/diver-300-m/catalog",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029",
+            "categoryEvidenceSource": "data/evidence/omega/AT/2026-10-08/price-update-run-2/category-capture-batch-1.json",
+            "categoryCaptureObservedDate": "2026-10-08",
+            "rawVisibleText": "SPECTRE LIMITED EDITION SET\nNEU\n- Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.01.029\n\nSEAMASTER DIVER 300M\n\n42 mm, Stahl mit Stahlarmband\n\n€ 87.800\n\nDetails\nDetails - Seamaster 42 mm, Stahl mit Stahlarmband - 210.30.42.20.01.029",
+            "categoryCardPrice": {
+              "rawText": "€ 87.800",
+              "currencyCode": "EUR",
+              "parsedInteger": 87800
+            },
+            "categoryCardCta": {
+              "text": "Details",
+              "code": "details",
+              "rawText": "Details\nDetails - Seamaster 42 mm, Stahl mit Stahlarmband - 210.30.42.20.01.029"
+            },
+            "newBadgeObserved": true,
+            "normalizedMarketFields": {
+              "collectionName": "Seamaster Diver 300M",
+              "modelName": "42 mm, Stahl mit Stahlarmband",
+              "caseDescription": "Stahl",
+              "dialDescription": "Schwarz",
+              "isNewModel": true,
+              "localNicknames": {
+                "names": [],
+                "sources": []
+              }
+            },
+            "pdpPriceHistoryDecision": "not independently verified; no price point or listing status added"
+          },
+          {
+            "reference": "210.30.42.20.03.004",
+            "watchId": "omega:210.30.42.20.03.004",
+            "category": "Diver 300M",
+            "categoryUrl": "https://www.omegawatches.com/de-at/watches/seamaster/diver-300-m/catalog",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003004",
+            "categoryEvidenceSource": "data/evidence/omega/AT/2026-10-08/price-update-run-2/category-capture-batch-1.json",
+            "categoryCaptureObservedDate": "2026-10-08",
+            "rawVisibleText": "JAMES BOND EDITION\nNEU\n- Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.03.004\n\nSEAMASTER DIVER 300M\n\n42 mm, Stahl mit Stahlarmband\n\n€ 8.400\n\n Wunschliste\nWunschliste - Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 21030422003004",
+            "categoryCardPrice": {
+              "rawText": "€ 8.400",
+              "currencyCode": "EUR",
+              "parsedInteger": 8400
+            },
+            "categoryCardCta": {
+              "text": "Wunschliste",
+              "code": "details",
+              "rawText": "Wunschliste\nWunschliste - Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 21030422003004"
+            },
+            "newBadgeObserved": true,
+            "normalizedMarketFields": {
+              "collectionName": "Seamaster Diver 300M",
+              "modelName": "42 mm, Stahl mit Stahlarmband",
+              "caseDescription": "Stahl",
+              "dialDescription": "Blau",
+              "isNewModel": true,
+              "localNicknames": {
+                "names": [],
+                "sources": []
+              }
+            },
+            "pdpPriceHistoryDecision": "not independently verified; no price point or listing status added"
+          },
+          {
+            "reference": "210.30.42.20.03.005",
+            "watchId": "omega:210.30.42.20.03.005",
+            "category": "Diver 300M",
+            "categoryUrl": "https://www.omegawatches.com/de-at/watches/seamaster/diver-300-m/catalog",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005",
+            "categoryEvidenceSource": "data/evidence/omega/AT/2026-10-08/price-update-run-2/category-capture-batch-1.json",
+            "categoryCaptureObservedDate": "2026-10-08",
+            "rawVisibleText": "JAMES BOND LIMITED EDITION SET\nNEU\n- Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.03.005\n\nSEAMASTER DIVER 300M\n\n42 mm, Stahl mit Stahlarmband\n\n€ 87.800\n\nDetails\nDetails - Seamaster 42 mm, Stahl mit Stahlarmband - 210.30.42.20.03.005",
+            "categoryCardPrice": {
+              "rawText": "€ 87.800",
+              "currencyCode": "EUR",
+              "parsedInteger": 87800
+            },
+            "categoryCardCta": {
+              "text": "Details",
+              "code": "details",
+              "rawText": "Details\nDetails - Seamaster 42 mm, Stahl mit Stahlarmband - 210.30.42.20.03.005"
+            },
+            "newBadgeObserved": true,
+            "normalizedMarketFields": {
+              "collectionName": "Seamaster Diver 300M",
+              "modelName": "42 mm, Stahl mit Stahlarmband",
+              "caseDescription": "Stahl",
+              "dialDescription": "Blau",
+              "isNewModel": true,
+              "localNicknames": {
+                "names": [],
+                "sources": []
+              }
+            },
+            "pdpPriceHistoryDecision": "not independently verified; no price point or listing status added"
+          },
+          {
+            "reference": "210.83.42.20.01.001",
+            "watchId": "omega:210.83.42.20.01.001",
+            "category": "Diver 300M",
+            "categoryUrl": "https://www.omegawatches.com/de-at/watches/seamaster/diver-300-m/catalog",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001",
+            "categoryEvidenceSource": "data/evidence/omega/AT/2026-10-08/price-update-run-2/category-capture-batch-1.json",
+            "categoryCaptureObservedDate": "2026-10-08",
+            "rawVisibleText": "SPECTRE LIMITED EDITION SET\nNEU\n- Seamaster Diver 300M 42 mm, Platingold mit Alligator - 210.83.42.20.01.001\n\nSEAMASTER DIVER 300M\n\n42 mm, Platingold mit Alligator\n\n€ 87.800\n\nDetails\nDetails - Seamaster 42 mm, Platingold mit Alligator - 210.83.42.20.01.001",
+            "categoryCardPrice": {
+              "rawText": "€ 87.800",
+              "currencyCode": "EUR",
+              "parsedInteger": 87800
+            },
+            "categoryCardCta": {
+              "text": "Details",
+              "code": "details",
+              "rawText": "Details\nDetails - Seamaster 42 mm, Platingold mit Alligator - 210.83.42.20.01.001"
+            },
+            "newBadgeObserved": true,
+            "normalizedMarketFields": {
+              "collectionName": "Seamaster Diver 300M",
+              "modelName": "42 mm, Platingold mit Alligator",
+              "caseDescription": "Platingold",
+              "dialDescription": "Grau",
+              "isNewModel": true,
+              "localNicknames": {
+                "names": [],
+                "sources": []
+              }
+            },
+            "pdpPriceHistoryDecision": "not independently verified; no price point or listing status added"
+          },
+          {
+            "reference": "210.83.42.20.03.001",
+            "watchId": "omega:210.83.42.20.03.001",
+            "category": "Diver 300M",
+            "categoryUrl": "https://www.omegawatches.com/de-at/watches/seamaster/diver-300-m/catalog",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001",
+            "categoryEvidenceSource": "data/evidence/omega/AT/2026-10-08/price-update-run-2/category-capture-batch-1.json",
+            "categoryCaptureObservedDate": "2026-10-08",
+            "rawVisibleText": "JAMES BOND LIMITED EDITION SET\nNEU\n- Seamaster Diver 300M 42 mm, Platingold mit Alligator - 210.83.42.20.03.001\n\nSEAMASTER DIVER 300M\n\n42 mm, Platingold mit Alligator\n\n€ 87.800\n\nDetails\nDetails - Seamaster 42 mm, Platingold mit Alligator - 210.83.42.20.03.001",
+            "categoryCardPrice": {
+              "rawText": "€ 87.800",
+              "currencyCode": "EUR",
+              "parsedInteger": 87800
+            },
+            "categoryCardCta": {
+              "text": "Details",
+              "code": "details",
+              "rawText": "Details\nDetails - Seamaster 42 mm, Platingold mit Alligator - 210.83.42.20.03.001"
+            },
+            "newBadgeObserved": true,
+            "normalizedMarketFields": {
+              "collectionName": "Seamaster Diver 300M",
+              "modelName": "42 mm, Platingold mit Alligator",
+              "caseDescription": "Platingold",
+              "dialDescription": "Blau",
+              "isNewModel": true,
+              "localNicknames": {
+                "names": [],
+                "sources": []
+              }
+            },
+            "pdpPriceHistoryDecision": "not independently verified; no price point or listing status added"
+          },
+          {
+            "reference": "220.10.38.20.02.004",
+            "watchId": "omega:220.10.38.20.02.004",
+            "category": "Aqua terra 150M",
+            "categoryUrl": "https://www.omegawatches.com/de-at/watches/seamaster/aqua-terra-150m/catalog",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004",
+            "categoryEvidenceSource": "data/evidence/omega/AT/2026-10-08/price-update-run-2/category-capture-batch-1.json",
+            "categoryCaptureObservedDate": "2026-10-08",
+            "rawVisibleText": "NEU\n- Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband - 220.10.38.20.02.004\n\nSEAMASTER AQUA TERRA 150M\n\n38 mm, Stahl mit Stahlarmband\n\n€ 7.300\n\n Wunschliste\nWunschliste - Seamaster 38 mm, Stahl mit Stahlarmband - 220.10.38.20.02.004",
+            "categoryCardPrice": {
+              "rawText": "€ 7.300",
+              "currencyCode": "EUR",
+              "parsedInteger": 7300
+            },
+            "categoryCardCta": {
+              "text": "Wunschliste",
+              "code": "wunschliste",
+              "rawText": "Wunschliste\nWunschliste - Seamaster 38 mm, Stahl mit Stahlarmband - 220.10.38.20.02.004"
+            },
+            "newBadgeObserved": true,
+            "normalizedMarketFields": {
+              "collectionName": "Seamaster Aqua Terra 150M",
+              "modelName": "38 mm, Stahl mit Stahlarmband",
+              "caseDescription": "Stahl",
+              "dialDescription": "Silber",
+              "isNewModel": true,
+              "localNicknames": {
+                "names": [],
+                "sources": []
+              }
+            },
+            "pdpPriceHistoryDecision": "not independently verified; no price point or listing status added"
+          },
+          {
+            "reference": "220.10.38.20.03.006",
+            "watchId": "omega:220.10.38.20.03.006",
+            "category": "Aqua terra 150M",
+            "categoryUrl": "https://www.omegawatches.com/de-at/watches/seamaster/aqua-terra-150m/catalog",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006",
+            "categoryEvidenceSource": "data/evidence/omega/AT/2026-10-08/price-update-run-2/category-capture-batch-1.json",
+            "categoryCaptureObservedDate": "2026-10-08",
+            "rawVisibleText": "NEU\n- Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband - 220.10.38.20.03.006\n\nSEAMASTER AQUA TERRA 150M\n\n38 mm, Stahl mit Stahlarmband\n\n€ 7.300\n\n Wunschliste\nWunschliste - Seamaster 38 mm, Stahl mit Stahlarmband - 220.10.38.20.03.006",
+            "categoryCardPrice": {
+              "rawText": "€ 7.300",
+              "currencyCode": "EUR",
+              "parsedInteger": 7300
+            },
+            "categoryCardCta": {
+              "text": "Wunschliste",
+              "code": "wunschliste",
+              "rawText": "Wunschliste\nWunschliste - Seamaster 38 mm, Stahl mit Stahlarmband - 220.10.38.20.03.006"
+            },
+            "newBadgeObserved": true,
+            "normalizedMarketFields": {
+              "collectionName": "Seamaster Aqua Terra 150M",
+              "modelName": "38 mm, Stahl mit Stahlarmband",
+              "caseDescription": "Stahl",
+              "dialDescription": "Blau",
+              "isNewModel": true,
+              "localNicknames": {
+                "names": [],
+                "sources": []
+              }
+            },
+            "pdpPriceHistoryDecision": "not independently verified; no price point or listing status added"
+          },
+          {
+            "reference": "220.10.41.21.01.003",
+            "watchId": "omega:220.10.41.21.01.003",
+            "category": "Aqua terra 150M",
+            "categoryUrl": "https://www.omegawatches.com/de-at/watches/seamaster/aqua-terra-150m/catalog",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003",
+            "categoryEvidenceSource": "data/evidence/omega/AT/2026-10-08/price-update-run-2/category-capture-batch-1.json",
+            "categoryCaptureObservedDate": "2026-10-08",
+            "rawVisibleText": "NEU\n- Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.01.003\n\nSEAMASTER AQUA TERRA 150M\n\n41 mm, Stahl mit Stahlarmband\n\n€ 7.300\n\n Wunschliste\nWunschliste - Seamaster 41 mm, Stahl mit Stahlarmband - 220.10.41.21.01.003",
+            "categoryCardPrice": {
+              "rawText": "€ 7.300",
+              "currencyCode": "EUR",
+              "parsedInteger": 7300
+            },
+            "categoryCardCta": {
+              "text": "Wunschliste",
+              "code": "wunschliste",
+              "rawText": "Wunschliste\nWunschliste - Seamaster 41 mm, Stahl mit Stahlarmband - 220.10.41.21.01.003"
+            },
+            "newBadgeObserved": true,
+            "normalizedMarketFields": {
+              "collectionName": "Seamaster Aqua Terra 150M",
+              "modelName": "41 mm, Stahl mit Stahlarmband",
+              "caseDescription": "Stahl",
+              "dialDescription": null,
+              "isNewModel": true,
+              "localNicknames": {
+                "names": [],
+                "sources": []
+              }
+            },
+            "pdpPriceHistoryDecision": "not independently verified; no price point or listing status added"
+          },
+          {
+            "reference": "220.10.41.21.02.005",
+            "watchId": "omega:220.10.41.21.02.005",
+            "category": "Aqua terra 150M",
+            "categoryUrl": "https://www.omegawatches.com/de-at/watches/seamaster/aqua-terra-150m/catalog",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005",
+            "categoryEvidenceSource": "data/evidence/omega/AT/2026-10-08/price-update-run-2/category-capture-batch-1.json",
+            "categoryCaptureObservedDate": "2026-10-08",
+            "rawVisibleText": "NEU\n- Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.02.005\n\nSEAMASTER AQUA TERRA 150M\n\n41 mm, Stahl mit Stahlarmband\n\n€ 7.300\n\n Wunschliste\nWunschliste - Seamaster 41 mm, Stahl mit Stahlarmband - 220.10.41.21.02.005",
+            "categoryCardPrice": {
+              "rawText": "€ 7.300",
+              "currencyCode": "EUR",
+              "parsedInteger": 7300
+            },
+            "categoryCardCta": {
+              "text": "Wunschliste",
+              "code": "wunschliste",
+              "rawText": "Wunschliste\nWunschliste - Seamaster 41 mm, Stahl mit Stahlarmband - 220.10.41.21.02.005"
+            },
+            "newBadgeObserved": true,
+            "normalizedMarketFields": {
+              "collectionName": "Seamaster Aqua Terra 150M",
+              "modelName": "41 mm, Stahl mit Stahlarmband",
+              "caseDescription": "Stahl",
+              "dialDescription": null,
+              "isNewModel": true,
+              "localNicknames": {
+                "names": [],
+                "sources": []
+              }
+            },
+            "pdpPriceHistoryDecision": "not independently verified; no price point or listing status added"
+          },
+          {
+            "reference": "220.10.41.21.03.007",
+            "watchId": "omega:220.10.41.21.03.007",
+            "category": "Aqua terra 150M",
+            "categoryUrl": "https://www.omegawatches.com/de-at/watches/seamaster/aqua-terra-150m/catalog",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007",
+            "categoryEvidenceSource": "data/evidence/omega/AT/2026-10-08/price-update-run-2/category-capture-batch-1.json",
+            "categoryCaptureObservedDate": "2026-10-08",
+            "rawVisibleText": "NEU\n- Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.03.007\n\nSEAMASTER AQUA TERRA 150M\n\n41 mm, Stahl mit Stahlarmband\n\n€ 7.300\n\n Wunschliste\nWunschliste - Seamaster 41 mm, Stahl mit Stahlarmband - 220.10.41.21.03.007",
+            "categoryCardPrice": {
+              "rawText": "€ 7.300",
+              "currencyCode": "EUR",
+              "parsedInteger": 7300
+            },
+            "categoryCardCta": {
+              "text": "Wunschliste",
+              "code": "wunschliste",
+              "rawText": "Wunschliste\nWunschliste - Seamaster 41 mm, Stahl mit Stahlarmband - 220.10.41.21.03.007"
+            },
+            "newBadgeObserved": true,
+            "normalizedMarketFields": {
+              "collectionName": "Seamaster Aqua Terra 150M",
+              "modelName": "41 mm, Stahl mit Stahlarmband",
+              "caseDescription": "Stahl",
+              "dialDescription": null,
+              "isNewModel": true,
+              "localNicknames": {
+                "names": [],
+                "sources": []
+              }
+            },
+            "pdpPriceHistoryDecision": "not independently verified; no price point or listing status added"
+          },
+          {
+            "reference": "220.10.41.21.10.002",
+            "watchId": "omega:220.10.41.21.10.002",
+            "category": "Aqua terra 150M",
+            "categoryUrl": "https://www.omegawatches.com/de-at/watches/seamaster/aqua-terra-150m/catalog",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002",
+            "categoryEvidenceSource": "data/evidence/omega/AT/2026-10-08/price-update-run-2/category-capture-batch-1.json",
+            "categoryCaptureObservedDate": "2026-10-08",
+            "rawVisibleText": "NEU\n- Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.10.002\n\nSEAMASTER AQUA TERRA 150M\n\n41 mm, Stahl mit Stahlarmband\n\n€ 7.300\n\n Wunschliste\nWunschliste - Seamaster 41 mm, Stahl mit Stahlarmband - 220.10.41.21.10.002",
+            "categoryCardPrice": {
+              "rawText": "€ 7.300",
+              "currencyCode": "EUR",
+              "parsedInteger": 7300
+            },
+            "categoryCardCta": {
+              "text": "Wunschliste",
+              "code": "wunschliste",
+              "rawText": "Wunschliste\nWunschliste - Seamaster 41 mm, Stahl mit Stahlarmband - 220.10.41.21.10.002"
+            },
+            "newBadgeObserved": true,
+            "normalizedMarketFields": {
+              "collectionName": "Seamaster Aqua Terra 150M",
+              "modelName": "41 mm, Stahl mit Stahlarmband",
+              "caseDescription": "Stahl",
+              "dialDescription": null,
+              "isNewModel": true,
+              "localNicknames": {
+                "names": [],
+                "sources": []
+              }
+            },
+            "pdpPriceHistoryDecision": "not independently verified; no price point or listing status added"
+          },
+          {
+            "reference": "220.50.41.21.02.004",
+            "watchId": "omega:220.50.41.21.02.004",
+            "category": "Aqua terra 150M",
+            "categoryUrl": "https://www.omegawatches.com/de-at/watches/seamaster/aqua-terra-150m/catalog",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004",
+            "categoryEvidenceSource": "data/evidence/omega/AT/2026-10-08/price-update-run-2/category-capture-batch-1.json",
+            "categoryCaptureObservedDate": "2026-10-08",
+            "rawVisibleText": "NEU\n- Seamaster Aqua Terra 150M 41 mm, Moonshine™-Gold mit Moonshine™-Gold - 220.50.41.21.02.004\n\nSEAMASTER AQUA TERRA 150M\n\n41 mm, Moonshine™‑Gold mit Moonshine™‑Gold\n\n€ 45.500\n\n Wunschliste\nWunschliste - Seamaster 41 mm, Moonshine™-Gold mit Moonshine™-Gold - 220.50.41.21.02.004",
+            "categoryCardPrice": {
+              "rawText": "€ 45.500",
+              "currencyCode": "EUR",
+              "parsedInteger": 45500
+            },
+            "categoryCardCta": {
+              "text": "Wunschliste",
+              "code": "wunschliste",
+              "rawText": "Wunschliste\nWunschliste - Seamaster 41 mm, Moonshine™-Gold mit Moonshine™-Gold - 220.50.41.21.02.004"
+            },
+            "newBadgeObserved": true,
+            "normalizedMarketFields": {
+              "collectionName": "Seamaster Aqua Terra 150M",
+              "modelName": "41 mm, Moonshine™‑Gold mit Moonshine™‑Gold",
+              "caseDescription": "Moonshine™-Gold",
+              "dialDescription": null,
+              "isNewModel": true,
+              "localNicknames": {
+                "names": [],
+                "sources": []
+              }
+            },
+            "pdpPriceHistoryDecision": "not independently verified; no price point or listing status added"
+          }
+        ]
+      }
+    },
+    {
+      "attemptId": "candidate-additions-run-2",
+      "originalRunDirectory": "data/evidence/omega/AT/2026-10-11/candidate-additions-run-2",
+      "observations": {
+        "brandId": "omega",
+        "marketCode": "AT",
+        "runId": 4,
+        "observations": [
+          {
+            "marketCode": "AT",
+            "reference": "210.30.42.20.01.029",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029",
+            "locale": "de-AT",
+            "rawSnapshotExcerpt": "          - listitem [ref=f66e73]:\n            - generic [ref=f66e74]: /\n            - generic [ref=f66e75]: 210.30.42.20.01.029\n      - generic [ref=f66e78]:\n        - generic [ref=f66e79]:\n          - generic [ref=f66e81]:\n            - list [ref=f66e82]:\n              - listitem [ref=f66e83]:\n                - button \"Bildergalerie öffnen 1\" [ref=f66e84] [cursor=pointer]:\n                  - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.01.029 - Bild 1\" [ref=f66e88]\n                - list [ref=f66e89]:\n                  - listitem [ref=f66e90]:\n                    - button \"Add to Wishlist\" [ref=f66e91] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f66e92]: \n                      - text: \n                  - listitem [ref=f66e93]:\n                    - button \"Zum Vergleichen hinzufügen\" [ref=f66e94] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f66e95]: \n                - list [ref=f66e96]:\n                  - listitem [aria-hidden] [ref=f66e97]:\n                    - button [ref=f66e98] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f66e99]: \n                      - generic [ref=f66e100]: An Ihrem Handgelenk\n                - text:  \n              - listitem \"Bildergalerie öffnen 2\" [ref=f66e101] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.01.029 - Bild 2\" [ref=f66e105]\n              - listitem \"Bildergalerie öffnen 3\" [ref=f66e106] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.01.029 - Bild 3\" [ref=f66e110]\n              - listitem \"Bildergalerie öffnen 4\" [ref=f66e111] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.01.029 - Bild 4\" [ref=f66e115]\n              - listitem \"Bildergalerie öffnen 5\" [ref=f66e116] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.01.029 - Bild 5\" [ref=f66e120]\n              - listitem \"Bildergalerie öffnen 6\" [ref=f66e121] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.01.029 - Bild 6\" [ref=f66e125]\n              - listitem \"Bildergalerie öffnen 7\" [ref=f66e126] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.01.029 - Bild 7\" [ref=f66e130]\n            - text:    \n          - generic [ref=f66e133]:\n            - generic [ref=f66e134]:\n              - heading \"Spectre Limited Edition Set Neu Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband\" [level=1] [ref=f66e135]:\n                - generic [ref=f66e136]:\n                  - generic: Spectre Limited Edition Set\n                  - generic: Neu\n                - generic [ref=f66e137]: Seamaster\n                - generic [ref=f66e138]: Diver 300M\n                - generic [ref=f66e139]: 42 mm, Stahl mit Stahlarmband\n              - generic [ref=f66e140]:\n                - paragraph [ref=f66e142]: 210.30.42.20.01.029\n                - generic [ref=f66e143]:\n                  - paragraph [ref=f66e144]:\n                    - generic [ref=f66e145]: € 87.800\n                  - generic [ref=f66e148]:\n                    - paragraph [ref=f66e149]: \"Umfasst folgende Uhren:\"\n                    - list [ref=f66e150]:\n                      - listitem [ref=f66e151]:\n                        - img \"210.30.42.20.01.029\" [ref=f66e153]\n                      - listitem [ref=f66e154]:\n                        - link [ref=f66e155] [cursor=pointer]:\n                          - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001\n                          - img \"210.83.42.20.01.001\" [ref=f66e156]\n              - button \" Eine Boutique kontaktieren\" [ref=f66e160] [cursor=pointer]:\n                - generic [ref=f66e161]: \n                - generic [ref=f66e162]: Eine Boutique kontaktieren\n              - list [ref=f66e163]:\n                - listitem [ref=f66e164]:\n                  - link [ref=f66e168] [cursor=pointer]:\n                    - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029\n                    - paragraph [ref=f66e169]: selected\n                    - img \"Seamaster 42 mm, Stahl mit Stahlarmband - 21030422001029\" [ref=f66e172]\n                  - generic [ref=f66e173]: Ausgewählt\n                - listitem [ref=f66e174]:\n                  - link [ref=f66e178] [cursor=pointer]:\n                    - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001\n                    - paragraph [ref=f66e179]",
+            "snapshotFileSha256": "f1022390873a273c18ce6300a3836b5881964c656c11a37323a7f30227b7d7c7",
+            "snapshotObservedAtUtc": "2026-10-11T07:31:28.615Z",
+            "pdpPriceTextObserved": "€ 87.800",
+            "pdpCtaLines": [
+              "- button \"Bildergalerie öffnen 1\" [ref=f66e84] [cursor=pointer]:",
+              "- button \"Add to Wishlist\" [ref=f66e91] [cursor=pointer]:",
+              "- button \"Zum Vergleichen hinzufügen\" [ref=f66e94] [cursor=pointer]:",
+              "- button \" Eine Boutique kontaktieren\" [ref=f66e160] [cursor=pointer]:",
+              "- generic [ref=f66e162]: Eine Boutique kontaktieren"
+            ],
+            "verifiedListingStatusInterpretation": "retailer-only",
+            "runId": 4,
+            "formalMarketAddition": true
+          },
+          {
+            "marketCode": "AT",
+            "reference": "210.30.42.20.03.004",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003004",
+            "locale": "de-AT",
+            "rawSnapshotExcerpt": "          - listitem [ref=f73e73]:\n            - generic [ref=f73e74]: /\n            - generic [ref=f73e75]: 210.30.42.20.03.004\n      - generic [ref=f73e78]:\n        - generic [ref=f73e79]:\n          - generic [ref=f73e81]:\n            - list [ref=f73e82]:\n              - listitem [ref=f73e83]:\n                - button \"Bildergalerie öffnen 1\" [ref=f73e84] [cursor=pointer]:\n                  - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.03.004 - Bild 1\" [ref=f73e88]\n                - list [ref=f73e89]:\n                  - listitem [ref=f73e90]:\n                    - button \"Add to Wishlist\" [ref=f73e91] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f73e92]: \n                      - text: \n                  - listitem [ref=f73e93]:\n                    - button \"Zum Vergleichen hinzufügen\" [ref=f73e94] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f73e95]: \n                - list [ref=f73e96]:\n                  - listitem [aria-hidden] [ref=f73e97]:\n                    - button [ref=f73e98] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f73e99]: \n                      - generic [ref=f73e100]: An Ihrem Handgelenk\n                - text:  \n              - listitem \"Bildergalerie öffnen 2\" [ref=f73e101] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.03.004 - Bild 2\" [ref=f73e105]\n              - listitem \"Bildergalerie öffnen 3\" [ref=f73e106] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.03.004 - Bild 3\" [ref=f73e110]\n              - listitem \"Bildergalerie öffnen 4\" [ref=f73e111] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.03.004 - Bild 4\" [ref=f73e115]\n              - listitem [ref=f73e116] [cursor=pointer]:\n                - generic [ref=f73e118]:\n                  - generic \"Launch video\" [ref=f73e120]\n                  - button \"Pause\" [ref=f73e123]:\n                    - text: \n                    - generic [ref=f73e124]:\n                      - generic [aria-hidden] [ref=f73e125]: \n                      - generic [ref=f73e126]: Pause\n              - listitem \"Bildergalerie öffnen 6\" [ref=f73e127] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.03.004 - Bild 6\" [ref=f73e131]\n              - listitem \"Bildergalerie öffnen 7\" [ref=f73e132] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.03.004 - Bild 7\" [ref=f73e136]\n            - button \"Siehe 2 weitere Bilder\" [ref=f73e137] [cursor=pointer]: +Mehr anzeigen\n            - text:      \n          - generic [ref=f73e141]:\n            - generic [ref=f73e142]:\n              - heading \"James Bond Edition Neu Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband\" [level=1] [ref=f73e143]:\n                - generic [ref=f73e144]:\n                  - generic: James Bond Edition\n                  - generic: Neu\n                - generic [ref=f73e145]: Seamaster\n                - generic [ref=f73e146]: Diver 300M\n                - generic [ref=f73e147]: 42 mm, Stahl mit Stahlarmband\n              - generic [ref=f73e148]:\n                - paragraph [ref=f73e150]: 210.30.42.20.03.004\n                - paragraph [ref=f73e152]:\n                  - generic [ref=f73e153]: € 8.400\n              - generic: \n              - generic [ref=f73e156]:\n                - generic [ref=f73e158]:\n                  - paragraph [ref=f73e159]: Online momentan nicht verfügbar. Bitte setzen Sie das Produkt auf die Wunschliste.\n                  - generic [ref=f73e160]:\n                    - textbox \"E-Mail\" [ref=f73e162]:\n                      - /placeholder: E-Mail *\n                    - generic [ref=f73e163]:\n                      - checkbox \"Ich stimme zu, dass OMEGA mir diese Benachrichtigung per E-Mail zusendet, und bin damit einverstanden, dass OMEGA meine Personendaten zu diesem Zweck nutzt. Ich bestätige, die Datenschutzerklärung gelesen und verstanden zu haben.\" [ref=f73e164]\n                      - generic [ref=f73e166] [cursor=pointer]:\n                        - text: Ich stimme zu, dass OMEGA mir diese Benachrichtigung per E-Mail zusendet, und bin damit einverstanden, dass OMEGA meine Personendaten zu diesem Zweck nutzt. Ich bestätige, die\n                        - link \"Datenschutzerklärung\" [ref=f73e167]:\n                          - /url: https://www.omegawatches.com/de-at/privacy-notice\n                        - text: gelesen und verstanden zu haben.\n                    - button \"Anmelden\" [ref=f73e168] [cursor=pointer]\n                - button \" Eine Boutique kontaktieren\" [ref=f73e172] [cursor=pointer]:\n                  - generic [ref=f73e173]: ",
+            "snapshotFileSha256": "720528d43b23af3b8473e3e63d2727c2c2da9a3b5ac79649cdd6516634753af1",
+            "snapshotObservedAtUtc": "2026-10-11T07:31:40.753Z",
+            "pdpPriceTextObserved": "€ 8.400",
+            "pdpCtaLines": [
+              "- button \"Bildergalerie öffnen 1\" [ref=f73e84] [cursor=pointer]:",
+              "- button \"Add to Wishlist\" [ref=f73e91] [cursor=pointer]:",
+              "- button \"Zum Vergleichen hinzufügen\" [ref=f73e94] [cursor=pointer]:",
+              "- button \"Pause\" [ref=f73e123]:",
+              "- button \"Siehe 2 weitere Bilder\" [ref=f73e137] [cursor=pointer]: +Mehr anzeigen",
+              "- paragraph [ref=f73e159]: Online momentan nicht verfügbar. Bitte setzen Sie das Produkt auf die Wunschliste.",
+              "- button \"Anmelden\" [ref=f73e168] [cursor=pointer]",
+              "- button \" Eine Boutique kontaktieren\" [ref=f73e172] [cursor=pointer]:"
+            ],
+            "verifiedListingStatusInterpretation": "retailer-only",
+            "runId": 4,
+            "formalMarketAddition": true
+          },
+          {
+            "marketCode": "AT",
+            "reference": "210.30.42.20.03.005",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005",
+            "locale": "de-AT",
+            "rawSnapshotExcerpt": "          - listitem [ref=f80e73]:\n            - generic [ref=f80e74]: /\n            - generic [ref=f80e75]: 210.30.42.20.03.005\n      - generic [ref=f80e78]:\n        - generic [ref=f80e79]:\n          - generic [ref=f80e81]:\n            - list [ref=f80e82]:\n              - listitem [ref=f80e83]:\n                - button \"Bildergalerie öffnen 1\" [ref=f80e84] [cursor=pointer]:\n                  - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.03.005 - Bild 1\" [ref=f80e88]\n                - list [ref=f80e89]:\n                  - listitem [ref=f80e90]:\n                    - button \"Add to Wishlist\" [ref=f80e91] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f80e92]: \n                      - text: \n                  - listitem [ref=f80e93]:\n                    - button \"Zum Vergleichen hinzufügen\" [ref=f80e94] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f80e95]: \n                - list [ref=f80e96]:\n                  - listitem [aria-hidden] [ref=f80e97]:\n                    - button [ref=f80e98] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f80e99]: \n                      - generic [ref=f80e100]: An Ihrem Handgelenk\n                - text:  \n              - listitem \"Bildergalerie öffnen 2\" [ref=f80e101] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.03.005 - Bild 2\" [ref=f80e105]\n              - listitem \"Bildergalerie öffnen 3\" [ref=f80e106] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.03.005 - Bild 3\" [ref=f80e110]\n              - listitem \"Bildergalerie öffnen 4\" [ref=f80e111] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.03.005 - Bild 4\" [ref=f80e115]\n              - listitem \"Bildergalerie öffnen 5\" [ref=f80e116] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.03.005 - Bild 5\" [ref=f80e120]\n              - listitem \"Bildergalerie öffnen 6\" [ref=f80e121] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.03.005 - Bild 6\" [ref=f80e125]\n              - listitem \"Bildergalerie öffnen 7\" [ref=f80e126] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband - 210.30.42.20.03.005 - Bild 7\" [ref=f80e130]\n            - text:    \n          - generic [ref=f80e133]:\n            - generic [ref=f80e134]:\n              - heading \"James Bond Limited Edition Set Neu Seamaster Diver 300M 42 mm, Stahl mit Stahlarmband\" [level=1] [ref=f80e135]:\n                - generic [ref=f80e136]:\n                  - generic: James Bond Limited Edition Set\n                  - generic: Neu\n                - generic [ref=f80e137]: Seamaster\n                - generic [ref=f80e138]: Diver 300M\n                - generic [ref=f80e139]: 42 mm, Stahl mit Stahlarmband\n              - generic [ref=f80e140]:\n                - paragraph [ref=f80e142]: 210.30.42.20.03.005\n                - generic [ref=f80e143]:\n                  - paragraph [ref=f80e144]:\n                    - generic [ref=f80e145]: € 87.800\n                  - generic [ref=f80e148]:\n                    - paragraph [ref=f80e149]: \"Umfasst folgende Uhren:\"\n                    - list [ref=f80e150]:\n                      - listitem [ref=f80e151]:\n                        - img \"210.30.42.20.03.005\" [ref=f80e153]\n                      - listitem [ref=f80e154]:\n                        - link [ref=f80e155] [cursor=pointer]:\n                          - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001\n                          - img \"210.83.42.20.03.001\" [ref=f80e156]\n              - button \" Eine Boutique kontaktieren\" [ref=f80e160] [cursor=pointer]:\n                - generic [ref=f80e161]: \n                - generic [ref=f80e162]: Eine Boutique kontaktieren\n              - list [ref=f80e163]:\n                - listitem [ref=f80e164]:\n                  - link [ref=f80e168] [cursor=pointer]:\n                    - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005\n                    - paragraph [ref=f80e169]: selected\n                    - img \"Seamaster 42 mm, Stahl mit Stahlarmband - 21030422003005\" [ref=f80e172]\n                  - generic [ref=f80e173]: Ausgewählt\n                - listitem [ref=f80e174]:\n                  - link [ref=f80e178] [cursor=pointer]:\n                    - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001\n                    - paragraph [ref=f80e179]",
+            "snapshotFileSha256": "6cca36a8bad38ce8d149ff0cb0ecccbb9308e37685df61c6df27624c7996a70d",
+            "snapshotObservedAtUtc": "2026-10-11T07:31:53.256Z",
+            "pdpPriceTextObserved": "€ 87.800",
+            "pdpCtaLines": [
+              "- button \"Bildergalerie öffnen 1\" [ref=f80e84] [cursor=pointer]:",
+              "- button \"Add to Wishlist\" [ref=f80e91] [cursor=pointer]:",
+              "- button \"Zum Vergleichen hinzufügen\" [ref=f80e94] [cursor=pointer]:",
+              "- button \" Eine Boutique kontaktieren\" [ref=f80e160] [cursor=pointer]:",
+              "- generic [ref=f80e162]: Eine Boutique kontaktieren"
+            ],
+            "verifiedListingStatusInterpretation": "retailer-only",
+            "runId": 4,
+            "formalMarketAddition": true
+          },
+          {
+            "marketCode": "AT",
+            "reference": "210.83.42.20.01.001",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001",
+            "locale": "de-AT",
+            "rawSnapshotExcerpt": "            - listitem [ref=f87e72]:\n              - button \"Bildergalerie öffnen 1\" [ref=f87e73] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Platingold mit Alligator - 210.83.42.20.01.001 - Bild 1\" [ref=f87e77]\n              - list [ref=f87e78]:\n                - listitem [ref=f87e79]:\n                  - button \"Add to Wishlist\" [ref=f87e80] [cursor=pointer]:\n                    - generic [aria-hidden] [ref=f87e81]: \n                    - text: \n                - listitem [ref=f87e82]:\n                  - button \"Zum Vergleichen hinzufügen\" [ref=f87e83] [cursor=pointer]:\n                    - generic [aria-hidden] [ref=f87e84]: \n              - list [ref=f87e85]:\n                - listitem [aria-hidden] [ref=f87e86]:\n                  - button [ref=f87e87] [cursor=pointer]:\n                    - generic [aria-hidden] [ref=f87e88]: \n                    - generic [ref=f87e89]: An Ihrem Handgelenk\n              - text:  \n            - listitem \"Bildergalerie öffnen 2\" [ref=f87e90] [cursor=pointer]:\n              - img \"Seamaster Diver 300M 42 mm, Platingold mit Alligator - 210.83.42.20.01.001 - Bild 2\" [ref=f87e94]\n            - listitem \"Bildergalerie öffnen 3\" [ref=f87e95] [cursor=pointer]:\n              - img \"Seamaster Diver 300M 42 mm, Platingold mit Alligator - 210.83.42.20.01.001 - Bild 3\" [ref=f87e99]\n            - listitem \"Bildergalerie öffnen 4\" [ref=f87e100] [cursor=pointer]:\n              - img \"Seamaster Diver 300M 42 mm, Platingold mit Alligator - 210.83.42.20.01.001 - Bild 4\" [ref=f87e104]\n            - listitem \"Bildergalerie öffnen 5\" [ref=f87e105] [cursor=pointer]:\n              - img \"Seamaster Diver 300M 42 mm, Platingold mit Alligator - 210.83.42.20.01.001 - Bild 5\" [ref=f87e109]\n            - listitem \"Bildergalerie öffnen 6\" [ref=f87e110] [cursor=pointer]:\n              - img \"Seamaster Diver 300M 42 mm, Platingold mit Alligator - 210.83.42.20.01.001 - Bild 6\" [ref=f87e114]\n            - listitem \"Bildergalerie öffnen 7\" [ref=f87e115] [cursor=pointer]:\n              - img \"Seamaster Diver 300M 42 mm, Platingold mit Alligator - 210.83.42.20.01.001 - Bild 7\" [ref=f87e119]\n          - text:    \n        - generic [ref=f87e122]:\n          - generic [ref=f87e123]:\n            - heading \"Spectre Limited Edition Set Neu Seamaster Diver 300M 42 mm, Platingold mit Alligator\" [level=1] [ref=f87e124]:\n              - generic [ref=f87e125]:\n                - generic: Spectre Limited Edition Set\n                - generic: Neu\n              - generic [ref=f87e126]: Seamaster\n              - generic [ref=f87e127]: Diver 300M\n              - generic [ref=f87e128]: 42 mm, Platingold mit Alligator\n            - generic [ref=f87e129]:\n              - paragraph [ref=f87e131]: 210.83.42.20.01.001\n              - generic [ref=f87e132]:\n                - paragraph [ref=f87e133]:\n                  - generic [ref=f87e134]: € 87.800\n                - generic [ref=f87e137]:\n                  - paragraph [ref=f87e138]: \"Umfasst folgende Uhren:\"\n                  - list [ref=f87e139]:\n                    - listitem [ref=f87e140]:\n                      - img \"210.83.42.20.01.001\" [ref=f87e142]\n                    - listitem [ref=f87e143]:\n                      - link [ref=f87e144] [cursor=pointer]:\n                        - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029\n                        - img \"210.30.42.20.01.029\" [ref=f87e145]\n            - button \" Eine Boutique kontaktieren\" [ref=f87e149] [cursor=pointer]:\n              - generic [ref=f87e150]: \n              - generic [ref=f87e151]: Eine Boutique kontaktieren\n            - list [ref=f87e152]:\n              - listitem [ref=f87e153]:\n                - link [ref=f87e157] [cursor=pointer]:\n                  - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001\n                  - paragraph [ref=f87e158]\n                  - img \"Seamaster 42 mm, Platingold mit Alligator - 21083422001001\" [ref=f87e161]\n                - generic [ref=f87e162]: Ausgewählt\n              - listitem [ref=f87e163]:\n                - link [ref=f87e167] [cursor=pointer]:\n                  - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023\n                  - paragraph [ref=f87e168]: selected\n                  - img \"Seamaster 42 mm, Stahl mit Stahlarmband - 21030422001023\" [ref=f87e171]\n              - listitem [ref=f87e172]:\n                - generic [ref=f87e174] [cursor=pointer]:\n                  - link [ref=f87e176]:\n                    - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21090422001001\n                    - paragraph [ref=f87e177]\n                    - img \"Seamaster 42 mm, Titan mit Titanband - 21090422001001\" [ref=f87e180]",
+            "snapshotFileSha256": "091982168626d5ccb9a7dba7812f009a3d53cd651b9461d4e4f6ec01050812bb",
+            "snapshotObservedAtUtc": "2026-10-11T07:32:05.304Z",
+            "pdpPriceTextObserved": "€ 87.800",
+            "pdpCtaLines": [
+              "- button \"Bildergalerie öffnen 1\" [ref=f87e73] [cursor=pointer]:",
+              "- button \"Add to Wishlist\" [ref=f87e80] [cursor=pointer]:",
+              "- button \"Zum Vergleichen hinzufügen\" [ref=f87e83] [cursor=pointer]:",
+              "- button \" Eine Boutique kontaktieren\" [ref=f87e149] [cursor=pointer]:",
+              "- generic [ref=f87e151]: Eine Boutique kontaktieren"
+            ],
+            "verifiedListingStatusInterpretation": "retailer-only",
+            "runId": 4,
+            "formalMarketAddition": true
+          },
+          {
+            "marketCode": "AT",
+            "reference": "210.83.42.20.03.001",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001",
+            "locale": "de-AT",
+            "rawSnapshotExcerpt": "            - listitem [ref=f94e72]:\n              - button \"Bildergalerie öffnen 1\" [ref=f94e73] [cursor=pointer]:\n                - img \"Seamaster Diver 300M 42 mm, Platingold mit Alligator - 210.83.42.20.03.001 - Bild 1\" [ref=f94e77]\n              - list [ref=f94e78]:\n                - listitem [ref=f94e79]:\n                  - button \"Add to Wishlist\" [ref=f94e80] [cursor=pointer]:\n                    - generic [aria-hidden] [ref=f94e81]: \n                    - text: \n                - listitem [ref=f94e82]:\n                  - button \"Zum Vergleichen hinzufügen\" [ref=f94e83] [cursor=pointer]:\n                    - generic [aria-hidden] [ref=f94e84]: \n              - list [ref=f94e85]:\n                - listitem [aria-hidden] [ref=f94e86]:\n                  - button [ref=f94e87] [cursor=pointer]:\n                    - generic [aria-hidden] [ref=f94e88]: \n                    - generic [ref=f94e89]: An Ihrem Handgelenk\n              - text:  \n            - listitem \"Bildergalerie öffnen 2\" [ref=f94e90] [cursor=pointer]:\n              - img \"Seamaster Diver 300M 42 mm, Platingold mit Alligator - 210.83.42.20.03.001 - Bild 2\" [ref=f94e94]\n            - listitem \"Bildergalerie öffnen 3\" [ref=f94e95] [cursor=pointer]:\n              - img \"Seamaster Diver 300M 42 mm, Platingold mit Alligator - 210.83.42.20.03.001 - Bild 3\" [ref=f94e99]\n            - listitem \"Bildergalerie öffnen 4\" [ref=f94e100] [cursor=pointer]:\n              - img \"Seamaster Diver 300M 42 mm, Platingold mit Alligator - 210.83.42.20.03.001 - Bild 4\" [ref=f94e104]\n            - listitem \"Bildergalerie öffnen 5\" [ref=f94e105] [cursor=pointer]:\n              - img \"Seamaster Diver 300M 42 mm, Platingold mit Alligator - 210.83.42.20.03.001 - Bild 5\" [ref=f94e109]\n            - listitem \"Bildergalerie öffnen 6\" [ref=f94e110] [cursor=pointer]:\n              - img \"Seamaster Diver 300M 42 mm, Platingold mit Alligator - 210.83.42.20.03.001 - Bild 6\" [ref=f94e114]\n            - listitem \"Bildergalerie öffnen 7\" [ref=f94e115] [cursor=pointer]:\n              - img \"Seamaster Diver 300M 42 mm, Platingold mit Alligator - 210.83.42.20.03.001 - Bild 7\" [ref=f94e119]\n          - text:    \n        - generic [ref=f94e122]:\n          - generic [ref=f94e123]:\n            - heading \"James Bond Limited Edition Set Neu Seamaster Diver 300M 42 mm, Platingold mit Alligator\" [level=1] [ref=f94e124]:\n              - generic [ref=f94e125]:\n                - generic: James Bond Limited Edition Set\n                - generic: Neu\n              - generic [ref=f94e126]: Seamaster\n              - generic [ref=f94e127]: Diver 300M\n              - generic [ref=f94e128]: 42 mm, Platingold mit Alligator\n            - generic [ref=f94e129]:\n              - paragraph [ref=f94e131]: 210.83.42.20.03.001\n              - generic [ref=f94e132]:\n                - paragraph [ref=f94e133]:\n                  - generic [ref=f94e134]: € 87.800\n                - generic [ref=f94e137]:\n                  - paragraph [ref=f94e138]: \"Umfasst folgende Uhren:\"\n                  - list [ref=f94e139]:\n                    - listitem [ref=f94e140]:\n                      - img \"210.83.42.20.03.001\" [ref=f94e142]\n                    - listitem [ref=f94e143]:\n                      - link [ref=f94e144] [cursor=pointer]:\n                        - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005\n                        - img \"210.30.42.20.03.005\" [ref=f94e145]\n            - button \" Eine Boutique kontaktieren\" [ref=f94e149] [cursor=pointer]:\n              - generic [ref=f94e150]: \n              - generic [ref=f94e151]: Eine Boutique kontaktieren\n            - list [ref=f94e152]:\n              - listitem [ref=f94e153]:\n                - link [ref=f94e157] [cursor=pointer]:\n                  - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001\n                  - paragraph [ref=f94e158]\n                  - img \"Seamaster 42 mm, Platingold mit Alligator - 21083422003001\" [ref=f94e161]\n                - generic [ref=f94e162]: Ausgewählt\n              - listitem [ref=f94e163]:\n                - link [ref=f94e167] [cursor=pointer]:\n                  - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029\n                  - paragraph [ref=f94e168]: selected\n                  - img \"Seamaster 42 mm, Stahl mit Stahlarmband - 21030422001029\" [ref=f94e171]\n              - listitem [ref=f94e172]:\n                - link [ref=f94e176] [cursor=pointer]:\n                  - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001\n                  - paragraph [ref=f94e177]\n                  - img \"Seamaster 42 mm, Platingold mit Alligator - 21083422001001\" [ref=f94e180]\n              - listitem [ref=f94e181]:",
+            "snapshotFileSha256": "bc2a65702794fa548431339d1a5a26d04c09eac2f5cc8ca7ccab16cac102701f",
+            "snapshotObservedAtUtc": "2026-10-11T07:32:16.049Z",
+            "pdpPriceTextObserved": "€ 87.800",
+            "pdpCtaLines": [
+              "- button \"Bildergalerie öffnen 1\" [ref=f94e73] [cursor=pointer]:",
+              "- button \"Add to Wishlist\" [ref=f94e80] [cursor=pointer]:",
+              "- button \"Zum Vergleichen hinzufügen\" [ref=f94e83] [cursor=pointer]:",
+              "- button \" Eine Boutique kontaktieren\" [ref=f94e149] [cursor=pointer]:",
+              "- generic [ref=f94e151]: Eine Boutique kontaktieren"
+            ],
+            "verifiedListingStatusInterpretation": "retailer-only",
+            "runId": 4,
+            "formalMarketAddition": true
+          },
+          {
+            "marketCode": "AT",
+            "reference": "220.10.38.20.02.004",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004",
+            "locale": "de-AT",
+            "rawSnapshotExcerpt": "          - listitem [ref=f101e73]:\n            - generic [ref=f101e74]: /\n            - generic [ref=f101e75]: 220.10.38.20.02.004\n      - generic [ref=f101e78]:\n        - generic [ref=f101e79]:\n          - generic [ref=f101e81]:\n            - list [ref=f101e82]:\n              - listitem [ref=f101e83]:\n                - button \"Bildergalerie öffnen 1\" [ref=f101e84] [cursor=pointer]:\n                  - img \"Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband - 220.10.38.20.02.004 - Bild 1\" [ref=f101e88]\n                - list [ref=f101e89]:\n                  - listitem [ref=f101e90]:\n                    - button \"Add to Wishlist\" [ref=f101e91] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f101e92]: \n                      - text: \n                  - listitem [ref=f101e93]:\n                    - button \"Zum Vergleichen hinzufügen\" [ref=f101e94] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f101e95]: \n                - list [ref=f101e96]:\n                  - listitem [aria-hidden] [ref=f101e97]:\n                    - button [ref=f101e98] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f101e99]: \n                      - generic [ref=f101e100]: An Ihrem Handgelenk\n                - text:  \n              - listitem \"Bildergalerie öffnen 2\" [ref=f101e101] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband - 220.10.38.20.02.004 - Bild 2\" [ref=f101e105]\n              - listitem \"Bildergalerie öffnen 3\" [ref=f101e106] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband - 220.10.38.20.02.004 - Bild 3\" [ref=f101e110]\n              - listitem \"Bildergalerie öffnen 4\" [ref=f101e111] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband - 220.10.38.20.02.004 - Bild 4\" [ref=f101e115]\n              - listitem \"Bildergalerie öffnen 5\" [ref=f101e116] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband - 220.10.38.20.02.004 - Bild 5\" [ref=f101e120]\n              - listitem \"Bildergalerie öffnen 6\" [ref=f101e121] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband - 220.10.38.20.02.004 - Bild 6\" [ref=f101e125]\n              - listitem \"Bildergalerie öffnen 7\" [ref=f101e126] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband - 220.10.38.20.02.004 - Bild 7\" [ref=f101e130]\n            - text:    \n          - generic [ref=f101e133]:\n            - generic [ref=f101e134]:\n              - heading \"Neu Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband\" [level=1] [ref=f101e135]:\n                - generic [ref=f101e136]: Neu\n                - generic [ref=f101e137]: Seamaster\n                - generic [ref=f101e138]: Aqua Terra 150M\n                - generic [ref=f101e139]: 38 mm, Stahl mit Stahlarmband\n              - generic [ref=f101e140]:\n                - paragraph [ref=f101e142]: 220.10.38.20.02.004\n                - paragraph [ref=f101e144]:\n                  - generic [ref=f101e145]: € 7.300\n              - generic [ref=f101e148]:\n                - generic [ref=f101e150]:\n                  - paragraph [ref=f101e151]: Online momentan nicht verfügbar. Bitte setzen Sie das Produkt auf die Wunschliste.\n                  - generic [ref=f101e152]:\n                    - textbox \"E-Mail\" [ref=f101e154]:\n                      - /placeholder: E-Mail *\n                    - generic [ref=f101e155]:\n                      - checkbox \"Ich stimme zu, dass OMEGA mir diese Benachrichtigung per E-Mail zusendet, und bin damit einverstanden, dass OMEGA meine Personendaten zu diesem Zweck nutzt. Ich bestätige, die Datenschutzerklärung gelesen und verstanden zu haben.\" [ref=f101e156]\n                      - generic [ref=f101e158] [cursor=pointer]:\n                        - text: Ich stimme zu, dass OMEGA mir diese Benachrichtigung per E-Mail zusendet, und bin damit einverstanden, dass OMEGA meine Personendaten zu diesem Zweck nutzt. Ich bestätige, die\n                        - link \"Datenschutzerklärung\" [ref=f101e159]:\n                          - /url: https://www.omegawatches.com/de-at/privacy-notice\n                        - text: gelesen und verstanden zu haben.\n                    - button \"Anmelden\" [ref=f101e160] [cursor=pointer]\n                - button \" Eine Boutique kontaktieren\" [ref=f101e164] [cursor=pointer]:\n                  - generic [ref=f101e165]: \n                  - generic [ref=f101e166]: Eine Boutique kontaktieren\n              - list [ref=f101e167]:\n                - listitem [ref=f101e168]:\n                  - generic [ref=f101e170] [cursor=pointer]:\n                    - link [ref=f101e172]:\n                      - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004\n                      - paragraph [ref=f101e173]: selected\n                      - img \"Seamaster 38 mm, Stahl mit Stahlarmband - 22010382002004\" [ref=f101e176]\n                    - text: \n                  - generic [ref=f101e177]: Ausgewählt",
+            "snapshotFileSha256": "1b7a04c7703bbb971a1afc532a042dddf94bd4b373617b3910596169ecaddc47",
+            "snapshotObservedAtUtc": "2026-10-11T07:32:28.120Z",
+            "pdpPriceTextObserved": "€ 7.300",
+            "pdpCtaLines": [
+              "- button \"Bildergalerie öffnen 1\" [ref=f101e84] [cursor=pointer]:",
+              "- button \"Add to Wishlist\" [ref=f101e91] [cursor=pointer]:",
+              "- button \"Zum Vergleichen hinzufügen\" [ref=f101e94] [cursor=pointer]:",
+              "- paragraph [ref=f101e151]: Online momentan nicht verfügbar. Bitte setzen Sie das Produkt auf die Wunschliste.",
+              "- button \"Anmelden\" [ref=f101e160] [cursor=pointer]",
+              "- button \" Eine Boutique kontaktieren\" [ref=f101e164] [cursor=pointer]:",
+              "- generic [ref=f101e166]: Eine Boutique kontaktieren"
+            ],
+            "verifiedListingStatusInterpretation": "retailer-only",
+            "runId": 4,
+            "formalMarketAddition": true
+          },
+          {
+            "marketCode": "AT",
+            "reference": "220.10.38.20.03.006",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006",
+            "locale": "de-AT",
+            "rawSnapshotExcerpt": "          - listitem [ref=f108e73]:\n            - generic [ref=f108e74]: /\n            - generic [ref=f108e75]: 220.10.38.20.03.006\n      - generic [ref=f108e78]:\n        - generic [ref=f108e79]:\n          - generic [ref=f108e81]:\n            - list [ref=f108e82]:\n              - listitem [ref=f108e83]:\n                - button \"Bildergalerie öffnen 1\" [ref=f108e84] [cursor=pointer]:\n                  - img \"Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband - 220.10.38.20.03.006 - Bild 1\" [ref=f108e88]\n                - list [ref=f108e89]:\n                  - listitem [ref=f108e90]:\n                    - button \"Add to Wishlist\" [ref=f108e91] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f108e92]: \n                      - text: \n                  - listitem [ref=f108e93]:\n                    - button \"Zum Vergleichen hinzufügen\" [ref=f108e94] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f108e95]: \n                - list [ref=f108e96]:\n                  - listitem [aria-hidden] [ref=f108e97]:\n                    - button [ref=f108e98] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f108e99]: \n                      - generic [ref=f108e100]: An Ihrem Handgelenk\n                - text:  \n              - listitem \"Bildergalerie öffnen 2\" [ref=f108e101] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband - 220.10.38.20.03.006 - Bild 2\" [ref=f108e105]\n              - listitem \"Bildergalerie öffnen 3\" [ref=f108e106] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband - 220.10.38.20.03.006 - Bild 3\" [ref=f108e110]\n              - listitem \"Bildergalerie öffnen 4\" [ref=f108e111] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband - 220.10.38.20.03.006 - Bild 4\" [ref=f108e115]\n              - listitem \"Bildergalerie öffnen 5\" [ref=f108e116] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband - 220.10.38.20.03.006 - Bild 5\" [ref=f108e120]\n              - listitem \"Bildergalerie öffnen 6\" [ref=f108e121] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband - 220.10.38.20.03.006 - Bild 6\" [ref=f108e125]\n              - listitem \"Bildergalerie öffnen 7\" [ref=f108e126] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband - 220.10.38.20.03.006 - Bild 7\" [ref=f108e130]\n            - text:    \n          - generic [ref=f108e133]:\n            - generic [ref=f108e134]:\n              - heading \"Neu Seamaster Aqua Terra 150M 38 mm, Stahl mit Stahlarmband\" [level=1] [ref=f108e135]:\n                - generic [ref=f108e136]: Neu\n                - generic [ref=f108e137]: Seamaster\n                - generic [ref=f108e138]: Aqua Terra 150M\n                - generic [ref=f108e139]: 38 mm, Stahl mit Stahlarmband\n              - generic [ref=f108e140]:\n                - paragraph [ref=f108e142]: 220.10.38.20.03.006\n                - paragraph [ref=f108e144]:\n                  - generic [ref=f108e145]: € 7.300\n              - generic [ref=f108e148]:\n                - generic [ref=f108e150]:\n                  - paragraph [ref=f108e151]: Online momentan nicht verfügbar. Bitte setzen Sie das Produkt auf die Wunschliste.\n                  - generic [ref=f108e152]:\n                    - textbox \"E-Mail\" [ref=f108e154]:\n                      - /placeholder: E-Mail *\n                    - generic [ref=f108e155]:\n                      - checkbox \"Ich stimme zu, dass OMEGA mir diese Benachrichtigung per E-Mail zusendet, und bin damit einverstanden, dass OMEGA meine Personendaten zu diesem Zweck nutzt. Ich bestätige, die Datenschutzerklärung gelesen und verstanden zu haben.\" [ref=f108e156]\n                      - generic [ref=f108e158] [cursor=pointer]:\n                        - text: Ich stimme zu, dass OMEGA mir diese Benachrichtigung per E-Mail zusendet, und bin damit einverstanden, dass OMEGA meine Personendaten zu diesem Zweck nutzt. Ich bestätige, die\n                        - link \"Datenschutzerklärung\" [ref=f108e159]:\n                          - /url: https://www.omegawatches.com/de-at/privacy-notice\n                        - text: gelesen und verstanden zu haben.\n                    - button \"Anmelden\" [ref=f108e160] [cursor=pointer]\n                - button \" Eine Boutique kontaktieren\" [ref=f108e164] [cursor=pointer]:\n                  - generic [ref=f108e165]: \n                  - generic [ref=f108e166]: Eine Boutique kontaktieren\n              - list [ref=f108e167]:\n                - listitem [ref=f108e168]:\n                  - generic [ref=f108e170] [cursor=pointer]:\n                    - link [ref=f108e172]:\n                      - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006\n                      - paragraph [ref=f108e173]: selected\n                      - img \"Seamaster 38 mm, Stahl mit Stahlarmband - 22010382003006\" [ref=f108e176]\n                    - text: \n                  - generic [ref=f108e177]: Ausgewählt",
+            "snapshotFileSha256": "db6fbbffdaac531c614345a8e71f1b8bdec390192fc6f5df93c75a12739977d9",
+            "snapshotObservedAtUtc": "2026-10-11T07:32:39.798Z",
+            "pdpPriceTextObserved": "€ 7.300",
+            "pdpCtaLines": [
+              "- button \"Bildergalerie öffnen 1\" [ref=f108e84] [cursor=pointer]:",
+              "- button \"Add to Wishlist\" [ref=f108e91] [cursor=pointer]:",
+              "- button \"Zum Vergleichen hinzufügen\" [ref=f108e94] [cursor=pointer]:",
+              "- paragraph [ref=f108e151]: Online momentan nicht verfügbar. Bitte setzen Sie das Produkt auf die Wunschliste.",
+              "- button \"Anmelden\" [ref=f108e160] [cursor=pointer]",
+              "- button \" Eine Boutique kontaktieren\" [ref=f108e164] [cursor=pointer]:",
+              "- generic [ref=f108e166]: Eine Boutique kontaktieren"
+            ],
+            "verifiedListingStatusInterpretation": "retailer-only",
+            "runId": 4,
+            "formalMarketAddition": true
+          },
+          {
+            "marketCode": "AT",
+            "reference": "220.10.41.21.01.003",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003",
+            "locale": "de-AT",
+            "rawSnapshotExcerpt": "          - listitem [ref=f115e73]:\n            - generic [ref=f115e74]: /\n            - generic [ref=f115e75]: 220.10.41.21.01.003\n      - generic [ref=f115e78]:\n        - generic [ref=f115e79]:\n          - generic [ref=f115e81]:\n            - list [ref=f115e82]:\n              - listitem [ref=f115e83]:\n                - button \"Bildergalerie öffnen 1\" [ref=f115e84] [cursor=pointer]:\n                  - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.01.003 - Bild 1\" [ref=f115e88]\n                - list [ref=f115e89]:\n                  - listitem [ref=f115e90]:\n                    - button \"Add to Wishlist\" [ref=f115e91] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f115e92]: \n                      - text: \n                  - listitem [ref=f115e93]:\n                    - button \"Zum Vergleichen hinzufügen\" [ref=f115e94] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f115e95]: \n                - list [ref=f115e96]:\n                  - listitem [aria-hidden] [ref=f115e97]:\n                    - button [ref=f115e98] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f115e99]: \n                      - generic [ref=f115e100]: An Ihrem Handgelenk\n                - text:  \n              - listitem \"Bildergalerie öffnen 2\" [ref=f115e101] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.01.003 - Bild 2\" [ref=f115e105]\n              - listitem \"Bildergalerie öffnen 3\" [ref=f115e106] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.01.003 - Bild 3\" [ref=f115e110]\n              - listitem \"Bildergalerie öffnen 4\" [ref=f115e111] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.01.003 - Bild 4\" [ref=f115e115]\n              - listitem \"Bildergalerie öffnen 5\" [ref=f115e116] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.01.003 - Bild 5\" [ref=f115e120]\n              - listitem \"Bildergalerie öffnen 6\" [ref=f115e121] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.01.003 - Bild 6\" [ref=f115e125]\n              - listitem \"Bildergalerie öffnen 7\" [ref=f115e126] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.01.003 - Bild 7\" [ref=f115e130]\n            - text:    \n          - generic [ref=f115e133]:\n            - generic [ref=f115e134]:\n              - heading \"Neu Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband\" [level=1] [ref=f115e135]:\n                - generic [ref=f115e136]: Neu\n                - generic [ref=f115e137]: Seamaster\n                - generic [ref=f115e138]: Aqua Terra 150M\n                - generic [ref=f115e139]: 41 mm, Stahl mit Stahlarmband\n              - generic [ref=f115e140]:\n                - paragraph [ref=f115e142]: 220.10.41.21.01.003\n                - paragraph [ref=f115e144]:\n                  - generic [ref=f115e145]: € 7.300\n              - generic [ref=f115e148]:\n                - generic [ref=f115e150]:\n                  - paragraph [ref=f115e151]: Online momentan nicht verfügbar. Bitte setzen Sie das Produkt auf die Wunschliste.\n                  - generic [ref=f115e152]:\n                    - textbox \"E-Mail\" [ref=f115e154]:\n                      - /placeholder: E-Mail *\n                    - generic [ref=f115e155]:\n                      - checkbox \"Ich stimme zu, dass OMEGA mir diese Benachrichtigung per E-Mail zusendet, und bin damit einverstanden, dass OMEGA meine Personendaten zu diesem Zweck nutzt. Ich bestätige, die Datenschutzerklärung gelesen und verstanden zu haben.\" [ref=f115e156]\n                      - generic [ref=f115e158] [cursor=pointer]:\n                        - text: Ich stimme zu, dass OMEGA mir diese Benachrichtigung per E-Mail zusendet, und bin damit einverstanden, dass OMEGA meine Personendaten zu diesem Zweck nutzt. Ich bestätige, die\n                        - link \"Datenschutzerklärung\" [ref=f115e159]:\n                          - /url: https://www.omegawatches.com/de-at/privacy-notice\n                        - text: gelesen und verstanden zu haben.\n                    - button \"Anmelden\" [ref=f115e160] [cursor=pointer]\n                - button \" Eine Boutique kontaktieren\" [ref=f115e164] [cursor=pointer]:\n                  - generic [ref=f115e165]: \n                  - generic [ref=f115e166]: Eine Boutique kontaktieren\n              - list [ref=f115e167]:\n                - listitem [ref=f115e168]:\n                  - generic [ref=f115e170] [cursor=pointer]:\n                    - link [ref=f115e172]:\n                      - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003\n                      - paragraph [ref=f115e173]: selected\n                      - img \"Seamaster 41 mm, Stahl mit Stahlarmband - 22010412101003\" [ref=f115e176]\n                    - text: \n                  - generic [ref=f115e177]: Ausgewählt",
+            "snapshotFileSha256": "8789bb2adc0684f29c2f53cb5dce34467eea1c921a9ad8ab2ac199b9e39955a5",
+            "snapshotObservedAtUtc": "2026-10-11T07:32:51.687Z",
+            "pdpPriceTextObserved": "€ 7.300",
+            "pdpCtaLines": [
+              "- button \"Bildergalerie öffnen 1\" [ref=f115e84] [cursor=pointer]:",
+              "- button \"Add to Wishlist\" [ref=f115e91] [cursor=pointer]:",
+              "- button \"Zum Vergleichen hinzufügen\" [ref=f115e94] [cursor=pointer]:",
+              "- paragraph [ref=f115e151]: Online momentan nicht verfügbar. Bitte setzen Sie das Produkt auf die Wunschliste.",
+              "- button \"Anmelden\" [ref=f115e160] [cursor=pointer]",
+              "- button \" Eine Boutique kontaktieren\" [ref=f115e164] [cursor=pointer]:",
+              "- generic [ref=f115e166]: Eine Boutique kontaktieren"
+            ],
+            "verifiedListingStatusInterpretation": "retailer-only",
+            "runId": 4,
+            "formalMarketAddition": true
+          },
+          {
+            "marketCode": "AT",
+            "reference": "220.10.41.21.02.005",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005",
+            "locale": "de-AT",
+            "rawSnapshotExcerpt": "          - listitem [ref=f122e73]:\n            - generic [ref=f122e74]: /\n            - generic [ref=f122e75]: 220.10.41.21.02.005\n      - generic [ref=f122e78]:\n        - generic [ref=f122e79]:\n          - generic [ref=f122e81]:\n            - list [ref=f122e82]:\n              - listitem [ref=f122e83]:\n                - button \"Bildergalerie öffnen 1\" [ref=f122e84] [cursor=pointer]:\n                  - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.02.005 - Bild 1\" [ref=f122e88]\n                - list [ref=f122e89]:\n                  - listitem [ref=f122e90]:\n                    - button \"Add to Wishlist\" [ref=f122e91] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f122e92]: \n                      - text: \n                  - listitem [ref=f122e93]:\n                    - button \"Zum Vergleichen hinzufügen\" [ref=f122e94] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f122e95]: \n                - list [ref=f122e96]:\n                  - listitem [aria-hidden] [ref=f122e97]:\n                    - button [ref=f122e98] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f122e99]: \n                      - generic [ref=f122e100]: An Ihrem Handgelenk\n                - text:  \n              - listitem \"Bildergalerie öffnen 2\" [ref=f122e101] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.02.005 - Bild 2\" [ref=f122e105]\n              - listitem \"Bildergalerie öffnen 3\" [ref=f122e106] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.02.005 - Bild 3\" [ref=f122e110]\n              - listitem \"Bildergalerie öffnen 4\" [ref=f122e111] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.02.005 - Bild 4\" [ref=f122e115]\n              - listitem \"Bildergalerie öffnen 5\" [ref=f122e116] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.02.005 - Bild 5\" [ref=f122e120]\n              - listitem \"Bildergalerie öffnen 6\" [ref=f122e121] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.02.005 - Bild 6\" [ref=f122e125]\n              - listitem \"Bildergalerie öffnen 7\" [ref=f122e126] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.02.005 - Bild 7\" [ref=f122e130]\n            - text:    \n          - generic [ref=f122e133]:\n            - generic [ref=f122e134]:\n              - heading \"Neu Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband\" [level=1] [ref=f122e135]:\n                - generic [ref=f122e136]: Neu\n                - generic [ref=f122e137]: Seamaster\n                - generic [ref=f122e138]: Aqua Terra 150M\n                - generic [ref=f122e139]: 41 mm, Stahl mit Stahlarmband\n              - generic [ref=f122e140]:\n                - paragraph [ref=f122e142]: 220.10.41.21.02.005\n                - paragraph [ref=f122e144]:\n                  - generic [ref=f122e145]: € 7.300\n              - generic [ref=f122e148]:\n                - generic [ref=f122e150]:\n                  - paragraph [ref=f122e151]: Online momentan nicht verfügbar. Bitte setzen Sie das Produkt auf die Wunschliste.\n                  - generic [ref=f122e152]:\n                    - textbox \"E-Mail\" [ref=f122e154]:\n                      - /placeholder: E-Mail *\n                    - generic [ref=f122e155]:\n                      - checkbox \"Ich stimme zu, dass OMEGA mir diese Benachrichtigung per E-Mail zusendet, und bin damit einverstanden, dass OMEGA meine Personendaten zu diesem Zweck nutzt. Ich bestätige, die Datenschutzerklärung gelesen und verstanden zu haben.\" [ref=f122e156]\n                      - generic [ref=f122e158] [cursor=pointer]:\n                        - text: Ich stimme zu, dass OMEGA mir diese Benachrichtigung per E-Mail zusendet, und bin damit einverstanden, dass OMEGA meine Personendaten zu diesem Zweck nutzt. Ich bestätige, die\n                        - link \"Datenschutzerklärung\" [ref=f122e159]:\n                          - /url: https://www.omegawatches.com/de-at/privacy-notice\n                        - text: gelesen und verstanden zu haben.\n                    - button \"Anmelden\" [ref=f122e160] [cursor=pointer]\n                - button \" Eine Boutique kontaktieren\" [ref=f122e164] [cursor=pointer]:\n                  - generic [ref=f122e165]: \n                  - generic [ref=f122e166]: Eine Boutique kontaktieren\n              - list [ref=f122e167]:\n                - listitem [ref=f122e168]:\n                  - generic [ref=f122e170] [cursor=pointer]:\n                    - link [ref=f122e172]:\n                      - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005\n                      - paragraph [ref=f122e173]: selected\n                      - img \"Seamaster 41 mm, Stahl mit Stahlarmband - 22010412102005\" [ref=f122e176]\n                    - text: \n                  - generic [ref=f122e177]: Ausgewählt",
+            "snapshotFileSha256": "93edb56919c5854d629b23818cbdde60fd64bc63f34f0afff032a027613a3dca",
+            "snapshotObservedAtUtc": "2026-10-11T07:33:04.873Z",
+            "pdpPriceTextObserved": "€ 7.300",
+            "pdpCtaLines": [
+              "- button \"Bildergalerie öffnen 1\" [ref=f122e84] [cursor=pointer]:",
+              "- button \"Add to Wishlist\" [ref=f122e91] [cursor=pointer]:",
+              "- button \"Zum Vergleichen hinzufügen\" [ref=f122e94] [cursor=pointer]:",
+              "- paragraph [ref=f122e151]: Online momentan nicht verfügbar. Bitte setzen Sie das Produkt auf die Wunschliste.",
+              "- button \"Anmelden\" [ref=f122e160] [cursor=pointer]",
+              "- button \" Eine Boutique kontaktieren\" [ref=f122e164] [cursor=pointer]:",
+              "- generic [ref=f122e166]: Eine Boutique kontaktieren"
+            ],
+            "verifiedListingStatusInterpretation": "retailer-only",
+            "runId": 4,
+            "formalMarketAddition": true
+          },
+          {
+            "marketCode": "AT",
+            "reference": "220.10.41.21.03.007",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007",
+            "locale": "de-AT",
+            "rawSnapshotExcerpt": "          - listitem [ref=f129e73]:\n            - generic [ref=f129e74]: /\n            - generic [ref=f129e75]: 220.10.41.21.03.007\n      - generic [ref=f129e78]:\n        - generic [ref=f129e79]:\n          - generic [ref=f129e81]:\n            - list [ref=f129e82]:\n              - listitem [ref=f129e83]:\n                - button \"Bildergalerie öffnen 1\" [ref=f129e84] [cursor=pointer]:\n                  - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.03.007 - Bild 1\" [ref=f129e88]\n                - list [ref=f129e89]:\n                  - listitem [ref=f129e90]:\n                    - button \"Add to Wishlist\" [ref=f129e91] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f129e92]: \n                      - text: \n                  - listitem [ref=f129e93]:\n                    - button \"Zum Vergleichen hinzufügen\" [ref=f129e94] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f129e95]: \n                - list [ref=f129e96]:\n                  - listitem [aria-hidden] [ref=f129e97]:\n                    - button [ref=f129e98] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f129e99]: \n                      - generic [ref=f129e100]: An Ihrem Handgelenk\n                - text:  \n              - listitem \"Bildergalerie öffnen 2\" [ref=f129e101] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.03.007 - Bild 2\" [ref=f129e105]\n              - listitem \"Bildergalerie öffnen 3\" [ref=f129e106] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.03.007 - Bild 3\" [ref=f129e110]\n              - listitem \"Bildergalerie öffnen 4\" [ref=f129e111] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.03.007 - Bild 4\" [ref=f129e115]\n              - listitem \"Bildergalerie öffnen 5\" [ref=f129e116] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.03.007 - Bild 5\" [ref=f129e120]\n              - listitem \"Bildergalerie öffnen 6\" [ref=f129e121] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.03.007 - Bild 6\" [ref=f129e125]\n              - listitem \"Bildergalerie öffnen 7\" [ref=f129e126] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.03.007 - Bild 7\" [ref=f129e130]\n            - button \"Siehe 1 weitere Bilder\" [ref=f129e131] [cursor=pointer]: +Mehr anzeigen\n            - text:    \n          - generic [ref=f129e135]:\n            - generic [ref=f129e136]:\n              - heading \"Neu Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband\" [level=1] [ref=f129e137]:\n                - generic [ref=f129e138]: Neu\n                - generic [ref=f129e139]: Seamaster\n                - generic [ref=f129e140]: Aqua Terra 150M\n                - generic [ref=f129e141]: 41 mm, Stahl mit Stahlarmband\n              - generic [ref=f129e142]:\n                - paragraph [ref=f129e144]: 220.10.41.21.03.007\n                - paragraph [ref=f129e146]:\n                  - generic [ref=f129e147]: € 7.300\n              - generic [ref=f129e150]:\n                - generic [ref=f129e152]:\n                  - paragraph [ref=f129e153]: Online momentan nicht verfügbar. Bitte setzen Sie das Produkt auf die Wunschliste.\n                  - generic [ref=f129e154]:\n                    - textbox \"E-Mail\" [ref=f129e156]:\n                      - /placeholder: E-Mail *\n                    - generic [ref=f129e157]:\n                      - checkbox \"Ich stimme zu, dass OMEGA mir diese Benachrichtigung per E-Mail zusendet, und bin damit einverstanden, dass OMEGA meine Personendaten zu diesem Zweck nutzt. Ich bestätige, die Datenschutzerklärung gelesen und verstanden zu haben.\" [ref=f129e158]\n                      - generic [ref=f129e160] [cursor=pointer]:\n                        - text: Ich stimme zu, dass OMEGA mir diese Benachrichtigung per E-Mail zusendet, und bin damit einverstanden, dass OMEGA meine Personendaten zu diesem Zweck nutzt. Ich bestätige, die\n                        - link \"Datenschutzerklärung\" [ref=f129e161]:\n                          - /url: https://www.omegawatches.com/de-at/privacy-notice\n                        - text: gelesen und verstanden zu haben.\n                    - button \"Anmelden\" [ref=f129e162] [cursor=pointer]\n                - button \" Eine Boutique kontaktieren\" [ref=f129e166] [cursor=pointer]:\n                  - generic [ref=f129e167]: \n                  - generic [ref=f129e168]: Eine Boutique kontaktieren\n              - list [ref=f129e169]:\n                - listitem [ref=f129e170]:\n                  - generic [ref=f129e172] [cursor=pointer]:\n                    - link [ref=f129e174]:\n                      - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007\n                      - paragraph [ref=f129e175]: selected\n                      - img \"Seamaster 41 mm, Stahl mit Stahlarmband - 22010412103007\" [ref=f129e178]\n                    - text: ",
+            "snapshotFileSha256": "69e03f851d7daf3ef597d8b42e8f08f777b12db486401371c93d228b5b319f0e",
+            "snapshotObservedAtUtc": "2026-10-11T07:33:16.910Z",
+            "pdpPriceTextObserved": "€ 7.300",
+            "pdpCtaLines": [
+              "- button \"Bildergalerie öffnen 1\" [ref=f129e84] [cursor=pointer]:",
+              "- button \"Add to Wishlist\" [ref=f129e91] [cursor=pointer]:",
+              "- button \"Zum Vergleichen hinzufügen\" [ref=f129e94] [cursor=pointer]:",
+              "- button \"Siehe 1 weitere Bilder\" [ref=f129e131] [cursor=pointer]: +Mehr anzeigen",
+              "- paragraph [ref=f129e153]: Online momentan nicht verfügbar. Bitte setzen Sie das Produkt auf die Wunschliste.",
+              "- button \"Anmelden\" [ref=f129e162] [cursor=pointer]",
+              "- button \" Eine Boutique kontaktieren\" [ref=f129e166] [cursor=pointer]:",
+              "- generic [ref=f129e168]: Eine Boutique kontaktieren"
+            ],
+            "verifiedListingStatusInterpretation": "retailer-only",
+            "runId": 4,
+            "formalMarketAddition": true
+          },
+          {
+            "marketCode": "AT",
+            "reference": "220.10.41.21.10.002",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002",
+            "locale": "de-AT",
+            "rawSnapshotExcerpt": "          - listitem [ref=f136e73]:\n            - generic [ref=f136e74]: /\n            - generic [ref=f136e75]: 220.10.41.21.10.002\n      - generic [ref=f136e78]:\n        - generic [ref=f136e79]:\n          - generic [ref=f136e81]:\n            - list [ref=f136e82]:\n              - listitem [ref=f136e83]:\n                - button \"Bildergalerie öffnen 1\" [ref=f136e84] [cursor=pointer]:\n                  - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.10.002 - Bild 1\" [ref=f136e88]\n                - list [ref=f136e89]:\n                  - listitem [ref=f136e90]:\n                    - button \"Add to Wishlist\" [ref=f136e91] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f136e92]: \n                      - text: \n                  - listitem [ref=f136e93]:\n                    - button \"Zum Vergleichen hinzufügen\" [ref=f136e94] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f136e95]: \n                - list [ref=f136e96]:\n                  - listitem [aria-hidden] [ref=f136e97]:\n                    - button [ref=f136e98] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f136e99]: \n                      - generic [ref=f136e100]: An Ihrem Handgelenk\n                - text:  \n              - listitem \"Bildergalerie öffnen 2\" [ref=f136e101] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.10.002 - Bild 2\" [ref=f136e105]\n              - listitem \"Bildergalerie öffnen 3\" [ref=f136e106] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.10.002 - Bild 3\" [ref=f136e110]\n              - listitem \"Bildergalerie öffnen 4\" [ref=f136e111] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.10.002 - Bild 4\" [ref=f136e115]\n              - listitem \"Bildergalerie öffnen 5\" [ref=f136e116] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.10.002 - Bild 5\" [ref=f136e120]\n              - listitem \"Bildergalerie öffnen 6\" [ref=f136e121] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.10.002 - Bild 6\" [ref=f136e125]\n              - listitem \"Bildergalerie öffnen 7\" [ref=f136e126] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband - 220.10.41.21.10.002 - Bild 7\" [ref=f136e130]\n            - text:    \n          - generic [ref=f136e133]:\n            - generic [ref=f136e134]:\n              - heading \"Neu Seamaster Aqua Terra 150M 41 mm, Stahl mit Stahlarmband\" [level=1] [ref=f136e135]:\n                - generic [ref=f136e136]: Neu\n                - generic [ref=f136e137]: Seamaster\n                - generic [ref=f136e138]: Aqua Terra 150M\n                - generic [ref=f136e139]: 41 mm, Stahl mit Stahlarmband\n              - generic [ref=f136e140]:\n                - paragraph [ref=f136e142]: 220.10.41.21.10.002\n                - paragraph [ref=f136e144]:\n                  - generic [ref=f136e145]: € 7.300\n              - generic [ref=f136e148]:\n                - generic [ref=f136e150]:\n                  - paragraph [ref=f136e151]: Online momentan nicht verfügbar. Bitte setzen Sie das Produkt auf die Wunschliste.\n                  - generic [ref=f136e152]:\n                    - textbox \"E-Mail\" [ref=f136e154]:\n                      - /placeholder: E-Mail *\n                    - generic [ref=f136e155]:\n                      - checkbox \"Ich stimme zu, dass OMEGA mir diese Benachrichtigung per E-Mail zusendet, und bin damit einverstanden, dass OMEGA meine Personendaten zu diesem Zweck nutzt. Ich bestätige, die Datenschutzerklärung gelesen und verstanden zu haben.\" [ref=f136e156]\n                      - generic [ref=f136e158] [cursor=pointer]:\n                        - text: Ich stimme zu, dass OMEGA mir diese Benachrichtigung per E-Mail zusendet, und bin damit einverstanden, dass OMEGA meine Personendaten zu diesem Zweck nutzt. Ich bestätige, die\n                        - link \"Datenschutzerklärung\" [ref=f136e159]:\n                          - /url: https://www.omegawatches.com/de-at/privacy-notice\n                        - text: gelesen und verstanden zu haben.\n                    - button \"Anmelden\" [ref=f136e160] [cursor=pointer]\n                - button \" Eine Boutique kontaktieren\" [ref=f136e164] [cursor=pointer]:\n                  - generic [ref=f136e165]: \n                  - generic [ref=f136e166]: Eine Boutique kontaktieren\n              - list [ref=f136e167]:\n                - listitem [ref=f136e168]:\n                  - generic [ref=f136e170] [cursor=pointer]:\n                    - link [ref=f136e172]:\n                      - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002\n                      - paragraph [ref=f136e173]: selected\n                      - img \"Seamaster 41 mm, Stahl mit Stahlarmband - 22010412110002\" [ref=f136e176]\n                    - text: \n                  - generic [ref=f136e177]: Ausgewählt",
+            "snapshotFileSha256": "b7871ef2545f7c5f6e2253eea8f6bb54bcb23f5fa3c4512caddde96d5dedf365",
+            "snapshotObservedAtUtc": "2026-10-11T07:33:28.484Z",
+            "pdpPriceTextObserved": "€ 7.300",
+            "pdpCtaLines": [
+              "- button \"Bildergalerie öffnen 1\" [ref=f136e84] [cursor=pointer]:",
+              "- button \"Add to Wishlist\" [ref=f136e91] [cursor=pointer]:",
+              "- button \"Zum Vergleichen hinzufügen\" [ref=f136e94] [cursor=pointer]:",
+              "- paragraph [ref=f136e151]: Online momentan nicht verfügbar. Bitte setzen Sie das Produkt auf die Wunschliste.",
+              "- button \"Anmelden\" [ref=f136e160] [cursor=pointer]",
+              "- button \" Eine Boutique kontaktieren\" [ref=f136e164] [cursor=pointer]:",
+              "- generic [ref=f136e166]: Eine Boutique kontaktieren"
+            ],
+            "verifiedListingStatusInterpretation": "retailer-only",
+            "runId": 4,
+            "formalMarketAddition": true
+          },
+          {
+            "marketCode": "AT",
+            "reference": "220.50.41.21.02.004",
+            "productUrl": "https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004",
+            "locale": "de-AT",
+            "rawSnapshotExcerpt": "              - listitem [ref=f143e72]:\n                - button \"Bildergalerie öffnen 1\" [ref=f143e73] [cursor=pointer]:\n                  - img \"Seamaster Aqua Terra 150M 41 mm, Moonshine™-Gold mit Moonshine™-Gold - 220.50.41.21.02.004 - Bild 1\" [ref=f143e77]\n                - list [ref=f143e78]:\n                  - listitem [ref=f143e79]:\n                    - button \"Add to Wishlist\" [ref=f143e80] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f143e81]: \n                      - text: \n                  - listitem [ref=f143e82]:\n                    - button \"Zum Vergleichen hinzufügen\" [ref=f143e83] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f143e84]: \n                - list [ref=f143e85]:\n                  - listitem [aria-hidden] [ref=f143e86]:\n                    - button [ref=f143e87] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f143e88]: \n                      - generic [ref=f143e89]: An Ihrem Handgelenk\n                - text:  \n              - listitem \"Bildergalerie öffnen 2\" [ref=f143e90] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Moonshine™-Gold mit Moonshine™-Gold - 220.50.41.21.02.004 - Bild 2\" [ref=f143e94]\n              - listitem \"Bildergalerie öffnen 3\" [ref=f143e95] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Moonshine™-Gold mit Moonshine™-Gold - 220.50.41.21.02.004 - Bild 3\" [ref=f143e99]\n              - listitem \"Bildergalerie öffnen 4\" [ref=f143e100] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Moonshine™-Gold mit Moonshine™-Gold - 220.50.41.21.02.004 - Bild 4\" [ref=f143e104]\n              - listitem \"Bildergalerie öffnen 5\" [ref=f143e105] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Moonshine™-Gold mit Moonshine™-Gold - 220.50.41.21.02.004 - Bild 5\" [ref=f143e109]\n              - listitem \"Bildergalerie öffnen 6\" [ref=f143e110] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Moonshine™-Gold mit Moonshine™-Gold - 220.50.41.21.02.004 - Bild 6\" [ref=f143e114]\n              - listitem \"Bildergalerie öffnen 7\" [ref=f143e115] [cursor=pointer]:\n                - img \"Seamaster Aqua Terra 150M 41 mm, Moonshine™-Gold mit Moonshine™-Gold - 220.50.41.21.02.004 - Bild 7\" [ref=f143e119]\n            - text:    \n          - generic [ref=f143e122]:\n            - generic [ref=f143e123]:\n              - heading \"Neu Seamaster Aqua Terra 150M 41 mm, Moonshine™‑Gold mit Moonshine™‑Gold\" [level=1] [ref=f143e124]:\n                - generic [ref=f143e125]: Neu\n                - generic [ref=f143e126]: Seamaster\n                - generic [ref=f143e127]: Aqua Terra 150M\n                - generic [ref=f143e128]: 41 mm, Moonshine™‑Gold mit Moonshine™‑Gold\n              - generic [ref=f143e129]:\n                - paragraph [ref=f143e131]: 220.50.41.21.02.004\n                - paragraph [ref=f143e133]:\n                  - generic [ref=f143e134]: € 45.500\n              - generic [ref=f143e137]:\n                - generic [ref=f143e139]:\n                  - paragraph [ref=f143e140]: Online momentan nicht verfügbar. Bitte setzen Sie das Produkt auf die Wunschliste.\n                  - generic [ref=f143e141]:\n                    - textbox \"E-Mail\" [ref=f143e143]:\n                      - /placeholder: E-Mail *\n                    - generic [ref=f143e144]:\n                      - checkbox \"Ich stimme zu, dass OMEGA mir diese Benachrichtigung per E-Mail zusendet, und bin damit einverstanden, dass OMEGA meine Personendaten zu diesem Zweck nutzt. Ich bestätige, die Datenschutzerklärung gelesen und verstanden zu haben.\" [ref=f143e145]\n                      - generic [ref=f143e147] [cursor=pointer]:\n                        - text: Ich stimme zu, dass OMEGA mir diese Benachrichtigung per E-Mail zusendet, und bin damit einverstanden, dass OMEGA meine Personendaten zu diesem Zweck nutzt. Ich bestätige, die\n                        - link \"Datenschutzerklärung\" [ref=f143e148]:\n                          - /url: https://www.omegawatches.com/de-at/privacy-notice\n                        - text: gelesen und verstanden zu haben.\n                    - button \"Anmelden\" [disabled]\n                - button \" Eine Boutique kontaktieren\" [ref=f143e151] [cursor=pointer]:\n                  - generic [ref=f143e152]: \n                  - generic [ref=f143e153]: Eine Boutique kontaktieren\n              - list [ref=f143e154]:\n                - listitem [ref=f143e155]:\n                  - generic [ref=f143e157] [cursor=pointer]:\n                    - link [ref=f143e159]:\n                      - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004\n                      - paragraph [ref=f143e160]: selected\n                      - img \"Seamaster 41 mm, Moonshine™-Gold mit Moonshine™-Gold - 22050412102004\" [ref=f143e163]\n                    - text: \n                  - generic [ref=f143e164]: Ausgewählt\n                - listitem [ref=f143e165]:\n                  - generic [ref=f143e167] [cursor=pointer]:\n                    - link [ref=f143e169]:\n                      - /url: https://www.omegawatches.com/de-at/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101002\n                      - paragraph [ref=f143e170]\n                      - img \"Seamaster 41 mm, Stahl mit Stahlarmband - 22010412101002\" [ref=f143e173]\n                    - text: ",
+            "snapshotFileSha256": "da829ba64d3b085194145cd13defe1e05f003391bc8457e874582e939453ec11",
+            "snapshotObservedAtUtc": "2026-10-11T07:33:39.228Z",
+            "pdpPriceTextObserved": "€ 45.500",
+            "pdpCtaLines": [
+              "- button \"Bildergalerie öffnen 1\" [ref=f143e73] [cursor=pointer]:",
+              "- button \"Add to Wishlist\" [ref=f143e80] [cursor=pointer]:",
+              "- button \"Zum Vergleichen hinzufügen\" [ref=f143e83] [cursor=pointer]:",
+              "- paragraph [ref=f143e140]: Online momentan nicht verfügbar. Bitte setzen Sie das Produkt auf die Wunschliste.",
+              "- button \"Anmelden\" [disabled]",
+              "- button \" Eine Boutique kontaktieren\" [ref=f143e151] [cursor=pointer]:",
+              "- generic [ref=f143e153]: Eine Boutique kontaktieren"
+            ],
+            "verifiedListingStatusInterpretation": "retailer-only",
+            "runId": 4,
+            "formalMarketAddition": true
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "FR",
+  "collectionDate": "2026-10-11",
+  "consolidatedAttemptCount": 4,
+  "note": "Same-day uncommitted evidence was consolidated. Each original collection summary is preserved verbatim by attempt; run IDs and distinct scopes remain separate.",
+  "attempts": [
+    {
+      "attemptId": "entry-retry-run-1",
+      "originalRunDirectory": "data/evidence/omega/FR/2026-10-11/entry-retry-run-1",
+      "collectionSummary": {
+        "brandId": "omega",
+        "marketCode": "FR",
+        "locale": "fr-FR",
+        "mode": "official-entry-retry-only",
+        "entryUrl": "https://www.omegawatches.com/fr-fr/watches",
+        "observedAtUtc": "2026-10-11T07-29-14-274Z",
+        "browser": "Playwright real browser; page.goto plus rendered DOM snapshot.",
+        "attempts": 1,
+        "entryRendered": true,
+        "displayedLandingWatchCount": 208,
+        "fullCategoryTraversal": "NOT RUN",
+        "pricesAndListingStatus": "NOT RUN",
+        "networkDiscovery": "StoreConfig/price category response not captured in this entry-only retry.",
+        "evidence": "observations.json"
+      }
+    },
+    {
+      "attemptId": "entry-retry-run-2",
+      "originalRunDirectory": "data/evidence/omega/FR/2026-10-11/entry-retry-run-2",
+      "collectionSummary": {
+        "brandId": "omega",
+        "marketCode": "FR",
+        "collectionDate": "2026-10-11",
+        "attempts": [
+          {
+            "url": "https://www.omegawatches.com/fr-fr/watches",
+            "method": "direct official entry navigation using real browser",
+            "result": "FAIL",
+            "error": "net::ERR_HTTP2_PROTOCOL_ERROR"
+          }
+        ],
+        "scope": "Retry official regional entry only; category traversal and product prices were not collected.",
+        "successes": 0,
+        "attemptedAtUtcWindow": "2026-10-11T08:24:00Z/2026-10-11T08:24:18Z"
+      }
+    },
+    {
+      "attemptId": "watchfinder-retry-run-3",
+      "originalRunDirectory": "data/evidence/omega/FR/2026-10-11/watchfinder-retry-run-3",
+      "collectionSummary": {
+        "brandId": "omega",
+        "marketCode": "FR",
+        "status": "COMPLETE",
+        "entryUrl": "https://www.omegawatches.com/fr-fr/",
+        "entryObservedAt": "2026-10-11T08:31:24Z",
+        "localizedHomepageTitle": "Recherche de Montres | OMEGA FR®",
+        "targetListingUrl": "https://www.omegawatches.com/fr-fr/watchfinder",
+        "officialDisplayedTotal": 563,
+        "pagination": {
+          "method": "Official Watch Finder pagination discovered from rendered next links; browser-context same-origin sequential AJAX page traversal",
+          "pagesObserved": 24,
+          "stopSignal": "Final official page had no next link; unique reference count equals official displayed total.",
+          "lastSuccessfulUniqueCount": 563,
+          "nextUrl": null
+        },
+        "networkDiscovery": {
+          "required": true,
+          "tool": "Chrome DevTools browser network/page context",
+          "attempted": true,
+          "result": "PASS",
+          "notes": "Used a fresh named isolated Chrome context after earlier HTTP/2 failures; traversed the official Watch Finder pagination. Cookie consent was rejected in FR/GB/IT contexts to reveal the page content. No cookies, request headers, or tokens were saved."
+        },
+        "attempts": [
+          {
+            "at": "2026-10-11T08:31:24Z",
+            "route": "https://www.omegawatches.com/fr-fr/",
+            "result": "PASS",
+            "detail": "Localized official homepage loaded."
+          },
+          {
+            "at": "2026-10-11T08:35:15Z",
+            "route": "https://www.omegawatches.com/fr-fr/watches",
+            "result": "NOT RUN",
+            "detail": "Stopped after repeated HTTP/2 protocol failures in the shared browser; no fresh Browser Context or HTTP/1.1 launch option is exposed."
+          },
+          {
+            "at": "2026-10-11T09:00:00Z",
+            "route": "https://www.omegawatches.com/fr-fr/watchfinder",
+            "result": "PASS",
+            "detail": "Fresh isolated Chrome context; official Watch Finder traversed through all pagination states; 563 unique references match official displayed total 563."
+          },
+          {
+            "at": "2026-10-11T09:20:00Z",
+            "route": "official product detail pages",
+            "result": "PARTIAL",
+            "detail": "Product CTA inspected for 4 configurations absent from the previous global catalog, plus representative current market additions. A further 11 of 13 existing-catalog additions were not individually checked; this is a classification limitation."
+          },
+          {
+            "at": "2026-10-11T10:58:10Z",
+            "route": "official localized product-detail pages and Watch Finder product badge reconciliation",
+            "result": "PASS",
+            "detail": "Per-reference purchase-channel checks were completed for all 17 additions; all source prices were parsed. Full official listing remains reconciled. Current official new-badge count: 82."
+          }
+        ],
+        "recovery": [
+          "New tab did not create an isolated browser context; no HTTP/2 downgrade option is exposed.",
+          "Created independent named isolated browser contexts per market and retried the official listing.",
+          "Rejected cookie consent prompts where they blocked product-page content; no access-control challenge was bypassed."
+        ],
+        "counts": {
+          "officialDisplayedTotal": 563,
+          "rawObserved": 563,
+          "uniqueObserved": 563,
+          "duplicates": 0,
+          "addedToPreviousMarket": 17,
+          "absentFromCurrentOfficialListing": 6,
+          "addedReferences": [
+            "21030422001023",
+            "21030422001029",
+            "21030422003004",
+            "21030422003005",
+            "21083422001001",
+            "21083422003001",
+            "22010382002004",
+            "22010382003006",
+            "22010412101003",
+            "22010412102005",
+            "22010412103007",
+            "22010412110002",
+            "22050412102004",
+            "51082000",
+            "51092000",
+            "51102000",
+            "52253455204001"
+          ],
+          "absentReferences": [
+            "22010382002001",
+            "22010382003001",
+            "22010412101001",
+            "22010412102001",
+            "22010412103004",
+            "22010412110001"
+          ],
+          "marketWatchCountAfterMerge": 569,
+          "newCatalogWatchesAddedToOmegaCatalog": 4,
+          "directProductPageClassificationsCompleted": 17,
+          "omegaCatalogUnionWatchesAdded": 8
+        },
+        "evidencePath": "data/evidence/omega/FR/2026-10-11/watchfinder-retry-run-3",
+        "formalDataChanged": true,
+        "listingUrl": "https://www.omegawatches.com/fr-fr/watchfinder",
+        "listingLocale": "fr-FR",
+        "listingTitle": "Recherche de Montres | OMEGA FR®",
+        "uniqueObserved": 563,
+        "priceValidation": {
+          "parseFailures": 0,
+          "existingReferencePriceChanges": 0,
+          "existingReferenceComparisons": 546,
+          "newlyListedConfigurationsPriceParsed": 17
+        },
+        "classificationLimitations": {
+          "newCatalogCandidatesIndividuallyInspected": 4,
+          "newCatalogCandidatesCount": 4,
+          "existingCatalogMarketAdditions": 13,
+          "existingCatalogMarketAdditionsIndividuallyChecked": 13,
+          "unverifiedExistingCatalogAdditions": 0,
+          "detail": "Every newly listed reference was checked on its official localized product page. The primary purchase CTA was classified per reference; all card prices parsed successfully."
+        },
+        "newModelBadgeCheck": {
+          "badgeLabel": "Nouveauté",
+          "count": 82,
+          "evidenceIn": "observations.json",
+          "pagination": {
+            "pages": 24,
+            "pageCounts": [
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              11
+            ],
+            "rows": 563,
+            "uniqueReferenceCount": 82,
+            "finalPageHasNext": false
+          }
+        }
+      }
+    },
+    {
+      "attemptId": "pdp-channel-audit-run-4",
+      "originalRunDirectory": "data/evidence/omega/FR/2026-10-11/pdp-channel-audit-run-4",
+      "collectionSummary": {
+        "brandId": "omega",
+        "marketCode": "FR",
+        "locale": "fr-FR",
+        "mode": "full-active-product-pdp-channel-and-price-revalidation",
+        "entryUrl": "https://www.omegawatches.com/fr-fr/",
+        "observedAtUtc": "2026-10-11T14:19:55Z",
+        "browser": "Chrome DevTools real browser; sequential same-origin PDP requests in FR isolated context.",
+        "officialCurrentListingCount": 563,
+        "activeReferencesVerified": 563,
+        "existingMarketReferencesVerified": 546,
+        "sameDayNewListingsReusedFromDirectPdpEvidence": 17,
+        "allPdpPricesMatchLatestFormalHistory": true,
+        "purchaseChannelStatusChanges": 81,
+        "evidence": "observations.json"
+      }
+    }
+  ]
+}

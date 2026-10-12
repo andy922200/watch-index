@@ -1,0 +1,465 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "CN",
+  "collectionDate": "2026-10-11",
+  "consolidatedAttemptCount": 3,
+  "note": "Same-day uncommitted evidence was consolidated. Each original collection summary is preserved verbatim by attempt; run IDs and distinct scopes remain separate.",
+  "attempts": [
+    {
+      "attemptId": "candidate-classification-price-validation-run-3",
+      "originalRunDirectory": "data/evidence/omega/CN/2026-10-11/candidate-classification-price-validation-run-3",
+      "collectionSummary": {
+        "brandId": "omega",
+        "marketCode": "CN",
+        "runId": 3,
+        "collectionDate": "2026-10-11",
+        "source": {
+          "entryUrl": "https://www.omegawatches.cn/watches",
+          "locale": "zh-Hans-CN",
+          "currencyObserved": "CNY from visible ¥ prices",
+          "candidateSource": "14 candidates in complete 16-category traversal; 13 global-catalog refs directly verified on official localized PDPs."
+        },
+        "observedAtUtcWindow": "2026-10-11T08:19:00Z/2026-10-11T08:23:05Z",
+        "candidatePdpValidation": {
+          "candidateCount": 13,
+          "directPdpSuccesses": 13,
+          "directPdpErrors": 0,
+          "priceMatchesCategoryCards": 13,
+          "newBadgeAndReferenceMatched": 13,
+          "directPdpCtaRetailerOnly": 13
+        },
+        "previousMarketComparison": {
+          "previousMarketRefs": 579,
+          "categoryMatchedRefs": 572,
+          "matchedPricesUnchangedFromPreviousHistory": 572,
+          "matchedPriceChangeCount": 0,
+          "marketRefsAbsentFromFullCategoryTraversalRetainedNotListedOnRunId2": 7
+        },
+        "candidateOutsideCatalog": {
+          "reference": "522.30.38.50.04.001",
+          "priceCny": 49000,
+          "pdpPriceVerified": true,
+          "formalMarketAddition": "pending global catalog stable fields"
+        },
+        "limitations": [
+          "137 of 139 previously uninspected ambiguous-CTA references remain unchecked.",
+          "522.30.38.50.04.001 remains outside market/history until a catalog record can be justified with complete stable fields."
+        ]
+      }
+    },
+    {
+      "attemptId": "full-category-price-validation-run-2",
+      "originalRunDirectory": "data/evidence/omega/CN/2026-10-11/full-category-price-validation-run-2",
+      "collectionSummary": {
+        "brandId": "omega",
+        "marketCode": "CN",
+        "runId": 2,
+        "collectionDate": "2026-10-11",
+        "source": {
+          "entryUrl": "https://www.omegawatches.cn/watches",
+          "locale": "zh-Hans-CN",
+          "currencyObserved": "CNY (¥) on live rendered category/PDP pages",
+          "categoryLinkSource": "Category links extracted from rendered official .cn watches landing page; actual category URLs were fetched sequentially in the same Playwright browser page context."
+        },
+        "observedAtUtcWindow": "2026-10-11T07:46:31Z/2026-10-11T07:48:39Z",
+        "homepageFamilyCounts": {
+          "Seamaster": 208,
+          "Speedmaster": 96,
+          "Constellation": 126,
+          "De Ville": 156
+        },
+        "homepageFamilySum": 586,
+        "categoryTraversal": {
+          "categoryCount": 16,
+          "categoryCountSum": 586,
+          "uniqueProductCodeCount": 586,
+          "uniqueProductUrlCount": 586,
+          "categories": [
+            {
+              "categoryUrl": "https://www.omegawatches.cn/watches/seamaster/aqua-terra-150m/catalog",
+              "pages": [
+                {
+                  "url": "https://www.omegawatches.cn/watches/seamaster/aqua-terra-150m/catalog",
+                  "status": 200,
+                  "cardCount": 24,
+                  "next": "https://www.omegawatches.cn/watches/seamaster/aqua-terra-150m/catalog?p=2"
+                },
+                {
+                  "url": "https://www.omegawatches.cn/watches/seamaster/aqua-terra-150m/catalog?p=2",
+                  "status": 200,
+                  "cardCount": 48,
+                  "next": "https://www.omegawatches.cn/watches/seamaster/aqua-terra-150m/catalog?p=3"
+                },
+                {
+                  "url": "https://www.omegawatches.cn/watches/seamaster/aqua-terra-150m/catalog?p=3",
+                  "status": 200,
+                  "cardCount": 72,
+                  "next": "https://www.omegawatches.cn/watches/seamaster/aqua-terra-150m/catalog?p=4"
+                },
+                {
+                  "url": "https://www.omegawatches.cn/watches/seamaster/aqua-terra-150m/catalog?p=4",
+                  "status": 200,
+                  "cardCount": 96,
+                  "next": "https://www.omegawatches.cn/watches/seamaster/aqua-terra-150m/catalog?p=5"
+                },
+                {
+                  "url": "https://www.omegawatches.cn/watches/seamaster/aqua-terra-150m/catalog?p=5",
+                  "status": 200,
+                  "cardCount": 108,
+                  "next": null
+                }
+              ],
+              "terminalUrl": "https://www.omegawatches.cn/watches/seamaster/aqua-terra-150m/catalog?p=5",
+              "uniqueProductCount": 108,
+              "terminalSignal": "no-visible-next-link"
+            },
+            {
+              "categoryUrl": "https://www.omegawatches.cn/watches/seamaster/diver-300-m/catalog",
+              "pages": [
+                {
+                  "url": "https://www.omegawatches.cn/watches/seamaster/diver-300-m/catalog",
+                  "status": 200,
+                  "cardCount": 24,
+                  "next": "https://www.omegawatches.cn/watches/seamaster/diver-300-m/catalog?p=2"
+                },
+                {
+                  "url": "https://www.omegawatches.cn/watches/seamaster/diver-300-m/catalog?p=2",
+                  "status": 200,
+                  "cardCount": 48,
+                  "next": "https://www.omegawatches.cn/watches/seamaster/diver-300-m/catalog?p=3"
+                },
+                {
+                  "url": "https://www.omegawatches.cn/watches/seamaster/diver-300-m/catalog?p=3",
+                  "status": 200,
+                  "cardCount": 65,
+                  "next": null
+                }
+              ],
+              "terminalUrl": "https://www.omegawatches.cn/watches/seamaster/diver-300-m/catalog?p=3",
+              "uniqueProductCount": 65,
+              "terminalSignal": "no-visible-next-link"
+            },
+            {
+              "categoryUrl": "https://www.omegawatches.cn/watches/seamaster/planet-ocean/catalog",
+              "pages": [
+                {
+                  "url": "https://www.omegawatches.cn/watches/seamaster/planet-ocean/catalog",
+                  "status": 200,
+                  "cardCount": 17,
+                  "next": null
+                }
+              ],
+              "terminalUrl": "https://www.omegawatches.cn/watches/seamaster/planet-ocean/catalog",
+              "uniqueProductCount": 17,
+              "terminalSignal": "no-visible-next-link"
+            },
+            {
+              "categoryUrl": "https://www.omegawatches.cn/watches/seamaster/heritage-models/catalog",
+              "pages": [
+                {
+                  "url": "https://www.omegawatches.cn/watches/seamaster/heritage-models/catalog",
+                  "status": 200,
+                  "cardCount": 17,
+                  "next": null
+                }
+              ],
+              "terminalUrl": "https://www.omegawatches.cn/watches/seamaster/heritage-models/catalog",
+              "uniqueProductCount": 17,
+              "terminalSignal": "no-visible-next-link"
+            },
+            {
+              "categoryUrl": "https://www.omegawatches.cn/watches/seamaster/instruments/catalog",
+              "pages": [
+                {
+                  "url": "https://www.omegawatches.cn/watches/seamaster/instruments/catalog",
+                  "status": 200,
+                  "cardCount": 1,
+                  "next": null
+                }
+              ],
+              "terminalUrl": "https://www.omegawatches.cn/watches/seamaster/instruments/catalog",
+              "uniqueProductCount": 1,
+              "terminalSignal": "no-visible-next-link"
+            },
+            {
+              "categoryUrl": "https://www.omegawatches.cn/watches/speedmaster/moonwatch-professional/catalog",
+              "pages": [
+                {
+                  "url": "https://www.omegawatches.cn/watches/speedmaster/moonwatch-professional/catalog",
+                  "status": 200,
+                  "cardCount": 24,
+                  "next": null
+                }
+              ],
+              "terminalUrl": "https://www.omegawatches.cn/watches/speedmaster/moonwatch-professional/catalog",
+              "uniqueProductCount": 24,
+              "terminalSignal": "no-visible-next-link"
+            },
+            {
+              "categoryUrl": "https://www.omegawatches.cn/watches/speedmaster/heritage-models/catalog",
+              "pages": [
+                {
+                  "url": "https://www.omegawatches.cn/watches/speedmaster/heritage-models/catalog",
+                  "status": 200,
+                  "cardCount": 16,
+                  "next": null
+                }
+              ],
+              "terminalUrl": "https://www.omegawatches.cn/watches/speedmaster/heritage-models/catalog",
+              "uniqueProductCount": 16,
+              "terminalSignal": "no-visible-next-link"
+            },
+            {
+              "categoryUrl": "https://www.omegawatches.cn/watches/speedmaster/dark-side-of-the-moon/catalog",
+              "pages": [
+                {
+                  "url": "https://www.omegawatches.cn/watches/speedmaster/dark-side-of-the-moon/catalog",
+                  "status": 200,
+                  "cardCount": 8,
+                  "next": null
+                }
+              ],
+              "terminalUrl": "https://www.omegawatches.cn/watches/speedmaster/dark-side-of-the-moon/catalog",
+              "uniqueProductCount": 8,
+              "terminalSignal": "no-visible-next-link"
+            },
+            {
+              "categoryUrl": "https://www.omegawatches.cn/watches/speedmaster/speedmaster-38-mm/catalog",
+              "pages": [
+                {
+                  "url": "https://www.omegawatches.cn/watches/speedmaster/speedmaster-38-mm/catalog",
+                  "status": 200,
+                  "cardCount": 12,
+                  "next": null
+                }
+              ],
+              "terminalUrl": "https://www.omegawatches.cn/watches/speedmaster/speedmaster-38-mm/catalog",
+              "uniqueProductCount": 12,
+              "terminalSignal": "no-visible-next-link"
+            },
+            {
+              "categoryUrl": "https://www.omegawatches.cn/watches/speedmaster/two-counters/catalog",
+              "pages": [
+                {
+                  "url": "https://www.omegawatches.cn/watches/speedmaster/two-counters/catalog",
+                  "status": 200,
+                  "cardCount": 24,
+                  "next": "https://www.omegawatches.cn/watches/speedmaster/two-counters/catalog?p=2"
+                },
+                {
+                  "url": "https://www.omegawatches.cn/watches/speedmaster/two-counters/catalog?p=2",
+                  "status": 200,
+                  "cardCount": 36,
+                  "next": null
+                }
+              ],
+              "terminalUrl": "https://www.omegawatches.cn/watches/speedmaster/two-counters/catalog?p=2",
+              "uniqueProductCount": 36,
+              "terminalSignal": "no-visible-next-link"
+            },
+            {
+              "categoryUrl": "https://www.omegawatches.cn/watches/constellation/observatory/catalog",
+              "pages": [
+                {
+                  "url": "https://www.omegawatches.cn/watches/constellation/observatory/catalog",
+                  "status": 200,
+                  "cardCount": 9,
+                  "next": null
+                }
+              ],
+              "terminalUrl": "https://www.omegawatches.cn/watches/constellation/observatory/catalog",
+              "uniqueProductCount": 9,
+              "terminalSignal": "no-visible-next-link"
+            },
+            {
+              "categoryUrl": "https://www.omegawatches.cn/watches/constellation/constellation/catalog",
+              "pages": [
+                {
+                  "url": "https://www.omegawatches.cn/watches/constellation/constellation/catalog",
+                  "status": 200,
+                  "cardCount": 24,
+                  "next": "https://www.omegawatches.cn/watches/constellation/constellation/catalog?p=2"
+                },
+                {
+                  "url": "https://www.omegawatches.cn/watches/constellation/constellation/catalog?p=2",
+                  "status": 200,
+                  "cardCount": 48,
+                  "next": "https://www.omegawatches.cn/watches/constellation/constellation/catalog?p=3"
+                },
+                {
+                  "url": "https://www.omegawatches.cn/watches/constellation/constellation/catalog?p=3",
+                  "status": 200,
+                  "cardCount": 72,
+                  "next": "https://www.omegawatches.cn/watches/constellation/constellation/catalog?p=4"
+                },
+                {
+                  "url": "https://www.omegawatches.cn/watches/constellation/constellation/catalog?p=4",
+                  "status": 200,
+                  "cardCount": 96,
+                  "next": "https://www.omegawatches.cn/watches/constellation/constellation/catalog?p=5"
+                },
+                {
+                  "url": "https://www.omegawatches.cn/watches/constellation/constellation/catalog?p=5",
+                  "status": 200,
+                  "cardCount": 117,
+                  "next": null
+                }
+              ],
+              "terminalUrl": "https://www.omegawatches.cn/watches/constellation/constellation/catalog?p=5",
+              "uniqueProductCount": 117,
+              "terminalSignal": "no-visible-next-link"
+            },
+            {
+              "categoryUrl": "https://www.omegawatches.cn/watches/de-ville/ladymatic/catalog",
+              "pages": [
+                {
+                  "url": "https://www.omegawatches.cn/watches/de-ville/ladymatic/catalog",
+                  "status": 200,
+                  "cardCount": 6,
+                  "next": null
+                }
+              ],
+              "terminalUrl": "https://www.omegawatches.cn/watches/de-ville/ladymatic/catalog",
+              "uniqueProductCount": 6,
+              "terminalSignal": "no-visible-next-link"
+            },
+            {
+              "categoryUrl": "https://www.omegawatches.cn/watches/de-ville/tresor/catalog",
+              "pages": [
+                {
+                  "url": "https://www.omegawatches.cn/watches/de-ville/tresor/catalog",
+                  "status": 200,
+                  "cardCount": 24,
+                  "next": "https://www.omegawatches.cn/watches/de-ville/tresor/catalog?p=2"
+                },
+                {
+                  "url": "https://www.omegawatches.cn/watches/de-ville/tresor/catalog?p=2",
+                  "status": 200,
+                  "cardCount": 37,
+                  "next": null
+                }
+              ],
+              "terminalUrl": "https://www.omegawatches.cn/watches/de-ville/tresor/catalog?p=2",
+              "uniqueProductCount": 37,
+              "terminalSignal": "no-visible-next-link"
+            },
+            {
+              "categoryUrl": "https://www.omegawatches.cn/watches/de-ville/prestige/catalog",
+              "pages": [
+                {
+                  "url": "https://www.omegawatches.cn/watches/de-ville/prestige/catalog",
+                  "status": 200,
+                  "cardCount": 24,
+                  "next": "https://www.omegawatches.cn/watches/de-ville/prestige/catalog?p=2"
+                },
+                {
+                  "url": "https://www.omegawatches.cn/watches/de-ville/prestige/catalog?p=2",
+                  "status": 200,
+                  "cardCount": 48,
+                  "next": "https://www.omegawatches.cn/watches/de-ville/prestige/catalog?p=3"
+                },
+                {
+                  "url": "https://www.omegawatches.cn/watches/de-ville/prestige/catalog?p=3",
+                  "status": 200,
+                  "cardCount": 72,
+                  "next": "https://www.omegawatches.cn/watches/de-ville/prestige/catalog?p=4"
+                },
+                {
+                  "url": "https://www.omegawatches.cn/watches/de-ville/prestige/catalog?p=4",
+                  "status": 200,
+                  "cardCount": 96,
+                  "next": "https://www.omegawatches.cn/watches/de-ville/prestige/catalog?p=5"
+                },
+                {
+                  "url": "https://www.omegawatches.cn/watches/de-ville/prestige/catalog?p=5",
+                  "status": 200,
+                  "cardCount": 111,
+                  "next": null
+                }
+              ],
+              "terminalUrl": "https://www.omegawatches.cn/watches/de-ville/prestige/catalog?p=5",
+              "uniqueProductCount": 111,
+              "terminalSignal": "no-visible-next-link"
+            },
+            {
+              "categoryUrl": "https://www.omegawatches.cn/watches/de-ville/tourbillon/catalog",
+              "pages": [
+                {
+                  "url": "https://www.omegawatches.cn/watches/de-ville/tourbillon/catalog",
+                  "status": 200,
+                  "cardCount": 2,
+                  "next": null
+                }
+              ],
+              "terminalUrl": "https://www.omegawatches.cn/watches/de-ville/tourbillon/catalog",
+              "uniqueProductCount": 2,
+              "terminalSignal": "no-visible-next-link"
+            }
+          ],
+          "terminalCondition": "All 16 category page chains returned HTTP 200; every terminal page had no visible 加载更多 link; category and landing family totals both sum to 586."
+        },
+        "marketReconciliation": {
+          "previousMarketRefs": 579,
+          "categoryMatchedRefs": 572,
+          "categoryRefsAbsentFromMarket": 14,
+          "marketRefsAbsentFromCompleteCategories": 7,
+          "newlyUntrackedObservedReferences": [
+            "210.30.42.20.01.023",
+            "210.30.42.20.01.029",
+            "210.30.42.20.03.004",
+            "210.30.42.20.03.005",
+            "210.83.42.20.01.001",
+            "210.83.42.20.03.001",
+            "220.10.38.20.02.004",
+            "220.10.38.20.03.006",
+            "220.10.41.21.01.003",
+            "220.10.41.21.02.005",
+            "220.10.41.21.03.007",
+            "220.10.41.21.10.002",
+            "220.50.41.21.02.004",
+            "522.30.38.50.04.001"
+          ],
+          "notListedReferences": [
+            "220.10.38.20.02.001",
+            "220.10.38.20.03.001",
+            "220.10.41.21.01.001",
+            "220.10.41.21.02.001",
+            "220.10.41.21.03.004",
+            "220.10.41.21.10.001",
+            "424.10.33.20.52.001"
+          ]
+        },
+        "networkDiscovery": {
+          "attempted": true,
+          "tool": "Playwright browser_network_requests",
+          "finding": "Live network requests were inspected; no reusable category JSON/XHR or StoreConfig response was identified. Category HTML rendered product card prices and references.",
+          "limitation": "External assets.giocdn.com SDK failed DNS in the browser session; category DOM remained available."
+        },
+        "errors": {
+          "categoryHttpErrors": 0,
+          "unresolvedNextPages": 0
+        }
+      }
+    },
+    {
+      "attemptId": "targeted-pdp-recheck-run-1",
+      "originalRunDirectory": "data/evidence/omega/CN/2026-10-11/targeted-pdp-recheck-run-1",
+      "collectionSummary": {
+        "brandId": "omega",
+        "marketCode": "CN",
+        "mode": "targeted-pdp-retry",
+        "observedAtUtcWindow": [
+          "2026-10-11T07:37:04Z",
+          "2026-10-11T07:37:29Z"
+        ],
+        "attempts": 3,
+        "successes": 3,
+        "method": "Sequential direct navigation to official product URLs in Playwright real browser; rendered page title, locale, reference, price and CTA captured.",
+        "scope": "Representative retry samples from the previously unchecked/failed target-market PDP groups.",
+        "fullPendingGroupRechecked": false,
+        "evidence": "observations.json"
+      }
+    }
+  ]
+}

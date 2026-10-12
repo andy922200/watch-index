@@ -1,0 +1,30 @@
+{
+  "brandId": "omega",
+  "marketCode": "CH",
+  "runId": 2,
+  "overall": "PARTIAL — no formal files updated",
+  "checks": {
+    "officialTargetMarket": "NOT RUN: official Swiss page did not render; current CH/de-CH/currency signals unavailable. Baseline fields do not count as current verification.",
+    "networkDiscovery": "FAIL: two GETs to official CH entry both net::ERR_HTTP2_PROTOCOL_ERROR; no response body.",
+    "fullListingAndPagination": "NOT RUN: 0/16 categories collected; no current terminal signals.",
+    "pricesAndListingStatus": "NOT RUN: no current observations and no inference from prior status.",
+    "PdpCtaStatusValidation": "NOT RUN.",
+    "currentSourceReconciliation": "NOT RUN.",
+    "historyCandidateAndSchema": "NOT RUN; no candidate or formal write.",
+    "evidenceStrictJson": "PASS: current checkpoint/collection/validation docs parsed with duplicate-key and invalid-constant rejection.",
+    "baselineProtection": "PASS: market/history/catalog hashes are unchanged."
+  },
+  "limitations": [
+    "Official page inaccessible after the one allowed retry.",
+    "No current price, status, or completeness claim.",
+    "Historical 2026-09-19 evidence not used for this run."
+  ],
+  "evidenceDirectory": "data/evidence/omega/CH/2026-10-08/price-update-run-2/",
+  "readmeUpdate": "NOT REQUIRED for price-only update.",
+  "evidenceConsolidation": {
+    "status": "PASS",
+    "itemsPreserved": 1,
+    "targetFile": "collection-summary.json",
+    "integrity": "Each embedded item carries its source filename and SHA-256."
+  }
+}

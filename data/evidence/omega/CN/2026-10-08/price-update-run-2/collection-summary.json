@@ -1,0 +1,241 @@
+{
+  "brandId": "omega",
+  "marketCode": "CN",
+  "runId": 2,
+  "collectionDate": "2026-10-08",
+  "source": {
+    "entryUrl": "https://www.omegawatches.cn/watches",
+    "locale": "zh-Hans-CN",
+    "currencyObserved": "CNY (¥)",
+    "selectorEvidence": "NOT RUN in persisted capture; see official-entry-rendered.json. Current selector state was not retained as structured evidence.",
+    "networkEvidence": [
+      "network-requests-last-pdp.txt",
+      "network-requests-tourbillon-pdp.txt"
+    ],
+    "networkFinding": "Actual browser network requests were inspected. The visible DOM contained product list content; filtered request captures showed supporting translations/messages and user-manual requests, but no category JSON/XHR dataset was identified. External assets.giocdn.com SDK failed with net::ERR_NAME_NOT_RESOLVED in the captured PDP request list; product DOM remained rendered."
+  },
+  "homepageFamilyCounts": {
+    "Seamaster": 208,
+    "Speedmaster": 96,
+    "Constellation": 126,
+    "De Ville": 156,
+    "sum": 586,
+    "sourceEvidence": "official-entry.json"
+  },
+  "categoryTraversal": {
+    "categoryCount": 16,
+    "categoryPageCountSum": 585,
+    "categories": [
+      {
+        "name": "Aqua Terra 150m",
+        "count": 108,
+        "uniqueProductUrls": 108,
+        "evidence": "aqua-terra.json",
+        "pages": "p=1 through p=5; no next link at terminal page"
+      },
+      {
+        "name": "Diver 300M",
+        "count": 65,
+        "uniqueProductUrls": 65,
+        "evidence": "diver-300m-terminal.json",
+        "pages": "24, 48, 65 cumulative; p=3 no next link"
+      },
+      {
+        "name": "Planet Ocean",
+        "count": 17,
+        "uniqueProductUrls": 17,
+        "evidence": "planet-ocean.json",
+        "pages": "single rendered page; no next link"
+      },
+      {
+        "name": "Seamaster Heritage",
+        "count": 17,
+        "uniqueProductUrls": 17,
+        "evidence": "seamaster-heritage.json",
+        "pages": "single rendered page; no next link"
+      },
+      {
+        "name": "Seamaster Instruments",
+        "count": 1,
+        "uniqueProductUrls": 1,
+        "evidence": "seamaster-instruments.json",
+        "pages": "single rendered page; no next link"
+      },
+      {
+        "name": "Moonwatch Professional",
+        "count": 24,
+        "uniqueProductUrls": 24,
+        "evidence": "moonwatch-professional.json",
+        "pages": "single rendered page; no next link"
+      },
+      {
+        "name": "Speedmaster Heritage",
+        "count": 16,
+        "uniqueProductUrls": 16,
+        "evidence": "speedmaster-heritage.json",
+        "pages": "single rendered page; no next link"
+      },
+      {
+        "name": "Dark Side of the Moon",
+        "count": 8,
+        "uniqueProductUrls": 8,
+        "evidence": "dark-side-of-the-moon.json",
+        "pages": "single rendered page; no next link; initial navigation call timed out although full DOM rendered"
+      },
+      {
+        "name": "Speedmaster 38mm",
+        "count": 11,
+        "uniqueProductUrls": 11,
+        "evidence": "speedmaster-38-mm.json",
+        "pages": "single rendered page; no next link; homepage showed 12, category page currently showed 11"
+      },
+      {
+        "name": "Speedmaster Two Counters",
+        "count": 36,
+        "uniqueProductUrls": 36,
+        "evidence": "speedmaster-two-counters.json",
+        "pages": "24 then 36 cumulative; p=2 no next link"
+      },
+      {
+        "name": "Constellation Observatory",
+        "count": 9,
+        "uniqueProductUrls": 9,
+        "evidence": "constellation-observatory.json",
+        "pages": "single rendered page; no next link"
+      },
+      {
+        "name": "Constellation",
+        "count": 117,
+        "uniqueProductUrls": 117,
+        "evidence": "constellation-recheck.json",
+        "pages": "initial click traversal p=1 through p=5 was captured in constellation.json with 3 repeated product URLs; direct terminal reload p=5 independently rendered 117/117 unique URLs and no next link"
+      },
+      {
+        "name": "De Ville Ladymatic",
+        "count": 6,
+        "uniqueProductUrls": 6,
+        "evidence": "de-ville-ladymatic.json",
+        "pages": "single rendered page; no next link"
+      },
+      {
+        "name": "De Ville Trésor",
+        "count": 37,
+        "uniqueProductUrls": 37,
+        "evidence": "de-ville-tresor.json",
+        "pages": "24 then 37 cumulative; p=2 no next link"
+      },
+      {
+        "name": "De Ville Prestige",
+        "count": 111,
+        "uniqueProductUrls": 111,
+        "evidence": "de-ville-prestige-recheck.json",
+        "pages": "initial click traversal p=1 through p=5 was captured in de-ville-prestige.json with 1 repeated product URL; direct terminal reload p=5 independently rendered 111/111 unique URLs and no next link"
+      },
+      {
+        "name": "De Ville Tourbillon",
+        "count": 2,
+        "uniqueProductUrls": 2,
+        "evidence": "de-ville-tourbillon.json",
+        "pages": "single rendered page; no next link"
+      }
+    ],
+    "firstVsReload": "Initial click traversals for Constellation and De Ville Prestige had repeated URLs; direct terminal reloads showed clean unique URLs. Both observations are retained."
+  },
+  "trackedMarketReconciliation": {
+    "targetMarketRefCount": 579,
+    "exactProductUrlMatchesInCategoryLists": 572,
+    "trackedRefsAbsentFromCurrentCategoryLists": 7,
+    "officialCategoryUrlsOutsideTargetMarket": 13,
+    "uniqueCategoryUrls": 585,
+    "missingTrackedRefsEvidence": "cta-status-review.json and missing-pdp-*.json",
+    "unmatchedTrackedRefs": [
+      "220.10.38.20.02.001",
+      "220.10.38.20.03.001",
+      "220.10.41.21.01.001",
+      "220.10.41.21.02.001",
+      "220.10.41.21.03.004",
+      "220.10.41.21.10.001",
+      "424.10.33.20.52.001"
+    ],
+    "unmatchedRefPdpFindings": "Seven existing official market PDP URLs were directly observed. Six expose a current public price; five show 添加至购物袋 or 立即预订, one explicitly says the item is temporarily unavailable for online purchase and offers wishlist/subscribe/contact. The remaining De Ville PDP shows 联系我们 and no public price."
+  },
+  "cardObservationSummary": {
+    "categoryRows": 585,
+    "missingCardPrices": 0,
+    "cardCtaCountsForTrackedMarketRefs": {
+      "立即选购": 268,
+      "立即预订": 162,
+      "立即订阅": 116,
+      "详细信息": 25,
+      "noRecognizedCta": 1,
+      "notInCurrentCategoryButPdpObserved": 7
+    },
+    "fullTrackedRows": "cta-status-review.json"
+  },
+  "pdpCtaSamples": [
+    "pdp-cta-sample-diver-shop.json",
+    "pdp-cta-sample-diver-reserve.json",
+    "pdp-cta-sample-diver-subscribe.json",
+    "pdp-cta-sample-diver-details.json",
+    "pdp-cta-sample-deville-shop.json",
+    "pdp-cta-sample-deville-reserve.json",
+    "pdp-cta-sample-deville-subscribe.json",
+    "pdp-cta-sample-deville-details.json"
+  ],
+  "retryAndErrorRecord": [
+    "Diver direct navigation initially returned ERR_CONNECTION_CLOSED; after cooldown, one retry by clicking the official rendered homepage category link succeeded and full pagination completed.",
+    "Dark Side of the Moon navigation timed out at 60 seconds, but the page rendered 8/8 cards and no next link; the rendered DOM was captured.",
+    "Two Counters first navigation returned net::ERR_NETWORK_CHANGED. After 30 seconds without a second navigation, the page rendered 24/36; clicking its visible load-more link completed the page at 36/36.",
+    "Some category pages emitted browser console errors while the category card DOM rendered; relevant network request captures are retained."
+  ],
+  "historyWrite": "NOT WRITTEN",
+  "evidenceConsolidation": {
+    "status": "PASS",
+    "targetFile": "observations.json#/consolidatedSupplementalEvidence",
+    "itemsAdded": 41,
+    "sourceFiles": [
+      "aqua-terra.json",
+      "checkpoint.json",
+      "constellation-observatory.json",
+      "constellation-recheck.json",
+      "constellation.json",
+      "cta-status-review.json",
+      "dark-side-of-the-moon.json",
+      "de-ville-ladymatic.json",
+      "de-ville-prestige-recheck.json",
+      "de-ville-prestige.json",
+      "de-ville-tourbillon.json",
+      "de-ville-tresor.json",
+      "diver-300m-terminal.json",
+      "final-checkpoint.json",
+      "missing-pdp-220.10.38.20.02.001.json",
+      "missing-pdp-220.10.38.20.03.001.json",
+      "missing-pdp-220.10.41.21.01.001.json",
+      "missing-pdp-220.10.41.21.02.001.json",
+      "missing-pdp-220.10.41.21.03.004.json",
+      "missing-pdp-220.10.41.21.10.001.json",
+      "missing-pdp-424.10.33.20.52.001.json",
+      "moonwatch-professional.json",
+      "network-requests-last-pdp.txt",
+      "network-requests-tourbillon-pdp.txt",
+      "official-entry-rendered.json",
+      "official-entry.json",
+      "pdp-cta-sample-deville-details.json",
+      "pdp-cta-sample-deville-reserve.json",
+      "pdp-cta-sample-deville-shop.json",
+      "pdp-cta-sample-deville-subscribe.json",
+      "pdp-cta-sample-diver-details.json",
+      "pdp-cta-sample-diver-reserve.json",
+      "pdp-cta-sample-diver-shop.json",
+      "pdp-cta-sample-diver-subscribe.json",
+      "planet-ocean.json",
+      "seamaster-heritage.json",
+      "seamaster-instruments.json",
+      "speedmaster-38-mm.json",
+      "speedmaster-heritage.json",
+      "speedmaster-two-counters.json",
+      "two-counters-attempt.json"
+    ],
+    "preservation": "Original parsed JSON/text content is embedded in consolidatedSupplementalEvidence with source filename and SHA-256."
+  }
+}

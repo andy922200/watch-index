@@ -1,0 +1,78 @@
+{
+  "brandId": "omega",
+  "marketCode": "HK",
+  "runId": 2,
+  "validatedAt": "2026-10-08T13:51:38Z",
+  "strictJsonAndSchema": {
+    "status": "PARTIAL",
+    "details": "嚴格 JSON PASS；完整 JSON Schema validator NOT RUN（驗證器不可用）；手動檢查 schema shape PASS。"
+  },
+  "marketHistoryIntegrity": {
+    "status": "PASS",
+    "details": "HK Omega market 551 refs 與 history 551 series 一對一；marketCode/brandId 一致；runId 2 recordCount 551。"
+  },
+  "priceStatusConsistency": {
+    "status": "PASS",
+    "details": "listed 254、retailer-only 291、not-listed 6；listed/retailer-only 為非負整數 HKD；not-listed price=null；run2 僅新增297個狀態點。"
+  },
+  "evidencePriceTraceability": "PASS: 545卡片價格與36個 market Details PDP逐筆對齊；六個 missing refs PDP明示停售。",
+  "sourceCompleteness": {
+    "status": "PASS for existing market refs; NOT PASS / partial for full-site aggregation",
+    "details": "既有市場551 refs完整對帳：545目前分類卡+6個明示停售PDP。全站入口total552與分類 union558存在官方口徑差異，差6在Seamaster。"
+  },
+  "independentOfficialSpotCheck": {
+    "status": "PASS",
+    "details": "42 Details PDP、8個CTA route PDP與6個停售PDP直接以香港官網渲染頁核查。"
+  },
+  "historyPrefixAndProtection": {
+    "status": "PASS",
+    "details": "run1 collectionRun與所有run1價格點是新版history前綴；run2僅追加297個狀態點。未改market、catalog、schema、其他市場或policy。"
+  },
+  "nicknameResearch": {
+    "status": "NOT RUN (out of scope)"
+  },
+  "travelerRefundPolicy": "NOT RUN; unchanged",
+  "limitations": [
+    "官方首頁family總數552與子分類唯一商品合計558不一致，差額在Seamaster；本次市場既有551 refs仍逐款回對為545現行卡片+6逐款停售。",
+    "13個現行分類refs不屬既有HK market，本次列為out-of-scope，未修改market/catalog/history。"
+  ],
+  "strictJson": {
+    "status": "PASS",
+    "details": "Price history、market、schema 與本 run 三份 evidence 均以拒絕重複 key 和 NaN/Infinity 的 parser 驗證。"
+  },
+  "jsonSchema": {
+    "status": "NOT RUN",
+    "details": "環境未安裝 jsonschema、fastjsonschema、Ajv 或 check-jsonschema；未安裝依賴。"
+  },
+  "manualSchemaShape": {
+    "status": "PASS",
+    "details": "market/history 必填與頂層允許欄位、schemaVersion、型別/狀態價格條件已按目標 schema 手動檢查；完整 JSON Schema validator NOT RUN。"
+  },
+  "evidenceTraceability": {
+    "status": "PASS",
+    "details": "558 個唯一官方分類ref均保存卡片價格/CTA；545既有ref卡片與36 PDP價格逐款相符；6個缺席ref均各有停售PDP；兩類CTA各4個跨系列PDP路徑樣本。"
+  },
+  "catalogRelationship": {
+    "status": "NOT RUN",
+    "details": "依單一市場工作範圍未讀取Omega catalog；驗證既有HK market與history內部對帳。"
+  },
+  "knownLimitations": [
+    "完整 JSON Schema 驗證器不可用，故只完成嚴格 JSON 與手動 schema shape 檢查。",
+    "官方首頁家族總數552與16分類 union558差6；差額為Seamaster子分類總和209 vs 首頁203，保留NOT PASS/partial。",
+    "13個目前分類reference不在既有市場範圍，未納入 history。"
+  ],
+  "schemaValidation": {
+    "status": "NOT RUN",
+    "details": "jsonschema、fastjsonschema、Ajv、check-jsonschema 均不可用；manual schema shape check PASS。"
+  },
+  "statusPointChanges": {
+    "runId": 2,
+    "pointsAdded": 297,
+    "listedUnchanged": 254,
+    "becameRetailerOnly": 291,
+    "becameNotListed": 6,
+    "priceChangesForPresentCards": 0,
+    "oldPricesForDiscontinuedRefs": 49500,
+    "newPriceForNotListed": null
+  }
+}

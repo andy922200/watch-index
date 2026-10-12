@@ -1,0 +1,30 @@
+{
+  "brandId": "omega",
+  "marketCode": "ES",
+  "runId": 2,
+  "overall": "PARTIAL — not a price update; no formal data changed",
+  "checks": {
+    "strictJson": "PASS for saved checkpoint, collection-summary and validation-summary after final parse.",
+    "officialTargetMarket": "NOT RUN: official page did not render; es-ES / Spain / EUR conditions could not be verified this run. Existing baseline locale and currency are not treated as current source verification.",
+    "networkDiscovery": "FAIL: two official entry GETs, both net::ERR_HTTP2_PROTOCOL_ERROR; no response body.",
+    "fullListingAndPagination": "NOT RUN: 0/16 categories collected; no current unique ref count or terminal signals.",
+    "priceAndListingStatus": "NOT RUN: no current observations; no status inferred from the old run.",
+    "PdpCtaValidation": "NOT RUN.",
+    "candidateAndHistoryAppend": "NOT RUN; history left unchanged.",
+    "schemaValidation": "NOT RUN for formal data because no formal data was written.",
+    "baselineProtection": "PASS: ES market/history/catalog hashes match recorded baseline."
+  },
+  "knownLimitations": [
+    "Official ES source inaccessible through Playwright after one retry following 10-second cooldown.",
+    "No current price, listing status, or completeness claim can be made.",
+    "Existing evidence from 2026-09-20 is historical only."
+  ],
+  "evidenceDirectory": "data/evidence/omega/ES/2026-10-08/price-update-run-2/",
+  "readmeUpdate": "NOT REQUIRED for pure price update.",
+  "evidenceConsolidation": {
+    "status": "PASS",
+    "itemsPreserved": 1,
+    "targetFile": "collection-summary.json",
+    "integrity": "Each embedded item carries its source filename and SHA-256."
+  }
+}

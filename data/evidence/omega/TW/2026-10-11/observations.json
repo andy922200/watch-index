@@ -1,0 +1,302 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "TW",
+  "collectionDate": "2026-10-11",
+  "sourceAttemptCount": 2,
+  "note": "Original observation documents are preserved verbatim by attempt; observations are not deduplicated or reconciled.",
+  "attemptObservations": [
+    {
+      "attemptId": "full-category-price-validation-run-2",
+      "originalRunDirectory": "data/evidence/omega/TW/2026-10-11/full-category-price-validation-run-2",
+      "observations": {
+        "brandId": "omega",
+        "marketCode": "TW",
+        "locale": "zh-Hant-TW",
+        "currencyCode": "TWD",
+        "sourceUrl": "https://www.omegawatches.com.tw/watches",
+        "observedAtUtcWindow": "2026-10-11T07:35:00Z/2026-10-11T08:10:00Z",
+        "collectionMethod": "Official rendered Taiwan store: 16 category chains traversed to terminal page, then direct product pages opened for all 13 category refs missing from the existing market.",
+        "categoryReconciliation": {
+          "homepageVisibleFamilyCounts": {
+            "Seamaster": 202,
+            "Speedmaster": 95,
+            "Constellation": 128,
+            "De Ville": 127
+          },
+          "homepageVisibleSum": 552,
+          "categoryUniqueReferenceCount": 558,
+          "categoryUniqueProductUrlCount": 558,
+          "categoryFamilyUniqueCounts": {
+            "Seamaster": 208,
+            "Speedmaster": 95,
+            "Constellation": 128,
+            "De Ville": 127
+          },
+          "categoriesTraversed": 16,
+          "allObservedCategoryResponsesHttp200": true,
+          "terminalNextLinkCount": 0,
+          "mismatch": "Full category traversal exceeds homepage family totals by 6. Seamaster category total is 208 vs homepage 202; homepage and complete traversal have not been reconciled to a single official count."
+        },
+        "productPageCandidateObservations": [
+          {
+            "reference": "210.30.42.20.01.023",
+            "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023",
+            "locale": "zh-Hant-TW",
+            "observedDuringUtc": "2026-10-11T08:04:00Z/2026-10-11T08:10:00Z",
+            "renderedTitleExcerpt": "「惡魔黨」限定款",
+            "renderedCaseDescription": "42毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+            "priceTextObserved": "NT$261,000",
+            "priceAmountTwd": 261000,
+            "ctaTextObserved": [
+              "目前無法於線上選購。請加入願望清單。",
+              "通知我",
+              "聯絡專賣店"
+            ],
+            "listingStatusInterpretation": "retailer-only",
+            "renderedLocaleConfirmed": true
+          },
+          {
+            "reference": "210.30.42.20.01.029",
+            "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029",
+            "locale": "zh-Hant-TW",
+            "observedDuringUtc": "2026-10-11T08:04:00Z/2026-10-11T08:10:00Z",
+            "renderedTitleExcerpt": "「惡魔黨」限量版腕錶組",
+            "renderedCaseDescription": "42毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+            "priceTextObserved": "NT$2,717,000",
+            "priceAmountTwd": 2717000,
+            "ctaTextObserved": [
+              "聯絡專賣店"
+            ],
+            "listingStatusInterpretation": "retailer-only",
+            "renderedLocaleConfirmed": true
+          },
+          {
+            "reference": "210.30.42.20.03.004",
+            "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003004",
+            "locale": "zh-Hant-TW",
+            "observedDuringUtc": "2026-10-11T08:04:00Z/2026-10-11T08:10:00Z",
+            "renderedTitleExcerpt": "James Bond限定款",
+            "renderedCaseDescription": "42毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+            "priceTextObserved": "NT$261,000",
+            "priceAmountTwd": 261000,
+            "ctaTextObserved": [
+              "目前無法於線上選購。請加入願望清單。",
+              "通知我",
+              "聯絡專賣店"
+            ],
+            "listingStatusInterpretation": "retailer-only",
+            "renderedLocaleConfirmed": true
+          },
+          {
+            "reference": "210.30.42.20.03.005",
+            "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005",
+            "locale": "zh-Hant-TW",
+            "observedDuringUtc": "2026-10-11T08:04:00Z/2026-10-11T08:10:00Z",
+            "renderedTitleExcerpt": "「詹姆斯龐德」限量版腕錶組",
+            "renderedCaseDescription": "42毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+            "priceTextObserved": "NT$2,717,000",
+            "priceAmountTwd": 2717000,
+            "ctaTextObserved": [
+              "聯絡專賣店"
+            ],
+            "listingStatusInterpretation": "retailer-only",
+            "renderedLocaleConfirmed": true
+          },
+          {
+            "reference": "210.83.42.20.01.001",
+            "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001",
+            "locale": "zh-Hant-TW",
+            "observedDuringUtc": "2026-10-11T08:04:00Z/2026-10-11T08:10:00Z",
+            "renderedTitleExcerpt": "「007：惡魔四伏」限量版腕錶組",
+            "renderedCaseDescription": "42毫米, 鉑金-金錶殼 搭配 鱷魚皮錶帶",
+            "priceTextObserved": "NT$2,717,000",
+            "priceAmountTwd": 2717000,
+            "ctaTextObserved": [
+              "聯絡專賣店"
+            ],
+            "listingStatusInterpretation": "retailer-only",
+            "renderedLocaleConfirmed": true
+          },
+          {
+            "reference": "210.83.42.20.03.001",
+            "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001",
+            "locale": "zh-Hant-TW",
+            "observedDuringUtc": "2026-10-11T08:04:00Z/2026-10-11T08:10:00Z",
+            "renderedTitleExcerpt": "「詹姆斯龐德」限量版腕錶組",
+            "renderedCaseDescription": "42毫米, 鉑金-金錶殼 搭配 鱷魚皮錶帶",
+            "priceTextObserved": "NT$2,717,000",
+            "priceAmountTwd": 2717000,
+            "ctaTextObserved": [
+              "聯絡專賣店"
+            ],
+            "listingStatusInterpretation": "retailer-only",
+            "renderedLocaleConfirmed": true
+          },
+          {
+            "reference": "220.10.38.20.02.004",
+            "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004",
+            "locale": "zh-Hant-TW",
+            "observedDuringUtc": "2026-10-11T08:04:00Z/2026-10-11T08:10:00Z",
+            "renderedTitleExcerpt": "Aqua Terra 150米系列",
+            "renderedCaseDescription": "38毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+            "priceTextObserved": "NT$226,000",
+            "priceAmountTwd": 226000,
+            "ctaTextObserved": [
+              "目前無法於線上選購。請加入願望清單。",
+              "通知我",
+              "聯絡專賣店"
+            ],
+            "listingStatusInterpretation": "retailer-only",
+            "renderedLocaleConfirmed": true
+          },
+          {
+            "reference": "220.10.38.20.03.006",
+            "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006",
+            "locale": "zh-Hant-TW",
+            "observedDuringUtc": "2026-10-11T08:04:00Z/2026-10-11T08:10:00Z",
+            "renderedTitleExcerpt": "Aqua Terra 150米系列",
+            "renderedCaseDescription": "38毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+            "priceTextObserved": "NT$226,000",
+            "priceAmountTwd": 226000,
+            "ctaTextObserved": [
+              "目前無法於線上選購。請加入願望清單。",
+              "通知我",
+              "聯絡專賣店"
+            ],
+            "listingStatusInterpretation": "retailer-only",
+            "renderedLocaleConfirmed": true
+          },
+          {
+            "reference": "220.10.41.21.01.003",
+            "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003",
+            "locale": "zh-Hant-TW",
+            "observedDuringUtc": "2026-10-11T08:04:00Z/2026-10-11T08:10:00Z",
+            "renderedTitleExcerpt": "Aqua Terra 150米系列",
+            "renderedCaseDescription": "41毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+            "priceTextObserved": "NT$226,000",
+            "priceAmountTwd": 226000,
+            "ctaTextObserved": [
+              "目前無法於線上選購。請加入願望清單。",
+              "通知我",
+              "聯絡專賣店"
+            ],
+            "listingStatusInterpretation": "retailer-only",
+            "renderedLocaleConfirmed": true
+          },
+          {
+            "reference": "220.10.41.21.02.005",
+            "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005",
+            "locale": "zh-Hant-TW",
+            "observedDuringUtc": "2026-10-11T08:04:00Z/2026-10-11T08:10:00Z",
+            "renderedTitleExcerpt": "Aqua Terra 150米系列",
+            "renderedCaseDescription": "41毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+            "priceTextObserved": "NT$226,000",
+            "priceAmountTwd": 226000,
+            "ctaTextObserved": [
+              "目前無法於線上選購。請加入願望清單。",
+              "通知我",
+              "聯絡專賣店"
+            ],
+            "listingStatusInterpretation": "retailer-only",
+            "renderedLocaleConfirmed": true
+          },
+          {
+            "reference": "220.10.41.21.03.007",
+            "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007",
+            "locale": "zh-Hant-TW",
+            "observedDuringUtc": "2026-10-11T08:04:00Z/2026-10-11T08:10:00Z",
+            "renderedTitleExcerpt": "Aqua Terra 150米系列",
+            "renderedCaseDescription": "41毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+            "priceTextObserved": "NT$226,000",
+            "priceAmountTwd": 226000,
+            "ctaTextObserved": [
+              "目前無法於線上選購。請加入願望清單。",
+              "通知我",
+              "聯絡專賣店"
+            ],
+            "listingStatusInterpretation": "retailer-only",
+            "renderedLocaleConfirmed": true
+          },
+          {
+            "reference": "220.10.41.21.10.002",
+            "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002",
+            "locale": "zh-Hant-TW",
+            "observedDuringUtc": "2026-10-11T08:04:00Z/2026-10-11T08:10:00Z",
+            "renderedTitleExcerpt": "Aqua Terra 150米系列",
+            "renderedCaseDescription": "41毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+            "priceTextObserved": "NT$226,000",
+            "priceAmountTwd": 226000,
+            "ctaTextObserved": [
+              "目前無法於線上選購。請加入願望清單。",
+              "通知我",
+              "聯絡專賣店"
+            ],
+            "listingStatusInterpretation": "retailer-only",
+            "renderedLocaleConfirmed": true
+          },
+          {
+            "reference": "220.50.41.21.02.004",
+            "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004",
+            "locale": "zh-Hant-TW",
+            "observedDuringUtc": "2026-10-11T08:04:00Z/2026-10-11T08:10:00Z",
+            "renderedTitleExcerpt": "Aqua Terra 150米系列",
+            "renderedCaseDescription": "41毫米, Moonshine™金錶殼 搭配 Moonshine™金",
+            "priceTextObserved": "NT$1,407,000",
+            "priceAmountTwd": 1407000,
+            "ctaTextObserved": [
+              "目前無法於線上選購。請加入願望清單。",
+              "通知我",
+              "聯絡專賣店"
+            ],
+            "listingStatusInterpretation": "retailer-only",
+            "renderedLocaleConfirmed": true
+          }
+        ],
+        "previousMarketComparison": {
+          "existingMarketRefs": 551,
+          "categoryMatchedExistingRefs": 545,
+          "categoryRefsAbsentFromMarket": 13,
+          "existingMarketRefsAbsentFromFullCategoryTraversal": 6,
+          "all545MatchedCurrentCategoryPricesEqualRun1History": true,
+          "priceDeltaCount": 0,
+          "sixAbsentRefsRetainedAndAppendedAsNotListed": [
+            "220.10.38.20.02.001",
+            "220.10.38.20.03.001",
+            "220.10.41.21.01.001",
+            "220.10.41.21.02.001",
+            "220.10.41.21.03.004",
+            "220.10.41.21.10.001"
+          ]
+        },
+        "statusCoverageLimitation": "110 of 111 previously pending wishlist-CTA PDP references remain unchecked. Existing listing statuses were retained for category-matched records without direct PDP confirmation."
+      }
+    },
+    {
+      "attemptId": "targeted-pdp-recheck-run-1",
+      "originalRunDirectory": "data/evidence/omega/TW/2026-10-11/targeted-pdp-recheck-run-1",
+      "observations": {
+        "brandId": "omega",
+        "marketCode": "TW",
+        "observations": [
+          {
+            "marketCode": "TW",
+            "reference": "220.50.38.20.03.001",
+            "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22050382003001",
+            "locale": "zh-Hant-TW",
+            "snapshotFileSha256": "a8fef381a97f967db91287cd72b485ee48e5504b491f5160121d8ea9e46d0aa5",
+            "rawRenderedSnapshotExcerpt": "- generic [active] [ref=f274e1]:\n  - generic:\n    - link \"Skip to content\" [ref=f274e2] [cursor=pointer]:\n      - /url: \"#contentarea\"\n    - banner [ref=f274e4]:\n      - generic [ref=f274e5]:\n        - paragraph [ref=f274e7]: 您可以親自至指定的歐米茄名品店取貨\n        - button \"关闭信息提示\" [ref=f274e8] [cursor=pointer]\n      - navigation \"Main\" [ref=f274e11]:\n        - generic [ref=f274e13]:\n          - generic [ref=f274e14]:\n            - list [ref=f274e15]:\n              - listitem [ref=f274e16]:\n                - list [ref=f274e17]:\n                  - listitem [ref=f274e18]:\n                    - link \"尋找專賣店\" [ref=f274e19] [cursor=pointer]:\n                      - /url: https://www.omegawatches.com.tw/store\n                  - listitem [ref=f274e20]:\n                    - link \"聯絡我們\" [ref=f274e21] [cursor=pointer]:\n                      - /url: https://www.omegawatches.com.tw/contact-us\n            - link [ref=f274e23] [cursor=pointer]:\n              - /url: /\n              - 'img \"Logo OMEGA watches: to home page\" [ref=f274e24]'\n            - list [ref=f274e32]:\n              - listitem [ref=f274e33]:\n                - button \"搜尋……\" [ref=f274e34] [cursor=pointer]\n              - listitem [ref=f274e37]:\n                - button \"我的帳戶\" [ref=f274e39] [cursor=pointer]\n              - listitem [ref=f274e42]:\n                - button \"Minicart\" [ref=f274e44] [cursor=pointer]\n          - list [ref=f274e49]:\n            - listitem [ref=f274e50]:\n              - button \"腕錶\" [ref=f274e51] [cursor=pointer]\n            - listitem [ref=f274e52]:\n              - button \"配件\" [ref=f274e53] [cursor=pointer]\n            - listitem [ref=f274e54]:\n              - button \"臻禮\" [ref=f274e55] [cursor=pointer]\n            - listitem [ref=f274e56]:\n              - button \"服務\" [ref=f274e57] [cursor=pointer]\n            - listitem [ref=f274e58]:\n              - button \"歐米茄世界\" [ref=f274e59] [cursor=pointer]\n        - dialog \"主選單\"\n    - img:\n      - generic:\n        - generic \"OMEGA\"\n        - generic \"constellation\"\n        - generic \"deville\"\n        - generic \"seamaster\"\n        - generic \"speedmaster\"\n        - generic \"特别系列\"\n  - generic [ref=f274e60]:\n    - main [ref=f274e61]:\n      - heading \"Breadcrumb\" [level=2] [ref=f274e62]\n      - navigation \"Breadcrumb\":\n        - list [ref=f274e63]:\n          - listitem \"expand breadcrumbs\" [ref=f274e64] [cursor=pointer]: ...\n          - listitem [ref=f274e65]:\n            - generic [ref=f274e66]: /\n            - link \"Aqua Terra 150米系列\" [ref=f274e67] [cursor=pointer]:\n              - /url: https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/catalog\n          - listitem [ref=f274e68]:\n            - generic [ref=f274e69]: /\n            - link \"Shades系列腕錶\" [ref=f274e70] [cursor=pointer]:\n              - /url: https://www.omegawatches.com.tw/watches/seamaster/aqua-terra-150m/shades/catalog\n          - listitem [ref=f274e71]:\n            - generic [ref=f274e72]: /\n            - generic [ref=f274e73]: 220.50.38.20.03.001\n      - generic [ref=f274e76]:\n        - generic [ref=f274e77]:\n          - generic [ref=f274e79]:\n            - list [ref=f274e80]:\n              - listitem [ref=f274e81]:\n                - button \"Open image gallery 1\" [ref=f274e82] [cursor=pointer]:\n                  - img \"海馬 Aqua Terra 150米系列 38毫米, Moonshine™金錶殼 搭配 Moonshine™金 - 220.50.38.20.03.001 - 影像 1\" [ref=f274e86]\n                - list [ref=f274e87]:\n                  - listitem [ref=f274e88]:\n                    - button \"加到願望清單\" [ref=f274e89] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f274e90]: \n                      - text: \n                  - listitem [ref=f274e91]:\n                    - button \"加入比較\" [ref=f274e92] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f274e93]: \n                - list [ref=f274e94]:\n                  - listitem [aria-hidden] [ref=f274e95]:\n                    - button [ref=f274e96] [cursor=pointer]:\n                      - generic [aria-hidden] [ref=f274e97]: \n                      - generic [ref=f274e98]: 線上試戴腕錶\n                - text:  \n              - listitem \"Open image gallery 2\" [ref=f274e99] [cursor=pointer]:\n                - img \"海馬 Aqua Terra 150米系列 38毫米, Moonshine™金錶殼 搭配 Moonshine™金 - 220.50.38.20.03.001 - 影像 2\" [ref=f274e103]\n              - listitem \"Open image gallery 3\" [ref=f274e104] [cursor=pointer]:\n                - img \"海馬 Aqua Terra 150米系列 38毫米, Moonshine™金錶殼 搭配 Moonshine™金 - 220.50.38.20.03.001 - 影像 3\" [ref=f274e108]\n              - listitem \"Open image gallery 4\" [ref=f274e109] [cursor=pointer]:\n                - img \"海馬 Aqua Terra 150米系列 38毫米, Moonshine™金錶殼 搭配 Moonshine™金 - 220.50.38.20.03.001 - 影像 4\" [ref=f274e113]\n              - listitem \"Open image gallery 5\" [ref=f274e114] [cursor=pointer]:\n                - img \"海馬 Aqua Terra 150米系列 38毫米, Moonshine™金錶殼 搭配 Moonshine™金 - 220.50.38.20.03.001 - 影像 5\" [ref=f274e118]\n              - listitem \"Open image gallery 6\" [ref=f274e119] [cursor=pointer]:\n                - img \"海馬 Aqua Terra 150米系列 38毫米, Moonshine™金錶殼 搭配 Moonshine™金 - 220.50.38.20.03.001 - 影像 6\" [ref=f274e123]\n              - listitem \"Open image gallery 7\" [ref=f274e124] [cursor=pointer]:\n                - img \"海馬 Aqua Terra 150米系列 38毫米, Moonshine™金錶殼 搭配 Moonshine™金 - 220.50.38.20.03.001 - 影像 7\" [ref=f274e128]\n            - button \"See 1 more images\" [ref=f274e129] [cursor=pointer]: +查看更多\n            - text:    \n          - generic [ref=f274e133]:\n            - generic [ref=f274e134]:\n              - heading \"海馬 Aqua Terra 150米系列 38毫米, Moonshine™金錶殼 搭配 Moonshine™金\" [level=1] [ref=f274e135]:\n                - generic [ref=f274e137]: 海馬\n                - generic [ref=f274e138]: Aqua Terra 150米系列\n                - generic [ref=f274e139]: 38毫米, Moonshine™金錶殼 搭配 Moonshine™金\n              - generic [ref=f274e140]:\n                - paragraph [ref=f274e142]: 220.50.38.20.03.001\n                - paragraph [ref=f274e144]:\n                  - generic [ref=f274e145]: NT$1,275,000\n              - generic [ref=f274e148]:\n                - generic [ref=f274e150]:\n                  - paragraph [ref=f274e151]: 目前無法於線上選購。請加入願望清單。\n                  - generic [ref=f274e152]:\n                    - textbox \"電郵\" [ref=f274e154]:\n                      - /placeholder: 電郵 *\n                    - button \"通知我\" [ref=f274e155] [cursor=pointer]\n                - button \" 聯絡專賣店\" [ref=f274e159] [cursor=pointer]:\n                  - generic [ref=f274e160]: \n                  - generic [ref=f274e161]: 聯絡專賣店\n              - list [ref=f274e162]:\n                - listitem [ref=f274e163]:\n                  - generic [ref=f274e165] [cursor=pointer]:\n                    - link [ref=f274e167]:\n                      - /url: https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22050382003001\n                      - paragraph [ref=f274e168]: selected\n                      - img \"海馬 38毫米, Moonshine™金錶殼 搭配 Moonshine™金 - 22050382003001\" [ref=f274e171]\n                    - text: \n                  - generic [ref=f274e172]: 已選擇\n                - listitem [ref=f274e173]:\n                  - generic [ref=f274e175] [cursor=pointer]:\n                    - link [ref=f274e177]:\n                      - /url: https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22012382010001\n                      - paragraph [ref=f274e178]\n                      - img \"海馬 38毫米, 不鏽鋼錶殼 搭配 橡膠錶帶 - 22012382010001\" [ref=f274e181]\n                    - text: \n                - listitem [ref=f274e182]:\n                  - generic [ref=f274e184] [cursor=pointer]:\n                    - link [ref=f274e186]:\n                      - /url: https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382010006\n                      - paragraph [ref=f274e187]\n                      - img \"海馬 38毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈 - 22010382010006\" [ref=f274e190]\n                    - text: \n                - listitem [ref=f274e191]:\n                  - generic [ref=f274e193] [cursor=pointer]:\n                    - link [ref=f274e195]:\n                      - /url: https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003001\n                      - paragraph [ref=f274e196]\n                      - img \"海馬 38毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈 - 22010382003001\" [ref=f274e199]\n                    - text: \n                - listitem [ref=f274e200]:\n                  - generic [ref=f274e202] [cursor=pointer]:\n                    - link [ref=f274e204]:\n                      - /url: https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22012382003001\n                      - paragraph [ref=f274e205]\n                      - img \"海馬 38毫米, 不鏽鋼錶殼 搭配 橡膠錶帶 - 22012382003001\" [ref=f274e208]\n                    - text: \n                - text: \n                - listitem [ref=f274e209]:\n                  - button \"See 25 more, click to open.\" [ref=f274e210] [cursor=pointer]:\n                    - generic [aria-hidden] [ref=f274e211]: \"+25\"\n              - text:                           \n              - generic [ref=f274e214]:\n                - button \"免費寄送和退換\" [ref=f274e215] [cursor=pointer]:\n                  - generic [aria-hidden] [ref=f274e216]: \n                - button \"安全付款\" [ref=f274e218] [cursor=pointer]:\n                  - generic [aria-hidden] [ref=f274e219]: \n                - button \"5年保固服務\" [ref=f274e221] [cursor=pointer]:\n                  - generic [aria-hidden] [ref=f274e222]: \n                - button \"瑞士製造\" [ref=f274e224] [cursor=pointer]:\n                  - generic [aria-hidden] [ref=f274e225]: \n            - generic [ref=f274e227]:\n              - button \"描述 \" [ref=f274e229] [cursor=pointer]\n              - button \"特色 \" [ref=f274e231] [cursor=pointer]\n              - generic [ref=f274e232]:\n                - button \"技術資料 \" [ref=f274e233] [cursor=pointer]\n                - text:    \n              - button \"錶鏈 \" [ref=f274e235] [cursor=pointer]",
+            "pdpPriceTextObserved": "NT$1,275,000",
+            "pdpCtaTextObserved": [
+              "目前無法於線上選購。請加入願望清單。",
+              "通知我",
+              "聯絡專賣店"
+            ],
+            "listingStatusInterpretationForThisReference": "retailer-only",
+            "snapshotObservedAtUtc": "2026-10-11T07:37:31.933Z"
+          }
+        ]
+      }
+    }
+  ]
+}

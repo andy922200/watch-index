@@ -1,0 +1,191 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "ES",
+  "collectionDate": "2026-10-11",
+  "sourceAttemptCount": 4,
+  "note": "Original validation results are preserved verbatim by attempt. This bundle does not promote any PARTIAL or NOT RUN result to PASS.",
+  "attemptValidations": [
+    {
+      "attemptId": "entry-retry-run-1",
+      "originalRunDirectory": "data/evidence/omega/ES/2026-10-11/entry-retry-run-1",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "ES",
+        "overall": "PARTIAL — official entry now renders; market completeness, current prices and PDP listing status have not been revalidated.",
+        "checks": {
+          "renderedOfficialEntry": "PASS",
+          "localeAndRegionalTitle": "PASS: URL locale, document language/title indicate target regional storefront.",
+          "currencyStoreConfig": "NOT RUN",
+          "fullCategoriesAndTerminalSignals": "NOT RUN",
+          "currentPriceAndListingStatus": "NOT RUN",
+          "formalMarketHistoryWrite": "NOT WRITTEN"
+        },
+        "limitations": [
+          "This entry retry is not a full market refresh and does not resolve the prior PARTIAL source-completeness validation.",
+          "Current visible family total is retained for comparison only; no category or product count reconciliation was performed."
+        ]
+      }
+    },
+    {
+      "attemptId": "entry-retry-run-2",
+      "originalRunDirectory": "data/evidence/omega/ES/2026-10-11/entry-retry-run-2",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "ES",
+        "overall": "PARTIAL — official regional entry unavailable during retry.",
+        "checks": {
+          "entryNavigation": "FAIL: net::ERR_HTTP2_PROTOCOL_ERROR",
+          "categoryClassification": "NOT RUN",
+          "currentPriceValidation": "NOT RUN",
+          "formalDataWrite": "NOT RUN: no source facts were rendered."
+        },
+        "limitations": [
+          "Direct official navigation repeated the HTTP/2 protocol error; no alternative access or price inference used."
+        ]
+      }
+    },
+    {
+      "attemptId": "watchfinder-retry-run-3",
+      "originalRunDirectory": "data/evidence/omega/ES/2026-10-11/watchfinder-retry-run-3",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "ES",
+        "overall": "PARTIAL (JSON Schema validation NOT RUN)",
+        "evidencePath": "data/evidence/omega/ES/2026-10-11/watchfinder-retry-run-3",
+        "checks": {
+          "officialMarketLocaleAndTitle": {
+            "status": "PASS",
+            "detail": "es-ES / Buscador de relojes | OMEGA ES®"
+          },
+          "fullPaginationStopAndOfficialCount": {
+            "status": "PASS",
+            "officialTotal": 563,
+            "uniqueObserved": 563,
+            "duplicates": 0,
+            "stopSignal": "Final official pagination link absent."
+          },
+          "newAndAbsentMarketConfigurationClassification": {
+            "status": "PASS",
+            "addedCount": 17,
+            "absentCount": 6,
+            "addedReferences": [
+              "21030422001023",
+              "21030422001029",
+              "21030422003004",
+              "21030422003005",
+              "21083422001001",
+              "21083422003001",
+              "22010382002004",
+              "22010382003006",
+              "22010412101003",
+              "22010412102005",
+              "22010412103007",
+              "22010412110002",
+              "22050412102004",
+              "51082000",
+              "51092000",
+              "51102000",
+              "52253455204001"
+            ],
+            "absentReferences": [
+              "22010382002001",
+              "22010382003001",
+              "22010412101001",
+              "22010412102001",
+              "22010412103004",
+              "22010412110001"
+            ]
+          },
+          "priceParsing": {
+            "status": "PASS",
+            "parsed": 563,
+            "total": 563,
+            "failures": [],
+            "existingReferencePriceChanges": 0,
+            "changeDetails": []
+          },
+          "purchaseChannelClassification": {
+            "status": "PASS",
+            "verifiedNovelCatalogConfigs": 4,
+            "unverifiedNewlyListedKnownCatalogConfigs": 0,
+            "detail": "All newly listed Omega references were individually checked on official localized product pages; primary purchase CTA and displayed card price were matched.",
+            "verifiedNewlyListedKnownCatalogConfigs": 13,
+            "individualProductPageClassifications": 17
+          },
+          "strictJsonSchemaAndCrossFileFormalData": {
+            "status": "NOT RUN",
+            "detail": "Cross-file checks passed; formal JSON Schema execution was not run because no local JSON Schema validator is installed (Python jsonschema and Node AJV are unavailable). No dependency was installed."
+          },
+          "priceHistoryAppendOnly": {
+            "status": "PASS",
+            "detail": "Each old collectionRuns array and every old priceSeries is an exact prefix of the updated target-market history, compared with HEAD."
+          },
+          "readmeSync": {
+            "status": "PASS",
+            "marketWatchCount": 569,
+            "catalogUnion": 607
+          },
+          "newModelBadgeClassification": {
+            "status": "PASS",
+            "badgeLabel": "Novedad",
+            "classifiedCount": 82,
+            "source": "Official Watch Finder badge HTML and complete official pagination."
+          },
+          "strictJsonParsing": {
+            "status": "PASS",
+            "filesChecked": 93,
+            "detail": "Strict duplicate-key and invalid-constant parsing completed for catalog, market, history, and schema JSON files."
+          },
+          "crossFileFormalData": {
+            "status": "PASS",
+            "detail": "Brand, marketCode, watchId, catalog links, history links, run IDs, price/status combinations, and per-file watchCount passed across the full repository."
+          },
+          "sourcePriceReconciliation": {
+            "status": "PASS",
+            "parsedAndMatchedNewPriceSeries": 17,
+            "existingPriceChanges": 0,
+            "officialRecordCount": 563
+          }
+        },
+        "independentSpotChecks": {
+          "status": "PARTIAL",
+          "detail": "Opened official product detail pages for every configuration absent from the global catalog (CTA and price) and two representative known-catalog additions per market."
+        },
+        "limitations": [
+          "Official Watch Finder list and all prices were captured completely.",
+          "No price changes were found among configurations already present in that market.",
+          "One official detail CTA sample per existing catalog reference is insufficient to classify all product purchase paths.",
+          "FR/IT localized new-model badges were not reliably extracted from every paginated state; badge classification remains incomplete."
+        ]
+      }
+    },
+    {
+      "attemptId": "pdp-channel-audit-run-4",
+      "originalRunDirectory": "data/evidence/omega/ES/2026-10-11/pdp-channel-audit-run-4",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "ES",
+        "overall": "PASS (JSON Schema validator NOT RUN)",
+        "checks": {
+          "officialRegionalPdpIdentity": "PASS: 546/546 fresh product responses returned HTTP 200, target es-ES storefront and matching reference; 17 same-day newly listed references are covered by prior direct PDP evidence.",
+          "currentPrices": "PASS: 563/563 active references have displayed EUR prices matching their latest formal price history.",
+          "purchaseChannelClassification": "PASS: 563/563 active references classified from the official primary purchase CTA; 68 existing records change from listed to retailer-only.",
+          "activeListingCoverage": "PASS: 546 existing active targets plus 17 same-day individually classified new listings = 563; 563 unique references equal the official active listing total.",
+          "statusHistoryAppendOnly": "PASS: runId 3 appended to all 563 active price-series without replacing prior points; six not-listed rows remain retained and unchanged.",
+          "strictJsonSchema": "NOT RUN: local validator unavailable in prior same-day validation; JSON parsed and cross-file invariants checked.",
+          "formalHistory": "PASS: run 3 adds points only when price or listing status changed; unchanged references remain represented by full observations without redundant adjacent price points; all earlier points retained.",
+          "activeHistoryReconciliation": "PASS: all 563 active observations reconcile with each series' final state; 68 changed series receive run 3 points.",
+          "strictJson": "PASS: 93 catalog, market, history and schema JSON files parse with duplicate-key and invalid-constant detection.",
+          "crossFileIntegrity": "PASS: market watchCount/unique identity, catalog and history relations, run metadata, price/status combinations and non-redundant history points validated.",
+          "schemaValidation": "NOT RUN: the workspace has no Draft 2020-12-compatible JSON Schema validator (Python jsonschema is unavailable; installed AJV is version 6)."
+        },
+        "limitations": [
+          "The 17 newly listed references reuse the same-day direct PDP observations preserved in watchfinder-retry-run-3; they were not reloaded during this exhaustive pre-existing-reference pass.",
+          "One browser-context fetch failed once and passed on retry in a fresh isolated context after selecting España in the official region selector.",
+          "Schema validation was NOT RUN because a compatible Draft 2020-12 validator is unavailable in this workspace."
+        ]
+      }
+    }
+  ]
+}

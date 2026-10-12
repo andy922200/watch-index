@@ -11,6 +11,16 @@
       "runId": 1,
       "collectedAt": "2026-09-22T04:31:11.479Z",
       "recordCount": 579
+    },
+    {
+      "runId": 2,
+      "collectedAt": "2026-10-11T07:48:39.634Z",
+      "recordCount": 7
+    },
+    {
+      "runId": 3,
+      "collectedAt": "2026-10-11T08:23:05Z",
+      "recordCount": 13
     }
   ],
   "priceSeries": {
@@ -1524,6 +1534,11 @@
         "runId": 1,
         "listingStatus": "listed",
         "price": 50800
+      },
+      {
+        "runId": 2,
+        "listingStatus": "not-listed",
+        "price": null
       }
     ],
     "omega:220.10.38.20.03.001": [
@@ -1531,6 +1546,11 @@
         "runId": 1,
         "listingStatus": "listed",
         "price": 50800
+      },
+      {
+        "runId": 2,
+        "listingStatus": "not-listed",
+        "price": null
       }
     ],
     "omega:220.10.38.20.03.003": [
@@ -1608,6 +1628,11 @@
         "runId": 1,
         "listingStatus": "listed",
         "price": 50800
+      },
+      {
+        "runId": 2,
+        "listingStatus": "not-listed",
+        "price": null
       }
     ],
     "omega:220.10.41.21.01.002": [
@@ -1622,6 +1647,11 @@
         "runId": 1,
         "listingStatus": "listed",
         "price": 50800
+      },
+      {
+        "runId": 2,
+        "listingStatus": "not-listed",
+        "price": null
       }
     ],
     "omega:220.10.41.21.02.002": [
@@ -1643,6 +1673,11 @@
         "runId": 1,
         "listingStatus": "listed",
         "price": 50800
+      },
+      {
+        "runId": 2,
+        "listingStatus": "not-listed",
+        "price": null
       }
     ],
     "omega:220.10.41.21.03.005": [
@@ -1664,6 +1699,11 @@
         "runId": 1,
         "listingStatus": "listed",
         "price": 50800
+      },
+      {
+        "runId": 2,
+        "listingStatus": "not-listed",
+        "price": null
       }
     ],
     "omega:220.10.43.22.03.001": [
@@ -2903,6 +2943,11 @@
         "runId": 1,
         "listingStatus": "listed",
         "price": 33100
+      },
+      {
+        "runId": 2,
+        "listingStatus": "not-listed",
+        "price": null
       }
     ],
     "omega:424.10.33.20.56.002": [
@@ -4065,6 +4110,97 @@
         "runId": 1,
         "listingStatus": "listed",
         "price": 1932200
+      }
+    ],
+    "omega:210.30.42.20.01.023": [
+      {
+        "runId": 3,
+        "listingStatus": "retailer-only",
+        "price": 61900
+      }
+    ],
+    "omega:210.30.42.20.01.029": [
+      {
+        "runId": 3,
+        "listingStatus": "retailer-only",
+        "price": 647000
+      }
+    ],
+    "omega:210.30.42.20.03.004": [
+      {
+        "runId": 3,
+        "listingStatus": "retailer-only",
+        "price": 61900
+      }
+    ],
+    "omega:210.30.42.20.03.005": [
+      {
+        "runId": 3,
+        "listingStatus": "retailer-only",
+        "price": 647000
+      }
+    ],
+    "omega:210.83.42.20.01.001": [
+      {
+        "runId": 3,
+        "listingStatus": "retailer-only",
+        "price": 647000
+      }
+    ],
+    "omega:210.83.42.20.03.001": [
+      {
+        "runId": 3,
+        "listingStatus": "retailer-only",
+        "price": 647000
+      }
+    ],
+    "omega:220.10.38.20.02.004": [
+      {
+        "runId": 3,
+        "listingStatus": "retailer-only",
+        "price": 53600
+      }
+    ],
+    "omega:220.10.38.20.03.006": [
+      {
+        "runId": 3,
+        "listingStatus": "retailer-only",
+        "price": 53600
+      }
+    ],
+    "omega:220.10.41.21.01.003": [
+      {
+        "runId": 3,
+        "listingStatus": "retailer-only",
+        "price": 53600
+      }
+    ],
+    "omega:220.10.41.21.02.005": [
+      {
+        "runId": 3,
+        "listingStatus": "retailer-only",
+        "price": 53600
+      }
+    ],
+    "omega:220.10.41.21.03.007": [
+      {
+        "runId": 3,
+        "listingStatus": "retailer-only",
+        "price": 53600
+      }
+    ],
+    "omega:220.10.41.21.10.002": [
+      {
+        "runId": 3,
+        "listingStatus": "retailer-only",
+        "price": 53600
+      }
+    ],
+    "omega:220.50.41.21.02.004": [
+      {
+        "runId": 3,
+        "listingStatus": "retailer-only",
+        "price": 335100
       }
     ]
   }

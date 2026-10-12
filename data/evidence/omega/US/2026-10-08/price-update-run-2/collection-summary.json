@@ -1,0 +1,131 @@
+{
+  "brandId": "omega",
+  "marketCode": "US",
+  "locale": "en-US",
+  "mode": "pure-price-update",
+  "runId": 2,
+  "status": "PARTIAL — official source entry unavailable; no current values collected",
+  "entryUrl": "https://www.omegawatches.com/en-us/watches",
+  "attemptWindowUtc": [
+    "2026-10-08T15:34:18Z",
+    "2026-10-08T15:34:54Z"
+  ],
+  "sourceDiscovery": {
+    "tool": "Playwright MCP real browser and network inspector",
+    "attempted": true,
+    "result": "FAIL",
+    "details": "Initial navigation and the one cooldown retry both failed with net::ERR_HTTP2_PROTOCOL_ERROR. Network list confirms two failed GET requests with no response body."
+  },
+  "fullCollection": {
+    "currentMarketConditionVerified": false,
+    "categoriesPlanned": 16,
+    "categoriesCompleted": 0,
+    "currentUniqueRefsObserved": 0,
+    "currentPrices": 0,
+    "currentStatuses": 0,
+    "paginationStopEvidence": "NOT RUN"
+  },
+  "baselineContextOnly": {
+    "marketWatchCount": 548,
+    "historySeriesCount": 548,
+    "lastRunId": 1,
+    "priorEvidenceDate": "2026-09-20",
+    "note": "Prior observations were inspected only for baseline context and were not reused as current facts."
+  },
+  "historyWrite": "NOT WRITTEN",
+  "protectedScope": {
+    "marketSha256": "d5496ed66ccfe49b353560ec9d938b5c235245ff875a7db3c92bd4483dce1f0c",
+    "historySha256": "7d1f47fed990cac02db633d22fb362aec752f83cf2655151d3851cdd18cde42a",
+    "catalogSha256": "79e743e2cf301c5cf535c23953993f13fe587d5f3df1d91ce28503263df9b47c",
+    "marketChanged": false,
+    "historyChanged": false,
+    "catalogChanged": false
+  },
+  "consolidatedSupplementalEvidence": [
+    {
+      "sourceFile": "checkpoint-summary.json",
+      "sha256": "f9a509af011ade001a4f62c88042fb353a9a4f9e01f08412bca6d43160ad9e65",
+      "content": {
+        "brandId": "omega",
+        "marketCode": "US",
+        "locale": "en-US",
+        "mode": "pure-price-update",
+        "runId": 2,
+        "startedAt": "2026-10-08T15:34:18Z",
+        "status": "PARTIAL CHECKPOINT — official entry failed after one cooldown retry; no history write",
+        "officialEntryUrl": "https://www.omegawatches.com/en-us/watches",
+        "baseline": {
+          "marketPath": "data/markets/omega-united-states-market.json",
+          "marketSha256": "d5496ed66ccfe49b353560ec9d938b5c235245ff875a7db3c92bd4483dce1f0c",
+          "marketWatchCount": 548,
+          "historyPath": "data/history/US/omega-price-history.json",
+          "historySha256": "7d1f47fed990cac02db633d22fb362aec752f83cf2655151d3851cdd18cde42a",
+          "lastRunId": 1,
+          "seriesCount": 548,
+          "catalogSha256": "79e743e2cf301c5cf535c23953993f13fe587d5f3df1d91ce28503263df9b47c",
+          "catalogCount": 586
+        },
+        "marketBaseline": {
+          "marketCode": "US",
+          "locale": "en-US",
+          "salesRegion": "United States",
+          "currencyCode": "USD",
+          "priceType": "tax-exclude",
+          "taxRatePercent": null
+        },
+        "attempts": [
+          {
+            "at": "2026-10-08T15:34:18Z",
+            "tool": "Playwright MCP browser_tabs(new)",
+            "url": "https://www.omegawatches.com/en-us/watches",
+            "result": "FAIL: browserBackend.callTool net::ERR_HTTP2_PROTOCOL_ERROR before domcontentloaded."
+          },
+          {
+            "at": "2026-10-08T15:34:54Z",
+            "tool": "Playwright MCP browser_tabs(new) + browser_network_requests",
+            "url": "https://www.omegawatches.com/en-us/watches",
+            "result": "FAIL after the one 10-second-cooldown retry; network panel confirms both GET attempts failed."
+          }
+        ],
+        "networkDiscovery": {
+          "required": true,
+          "attempted": true,
+          "tool": "Playwright MCP browser network inspector",
+          "result": "FAIL",
+          "details": "Two GET requests to the official US entry were observed; both failed with net::ERR_HTTP2_PROTOCOL_ERROR and no response."
+        },
+        "collectionProgress": {
+          "officialTargetConditionVerifiedThisRun": false,
+          "categoriesPlanned": 16,
+          "categoriesCompleted": 0,
+          "currentUniqueRefs": 0,
+          "remaining": [
+            "verify current US market / en-US / currency",
+            "observe network response",
+            "traverse full official categories",
+            "current prices and CTA",
+            "PDP status samples",
+            "match tracked refs",
+            "candidate/history validation"
+          ]
+        },
+        "historyWrite": "NOT WRITTEN",
+        "notes": [
+          "Existing 2026-09-20 evidence only provides historical context; not reused as current facts.",
+          "No current status, price, or completeness assertion."
+        ],
+        "lastAttemptAt": "2026-10-08T15:34:54Z",
+        "reasonForStop": "The only limited retry produced the same protocol error. No rendered official page or response body was available; no further retry was attempted."
+      }
+    }
+  ],
+  "evidenceConsolidation": {
+    "status": "PASS",
+    "targetFile": "collection-summary.json",
+    "itemsAdded": 1,
+    "sourceFiles": [
+      "checkpoint-summary.json"
+    ],
+    "preservation": "Original parsed JSON/text content is embedded in consolidatedSupplementalEvidence with source filename and SHA-256."
+  }
+}

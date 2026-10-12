@@ -1,0 +1,1084 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "KR",
+  "collectionDate": "2026-10-11",
+  "sourceAttemptCount": 1,
+  "note": "Original observation documents are preserved verbatim by attempt; observations are not deduplicated or reconciled.",
+  "attemptObservations": [
+    {
+      "attemptId": "candidate-additions-run-1",
+      "originalRunDirectory": "data/evidence/omega/KR/2026-10-11/candidate-additions-run-1",
+      "observations": {
+        "brandId": "omega",
+        "marketCode": "KR",
+        "runId": 3,
+        "purpose": "2026-10-11 candidate PDP verification",
+        "observations": [
+          {
+            "sourceFile": "pdp-candidate-210-30-42-20-01-023.json",
+            "sha256": "765571665f0dd1dcc682336c11f2a572a85edfd22c18761912c43d5e65284c02",
+            "observation": {
+              "brandId": "omega",
+              "marketCode": "KR",
+              "sourceType": "visible-browser-accessibility-observation",
+              "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023",
+              "locale": "ko-KR",
+              "storeCountry": "대한민국",
+              "pageTitle": "씨마스터 다이버 300M 스펙터 에디션 - 210.30.42.20.01.023",
+              "exactReference": "210.30.42.20.01.023",
+              "referenceText": "210.30.42.20.01.023",
+              "priceText": "₩12,800,000",
+              "price": 12800000,
+              "availabilityText": "현재 온라인에서 구매하실 수 없습니다. 위시리스트를 등록하세요.",
+              "purchasePathCtas": [
+                "입고 알림 받기",
+                "부티크 연락하기"
+              ],
+              "onlineCartCtaPresent": false,
+              "listingStatusDecision": "retailer-only",
+              "decisionBasis": "Exact-SKU KR PDP rendered in visible Chrome; price and PDP-level purchase/contact path were read from the same page. Category-card CTA was not used to assign listingStatus.",
+              "categoryEvidence": "../../2026-10-08/price-update-run-2/category-seamaster-diver-300-m.json",
+              "categoryProductUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023",
+              "categoryCardPriceText": "₩12,800,000",
+              "categoryCardCta": "자세히 보기",
+              "categoryIsNewTag": true,
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              },
+              "observedOn": "2026-10-11"
+            }
+          },
+          {
+            "sourceFile": "pdp-candidate-210-30-42-20-01-029.json",
+            "sha256": "b8ea5074451c9e11fe93a308d73a2c1e91b891995b3c107810f07f969faa99cf",
+            "observation": {
+              "brandId": "omega",
+              "marketCode": "KR",
+              "sourceType": "visible-browser-accessibility-observation",
+              "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029",
+              "locale": "ko-KR",
+              "storeCountry": "대한민국",
+              "pageTitle": "씨마스터 다이버 300M 스펙터 리미티드 에디션 세트 - 210.30.42.20.01.029",
+              "exactReference": "210.30.42.20.01.029",
+              "referenceText": "210.30.42.20.01.029",
+              "priceText": "₩134,200,000",
+              "price": 134200000,
+              "availabilityText": "다음의 시계 포함: 210.83.42.20.01.001",
+              "purchasePathCtas": [
+                "부티크 연락하기"
+              ],
+              "onlineCartCtaPresent": false,
+              "listingStatusDecision": "retailer-only",
+              "decisionBasis": "Exact-SKU KR PDP rendered in visible Chrome; price and PDP-level purchase/contact path were read from the same page. Category-card CTA was not used to assign listingStatus.",
+              "categoryEvidence": "../../2026-10-08/price-update-run-2/category-seamaster-diver-300-m.json",
+              "categoryProductUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029",
+              "categoryCardPriceText": "₩134,200,000",
+              "categoryCardCta": "자세히 보기",
+              "categoryIsNewTag": true,
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              },
+              "observedOn": "2026-10-11"
+            }
+          },
+          {
+            "sourceFile": "pdp-candidate-210-30-42-20-03-004.json",
+            "sha256": "368d2f207694c3098c5aabe8c272d7c91c3bebeaa2c4f791b64f340faf4b5bb4",
+            "observation": {
+              "brandId": "omega",
+              "marketCode": "KR",
+              "sourceType": "visible-browser-accessibility-observation",
+              "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003004",
+              "locale": "ko-KR",
+              "storeCountry": "대한민국",
+              "pageTitle": "씨마스터 다이버 300M 제임스 본드 에디션 - 210.30.42.20.03.004",
+              "exactReference": "210.30.42.20.03.004",
+              "referenceText": "210.30.42.20.03.004",
+              "priceText": "₩12,800,000",
+              "price": 12800000,
+              "availabilityText": "현재 온라인에서 구매하실 수 없습니다. 위시리스트를 등록하세요.",
+              "purchasePathCtas": [
+                "입고 알림 받기",
+                "부티크 연락하기"
+              ],
+              "onlineCartCtaPresent": false,
+              "listingStatusDecision": "retailer-only",
+              "decisionBasis": "Exact-SKU KR PDP rendered in visible Chrome; price and PDP-level purchase/contact path were read from the same page. Category-card CTA was not used to assign listingStatus.",
+              "categoryEvidence": "../../2026-10-08/price-update-run-2/category-seamaster-diver-300-m.json",
+              "categoryProductUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003004",
+              "categoryCardPriceText": "₩12,800,000",
+              "categoryCardCta": "자세히 보기",
+              "categoryIsNewTag": true,
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              },
+              "observedOn": "2026-10-11"
+            }
+          },
+          {
+            "sourceFile": "pdp-candidate-210-30-42-20-03-005.json",
+            "sha256": "fe83d65a471d5fb9195e7dc531d590d43c6e559736fa27c7bac2a8c35fed1b6c",
+            "observation": {
+              "brandId": "omega",
+              "marketCode": "KR",
+              "sourceType": "visible-browser-accessibility-observation",
+              "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005",
+              "locale": "ko-KR",
+              "storeCountry": "대한민국",
+              "pageTitle": "씨마스터 다이버 300M 제임스 본드 리미티드 에디션 세트 - 210.30.42.20.03.005",
+              "exactReference": "210.30.42.20.03.005",
+              "referenceText": "210.30.42.20.03.005",
+              "priceText": "₩134,200,000",
+              "price": 134200000,
+              "availabilityText": "다음의 시계 포함: 210.83.42.20.03.001",
+              "purchasePathCtas": [
+                "부티크 연락하기"
+              ],
+              "onlineCartCtaPresent": false,
+              "listingStatusDecision": "retailer-only",
+              "decisionBasis": "Exact-SKU KR PDP rendered in visible Chrome; price and PDP-level purchase/contact path were read from the same page. Category-card CTA was not used to assign listingStatus.",
+              "categoryEvidence": "../../2026-10-08/price-update-run-2/category-seamaster-diver-300-m.json",
+              "categoryProductUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005",
+              "categoryCardPriceText": "₩134,200,000",
+              "categoryCardCta": "자세히 보기",
+              "categoryIsNewTag": true,
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              },
+              "observedOn": "2026-10-11"
+            }
+          },
+          {
+            "sourceFile": "pdp-candidate-210-83-42-20-01-001.json",
+            "sha256": "639ee6ff3872ca88fdf1f6ffafd15c00148e8d48bdf0f98b519461a9dc87c55a",
+            "observation": {
+              "brandId": "omega",
+              "marketCode": "KR",
+              "sourceType": "visible-browser-accessibility-observation",
+              "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001",
+              "locale": "ko-KR",
+              "storeCountry": "대한민국",
+              "pageTitle": "씨마스터 다이버 300M 스펙터 리미티드 에디션 세트 - 210.83.42.20.01.001",
+              "exactReference": "210.83.42.20.01.001",
+              "referenceText": "210.83.42.20.01.001",
+              "priceText": "₩134,200,000",
+              "price": 134200000,
+              "availabilityText": "다음의 시계 포함: 210.30.42.20.01.029",
+              "purchasePathCtas": [
+                "부티크 연락하기"
+              ],
+              "onlineCartCtaPresent": false,
+              "listingStatusDecision": "retailer-only",
+              "decisionBasis": "Exact-SKU KR PDP rendered in visible Chrome; price and PDP-level purchase/contact path were read from the same page. Category-card CTA was not used to assign listingStatus.",
+              "categoryEvidence": "../../2026-10-08/price-update-run-2/category-seamaster-diver-300-m.json",
+              "categoryProductUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001",
+              "categoryCardPriceText": "₩134,200,000",
+              "categoryCardCta": "자세히 보기",
+              "categoryIsNewTag": true,
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              },
+              "observedOn": "2026-10-11"
+            }
+          },
+          {
+            "sourceFile": "pdp-candidate-210-83-42-20-03-001.json",
+            "sha256": "e9cd12821d712ac69f453faf4d69146d50211a80bd7d6d4d15b288c75769e758",
+            "observation": {
+              "brandId": "omega",
+              "marketCode": "KR",
+              "sourceType": "visible-browser-accessibility-observation",
+              "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001",
+              "locale": "ko-KR",
+              "storeCountry": "대한민국",
+              "pageTitle": "씨마스터 다이버 300M 제임스 본드 리미티드 에디션 세트 - 210.83.42.20.03.001",
+              "exactReference": "210.83.42.20.03.001",
+              "referenceText": "210.83.42.20.03.001",
+              "priceText": "₩134,200,000",
+              "price": 134200000,
+              "availabilityText": "다음의 시계 포함: 210.30.42.20.03.005",
+              "purchasePathCtas": [
+                "부티크 연락하기"
+              ],
+              "onlineCartCtaPresent": false,
+              "listingStatusDecision": "retailer-only",
+              "decisionBasis": "Exact-SKU KR PDP rendered in visible Chrome; price and PDP-level purchase/contact path were read from the same page. Category-card CTA was not used to assign listingStatus.",
+              "categoryEvidence": "../../2026-10-08/price-update-run-2/category-seamaster-diver-300-m.json",
+              "categoryProductUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001",
+              "categoryCardPriceText": "₩134,200,000",
+              "categoryCardCta": "자세히 보기",
+              "categoryIsNewTag": true,
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              },
+              "observedOn": "2026-10-11"
+            }
+          },
+          {
+            "sourceFile": "pdp-candidate-220-10-38-20-02-004.json",
+            "sha256": "ceb4fbe99731e2b7d6c25eae0ce4bb6f3853c2646273ae7fb2fe65d9f39e6379",
+            "observation": {
+              "brandId": "omega",
+              "marketCode": "KR",
+              "sourceType": "visible-browser-accessibility-observation",
+              "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004",
+              "locale": "ko-KR",
+              "storeCountry": "대한민국",
+              "pageTitle": "씨마스터 아쿠아 테라 150M 38 mm, 스틸 및 스틸 - 220.10.38.20.02.004",
+              "exactReference": "220.10.38.20.02.004",
+              "referenceText": "220.10.38.20.02.004",
+              "priceText": "₩11,100,000",
+              "price": 11100000,
+              "availabilityText": "장바구니에 추가",
+              "purchasePathCtas": [
+                "장바구니에 추가",
+                "부티크 연락하기"
+              ],
+              "onlineCartCtaPresent": true,
+              "listingStatusDecision": "listed",
+              "decisionBasis": "Exact-SKU KR PDP rendered in visible Chrome; price and PDP-level purchase/contact path were read from the same page. Category-card CTA was not used to assign listingStatus.",
+              "categoryEvidence": "../../2026-10-08/price-update-run-2/category-seamaster-aqua-terra-150m.json",
+              "categoryProductUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004",
+              "categoryCardPriceText": "₩11,100,000",
+              "categoryCardCta": "지금 구매하기",
+              "categoryIsNewTag": true,
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              },
+              "observedOn": "2026-10-11"
+            }
+          },
+          {
+            "sourceFile": "pdp-candidate-220-10-38-20-03-006.json",
+            "sha256": "dccf61c47040aaddc7b2d5c0fdad0445bde2c1bf69eb91864c1b638ec8b562ec",
+            "observation": {
+              "brandId": "omega",
+              "marketCode": "KR",
+              "sourceType": "visible-browser-accessibility-observation",
+              "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006",
+              "locale": "ko-KR",
+              "storeCountry": "대한민국",
+              "pageTitle": "씨마스터 아쿠아 테라 150M 38 mm, 스틸 및 스틸 - 220.10.38.20.03.006",
+              "exactReference": "220.10.38.20.03.006",
+              "referenceText": "220.10.38.20.03.006",
+              "priceText": "₩11,100,000",
+              "price": 11100000,
+              "availabilityText": "현재 온라인에서 구매하실 수 없습니다. 위시리스트를 등록하세요.",
+              "purchasePathCtas": [
+                "입고 알림 받기",
+                "부티크 연락하기"
+              ],
+              "onlineCartCtaPresent": false,
+              "listingStatusDecision": "retailer-only",
+              "decisionBasis": "Exact-SKU KR PDP rendered in visible Chrome; price and PDP-level purchase/contact path were read from the same page. Category-card CTA was not used to assign listingStatus.",
+              "categoryEvidence": "../../2026-10-08/price-update-run-2/category-seamaster-aqua-terra-150m.json",
+              "categoryProductUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006",
+              "categoryCardPriceText": "₩11,100,000",
+              "categoryCardCta": "위시리스트",
+              "categoryIsNewTag": true,
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              },
+              "observedOn": "2026-10-11"
+            }
+          },
+          {
+            "sourceFile": "pdp-candidate-220-10-41-21-01-003.json",
+            "sha256": "ff8d8bc6528f4fb4d7b5af238d3dada7d07e78ec88a58fa07b646384ec4943af",
+            "observation": {
+              "brandId": "omega",
+              "marketCode": "KR",
+              "sourceType": "visible-browser-accessibility-observation",
+              "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003",
+              "locale": "ko-KR",
+              "storeCountry": "대한민국",
+              "pageTitle": "씨마스터 아쿠아 테라 150M 41 mm, 스틸 및 스틸 - 220.10.41.21.01.003",
+              "exactReference": "220.10.41.21.01.003",
+              "referenceText": "220.10.41.21.01.003",
+              "priceText": "₩11,100,000",
+              "price": 11100000,
+              "availabilityText": "장바구니에 추가",
+              "purchasePathCtas": [
+                "장바구니에 추가",
+                "부티크 연락하기"
+              ],
+              "onlineCartCtaPresent": true,
+              "listingStatusDecision": "listed",
+              "decisionBasis": "Exact-SKU KR PDP rendered in visible Chrome; price and PDP-level purchase/contact path were read from the same page. Category-card CTA was not used to assign listingStatus.",
+              "categoryEvidence": "../../2026-10-08/price-update-run-2/category-seamaster-aqua-terra-150m.json",
+              "categoryProductUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003",
+              "categoryCardPriceText": "₩11,100,000",
+              "categoryCardCta": "지금 구매하기",
+              "categoryIsNewTag": true,
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              },
+              "observedOn": "2026-10-11"
+            }
+          },
+          {
+            "sourceFile": "pdp-candidate-220-10-41-21-02-005.json",
+            "sha256": "a936426ad9793677eed3983371932a21c6470776901b9ed5548e706ece0192de",
+            "observation": {
+              "brandId": "omega",
+              "marketCode": "KR",
+              "sourceType": "visible-browser-accessibility-observation",
+              "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005",
+              "locale": "ko-KR",
+              "storeCountry": "대한민국",
+              "pageTitle": "씨마스터 아쿠아 테라 150M 41 mm, 스틸 및 스틸 - 220.10.41.21.02.005",
+              "exactReference": "220.10.41.21.02.005",
+              "referenceText": "220.10.41.21.02.005",
+              "priceText": "₩11,100,000",
+              "price": 11100000,
+              "availabilityText": "장바구니에 추가",
+              "purchasePathCtas": [
+                "장바구니에 추가",
+                "부티크 연락하기"
+              ],
+              "onlineCartCtaPresent": true,
+              "listingStatusDecision": "listed",
+              "decisionBasis": "Exact-SKU KR PDP rendered in visible Chrome; price and PDP-level purchase/contact path were read from the same page. Category-card CTA was not used to assign listingStatus.",
+              "categoryEvidence": "../../2026-10-08/price-update-run-2/category-seamaster-aqua-terra-150m.json",
+              "categoryProductUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005",
+              "categoryCardPriceText": "₩11,100,000",
+              "categoryCardCta": "지금 구매하기",
+              "categoryIsNewTag": true,
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              },
+              "observedOn": "2026-10-11"
+            }
+          },
+          {
+            "sourceFile": "pdp-candidate-220-10-41-21-03-007.json",
+            "sha256": "66ecaabb429bb7fb1c5f4cf4c43518a1973880123291536fbd0ecbe4fcd5e7d8",
+            "observation": {
+              "brandId": "omega",
+              "marketCode": "KR",
+              "sourceType": "visible-browser-accessibility-observation",
+              "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007",
+              "locale": "ko-KR",
+              "storeCountry": "대한민국",
+              "pageTitle": "씨마스터 아쿠아 테라 150M 41 mm, 스틸 및 스틸 - 220.10.41.21.03.007",
+              "exactReference": "220.10.41.21.03.007",
+              "referenceText": "220.10.41.21.03.007",
+              "priceText": "₩11,100,000",
+              "price": 11100000,
+              "availabilityText": "현재 온라인에서 구매하실 수 없습니다. 위시리스트를 등록하세요.",
+              "purchasePathCtas": [
+                "입고 알림 받기",
+                "부티크 연락하기"
+              ],
+              "onlineCartCtaPresent": false,
+              "listingStatusDecision": "retailer-only",
+              "decisionBasis": "Exact-SKU KR PDP rendered in visible Chrome; price and PDP-level purchase/contact path were read from the same page. Category-card CTA was not used to assign listingStatus.",
+              "categoryEvidence": "../../2026-10-08/price-update-run-2/category-seamaster-aqua-terra-150m.json",
+              "categoryProductUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007",
+              "categoryCardPriceText": "₩11,100,000",
+              "categoryCardCta": "위시리스트",
+              "categoryIsNewTag": true,
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              },
+              "observedOn": "2026-10-11"
+            }
+          },
+          {
+            "sourceFile": "pdp-candidate-220-10-41-21-10-002.json",
+            "sha256": "896e4566df95a435dad1cfc61f8c96d16ba577901bbfdb475f2646a6de6f4477",
+            "observation": {
+              "brandId": "omega",
+              "marketCode": "KR",
+              "sourceType": "visible-browser-accessibility-observation",
+              "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002",
+              "locale": "ko-KR",
+              "storeCountry": "대한민국",
+              "pageTitle": "씨마스터 아쿠아 테라 150M 41 mm, 스틸 및 스틸 - 220.10.41.21.10.002",
+              "exactReference": "220.10.41.21.10.002",
+              "referenceText": "220.10.41.21.10.002",
+              "priceText": "₩11,100,000",
+              "price": 11100000,
+              "availabilityText": "장바구니에 추가",
+              "purchasePathCtas": [
+                "장바구니에 추가",
+                "부티크 연락하기"
+              ],
+              "onlineCartCtaPresent": true,
+              "listingStatusDecision": "listed",
+              "decisionBasis": "Exact-SKU KR PDP rendered in visible Chrome; price and PDP-level purchase/contact path were read from the same page. Category-card CTA was not used to assign listingStatus.",
+              "categoryEvidence": "../../2026-10-08/price-update-run-2/category-seamaster-aqua-terra-150m.json",
+              "categoryProductUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002",
+              "categoryCardPriceText": "₩11,100,000",
+              "categoryCardCta": "지금 구매하기",
+              "categoryIsNewTag": true,
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              },
+              "observedOn": "2026-10-11"
+            }
+          },
+          {
+            "sourceFile": "pdp-candidate-220-50-41-21-02-004.json",
+            "sha256": "5c942ea483ea0b60d1d4e8f8fa1c6d253878f865af099e3097eb99ff01276cc2",
+            "observation": {
+              "brandId": "omega",
+              "marketCode": "KR",
+              "sourceType": "visible-browser-accessibility-observation",
+              "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004",
+              "locale": "ko-KR",
+              "storeCountry": "대한민국",
+              "pageTitle": "씨마스터 아쿠아 테라 150M 41 mm, 문샤인 골드 및 문샤인 골드 - 220.50.41.21.02.004",
+              "exactReference": "220.50.41.21.02.004",
+              "referenceText": "220.50.41.21.02.004",
+              "priceText": "₩69,500,000",
+              "price": 69500000,
+              "availabilityText": "현재 온라인에서 구매하실 수 없습니다. 위시리스트를 등록하세요.",
+              "purchasePathCtas": [
+                "입고 알림 받기",
+                "부티크 연락하기"
+              ],
+              "onlineCartCtaPresent": false,
+              "listingStatusDecision": "retailer-only",
+              "decisionBasis": "Exact-SKU KR PDP rendered in visible Chrome; price and PDP-level purchase/contact path were read from the same page. Category-card CTA was not used to assign listingStatus.",
+              "categoryEvidence": "../../2026-10-08/price-update-run-2/category-seamaster-aqua-terra-150m.json",
+              "categoryProductUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004",
+              "categoryCardPriceText": "₩69,500,000",
+              "categoryCardCta": "위시리스트",
+              "categoryIsNewTag": true,
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              },
+              "observedOn": "2026-10-11"
+            }
+          }
+        ],
+        "candidateAdditionsReview": {
+          "brandId": "omega",
+          "marketCode": "KR",
+          "runId": 3,
+          "reviewedAt": "2026-10-11",
+          "scope": "13 official category references absent from the 2026-09-18 full capture and present in the 2026-10-08 KR category capture; each exact KR PDP was subsequently verified on 2026-10-11. Category card CTA is not used to determine listingStatus.",
+          "previousCapture": {
+            "date": "2026-09-18",
+            "file": "../../2026-09-18/observations.json",
+            "observationCount": 554,
+            "candidateRefsPresent": 0,
+            "candidateRefsAbsent": 13
+          },
+          "currentCategoryCapture": {
+            "date": "2026-10-08",
+            "files": [
+              "../../2026-10-08/price-update-run-2/category-seamaster-diver-300-m.json",
+              "../../2026-10-08/price-update-run-2/category-seamaster-aqua-terra-150m.json"
+            ],
+            "officialUniqueRefs": 561,
+            "candidateRefsPresent": 13
+          },
+          "pdpCaptureDate": "2026-10-11",
+          "pdpCaptureEvidence": [
+            "pdp-candidate-210-30-42-20-01-023.json",
+            "pdp-candidate-210-30-42-20-01-029.json",
+            "pdp-candidate-210-30-42-20-03-004.json",
+            "pdp-candidate-210-30-42-20-03-005.json",
+            "pdp-candidate-210-83-42-20-01-001.json",
+            "pdp-candidate-210-83-42-20-03-001.json",
+            "pdp-candidate-220-10-38-20-02-004.json",
+            "pdp-candidate-220-10-38-20-03-006.json",
+            "pdp-candidate-220-10-41-21-01-003.json",
+            "pdp-candidate-220-10-41-21-02-005.json",
+            "pdp-candidate-220-10-41-21-03-007.json",
+            "pdp-candidate-220-10-41-21-10-002.json",
+            "pdp-candidate-220-50-41-21-02-004.json"
+          ],
+          "browserToolAttempts": [
+            {
+              "tool": "visible Chrome UI",
+              "result": "PASS",
+              "detail": "All 13 exact KR PDPs rendered in OMEGA KR store view; footer country selector showed 대한민국. No cross-market redirect or rate limit."
+            }
+          ],
+          "candidates": [
+            {
+              "reference": "210.30.42.20.01.023",
+              "previousCapture": {
+                "date": "2026-09-18",
+                "file": "../../2026-09-18/observations.json",
+                "exactReferencePresent": false
+              },
+              "currentCategoryCapture": {
+                "date": "2026-10-08",
+                "categoryName": "씨마스터 다이버 300M",
+                "categorySlug": "seamaster/diver-300-m",
+                "evidence": "category-seamaster-diver-300-m.json",
+                "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023",
+                "rawPriceText": "₩12,800,000",
+                "price": 12800000,
+                "cardCta": "자세히 보기",
+                "isNewTag": true
+              },
+              "pdpReview": {
+                "result": "verified on 2026-10-11 in visible Chrome KR store view",
+                "exactSkuConfirmed": true,
+                "marketAndLocale": "OMEGA KR / omegawatches.co.kr / ko-KR; footer country selector says 대한민국",
+                "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023",
+                "pageTitle": "씨마스터 다이버 300M 스펙터 에디션 - 210.30.42.20.01.023",
+                "referenceText": "210.30.42.20.01.023",
+                "pdpPriceText": "₩12,800,000",
+                "availabilityText": "현재 온라인에서 구매하실 수 없습니다. 위시리스트를 등록하세요.",
+                "purchasePathCtas": [
+                  "입고 알림 받기",
+                  "부티크 연락하기"
+                ],
+                "onlineCartCtaPresent": false,
+                "listingStatusDecision": "retailer-only",
+                "decisionBasis": "Exact-SKU target-market PDP exposes price and PDP CTA; category-card CTA is discovery evidence only.",
+                "pdpEvidence": "pdp-candidate-210-30-42-20-01-023.json"
+              },
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              }
+            },
+            {
+              "reference": "210.30.42.20.01.029",
+              "previousCapture": {
+                "date": "2026-09-18",
+                "file": "../../2026-09-18/observations.json",
+                "exactReferencePresent": false
+              },
+              "currentCategoryCapture": {
+                "date": "2026-10-08",
+                "categoryName": "씨마스터 다이버 300M",
+                "categorySlug": "seamaster/diver-300-m",
+                "evidence": "category-seamaster-diver-300-m.json",
+                "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029",
+                "rawPriceText": "₩134,200,000",
+                "price": 134200000,
+                "cardCta": "자세히 보기",
+                "isNewTag": true
+              },
+              "pdpReview": {
+                "result": "verified on 2026-10-11 in visible Chrome KR store view",
+                "exactSkuConfirmed": true,
+                "marketAndLocale": "OMEGA KR / omegawatches.co.kr / ko-KR; footer country selector says 대한민국",
+                "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029",
+                "pageTitle": "씨마스터 다이버 300M 스펙터 리미티드 에디션 세트 - 210.30.42.20.01.029",
+                "referenceText": "210.30.42.20.01.029",
+                "pdpPriceText": "₩134,200,000",
+                "availabilityText": "다음의 시계 포함: 210.83.42.20.01.001",
+                "purchasePathCtas": [
+                  "부티크 연락하기"
+                ],
+                "onlineCartCtaPresent": false,
+                "listingStatusDecision": "retailer-only",
+                "decisionBasis": "Exact-SKU target-market PDP exposes price and PDP CTA; category-card CTA is discovery evidence only.",
+                "pdpEvidence": "pdp-candidate-210-30-42-20-01-029.json"
+              },
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              }
+            },
+            {
+              "reference": "210.30.42.20.03.004",
+              "previousCapture": {
+                "date": "2026-09-18",
+                "file": "../../2026-09-18/observations.json",
+                "exactReferencePresent": false
+              },
+              "currentCategoryCapture": {
+                "date": "2026-10-08",
+                "categoryName": "씨마스터 다이버 300M",
+                "categorySlug": "seamaster/diver-300-m",
+                "evidence": "category-seamaster-diver-300-m.json",
+                "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003004",
+                "rawPriceText": "₩12,800,000",
+                "price": 12800000,
+                "cardCta": "자세히 보기",
+                "isNewTag": true
+              },
+              "pdpReview": {
+                "result": "verified on 2026-10-11 in visible Chrome KR store view",
+                "exactSkuConfirmed": true,
+                "marketAndLocale": "OMEGA KR / omegawatches.co.kr / ko-KR; footer country selector says 대한민국",
+                "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003004",
+                "pageTitle": "씨마스터 다이버 300M 제임스 본드 에디션 - 210.30.42.20.03.004",
+                "referenceText": "210.30.42.20.03.004",
+                "pdpPriceText": "₩12,800,000",
+                "availabilityText": "현재 온라인에서 구매하실 수 없습니다. 위시리스트를 등록하세요.",
+                "purchasePathCtas": [
+                  "입고 알림 받기",
+                  "부티크 연락하기"
+                ],
+                "onlineCartCtaPresent": false,
+                "listingStatusDecision": "retailer-only",
+                "decisionBasis": "Exact-SKU target-market PDP exposes price and PDP CTA; category-card CTA is discovery evidence only.",
+                "pdpEvidence": "pdp-candidate-210-30-42-20-03-004.json"
+              },
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              }
+            },
+            {
+              "reference": "210.30.42.20.03.005",
+              "previousCapture": {
+                "date": "2026-09-18",
+                "file": "../../2026-09-18/observations.json",
+                "exactReferencePresent": false
+              },
+              "currentCategoryCapture": {
+                "date": "2026-10-08",
+                "categoryName": "씨마스터 다이버 300M",
+                "categorySlug": "seamaster/diver-300-m",
+                "evidence": "category-seamaster-diver-300-m.json",
+                "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005",
+                "rawPriceText": "₩134,200,000",
+                "price": 134200000,
+                "cardCta": "자세히 보기",
+                "isNewTag": true
+              },
+              "pdpReview": {
+                "result": "verified on 2026-10-11 in visible Chrome KR store view",
+                "exactSkuConfirmed": true,
+                "marketAndLocale": "OMEGA KR / omegawatches.co.kr / ko-KR; footer country selector says 대한민국",
+                "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005",
+                "pageTitle": "씨마스터 다이버 300M 제임스 본드 리미티드 에디션 세트 - 210.30.42.20.03.005",
+                "referenceText": "210.30.42.20.03.005",
+                "pdpPriceText": "₩134,200,000",
+                "availabilityText": "다음의 시계 포함: 210.83.42.20.03.001",
+                "purchasePathCtas": [
+                  "부티크 연락하기"
+                ],
+                "onlineCartCtaPresent": false,
+                "listingStatusDecision": "retailer-only",
+                "decisionBasis": "Exact-SKU target-market PDP exposes price and PDP CTA; category-card CTA is discovery evidence only.",
+                "pdpEvidence": "pdp-candidate-210-30-42-20-03-005.json"
+              },
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              }
+            },
+            {
+              "reference": "210.83.42.20.01.001",
+              "previousCapture": {
+                "date": "2026-09-18",
+                "file": "../../2026-09-18/observations.json",
+                "exactReferencePresent": false
+              },
+              "currentCategoryCapture": {
+                "date": "2026-10-08",
+                "categoryName": "씨마스터 다이버 300M",
+                "categorySlug": "seamaster/diver-300-m",
+                "evidence": "category-seamaster-diver-300-m.json",
+                "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001",
+                "rawPriceText": "₩134,200,000",
+                "price": 134200000,
+                "cardCta": "자세히 보기",
+                "isNewTag": true
+              },
+              "pdpReview": {
+                "result": "verified on 2026-10-11 in visible Chrome KR store view",
+                "exactSkuConfirmed": true,
+                "marketAndLocale": "OMEGA KR / omegawatches.co.kr / ko-KR; footer country selector says 대한민국",
+                "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001",
+                "pageTitle": "씨마스터 다이버 300M 스펙터 리미티드 에디션 세트 - 210.83.42.20.01.001",
+                "referenceText": "210.83.42.20.01.001",
+                "pdpPriceText": "₩134,200,000",
+                "availabilityText": "다음의 시계 포함: 210.30.42.20.01.029",
+                "purchasePathCtas": [
+                  "부티크 연락하기"
+                ],
+                "onlineCartCtaPresent": false,
+                "listingStatusDecision": "retailer-only",
+                "decisionBasis": "Exact-SKU target-market PDP exposes price and PDP CTA; category-card CTA is discovery evidence only.",
+                "pdpEvidence": "pdp-candidate-210-83-42-20-01-001.json"
+              },
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              }
+            },
+            {
+              "reference": "210.83.42.20.03.001",
+              "previousCapture": {
+                "date": "2026-09-18",
+                "file": "../../2026-09-18/observations.json",
+                "exactReferencePresent": false
+              },
+              "currentCategoryCapture": {
+                "date": "2026-10-08",
+                "categoryName": "씨마스터 다이버 300M",
+                "categorySlug": "seamaster/diver-300-m",
+                "evidence": "category-seamaster-diver-300-m.json",
+                "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001",
+                "rawPriceText": "₩134,200,000",
+                "price": 134200000,
+                "cardCta": "자세히 보기",
+                "isNewTag": true
+              },
+              "pdpReview": {
+                "result": "verified on 2026-10-11 in visible Chrome KR store view",
+                "exactSkuConfirmed": true,
+                "marketAndLocale": "OMEGA KR / omegawatches.co.kr / ko-KR; footer country selector says 대한민국",
+                "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001",
+                "pageTitle": "씨마스터 다이버 300M 제임스 본드 리미티드 에디션 세트 - 210.83.42.20.03.001",
+                "referenceText": "210.83.42.20.03.001",
+                "pdpPriceText": "₩134,200,000",
+                "availabilityText": "다음의 시계 포함: 210.30.42.20.03.005",
+                "purchasePathCtas": [
+                  "부티크 연락하기"
+                ],
+                "onlineCartCtaPresent": false,
+                "listingStatusDecision": "retailer-only",
+                "decisionBasis": "Exact-SKU target-market PDP exposes price and PDP CTA; category-card CTA is discovery evidence only.",
+                "pdpEvidence": "pdp-candidate-210-83-42-20-03-001.json"
+              },
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              }
+            },
+            {
+              "reference": "220.10.38.20.02.004",
+              "previousCapture": {
+                "date": "2026-09-18",
+                "file": "../../2026-09-18/observations.json",
+                "exactReferencePresent": false
+              },
+              "currentCategoryCapture": {
+                "date": "2026-10-08",
+                "categoryName": "씨마스터 아쿠아 테라 150M",
+                "categorySlug": "seamaster/aqua-terra-150m",
+                "evidence": "category-seamaster-aqua-terra-150m.json",
+                "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004",
+                "rawPriceText": "₩11,100,000",
+                "price": 11100000,
+                "cardCta": "지금 구매하기",
+                "isNewTag": true
+              },
+              "pdpReview": {
+                "result": "verified on 2026-10-11 in visible Chrome KR store view",
+                "exactSkuConfirmed": true,
+                "marketAndLocale": "OMEGA KR / omegawatches.co.kr / ko-KR; footer country selector says 대한민국",
+                "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004",
+                "pageTitle": "씨마스터 아쿠아 테라 150M 38 mm, 스틸 및 스틸 - 220.10.38.20.02.004",
+                "referenceText": "220.10.38.20.02.004",
+                "pdpPriceText": "₩11,100,000",
+                "availabilityText": "장바구니에 추가",
+                "purchasePathCtas": [
+                  "장바구니에 추가",
+                  "부티크 연락하기"
+                ],
+                "onlineCartCtaPresent": true,
+                "listingStatusDecision": "listed",
+                "decisionBasis": "Exact-SKU target-market PDP exposes price and PDP CTA; category-card CTA is discovery evidence only.",
+                "pdpEvidence": "pdp-candidate-220-10-38-20-02-004.json"
+              },
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              }
+            },
+            {
+              "reference": "220.10.38.20.03.006",
+              "previousCapture": {
+                "date": "2026-09-18",
+                "file": "../../2026-09-18/observations.json",
+                "exactReferencePresent": false
+              },
+              "currentCategoryCapture": {
+                "date": "2026-10-08",
+                "categoryName": "씨마스터 아쿠아 테라 150M",
+                "categorySlug": "seamaster/aqua-terra-150m",
+                "evidence": "category-seamaster-aqua-terra-150m.json",
+                "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006",
+                "rawPriceText": "₩11,100,000",
+                "price": 11100000,
+                "cardCta": "위시리스트",
+                "isNewTag": true
+              },
+              "pdpReview": {
+                "result": "verified on 2026-10-11 in visible Chrome KR store view",
+                "exactSkuConfirmed": true,
+                "marketAndLocale": "OMEGA KR / omegawatches.co.kr / ko-KR; footer country selector says 대한민국",
+                "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006",
+                "pageTitle": "씨마스터 아쿠아 테라 150M 38 mm, 스틸 및 스틸 - 220.10.38.20.03.006",
+                "referenceText": "220.10.38.20.03.006",
+                "pdpPriceText": "₩11,100,000",
+                "availabilityText": "현재 온라인에서 구매하실 수 없습니다. 위시리스트를 등록하세요.",
+                "purchasePathCtas": [
+                  "입고 알림 받기",
+                  "부티크 연락하기"
+                ],
+                "onlineCartCtaPresent": false,
+                "listingStatusDecision": "retailer-only",
+                "decisionBasis": "Exact-SKU target-market PDP exposes price and PDP CTA; category-card CTA is discovery evidence only.",
+                "pdpEvidence": "pdp-candidate-220-10-38-20-03-006.json"
+              },
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              }
+            },
+            {
+              "reference": "220.10.41.21.01.003",
+              "previousCapture": {
+                "date": "2026-09-18",
+                "file": "../../2026-09-18/observations.json",
+                "exactReferencePresent": false
+              },
+              "currentCategoryCapture": {
+                "date": "2026-10-08",
+                "categoryName": "씨마스터 아쿠아 테라 150M",
+                "categorySlug": "seamaster/aqua-terra-150m",
+                "evidence": "category-seamaster-aqua-terra-150m.json",
+                "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003",
+                "rawPriceText": "₩11,100,000",
+                "price": 11100000,
+                "cardCta": "지금 구매하기",
+                "isNewTag": true
+              },
+              "pdpReview": {
+                "result": "verified on 2026-10-11 in visible Chrome KR store view",
+                "exactSkuConfirmed": true,
+                "marketAndLocale": "OMEGA KR / omegawatches.co.kr / ko-KR; footer country selector says 대한민국",
+                "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003",
+                "pageTitle": "씨마스터 아쿠아 테라 150M 41 mm, 스틸 및 스틸 - 220.10.41.21.01.003",
+                "referenceText": "220.10.41.21.01.003",
+                "pdpPriceText": "₩11,100,000",
+                "availabilityText": "장바구니에 추가",
+                "purchasePathCtas": [
+                  "장바구니에 추가",
+                  "부티크 연락하기"
+                ],
+                "onlineCartCtaPresent": true,
+                "listingStatusDecision": "listed",
+                "decisionBasis": "Exact-SKU target-market PDP exposes price and PDP CTA; category-card CTA is discovery evidence only.",
+                "pdpEvidence": "pdp-candidate-220-10-41-21-01-003.json"
+              },
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              }
+            },
+            {
+              "reference": "220.10.41.21.02.005",
+              "previousCapture": {
+                "date": "2026-09-18",
+                "file": "../../2026-09-18/observations.json",
+                "exactReferencePresent": false
+              },
+              "currentCategoryCapture": {
+                "date": "2026-10-08",
+                "categoryName": "씨마스터 아쿠아 테라 150M",
+                "categorySlug": "seamaster/aqua-terra-150m",
+                "evidence": "category-seamaster-aqua-terra-150m.json",
+                "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005",
+                "rawPriceText": "₩11,100,000",
+                "price": 11100000,
+                "cardCta": "지금 구매하기",
+                "isNewTag": true
+              },
+              "pdpReview": {
+                "result": "verified on 2026-10-11 in visible Chrome KR store view",
+                "exactSkuConfirmed": true,
+                "marketAndLocale": "OMEGA KR / omegawatches.co.kr / ko-KR; footer country selector says 대한민국",
+                "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005",
+                "pageTitle": "씨마스터 아쿠아 테라 150M 41 mm, 스틸 및 스틸 - 220.10.41.21.02.005",
+                "referenceText": "220.10.41.21.02.005",
+                "pdpPriceText": "₩11,100,000",
+                "availabilityText": "장바구니에 추가",
+                "purchasePathCtas": [
+                  "장바구니에 추가",
+                  "부티크 연락하기"
+                ],
+                "onlineCartCtaPresent": true,
+                "listingStatusDecision": "listed",
+                "decisionBasis": "Exact-SKU target-market PDP exposes price and PDP CTA; category-card CTA is discovery evidence only.",
+                "pdpEvidence": "pdp-candidate-220-10-41-21-02-005.json"
+              },
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              }
+            },
+            {
+              "reference": "220.10.41.21.03.007",
+              "previousCapture": {
+                "date": "2026-09-18",
+                "file": "../../2026-09-18/observations.json",
+                "exactReferencePresent": false
+              },
+              "currentCategoryCapture": {
+                "date": "2026-10-08",
+                "categoryName": "씨마스터 아쿠아 테라 150M",
+                "categorySlug": "seamaster/aqua-terra-150m",
+                "evidence": "category-seamaster-aqua-terra-150m.json",
+                "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007",
+                "rawPriceText": "₩11,100,000",
+                "price": 11100000,
+                "cardCta": "위시리스트",
+                "isNewTag": true
+              },
+              "pdpReview": {
+                "result": "verified on 2026-10-11 in visible Chrome KR store view",
+                "exactSkuConfirmed": true,
+                "marketAndLocale": "OMEGA KR / omegawatches.co.kr / ko-KR; footer country selector says 대한민국",
+                "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007",
+                "pageTitle": "씨마스터 아쿠아 테라 150M 41 mm, 스틸 및 스틸 - 220.10.41.21.03.007",
+                "referenceText": "220.10.41.21.03.007",
+                "pdpPriceText": "₩11,100,000",
+                "availabilityText": "현재 온라인에서 구매하실 수 없습니다. 위시리스트를 등록하세요.",
+                "purchasePathCtas": [
+                  "입고 알림 받기",
+                  "부티크 연락하기"
+                ],
+                "onlineCartCtaPresent": false,
+                "listingStatusDecision": "retailer-only",
+                "decisionBasis": "Exact-SKU target-market PDP exposes price and PDP CTA; category-card CTA is discovery evidence only.",
+                "pdpEvidence": "pdp-candidate-220-10-41-21-03-007.json"
+              },
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              }
+            },
+            {
+              "reference": "220.10.41.21.10.002",
+              "previousCapture": {
+                "date": "2026-09-18",
+                "file": "../../2026-09-18/observations.json",
+                "exactReferencePresent": false
+              },
+              "currentCategoryCapture": {
+                "date": "2026-10-08",
+                "categoryName": "씨마스터 아쿠아 테라 150M",
+                "categorySlug": "seamaster/aqua-terra-150m",
+                "evidence": "category-seamaster-aqua-terra-150m.json",
+                "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002",
+                "rawPriceText": "₩11,100,000",
+                "price": 11100000,
+                "cardCta": "지금 구매하기",
+                "isNewTag": true
+              },
+              "pdpReview": {
+                "result": "verified on 2026-10-11 in visible Chrome KR store view",
+                "exactSkuConfirmed": true,
+                "marketAndLocale": "OMEGA KR / omegawatches.co.kr / ko-KR; footer country selector says 대한민국",
+                "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002",
+                "pageTitle": "씨마스터 아쿠아 테라 150M 41 mm, 스틸 및 스틸 - 220.10.41.21.10.002",
+                "referenceText": "220.10.41.21.10.002",
+                "pdpPriceText": "₩11,100,000",
+                "availabilityText": "장바구니에 추가",
+                "purchasePathCtas": [
+                  "장바구니에 추가",
+                  "부티크 연락하기"
+                ],
+                "onlineCartCtaPresent": true,
+                "listingStatusDecision": "listed",
+                "decisionBasis": "Exact-SKU target-market PDP exposes price and PDP CTA; category-card CTA is discovery evidence only.",
+                "pdpEvidence": "pdp-candidate-220-10-41-21-10-002.json"
+              },
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              }
+            },
+            {
+              "reference": "220.50.41.21.02.004",
+              "previousCapture": {
+                "date": "2026-09-18",
+                "file": "../../2026-09-18/observations.json",
+                "exactReferencePresent": false
+              },
+              "currentCategoryCapture": {
+                "date": "2026-10-08",
+                "categoryName": "씨마스터 아쿠아 테라 150M",
+                "categorySlug": "seamaster/aqua-terra-150m",
+                "evidence": "category-seamaster-aqua-terra-150m.json",
+                "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004",
+                "rawPriceText": "₩69,500,000",
+                "price": 69500000,
+                "cardCta": "위시리스트",
+                "isNewTag": true
+              },
+              "pdpReview": {
+                "result": "verified on 2026-10-11 in visible Chrome KR store view",
+                "exactSkuConfirmed": true,
+                "marketAndLocale": "OMEGA KR / omegawatches.co.kr / ko-KR; footer country selector says 대한민국",
+                "url": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004",
+                "pageTitle": "씨마스터 아쿠아 테라 150M 41 mm, 문샤인 골드 및 문샤인 골드 - 220.50.41.21.02.004",
+                "referenceText": "220.50.41.21.02.004",
+                "pdpPriceText": "₩69,500,000",
+                "availabilityText": "현재 온라인에서 구매하실 수 없습니다. 위시리스트를 등록하세요.",
+                "purchasePathCtas": [
+                  "입고 알림 받기",
+                  "부티크 연락하기"
+                ],
+                "onlineCartCtaPresent": false,
+                "listingStatusDecision": "retailer-only",
+                "decisionBasis": "Exact-SKU target-market PDP exposes price and PDP CTA; category-card CTA is discovery evidence only.",
+                "pdpEvidence": "pdp-candidate-220-50-41-21-02-004.json"
+              },
+              "catalogMergeEvidence": {
+                "collectionId": "unknown from observed category/PDP accessibility content",
+                "imageUrl": "unknown; image alt text observed but no image asset URL was exposed",
+                "dialColors": "unknown; no structured dial color field in captured category card/PDP summary"
+              }
+            }
+          ],
+          "formalAdditionCount": 13,
+          "formalMarketRefsAfterAddition": 567,
+          "listingStatusCounts": {
+            "listed": 4,
+            "retailer-only": 9
+          },
+          "catalogMergeNote": "collectionId, imageUrl and dialColors were not established from captured category/PDP summary; leave pending catalog enrichment."
+        },
+        "consolidatedSupplementalEvidence": []
+      }
+    }
+  ]
+}

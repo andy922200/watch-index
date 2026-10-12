@@ -1,0 +1,251 @@
+{
+  "brandId": "omega",
+  "marketCode": "DE",
+  "locale": "de-DE",
+  "mode": "pure-price-update",
+  "runId": 2,
+  "status": "PARTIAL: official category traversal interrupted by repeated HTTP/2/network errors; no full price/status update and no history run written",
+  "startedAt": "2026-10-08T15:23:31Z",
+  "lastAttemptAt": "2026-10-08T15:27:25Z",
+  "officialEntryUrl": "https://www.omegawatches.com/de-de/watches",
+  "marketConditions": {
+    "htmlLang": "de-DE",
+    "storeConfig": {
+      "store_code": "de_de",
+      "default_country_code": "DE",
+      "default_display_currency_code": "EUR",
+      "onetrust_language": "de-DE"
+    },
+    "verification": "PASS"
+  },
+  "networkDiscovery": {
+    "required": true,
+    "browserTool": "Playwright MCP",
+    "renderedPageObserved": true,
+    "actualGraphQLStoreConfigResponseObserved": true,
+    "sameOriginCategoryFetchObserved": true,
+    "result": "PASS for initial discovery; subsequent browsing session failed"
+  },
+  "sourceStructure": {
+    "officialCategoryHtml": "Rendered HTML contains li.product-item[data-sku], span.tracking-data[data-sku] and data-real-sku, data-price-amount, data-product-dl, official product URLs, CTA text/status code, and .ow-prod__tag-new; next page represented by a[data-role=\"ajax-pager\"][data-target=\"next\"].",
+    "pagination": "p=N response accumulates page cards; terminal criterion was official next-page anchor absent, along with all observed requests HTTP 200 and unique references."
+  },
+  "landingCounters": {
+    "family": {
+      "Seamaster": 202,
+      "Speedmaster": 95,
+      "Constellation": 128,
+      "De Ville": 128,
+      "sum": 553
+    },
+    "subcategories": {
+      "Aqua Terra 150M": 107,
+      "Diver 300M": 60,
+      "Planet Ocean": 17,
+      "Seamaster heritage": 17,
+      "Instruments": 1,
+      "Moonwatch": 24,
+      "Speedmaster heritage": 16,
+      "Dark Side of the Moon": 8,
+      "Speedmaster 38 mm": 11,
+      "Two Counters": 36,
+      "Observatory": 9,
+      "Constellation": 119,
+      "Ladymatic": 6,
+      "Tresor": 38,
+      "Prestige": 82,
+      "Tourbillon": 2
+    }
+  },
+  "categoryTraversal": {
+    "categoriesPlanned": 16,
+    "categoriesCompleted": 7,
+    "pageRequestsCompleted": 13,
+    "cardsInTerminalCollections": 248,
+    "uniqueReferencesAcrossCompletedCategories": 248,
+    "categories": [
+      {
+        "category": "Aqua Terra 150M",
+        "categoryUrl": "https://www.omegawatches.com/de-de/watches/seamaster/aqua-terra-150m/catalog",
+        "count": 108,
+        "uniqueReferences": 108,
+        "pageCount": 5,
+        "httpStatuses": [
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "terminalNextUrl": null,
+        "reportedCountByPage": [
+          108,
+          108,
+          108,
+          108,
+          108
+        ]
+      },
+      {
+        "category": "diver-300-m",
+        "categoryUrl": "https://www.omegawatches.com/de-de/watches/seamaster/diver-300-m/catalog",
+        "count": 65,
+        "uniqueReferences": 65,
+        "pageCount": 3,
+        "httpStatuses": [
+          200,
+          200,
+          200
+        ],
+        "terminalNextUrl": null,
+        "reportedCountByPage": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "category": "instruments",
+        "categoryUrl": "https://www.omegawatches.com/de-de/watches/seamaster/instruments/catalog",
+        "count": 1,
+        "uniqueReferences": 1,
+        "pageCount": 1,
+        "httpStatuses": [
+          200
+        ],
+        "terminalNextUrl": null,
+        "reportedCountByPage": [
+          null
+        ]
+      },
+      {
+        "category": "moonwatch-professional",
+        "categoryUrl": "https://www.omegawatches.com/de-de/watches/speedmaster/moonwatch-professional/catalog",
+        "count": 24,
+        "uniqueReferences": 24,
+        "pageCount": 1,
+        "httpStatuses": [
+          200
+        ],
+        "terminalNextUrl": null,
+        "reportedCountByPage": [
+          null
+        ]
+      },
+      {
+        "category": "planet-ocean",
+        "categoryUrl": "https://www.omegawatches.com/de-de/watches/seamaster/planet-ocean/catalog",
+        "count": 17,
+        "uniqueReferences": 17,
+        "pageCount": 1,
+        "httpStatuses": [
+          200
+        ],
+        "terminalNextUrl": null,
+        "reportedCountByPage": [
+          null
+        ]
+      },
+      {
+        "category": "seamaster-heritage",
+        "categoryUrl": "https://www.omegawatches.com/de-de/watches/seamaster/heritage-models/catalog",
+        "count": 17,
+        "uniqueReferences": 17,
+        "pageCount": 1,
+        "httpStatuses": [
+          200
+        ],
+        "terminalNextUrl": null,
+        "reportedCountByPage": [
+          null
+        ]
+      },
+      {
+        "category": "speedmaster-heritage",
+        "categoryUrl": "https://www.omegawatches.com/de-de/watches/speedmaster/heritage-models/catalog",
+        "count": 16,
+        "uniqueReferences": 16,
+        "pageCount": 1,
+        "httpStatuses": [
+          200
+        ],
+        "terminalNextUrl": null,
+        "reportedCountByPage": [
+          null
+        ]
+      }
+    ],
+    "allObservedRequestsHttp200": true,
+    "allCompletedCategoriesTerminalAtNoNextLink": true,
+    "trackedMarketMatchesAmongPartialCollection": 235,
+    "officialRefsOutsideTrackedMarketAmongPartialCollection": 13,
+    "ctaCountsPartial": {
+      "jetzt-kaufen": 192,
+      "wunschliste": 29,
+      "details": 27
+    },
+    "remainingCategories": [
+      "Dark Side of the Moon",
+      "Speedmaster 38 mm",
+      "Two Counters",
+      "Observatory",
+      "Constellation",
+      "Ladymatic",
+      "Trésor",
+      "Prestige",
+      "Tourbillon"
+    ]
+  },
+  "attempts": [
+    {
+      "at": "2026-10-08T15:27:19Z",
+      "category": "Dark Side of the Moon",
+      "attempt": "browser in-page fetch failed with TypeError: Failed to fetch; direct navigation retry after cooldown failed with net::ERR_HTTP2_PROTOCOL_ERROR."
+    },
+    {
+      "at": "2026-10-08T15:27:19Z",
+      "category": "Speedmaster 38 mm",
+      "attempt": "browser in-page fetch from chrome-error page failed TypeError: Failed to fetch; result discarded as page context was no longer official origin."
+    },
+    {
+      "at": "2026-10-08T15:27:20Z",
+      "attempt": "new Playwright tab to official DE entry for session recovery",
+      "result": "net::ERR_HTTP2_PROTOCOL_ERROR at https://www.omegawatches.com/de-de/watches; could not reverify or resume."
+    },
+    {
+      "at": "2026-10-08T15:25:30Z",
+      "attempt": "initial category batch for Dark Side, Speedmaster 38 mm, Two Counters",
+      "result": "Browser tool returned evaluation errors; detailed per-call error payload was not retained. The paths remain uncollected; later dark-side navigation failure is recorded separately."
+    }
+  ],
+  "priceStatus": {
+    "status": "NOT RUN for full tracked market",
+    "reason": "Only 248 unique refs across seven of 16 official categories collected. No product detail page CTA behavior samples or complete current market mapping; cannot assign statuses or safe history deltas."
+  },
+  "historyWrite": "NOT WRITTEN",
+  "protectedScope": {
+    "marketBaselineSha256": "a5dad744c8426f931ba9a9fcbc153f101b2b1229e980ec4bb6398128dafd663b",
+    "historyBaselineSha256": "d63111658cd56844e980659fff127f6ec80877c0b5120a8c1cc453bf9fbfdf0d",
+    "catalogUnchanged": true,
+    "marketUnchanged": true,
+    "historyUnchanged": true
+  },
+  "evidenceConsolidation": {
+    "status": "PASS",
+    "targetFile": "observations.json#/consolidatedSupplementalEvidence",
+    "itemsAdded": 10,
+    "sourceFiles": [
+      "category-aqua-terra.json",
+      "category-diver-300-m.json",
+      "category-instruments.json",
+      "category-moonwatch-professional.json",
+      "category-planet-ocean.json",
+      "category-seamaster-heritage.json",
+      "category-speedmaster-heritage.json",
+      "checkpoint-summary.json",
+      "network-discovery.json",
+      "official-entry.json"
+    ],
+    "preservation": "Original parsed JSON/text content is embedded in consolidatedSupplementalEvidence with source filename and SHA-256."
+  }
+}

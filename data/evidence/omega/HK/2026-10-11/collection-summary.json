@@ -1,0 +1,189 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "HK",
+  "collectionDate": "2026-10-11",
+  "consolidatedAttemptCount": 1,
+  "note": "Same-day uncommitted evidence was consolidated. Each original collection summary is preserved verbatim by attempt; run IDs and distinct scopes remain separate.",
+  "attempts": [
+    {
+      "attemptId": "candidate-additions-run-1",
+      "originalRunDirectory": "data/evidence/omega/HK/2026-10-11/candidate-additions-run-1",
+      "collectionSummary": {
+        "brandId": "omega",
+        "marketCode": "HK",
+        "locale": "zh-HK",
+        "runId": 3,
+        "startedAtUtc": "2026-10-11T06:13:25Z",
+        "completedAtUtc": "2026-10-11T06:17:53Z",
+        "scope": "僅針對 2026-10-08 完整分類 union 中、前次完整分類觀察未出現的 13 個 HK reference 做補充確認；不是重新抓取整個市場。",
+        "sourceListingEvidence": "data/evidence/omega/HK/2026-10-08/price-update-run-2/observations.json",
+        "previousFullListingEvidence": "data/evidence/omega/HK/2026-09-20/observations.json",
+        "source": "OMEGA Hong Kong zh-HK official category cards and product detail pages",
+        "collectionMethod": "比對 HK 2026-09-20 完整觀察與 2026-10-08 全部官方分類卡集合；使用 2026-10-08 分類卡資料，再於 2026-10-11 逐一直接重開 13 個 HK 官方 PDP，核對頁面標題/reference、價格與主購買 CTA。",
+        "candidateCount": 13,
+        "previousFullListingMatches": 0,
+        "currentCategoryCards": 13,
+        "currentPdpChecks": 13,
+        "candidateReferences": [
+          "210.30.42.20.01.023",
+          "210.30.42.20.01.029",
+          "210.30.42.20.03.004",
+          "210.30.42.20.03.005",
+          "210.83.42.20.01.001",
+          "210.83.42.20.03.001",
+          "220.10.38.20.02.004",
+          "220.10.38.20.03.006",
+          "220.10.41.21.01.003",
+          "220.10.41.21.02.005",
+          "220.10.41.21.03.007",
+          "220.10.41.21.10.002",
+          "220.50.41.21.02.004"
+        ],
+        "pdpCheckResult": {
+          "referencesMatched": 13,
+          "pricesMatchedCategoryCards": 13,
+          "primaryCtaContactRetailer": 13,
+          "onlineCheckoutObserved": 0
+        },
+        "bundleReferences": [
+          "210.30.42.20.01.029",
+          "210.30.42.20.03.005",
+          "210.83.42.20.01.001",
+          "210.83.42.20.03.001"
+        ],
+        "bundleInterpretation": "4 個 PDP 的完整 reference 與網址一致，頁面均列 HKD630,000、CTA「聯絡專賣店」，並明示是限量套裝，含兩枚腕錶及配件；依統籌者指示以該頁列出的套裝價格原樣記錄，不作單錶拆分。",
+        "listingStatusInterpretation": "13 個 PDP 均公開列價且主 CTA 是「聯絡專賣店」，頁面未提供此配置線上結帳；因此採 retailer-only。",
+        "newModelFlag": "13 張分類卡與商品頁均有「新品」標示；market isNewModel=true。此旗標記錄官方標籤，不推論首次全球發表日。",
+        "networkDiscovery": {
+          "chromeDevtoolsNetworkTool": "ATTEMPTED / FAIL: mcp__chrome_devtools__list_pages returned browser already running for existing profile; could not attach.",
+          "fallback": "Playwright browser opened HK PDPs and Playwright network request listing was queried on an HK PDP; page rendered localized product detail and static/runtime requests loaded. This targeted work did not repeat the full category API crawl; full category evidence remains in the 2026-10-08 source run.",
+          "result": "PDP UI and current price/CTA verified; no request/response secrets saved."
+        },
+        "catalogFactsForCoordinator": [
+          {
+            "reference": "210.30.42.20.01.023",
+            "watchId": "omega:210.30.42.20.01.023",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/diver-300-m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023-72e2b8.png?w=210",
+            "dialColors": null,
+            "dialColorsStatus": "待查：官方 HK 中文分類卡與商品頁未見明確錶盤顏色文字，未推斷。"
+          },
+          {
+            "reference": "210.30.42.20.01.029",
+            "watchId": "omega:210.30.42.20.01.029",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/diver-300-m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029-22b45a.png?w=210",
+            "dialColors": null,
+            "dialColorsStatus": "待查：官方 HK 中文分類卡與商品頁未見明確錶盤顏色文字，未推斷。"
+          },
+          {
+            "reference": "210.30.42.20.03.004",
+            "watchId": "omega:210.30.42.20.03.004",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/diver-300-m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003004-68cc39.png?w=210",
+            "dialColors": null,
+            "dialColorsStatus": "待查：官方 HK 中文分類卡與商品頁未見明確錶盤顏色文字，未推斷。"
+          },
+          {
+            "reference": "210.30.42.20.03.005",
+            "watchId": "omega:210.30.42.20.03.005",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/diver-300-m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005-18104a.png?w=210",
+            "dialColors": null,
+            "dialColorsStatus": "待查：官方 HK 中文分類卡與商品頁未見明確錶盤顏色文字，未推斷。"
+          },
+          {
+            "reference": "210.83.42.20.01.001",
+            "watchId": "omega:210.83.42.20.01.001",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/diver-300-m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001-a545d5.png?w=210",
+            "dialColors": null,
+            "dialColorsStatus": "待查：官方 HK 中文分類卡與商品頁未見明確錶盤顏色文字，未推斷。"
+          },
+          {
+            "reference": "210.83.42.20.03.001",
+            "watchId": "omega:210.83.42.20.03.001",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/diver-300-m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001-ce2f28.png?w=210",
+            "dialColors": null,
+            "dialColorsStatus": "待查：官方 HK 中文分類卡與商品頁未見明確錶盤顏色文字，未推斷。"
+          },
+          {
+            "reference": "220.10.38.20.02.004",
+            "watchId": "omega:220.10.38.20.02.004",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004-3f46bb.png?w=210",
+            "dialColors": null,
+            "dialColorsStatus": "待查：官方 HK 中文分類卡與商品頁未見明確錶盤顏色文字，未推斷。"
+          },
+          {
+            "reference": "220.10.38.20.03.006",
+            "watchId": "omega:220.10.38.20.03.006",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006-68ee4a.png?w=210",
+            "dialColors": null,
+            "dialColorsStatus": "待查：官方 HK 中文分類卡與商品頁未見明確錶盤顏色文字，未推斷。"
+          },
+          {
+            "reference": "220.10.41.21.01.003",
+            "watchId": "omega:220.10.41.21.01.003",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003-b80381.png?w=210",
+            "dialColors": null,
+            "dialColorsStatus": "待查：官方 HK 中文分類卡與商品頁未見明確錶盤顏色文字，未推斷。"
+          },
+          {
+            "reference": "220.10.41.21.02.005",
+            "watchId": "omega:220.10.41.21.02.005",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005-f92917.png?w=210",
+            "dialColors": null,
+            "dialColorsStatus": "待查：官方 HK 中文分類卡與商品頁未見明確錶盤顏色文字，未推斷。"
+          },
+          {
+            "reference": "220.10.41.21.03.007",
+            "watchId": "omega:220.10.41.21.03.007",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007-3d64c3.png?w=210",
+            "dialColors": null,
+            "dialColorsStatus": "待查：官方 HK 中文分類卡與商品頁未見明確錶盤顏色文字，未推斷。"
+          },
+          {
+            "reference": "220.10.41.21.10.002",
+            "watchId": "omega:220.10.41.21.10.002",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002-abd92c.png?w=210",
+            "dialColors": null,
+            "dialColorsStatus": "待查：官方 HK 中文分類卡與商品頁未見明確錶盤顏色文字，未推斷。"
+          },
+          {
+            "reference": "220.50.41.21.02.004",
+            "watchId": "omega:220.50.41.21.02.004",
+            "collectionId": "seamaster",
+            "categoryPath": "watches/seamaster/aqua-terra-150m/catalog",
+            "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004-635a8d.png?w=210",
+            "dialColors": null,
+            "dialColorsStatus": "待查：官方 HK 中文分類卡與商品頁未見明確錶盤顏色文字，未推斷。"
+          }
+        ],
+        "limitations": [
+          "HK official localized card and PDP text does not explicitly state these 13 dial colors; market dialDescription is null and catalog dialColors are not guessed, pending coordinator verification.",
+          "官方首頁 family total 與 category union 的差異沿用 2026-10-08 原始收集摘要；此補充 run 不宣稱重新確認全站完整度。"
+        ]
+      }
+    }
+  ]
+}

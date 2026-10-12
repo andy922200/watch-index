@@ -2,7 +2,7 @@
   "$schema": "../schemas/watch-catalog.schema.json",
   "schemaVersion": 5,
   "brandId": "omega",
-  "collectedAt": "2026-09-24T11:16:40Z",
+  "collectedAt": "2026-10-11T10:42:50Z",
   "sourceMarketCodes": [
     "TW",
     "JP",
@@ -15,9 +15,10 @@
     "ES",
     "CN",
     "IT",
-    "AT"
+    "AT",
+    "GB"
   ],
-  "watchCount": 586,
+  "watchCount": 607,
   "watches": [
     {
       "watchId": "omega:131.10.25.60.02.002",
@@ -1307,6 +1308,24 @@
       ]
     },
     {
+      "watchId": "omega:210.30.42.20.01.023",
+      "collectionId": "seamaster",
+      "reference": "210.30.42.20.01.023",
+      "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023-72e2b8.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "omega:210.30.42.20.01.029",
+      "collectionId": "seamaster",
+      "reference": "210.30.42.20.01.029",
+      "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029-22b45a.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
       "watchId": "omega:210.30.42.20.03.001",
       "collectionId": "seamaster",
       "reference": "210.30.42.20.03.001",
@@ -1329,6 +1348,24 @@
       "collectionId": "seamaster",
       "reference": "210.30.42.20.03.003",
       "imageUrl": "https://www.omegawatches.com.tw/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003003-544926.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "omega:210.30.42.20.03.004",
+      "collectionId": "seamaster",
+      "reference": "210.30.42.20.03.004",
+      "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003004-68cc39.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "omega:210.30.42.20.03.005",
+      "collectionId": "seamaster",
+      "reference": "210.30.42.20.03.005",
+      "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005-18104a.png",
       "dialColors": [
         "blue"
       ]
@@ -1601,6 +1638,24 @@
       "imageUrl": "https://www.omegawatches.com.tw/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-chronograph-44-mm-21062445101001-c2f57f.png",
       "dialColors": [
         "black"
+      ]
+    },
+    {
+      "watchId": "omega:210.83.42.20.01.001",
+      "collectionId": "seamaster",
+      "reference": "210.83.42.20.01.001",
+      "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001-a545d5.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
+      "watchId": "omega:210.83.42.20.03.001",
+      "collectionId": "seamaster",
+      "reference": "210.83.42.20.03.001",
+      "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001-ce2f28.png",
+      "dialColors": [
+        "blue"
       ]
     },
     {
@@ -1991,6 +2046,15 @@
       ]
     },
     {
+      "watchId": "omega:220.10.38.20.02.004",
+      "collectionId": "seamaster",
+      "reference": "220.10.38.20.02.004",
+      "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004-3f46bb.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
       "watchId": "omega:220.10.38.20.03.001",
       "collectionId": "seamaster",
       "reference": "220.10.38.20.03.001",
@@ -2022,6 +2086,15 @@
       "collectionId": "seamaster",
       "reference": "220.10.38.20.03.005",
       "imageUrl": "https://www.omegawatches.com.tw/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003005-de931b.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
+      "watchId": "omega:220.10.38.20.03.006",
+      "collectionId": "seamaster",
+      "reference": "220.10.38.20.03.006",
+      "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006-68ee4a.png",
       "dialColors": [
         "blue"
       ]
@@ -2109,6 +2182,15 @@
       ]
     },
     {
+      "watchId": "omega:220.10.41.21.01.003",
+      "collectionId": "seamaster",
+      "reference": "220.10.41.21.01.003",
+      "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003-b80381.png",
+      "dialColors": [
+        "black"
+      ]
+    },
+    {
       "watchId": "omega:220.10.41.21.02.001",
       "collectionId": "seamaster",
       "reference": "220.10.41.21.02.001",
@@ -2131,6 +2213,15 @@
       "collectionId": "seamaster",
       "reference": "220.10.41.21.02.004",
       "imageUrl": "https://www.omegawatches.com.tw/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-small-seconds-41-mm-22010412102004-563830.png",
+      "dialColors": [
+        "silver"
+      ]
+    },
+    {
+      "watchId": "omega:220.10.41.21.02.005",
+      "collectionId": "seamaster",
+      "reference": "220.10.41.21.02.005",
+      "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005-f92917.png",
       "dialColors": [
         "silver"
       ]
@@ -2163,10 +2254,28 @@
       ]
     },
     {
+      "watchId": "omega:220.10.41.21.03.007",
+      "collectionId": "seamaster",
+      "reference": "220.10.41.21.03.007",
+      "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007-3d64c3.png",
+      "dialColors": [
+        "blue"
+      ]
+    },
+    {
       "watchId": "omega:220.10.41.21.10.001",
       "collectionId": "seamaster",
       "reference": "220.10.41.21.10.001",
       "imageUrl": "https://www.omegawatches.com.tw/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110001-bacbaa.png",
+      "dialColors": [
+        "green"
+      ]
+    },
+    {
+      "watchId": "omega:220.10.41.21.10.002",
+      "collectionId": "seamaster",
+      "reference": "220.10.41.21.10.002",
+      "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002-abd92c.png",
       "dialColors": [
         "green"
       ]
@@ -2583,6 +2692,15 @@
       "imageUrl": "https://www.omegawatches.com.tw/media/catalog/product/o/m/omega-seamaster-aqua-terra-shades-co-axial-master-chronometer-38-mm-22050382010001-a30aa7.png",
       "dialColors": [
         "pink"
+      ]
+    },
+    {
+      "watchId": "omega:220.50.41.21.02.004",
+      "collectionId": "seamaster",
+      "reference": "220.50.41.21.02.004",
+      "imageUrl": "https://www.omegawatches.com.hk/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004-635a8d.png",
+      "dialColors": [
+        "silver"
       ]
     },
     {
@@ -5296,6 +5414,78 @@
       "imageUrl": "https://www.omegawatches.cn/media/catalog/product/o/m/omega-de-ville-prestige-co-axial-chronometer-32-7_mm-42410332005001-f90ced.png",
       "dialColors": [
         "white"
+      ]
+    },
+    {
+      "watchId": "omega:522.53.45.52.04.001",
+      "collectionId": "specialities",
+      "reference": "522.53.45.52.04.001",
+      "imageUrl": "https://www.omegawatches.com/media/catalog/product/o/m/omega-specialities-olympic-1932-chrono-chime-52253455204001-bf0d91.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "omega:5108.20.00",
+      "collectionId": "specialities",
+      "reference": "5108.20.00",
+      "imageUrl": "https://www.omegawatches.com/media/catalog/product/o/m/omega-specialities-olympic-pocket-watch-1932-51082000-86e7bb.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "omega:5109.20.00",
+      "collectionId": "specialities",
+      "reference": "5109.20.00",
+      "imageUrl": "https://www.omegawatches.com/media/catalog/product/o/m/omega-specialities-olympic-pocket-watch-1932-51092000-0e2e27.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "omega:5110.20.00",
+      "collectionId": "specialities",
+      "reference": "5110.20.00",
+      "imageUrl": "https://www.omegawatches.com/media/catalog/product/o/m/omega-specialities-olympic-pocket-watch-1932-51102000-9dd7a6.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "omega:215.32.44.21.01.002",
+      "collectionId": "seamaster",
+      "reference": "215.32.44.21.01.002",
+      "imageUrl": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-planet-ocean-600m-co-axial-master-chronometer-43-5-mm-21532442101002-b41fb6.png",
+      "dialColors": [
+        "grey"
+      ]
+    },
+    {
+      "watchId": "omega:324.30.38.50.55.001",
+      "collectionId": "speedmaster",
+      "reference": "324.30.38.50.55.001",
+      "imageUrl": "https://www.omegawatches.com/media/catalog/product/o/m/omega-speedmaster-38-co-axial-chronometer-chronograph-38-mm-32430385055001-0459d0.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "omega:324.30.38.50.06.001",
+      "collectionId": "speedmaster",
+      "reference": "324.30.38.50.06.001",
+      "imageUrl": "https://www.omegawatches.com/media/catalog/product/o/m/omega-speedmaster-38-co-axial-chronometer-chronograph-38-mm-32430385006001-6d86c2.png",
+      "dialColors": [
+        "grey"
+      ]
+    },
+    {
+      "watchId": "omega:324.30.38.50.02.001",
+      "collectionId": "speedmaster",
+      "reference": "324.30.38.50.02.001",
+      "imageUrl": "https://www.omegawatches.com/media/catalog/product/o/m/omega-speedmaster-38-co-axial-chronometer-chronograph-38-mm-32430385002001-a76768.png",
+      "dialColors": [
+        "silver"
       ]
     }
   ]

@@ -1,0 +1,188 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "AT",
+  "collectionDate": "2026-10-11",
+  "sourceAttemptCount": 2,
+  "note": "Original validation results are preserved verbatim by attempt. This bundle does not promote any PARTIAL or NOT RUN result to PASS.",
+  "attemptValidations": [
+    {
+      "attemptId": "candidate-additions-run-1",
+      "originalRunDirectory": "data/evidence/omega/AT/2026-10-11/candidate-additions-run-1",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "AT",
+        "locale": "de-AT",
+        "runId": 3,
+        "overallStatus": "PARTIAL — 1 candidate added; 12 category-only candidates remain pending PDP verification",
+        "checks": {
+          "strictJson": {
+            "status": "PASS",
+            "scope": "data/catalog, data/markets, data/history, data/schemas",
+            "fileCount": 93,
+            "duplicateKeys": "none",
+            "invalidJsonConstants": "none"
+          },
+          "jsonSchema": {
+            "status": "NOT RUN",
+            "scope": [
+              "data/markets/omega-austria-market.json",
+              "data/history/AT/omega-price-history.json"
+            ],
+            "reason": "No JSON Schema validation library is installed in the local Python environment. Manual required-field/type/enum checks were performed; this does not replace a JSON Schema engine."
+          },
+          "marketIntegrity": {
+            "status": "PASS",
+            "watchCount": 553,
+            "uniqueWatchIds": true,
+            "uniqueReferences": true,
+            "candidateReferencesAdded": 1,
+            "candidateReferencesMatchedToEvidence": 1,
+            "marketCode": "AT",
+            "locale": "de-AT",
+            "pendingCategoryOnlyReferences": [
+              "210.30.42.20.01.029",
+              "210.30.42.20.03.004",
+              "210.30.42.20.03.005",
+              "210.83.42.20.01.001",
+              "210.83.42.20.03.001",
+              "220.10.38.20.02.004",
+              "220.10.38.20.03.006",
+              "220.10.41.21.01.003",
+              "220.10.41.21.02.005",
+              "220.10.41.21.03.007",
+              "220.10.41.21.10.002",
+              "220.50.41.21.02.004"
+            ]
+          },
+          "historyIntegrity": {
+            "status": "PASS",
+            "runIds": [
+              1,
+              2,
+              3
+            ],
+            "run3RecordCount": 1,
+            "newPricePoints": [
+              "omega:210.30.42.20.01.023"
+            ],
+            "newPoint": {
+              "listingStatus": "retailer-only",
+              "price": 8400,
+              "currencyCode": "EUR"
+            },
+            "otherCandidatePricePointsAdded": 0,
+            "pointRunIdsValid": true,
+            "priceStatusCombinationsValid": true
+          },
+          "evidenceIntegrity": {
+            "status": "PASS",
+            "observationCount": 13,
+            "candidateIdsMatchMarketAdditions": false,
+            "categoryPriceAndCtaPreservedAsCategoryOnlyFacts": true,
+            "directPdpFactCount": 1,
+            "formalMarketReferencesMatched": [
+              "210.30.42.20.01.023"
+            ],
+            "categoryOnlyCandidatesRetainedInEvidence": [
+              "210.30.42.20.01.029",
+              "210.30.42.20.03.004",
+              "210.30.42.20.03.005",
+              "210.83.42.20.01.001",
+              "210.83.42.20.03.001",
+              "220.10.38.20.02.004",
+              "220.10.38.20.03.006",
+              "220.10.41.21.01.003",
+              "220.10.41.21.02.005",
+              "220.10.41.21.03.007",
+              "220.10.41.21.10.002",
+              "220.50.41.21.02.004"
+            ],
+            "note": "The 12 category-only candidates remain in observations evidence, but were removed from the formal market until their PDP status can be verified."
+          },
+          "catalogRelationship": {
+            "status": "NOT RUN",
+            "reason": "Catalog is outside this single-market worker scope; no catalog file was read or modified."
+          },
+          "sourceCompleteness": {
+            "status": "NOT PASS — incomplete PDP coverage",
+            "categoryCapture": "Reused the complete 2026-10-08 AT capture: 16 categories with terminal-page evidence documented in the source run.",
+            "pdpSpotCheck": "1 of 13 candidates, 210.30.42.20.01.023, was confirmed directly on exact /de-at/ PDP; the other 12 product pages were not checked and remain candidates only."
+          },
+          "independentSpotCheck": {
+            "status": "PARTIAL — 1 of 13 candidates",
+            "checkedReferences": [
+              "210.30.42.20.01.023"
+            ],
+            "uncheckedReferences": [
+              "210.30.42.20.01.029",
+              "210.30.42.20.03.004",
+              "210.30.42.20.03.005",
+              "210.83.42.20.01.001",
+              "210.83.42.20.03.001",
+              "220.10.38.20.02.004",
+              "220.10.38.20.03.006",
+              "220.10.41.21.01.003",
+              "220.10.41.21.02.005",
+              "220.10.41.21.03.007",
+              "220.10.41.21.10.002",
+              "220.50.41.21.02.004"
+            ]
+          }
+        },
+        "limitations": [
+          "The previous attempt record remains in the 2026-10-08 candidate review. A later exact /de-at/ PDP visit successfully confirmed 210.30.42.20.01.023 on the Austria store; the other 12 candidates were not independently checked on PDPs.",
+          "The 12 unverified references are retained in observations.json as category-only candidates and are not formal market or price-history records.",
+          "Category card CTA labels and prices are preserved verbatim in observations.json but were not used to create history points for the other 12 products.",
+          "The precise clock time of the 2026-10-11 PDP visit was not captured; its date, rendered locale/region, title, price and CTA are preserved.",
+          "No catalog records were read or changed. The coordinator should reconcile catalog fields, including the unresolved image and dial details, after PDP verification."
+        ],
+        "readmeImpact": "No long-term README change needed for this market-level addition."
+      }
+    },
+    {
+      "attemptId": "candidate-additions-run-2",
+      "originalRunDirectory": "data/evidence/omega/AT/2026-10-11/candidate-additions-run-2",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "AT",
+        "runId": "source-revalidation-1",
+        "overall": "PASS WITH DOCUMENTED SOURCE LIMITATIONS — all 12 candidates added after exact-market PDP verification; complete full-market refresh remains outside this candidate-specific run.",
+        "checks": {
+          "strictJson": "PASS: evidence JSON written with Python json encoder.",
+          "targetLocaleAndReference": "PASS: direct browser output showed target storefront locale and URL reference for the sampled pages.",
+          "pagePriceAndCta": "Captured in the embedded rendered-page snapshot excerpts; requires point-by-point semantic normalization before any formal write.",
+          "fullMarketCompleteness": "NOT RUN: targeted candidates only; full 16-category current source refresh and family-count reconciliation remain outstanding.",
+          "formalMarketHistoryWrite": "NOT RUN.",
+          "exactPdpReferencePriceCta": {
+            "status": "PASS",
+            "directPdpCount": 12,
+            "priceTextCount": 12,
+            "statusMappingCounts": {
+              "retailer-only": 12
+            },
+            "details": "Per-reference rendered snapshot excerpts and extraction strings are preserved in observations.json."
+          },
+          "formalMarketAndHistory": {
+            "status": "PASS",
+            "watchCount": 565,
+            "historySeriesCount": 565,
+            "runId": 4,
+            "referencesAdded": 12,
+            "historyPointsAdded": 12,
+            "priceStatusPairsValid": true,
+            "categoryAndPdpPricesMatch": true
+          },
+          "catalogReferences": {
+            "status": "PASS",
+            "allCandidateRefsAlreadyPresentInSharedCatalog": true
+          }
+        },
+        "limitations": [
+          "This run validates and adds only the 12 identified candidates.",
+          "It does not re-run all 16 market categories or resolve the previously documented landing/category total discrepancy."
+        ]
+      }
+    }
+  ]
+}

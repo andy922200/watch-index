@@ -1,0 +1,99 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "CN",
+  "collectionDate": "2026-10-11",
+  "sourceAttemptCount": 3,
+  "note": "Original validation results are preserved verbatim by attempt. This bundle does not promote any PARTIAL or NOT RUN result to PASS.",
+  "attemptValidations": [
+    {
+      "attemptId": "candidate-classification-price-validation-run-3",
+      "originalRunDirectory": "data/evidence/omega/CN/2026-10-11/candidate-classification-price-validation-run-3",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "CN",
+        "runId": 3,
+        "overall": "PARTIAL — 13 catalog-backed category candidates classified and price-verified; one catalog-missing candidate and broad pending CTA group remain.",
+        "checks": {
+          "directPdpCandidateVerification": "PASS: all 13 catalog-backed candidates opened on official zh-Hans-CN pages; ref/title/new badge/configuration, price and CTA recorded.",
+          "categoryPriceCrosscheck": "PASS: all 13 direct PDP prices equal the official category card amounts.",
+          "statusInterpretation": "PASS: all 13 direct pages show price and only retailer contact action; history status retailer-only.",
+          "existingPrices": "PASS: all 572 matched existing market refs remain unchanged from run 2 history.",
+          "notListedHistory": "PASS: prior 7 not-listed points from run 2 retained; no removals.",
+          "catalogIntegrity": "PASS: all 13 additions already exist in global Omega catalog; catalog was not changed.",
+          "unresolvedNonCatalogCandidate": "PARTIAL: 522.30.38.50.04.001 has a verified CNY 49,000 PDP price and reserve/contact CTA, but no formal market/history addition without its stable catalog record.",
+          "strictJson": "PASS: duplicate-key-aware parser and invalid-constant check passed across 93 catalog/market/history/schema JSON files.",
+          "jsonSchema": "NOT RUN: Python jsonschema module unavailable in environment.",
+          "pendingStatusCohort": "PARTIAL: 137 of 139 prior ambiguous-CTA PDP refs remain unchecked.",
+          "crossFileIntegrity": "PASS: project cross-brand validation passed for all 43 formal market files; CN catalog/market/history links, watchCount, runId and price/status pairs checked.",
+          "appendOnly": "PASS: all original 579 market records and prior price-series arrays remain exact members/prefixes; run 2 and its seven not-listed points retained.",
+          "READMECount": "PASS: README China Omega count updated from 579 to 592."
+        },
+        "limitations": [
+          "The uncatalogued 522.30.38.50.04.001 candidate is not formally added.",
+          "137 of 139 prior ambiguous-CTA PDP refs remain unchecked."
+        ],
+        "scopeProtection": "Only Omega China market/history/evidence and README CN Omega count updated; catalog/schema and other markets untouched."
+      }
+    },
+    {
+      "attemptId": "full-category-price-validation-run-2",
+      "originalRunDirectory": "data/evidence/omega/CN/2026-10-11/full-category-price-validation-run-2",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "CN",
+        "runId": 2,
+        "overall": "PARTIAL — full category and card-price reconciliation completed; additions and CTA status remain unresolved.",
+        "checks": {
+          "categoryTraversal": "PASS: 16/16 categories reached a terminal page; 586 unique codes/URLs; landing family sum 586",
+          "priceReconciliation": "PASS for 572 existing category matches: all CNY card prices equal prior history; 0 price deltas",
+          "marketAbsentReferences": "PASS: 7 previously tracked references absent from the complete current category set; records retained and marked not-listed",
+          "newCategoryReferences": "PARTIAL: 14 official category refs absent from target market; 13 are known catalog refs; 1 (522.30.38.50.04.001) is absent from global catalog and awaits full stable configuration review",
+          "history": "PASS: run 2 appended 7 not-listed points; prior run remains intact",
+          "pdpClassification": "PARTIAL: category CTA card groups remain unresolved for tracked items; 137 of the prior 139 ambiguous PDP references remain unchecked after earlier targeted rechecks",
+          "networkDiscovery": "PARTIAL: live requests inspected; category JSON/XHR was not identified; external SDK DNS failure did not block DOM collection",
+          "strictJson": "PASS: duplicate-key-aware parser, market/history link integrity and price/status checks.",
+          "jsonSchema": "NOT RUN: Python jsonschema module unavailable in this environment."
+        },
+        "limitations": [
+          "Fourteen category refs lack formal target-market records; no market additions are made until all local fields and listing status can be justified.",
+          "The newly observed 522.30.38.50.04.001 has a direct browser PDP observation: CNY 49,000 and 立即预订 / 联系我们; catalog dialColors and complete stable fields remain unresolved.",
+          "137 ambiguous listing-status PDPs still lack individual direct CTA checks."
+        ],
+        "scopeProtection": "Only CN Omega history and CN Omega evidence were modified; market data, catalog, README, schema, refund policy, and other markets were untouched."
+      }
+    },
+    {
+      "attemptId": "targeted-pdp-recheck-run-1",
+      "originalRunDirectory": "data/evidence/omega/CN/2026-10-11/targeted-pdp-recheck-run-1",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "CN",
+        "overall": "PARTIAL — sampled retry PDPs now render, but prior unresolved target groups remain unverified.",
+        "checks": {
+          "strictJson": "PASS: files written with Python JSON encoder.",
+          "exactTargetStorefront": "PASS: each sampled page rendered expected locale and exact reference.",
+          "targetedPdpRetry": "PASS: all selected pages rendered; price and CTA are in observations.json rendered snapshots.",
+          "unresolvedCoverage": "NOT PASS: 2 previously unchecked references are now individually checked; 1 of 3 historical PDP samples was rechecked. 137 of the original 139 ambiguous tracked references remain without individual PDP inspection.",
+          "formalMarketHistoryWrite": "NOT WRITTEN",
+          "sampledCtaBehavior": {
+            "status": "PASS for samples only",
+            "newlyCheckedPreviouslyPending": 2,
+            "historicalSampleRechecked": 1,
+            "references": [
+              "131.10.25.60.02.002",
+              "210.55.42.20.99.001",
+              "310.32.42.50.02.001"
+            ],
+            "interpretation": "All three sampled PDPs display public price with no online cart/checkout; each directs customers to subscribe, contact, or consult a boutique. This sample cannot be extrapolated to uninspected references."
+          }
+        },
+        "limitations": [
+          "137 of 139 previously uninspected ambiguous CTA references remain unchecked.",
+          "Source category-count mismatch and one price-unavailable PDP remain unresolved.",
+          "No formal China market/history update was made."
+        ]
+      }
+    }
+  ]
+}

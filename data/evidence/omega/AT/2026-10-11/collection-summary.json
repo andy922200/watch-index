@@ -1,0 +1,112 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "AT",
+  "collectionDate": "2026-10-11",
+  "consolidatedAttemptCount": 2,
+  "note": "Same-day uncommitted evidence was consolidated. Each original collection summary is preserved verbatim by attempt; run IDs and distinct scopes remain separate.",
+  "attempts": [
+    {
+      "attemptId": "candidate-additions-run-1",
+      "originalRunDirectory": "data/evidence/omega/AT/2026-10-11/candidate-additions-run-1",
+      "collectionSummary": {
+        "evidenceFormatVersion": 2,
+        "brandId": "omega",
+        "marketCode": "AT",
+        "locale": "de-AT",
+        "salesRegion": "Austria",
+        "mode": "candidate-additions from previously captured complete official categories",
+        "runId": 3,
+        "startedAt": "2026-10-11T06:41:41Z",
+        "completedAt": "2026-10-11T06:41:41Z",
+        "status": "One directly verified candidate (210.30.42.20.01.023) added to AT market/history; 12 additional category-confirmed candidates remain pending PDP verification and are not formal market records.",
+        "marketConditions": {
+          "officialEntryUrl": "https://www.omegawatches.com/de-at/watches",
+          "currencyCode": "EUR",
+          "priceType": "tax-include",
+          "taxRatePercent": 20,
+          "marketLocale": "de-AT",
+          "regionEvidence": "The successful 210.30.42.20.01.023 PDP showed OMEGA AT® and footer region Österreich."
+        },
+        "categoryEvidenceReuse": {
+          "sourceRunId": 2,
+          "observedDate": "2026-10-08",
+          "fullCategoryCount": 16,
+          "candidateCount": 13,
+          "priorObservationAbsentCount": 13,
+          "currentCategoryPresentCount": 13,
+          "newBadgeCount": 13,
+          "stopEvidence": "The source 2026-10-08 complete category capture records terminal pages with no next-page link; see its collection-summary.json and category-capture-batch-*.json files."
+        },
+        "pdpVerification": {
+          "verifiedCount": 1,
+          "verifiedReferences": [
+            "210.30.42.20.01.023"
+          ],
+          "market": "AT / de-AT",
+          "note": "An earlier live attempt redirected to TW and was excluded. A later exact /de-at/ URL visibly resolved to OMEGA AT®, displayed € 8.400 and Österreich in the footer; the exact observation clock time was not captured."
+        },
+        "historyScope": {
+          "newRunId": 3,
+          "recordCount": 1,
+          "pricePointsAdded": [
+            "omega:210.30.42.20.01.023"
+          ],
+          "otherCandidateHistoryPointsAdded": 0,
+          "note": "Category card CTA and price remain in observations as category evidence only; no category CTA was promoted to PDP listing status or price history."
+        },
+        "limitations": [
+          "Official imageUrl was not present in category evidence and is not a market schema field.",
+          "PDP CTA and price history were not independently checked for the other 12 references.",
+          "Category card prices and CTA labels are preserved as category observations only; they were not converted into history records.",
+          "Exact clock time of the successful 2026-10-11 PDP observation was not preserved; only the date is recorded."
+        ],
+        "marketUpdate": {
+          "beforeWatchCount": 552,
+          "afterWatchCount": 553,
+          "formallyAddedReferences": [
+            "210.30.42.20.01.023"
+          ],
+          "pendingCategoryOnlyReferences": [
+            "210.30.42.20.01.029",
+            "210.30.42.20.03.004",
+            "210.30.42.20.03.005",
+            "210.83.42.20.01.001",
+            "210.83.42.20.03.001",
+            "220.10.38.20.02.004",
+            "220.10.38.20.03.006",
+            "220.10.41.21.01.003",
+            "220.10.41.21.02.005",
+            "220.10.41.21.03.007",
+            "220.10.41.21.10.002",
+            "220.50.41.21.02.004"
+          ]
+        }
+      }
+    },
+    {
+      "attemptId": "candidate-additions-run-2",
+      "originalRunDirectory": "data/evidence/omega/AT/2026-10-11/candidate-additions-run-2",
+      "collectionSummary": {
+        "brandId": "omega",
+        "marketCode": "AT",
+        "locale": "de-AT",
+        "mode": "candidate-additions",
+        "observedAtUtcWindow": [
+          "2026-10-11T07:31:28Z",
+          "2026-10-11T07:35:46Z"
+        ],
+        "browser": "Playwright real browser; each official productUrl navigated sequentially and rendered-page snapshot captured.",
+        "scope": "12 references previously category-only and pending exact-market PDP verification.",
+        "attempts": 12,
+        "resolvedPdpPages": 12,
+        "rawSnapshotsEmbeddedIn": "observations.json",
+        "historyWrite": "APPENDED",
+        "runId": 4,
+        "formalMarketReferencesAdded": 12,
+        "formalHistoryPointsAdded": 12,
+        "evidenceFolder": "data/evidence/omega/AT/2026-10-11/candidate-additions-run-2"
+      }
+    }
+  ]
+}

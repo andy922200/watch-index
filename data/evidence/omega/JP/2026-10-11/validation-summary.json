@@ -1,0 +1,55 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "JP",
+  "collectionDate": "2026-10-11",
+  "sourceAttemptCount": 1,
+  "note": "Original validation results are preserved verbatim by attempt. This bundle does not promote any PARTIAL or NOT RUN result to PASS.",
+  "attemptValidations": [
+    {
+      "attemptId": "candidate-additions-run-1",
+      "originalRunDirectory": "data/evidence/omega/JP/2026-10-11/candidate-additions-run-1",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "JP",
+        "runId": "source-revalidation-1",
+        "overall": "PASS WITH DOCUMENTED SOURCE LIMITATIONS — all 12 candidates added after exact-market PDP verification; complete full-market refresh remains outside this candidate-specific run.",
+        "checks": {
+          "strictJson": "PASS: evidence JSON written with Python json encoder.",
+          "targetLocaleAndReference": "PASS: direct browser output showed target storefront locale and URL reference for the sampled pages.",
+          "pagePriceAndCta": "Captured in the embedded rendered-page snapshot excerpts; requires point-by-point semantic normalization before any formal write.",
+          "fullMarketCompleteness": "NOT RUN: targeted candidates only; full 16-category current source refresh and family-count reconciliation remain outstanding.",
+          "formalMarketHistoryWrite": "NOT RUN.",
+          "exactPdpReferencePriceCta": {
+            "status": "PASS",
+            "directPdpCount": 12,
+            "priceTextCount": 12,
+            "statusMappingCounts": {
+              "listed": 1,
+              "retailer-only": 11
+            },
+            "details": "Per-reference rendered snapshot excerpts and extraction strings are preserved in observations.json."
+          },
+          "formalMarketAndHistory": {
+            "status": "PASS",
+            "watchCount": 565,
+            "historySeriesCount": 565,
+            "runId": 3,
+            "referencesAdded": 12,
+            "historyPointsAdded": 12,
+            "priceStatusPairsValid": true,
+            "categoryAndPdpPricesMatch": true
+          },
+          "catalogReferences": {
+            "status": "PASS",
+            "allCandidateRefsAlreadyPresentInSharedCatalog": true
+          }
+        },
+        "limitations": [
+          "This run validates and adds only the 12 identified candidates.",
+          "It does not re-run all 16 market categories or resolve the previously documented landing/category total discrepancy."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "TW",
+  "collectionDate": "2026-10-11",
+  "consolidatedAttemptCount": 2,
+  "note": "Same-day uncommitted evidence was consolidated. Each original collection summary is preserved verbatim by attempt; run IDs and distinct scopes remain separate.",
+  "attempts": [
+    {
+      "attemptId": "full-category-price-validation-run-2",
+      "originalRunDirectory": "data/evidence/omega/TW/2026-10-11/full-category-price-validation-run-2",
+      "collectionSummary": {
+        "brandId": "omega",
+        "marketCode": "TW",
+        "runId": 2,
+        "collectionDate": "2026-10-11",
+        "source": {
+          "entryUrl": "https://www.omegawatches.com.tw/watches",
+          "locale": "zh-Hant-TW",
+          "currencyObserved": "TWD (visible NT$ prices on category and direct product pages)",
+          "categoryLinkSource": "Official Taiwan store rendered product categories; all 16 category chains reached a terminal page."
+        },
+        "observedAtUtcWindow": "2026-10-11T07:35:00Z/2026-10-11T08:10:00Z",
+        "categoryTraversal": {
+          "categoryCount": 16,
+          "uniqueProductCodeCount": 558,
+          "uniqueProductUrlCount": 558,
+          "terminalSignal": "All observed category chains have no visible next/load-more link.",
+          "homepageFamilyCounts": {
+            "Seamaster": 202,
+            "Speedmaster": 95,
+            "Constellation": 128,
+            "De Ville": 127
+          },
+          "categoryFamilyUniqueCounts": {
+            "Seamaster": 208,
+            "Speedmaster": 95,
+            "Constellation": 128,
+            "De Ville": 127
+          },
+          "categoryVsHomepageDelta": 6,
+          "httpErrors": 0
+        },
+        "marketReconciliation": {
+          "previousMarketRefs": 551,
+          "matchedCategoryRefs": 545,
+          "categoryRefsAbsentFromMarket": 13,
+          "marketRefsAbsentFromFullCategoryTraversal": 6,
+          "newReferences": [
+            "210.30.42.20.01.023",
+            "210.30.42.20.01.029",
+            "210.30.42.20.03.004",
+            "210.30.42.20.03.005",
+            "210.83.42.20.01.001",
+            "210.83.42.20.03.001",
+            "220.10.38.20.02.004",
+            "220.10.38.20.03.006",
+            "220.10.41.21.01.003",
+            "220.10.41.21.02.005",
+            "220.10.41.21.03.007",
+            "220.10.41.21.10.002",
+            "220.50.41.21.02.004"
+          ],
+          "absentReferences": [
+            "220.10.38.20.02.001",
+            "220.10.38.20.03.001",
+            "220.10.41.21.01.001",
+            "220.10.41.21.02.001",
+            "220.10.41.21.03.004",
+            "220.10.41.21.10.001"
+          ],
+          "matchedCurrentPricesEqualPreviousHistory": 545,
+          "matchedPriceChanges": 0
+        },
+        "networkDiscovery": {
+          "attempted": true,
+          "finding": "Earlier live browser network inspection did not reveal a StoreConfig response; regional scope corroborated by zh-Hant-TW page locale and NT$ direct/category prices.",
+          "limitation": "No StoreConfig payload available in observed requests."
+        },
+        "errors": {
+          "categoryHttpErrors": 0,
+          "unresolvedNextPages": 0
+        }
+      }
+    },
+    {
+      "attemptId": "targeted-pdp-recheck-run-1",
+      "originalRunDirectory": "data/evidence/omega/TW/2026-10-11/targeted-pdp-recheck-run-1",
+      "collectionSummary": {
+        "brandId": "omega",
+        "marketCode": "TW",
+        "mode": "targeted-pdp-retry",
+        "observedAtUtcWindow": [
+          "2026-10-11T07:37:04Z",
+          "2026-10-11T07:37:29Z"
+        ],
+        "attempts": 1,
+        "successes": 1,
+        "method": "Sequential direct navigation to official product URLs in Playwright real browser; rendered page title, locale, reference, price and CTA captured.",
+        "scope": "Representative retry samples from the previously unchecked/failed target-market PDP groups.",
+        "fullPendingGroupRechecked": false,
+        "evidence": "observations.json"
+      }
+    }
+  ]
+}

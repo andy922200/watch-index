@@ -1,0 +1,89 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "HK",
+  "collectionDate": "2026-10-11",
+  "sourceAttemptCount": 1,
+  "note": "Original validation results are preserved verbatim by attempt. This bundle does not promote any PARTIAL or NOT RUN result to PASS.",
+  "attemptValidations": [
+    {
+      "attemptId": "candidate-additions-run-1",
+      "originalRunDirectory": "data/evidence/omega/HK/2026-10-11/candidate-additions-run-1",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "HK",
+        "runId": 3,
+        "validatedAt": "2026-10-11T06:18:16Z",
+        "priorListingComparison": {
+          "status": "PASS",
+          "details": "13 個候選均不在 2026-09-20 HK 完整 551-reference 官方觀察中；13 個均出現在 2026-10-08 HK 官方完整分類 union。"
+        },
+        "pdpIdentityPriceAndCta": {
+          "status": "PASS",
+          "details": "13/13 香港官方 PDP 的標題／渲染 reference 與完整 reference 一致；PDP 價格 13/13 與 10-08 分類卡一致；主 CTA 13/13 為「聯絡專賣店」，未見線上結帳。"
+        },
+        "bundleSemantic": {
+          "status": "PASS",
+          "details": "4 個套裝 PDP 明示兩枚腕錶及配件，單一 SKU/ref 的頁面標價 HKD630,000。按統籌指示將其作該 reference 的套裝商品價格原樣收錄，不拆分。"
+        },
+        "listingStatusAndPriceConsistency": {
+          "status": "PASS",
+          "details": "13 筆皆 retailer-only + 非負整數 HKD；新增 priceSeries 點與 PDP/category 證據逐筆相符。"
+        },
+        "marketHistoryIntegrity": {
+          "status": "PASS",
+          "details": "新增後 HK market 564 refs、HK history 564 series；collectionRun runId 3 為 13 個補納記錄。原 runId 1/2 與舊價格點保留。"
+        },
+        "strictJson": {
+          "status": "PASS",
+          "details": "新增 JSON 以拒絕重複 key 和 NaN/Infinity 的 parser 驗證。"
+        },
+        "jsonSchema": {
+          "status": "NOT RUN",
+          "details": "未呼叫/安裝 JSON Schema validator；使用手動欄位型別與狀態/價格契約檢查。"
+        },
+        "catalogRelationship": {
+          "status": "PASS with normalization caveat",
+          "details": "Coordinator added all 13 exact watchIds to data/catalog/omega-catalog.json; catalog watchCount is 599 and every candidate is unique. Three pale dials use silver as a documented best-fit filter mapping because the image cannot resolve white versus silver; see catalog-coordinator-update.json."
+        },
+        "historyPrefixAndProtection": {
+          "status": "PASS",
+          "details": "runId 1 和 runId 2 所有價格點在更新前後完全保留；本 run 只新增 13 條 runId 3 點。"
+        },
+        "independentOfficialSpotCheck": {
+          "status": "PASS",
+          "details": "本次 13/13 候選均直接開啟香港官方 PDP；精確 reference、價格與主要 CTA 逐一比對。"
+        },
+        "nicknameResearch": {
+          "status": "NOT RUN (out of scope)",
+          "scope": "candidate additions during price maintenance"
+        },
+        "readmeUpdate": {
+          "status": "PASS",
+          "updated": true,
+          "sections": [
+            "Data：官方配置與多市場價格"
+          ],
+          "reason": "The coordinated Omega counts in AT, HK, JP, KR and the shared catalog were updated after formal additions."
+        },
+        "changes": {
+          "watchCountBefore": 551,
+          "watchCountAfter": 564,
+          "marketRefsAdded": 13,
+          "priceSeriesAdded": 13,
+          "statusPointsAdded": 13,
+          "listingStatus": "retailer-only",
+          "priceRangeHKD": [
+            52200,
+            630000
+          ]
+        },
+        "limitations": [
+          "新款標示僅記錄官網「新品」字樣，不代表可確定首次公開日期。",
+          "Official HK localized text does not state explicit dial colors for the 13 candidates; market dialDescription is null and catalog dialColors are now present; three pale-dial values use the documented silver best-fit normalization because white/silver remains visually ambiguous.",
+          "本補充 run 不是全量市場重抓；全站 category 完整性依 2026-10-08 原始 evidence 的既有限制。"
+        ]
+      }
+    }
+  ]
+}

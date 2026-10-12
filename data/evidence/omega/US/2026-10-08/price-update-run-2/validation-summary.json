@@ -1,0 +1,30 @@
+{
+  "brandId": "omega",
+  "marketCode": "US",
+  "runId": 2,
+  "overall": "PARTIAL — no formal data files updated",
+  "checks": {
+    "officialTargetMarket": "NOT RUN: official en-US page did not render; current US/locale/currency signals unavailable. Baseline fields are not a substitute.",
+    "networkDiscovery": "FAIL: two official entry GETs both net::ERR_HTTP2_PROTOCOL_ERROR; no response body.",
+    "fullListingAndPagination": "NOT RUN: 0/16 categories collected; no current terminal signals.",
+    "currentPriceAndStatus": "NOT RUN: no current observations; no inference from old history.",
+    "PdpCtaStatusSamples": "NOT RUN.",
+    "fullReferenceReconciliation": "NOT RUN.",
+    "historyCandidateAndSchema": "NOT RUN because no candidate or formal write.",
+    "strictJsonEvidence": "PASS: all current evidence JSON parsed with duplicate-key and invalid-constant rejection.",
+    "baselineProtection": "PASS: US market/history/catalog hashes unchanged from start."
+  },
+  "limitations": [
+    "Official US entry was inaccessible on initial attempt and the one retry after a 10-second cooldown.",
+    "No current price, status, or completeness claim.",
+    "Historical 2026-09-20 evidence not reused."
+  ],
+  "evidenceDirectory": "data/evidence/omega/US/2026-10-08/price-update-run-2/",
+  "readmeUpdate": "NOT REQUIRED for pure price update.",
+  "evidenceConsolidation": {
+    "status": "PASS",
+    "itemsPreserved": 1,
+    "targetFile": "collection-summary.json",
+    "integrity": "Each embedded item carries its source filename and SHA-256."
+  }
+}

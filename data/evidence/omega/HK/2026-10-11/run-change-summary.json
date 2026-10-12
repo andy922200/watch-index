@@ -1,0 +1,102 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "HK",
+  "collectionDate": "2026-10-11",
+  "sourceReportCount": 1,
+  "note": "Original run-change reports are preserved verbatim by attempt; different run IDs remain distinct.",
+  "runChangeReports": [
+    {
+      "attemptId": "candidate-additions-run-1",
+      "originalRunDirectory": "data/evidence/omega/HK/2026-10-11/candidate-additions-run-1",
+      "runChangeSummary": {
+        "marketCode": "HK",
+        "runId": 3,
+        "collectedAt": "2026-10-11T06:18:16Z",
+        "recordCount": 13,
+        "changedPriceOrStatusCount": 13,
+        "changedWatchIds": [
+          "omega:210.30.42.20.01.023",
+          "omega:210.30.42.20.01.029",
+          "omega:210.30.42.20.03.004",
+          "omega:210.30.42.20.03.005",
+          "omega:210.83.42.20.01.001",
+          "omega:210.83.42.20.03.001",
+          "omega:220.10.38.20.02.004",
+          "omega:220.10.38.20.03.006",
+          "omega:220.10.41.21.01.003",
+          "omega:220.10.41.21.02.005",
+          "omega:220.10.41.21.03.007",
+          "omega:220.10.41.21.10.002",
+          "omega:220.50.41.21.02.004"
+        ],
+        "unchangedPriceOrStatusCount": 0,
+        "marketAddedWatchIds": [
+          "omega:210.30.42.20.01.023",
+          "omega:210.30.42.20.01.029",
+          "omega:210.30.42.20.03.004",
+          "omega:210.30.42.20.03.005",
+          "omega:210.83.42.20.01.001",
+          "omega:210.83.42.20.03.001",
+          "omega:220.10.38.20.02.004",
+          "omega:220.10.38.20.03.006",
+          "omega:220.10.41.21.01.003",
+          "omega:220.10.41.21.02.005",
+          "omega:220.10.41.21.03.007",
+          "omega:220.10.41.21.10.002",
+          "omega:220.50.41.21.02.004"
+        ],
+        "marketAddedCount": 13,
+        "notes": "由正式 market/history 與 HEAD 基準逐筆比較產生；價格／狀態變更指向本 run 的追加點。完整原始市場觀察保留於本資料夾 observations.json。",
+        "priorRunId": 2,
+        "coordinatorCatalogMerge": {
+          "brandId": "omega",
+          "scope": "Shared catalog merge for the 13 Omega references established as absent from the previous complete captures and present in the 2026-10-08 official AT/HK/JP/KR category captures.",
+          "mergedAt": "2026-10-11T06:18:16Z",
+          "catalogFile": "data/catalog/omega-catalog.json",
+          "catalogWatchCountBefore": 586,
+          "catalogWatchCountAfter": 599,
+          "addedReferences": [
+            "210.30.42.20.01.023",
+            "210.30.42.20.01.029",
+            "210.30.42.20.03.004",
+            "210.30.42.20.03.005",
+            "210.83.42.20.01.001",
+            "210.83.42.20.03.001",
+            "220.10.38.20.02.004",
+            "220.10.38.20.03.006",
+            "220.10.41.21.01.003",
+            "220.10.41.21.02.005",
+            "220.10.41.21.03.007",
+            "220.10.41.21.10.002",
+            "220.50.41.21.02.004"
+          ],
+          "identityAndCollection": "Each item uses watchId omega:<full reference>, collectionId seamaster, and the exact official Hong Kong image asset URL without its thumbnail-width query.",
+          "dialColorSource": "Official Hong Kong product images reviewed at full resolution. AT category text explicitly labels 210.83.42.20.01.001 grey and 220.10.38.20.02.004 silver; remaining clear colors use the documented HK image review.",
+          "normalizationDecision": {
+            "references": [
+              "220.10.38.20.02.004",
+              "220.10.41.21.02.005",
+              "220.50.41.21.02.004"
+            ],
+            "catalogSlug": "silver",
+            "basis": "The official images show pale metallic dials but cannot reliably distinguish white from silver. Silver is used as a best-fit catalog filter slug to satisfy the existing required non-empty dialColors field; for 220.10.38.20.02.004 the AT official category title says Silber. The remaining ambiguity is preserved in observations.json imageReview.",
+            "caveat": "This is a catalog filter normalization, not a claim that all three official localized pages explicitly call the dial silver. Moonshine Gold case/bracelet material was not used to infer dial color."
+          },
+          "marketHistoryStatus": {
+            "AT": "One PDP-verified candidate formally included; 12 category-only candidates remain in evidence pending exact PDP purchase-path checks.",
+            "HK": "All 13 PDP-verified and included in market and history runId 3.",
+            "JP": "One PDP-verified candidate formally included; 12 category-only candidates remain in evidence pending exact PDP purchase-path checks.",
+            "KR": "All 13 PDP-verified and included in market and history runId 3."
+          },
+          "validation": {
+            "strictJson": "PASS",
+            "catalogReferenceCount": "PASS: 599 unique references; all 13 additions unique.",
+            "schema": "NOT RUN: no JSON Schema validation library installed; schema files were not changed.",
+            "tests": "NOT RUN: not requested."
+          }
+        }
+      }
+    }
+  ]
+}

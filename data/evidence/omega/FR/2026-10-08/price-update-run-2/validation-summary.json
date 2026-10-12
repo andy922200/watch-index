@@ -1,0 +1,30 @@
+{
+  "brandId": "omega",
+  "marketCode": "FR",
+  "runId": 2,
+  "overall": "PARTIAL — no formal market/history changes",
+  "checks": {
+    "officialTargetMarket": "NOT RUN: official FR page did not render; cannot verify current market or locale signals. Existing baseline market fields do not substitute for current source verification.",
+    "networkDiscovery": "FAIL: two GETs to official FR entry each net::ERR_HTTP2_PROTOCOL_ERROR; no successful network response body.",
+    "fullListingAndPagination": "NOT RUN: 0/16 categories collected and no current stop signals.",
+    "priceAndListingStatus": "NOT RUN: no current observations; no status inferred from prior run.",
+    "PdpCtaValidation": "NOT RUN.",
+    "crossFileSourceMapping": "NOT RUN for current data.",
+    "candidateHistoryAppendAndSchema": "NOT RUN; no candidate generated and no formal file written.",
+    "evidenceStrictJson": "PASS for current checkpoint/collection/validation documents, duplicate-key and invalid-constant parsing.",
+    "changeSafety": "PASS: market/history/catalog file hashes unchanged from start; only new FR evidence files created."
+  },
+  "limitations": [
+    "Official source inaccessible in browser after one cooldown retry; ERR_HTTP2_PROTOCOL_ERROR persisted.",
+    "No current prices, statuses, or full-listing completeness can be claimed.",
+    "Old 2026-09-20 evidence is historical only."
+  ],
+  "evidenceDirectory": "data/evidence/omega/FR/2026-10-08/price-update-run-2/",
+  "readmeUpdate": "NOT REQUIRED for price-only update.",
+  "evidenceConsolidation": {
+    "status": "PASS",
+    "itemsPreserved": 1,
+    "targetFile": "collection-summary.json",
+    "integrity": "Each embedded item carries its source filename and SHA-256."
+  }
+}

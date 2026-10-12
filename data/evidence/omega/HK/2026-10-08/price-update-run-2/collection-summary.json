@@ -1,0 +1,310 @@
+{
+  "brandId": "omega",
+  "marketCode": "HK",
+  "locale": "zh-HK",
+  "runId": 2,
+  "collectedAt": "2026-10-08T13:51:05Z",
+  "entryUrl": "https://www.omegawatches.com.hk/zh-hk/watches",
+  "officialEndpoints": [
+    "https://www.omegawatches.com.hk/zh-hk/watches",
+    "https://www.omegawatches.com.hk/zh-hk/watches/{family}/{subcategory}/catalog",
+    "https://www.omegawatches.com.hk/zh-hk/watch-omega-{slug}",
+    "https://www.omegawatches.com.hk/zh-hk/ajax/product/index/?ids=…"
+  ],
+  "sourceDiscovery": {
+    "method": "直接深層分類導覽會回導 .com.tw；由 HK 首頁點擊可見分類連結，能留在 .com.hk。",
+    "uiLocale": "zh-HK",
+    "currency": "HKD",
+    "landingFamilies": {
+      "seamaster": 203,
+      "speedmaster": 96,
+      "constellation": 128,
+      "deVille": 125,
+      "total": 552
+    },
+    "networkRequestStatus": 200
+  },
+  "catalogCategoryCount": 16,
+  "categories": [
+    {
+      "categoryUrl": "https://www.omegawatches.com.hk/zh-hk/watches/seamaster/aqua-terra-150m/catalog",
+      "officialTotal": 108,
+      "uniqueCollectedCount": 108,
+      "pagesUsed": 5,
+      "pageCumulativeCounts": [
+        24,
+        48,
+        72,
+        96,
+        108
+      ],
+      "terminalSignal": "卡片數穩定，最後一批載入完後沒有可用的載入更多控制。",
+      "matchesCategoryTotal": true
+    },
+    {
+      "categoryUrl": "https://www.omegawatches.com.hk/zh-hk/watches/seamaster/diver-300-m/catalog",
+      "officialTotal": 66,
+      "uniqueCollectedCount": 66,
+      "pagesUsed": 2,
+      "pageCumulativeCounts": [
+        24,
+        66
+      ],
+      "terminalSignal": "卡片數穩定，最後一批載入完後沒有可用的載入更多控制。",
+      "matchesCategoryTotal": true
+    },
+    {
+      "categoryUrl": "https://www.omegawatches.com.hk/zh-hk/watches/seamaster/planet-ocean/catalog",
+      "officialTotal": 17,
+      "uniqueCollectedCount": 17,
+      "pagesUsed": 1,
+      "pageCumulativeCounts": [
+        17
+      ],
+      "terminalSignal": "卡片數穩定，最後一批載入完後沒有可用的載入更多控制。",
+      "matchesCategoryTotal": true
+    },
+    {
+      "categoryUrl": "https://www.omegawatches.com.hk/zh-hk/watches/seamaster/heritage-models/catalog",
+      "officialTotal": 17,
+      "uniqueCollectedCount": 17,
+      "pagesUsed": 1,
+      "pageCumulativeCounts": [
+        17
+      ],
+      "terminalSignal": "卡片數穩定，最後一批載入完後沒有可用的載入更多控制。",
+      "matchesCategoryTotal": true
+    },
+    {
+      "categoryUrl": "https://www.omegawatches.com.hk/zh-hk/watches/seamaster/instruments/catalog",
+      "officialTotal": 1,
+      "uniqueCollectedCount": 1,
+      "pagesUsed": 1,
+      "pageCumulativeCounts": [
+        1
+      ],
+      "terminalSignal": "卡片數穩定，最後一批載入完後沒有可用的載入更多控制。",
+      "matchesCategoryTotal": true
+    },
+    {
+      "categoryUrl": "https://www.omegawatches.com.hk/zh-hk/watches/speedmaster/moonwatch-professional/catalog",
+      "officialTotal": 24,
+      "uniqueCollectedCount": 24,
+      "pagesUsed": 1,
+      "pageCumulativeCounts": [
+        24
+      ],
+      "terminalSignal": "卡片數穩定，最後一批載入完後沒有可用的載入更多控制。",
+      "matchesCategoryTotal": true
+    },
+    {
+      "categoryUrl": "https://www.omegawatches.com.hk/zh-hk/watches/speedmaster/heritage-models/catalog",
+      "officialTotal": 16,
+      "uniqueCollectedCount": 16,
+      "pagesUsed": 1,
+      "pageCumulativeCounts": [
+        16
+      ],
+      "terminalSignal": "卡片數穩定，最後一批載入完後沒有可用的載入更多控制。",
+      "matchesCategoryTotal": true
+    },
+    {
+      "categoryUrl": "https://www.omegawatches.com.hk/zh-hk/watches/speedmaster/dark-side-of-the-moon/catalog",
+      "officialTotal": 8,
+      "uniqueCollectedCount": 8,
+      "pagesUsed": 1,
+      "pageCumulativeCounts": [
+        8
+      ],
+      "terminalSignal": "卡片數穩定，最後一批載入完後沒有可用的載入更多控制。",
+      "matchesCategoryTotal": true
+    },
+    {
+      "categoryUrl": "https://www.omegawatches.com.hk/zh-hk/watches/speedmaster/speedmaster-38-mm/catalog",
+      "officialTotal": 12,
+      "uniqueCollectedCount": 12,
+      "pagesUsed": 1,
+      "pageCumulativeCounts": [
+        12
+      ],
+      "terminalSignal": "卡片數穩定，最後一批載入完後沒有可用的載入更多控制。",
+      "matchesCategoryTotal": true
+    },
+    {
+      "categoryUrl": "https://www.omegawatches.com.hk/zh-hk/watches/speedmaster/two-counters/catalog",
+      "officialTotal": 36,
+      "uniqueCollectedCount": 36,
+      "pagesUsed": 2,
+      "pageCumulativeCounts": [
+        24,
+        36
+      ],
+      "terminalSignal": "卡片數穩定，最後一批載入完後沒有可用的載入更多控制。",
+      "matchesCategoryTotal": true
+    },
+    {
+      "categoryUrl": "https://www.omegawatches.com.hk/zh-hk/watches/constellation/observatory/catalog",
+      "officialTotal": 9,
+      "uniqueCollectedCount": 9,
+      "pagesUsed": 1,
+      "pageCumulativeCounts": [
+        9
+      ],
+      "terminalSignal": "卡片數穩定，最後一批載入完後沒有可用的載入更多控制。",
+      "matchesCategoryTotal": true
+    },
+    {
+      "categoryUrl": "https://www.omegawatches.com.hk/zh-hk/watches/constellation/constellation/catalog",
+      "officialTotal": 119,
+      "uniqueCollectedCount": 119,
+      "pagesUsed": 5,
+      "pageCumulativeCounts": [
+        24,
+        48,
+        72,
+        96,
+        119
+      ],
+      "terminalSignal": "卡片數穩定，最後一批載入完後沒有可用的載入更多控制。",
+      "matchesCategoryTotal": true
+    },
+    {
+      "categoryUrl": "https://www.omegawatches.com.hk/zh-hk/watches/de-ville/ladymatic/catalog",
+      "officialTotal": 3,
+      "uniqueCollectedCount": 3,
+      "pagesUsed": 1,
+      "pageCumulativeCounts": [
+        3
+      ],
+      "terminalSignal": "卡片數穩定，最後一批載入完後沒有可用的載入更多控制。",
+      "matchesCategoryTotal": true
+    },
+    {
+      "categoryUrl": "https://www.omegawatches.com.hk/zh-hk/watches/de-ville/tresor/catalog",
+      "officialTotal": 38,
+      "uniqueCollectedCount": 38,
+      "pagesUsed": 2,
+      "pageCumulativeCounts": [
+        24,
+        38
+      ],
+      "terminalSignal": "卡片數穩定，最後一批載入完後沒有可用的載入更多控制。",
+      "matchesCategoryTotal": true
+    },
+    {
+      "categoryUrl": "https://www.omegawatches.com.hk/zh-hk/watches/de-ville/prestige/catalog",
+      "officialTotal": 82,
+      "uniqueCollectedCount": 82,
+      "pagesUsed": 4,
+      "pageCumulativeCounts": [
+        24,
+        48,
+        72,
+        82
+      ],
+      "terminalSignal": "卡片數穩定，最後一批載入完後沒有可用的載入更多控制。",
+      "matchesCategoryTotal": true
+    },
+    {
+      "categoryUrl": "https://www.omegawatches.com.hk/zh-hk/watches/de-ville/tourbillon/catalog",
+      "officialTotal": 2,
+      "uniqueCollectedCount": 2,
+      "pagesUsed": 1,
+      "pageCumulativeCounts": [
+        2
+      ],
+      "terminalSignal": "卡片數穩定，最後一批載入完後沒有可用的載入更多控制。",
+      "matchesCategoryTotal": true
+    }
+  ],
+  "uniqueListingCount": 558,
+  "duplicateReferenceCount": 0,
+  "listingCtaCounts": {
+    "立即選購": 254,
+    "喜愛清單": 262,
+    "details": 42
+  },
+  "existingMarketReconciliation": {
+    "existingMarketRefs": 551,
+    "currentCategoryExistingRefs": 545,
+    "missingMarketRefs": [
+      "220.10.38.20.02.001",
+      "220.10.38.20.03.001",
+      "220.10.41.21.01.001",
+      "220.10.41.21.02.001",
+      "220.10.41.21.03.004",
+      "220.10.41.21.10.001"
+    ],
+    "missingPdpExplicitlyDiscontinued": 6,
+    "categoryOnlyOutOfScopeRefs": [
+      "210.30.42.20.01.023",
+      "210.30.42.20.01.029",
+      "210.30.42.20.03.004",
+      "210.30.42.20.03.005",
+      "210.83.42.20.01.001",
+      "210.83.42.20.03.001",
+      "220.10.38.20.02.004",
+      "220.10.38.20.03.006",
+      "220.10.41.21.01.003",
+      "220.10.41.21.02.005",
+      "220.10.41.21.03.007",
+      "220.10.41.21.10.002",
+      "220.50.41.21.02.004"
+    ],
+    "outOfScopeCount": 13,
+    "allTargetRefsReconciled": true
+  },
+  "listingStatusCounts": {
+    "listed": 254,
+    "retailerOnly": 291,
+    "notListed": 6
+  },
+  "priceReconciliation": {
+    "existingMarketCardPrices": 545,
+    "directDetailsPdpPriceChecks": 36,
+    "detailsPdpPriceMatches": 36,
+    "presentRefsPriceChanges": 0,
+    "discontinuedPriorPrice": 49500,
+    "discontinuedCurrentPrice": null
+  },
+  "pdpAudit": {
+    "detailsCtaTotal": 42,
+    "existingMarketDetailsPdpChecked": 36,
+    "categoryOnlyDetailsPdpChecked": 6,
+    "detailsPdpPublicPriceAndContactStore": 36,
+    "detailsPdpExplicitOnlineUnavailableCount": 5,
+    "crossSeriesCtaSamplesPerType": 4,
+    "sampleFamilies": [
+      "Seamaster",
+      "Speedmaster",
+      "Constellation",
+      "De Ville"
+    ],
+    "immediatePurchasePdpAddToCartMatches": 4,
+    "wishlistPdpOnlineUnavailableMatches": 4
+  },
+  "sourceReconciliation": {
+    "landingFamilySum": 552,
+    "categorySum": 558,
+    "uniqueCategoryReferences": 558,
+    "difference": 6,
+    "seamasterLanding": 203,
+    "seamasterSubcategories": 209,
+    "otherFamiliesMatch": true,
+    "status": "NOT PASS / partial unresolved source reconciliation"
+  },
+  "attempts": [
+    {
+      "action": "直接導覽深層分類",
+      "result": "自動回導 .com.tw；未使用其內容"
+    },
+    {
+      "action": "從 HK 首頁點擊官方分類 DOM 連結",
+      "result": "成功進入 .com.hk 各分類並顯示 HKD"
+    },
+    {
+      "action": "Dark Side 首次過早讀 DOM",
+      "result": "初讀2卡；穩定等待後取得8卡，總數提示與唯一ref為8"
+    }
+  ]
+}

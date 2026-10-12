@@ -1,0 +1,59 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "KR",
+  "collectionDate": "2026-10-11",
+  "sourceAttemptCount": 1,
+  "note": "Original validation results are preserved verbatim by attempt. This bundle does not promote any PARTIAL or NOT RUN result to PASS.",
+  "attemptValidations": [
+    {
+      "attemptId": "candidate-additions-run-1",
+      "originalRunDirectory": "data/evidence/omega/KR/2026-10-11/candidate-additions-run-1",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "KR",
+        "runId": 3,
+        "validatedAt": "2026-10-11",
+        "checks": {
+          "strictJson": {
+            "result": "PASS",
+            "detail": "All new run-3 evidence, market and history JSON parsed with duplicate-key and non-finite-value rejection."
+          },
+          "candidateCoverage": {
+            "result": "PASS",
+            "detail": "All 13 candidates are absent from the 2026-09-18 capture, present in the complete 2026-10-08 categories, and have exact-SKU KR PDP evidence."
+          },
+          "statusPriceEvidence": {
+            "result": "PASS",
+            "detail": "All 13 prices and PDP purchase paths were read on the target KR PDP. Four PDPs expose add-to-cart; nine expose boutique contact without add-to-cart (including wishlist notification paths). Category-card CTA was not used to infer listingStatus."
+          },
+          "marketHistoryIntegrity": {
+            "result": "PASS",
+            "detail": "567 unique KR market references equal 567 unique KR history series; brand, market and currency fields agree."
+          },
+          "appendOnlyHistory": {
+            "result": "PASS",
+            "detail": "New runId 3 added with 13 points. RunId 1 and 2 and every pre-existing price point were preserved."
+          },
+          "schema": {
+            "result": "NOT RUN",
+            "detail": "Schema validator not run, consistent with the assignment; strict JSON and relevant structural invariants checked locally."
+          },
+          "catalogMerge": {
+            "result": "PASS with normalization caveat",
+            "detail": "Coordinator added all 13 references to the shared Omega catalog (watchCount 599). Three pale dials map to silver as a best-fit catalog filter slug; see HK candidate-additions-run-1/catalog-coordinator-update.json for source and caveat."
+          }
+        },
+        "limits": [
+          "Three pale-dial catalog colors use a documented silver best-fit mapping because official images do not distinguish white from silver; see coordinator update evidence."
+        ],
+        "evidenceConsolidation": {
+          "status": "PASS",
+          "itemsPreserved": 14,
+          "targetFile": "observations.json",
+          "integrity": "Each embedded item carries its source filename and SHA-256."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,670 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "US",
+  "collectionDate": "2026-10-11",
+  "sourceReportCount": 2,
+  "note": "Original run-change reports are preserved verbatim by attempt; different run IDs remain distinct.",
+  "runChangeReports": [
+    {
+      "attemptId": "watchfinder-retry-run-3",
+      "originalRunDirectory": "data/evidence/omega/US/2026-10-11/watchfinder-retry-run-3",
+      "runChangeSummary": {
+        "marketCode": "US",
+        "runId": 2,
+        "formalFilesChanged": true,
+        "observedOfficialTotal": 562,
+        "newListings": 21,
+        "absentFromCurrentListing": 7,
+        "existingPriceChanges": 0,
+        "reasonFormalWriteDeferred": null,
+        "newCatalogWatchesAdded": 8,
+        "directProductPageClassificationsCompleted": 21,
+        "statusCounts": {
+          "retailer-only": 12,
+          "listed": 9
+        },
+        "newListingsReferences": [
+          "210.30.42.20.03.004",
+          "210.30.42.20.01.023",
+          "210.30.42.20.03.005",
+          "210.83.42.20.03.001",
+          "210.30.42.20.01.029",
+          "210.83.42.20.01.001",
+          "220.10.38.20.03.006",
+          "220.10.38.20.02.004",
+          "220.10.41.21.01.003",
+          "220.10.41.21.10.002",
+          "220.10.41.21.03.007",
+          "220.10.41.21.02.005",
+          "220.50.41.21.02.004",
+          "215.32.44.21.01.002",
+          "522.53.45.52.04.001",
+          "324.30.38.50.55.001",
+          "324.30.38.50.06.001",
+          "324.30.38.50.02.001",
+          "5110.20.00",
+          "5109.20.00",
+          "5108.20.00"
+        ],
+        "absentReferences": [
+          "220.10.41.21.02.001",
+          "220.10.41.21.10.001",
+          "220.10.41.21.03.004",
+          "220.10.41.21.01.001",
+          "220.10.38.20.03.001",
+          "220.10.38.20.02.001",
+          "215.92.46.22.03.001"
+        ],
+        "observedOfficialUniqueReferences": 562,
+        "marketWatchCountAfterMerge": 569,
+        "priceSeriesAdditions": 21,
+        "newNotListedPoints": 7,
+        "newModelBadgeCount": 83,
+        "newModelBadgeLabel": "NEW",
+        "omegaCatalogUnionWatchesAdded": 8
+      }
+    },
+    {
+      "attemptId": "pdp-channel-audit-run-4",
+      "originalRunDirectory": "data/evidence/omega/US/2026-10-11/pdp-channel-audit-run-4",
+      "runChangeSummary": {
+        "marketCode": "US",
+        "runId": 3,
+        "formalFilesChanged": true,
+        "activeReferenceCount": 562,
+        "directPdpFetched": 541,
+        "sameDayDirectPdpEvidenceReused": 21,
+        "newListings": 0,
+        "absentFromCurrentListing": 7,
+        "existingPriceChanges": 0,
+        "listingStatusChanges": 113,
+        "statusCounts": {
+          "listed": 437,
+          "retailer-only": 125
+        },
+        "statusChangesByReference": [
+          {
+            "reference": "220.12.41.21.02.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.12.41.21.03.007",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.13.41.21.03.003",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.10.41.21.03.005",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.12.41.21.01.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.20.41.21.01.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.10.38.20.03.004",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.12.38.20.03.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.12.41.21.03.005",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.10.41.21.02.004",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.10.41.21.02.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.30.41.21.04.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.30.41.21.99.003",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.63.41.21.01.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.50.41.21.99.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.10.39.20.06.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.25.39.20.52.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.28.29.20.52.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.55.29.20.55.003",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.55.29.20.99.006",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "329.33.43.51.02.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "329.32.43.51.02.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "329.92.43.51.10.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "329.53.44.51.03.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "304.30.43.52.06.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "304.63.44.52.02.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "304.93.44.52.99.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "304.93.44.52.99.004",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "304.93.44.52.99.003",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "522.50.45.52.03.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "140.13.39.21.02.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "140.13.39.21.10.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "140.13.39.21.01.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "140.93.39.21.99.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.20.28.60.52.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.10.25.60.02.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.25.25.60.60.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.10.25.60.53.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.15.25.60.55.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "425.25.34.20.55.004",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "428.15.26.60.04.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "310.20.42.50.02.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "310.60.42.50.10.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "310.30.40.50.06.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "332.10.41.51.11.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "311.50.39.30.01.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "311.93.42.30.99.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "311.90.42.30.99.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "310.92.44.50.06.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "324.30.38.50.04.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "324.20.38.50.02.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.15.29.20.53.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.10.29.20.55.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.25.29.20.55.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.15.28.60.11.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.10.28.60.03.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.20.28.60.63.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.20.28.60.05.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "131.20.28.60.58.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.50.43.22.02.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "210.32.42.20.01.003",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "210.32.42.20.01.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "210.32.42.20.10.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "210.30.42.20.03.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "210.55.42.20.99.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "210.30.42.20.06.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "210.30.42.20.04.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "210.22.42.20.01.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "210.20.42.20.01.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "210.20.42.20.03.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "210.92.42.20.01.003",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "522.92.44.20.04.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "434.20.34.20.05.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "434.23.34.20.55.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "434.10.34.20.05.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "434.10.34.20.02.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "434.10.30.60.05.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "434.10.30.60.02.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "434.10.28.60.11.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "434.10.28.60.09.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "434.10.28.60.05.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "529.53.43.22.01.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "529.53.43.22.99.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "435.13.40.21.03.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "434.20.41.21.02.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "434.13.41.21.06.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "434.10.41.20.02.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "434.10.41.20.03.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "434.10.40.20.10.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "434.10.40.20.03.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "434.13.40.20.01.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "434.10.40.20.01.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.58.38.20.99.007",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.55.38.20.99.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.58.38.20.99.008",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.55.38.20.99.003",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.10.34.20.10.003",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.20.34.20.10.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.58.34.20.99.007",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.58.34.20.99.008",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.55.34.20.99.007",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.20.30.20.02.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.20.30.20.10.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "220.10.43.22.03.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "210.32.44.51.01.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "210.32.44.51.01.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "210.30.44.51.01.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "234.63.41.21.99.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "234.63.41.21.99.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "234.93.41.21.99.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "234.93.41.21.99.001",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "522.53.40.20.04.003",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          },
+          {
+            "reference": "511.13.40.20.11.002",
+            "previousStatus": "listed",
+            "currentStatus": "retailer-only"
+          }
+        ],
+        "notListedReferencesPreserved": [
+          "215.92.46.22.03.001",
+          "220.10.38.20.02.001",
+          "220.10.38.20.03.001",
+          "220.10.41.21.01.001",
+          "220.10.41.21.02.001",
+          "220.10.41.21.03.004",
+          "220.10.41.21.10.001"
+        ],
+        "observedAtUtcWindow": "2026-10-11T15:52:41.705Z/2026-10-11T16:41:18.248Z",
+        "collectionDateLocal": "2026-10-11 to 2026-10-12 (Asia/Taipei; window crossed local midnight)",
+        "evidence": "observations.json",
+        "historyPointsAdded": 113,
+        "redundantUnchangedHistoryPointsAdded": 0
+      }
+    }
+  ]
+}

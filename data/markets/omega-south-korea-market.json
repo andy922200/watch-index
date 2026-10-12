@@ -2,11 +2,11 @@
   "$schema": "../schemas/watch-market.schema.json",
   "schemaVersion": 4,
   "brandId": "omega",
-  "collectedAt": "2026-09-18T16:02:21.000Z",
+  "collectedAt": "2026-10-11T06:34:24Z",
   "salesRegion": "South Korea",
   "marketCode": "KR",
   "locale": "ko-KR",
-  "watchCount": 554,
+  "watchCount": 567,
   "source": {
     "name": "OMEGA South Korea Official Website",
     "url": "https://www.omegawatches.co.kr/watches"
@@ -7781,6 +7781,188 @@
       "dialDescription": "실버",
       "isNewModel": false,
       "productUrl": "https://www.omegawatches.co.kr/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31055425002001",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:210.30.42.20.01.023",
+      "reference": "210.30.42.20.01.023",
+      "collectionName": "씨마스터 다이버 300M",
+      "modelName": "스펙터 에디션",
+      "caseDescription": "42 mm, 스틸 및 스틸",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:210.30.42.20.01.029",
+      "reference": "210.30.42.20.01.029",
+      "collectionName": "씨마스터 다이버 300M",
+      "modelName": "스펙터 리미티드 에디션 세트",
+      "caseDescription": "42 mm, 스틸 및 스틸",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:210.30.42.20.03.004",
+      "reference": "210.30.42.20.03.004",
+      "collectionName": "씨마스터 다이버 300M",
+      "modelName": "제임스 본드 에디션",
+      "caseDescription": "42 mm, 스틸 및 스틸",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003004",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:210.30.42.20.03.005",
+      "reference": "210.30.42.20.03.005",
+      "collectionName": "씨마스터 다이버 300M",
+      "modelName": "제임스 본드 리미티드 에디션 세트",
+      "caseDescription": "42 mm, 스틸 및 스틸",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:210.83.42.20.01.001",
+      "reference": "210.83.42.20.01.001",
+      "collectionName": "씨마스터 다이버 300M",
+      "modelName": "스펙터 리미티드 에디션 세트",
+      "caseDescription": "42 mm, 플래티늄 골드 및 앨리게이터",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:210.83.42.20.03.001",
+      "reference": "210.83.42.20.03.001",
+      "collectionName": "씨마스터 다이버 300M",
+      "modelName": "제임스 본드 리미티드 에디션 세트",
+      "caseDescription": "42 mm, 플래티늄 골드 및 앨리게이터",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:220.10.38.20.02.004",
+      "reference": "220.10.38.20.02.004",
+      "collectionName": "씨마스터 아쿠아 테라 150M",
+      "modelName": "아쿠아 테라 150M",
+      "caseDescription": "38 mm, 스틸 및 스틸",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:220.10.38.20.03.006",
+      "reference": "220.10.38.20.03.006",
+      "collectionName": "씨마스터 아쿠아 테라 150M",
+      "modelName": "아쿠아 테라 150M",
+      "caseDescription": "38 mm, 스틸 및 스틸",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:220.10.41.21.01.003",
+      "reference": "220.10.41.21.01.003",
+      "collectionName": "씨마스터 아쿠아 테라 150M",
+      "modelName": "아쿠아 테라 150M",
+      "caseDescription": "41 mm, 스틸 및 스틸",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:220.10.41.21.02.005",
+      "reference": "220.10.41.21.02.005",
+      "collectionName": "씨마스터 아쿠아 테라 150M",
+      "modelName": "아쿠아 테라 150M",
+      "caseDescription": "41 mm, 스틸 및 스틸",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:220.10.41.21.03.007",
+      "reference": "220.10.41.21.03.007",
+      "collectionName": "씨마스터 아쿠아 테라 150M",
+      "modelName": "아쿠아 테라 150M",
+      "caseDescription": "41 mm, 스틸 및 스틸",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:220.10.41.21.10.002",
+      "reference": "220.10.41.21.10.002",
+      "collectionName": "씨마스터 아쿠아 테라 150M",
+      "modelName": "아쿠아 테라 150M",
+      "caseDescription": "41 mm, 스틸 및 스틸",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:220.50.41.21.02.004",
+      "reference": "220.50.41.21.02.004",
+      "collectionName": "씨마스터 아쿠아 테라 150M",
+      "modelName": "아쿠아 테라 150M",
+      "caseDescription": "41 mm, 문샤인™ 골드 및 문샤인™ 골드",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.co.kr/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004",
       "localNicknames": {
         "names": [],
         "sources": []

@@ -6,7 +6,7 @@
   "salesRegion": "Taiwan",
   "marketCode": "TW",
   "locale": "zh-Hant-TW",
-  "watchCount": 551,
+  "watchCount": 564,
   "source": {
     "name": "OMEGA Taiwan Official Website",
     "url": "https://www.omegawatches.com.tw/watches"
@@ -2033,6 +2033,34 @@
       }
     },
     {
+      "watchId": "omega:210.30.42.20.01.023",
+      "reference": "210.30.42.20.01.023",
+      "collectionName": "海馬 潛水300米系列",
+      "modelName": "潛水300米系列",
+      "caseDescription": "42毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:210.30.42.20.01.029",
+      "reference": "210.30.42.20.01.029",
+      "collectionName": "海馬 潛水300米系列",
+      "modelName": "潛水300米系列",
+      "caseDescription": "42毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
       "watchId": "omega:210.30.42.20.03.001",
       "reference": "210.30.42.20.03.001",
       "collectionName": "海馬 潛水300米系列",
@@ -2069,6 +2097,34 @@
       "dialDescription": "藍色",
       "isNewModel": false,
       "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003003",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:210.30.42.20.03.004",
+      "reference": "210.30.42.20.03.004",
+      "collectionName": "海馬 潛水300米系列",
+      "modelName": "潛水300米系列",
+      "caseDescription": "42毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003004",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:210.30.42.20.03.005",
+      "reference": "210.30.42.20.03.005",
+      "collectionName": "海馬 潛水300米系列",
+      "modelName": "潛水300米系列",
+      "caseDescription": "42毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005",
       "localNicknames": {
         "names": [],
         "sources": []
@@ -2489,6 +2545,34 @@
       "dialDescription": "黑色",
       "isNewModel": false,
       "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-chronograph-44-mm-21062445101001",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:210.83.42.20.01.001",
+      "reference": "210.83.42.20.01.001",
+      "collectionName": "海馬 潛水300米系列",
+      "modelName": "潛水300米系列",
+      "caseDescription": "42毫米, 鉑金-金錶殼 搭配 鱷魚皮錶帶",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:210.83.42.20.03.001",
+      "reference": "210.83.42.20.03.001",
+      "collectionName": "海馬 潛水300米系列",
+      "modelName": "潛水300米系列",
+      "caseDescription": "42毫米, 鉑金-金錶殼 搭配 鱷魚皮錶帶",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001",
       "localNicknames": {
         "names": [],
         "sources": []
@@ -3097,6 +3181,20 @@
       }
     },
     {
+      "watchId": "omega:220.10.38.20.02.004",
+      "reference": "220.10.38.20.02.004",
+      "collectionName": "海馬 Aqua Terra 150米系列",
+      "modelName": "Aqua Terra 150米系列",
+      "caseDescription": "38毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
       "watchId": "omega:220.10.38.20.03.001",
       "reference": "220.10.38.20.03.001",
       "collectionName": "海馬 Aqua Terra 150米系列",
@@ -3147,6 +3245,20 @@
       "dialDescription": "綠松 石色",
       "isNewModel": false,
       "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003005",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:220.10.38.20.03.006",
+      "reference": "220.10.38.20.03.006",
+      "collectionName": "海馬 Aqua Terra 150米系列",
+      "modelName": "Aqua Terra 150米系列",
+      "caseDescription": "38毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006",
       "localNicknames": {
         "names": [],
         "sources": []
@@ -3279,6 +3391,20 @@
       }
     },
     {
+      "watchId": "omega:220.10.41.21.01.003",
+      "reference": "220.10.41.21.01.003",
+      "collectionName": "海馬 Aqua Terra 150米系列",
+      "modelName": "Aqua Terra 150米系列",
+      "caseDescription": "41毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
       "watchId": "omega:220.10.41.21.02.001",
       "reference": "220.10.41.21.02.001",
       "collectionName": "海馬 Aqua Terra 150米系列",
@@ -3315,6 +3441,20 @@
       "dialDescription": "銀色",
       "isNewModel": false,
       "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-small-seconds-41-mm-22010412102004",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:220.10.41.21.02.005",
+      "reference": "220.10.41.21.02.005",
+      "collectionName": "海馬 Aqua Terra 150米系列",
+      "modelName": "Aqua Terra 150米系列",
+      "caseDescription": "41毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005",
       "localNicknames": {
         "names": [],
         "sources": []
@@ -3363,6 +3503,20 @@
       }
     },
     {
+      "watchId": "omega:220.10.41.21.03.007",
+      "reference": "220.10.41.21.03.007",
+      "collectionName": "海馬 Aqua Terra 150米系列",
+      "modelName": "Aqua Terra 150米系列",
+      "caseDescription": "41毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
       "watchId": "omega:220.10.41.21.10.001",
       "reference": "220.10.41.21.10.001",
       "collectionName": "海馬 Aqua Terra 150米系列",
@@ -3371,6 +3525,20 @@
       "dialDescription": "綠色",
       "isNewModel": false,
       "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110001",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:220.10.41.21.10.002",
+      "reference": "220.10.41.21.10.002",
+      "collectionName": "海馬 Aqua Terra 150米系列",
+      "modelName": "Aqua Terra 150米系列",
+      "caseDescription": "41毫米, 不鏽鋼錶殼 搭配 不鏽鋼錶鏈",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002",
       "localNicknames": {
         "names": [],
         "sources": []
@@ -4015,6 +4183,20 @@
       "dialDescription": "粉 紅色",
       "isNewModel": false,
       "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-shades-co-axial-master-chronometer-38-mm-22050382010001",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "omega:220.50.41.21.02.004",
+      "reference": "220.50.41.21.02.004",
+      "collectionName": "海馬 Aqua Terra 150米系列",
+      "modelName": "Aqua Terra 150米系列",
+      "caseDescription": "41毫米, Moonshine™金錶殼 搭配 Moonshine™金",
+      "dialDescription": null,
+      "isNewModel": true,
+      "productUrl": "https://www.omegawatches.com.tw/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004",
       "localNicknames": {
         "names": [],
         "sources": []

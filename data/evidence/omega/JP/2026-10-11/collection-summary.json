@@ -1,0 +1,34 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "JP",
+  "collectionDate": "2026-10-11",
+  "consolidatedAttemptCount": 1,
+  "note": "Same-day uncommitted evidence was consolidated. Each original collection summary is preserved verbatim by attempt; run IDs and distinct scopes remain separate.",
+  "attempts": [
+    {
+      "attemptId": "candidate-additions-run-1",
+      "originalRunDirectory": "data/evidence/omega/JP/2026-10-11/candidate-additions-run-1",
+      "collectionSummary": {
+        "brandId": "omega",
+        "marketCode": "JP",
+        "locale": "ja-JP",
+        "mode": "candidate-additions",
+        "observedAtUtcWindow": [
+          "2026-10-11T07:31:28Z",
+          "2026-10-11T07:35:46Z"
+        ],
+        "browser": "Playwright real browser; each official productUrl navigated sequentially and rendered-page snapshot captured.",
+        "scope": "12 references previously category-only and pending exact-market PDP verification.",
+        "attempts": 12,
+        "resolvedPdpPages": 12,
+        "rawSnapshotsEmbeddedIn": "observations.json",
+        "historyWrite": "APPENDED",
+        "runId": 3,
+        "formalMarketReferencesAdded": 12,
+        "formalHistoryPointsAdded": 12,
+        "evidenceFolder": "data/evidence/omega/JP/2026-10-11/candidate-additions-run-1"
+      }
+    }
+  ]
+}

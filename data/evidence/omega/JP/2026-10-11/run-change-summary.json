@@ -1,0 +1,139 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "JP",
+  "collectionDate": "2026-10-11",
+  "sourceReportCount": 1,
+  "note": "Original run-change reports are preserved verbatim by attempt; different run IDs remain distinct.",
+  "runChangeReports": [
+    {
+      "attemptId": "candidate-additions-run-1",
+      "originalRunDirectory": "data/evidence/omega/JP/2026-10-11/candidate-additions-run-1",
+      "runChangeSummary": {
+        "brandId": "omega",
+        "marketCode": "JP",
+        "runId": 3,
+        "changeType": "verified-candidate-additions",
+        "observedAtUtcWindow": [
+          "2026-10-11T07:31:28.615Z",
+          "2026-10-11T07:35:46.867Z"
+        ],
+        "before": {
+          "marketWatchCount": 553,
+          "historySeriesCount": 553
+        },
+        "after": {
+          "marketWatchCount": 565,
+          "historySeriesCount": 565
+        },
+        "marketReferencesAdded": 12,
+        "priceHistoryPointsAdded": 12,
+        "priceChangesToExistingReferences": 0,
+        "changes": [
+          {
+            "watchId": "omega:220.10.41.21.02.005",
+            "reference": "220.10.41.21.02.005",
+            "listingStatus": "retailer-only",
+            "price": 1111000,
+            "currencyCode": "JPY",
+            "sourceProductUrl": "https://www.omegawatches.jp/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412102005"
+          },
+          {
+            "watchId": "omega:220.10.41.21.10.002",
+            "reference": "220.10.41.21.10.002",
+            "listingStatus": "listed",
+            "price": 1111000,
+            "currencyCode": "JPY",
+            "sourceProductUrl": "https://www.omegawatches.jp/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412110002"
+          },
+          {
+            "watchId": "omega:220.10.41.21.03.007",
+            "reference": "220.10.41.21.03.007",
+            "listingStatus": "retailer-only",
+            "price": 1111000,
+            "currencyCode": "JPY",
+            "sourceProductUrl": "https://www.omegawatches.jp/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103007"
+          },
+          {
+            "watchId": "omega:220.10.41.21.01.003",
+            "reference": "220.10.41.21.01.003",
+            "listingStatus": "retailer-only",
+            "price": 1111000,
+            "currencyCode": "JPY",
+            "sourceProductUrl": "https://www.omegawatches.jp/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412101003"
+          },
+          {
+            "watchId": "omega:220.50.41.21.02.004",
+            "reference": "220.50.41.21.02.004",
+            "listingStatus": "retailer-only",
+            "price": 6941000,
+            "currencyCode": "JPY",
+            "sourceProductUrl": "https://www.omegawatches.jp/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22050412102004"
+          },
+          {
+            "watchId": "omega:220.10.38.20.03.006",
+            "reference": "220.10.38.20.03.006",
+            "listingStatus": "retailer-only",
+            "price": 1111000,
+            "currencyCode": "JPY",
+            "sourceProductUrl": "https://www.omegawatches.jp/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003006"
+          },
+          {
+            "watchId": "omega:220.10.38.20.02.004",
+            "reference": "220.10.38.20.02.004",
+            "listingStatus": "retailer-only",
+            "price": 1111000,
+            "currencyCode": "JPY",
+            "sourceProductUrl": "https://www.omegawatches.jp/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382002004"
+          },
+          {
+            "watchId": "omega:210.30.42.20.01.023",
+            "reference": "210.30.42.20.01.023",
+            "listingStatus": "retailer-only",
+            "price": 1287000,
+            "currencyCode": "JPY",
+            "sourceProductUrl": "https://www.omegawatches.jp/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001023"
+          },
+          {
+            "watchId": "omega:210.30.42.20.03.005",
+            "reference": "210.30.42.20.03.005",
+            "listingStatus": "retailer-only",
+            "price": 13398000,
+            "currencyCode": "JPY",
+            "sourceProductUrl": "https://www.omegawatches.jp/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422003005"
+          },
+          {
+            "watchId": "omega:210.83.42.20.03.001",
+            "reference": "210.83.42.20.03.001",
+            "listingStatus": "retailer-only",
+            "price": 13398000,
+            "currencyCode": "JPY",
+            "sourceProductUrl": "https://www.omegawatches.jp/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422003001"
+          },
+          {
+            "watchId": "omega:210.30.42.20.01.029",
+            "reference": "210.30.42.20.01.029",
+            "listingStatus": "retailer-only",
+            "price": 13398000,
+            "currencyCode": "JPY",
+            "sourceProductUrl": "https://www.omegawatches.jp/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001029"
+          },
+          {
+            "watchId": "omega:210.83.42.20.01.001",
+            "reference": "210.83.42.20.01.001",
+            "listingStatus": "retailer-only",
+            "price": 13398000,
+            "currencyCode": "JPY",
+            "sourceProductUrl": "https://www.omegawatches.jp/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21083422001001"
+          }
+        ],
+        "catalogChanges": 0,
+        "notes": [
+          "新增記錄均為相較於先前市場資料未出現、且本次精確市場 PDP 已直接核實的候選。",
+          "AT 與 JP 的當次完整分類／全市場價格重抓仍未完成；本 run 僅追加候選商品。",
+          "history 僅新增 runId 指定的商品點，舊 run 與既有價格點保留。"
+        ]
+      }
+    }
+  ]
+}

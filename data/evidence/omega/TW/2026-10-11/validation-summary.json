@@ -1,0 +1,68 @@
+{
+  "evidenceBundleVersion": 1,
+  "brandId": "omega",
+  "marketCode": "TW",
+  "collectionDate": "2026-10-11",
+  "sourceAttemptCount": 2,
+  "note": "Original validation results are preserved verbatim by attempt. This bundle does not promote any PARTIAL or NOT RUN result to PASS.",
+  "attemptValidations": [
+    {
+      "attemptId": "full-category-price-validation-run-2",
+      "originalRunDirectory": "data/evidence/omega/TW/2026-10-11/full-category-price-validation-run-2",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "TW",
+        "runId": 2,
+        "overall": "PARTIAL — category and current prices reconciled, with homepage/category count mismatch and incomplete direct-PDP CTA coverage.",
+        "checks": {
+          "categoryTraversal": "PASS: 16 terminal category chains, 558 unique product refs/URLs; no unresolved next page.",
+          "homepageCountReconciliation": "PARTIAL: 558 category refs vs 552 visible homepage family total; Seamaster differs by 6 and source counting scope is unresolved.",
+          "priceReconciliation": "PASS: all 545 existing category matches had the same current TWD price as run 1 history; no price changes.",
+          "newCandidates": "PASS: 13 exact global catalog references directly observed on localized TW PDPs; all with public prices and retailer-only CTA.",
+          "absentReferences": "PASS: 6 prior market refs absent from completed category traversal; retained in market, appended not-listed points.",
+          "directPdpCtaCoverage": "PARTIAL: all 13 new candidates directly checked; 110 of 128 historical wishlist-card refs remain unchecked after this run; existing statuses on those refs were retained.",
+          "strictJson": "PASS: duplicate-key-aware parser and invalid-constant check passed across 93 catalog/market/history/schema JSON files.",
+          "jsonSchema": "NOT RUN: jsonschema module unavailable in environment.",
+          "independentPdpSamples": "PARTIAL: 13 new candidate PDPs and one previously targeted existing PDP were directly observed; 110 of 128 historical wishlist-card refs still lack an individual successful PDP check. The 19–21 sample target for a full rebuild was not met.",
+          "READMECount": "PASS: README Taiwan Omega count updated from 551 to 564.",
+          "crossFileIntegrity": "PASS: project cross-brand validation passed for all 43 formal market files; TW catalog/market/history links, watchCount, runId and price/status pairs checked.",
+          "appendOnly": "PASS: all original 551 market records and run 1 price-series arrays remain exact members/prefixes; no identical point duplicated."
+        },
+        "limitations": [
+          "Official homepage visible family sum (552) differs from complete category refs (558); no normalization or deletion based on the mismatch.",
+          "110 of 128 historical wishlist-card references still lack individual successful PDP verification; prior listingStatus values were preserved.",
+          "No StoreConfig payload captured.",
+          "No Python jsonschema module is installed, so JSON Schema validation was NOT RUN.",
+          "Newly added dialDescription values are null where localized page view did not yield precise verified wording."
+        ],
+        "scopeProtection": "Only Omega Taiwan market/history/evidence and the Taiwan Omega README count are intended to be updated; no catalog/schema or other market changes."
+      }
+    },
+    {
+      "attemptId": "targeted-pdp-recheck-run-1",
+      "originalRunDirectory": "data/evidence/omega/TW/2026-10-11/targeted-pdp-recheck-run-1",
+      "validation": {
+        "brandId": "omega",
+        "marketCode": "TW",
+        "overall": "PARTIAL — sampled retry PDPs now render, but prior unresolved target groups remain unverified.",
+        "checks": {
+          "strictJson": "PASS: files written with Python JSON encoder.",
+          "exactTargetStorefront": "PASS: each sampled page rendered expected locale and exact reference.",
+          "targetedPdpRetry": "PASS: all selected pages rendered; price and CTA are in observations.json rendered snapshots.",
+          "unresolvedCoverage": "NOT PASS: one previously failed wishlist PDP now loads; 110 of the 111 historically pending wishlist PDPs remain unchecked.",
+          "formalMarketHistoryWrite": "NOT WRITTEN",
+          "sampledCtaBehavior": {
+            "status": "PASS for one sample only",
+            "newlyCheckedPreviouslyPending": 1,
+            "reference": "220.50.38.20.03.001",
+            "interpretation": "The target TW PDP displays NT$1,275,000, online unavailability, wishlist notification, and boutique contact. No extrapolation to other references."
+          }
+        },
+        "limitations": [
+          "110 of 111 historically pending wishlist CTA references remain unchecked.",
+          "No full category/candidate source reconciliation or formal TW history write was performed."
+        ]
+      }
+    }
+  ]
+}

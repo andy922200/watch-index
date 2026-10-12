@@ -1,0 +1,30 @@
+{
+  "brandId": "omega",
+  "marketCode": "IT",
+  "runId": 2,
+  "overall": "PARTIAL — no formal files updated",
+  "checks": {
+    "officialTargetMarket": "NOT RUN: official Italian page did not render; current it-IT/IT/EUR signals were unavailable. Baseline locale and currency do not substitute for current verification.",
+    "networkDiscovery": "FAIL: two GETs to official entry; both net::ERR_HTTP2_PROTOCOL_ERROR, no response body.",
+    "fullListingAndPagination": "NOT RUN: 0/16 categories traversed and no current stop signals.",
+    "pricesAndListingStatus": "NOT RUN: no current observations; no status inferred from prior history.",
+    "PdpCtaStatusValidation": "NOT RUN.",
+    "crossFileCurrentSourceMapping": "NOT RUN.",
+    "historyCandidateAndSchema": "NOT RUN because no history candidate or formal write.",
+    "evidenceStrictJson": "PASS: all three new checkpoint/summary documents parsed with duplicate-key and invalid-constant rejection.",
+    "baselineProtection": "PASS: market/history/catalog hashes are unchanged from start."
+  },
+  "limitations": [
+    "Official source entry returned ERR_HTTP2_PROTOCOL_ERROR on initial attempt and one retry after 10-second cooldown.",
+    "No current pricing, listing status, or completeness claim.",
+    "Prior 2026-09-24 evidence is historical only."
+  ],
+  "evidenceDirectory": "data/evidence/omega/IT/2026-10-08/price-update-run-2/",
+  "readmeUpdate": "NOT REQUIRED for pure price update.",
+  "evidenceConsolidation": {
+    "status": "PASS",
+    "itemsPreserved": 1,
+    "targetFile": "collection-summary.json",
+    "integrity": "Each embedded item carries its source filename and SHA-256."
+  }
+}

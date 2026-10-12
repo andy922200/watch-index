@@ -1,0 +1,30 @@
+{
+  "brandId": "omega",
+  "marketCode": "CN",
+  "runId": 2,
+  "overall": "NOT PASS / PARTIAL — no formal price-history run written",
+  "checks": {
+    "officialEntryRendered": "PASS: official .cn watch entry rendered in zh-Hans-CN; selector choice was not preserved in structured evidence (NOT RUN).",
+    "categoryTraversal": "PASS for 16 per-category rendered counts and terminal stop signals; source reconciliation NOT PASS because homepage family totals sum to 586 while per-category pages currently sum to 585 (Speedmaster 38mm homepage count 12, category page count 11).",
+    "categoryUrlUniqueness": "PASS on independent terminal reloads for Constellation (117/117) and Prestige (111/111); initial click-traversal snapshots contained 3 and 1 duplicate URLs respectively. Both versions are preserved; hydration/pagination difference remains an evidence limitation.",
+    "trackedMarketUrlReconciliation": "PASS: 572 of 579 market refs exactly matched category product URLs; the remaining 7 were directly checked at existing official PDP URLs.",
+    "trackedPriceCoverage": "PARTIAL: 572 category-matched refs had visible CNY card prices; all matched prior history prices. Six unmatched refs had a direct PDP price equal to prior history. One unmatched De Ville PDP had no public price and only 联系我们. Across 578 comparable values, no price changes were observed; one current price is unavailable.",
+    "ctaStatusMapping": "NOT RUN for 142 tracked refs whose card CTA groups are 立即订阅 (116), 详细信息 (25), or no recognized CTA (1). Three of those 142 tracked refs have direct PDP sample evidence (one subscribe, two details); 139 remain without individual PDP inspection. A fourth subscribe sample (210.30.42.20.03.004) is outside the 579-ref target market and is not counted in tracked coverage. Across both sampled collections, subscribe PDPs explicitly show temporary online unavailability plus wishlist/subscribe/contact, while details PDPs show 联系我们; these behaviors do not map to existing status definitions without extrapolation. A further unmatched tracked Aqua Terra PDP explicitly shows temporary online unavailability plus wishlist/subscribe/contact.",
+    "pdpSamples": "PASS as samples only: eight PDPs checked across Diver and De Ville for shop, reserve, subscribe, and details card CTA groups. Three sample refs belong to the target 579 market refs; one sampled subscribe ref is outside that target. Seven missing-category tracked PDPs were also directly checked.",
+    "networkDiscovery": "PARTIAL: browser network requests were inspected and saved; no reusable category JSON/XHR endpoint was identified in filtered captures. External SDK request failed DNS in sampled requests; rendered DOM remained available.",
+    "formalHistory": "NOT WRITTEN: any unresolved listing status prevents a valid run under the current price-history enum."
+  },
+  "pdpOriginalTextEvidence": "cta-status-review.json contains all 579 tracked refs with original card text/prices and per-ref status of direct PDP inspection. Direct PDP original text is embedded for three tracked CTA samples and seven missing-category tracked refs; the fourth CTA sample is separately preserved in pdp-cta-sample-diver-subscribe.json but is outside target-market scope. The other 139 refs in ambiguous CTA groups lack individual PDP inspection; this is NOT RUN.",
+  "scopeAndLimits": [
+    "No market, history, catalog, schema, traveler policy, or other-market file was modified.",
+    "No existing market ref was assigned a status based solely on another market or on guessed URL-derived identity.",
+    "The 13 official category URLs outside the current CN market were retained as out-of-scope; their individual reference codes were not independently PDP-verified.",
+    "CTA sample reference 210.30.42.20.03.004 belongs to an official category card but is outside the existing CN market set; it is sample evidence only and excluded from target-market CTA counts."
+  ],
+  "evidenceConsolidation": {
+    "status": "PASS",
+    "itemsPreserved": 41,
+    "targetFile": "observations.json",
+    "integrity": "Each embedded item carries its source filename and SHA-256."
+  }
+}
