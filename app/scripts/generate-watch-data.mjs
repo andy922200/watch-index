@@ -264,16 +264,16 @@ const createBrandPayloads = ({ catalog, markets, historiesByMarketCode }) => {
     const catalogWatchesById = new Map(catalog.watches.map((watch) => [watch.watchId, watch]))
     const getLatestPriceRecord = (watchId) => history.priceSeries[watchId]?.at(-1)
 
-    const watches = market.watches.map((marketWatch) => {
+    const watches = market.watches.flatMap((marketWatch) => {
       const watch = catalogWatchesById.get(marketWatch.watchId)
       const priceRecord = getLatestPriceRecord(marketWatch.watchId)
       if (!watch || !priceRecord) {
         throw new Error(`${catalog.brandId}:${market.marketCode} is missing ${marketWatch.watchId}`)
       }
       if (priceRecord.listingStatus === 'not-listed') {
-        throw new Error(
-          `${catalog.brandId}:${market.marketCode} lists ${marketWatch.watchId} without a current price status`,
-        )
+        // Keep historical market rows in source data, but omit confirmed absent watches from
+        // the current market catalog. The comparison payload still exposes their not-listed status.
+        return []
       }
       if (
         marketWatch.watchId !== `${catalog.brandId}:${marketWatch.reference}` ||
@@ -285,15 +285,17 @@ const createBrandPayloads = ({ catalog, markets, historiesByMarketCode }) => {
       ) {
         throw new Error(`${catalog.brandId}:${market.marketCode} is invalid for ${watch.watchId}`)
       }
-      return {
-        ...watch,
-        modelName: marketWatch.modelName,
-        caseDescription: marketWatch.caseDescription ?? '',
-        dialDescription: marketWatch.dialDescription ?? '',
-        localNicknames: marketWatch.localNicknames.names,
-        price: priceRecord.price,
-        priceStatus: priceRecord.listingStatus,
-      }
+      return [
+        {
+          ...watch,
+          modelName: marketWatch.modelName,
+          caseDescription: marketWatch.caseDescription ?? '',
+          dialDescription: marketWatch.dialDescription ?? '',
+          localNicknames: marketWatch.localNicknames.names,
+          price: priceRecord.price,
+          priceStatus: priceRecord.listingStatus,
+        },
+      ]
     })
     const collectionCounts = new Map()
     for (const watch of watches) {
@@ -303,7 +305,7 @@ const createBrandPayloads = ({ catalog, markets, historiesByMarketCode }) => {
       schemaVersion: 5,
       brandId: catalog.brandId,
       collectedAt: catalog.collectedAt,
-      watchCount: market.watchCount,
+      watchCount: watches.length,
       collections: [...collectionCounts]
         .map(([id, watchCount]) => ({ id, watchCount }))
         .sort((left, right) => left.id.localeCompare(right.id)),
