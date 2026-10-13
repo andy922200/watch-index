@@ -1,0 +1,54 @@
+{
+  "brandId": "longines",
+  "marketCode": "SG",
+  "validatedAt": "2026-10-08T13:09:20.000Z",
+  "validationScope": "Partial-source checkpoint only; no formal market/history values changed.",
+  "checks": {
+    "strictJsonParseAndDuplicateKeyCheck": {
+      "status": "PASS",
+      "detail": "New checkpoint files are checked after writing using strict JSON parsing with duplicate-key rejection and rejection of NaN/Infinity."
+    },
+    "marketAndHistorySchema": {
+      "status": "NOT RUN",
+      "detail": "No market/history update was made; this checkpoint does not claim formal schema validation."
+    },
+    "marketHistoryCrossFileRelations": {
+      "status": "NOT RUN",
+      "detail": "No new collection run or price points were appended."
+    },
+    "sourceReconciliation": {
+      "status": "PARTIAL",
+      "detail": "Three official SG product snapshots have matching listing and product-page amounts and Find a retailer CTAs. Snapshot crawl ages range from today to 4 days ago. Bare '$' shown; SGD code not re-confirmed through current network in this run."
+    },
+    "completenessAndStopEvidence": {
+      "status": "NOT RUN",
+      "detail": "Only the first 24 items of an 803-result label were visible; no later pages or beyond-last-page signal was observed. Prior formal market count is 755; discrepancy of 48 remains unresolved."
+    },
+    "changeSafety": {
+      "status": "PASS",
+      "detail": "Only new Longines SG checkpoint evidence files are added. SG market and SG history files were not edited; catalog, traveler policy, and other-market files were not read or changed."
+    },
+    "nicknameResearch": {
+      "status": "NOT RUN (out of scope)"
+    },
+    "readmeSynchronization": {
+      "status": "NOT RUN",
+      "detail": "A partial page snapshot does not establish a lasting change to README market descriptions."
+    }
+  },
+  "baseline": {
+    "marketFile": "data/markets/longines-singapore-market.json",
+    "marketSha256Before": "e90499c1d80a7cae4d11acf929d6c79cb580282894d3dd4c6d477a1b3a2f10db",
+    "historyFile": "data/history/SG/longines-price-history.json",
+    "historySha256Before": "e5f6c60bac2254df50893a1304541515c94f34aa159580c55906ad5d40c0886d",
+    "lastRunId": 1,
+    "watchCount": 755
+  },
+  "limitations": [
+    "Chrome DevTools and Playwright could not create/use an isolated browser session because their shared profiles were already running and the exposed interfaces could not start an isolated instance.",
+    "The browsing tool supplies indexed page snapshots, not a live network session; its relative crawl-age labels do not include exact timestamps.",
+    "Direct shell network fallback failed DNS resolution for www.longines.com.",
+    "The official listing label was 803, compared with 755 in the previous formal market data; the difference is unresolved and must not be treated as additions or removals.",
+    "The listing displays a bare dollar sign; the current SG currency configuration was not retrieved in this run."
+  ]
+}

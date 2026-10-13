@@ -1,0 +1,87 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "SG",
+  "locale": "en-sg",
+  "observedAt": "2026-10-08T13:09:20.000Z",
+  "observationWindow": {
+    "note": "Timestamp records the checkpoint capture time. The browsing source provides relative crawl-age labels rather than exact page publication or retrieval timestamps."
+  },
+  "entryUrl": "https://www.longines.com/en-sg/watches",
+  "collectionMethod": "Official Longines SG rendered listing and linked official product pages were opened through the web browsing tool. The listing snapshot was labelled Crawled: yesterday; product page snapshots were labelled Crawled: today, yesterday, or 4 days ago. A separate live browser session and live network response could not be obtained. This is a partial snapshot check, not a current complete collection.",
+  "marketContext": {
+    "currencyCode": "SGD",
+    "currencyContextNote": "SGD is the persisted currencyCode for the assigned SG history and was confirmed in the prior SG evidence's official StoreConfig. The current rendered pages display a bare $ symbol; this run could not retrieve current StoreConfig/network data to reconfirm its ISO code."
+  },
+  "coverage": {
+    "status": "PARTIAL",
+    "officialListingTotalLabelObserved": 803,
+    "listingPageSizeObserved": 24,
+    "visibleProductCards": 24,
+    "productPagesOpened": 3,
+    "pagesAfterFirst": 0,
+    "paginationCompleted": false,
+    "stopEvidence": null,
+    "completeConfigurationsCollected": false,
+    "priorMarketWatchCount": 755
+  },
+  "productObservations": [
+    {
+      "reference": "L2.960.4.78.2",
+      "productUrl": "https://www.longines.com/en-sg/p/watch-the-longines-master-collection-chrono-monopusher-l2-960-4-78-2",
+      "productName": "THE LONGINES MASTER COLLECTION CHRONO MONOPUSHER",
+      "sourceUrl": "https://www.longines.com/en-sg/watches",
+      "productPageSourceUrl": "https://www.longines.com/en-sg/p/watch-the-longines-master-collection-chrono-monopusher-l2-960-4-78-2",
+      "listingPageCrawlAge": "Crawled: yesterday",
+      "productPageCrawlAge": "Crawled: today",
+      "rawPriceText": "$5,000.00",
+      "parsedPrice": 5000,
+      "currencySymbolObserved": "$",
+      "listingStatus": "retailer-only",
+      "rawAvailabilityText": "Find a retailer",
+      "rawPriceTypeText": "Recommended Retail Price - Our authorized retailers remain free to set their own price",
+      "rawNewModelText": "New",
+      "isNewModel": true,
+      "listingAndProductPriceMatch": true
+    },
+    {
+      "reference": "L2.962.4.73.6",
+      "productUrl": "https://www.longines.com/en-sg/p/watch-the-longines-master-collection-chronograph-l2-962-4-73-6",
+      "productName": "THE LONGINES MASTER COLLECTION CHRONO MOONPHASE",
+      "sourceUrl": "https://www.longines.com/en-sg/watches",
+      "productPageSourceUrl": "https://www.longines.com/en-sg/p/watch-the-longines-master-collection-chronograph-l2-962-4-73-6",
+      "listingPageCrawlAge": "Crawled: yesterday",
+      "productPageCrawlAge": "Crawled: yesterday",
+      "rawPriceText": "$5,500.00",
+      "parsedPrice": 5500,
+      "currencySymbolObserved": "$",
+      "listingStatus": "retailer-only",
+      "rawAvailabilityText": "Find a retailer",
+      "rawPriceTypeText": "Recommended Retail Price - Our authorized retailers remain free to set their own price",
+      "rawNewModelText": "New",
+      "isNewModel": true,
+      "listingAndProductPriceMatch": true
+    },
+    {
+      "reference": "L2.450.4.97.6",
+      "productUrl": "https://www.longines.com/en-sg/p/watch-the-longines-master-collection-l2-450-4-97-6",
+      "productName": "THE LONGINES MASTER COLLECTION",
+      "sourceUrl": "https://www.longines.com/en-sg/watches",
+      "productPageSourceUrl": "https://www.longines.com/en-sg/p/watch-the-longines-master-collection-l2-450-4-97-6",
+      "listingPageCrawlAge": "Crawled: yesterday",
+      "productPageCrawlAge": "Crawled: 4 days ago",
+      "rawPriceText": "$3,750.00",
+      "parsedPrice": 3750,
+      "currencySymbolObserved": "$",
+      "listingStatus": "retailer-only",
+      "rawAvailabilityText": "Find a retailer",
+      "rawPriceTypeText": "Recommended Retail Price - Our authorized retailers remain free to set their own price",
+      "rawNewModelText": "New",
+      "isNewModel": true,
+      "listingAndProductPriceMatch": true
+    }
+  ],
+  "nicknameResearch": {
+    "status": "NOT RUN (out of scope)"
+  }
+}

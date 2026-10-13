@@ -1,0 +1,45 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "CN",
+  "locale": "zh-Hans-CN",
+  "recordedAt": "2026-10-08T13:15:22.000Z",
+  "timestampNote": "This is the checkpoint recording time. The web search provider returned only a relative crawl-age label (Crawled: today), not the exact source fetch time.",
+  "entryUrl": "https://www.longines.cn/watches",
+  "collectionMethod": "Live browser pages and direct HTTP could not be opened. The fallback web search provider returned an indexed snapshot of the official Longines China homepage (Crawled: today), with a 15-card curated selection and product references, displayed RMB prices, and calls to action. This homepage selection is not the full /watches listing and its prices are retained only as snapshot observations, not as current-price updates.",
+  "marketContext": {
+    "currencyCode": "CNY",
+    "currencyBasis": "The official China site snapshot uses ¥ and the assigned CN history file records CNY; no current StoreConfig/network response was retrieved in this run."
+  },
+  "coverage": {
+    "status": "PARTIAL",
+    "sourcePageObserved": "https://www.longines.cn/",
+    "sourcePageCrawlAge": "Crawled: today",
+    "curatedCardsObserved": 15,
+    "officialFullListingCountObserved": null,
+    "fullWatchesPageObserved": false,
+    "paginationObserved": false,
+    "stopEvidence": null,
+    "priorFormalMarketWatchCount": 666,
+    "countDifference": null,
+    "countComparisonNote": "The current source is a homepage curated carousel and provides no full listing total; the previous 666-watch collection is only a baseline and is not used as the current collection target or stop condition."
+  },
+  "productSnapshots": [
+    {"reference":"L3.769.4.96.6","collectionName":"浪琴表康卡斯潜水系列","modelName":"浪琴表康卡斯潜水系列","rawDetails":"男士, 石英, 42.00 mm","rawPriceText":"¥ 11,500.00","parsedPrice":11500,"badgeSnapshot":"热销","purchaseCtaSnapshot":"立即选购; 门店鉴赏; 购物车","productUrl":null,"useForFormalCurrentPriceUpdate":false},
+    {"reference":"L3.769.4.56.6","collectionName":"浪琴表康卡斯潜水系列","modelName":"浪琴表康卡斯潜水系列","rawDetails":"男士, 石英, 42.00 mm","rawPriceText":"¥ 11,500.00","parsedPrice":11500,"badgeSnapshot":"新品","purchaseCtaSnapshot":"立即选购; 门店鉴赏; 购物车","productUrl":null,"useForFormalCurrentPriceUpdate":false},
+    {"reference":"L3.769.3.56.7","collectionName":"浪琴表康卡斯潜水系列","modelName":"浪琴表康卡斯潜水系列","rawDetails":"男士, 石英, 42.00 mm","rawPriceText":"¥ 13,300.00","parsedPrice":13300,"badgeSnapshot":"新品","purchaseCtaSnapshot":"立即选购; 门店鉴赏; 购物车","productUrl":null,"useForFormalCurrentPriceUpdate":false},
+    {"reference":"L4.330.4.11.6","collectionName":"浪琴表博雅系列","modelName":"浪琴表博雅系列","rawDetails":"女士, 石英, 30.00 mm","rawPriceText":"¥ 10,600.00","parsedPrice":10600,"badgeSnapshot":"线上专供","purchaseCtaSnapshot":"立即选购; 门店鉴赏; 购物车","productUrl":null,"useForFormalCurrentPriceUpdate":false},
+    {"reference":"L4.330.4.87.6","collectionName":"浪琴表博雅系列","modelName":"浪琴表博雅系列","rawDetails":"女士, 石英, 30.00 mm","rawPriceText":"¥ 14,200.00","parsedPrice":14200,"badgeSnapshot":null,"purchaseCtaSnapshot":"立即选购; 门店鉴赏; 购物车","productUrl":null,"useForFormalCurrentPriceUpdate":false},
+    {"reference":"L4.330.4.11.0","collectionName":"浪琴表博雅系列","modelName":"浪琴表博雅系列","rawDetails":"女士, 石英, 30.00 mm","rawPriceText":"¥ 10,600.00","parsedPrice":10600,"badgeSnapshot":"线上专供","purchaseCtaSnapshot":"立即选购; 门店鉴赏; 购物车","productUrl":null,"useForFormalCurrentPriceUpdate":false},
+    {"reference":"L4.330.4.11.2","collectionName":"浪琴表博雅系列","modelName":"浪琴表博雅系列","rawDetails":"女士, 石英, 30.00 mm","rawPriceText":"¥ 10,600.00","parsedPrice":10600,"badgeSnapshot":"线上专供","purchaseCtaSnapshot":"立即选购; 门店鉴赏; 购物车","productUrl":null,"useForFormalCurrentPriceUpdate":false},
+    {"reference":"L3.860.4.92.6","collectionName":"康卡斯系列悦动腕表","modelName":"康卡斯系列悦动腕表","rawDetails":"男士, 石英, 41.00 mm","rawPriceText":"¥ 11,000.00","parsedPrice":11000,"badgeSnapshot":"热销","purchaseCtaSnapshot":"立即选购; 门店鉴赏; 购物车","productUrl":null,"useForFormalCurrentPriceUpdate":false},
+    {"reference":"L3.860.4.52.6","collectionName":"康卡斯系列悦动腕表","modelName":"康卡斯系列悦动腕表","rawDetails":"男士, 石英, 41.00 mm","rawPriceText":"¥ 11,000.00","parsedPrice":11000,"badgeSnapshot":"新品","purchaseCtaSnapshot":"立即选购; 门店鉴赏; 购物车","productUrl":null,"useForFormalCurrentPriceUpdate":false},
+    {"reference":"L3.350.3.18.7","collectionName":"康卡斯系列悦动腕表","modelName":"康卡斯系列悦动腕表","rawDetails":"女士, 石英, 30.00 mm","rawPriceText":"¥ 12,800.00","parsedPrice":12800,"badgeSnapshot":"新品","purchaseCtaSnapshot":"立即选购; 门店鉴赏; 购物车","productUrl":null,"useForFormalCurrentPriceUpdate":false},
+    {"reference":"L3.350.4.18.6","collectionName":"康卡斯系列悦动腕表","modelName":"康卡斯系列悦动腕表","rawDetails":"女士, 石英, 30.00 mm","rawPriceText":"¥ 11,000.00","parsedPrice":11000,"badgeSnapshot":"新品","purchaseCtaSnapshot":"立即选购; 门店鉴赏; 购物车","productUrl":null,"useForFormalCurrentPriceUpdate":false},
+    {"reference":"L8.142.4.71.6","collectionName":"浪琴表心月系列星辰腕表","modelName":"浪琴表心月系列星辰腕表","rawDetails":"女士, 石英, 30.00 mm","rawPriceText":"¥ 10,600.00","parsedPrice":10600,"badgeSnapshot":"新品","purchaseCtaSnapshot":"立即选购; 门店鉴赏; 购物车","productUrl":null,"useForFormalCurrentPriceUpdate":false},
+    {"reference":"L8.122.4.71.6","collectionName":"浪琴表心月系列","modelName":"浪琴表心月系列","rawDetails":"女士, 石英, 30.00 mm","rawPriceText":"¥ 9,800.00","parsedPrice":9800,"badgeSnapshot":"热销","purchaseCtaSnapshot":"立即选购; 门店鉴赏; 购物车","productUrl":null,"useForFormalCurrentPriceUpdate":false},
+    {"reference":"L8.122.4.99.6","collectionName":"浪琴表心月系列","modelName":"浪琴表心月系列","rawDetails":"女士, 石英, 30.00 mm","rawPriceText":"¥ 12,000.00","parsedPrice":12000,"badgeSnapshot":"热销","purchaseCtaSnapshot":"立即选购; 门店鉴赏; 购物车","productUrl":null,"useForFormalCurrentPriceUpdate":false},
+    {"reference":"L8.142.4.87.6","collectionName":"浪琴表心月系列星辰腕表","modelName":"浪琴表心月系列星辰腕表","rawDetails":"女士, 石英, 30.00 mm","rawPriceText":"¥ 14,600.00","parsedPrice":14600,"badgeSnapshot":"新品","purchaseCtaSnapshot":"立即选购; 门店鉴赏; 购物车","productUrl":null,"useForFormalCurrentPriceUpdate":false}
+  ],
+  "nicknameResearch": {"status":"NOT RUN (out of scope)"}
+}

@@ -2,11 +2,11 @@
   "$schema": "../schemas/watch-market.schema.json",
   "schemaVersion": 4,
   "brandId": "longines",
-  "collectedAt": "2026-10-02T23:51:14.265Z",
+  "collectedAt": "2026-10-12T00:00:00.000Z",
   "salesRegion": "Austria",
   "marketCode": "AT",
   "locale": "de-AT",
-  "watchCount": 804,
+  "watchCount": 805,
   "source": {
     "name": "LONGINES Austria Official Website",
     "url": "https://www.longines.com/de-at/watches"
@@ -11389,6 +11389,20 @@
       "dialDescription": "Mintfarben mit Sonnenstrahl-Dekor",
       "isNewModel": false,
       "productUrl": "https://www.longines.com/de-at/p/watch-longines-primaluna-l8-142-4-97-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.369.4.87.6",
+      "reference": "L3.369.4.87.6",
+      "collectionName": "HYDROCONQUEST",
+      "modelName": "HYDROCONQUEST",
+      "caseDescription": "Ø 30.00 mm, Edelstahl",
+      "dialDescription": "Weißes Perlmutt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/de-at/p/watch-hydroconquest-l3-369-4-87-6",
       "localNicknames": {
         "names": [],
         "sources": []

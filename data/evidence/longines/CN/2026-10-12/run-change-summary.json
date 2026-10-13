@@ -1,0 +1,56 @@
+{
+  "brandId": "longines",
+  "marketCode": "CN",
+  "runDate": "2026-10-12",
+  "sourceTotal": 666,
+  "sourceCount": 666,
+  "existingMarketCountBeforeRun": 666,
+  "newToMarketReferences": [],
+  "oldMarketReferencesAbsentFromCurrentSource": [],
+  "newToMarketCount": 0,
+  "oldReferencesAbsentCount": 0,
+  "existingPriceComparison": {
+    "status": "PASS",
+    "comparedCount": 666,
+    "priceDifferenceCount": 0,
+    "differences": []
+  },
+  "productPageChecks": {
+    "checkedNewCandidateCount": 0,
+    "path": null
+  },
+  "formalChangesApplied": true,
+  "reason": "Formal market and price-history updates were applied after the user confirmed notify-me CTAs map to listed. Existing rows were retained; complete current-source absences received not-listed points. Existing product-page CTAs were only partly rechecked in the follow-up; per-reference listing signals were audited separately.",
+  "formalChangeSummary": {
+    "marketRowsAdded": 0,
+    "newPriceSeriesAdded": 0,
+    "notListedPointsAppended": 0,
+    "existingPriceDifferences": 0,
+    "listingStatusMapping": {
+      "notify-me": "listed",
+      "direct-purchase": "listed",
+      "retailer-only": "retailer-only"
+    },
+    "addedMarketReferences": [],
+    "notListedReferences": []
+  },
+  "existingCtaRecheck": {
+    "status": "NOT RUN",
+    "directProductPageCtaCount": 0,
+    "evidencePath": "data/evidence/longines/CN/2026-10-12/observations.json#/supplementalEvidence/existingCtaRecheck",
+    "listingSignalCoverage": 666,
+    "listingSignalsAreNotDirectProductPageCta": true
+  },
+  "existingProductPageCtaRecheck": {
+    "status": "PASS",
+    "expectedReferences": 666,
+    "attemptedReferences": 666,
+    "exactProductPagesConfirmedAtLeastOnce": 666,
+    "noExactProductPageAfterRetries": 0,
+    "verifiedPagesWithUnresolvedPurchaseCta": 0,
+    "entriesWithRetryAttempts": 61,
+    "individualRetryAttempts": 62,
+    "completedThrough": "2026-10-13",
+    "evidencePath": "data/evidence/longines/CN/2026-10-12/observations.json#/supplementalEvidence/existingProductPageCtaChecks"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "IT",
+  "locale": "it-IT",
+  "observedOn": "2026-10-08 (UTC; exact time not recorded)",
+  "entryUrl": "https://www.longines.com/it/watches",
+  "observationType": "official crawler snapshot capability check; not current price evidence",
+  "snapshotMetadata": {
+    "pageTitle": "Orologi Longines | Orologi Svizzeri | LONGINES IT",
+    "freshnessLabel": "Crawled: yesterday",
+    "exactCrawlTime": null,
+    "visibleCardCount": 24,
+    "loadMoreText": "Mostra più risultati",
+    "verbatimFooterNumbers": [
+      24,
+      805
+    ],
+    "samplePrices": [
+      {
+        "displayName": "FLAGSHIP HERITAGE 38.50 mm",
+        "rawPrice": "2.050,00 €",
+        "currentPriceEligible": false,
+        "reason": "Prior-day crawler snapshot; no full reference observed."
+      },
+      {
+        "displayName": "LONGINES SPIRIT PILOT 39 mm",
+        "rawPrice": "3.000,00 €",
+        "currentPriceEligible": false,
+        "reason": "Prior-day crawler snapshot; no full reference observed."
+      }
+    ]
+  },
+  "observations": [],
+  "note": "Snapshot examples are included only to document what the official page snapshot exposed. No current product observations were admitted; the snapshot cannot prove current prices or a complete listing."
+}

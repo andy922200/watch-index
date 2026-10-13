@@ -1,0 +1,343 @@
+{
+  "brandId": "longines",
+  "marketCode": "CN",
+  "task": "price-update",
+  "status": "listing-source-count-matched",
+  "locale": "zh-CN",
+  "entryUrl": "https://www.longines.cn/watches",
+  "observedOn": "2026-10-12",
+  "collectionMethod": "official REST productList observed after clicking the official “显示更多结果” control; pages 1–56 collected in checkpoints",
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "available",
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "PASS",
+    "notes": "Chrome DevTools captured the official pagination request. Initial 56-page call exceeded tool protocol timeout after page 36; six bounded checkpoints completed through page 56, final hasMore=false."
+  },
+  "sourceReportedTotal": 666,
+  "rawItemsReturned": 666,
+  "uniqueReferences": 666,
+  "duplicatesRemoved": 0,
+  "sourcePagination": [
+    {
+      "page": 1,
+      "itemCount": 10,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 2,
+      "itemCount": 10,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 3,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 4,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 5,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 6,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 7,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 8,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 9,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 10,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 11,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 12,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 13,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 14,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 15,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 16,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 17,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 18,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 19,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 20,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 21,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 22,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 23,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 24,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 25,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 26,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 27,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 28,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 29,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 30,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 31,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 32,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 33,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 34,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 35,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 36,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 37,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 38,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 39,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 40,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 41,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 42,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 43,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 44,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 45,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 46,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 47,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 48,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 49,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 50,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 51,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 52,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 53,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 54,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 55,
+      "itemCount": 12,
+      "sourceUrl": "https://www.longines.cn/watches"
+    },
+    {
+      "page": 56,
+      "itemCount": 10,
+      "sourceUrl": "https://www.longines.cn/watches"
+    }
+  ],
+  "attempts": [
+    {
+      "method": "official REST pages 1-56",
+      "result": "Initial call timed out after page 36; bounded checkpoints completed all 56 pages and confirmed final hasMore=false."
+    }
+  ],
+  "completeness": "Deduplicated reference count matches the official all-watches total.",
+  "limitations": [
+    "Existing product-page CTA audit attempted all 666 references through 2026-10-13: 666 exact product pages were confirmed at least once, 0 could not reach an exact product page after retries, and 0 confirmed pages had unresolved purchase CTA. Full attempts are in observations.json supplementalEvidence.",
+    "Independent product-page spot checks have not yet been performed.",
+    "Broad independent 19–21 representative sample of unchanged listings was not performed.",
+    "Evidence stores date precision only; exact request timestamps were not retained."
+  ],
+  "newCandidateProductPageChecks": {
+    "checkedCount": 0,
+    "failures": [],
+    "skuMismatches": [],
+    "priceOrCurrencyMismatches": [],
+    "ctaClassCounts": {},
+    "status": "NOT RUN"
+  },
+  "formalChangesApplied": true,
+  "listingStatusMapping": {
+    "direct-purchase": "listed",
+    "notify-me": "listed per user instruction",
+    "find-retailer-only": "retailer-only"
+  },
+  "existingProductPageCtaRecheck": {
+    "status": "PASS",
+    "expectedReferences": 666,
+    "attemptedReferences": 666,
+    "exactProductPagesConfirmedAtLeastOnce": 666,
+    "noExactProductPageAfterRetries": 0,
+    "verifiedPagesWithUnresolvedPurchaseCta": 0,
+    "entriesWithRetryAttempts": 61,
+    "individualRetryAttempts": 62,
+    "completedThrough": "2026-10-13",
+    "evidencePath": "data/evidence/longines/CN/2026-10-12/observations.json#/supplementalEvidence/existingProductPageCtaChecks"
+  }
+}

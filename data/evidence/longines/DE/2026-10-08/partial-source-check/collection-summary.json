@@ -1,0 +1,83 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "DE",
+  "task": "pure-price-update",
+  "status": "partial; stopped because current full-list browser/network verification unavailable",
+  "locale": "de-DE",
+  "salesRegion": "Germany",
+  "entryPoint": "https://www.longines.com/de/watches",
+  "sourceAttempts": [
+    {
+      "attempt": 1,
+      "observedAt": "2026-10-08 (UTC; exact time not recorded)",
+      "method": "mcp__playwright__browser_tabs(action=new)",
+      "url": "https://www.longines.com/de/watches",
+      "result": "FAILED before new tab creation",
+      "error": "Browser is already in use for /Users/andylien/Library/Caches/ms-playwright-mcp/mcp-chrome-e3a8b11, use --isolated to run multiple instances of the same browser"
+    },
+    {
+      "attempt": 2,
+      "observedAt": "2026-10-08 (UTC; exact time not recorded)",
+      "method": "mcp__cua_repl createBrowserTab('iab', official URL)",
+      "url": "https://www.longines.com/de/watches",
+      "result": "FAILED",
+      "error": "Browser is not available: iab"
+    },
+    {
+      "attempt": 3,
+      "observedAt": "2026-10-08 (UTC; exact time not recorded)",
+      "method": "web__run open official URL",
+      "url": "https://www.longines.com/de/watches",
+      "result": "Official page text snapshot returned; crawler metadata says 'Crawled: yesterday' (no exact crawl timestamp)",
+      "observedPageTitle": "Longines Uhren | Schweizer Uhren | LONGINES DE",
+      "snapshotFacts": {
+        "visibleCards": 24,
+        "paginationControl": "Mehr Ergebnisse anzeigen",
+        "priceCurrencyInVisibleCards": "EUR",
+        "examples": [
+          "THE LONGINES MASTER COLLECTION 34 mm — 2.850,00 €",
+          "LONGINES SPIRIT PILOT 39 mm — 2.550,00 €"
+        ],
+        "terminalEvidence": false
+      },
+      "limitation": "This is a crawler snapshot with coarse prior-day freshness, not a live rendered browser observation; examples are recorded only as source-capability evidence and are not treated as current prices. The extracted snapshot did not expose full reference numbers for those examples."
+    }
+  ],
+  "networkDiscovery": {
+    "required": true,
+    "toolConfigured": true,
+    "toolAttempted": false,
+    "status": "NOT RUN / capability unavailable",
+    "reason": "No new browser page was created, hence no pageId was available for list_network_requests or get_network_request. No existing page was reused."
+  },
+  "targetCondition": {
+    "marketEntryPreviouslyConfirmed": true,
+    "entryConfirmationSource": "Prior Longines DE collection evidence dated 2026-09-27 records the site's Germany market route as https://www.longines.com/de/watches; that earlier evidence was not reused as current prices.",
+    "currentLocaleSignal": "The official-page snapshot title includes LONGINES DE and the visible card prices use EUR formatting.",
+    "currentMarketConditionFullyVerified": false
+  },
+  "checkpoint": {
+    "completedScope": "Official crawler snapshot inspected for page title, 24 visible cards, EUR-formatted example prices, and a load-more control.",
+    "lastSuccessfulPosition": "First 24 visible cards only in prior-day crawler snapshot; not a live collection position.",
+    "uniqueConfigurationsObserved": 0,
+    "officialTotalCount": null,
+    "stopSignal": null,
+    "observationsPath": "data/evidence/longines/DE/2026-10-08/partial-source-check/observations.json",
+    "incompleteScope": "Current full listing, complete references, current prices and listing states, pagination/cursor termination, network response, and independent current product-page spot checks.",
+    "suggestedResume": "Resume when a dedicated browser session is available. Use the documented Germany route, verify live de-DE/EUR state, capture the ProductList network response and terminal signal, then independently inspect current product pages. Do not use the prior-day crawler snapshot as a price source."
+  },
+  "baseline": {
+    "marketPath": "data/markets/longines-germany-market.json",
+    "marketSha256Before": "8c25ee56c276d30713f39c62c09e270e275c6c2c8858cdaf988728f9a39f5000",
+    "historyPath": "data/history/DE/longines-price-history.json",
+    "historySha256Before": "a101fe55e0f3a5f763c04880241383c74aff4fb7a5e3667997c5a2583f78a8bc",
+    "lastHistoryRunId": 1,
+    "lastHistoryCollectedAt": "2026-09-27T15:04:58.000Z"
+  },
+  "formalDataChanges": {
+    "market": "none",
+    "history": "none; no run appended",
+    "catalog": "none"
+  }
+}

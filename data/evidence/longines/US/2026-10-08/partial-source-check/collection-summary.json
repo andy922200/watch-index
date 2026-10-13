@@ -1,0 +1,141 @@
+{
+  "brandId": "longines",
+  "marketCode": "US",
+  "locale": "en-US",
+  "collectedAt": "2026-10-08T13:20:00.000Z",
+  "timestampPrecision": "UTC minute-rounded",
+  "entryUrl": "https://www.longines.com/en-us/watches",
+  "scopeStatus": "PARTIAL",
+  "runId": null,
+  "attempts": [
+    {
+      "attempt": 1,
+      "at": "2026-10-08T13:19:00.000Z",
+      "method": "Chrome DevTools MCP new_page，使用 isolatedContext=longines-us-20261008 建立官方頁面",
+      "scope": "官方頁面渲染與 network discovery",
+      "result": "FAIL",
+      "error": "Chrome DevTools MCP 回報 browser profile already running，提示使用 --isolated 或不同 userDataDir；未建立 pageId。"
+    },
+    {
+      "attempt": 2,
+      "at": "2026-10-08T13:19:00.000Z",
+      "method": "Chrome DevTools MCP list_pages",
+      "scope": "檢查可用頁面以繼續 network discovery",
+      "result": "FAIL",
+      "error": "同樣回報 browser profile already running；未能列出頁面或讀取 network requests。"
+    },
+    {
+      "attempt": 3,
+      "at": "2026-10-08T13:19:00.000Z",
+      "method": "functions.exec 內呼叫 tools.mcp__chrome_devtools__new_page({url, isolatedContext:'longines-us-20261008', timeout:30000})，與 Rolex worker 成功方式一致",
+      "scope": "官方頁面渲染與 network discovery 重試",
+      "result": "FAIL",
+      "error": "仍回報 browser profile already running；無 pageId，無法檢視渲染頁面或 network requests。"
+    },
+    {
+      "attempt": 4,
+      "at": "2026-10-08T13:20:00.000Z",
+      "method": "官方網站 web open snapshot：open https://www.longines.com/en-us/watches",
+      "scope": "官方來源能力與頁面結構的有限確認；不收集價格",
+      "result": "PARTIAL",
+      "error": "回傳索引快照，標示 Crawled: today；僅呈現 24 項及頁面顯示的總數 807，沒有可驗證的即時分頁／停止訊號或完整列表。快照不作本輪價格證據。"
+    },
+    {
+      "attempt": 5,
+      "at": "2026-10-08T13:25:00.000Z",
+      "method": "Rolex SG browser 任務結束後，再於 functions.exec 內呼叫 tools.mcp__chrome_devtools__new_page({url, isolatedContext:'longines-us-20261008', timeout:30000})",
+      "scope": "確認 browser profile 釋出後重試官方頁渲染與 network discovery",
+      "result": "FAIL",
+      "error": "仍回報 browser profile already running，提示使用 --isolated 或不同 userDataDir；無 pageId，未能檢視渲染頁面或 network requests。"
+    },
+    {
+      "attempt": 6,
+      "at": "2026-10-08T13:30:00.000Z",
+      "method": "Rolex JP browser 任務結束後，於 functions.exec 內呼叫 tools.mcp__chrome_devtools__new_page({url, isolatedContext:'longines-us-20261008', timeout:30000})",
+      "scope": "最後一次確認 browser profile 狀態並建立官方頁面",
+      "result": "FAIL",
+      "error": "Chrome DevTools MCP 仍回報 browser profile already running，提示使用 --isolated 或不同 userDataDir；本次沒有 pageId，無法查看活躍頁面或 network requests。依統籌指示停止重試。"
+    },
+    {
+      "attempt": 7,
+      "at": "2026-10-08T13:35:00.000Z",
+      "method": "CUA 原生 Google Chrome：保留既有分頁，super+t 開新分頁並導航到 https://www.longines.com/en-us/watches，讀取實際渲染 accessibility tree",
+      "scope": "官方 US 頁面、首批商品與分頁控件驗證",
+      "result": "PARTIAL",
+      "error": "頁面實際渲染；AX 顯示 United States 選擇器、807 products、24 items seen、Show more results 及首批商品價格／行動標籤。頁面同時顯示地理提示『It seems that you are in Taiwan』，已記錄此環境差異。後續 CUA 綁定切換到其他既有 Chrome 視窗，無法穩定留在此頁按 Show more。"
+    },
+    {
+      "attempt": 8,
+      "at": "2026-10-08T13:40:00.000Z",
+      "method": "CUA 建立獨立 Chrome session：createBrowserTab('chrome', officialUrl, {visible:true, sessionName:'🔎 Longines US'})",
+      "scope": "隔離分頁焦點以繼續完整 UI pagination/network inspection",
+      "result": "FAIL",
+      "error": "CUA 回報 Browser is not available: chrome；browser providers inventory 為空。"
+    },
+    {
+      "attempt": 9,
+      "at": "2026-10-08T13:42:00.000Z",
+      "method": "Chrome DevTools MCP list_pages，嘗試讀取原生 Chrome 中 Longines 頁的 Network 請求",
+      "scope": "network discovery",
+      "result": "FAIL",
+      "error": "仍回報 browser profile already running；無法連到原生 Chrome 頁或取回 Network 資料。"
+    },
+    {
+      "attempt": 10,
+      "at": "2026-10-08T14:47:00.000Z",
+      "method": "Playwright MCP browser_run_code_unsafe：依指示僅在傳入 page.context() 中 newPage、導覽 Longines US 官網並讀取 title/body text",
+      "scope": "建立獨立官方頁面與檢查 rendered content",
+      "result": "FAIL",
+      "error": "Playwright MCP 在執行程式前即回報 Browser is already in use for /Users/andylien/Library/Caches/ms-playwright-mcp/mcp-chrome-e3a8b11, use --isolated to run multiple instances of the same browser；程式未執行，未建立 page。"
+    },
+    {
+      "attempt": 11,
+      "at": "2026-10-08T14:50:00.000Z",
+      "method": "Rolex 品牌最後一個 browser 任務結束後，使用 Chrome DevTools MCP new_page 並傳入 isolatedContext=longines-us-20261008",
+      "scope": "最終確認 DevTools context 是否已釋出",
+      "result": "FAIL",
+      "error": "仍回報 Chrome profile already running，提示 --isolated 或不同 userDataDir；無 pageId，無法使用此 context 讀取 US list 或 Network。依統籌指示不再重試。"
+    }
+  ],
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "unavailable",
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "FAIL",
+    "fallbackTool": "official web open snapshot",
+    "notes": "已實際呼叫 Chrome DevTools MCP，但新頁與頁面清單均被 browser profile lock 阻擋。官方 web snapshot 僅能證明頁面可被索引，不能驗證即時價格或 network 請求。"
+  },
+  "sourceDiscovery": {
+    "sourceUrl": "https://www.longines.com/en-us/watches",
+    "sourceType": "Official Longines US page, retrieved through web index snapshot",
+    "snapshotObservation": "The returned snapshot displayed 24 watch entries and a total count of 807. It identified itself as crawled today, without an exact crawl timestamp.",
+    "priceValuesUsed": false,
+    "paginationMethod": null,
+    "stopEvidence": null,
+    "completeness": "NOT VERIFIED",
+    "notes": "不將 snapshot 的價格、筆數或索引時間視為本輪即時資料；既有基線 802 筆僅作變更安全核對，不推定本輪 current count。"
+  },
+  "counts": {
+    "snapshotEntriesDisplayed": 24,
+    "snapshotDisplayedTotal": 807,
+    "baselineMarketRecordCount": 802,
+    "currentUniqueReferences": null,
+    "currentPriceRecords": 0
+  },
+  "pagination": {
+    "observedControl": "Show more results",
+    "snapshotPageSize": 24,
+    "totalPages": null,
+    "lastPageEvidence": null,
+    "complete": false,
+    "notes": "頁面快照未提供可驗證的分頁 response 或停止條件。"
+  },
+  "stoppingEvidence": null,
+  "formalDataChanges": {
+    "marketFileChanged": false,
+    "historyFileChanged": false,
+    "priceHistoryRunAppended": false
+  },
+  "scopeNotes": "此工作單位僅處理 Longines US。未讀寫 catalog、其他市場、traveler refund policy 或其他市場 evidence。"
+}

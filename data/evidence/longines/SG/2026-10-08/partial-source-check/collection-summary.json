@@ -1,0 +1,72 @@
+{
+  "brandId": "longines",
+  "marketCode": "SG",
+  "locale": "en-sg",
+  "entryUrl": "https://www.longines.com/en-sg/watches",
+  "checkpointRecordedAt": "2026-10-08T13:09:20.000Z",
+  "status": "PARTIAL — no formal market/history update",
+  "attempts": [
+    {
+      "method": "Chrome DevTools MCP new_page with isolatedContext=longines-sg-price-refresh",
+      "scope": "Create a dedicated browser page for live rendering and network inspection",
+      "result": "FAIL",
+      "error": "Browser profile was already running for /Users/andylien/.cache/chrome-devtools-mcp/chrome-profile; tool requested a separate userDataDir or --isolated instance. The exposed new_page interface did not offer that option."
+    },
+    {
+      "method": "Playwright MCP browser_tabs list",
+      "scope": "Check for an independent usable browser session",
+      "result": "FAIL",
+      "error": "Browser was already in use for /Users/andylien/Library/Caches/ms-playwright-mcp/mcp-chrome-e3a8b11 and requested --isolated. No page was created or inspected through this session."
+    },
+    {
+      "method": "Official rendered-page lookup with web browsing tool",
+      "scope": "https://www.longines.com/en-sg/watches first page",
+      "result": "PARTIAL",
+      "detail": "Official page snapshot displayed 803 results, a 24-item first page, SGD-market locale URL /en-sg/, prices with a bare '$' symbol, and Find a retailer calls to action. Snapshot crawl label: Crawled yesterday. The Show more results control was visible, but no next page was opened."
+    },
+    {
+      "method": "Open three linked official product pages from the listing snapshot",
+      "scope": "L2.960.4.78.2, L2.962.4.73.6, and L2.450.4.97.6",
+      "result": "PARTIAL",
+      "detail": "Pages showed $5,000.00, $5,500.00, and $3,750.00 respectively; listing cards showed the same amounts. Crawl labels were today, yesterday, and 4 days ago. All three showed Recommended Retail Price and Find a retailer. These snapshots do not constitute live revalidation."
+    },
+    {
+      "method": "curl -I https://www.longines.com/en-sg/watches",
+      "scope": "Direct network fallback for official site access",
+      "result": "FAIL",
+      "error": "curl exit code 6: Could not resolve host: www.longines.com"
+    }
+  ],
+  "networkDiscovery": {
+    "required": true,
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "NOT RUN / capability unavailable after page-creation failure",
+    "toolsAttempted": [
+      "Chrome DevTools MCP new_page",
+      "Playwright MCP browser_tabs list",
+      "curl DNS fallback"
+    ],
+    "detail": "No isolated browser page was created, so there was no assigned-page network request list or response body to inspect. No cookies, headers, or request data were recorded."
+  },
+  "pagination": {
+    "pageSize": 24,
+    "officialTotalLabelObserved": 803,
+    "pagesOpened": 1,
+    "visibleItemCount": 24,
+    "stopEvidence": null,
+    "complete": false
+  },
+  "reconciliation": {
+    "priorMarketWatchCount": 755,
+    "currentListingLabel": 803,
+    "difference": 48,
+    "interpretation": "Unreconciled snapshot difference only. This does not prove 48 new products, and the relative crawl date means it cannot be treated as a current complete listing."
+  },
+  "formalUpdate": {
+    "marketFileChanged": false,
+    "historyFileChanged": false,
+    "runIdCreated": null,
+    "reason": "A complete current product enumeration, official pagination stop signal, and current network response were unavailable. Do not append an incomplete run or assign not-listed status from a partial snapshot."
+  }
+}

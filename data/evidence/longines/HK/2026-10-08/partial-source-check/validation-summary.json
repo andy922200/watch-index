@@ -1,0 +1,46 @@
+{
+  "brandId": "longines",
+  "marketCode": "HK",
+  "validatedAt": "2026-10-08T13:06:33.000Z",
+  "validationScope": "Partial-source checkpoint only; no formal market or history data changed.",
+  "checks": {
+    "strictJsonParseAndDuplicateKeyCheck": {
+      "status": "PASS",
+      "detail": "All three new evidence JSON files were parsed with duplicate-key rejection and non-finite number rejection."
+    },
+    "marketAndHistorySchema": {
+      "status": "NOT RUN",
+      "detail": "No market/history writes were made; this checkpoint does not claim schema validation."
+    },
+    "marketHistoryCrossFileRelations": {
+      "status": "NOT RUN",
+      "detail": "No formal market/history writes were made; no current collectionRun was created."
+    },
+    "sourceReconciliation": {
+      "status": "PARTIAL",
+      "detail": "One official product page displays reference L3.809.4.93.9, HK$19,000.00, and a find-a-retailer CTA. The browsing tool reported the page content was crawled 4 days before retrieval. The listing label was 538 versus the previous formal market count 493; this discrepancy remains unresolved."
+    },
+    "completenessAndStopEvidence": {
+      "status": "NOT RUN",
+      "detail": "Only the first 24-card listing page was rendered. No further pages, live network response, or official beyond-last-page response was obtained."
+    },
+    "changeSafety": {
+      "status": "PASS",
+      "detail": "No market, history, catalog, traveler refund policy, or other-market files were changed. Only this Longines HK evidence checkpoint was added."
+    },
+    "nicknameResearch": {
+      "status": "NOT RUN (out of scope)"
+    },
+    "readmeSynchronization": {
+      "status": "NOT RUN",
+      "detail": "This partial collection does not establish a lasting change to the project’s market description."
+    }
+  },
+  "limitations": [
+    "No live rendered browser session with network inspection could be opened because the available Chrome DevTools and Playwright browser profile was already running and isolated-profile options were unavailable.",
+    "The shell could not resolve www.longines.com; direct API/network fallback did not work.",
+    "The browsing tool provided a page snapshot; the product page snapshot was marked crawled 4 days ago, so its price cannot be represented as freshly verified at retrieval time.",
+    "The observed total label 538 is not reconciled with the previous market’s 493 watches; no absent configurations have been inferred.",
+    "data/catalog/longines-catalog.json was not read or modified, per the assigned market scope."
+  ]
+}

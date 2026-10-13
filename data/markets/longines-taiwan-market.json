@@ -2,11 +2,11 @@
   "$schema": "../schemas/watch-market.schema.json",
   "schemaVersion": 4,
   "brandId": "longines",
-  "collectedAt": "2026-09-24T15:18:10.629Z",
+  "collectedAt": "2026-10-12T00:00:00.000Z",
   "salesRegion": "Taiwan",
   "marketCode": "TW",
   "locale": "zh-Hant-TW",
-  "watchCount": 544,
+  "watchCount": 545,
   "source": {
     "name": "LONGINES Taiwan Official Website",
     "url": "https://www.longines.com/zh-tw/watches"
@@ -7752,6 +7752,20 @@
       "dialDescription": "薄荷藍色太陽放射飾紋",
       "isNewModel": false,
       "productUrl": "https://www.longines.com/zh-tw/p/watch-longines-primaluna-l8-142-4-97-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.369.4.12.6",
+      "reference": "L3.369.4.12.6",
+      "collectionName": "深海征服者系列",
+      "modelName": "深海征服者系列",
+      "caseDescription": "Ø 30.00 mm, 不鏽鋼",
+      "dialDescription": "白色啞光",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/zh-tw/p/watch-hydroconquest-l3-369-4-12-6",
       "localNicknames": {
         "names": [],
         "sources": []

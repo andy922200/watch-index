@@ -11,6 +11,11 @@
       "runId": 1,
       "collectedAt": "2026-09-27T15:23:03.000Z",
       "recordCount": 776
+    },
+    {
+      "runId": 2,
+      "collectedAt": "2026-10-12T00:00:00.000Z",
+      "recordCount": 779
     }
   ],
   "priceSeries": {
@@ -2378,6 +2383,11 @@
         "runId": 1,
         "listingStatus": "listed",
         "price": 900
+      },
+      {
+        "runId": 2,
+        "listingStatus": "not-listed",
+        "price": null
       }
     ],
     "longines:L3.759.4.96.6": [
@@ -5444,6 +5454,34 @@
         "runId": 1,
         "listingStatus": "listed",
         "price": 1900
+      }
+    ],
+    "longines:L3.369.4.09.6": [
+      {
+        "runId": 2,
+        "listingStatus": "listed",
+        "price": 1450
+      }
+    ],
+    "longines:L3.369.4.12.6": [
+      {
+        "runId": 2,
+        "listingStatus": "listed",
+        "price": 1450
+      }
+    ],
+    "longines:L3.369.4.87.6": [
+      {
+        "runId": 2,
+        "listingStatus": "listed",
+        "price": 1950
+      }
+    ],
+    "longines:L8.123.4.67.6": [
+      {
+        "runId": 2,
+        "listingStatus": "listed",
+        "price": 2700
       }
     ]
   }

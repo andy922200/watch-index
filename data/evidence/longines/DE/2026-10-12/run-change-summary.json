@@ -1,0 +1,80 @@
+{
+  "brandId": "longines",
+  "marketCode": "DE",
+  "runDate": "2026-10-12",
+  "sourceTotal": 804,
+  "sourceCount": 804,
+  "existingMarketCountBeforeRun": 804,
+  "newToMarketReferences": [
+    "L3.369.4.09.6",
+    "L3.369.4.12.6",
+    "L3.369.4.87.6"
+  ],
+  "oldMarketReferencesAbsentFromCurrentSource": [
+    "L3.759.4.76.6",
+    "L8.115.5.31.7",
+    "L8.115.5.61.7"
+  ],
+  "newToMarketCount": 3,
+  "oldReferencesAbsentCount": 3,
+  "existingPriceComparison": {
+    "status": "PASS",
+    "comparedCount": 801,
+    "priceDifferenceCount": 0,
+    "differences": []
+  },
+  "productPageChecks": {
+    "checkedNewCandidateCount": 3,
+    "supplementalResolvedReferenceCount": 1,
+    "path": "data/evidence/longines/DE/2026-10-12/observations.json#/supplementalEvidence/newCandidateProductPageChecks"
+  },
+  "formalChangesApplied": true,
+  "reason": "Official all-watches ProductList pagination resolved the one-reference mismatch in the five-parent-series collection. Three new market rows and three not-listed history points were appended after direct DE product-page checks; L4.523.0.50.2 reappeared in the complete source with unchanged price.",
+  "formalChangeSummary": {
+    "marketRowsAdded": 3,
+    "newPriceSeriesAdded": 3,
+    "notListedPointsAppended": 3,
+    "existingPriceDifferences": 0,
+    "listingStatusMapping": {
+      "notify-me": "listed",
+      "direct-purchase": "listed",
+      "retailer-only": "retailer-only"
+    },
+    "addedMarketReferences": [
+      "L3.369.4.09.6",
+      "L3.369.4.12.6",
+      "L3.369.4.87.6"
+    ],
+    "notListedReferences": [
+      "L3.759.4.76.6",
+      "L8.115.5.31.7",
+      "L8.115.5.61.7"
+    ],
+    "reappearedExistingReference": "L4.523.0.50.2"
+  },
+  "existingCtaRecheck": {
+    "status": "NOT RUN",
+    "directProductPageCtaCount": 0,
+    "evidencePath": "data/evidence/longines/DE/2026-10-12/observations.json#/supplementalEvidence/existingCtaRecheck",
+    "listingSignalCoverage": 804,
+    "listingSignalsAreNotDirectProductPageCta": true
+  },
+  "notListedRepresentativeSample": {
+    "status": "PASS_MARKET_NOT_LISTED",
+    "attemptedCount": 2,
+    "evidencePath": "data/evidence/longines/DE/2026-10-12/observations.json#/supplementalEvidence/notListedRepresentativeSampleChecks",
+    "interpretation": "All sampled references are absent from the complete official market listing and their localized official product URLs redirect to the market homepage; interpreted as market-specific not-listed, not global discontinuation."
+  },
+  "existingProductPageCtaRecheck": {
+    "status": "PARTIAL",
+    "expectedReferences": 804,
+    "attemptedReferences": 804,
+    "exactProductPagesConfirmedAtLeastOnce": 799,
+    "noExactProductPageAfterRetries": 5,
+    "verifiedPagesWithUnresolvedPurchaseCta": 3,
+    "entriesWithRetryAttempts": 10,
+    "individualRetryAttempts": 11,
+    "completedThrough": "2026-10-13",
+    "evidencePath": "data/evidence/longines/DE/2026-10-12/observations.json#/supplementalEvidence/existingProductPageCtaChecks"
+  }
+}

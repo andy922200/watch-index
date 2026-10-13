@@ -2,11 +2,11 @@
   "$schema": "../schemas/watch-market.schema.json",
   "schemaVersion": 4,
   "brandId": "longines",
-  "collectedAt": "2026-09-27T00:00:00.000Z",
+  "collectedAt": "2026-10-12T00:00:00.000Z",
   "salesRegion": "Singapore",
   "marketCode": "SG",
   "locale": "en-SG",
-  "watchCount": 755,
+  "watchCount": 805,
   "source": {
     "name": "LONGINES Singapore Official Website",
     "url": "https://www.longines.com/en-sg/watches"
@@ -10703,6 +10703,706 @@
       "dialDescription": "Mint Blue sunray",
       "isNewModel": false,
       "productUrl": "https://www.longines.com/en-sg/p/watch-longines-primaluna-l8-142-4-97-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L1.649.4.52.0",
+      "reference": "L1.649.4.52.0",
+      "collectionName": "CONQUEST HERITAGE",
+      "modelName": "CONQUEST HERITAGE",
+      "caseDescription": "Ø 38.00 mm, Stainless steel",
+      "dialDescription": "Black lacquered polished",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-conquest-heritage-l1-649-4-52-0",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L2.409.8.87.2",
+      "reference": "L2.409.8.87.2",
+      "collectionName": "THE LONGINES MASTER COLLECTION MOONPHASE",
+      "modelName": "THE LONGINES MASTER COLLECTION MOONPHASE",
+      "caseDescription": "Ø 34.00 mm, 18 karat rose gold",
+      "dialDescription": "White mother-of-pearl",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-the-longines-master-collection-moonphase-l2-409-8-87-2",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.320.5.80.6",
+      "reference": "L3.320.5.80.6",
+      "collectionName": "CONQUEST",
+      "modelName": "CONQUEST",
+      "caseDescription": "Ø 30.00 mm, Stainless steel and 18 karat yellow gold cap 200",
+      "dialDescription": "White mother-of-pearl",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-conquest-l3-320-5-80-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.350.4.92.6",
+      "reference": "L3.350.4.92.6",
+      "collectionName": "CONQUEST",
+      "modelName": "CONQUEST",
+      "caseDescription": "Ø 30.00 mm, Stainless steel",
+      "dialDescription": "Mint Blue sandblasted",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-conquest-l3-350-4-92-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.369.4.09.6",
+      "reference": "L3.369.4.09.6",
+      "collectionName": "HYDROCONQUEST",
+      "modelName": "HYDROCONQUEST",
+      "caseDescription": "Ø 30.00 mm, Stainless steel",
+      "dialDescription": "Sunray green",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-hydroconquest-l3-369-4-09-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.369.4.12.6",
+      "reference": "L3.369.4.12.6",
+      "collectionName": "HYDROCONQUEST",
+      "modelName": "HYDROCONQUEST",
+      "caseDescription": "Ø 30.00 mm, Stainless steel",
+      "dialDescription": "White matt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-hydroconquest-l3-369-4-12-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.430.5.87.6",
+      "reference": "L3.430.5.87.6",
+      "collectionName": "CONQUEST",
+      "modelName": "CONQUEST",
+      "caseDescription": "Ø 34.00 mm, Stainless steel and 18 karat rose gold cap 200",
+      "dialDescription": "White mother-of-pearl",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-conquest-l3-430-5-87-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.721.4.93.6",
+      "reference": "L3.721.4.93.6",
+      "collectionName": "LONGINES SPIRIT PILOT FLYBACK",
+      "modelName": "LONGINES SPIRIT PILOT FLYBACK",
+      "caseDescription": "Ø 39.50 mm, Stainless steel and ceramic bezel",
+      "dialDescription": "Blue matt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-spirit-pilot-flyback-l3-721-4-93-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.721.4.93.9",
+      "reference": "L3.721.4.93.9",
+      "collectionName": "LONGINES SPIRIT PILOT FLYBACK",
+      "modelName": "LONGINES SPIRIT PILOT FLYBACK",
+      "caseDescription": "Ø 39.50 mm, Stainless steel and ceramic bezel",
+      "dialDescription": "Blue matt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-spirit-pilot-flyback-l3-721-4-93-9",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.750.3.52.7",
+      "reference": "L3.750.3.52.7",
+      "collectionName": "CONQUEST",
+      "modelName": "CONQUEST",
+      "caseDescription": "Ø 38.00 mm, Stainless steel and yellow PVD coating",
+      "dialDescription": "Black sandblasted",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-conquest-l3-750-3-52-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.809.4.93.6",
+      "reference": "L3.809.4.93.6",
+      "collectionName": "LONGINES SPIRIT PILOT",
+      "modelName": "LONGINES SPIRIT PILOT",
+      "caseDescription": "Ø 39.00 mm, Stainless steel",
+      "dialDescription": "Blue matt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-spirit-pilot-l3-809-4-93-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.809.4.93.9",
+      "reference": "L3.809.4.93.9",
+      "collectionName": "LONGINES SPIRIT PILOT",
+      "modelName": "LONGINES SPIRIT PILOT",
+      "caseDescription": "Ø 39.00 mm, Stainless steel",
+      "dialDescription": "Blue matt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-spirit-pilot-l3-809-4-93-9",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.860.4.12.6",
+      "reference": "L3.860.4.12.6",
+      "collectionName": "CONQUEST",
+      "modelName": "CONQUEST",
+      "caseDescription": "Ø 41.00 mm, Stainless steel",
+      "dialDescription": "White sandblasted",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-conquest-l3-860-4-12-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.0.80.6",
+      "reference": "L4.309.0.80.6",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 25.50 mm, Stainless steel",
+      "dialDescription": "White mother-of-pearl",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-309-0-80-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.4.18.6",
+      "reference": "L4.309.4.18.6",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 25.50 mm, Stainless steel",
+      "dialDescription": "White matt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-309-4-18-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.4.19.6",
+      "reference": "L4.309.4.19.6",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 25.50 mm, Stainless steel",
+      "dialDescription": "White matt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-309-4-19-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.4.79.6",
+      "reference": "L4.309.4.79.6",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 25.50 mm, Stainless steel",
+      "dialDescription": "Striped Silver",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-309-4-79-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.4.80.6",
+      "reference": "L4.309.4.80.6",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 25.50 mm, Stainless steel",
+      "dialDescription": "White mother-of-pearl",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-309-4-80-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.4.90.6",
+      "reference": "L4.309.4.90.6",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 25.50 mm, Stainless steel",
+      "dialDescription": "Sunray blue",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-309-4-90-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.5.18.7",
+      "reference": "L4.309.5.18.7",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 25.50 mm, Stainless steel and 18 karat rose gold cap 200",
+      "dialDescription": "White matt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-309-5-18-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.5.19.7",
+      "reference": "L4.309.5.19.7",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 25.50 mm, Stainless steel and 18 karat rose gold cap 200",
+      "dialDescription": "White matt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-309-5-19-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.5.79.7",
+      "reference": "L4.309.5.79.7",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 25.50 mm, Stainless steel and 18 karat rose gold cap 200",
+      "dialDescription": "Striped Silver",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-309-5-79-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.0.80.6",
+      "reference": "L4.310.0.80.6",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 29.00 mm, Stainless steel",
+      "dialDescription": "White mother-of-pearl",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-310-0-80-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.4.18.6",
+      "reference": "L4.310.4.18.6",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 29.00 mm, Stainless steel",
+      "dialDescription": "White matt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-310-4-18-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.4.80.6",
+      "reference": "L4.310.4.80.6",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 29.00 mm, Stainless steel",
+      "dialDescription": "White mother-of-pearl",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-310-4-80-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.4.90.6",
+      "reference": "L4.310.4.90.6",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 29.00 mm, Stainless steel",
+      "dialDescription": "Sunray blue",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-310-4-90-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.5.18.7",
+      "reference": "L4.310.5.18.7",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 29.00 mm, Stainless steel and 18 karat rose gold cap 200",
+      "dialDescription": "White matt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-310-5-18-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.5.19.7",
+      "reference": "L4.310.5.19.7",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 29.00 mm, Stainless steel and 18 karat rose gold cap 200",
+      "dialDescription": "White matt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-310-5-19-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.5.79.7",
+      "reference": "L4.310.5.79.7",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 29.00 mm, Stainless steel and 18 karat rose gold cap 200",
+      "dialDescription": "Striped Silver",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-310-5-79-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.5.80.7",
+      "reference": "L4.310.5.80.7",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 29.00 mm, Stainless steel and 18 karat rose gold cap 200",
+      "dialDescription": "White mother-of-pearl",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-310-5-80-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.5.81.7",
+      "reference": "L4.310.5.81.7",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 29.00 mm, Stainless steel and 18 karat rose gold",
+      "dialDescription": "White mother-of-pearl",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-310-5-81-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.374.3.17.7",
+      "reference": "L4.374.3.17.7",
+      "collectionName": "FLAGSHIP CLASSIC",
+      "modelName": "FLAGSHIP CLASSIC",
+      "caseDescription": "Ø 30.00 mm, Stainless steel and yellow PVD coating",
+      "dialDescription": "White matt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-flagship-classic-l4-374-3-17-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.512.1.08.7",
+      "reference": "L4.512.1.08.7",
+      "collectionName": "LA GRANDE CLASSIQUE DE LONGINES",
+      "modelName": "LA GRANDE CLASSIQUE DE LONGINES",
+      "caseDescription": "Ø 29.00 mm, Stainless steel and red PVD coating",
+      "dialDescription": "Sunray green",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-la-grande-classique-de-longines-l4-512-1-08-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.866.1.97.7",
+      "reference": "L4.866.1.97.7",
+      "collectionName": "LA GRANDE CLASSIQUE DE LONGINES",
+      "modelName": "LA GRANDE CLASSIQUE DE LONGINES",
+      "caseDescription": "Ø 38.00 mm, Stainless steel and red PVD coating",
+      "dialDescription": "White mother-of-pearl",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-la-grande-classique-de-longines-l4-866-1-97-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.18.6",
+      "reference": "L4.910.4.18.6",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 39.00 mm, Stainless steel",
+      "dialDescription": "White matt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-910-4-18-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.19.6",
+      "reference": "L4.910.4.19.6",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 39.00 mm, Stainless steel",
+      "dialDescription": "White matt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-910-4-19-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.59.6",
+      "reference": "L4.910.4.59.6",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 39.00 mm, Stainless steel",
+      "dialDescription": "Sunray black",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-910-4-59-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.70.6",
+      "reference": "L4.910.4.70.6",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 39.00 mm, Stainless steel",
+      "dialDescription": "Sunray grey",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-910-4-70-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.79.6",
+      "reference": "L4.910.4.79.6",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 39.00 mm, Stainless steel",
+      "dialDescription": "Striped Silver",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-910-4-79-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.90.6",
+      "reference": "L4.910.4.90.6",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 39.00 mm, Stainless steel",
+      "dialDescription": "Sunray blue",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-910-4-90-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.99.6",
+      "reference": "L4.910.4.99.6",
+      "collectionName": "LONGINES ELEGANT COLLECTION",
+      "modelName": "LONGINES ELEGANT COLLECTION",
+      "caseDescription": "Ø 39.00 mm, Stainless steel",
+      "dialDescription": "Sunray blue",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-elegant-collection-l4-910-4-99-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.984.4.02.6",
+      "reference": "L4.984.4.02.6",
+      "collectionName": "FLAGSHIP CLASSIC",
+      "modelName": "FLAGSHIP CLASSIC",
+      "caseDescription": "Ø 40.00 mm, Stainless steel",
+      "dialDescription": "Sunray green",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-flagship-classic-l4-984-4-02-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.984.4.70.6",
+      "reference": "L4.984.4.70.6",
+      "collectionName": "FLAGSHIP CLASSIC",
+      "modelName": "FLAGSHIP CLASSIC",
+      "caseDescription": "Ø 40.00 mm, Stainless steel",
+      "dialDescription": "Sunray silver",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-flagship-classic-l4-984-4-70-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.984.4.98.6",
+      "reference": "L4.984.4.98.6",
+      "collectionName": "FLAGSHIP CLASSIC",
+      "modelName": "FLAGSHIP CLASSIC",
+      "caseDescription": "Ø 40.00 mm, Stainless steel",
+      "dialDescription": "Sunray blue",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-flagship-classic-l4-984-4-98-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L5.255.5.70.7",
+      "reference": "L5.255.5.70.7",
+      "collectionName": "LONGINES DOLCEVITA",
+      "modelName": "LONGINES DOLCEVITA",
+      "caseDescription": "20.80 X 32.00 mm, Stainless steel with 18 karat yellow gold crown",
+      "dialDescription": "Silver \"flinqué\"",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-dolcevita-l5-255-5-70-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L5.255.5.78.7",
+      "reference": "L5.255.5.78.7",
+      "collectionName": "LONGINES DOLCEVITA",
+      "modelName": "LONGINES DOLCEVITA",
+      "caseDescription": "20.80 X 32.00 mm, Stainless steel with 18 karat yellow gold crown",
+      "dialDescription": "Silver \"flinqué\"",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-dolcevita-l5-255-5-78-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L5.512.5.70.7",
+      "reference": "L5.512.5.70.7",
+      "collectionName": "LONGINES DOLCEVITA",
+      "modelName": "LONGINES DOLCEVITA",
+      "caseDescription": "23.30 X 37.00 mm, Stainless steel with 18 karat yellow gold crown",
+      "dialDescription": "Silver \"flinqué\"",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-dolcevita-l5-512-5-70-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L5.512.5.78.7",
+      "reference": "L5.512.5.78.7",
+      "collectionName": "LONGINES DOLCEVITA",
+      "modelName": "LONGINES DOLCEVITA",
+      "caseDescription": "23.30 X 37.00 mm, Stainless steel with 18 karat yellow gold crown",
+      "dialDescription": "Silver \"flinqué\"",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-dolcevita-l5-512-5-78-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L8.120.4.71.6",
+      "reference": "L8.120.4.71.6",
+      "collectionName": "LONGINES PRIMALUNA",
+      "modelName": "LONGINES PRIMALUNA",
+      "caseDescription": "Ø 26.50 mm, Stainless steel",
+      "dialDescription": "Opaline Ivory",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-primaluna-l8-120-4-71-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L8.123.4.67.6",
+      "reference": "L8.123.4.67.6",
+      "collectionName": "LONGINES PRIMALUNA",
+      "modelName": "LONGINES PRIMALUNA",
+      "caseDescription": "Ø 30.00 mm, Stainless steel",
+      "dialDescription": "Bordeaux",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-sg/p/watch-longines-primaluna-l8-123-4-67-6",
       "localNicknames": {
         "names": [],
         "sources": []

@@ -1,0 +1,41 @@
+{
+  "brandId": "longines",
+  "marketCode": "CN",
+  "locale": "zh-Hans-CN",
+  "entryUrl": "https://www.longines.cn/watches",
+  "checkpointRecordedAt": "2026-10-08T13:16:23.000Z",
+  "attemptTimeNote": "Attempts are listed in chronological order. Per-call exact times were not captured. The final Chrome DevTools and Playwright retry was made after the coordinator reported that Rolex HK had released Chrome DevTools; both still returned browser-in-use errors.",
+  "status": "PARTIAL — no formal market/history update",
+  "attempts": [
+    {"method":"Chrome DevTools MCP new_page with isolatedContext=longines-cn-price-refresh","scope":"Open isolated Longines CN listing and inspect live network requests","result":"FAIL","error":"Browser profile was already running; tool requested --isolated or a different userDataDir, unavailable through the exposed new_page call."},
+    {"method":"Playwright MCP browser_tabs new","scope":"Fallback dedicated browser tab for live listing/network inspection","result":"FAIL","error":"Browser was already in use and requested --isolated; no assigned-market tab was created."},
+    {"method":"CUA createBrowserTab chrome and iab","scope":"Check for alternate real browser surface","result":"FAIL","error":"CUA state reported no browsers; both Chrome and in-app browser creation returned Browser is not available."},
+    {"method":"web browsing tool open https://www.longines.cn/watches","scope":"Official China full listing page","result":"FAIL","error":"Tool reported Failed to fetch / 400 Timeout fetching."},
+    {"method":"curl -I https://www.longines.cn/watches","scope":"Direct network fallback","result":"FAIL","error":"curl exit code 6: Could not resolve host: www.longines.cn"},
+    {"method":"Official-site-restricted web search snapshot of https://www.longines.cn/","scope":"Limited fallback content only","result":"PARTIAL","detail":"Search provider returned the official homepage snapshot labelled Crawled: today, showing 15 curated watch cards with references, RMB prices, selected badges and purchase/cart text. It is not the complete watches listing, does not expose product URLs or a total count, and its origin fetch time is unknown."},
+    {"method":"Retry Chrome DevTools MCP new_page and Playwright MCP browser_tabs new after a brief wait","scope":"Final check for isolated live browser availability before coordinator reported the session released","result":"FAIL","error":"Both tools continued to report the browser profile already running/in use and requested isolated mode, which the exposed interfaces cannot enable."},
+    {"method":"Retry Chrome DevTools MCP new_page and Playwright MCP browser_tabs new after coordinator reported Rolex HK had released Chrome DevTools","scope":"Final isolated CN listing page and network check","result":"FAIL","error":"Chrome DevTools still reported the browser profile already running and requested --isolated or another userDataDir; Playwright still reported the browser was already in use and requested --isolated. No CN page or network response was obtained."}
+  ],
+  "networkDiscovery": {
+    "required": true,
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "NOT RUN / capability unavailable",
+    "detail": "No browser page could be created, so no official request/response list or current REST response was read in this run. The official CN page timeout and DNS failure are retained above. No endpoint was guessed and no cookies, tokens, or headers were saved."
+  },
+  "completeness": {
+    "priorFormalMarketCount": 666,
+    "currentOfficialFullListingCount": null,
+    "homepageCuratedCardCount": 15,
+    "pagesCollected": 0,
+    "stopEvidence": null,
+    "complete": false,
+    "differenceNote": "The previous 666 count is not comparable with the current homepage's curated 15-card selection; current full listing count and any change from the prior count are unknown."
+  },
+  "formalUpdate": {
+    "marketFileChanged": false,
+    "historyFileChanged": false,
+    "runIdCreated": null,
+    "reason": "Only an indexed homepage snapshot was accessible. It has no full listing, pagination, product-page purchase CTA verification, or exact origin-fetch time, so it cannot support a current full-market price run."
+  }
+}

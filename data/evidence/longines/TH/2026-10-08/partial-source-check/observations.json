@@ -1,0 +1,34 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "TH",
+  "locale": "th-TH",
+  "observedOn": "2026-10-08 (UTC; exact time not recorded)",
+  "entryUrl": "https://www.longines.com/th/watches",
+  "observationType": "official crawler snapshot capability check; not current price evidence",
+  "snapshotMetadata": {
+    "pageTitle": "นาฬิกาทั้งหมดของ Longines | นาฬิกาสวิสสุดหรู | p1 | LONGINES TH",
+    "freshnessLabel": "Crawled: yesterday",
+    "exactCrawlTime": null,
+    "visibleCardCount": null,
+    "paginationHint": "p1",
+    "samplePrices": [
+      {
+        "displayName": "LONGINES SPIRIT PILOT 39 mm",
+        "rawPrice": "฿85,800.00",
+        "rawCta": "ค้นหาร้านค้าปลีก",
+        "currentPriceEligible": false,
+        "reason": "Prior-day crawler snapshot; no full reference observed."
+      },
+      {
+        "displayName": "LONGINES SPIRIT PILOT FLYBACK 39.50 mm",
+        "rawPrice": "฿167,700.00",
+        "rawCta": "ค้นหาร้านค้าปลีก",
+        "currentPriceEligible": false,
+        "reason": "Prior-day crawler snapshot; no full reference observed."
+      }
+    ]
+  },
+  "observations": [],
+  "note": "Samples record only source capability evidence. No current observations were admitted, and no historical prices were used to infer current values."
+}

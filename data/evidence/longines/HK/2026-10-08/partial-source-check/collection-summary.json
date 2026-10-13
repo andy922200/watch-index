@@ -1,0 +1,72 @@
+{
+  "brandId": "longines",
+  "marketCode": "HK",
+  "locale": "zh-Hant-HK",
+  "collectionAttemptedAt": "2026-10-08T13:06:33.000Z",
+  "entryUrl": "https://www.longines.com/hk/watches",
+  "status": "PARTIAL — no formal market/history update",
+  "attempts": [
+    {
+      "method": "Official rendered listing via web browsing tool",
+      "scope": "HK watches listing page, visible first page only",
+      "result": "PARTIAL",
+      "detail": "Rendered page showed 538 results, 24 visible cards, HK$ prices, and a 顯示更多結果 control. Pagination was not activated and the tool did not expose network requests/responses."
+    },
+    {
+      "method": "Open first visible product link from the official listing",
+      "scope": "L3.809.4.93.9 only",
+      "result": "PARTIAL",
+      "detail": "Official product page displayed HK$19,000.00, recommended retail price text, and 尋找零售商. The browsing tool reported the page content was crawled 4 days before retrieval, so it is not considered a live current-price confirmation."
+    },
+    {
+      "method": "Chrome DevTools MCP new_page and Playwright browser_tabs new page",
+      "scope": "Attempt to open an isolated browser page for live render/network observation",
+      "result": "FAIL",
+      "error": "Both browser tools reported that the browser profile was already running and requested an isolated profile/context option unavailable through the exposed interface."
+    },
+    {
+      "method": "web browsing tool open of the known official ProductList GraphQL URL with query variables",
+      "scope": "Attempt to read official HK product listing JSON",
+      "result": "FAIL",
+      "error": "The web tool returned an internal error stating that the URL was not accessible. No response body or network request was observed."
+    },
+    {
+      "method": "curl -I https://www.longines.com/hk/watches",
+      "scope": "Network fallback connectivity check",
+      "result": "FAIL",
+      "error": "curl exit code 6: Could not resolve host: www.longines.com"
+    }
+  ],
+  "networkDiscovery": {
+    "required": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "NOT RUN / capability unavailable after browser startup failures; web tool did not expose live network requests",
+    "toolsAttempted": [
+      "Chrome DevTools MCP new_page",
+      "Playwright browser_tabs new",
+      "web browsing tool official GraphQL URL open",
+      "curl DNS connectivity check"
+    ],
+    "notes": "Attempts and errors are retained here. No endpoint response, request headers, pagination response, or beyond-last-page stop evidence was obtained in this run."
+  },
+  "pagination": {
+    "pageSizeObserved": 24,
+    "officialTotalLabelObserved": 538,
+    "pagesRequested": 1,
+    "perPageItemCounts": [24],
+    "stopEvidence": null,
+    "complete": false
+  },
+  "reconciliation": {
+    "priorMarketWatchCount": 493,
+    "currentOfficialListingLabel": 538,
+    "difference": 45,
+    "interpretation": "Unreconciled discrepancy only. This partial listing observation does not establish whether configurations were added, removed, filtered differently, or whether the indexed page count is current."
+  },
+  "formalUpdate": {
+    "marketFileChanged": false,
+    "historyFileChanged": false,
+    "runIdCreated": null,
+    "reason": "A complete current listing, configuration mapping, and stop condition could not be verified. Do not append an incomplete run or assign not-listed statuses from the partial result."
+  }
+}

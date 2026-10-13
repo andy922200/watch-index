@@ -1,0 +1,73 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "KR",
+  "task": "pure-price-update",
+  "status": "partial; no history update because the available crawler snapshot is incomplete and not live-verified",
+  "locale": "ko-KR",
+  "salesRegion": "South Korea",
+  "entryPoint": "https://www.longines.com/kr/watches",
+  "sourceAttempts": [
+    {
+      "attempt": 1,
+      "observedOn": "2026-10-08 (UTC; exact time not recorded)",
+      "method": "web__run open official URL",
+      "url": "https://www.longines.com/kr/watches",
+      "result": "Official-page text snapshot returned; crawler metadata says 'Crawled: today' with no exact crawl timestamp.",
+      "pageTitle": "모든 론진 시계 | 럭셔리 스위스 타임피스 | LONGINES KR",
+      "visiblePageFacts": {
+        "visibleProductCards": 24,
+        "currencyExample": "KRW",
+        "snapshotFooterNumbers": [
+          24,
+          461
+        ],
+        "terminalControlText": "Not reliably identified in the snapshot; footer includes '페이지:'",
+        "freshness": "today per crawler metadata"
+      },
+      "limitation": "Snapshot is not a live rendered browser/network capture; only a first group of cards is visible, complete reference numbers are unavailable, and no verifiable terminal evidence was returned. Footer numbers are preserved verbatim and not interpreted as total count or a stop condition."
+    },
+    {
+      "attempt": 2,
+      "observedOn": "2026-10-08 (UTC; exact time not recorded)",
+      "method": "Shared-profile browser tools",
+      "result": "Not retried, per task instruction.",
+      "limitation": "No live browser pageId; Chrome DevTools network requests could not be inspected in this work unit."
+    }
+  ],
+  "networkDiscovery": {
+    "required": true,
+    "toolConfigured": true,
+    "toolAttempted": false,
+    "status": "NOT RUN / live browser capability unavailable in this work unit",
+    "reason": "No live browser page was created or available. The web snapshot does not expose network requests or responses; shared-profile retries were explicitly disallowed."
+  },
+  "targetCondition": {
+    "pathAndLanguageSignal": "Official URL uses /kr/watches; snapshot title and text are Korean; visible price examples are KRW-formatted.",
+    "liveMarketConditionVerified": false,
+    "priorMarketSourceEvidence": "Existing 2026-09-25 KR collection evidence is baseline context only and was not reused as current prices."
+  },
+  "checkpoint": {
+    "completedScope": "Inspected official crawler snapshot metadata, Korean market title, KRW examples, and the incomplete listing/footer structure.",
+    "lastSuccessfulPosition": "Initial visible card group in crawler snapshot; not a live collection cursor.",
+    "uniqueConfigurationsObserved": 0,
+    "officialTotalCount": null,
+    "stopSignal": null,
+    "observationsPath": "data/evidence/longines/KR/2026-10-08/partial-source-check/observations.json",
+    "incompleteScope": "Current full listing, full references, current prices and listing states, pagination/cursor termination, live network response, and independent current PDP checks.",
+    "suggestedResume": "Resume with a dedicated live browser context; verify Korean-market store state and KRW, inspect ProductList requests plus a complete-list terminal signal, then independently inspect current product pages. Do not use the crawler snapshot as current price evidence."
+  },
+  "baseline": {
+    "marketPath": "data/markets/longines-south-korea-market.json",
+    "marketSha256Before": "38c75934418cf4717f271e93edf1acbd73db7cb1834c37674adbbc4b1ac4ded8",
+    "historyPath": "data/history/KR/longines-price-history.json",
+    "historySha256Before": "442bd44ff1d2bb20de4a21959d97a2877569accb0f389580f7d9cd5c66bfada6",
+    "lastHistoryRunId": 1,
+    "lastHistoryCollectedAt": "2026-09-25T09:30:00.000Z"
+  },
+  "formalDataChanges": {
+    "market": "none",
+    "history": "none; no run appended",
+    "catalog": "none"
+  }
+}

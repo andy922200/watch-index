@@ -1,0 +1,87 @@
+{
+  "brandId": "longines",
+  "marketCode": "US",
+  "runDate": "2026-10-12",
+  "sourceTotal": 807,
+  "sourceCount": 807,
+  "existingMarketCountBeforeRun": 802,
+  "newToMarketReferences": [
+    "L3.369.3.12.7",
+    "L3.369.3.18.7",
+    "L3.369.3.87.7",
+    "L3.369.3.88.7",
+    "L3.369.4.09.6",
+    "L3.369.4.12.6",
+    "L3.369.4.87.6"
+  ],
+  "oldMarketReferencesAbsentFromCurrentSource": [
+    "L8.115.5.31.7",
+    "L8.115.5.61.7"
+  ],
+  "newToMarketCount": 7,
+  "oldReferencesAbsentCount": 2,
+  "existingPriceComparison": {
+    "status": "PASS",
+    "comparedCount": 800,
+    "priceDifferenceCount": 0,
+    "differences": []
+  },
+  "productPageChecks": {
+    "checkedNewCandidateCount": 7,
+    "path": "data/evidence/longines/US/2026-10-12/observations.json#/supplementalEvidence/newCandidateProductPageChecks"
+  },
+  "formalChangesApplied": true,
+  "reason": "Formal market and price-history updates were applied after the user confirmed notify-me CTAs map to listed. Existing rows were retained; complete current-source absences received not-listed points. Existing product-page CTAs were only partly rechecked in the follow-up; per-reference listing signals were audited separately.",
+  "formalChangeSummary": {
+    "marketRowsAdded": 7,
+    "newPriceSeriesAdded": 7,
+    "notListedPointsAppended": 2,
+    "existingPriceDifferences": 0,
+    "listingStatusMapping": {
+      "notify-me": "listed",
+      "direct-purchase": "listed",
+      "retailer-only": "retailer-only"
+    },
+    "addedMarketReferences": [
+      "L3.369.3.12.7",
+      "L3.369.3.18.7",
+      "L3.369.3.87.7",
+      "L3.369.3.88.7",
+      "L3.369.4.09.6",
+      "L3.369.4.12.6",
+      "L3.369.4.87.6"
+    ],
+    "notListedReferences": [
+      "L8.115.5.31.7",
+      "L8.115.5.61.7"
+    ]
+  },
+  "catalogReferencesAdded": [
+    "L3.369.3.87.7"
+  ],
+  "existingCtaRecheck": {
+    "status": "PARTIAL",
+    "directProductPageCtaCount": 1,
+    "evidencePath": "data/evidence/longines/US/2026-10-12/observations.json#/supplementalEvidence/existingCtaRecheck",
+    "listingSignalCoverage": 807,
+    "listingSignalsAreNotDirectProductPageCta": true
+  },
+  "notListedRepresentativeSample": {
+    "status": "PASS_MARKET_NOT_LISTED",
+    "attemptedCount": 2,
+    "evidencePath": "data/evidence/longines/US/2026-10-12/observations.json#/supplementalEvidence/notListedRepresentativeSampleChecks",
+    "interpretation": "All sampled references are absent from the complete official market listing and their localized official product URLs redirect to the market homepage; interpreted as market-specific not-listed, not global discontinuation."
+  },
+  "existingProductPageCtaRecheck": {
+    "status": "PARTIAL",
+    "expectedReferences": 807,
+    "attemptedReferences": 807,
+    "exactProductPagesConfirmedAtLeastOnce": 803,
+    "noExactProductPageAfterRetries": 4,
+    "verifiedPagesWithUnresolvedPurchaseCta": 0,
+    "entriesWithRetryAttempts": 4,
+    "individualRetryAttempts": 4,
+    "completedThrough": "2026-10-13",
+    "evidencePath": "data/evidence/longines/US/2026-10-12/observations.json#/supplementalEvidence/existingProductPageCtaChecks"
+  }
+}

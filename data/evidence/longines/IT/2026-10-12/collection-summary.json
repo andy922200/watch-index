@@ -1,0 +1,105 @@
+{
+  "brandId": "longines",
+  "marketCode": "IT",
+  "task": "price-update",
+  "status": "listing-source-count-matched",
+  "locale": "it-IT",
+  "entryUrl": "https://www.longines.com/it/watches",
+  "observedOn": "2026-10-12",
+  "collectionMethod": "official SSR pageProps.products from five parent-series routes found in rendered navigation; pages accumulated through page*pageSize >= total_count",
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "available",
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "PASS",
+    "notes": "Browser/Chrome DevTools inspected the official rendered listing and pagination."
+  },
+  "sourceReportedTotal": 806,
+  "rawItemsReturned": 806,
+  "uniqueReferences": 806,
+  "duplicatesRemoved": 0,
+  "sourcePagination": [
+    {
+      "path": "/it/watches/conquest",
+      "officialTotal": 188,
+      "pageSize": 24,
+      "pagesCollected": 8,
+      "rawCount": 188,
+      "error": null
+    },
+    {
+      "path": "/it/watches/master",
+      "officialTotal": 158,
+      "pageSize": 24,
+      "pagesCollected": 7,
+      "rawCount": 158,
+      "error": null
+    },
+    {
+      "path": "/it/watches/spirit",
+      "officialTotal": 58,
+      "pageSize": 24,
+      "pagesCollected": 3,
+      "rawCount": 58,
+      "error": null
+    },
+    {
+      "path": "/it/watches/elegance",
+      "officialTotal": 329,
+      "pageSize": 24,
+      "pagesCollected": 14,
+      "rawCount": 329,
+      "error": null
+    },
+    {
+      "path": "/it/watches/heritage",
+      "officialTotal": 73,
+      "pageSize": 24,
+      "pagesCollected": 4,
+      "rawCount": 73,
+      "error": null
+    }
+  ],
+  "attempts": [
+    {
+      "method": "official parent-series SSR pagination",
+      "result": "Five parent routes collected through their last page."
+    }
+  ],
+  "completeness": "Deduplicated reference count matches the official all-watches total.",
+  "limitations": [
+    "Existing product-page CTA audit attempted all 806 references through 2026-10-13: 802 exact product pages were confirmed at least once, 4 could not reach an exact product page after retries, and 0 confirmed pages had unresolved purchase CTA. Full attempts are in observations.json supplementalEvidence.",
+    "Independent product-page spot checks have not yet been performed.",
+    "Broad independent 19–21 representative sample of unchanged listings was not performed.",
+    "Evidence stores date precision only; exact request timestamps were not retained."
+  ],
+  "newCandidateProductPageChecks": {
+    "checkedCount": 1,
+    "failures": [],
+    "skuMismatches": [],
+    "priceOrCurrencyMismatches": [],
+    "ctaClassCounts": {
+      "direct-purchase": 1
+    },
+    "status": "PASS"
+  },
+  "formalChangesApplied": true,
+  "listingStatusMapping": {
+    "direct-purchase": "listed",
+    "notify-me": "listed per user instruction",
+    "find-retailer-only": "retailer-only"
+  },
+  "existingProductPageCtaRecheck": {
+    "status": "PARTIAL",
+    "expectedReferences": 806,
+    "attemptedReferences": 806,
+    "exactProductPagesConfirmedAtLeastOnce": 802,
+    "noExactProductPageAfterRetries": 4,
+    "verifiedPagesWithUnresolvedPurchaseCta": 0,
+    "entriesWithRetryAttempts": 5,
+    "individualRetryAttempts": 5,
+    "completedThrough": "2026-10-13",
+    "evidencePath": "data/evidence/longines/IT/2026-10-12/observations.json#/supplementalEvidence/existingProductPageCtaChecks"
+  }
+}

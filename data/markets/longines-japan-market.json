@@ -2,11 +2,11 @@
   "$schema": "../schemas/watch-market.schema.json",
   "schemaVersion": 4,
   "brandId": "longines",
-  "collectedAt": "2026-09-25T09:09:40.000Z",
+  "collectedAt": "2026-10-12T00:00:00.000Z",
   "salesRegion": "Japan",
   "marketCode": "JP",
   "locale": "ja-JP",
-  "watchCount": 612,
+  "watchCount": 658,
   "source": {
     "name": "LONGINES Japan Official Website",
     "url": "https://www.longines.com/jp/watches"
@@ -8701,6 +8701,650 @@
       "dialDescription": "サンレイ ミントブルー",
       "isNewModel": false,
       "productUrl": "https://www.longines.com/jp/p/watch-longines-primaluna-l8-142-4-97-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L1.649.4.52.0",
+      "reference": "L1.649.4.52.0",
+      "collectionName": "コンクエスト ヘリテージ",
+      "modelName": "コンクエスト ヘリテージ",
+      "caseDescription": "Ø 38.00 mm, ステンレススティール",
+      "dialDescription": "ブラックラッカー「ポリッシュ」",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-conquest-heritage-l1-649-4-52-0",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L2.409.8.87.2",
+      "reference": "L2.409.8.87.2",
+      "collectionName": "ロンジン マスターコレクション ムーンフェイズ",
+      "modelName": "ロンジン マスターコレクション ムーンフェイズ",
+      "caseDescription": "Ø 34.00 mm, 18Kピンクゴールド",
+      "dialDescription": "ホワイト マザーオブパール",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-the-longines-master-collection-moonphase-l2-409-8-87-2",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.320.5.80.6",
+      "reference": "L3.320.5.80.6",
+      "collectionName": "コンクエスト",
+      "modelName": "コンクエスト",
+      "caseDescription": "Ø 30.00 mm, ステンレススチール&18KイエローゴールドGC200",
+      "dialDescription": "ホワイト マザーオブパール",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-conquest-l3-320-5-80-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.369.4.09.6",
+      "reference": "L3.369.4.09.6",
+      "collectionName": "ハイドロコンクエスト",
+      "modelName": "ハイドロコンクエスト",
+      "caseDescription": "Ø 30.00 mm, ステンレススティール",
+      "dialDescription": "サンレイグリーン",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-hydroconquest-l3-369-4-09-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.369.4.12.6",
+      "reference": "L3.369.4.12.6",
+      "collectionName": "ハイドロコンクエスト",
+      "modelName": "ハイドロコンクエスト",
+      "caseDescription": "Ø 30.00 mm, ステンレススティール",
+      "dialDescription": "マットホワイト",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-hydroconquest-l3-369-4-12-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.430.5.87.6",
+      "reference": "L3.430.5.87.6",
+      "collectionName": "コンクエスト",
+      "modelName": "コンクエスト",
+      "caseDescription": "Ø 34.00 mm, ステンレススチール&18KローズゴールドGC200",
+      "dialDescription": "ホワイト マザーオブパール",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-conquest-l3-430-5-87-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.721.4.93.6",
+      "reference": "L3.721.4.93.6",
+      "collectionName": "ロンジン スピリット パイロット フライバック",
+      "modelName": "ロンジン スピリット パイロット フライバック",
+      "caseDescription": "Ø 39.50 mm, ステンレススティールとセラミック",
+      "dialDescription": "ブルー マット",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-spirit-pilot-flyback-l3-721-4-93-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.721.4.93.9",
+      "reference": "L3.721.4.93.9",
+      "collectionName": "ロンジン スピリット パイロット フライバック",
+      "modelName": "ロンジン スピリット パイロット フライバック",
+      "caseDescription": "Ø 39.50 mm, ステンレススティールとセラミック",
+      "dialDescription": "ブルー マット",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-spirit-pilot-flyback-l3-721-4-93-9",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.750.3.52.7",
+      "reference": "L3.750.3.52.7",
+      "collectionName": "コンクエスト",
+      "modelName": "コンクエスト",
+      "caseDescription": "Ø 38.00 mm, ステンレススティール＆イエロー PVD",
+      "dialDescription": "ブラック サンドブラスト仕上げ",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-conquest-l3-750-3-52-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.809.4.93.6",
+      "reference": "L3.809.4.93.6",
+      "collectionName": "ロンジン スピリット パイロット",
+      "modelName": "ロンジン スピリット パイロット",
+      "caseDescription": "Ø 39.00 mm, ステンレススティール",
+      "dialDescription": "ブルー マット",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-spirit-pilot-l3-809-4-93-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.809.4.93.9",
+      "reference": "L3.809.4.93.9",
+      "collectionName": "ロンジン スピリット パイロット",
+      "modelName": "ロンジン スピリット パイロット",
+      "caseDescription": "Ø 39.00 mm, ステンレススティール",
+      "dialDescription": "ブルー マット",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-spirit-pilot-l3-809-4-93-9",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.860.4.12.6",
+      "reference": "L3.860.4.12.6",
+      "collectionName": "コンクエスト",
+      "modelName": "コンクエスト",
+      "caseDescription": "Ø 41.00 mm, ステンレススティール",
+      "dialDescription": "ホワイト サンドブラスト仕上げ",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-conquest-l3-860-4-12-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.0.80.6",
+      "reference": "L4.309.0.80.6",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 25.50 mm, ステンレススティール",
+      "dialDescription": "ホワイト マザーオブパール",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-309-0-80-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.4.18.6",
+      "reference": "L4.309.4.18.6",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 25.50 mm, ステンレススティール",
+      "dialDescription": "マットホワイト",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-309-4-18-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.4.19.6",
+      "reference": "L4.309.4.19.6",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 25.50 mm, ステンレススティール",
+      "dialDescription": "マットホワイト",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-309-4-19-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.4.79.6",
+      "reference": "L4.309.4.79.6",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 25.50 mm, ステンレススティール",
+      "dialDescription": "Striped Silver",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-309-4-79-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.4.80.6",
+      "reference": "L4.309.4.80.6",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 25.50 mm, ステンレススティール",
+      "dialDescription": "ホワイト マザーオブパール",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-309-4-80-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.4.90.6",
+      "reference": "L4.309.4.90.6",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 25.50 mm, ステンレススティール",
+      "dialDescription": "ブルー「サンレイ」",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-309-4-90-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.5.18.7",
+      "reference": "L4.309.5.18.7",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 25.50 mm, ステンレススチール&18KローズゴールドGC200",
+      "dialDescription": "マットホワイト",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-309-5-18-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.5.19.7",
+      "reference": "L4.309.5.19.7",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 25.50 mm, ステンレススチール&18KローズゴールドGC200",
+      "dialDescription": "マットホワイト",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-309-5-19-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.5.79.7",
+      "reference": "L4.309.5.79.7",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 25.50 mm, ステンレススチール&18KローズゴールドGC200",
+      "dialDescription": "Striped Silver",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-309-5-79-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.0.80.6",
+      "reference": "L4.310.0.80.6",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 29.00 mm, ステンレススティール",
+      "dialDescription": "ホワイト マザーオブパール",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-310-0-80-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.4.18.6",
+      "reference": "L4.310.4.18.6",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 29.00 mm, ステンレススティール",
+      "dialDescription": "マットホワイト",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-310-4-18-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.4.80.6",
+      "reference": "L4.310.4.80.6",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 29.00 mm, ステンレススティール",
+      "dialDescription": "ホワイト マザーオブパール",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-310-4-80-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.4.90.6",
+      "reference": "L4.310.4.90.6",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 29.00 mm, ステンレススティール",
+      "dialDescription": "ブルー「サンレイ」",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-310-4-90-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.5.18.7",
+      "reference": "L4.310.5.18.7",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 29.00 mm, ステンレススチール&18KローズゴールドGC200",
+      "dialDescription": "マットホワイト",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-310-5-18-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.5.19.7",
+      "reference": "L4.310.5.19.7",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 29.00 mm, ステンレススチール&18KローズゴールドGC200",
+      "dialDescription": "マットホワイト",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-310-5-19-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.5.79.7",
+      "reference": "L4.310.5.79.7",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 29.00 mm, ステンレススチール&18KローズゴールドGC200",
+      "dialDescription": "Striped Silver",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-310-5-79-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.5.80.7",
+      "reference": "L4.310.5.80.7",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 29.00 mm, ステンレススチール&18KローズゴールドGC200",
+      "dialDescription": "ホワイト マザーオブパール",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-310-5-80-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.5.81.7",
+      "reference": "L4.310.5.81.7",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 29.00 mm, ステンレススティール＆18Kピンクゴールド",
+      "dialDescription": "ホワイト マザーオブパール",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-310-5-81-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.374.3.17.7",
+      "reference": "L4.374.3.17.7",
+      "collectionName": "フラッグシップ クラシック",
+      "modelName": "フラッグシップ クラシック",
+      "caseDescription": "Ø 30.00 mm, ステンレススティール＆イエロー PVD",
+      "dialDescription": "マットホワイト",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-flagship-classic-l4-374-3-17-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.512.1.08.7",
+      "reference": "L4.512.1.08.7",
+      "collectionName": "ラ グラン クラシック ドゥ ロンジン",
+      "modelName": "ラ グラン クラシック ドゥ ロンジン",
+      "caseDescription": "Ø 29.00 mm, ステンレススティール＆レッド PVD",
+      "dialDescription": "サンレイグリーン",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-la-grande-classique-de-longines-l4-512-1-08-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.866.1.97.7",
+      "reference": "L4.866.1.97.7",
+      "collectionName": "ラ グラン クラシック ドゥ ロンジン",
+      "modelName": "ラ グラン クラシック ドゥ ロンジン",
+      "caseDescription": "Ø 38.00 mm, ステンレススティール＆レッド PVD",
+      "dialDescription": "ホワイト マザーオブパール",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-la-grande-classique-de-longines-l4-866-1-97-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.18.6",
+      "reference": "L4.910.4.18.6",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 39.00 mm, ステンレススティール",
+      "dialDescription": "マットホワイト",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-910-4-18-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.19.6",
+      "reference": "L4.910.4.19.6",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 39.00 mm, ステンレススティール",
+      "dialDescription": "マットホワイト",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-910-4-19-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.59.6",
+      "reference": "L4.910.4.59.6",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 39.00 mm, ステンレススティール",
+      "dialDescription": "ブラック「サンレイ」",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-910-4-59-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.70.6",
+      "reference": "L4.910.4.70.6",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 39.00 mm, ステンレススティール",
+      "dialDescription": "サンレイグレー",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-910-4-70-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.79.6",
+      "reference": "L4.910.4.79.6",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 39.00 mm, ステンレススティール",
+      "dialDescription": "Striped Silver",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-910-4-79-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.90.6",
+      "reference": "L4.910.4.90.6",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 39.00 mm, ステンレススティール",
+      "dialDescription": "ブルー「サンレイ」",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-910-4-90-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.99.6",
+      "reference": "L4.910.4.99.6",
+      "collectionName": "ロンジン エレガント コレクション",
+      "modelName": "ロンジン エレガント コレクション",
+      "caseDescription": "Ø 39.00 mm, ステンレススティール",
+      "dialDescription": "ブルー「サンレイ」",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-elegant-collection-l4-910-4-99-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.984.4.02.6",
+      "reference": "L4.984.4.02.6",
+      "collectionName": "フラッグシップ クラシック",
+      "modelName": "フラッグシップ クラシック",
+      "caseDescription": "Ø 40.00 mm, ステンレススティール",
+      "dialDescription": "サンレイグリーン",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-flagship-classic-l4-984-4-02-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.984.4.70.6",
+      "reference": "L4.984.4.70.6",
+      "collectionName": "フラッグシップ クラシック",
+      "modelName": "フラッグシップ クラシック",
+      "caseDescription": "Ø 40.00 mm, ステンレススティール",
+      "dialDescription": "シルバー「サンレイ」",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-flagship-classic-l4-984-4-70-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.984.4.98.6",
+      "reference": "L4.984.4.98.6",
+      "collectionName": "フラッグシップ クラシック",
+      "modelName": "フラッグシップ クラシック",
+      "caseDescription": "Ø 40.00 mm, ステンレススティール",
+      "dialDescription": "ブルー「サンレイ」",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-flagship-classic-l4-984-4-98-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L5.512.5.78.7",
+      "reference": "L5.512.5.78.7",
+      "collectionName": "ロンジン ドルチェヴィータ",
+      "modelName": "ロンジン ドルチェヴィータ",
+      "caseDescription": "23.30 X 37.00 mm, 18金イエローゴールドのリューズ付きステンレススチール",
+      "dialDescription": "シルバー「フランケ」",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-dolcevita-l5-512-5-78-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L8.120.4.71.6",
+      "reference": "L8.120.4.71.6",
+      "collectionName": "ロンジン プリマルナ",
+      "modelName": "ロンジン プリマルナ",
+      "caseDescription": "Ø 26.50 mm, ステンレススティール",
+      "dialDescription": "シルバー",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-primaluna-l8-120-4-71-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L8.123.4.67.6",
+      "reference": "L8.123.4.67.6",
+      "collectionName": "ロンジン プリマルナ",
+      "modelName": "ロンジン プリマルナ",
+      "caseDescription": "Ø 30.00 mm, ステンレススティール",
+      "dialDescription": "ボルドー",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-primaluna-l8-123-4-67-6",
       "localNicknames": {
         "names": [],
         "sources": []

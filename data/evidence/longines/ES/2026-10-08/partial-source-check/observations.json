@@ -1,0 +1,36 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "ES",
+  "locale": "es-ES",
+  "observedOn": "2026-10-08 (UTC; exact time not recorded)",
+  "entryUrl": "https://www.longines.com/es/watches",
+  "observationType": "official crawler snapshot capability check; not current price evidence",
+  "snapshotMetadata": {
+    "pageTitle": "Relojes Longines | Relojes Suizos | LONGINES ES",
+    "freshnessLabel": "Crawled: yesterday",
+    "exactCrawlTime": null,
+    "visibleCardCount": 24,
+    "loadMoreText": "Mostrar más resultados",
+    "verbatimFooterNumbers": [
+      24,
+      805
+    ],
+    "samplePrices": [
+      {
+        "displayName": "LONGINES SPIRIT PILOT 39 mm",
+        "rawPrice": "2.600,00 €",
+        "currentPriceEligible": false,
+        "reason": "Prior-day crawler snapshot; no full reference observed."
+      },
+      {
+        "displayName": "LONGINES SPIRIT PILOT FLYBACK 39.50 mm",
+        "rawPrice": "5.100,00 €",
+        "currentPriceEligible": false,
+        "reason": "Prior-day crawler snapshot; no full reference observed."
+      }
+    ]
+  },
+  "observations": [],
+  "note": "Snapshot examples are included only to document what the official page snapshot exposed. No current product observations were admitted; the snapshot cannot prove current prices or a complete listing."
+}

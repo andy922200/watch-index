@@ -1,0 +1,44 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "TW",
+  "task": "pure-price-update retry; browser capability check only",
+  "status": "partial; isolated Playwright context unavailable",
+  "locale": "zh-Hant-TW",
+  "salesRegion": "Taiwan",
+  "entryPoint": "https://www.longines.com/zh-tw/watches",
+  "attempts": [
+    {
+      "attempt": 1,
+      "observedAt": "2026-10-08T15:24:53Z",
+      "tool": "mcp__playwright__browser_run_code_unsafe",
+      "method": "Requested code would call the existing page's browser().newContext(), create a fresh page, navigate to the official Taiwan listing, and observe request URLs plus rendered text.",
+      "result": "FAILED before user code executed",
+      "error": "Browser is already in use for /Users/andylien/Library/Caches/ms-playwright-mcp/mcp-chrome-e3a8b11, use --isolated to run multiple instances of the same browser",
+      "isolatedContextCreated": false,
+      "networkInspection": "NOT RUN; page and request listeners were never created"
+    }
+  ],
+  "checkpoint": {
+    "completedScope": "Recorded one isolated Playwright retry attempt and its profile contention error.",
+    "uniqueConfigurationsObserved": 0,
+    "officialTotalCount": null,
+    "stopSignal": null,
+    "observationsPath": "data/evidence/longines/TW/2026-10-08/isolated-playwright-retry/observations.json",
+    "incompleteScope": "Current listing and prices, references, listing statuses, network responses, pagination termination, and independent product checks.",
+    "stopReason": "The Playwright tool rejected the request before the code could create an isolated browser context. No further browser/profile attempt was made."
+  },
+  "baseline": {
+    "marketPath": "data/markets/longines-taiwan-market.json",
+    "marketSha256Before": "edc30f8b208b1eabd8f10e2451781d35380f5750f82ed2cc05d64aa8806a73f7",
+    "historyPath": "data/history/TW/longines-price-history.json",
+    "historySha256Before": "8b52332ad982cdef7e33df9dad18d37f6515f0b3c88eeaa5688a57f540652a12",
+    "lastHistoryRunId": 1
+  },
+  "formalDataChanges": {
+    "market": "none",
+    "history": "none; no run appended",
+    "catalog": "none"
+  },
+  "priorCheckpointPreserved": "data/evidence/longines/TW/2026-10-08/partial-source-check/ (not modified)"
+}

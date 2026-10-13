@@ -2,11 +2,11 @@
   "$schema": "../schemas/watch-market.schema.json",
   "schemaVersion": 4,
   "brandId": "longines",
-  "collectedAt": "2026-09-25T09:09:00.000Z",
+  "collectedAt": "2026-10-12T00:00:00.000Z",
   "salesRegion": "Hong Kong SAR",
   "marketCode": "HK",
   "locale": "zh-Hant-HK",
-  "watchCount": 493,
+  "watchCount": 540,
   "source": {
     "name": "LONGINES Hong Kong Official Website",
     "url": "https://www.longines.com/hk/watches"
@@ -7038,6 +7038,664 @@
       "dialDescription": "銀色\"flinqué\"飾紋",
       "isNewModel": false,
       "productUrl": "https://www.longines.com/hk/p/watch-longines-evidenza-l2-142-0-70-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L1.649.4.52.0",
+      "reference": "L1.649.4.52.0",
+      "collectionName": "康卡斯系列復刻腕錶",
+      "modelName": "康卡斯系列復刻腕錶",
+      "caseDescription": "Ø 38.00 mm, 精鋼",
+      "dialDescription": "黑色漆面拋光",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-conquest-heritage-l1-649-4-52-0",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.320.5.80.6",
+      "reference": "L3.320.5.80.6",
+      "collectionName": "康卡斯系列",
+      "modelName": "康卡斯系列",
+      "caseDescription": "Ø 30.00 mm, 精鋼及18K黃金",
+      "dialDescription": "白色珍珠母貝",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-conquest-l3-320-5-80-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.350.4.92.6",
+      "reference": "L3.350.4.92.6",
+      "collectionName": "康卡斯系列",
+      "modelName": "康卡斯系列",
+      "caseDescription": "Ø 30.00 mm, 精鋼",
+      "dialDescription": "薄荷藍色噴砂",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-conquest-l3-350-4-92-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.369.4.09.6",
+      "reference": "L3.369.4.09.6",
+      "collectionName": "康卡斯潛水系列",
+      "modelName": "康卡斯潛水系列",
+      "caseDescription": "Ø 30.00 mm, 精鋼",
+      "dialDescription": "綠色太陽 放射線紋錶盤",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-hydroconquest-l3-369-4-09-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.369.4.12.6",
+      "reference": "L3.369.4.12.6",
+      "collectionName": "康卡斯潛水系列",
+      "modelName": "康卡斯潛水系列",
+      "caseDescription": "Ø 30.00 mm, 精鋼",
+      "dialDescription": "白色啞光",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-hydroconquest-l3-369-4-12-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.721.4.93.6",
+      "reference": "L3.721.4.93.6",
+      "collectionName": "LONGINES SPIRIT PILOT FLYBACK",
+      "modelName": "LONGINES SPIRIT PILOT FLYBACK",
+      "caseDescription": "Ø 39.50 mm, 精鋼及陶瓷",
+      "dialDescription": "藍色啞光",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-spirit-pilot-flyback-l3-721-4-93-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.721.4.93.9",
+      "reference": "L3.721.4.93.9",
+      "collectionName": "LONGINES SPIRIT PILOT FLYBACK",
+      "modelName": "LONGINES SPIRIT PILOT FLYBACK",
+      "caseDescription": "Ø 39.50 mm, 精鋼及陶瓷",
+      "dialDescription": "藍色啞光",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-spirit-pilot-flyback-l3-721-4-93-9",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.750.3.52.7",
+      "reference": "L3.750.3.52.7",
+      "collectionName": "康卡斯系列",
+      "modelName": "康卡斯系列",
+      "caseDescription": "Ø 38.00 mm, 精鋼和黃色PVD塗層",
+      "dialDescription": "黑色噴砂",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-conquest-l3-750-3-52-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.809.4.93.6",
+      "reference": "L3.809.4.93.6",
+      "collectionName": "LONGINES SPIRIT PILOT",
+      "modelName": "LONGINES SPIRIT PILOT",
+      "caseDescription": "Ø 39.00 mm, 精鋼",
+      "dialDescription": "藍色啞光",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-spirit-pilot-l3-809-4-93-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.809.4.93.9",
+      "reference": "L3.809.4.93.9",
+      "collectionName": "LONGINES SPIRIT PILOT",
+      "modelName": "LONGINES SPIRIT PILOT",
+      "caseDescription": "Ø 39.00 mm, 精鋼",
+      "dialDescription": "藍色啞光",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-spirit-pilot-l3-809-4-93-9",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.860.4.12.6",
+      "reference": "L3.860.4.12.6",
+      "collectionName": "康卡斯系列",
+      "modelName": "康卡斯系列",
+      "caseDescription": "Ø 41.00 mm, 精鋼",
+      "dialDescription": "白色噴砂",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-conquest-l3-860-4-12-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.0.80.6",
+      "reference": "L4.309.0.80.6",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 25.50 mm, 精鋼",
+      "dialDescription": "白色珍珠母貝",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-309-0-80-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.4.18.6",
+      "reference": "L4.309.4.18.6",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 25.50 mm, 精鋼",
+      "dialDescription": "白色啞光",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-309-4-18-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.4.19.6",
+      "reference": "L4.309.4.19.6",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 25.50 mm, 精鋼",
+      "dialDescription": "白色啞光",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-309-4-19-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.4.79.6",
+      "reference": "L4.309.4.79.6",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 25.50 mm, 精鋼",
+      "dialDescription": "Striped Silver",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-309-4-79-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.4.80.6",
+      "reference": "L4.309.4.80.6",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 25.50 mm, 精鋼",
+      "dialDescription": "白色珍珠母貝",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-309-4-80-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.4.90.6",
+      "reference": "L4.309.4.90.6",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 25.50 mm, 精鋼",
+      "dialDescription": "藍色太陽飾紋",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-309-4-90-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.5.18.7",
+      "reference": "L4.309.5.18.7",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 25.50 mm, 精鋼及18K玫瑰金",
+      "dialDescription": "白色啞光",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-309-5-18-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.5.19.7",
+      "reference": "L4.309.5.19.7",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 25.50 mm, 精鋼及18K玫瑰金",
+      "dialDescription": "白色啞光",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-309-5-19-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.309.5.79.7",
+      "reference": "L4.309.5.79.7",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 25.50 mm, 精鋼及18K玫瑰金",
+      "dialDescription": "Striped Silver",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-309-5-79-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.0.80.6",
+      "reference": "L4.310.0.80.6",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 29.00 mm, 精鋼",
+      "dialDescription": "白色珍珠母貝",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-310-0-80-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.4.18.6",
+      "reference": "L4.310.4.18.6",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 29.00 mm, 精鋼",
+      "dialDescription": "白色啞光",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-310-4-18-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.4.80.6",
+      "reference": "L4.310.4.80.6",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 29.00 mm, 精鋼",
+      "dialDescription": "白色珍珠母貝",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-310-4-80-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.4.90.6",
+      "reference": "L4.310.4.90.6",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 29.00 mm, 精鋼",
+      "dialDescription": "藍色太陽飾紋",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-310-4-90-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.5.18.7",
+      "reference": "L4.310.5.18.7",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 29.00 mm, 精鋼及18K玫瑰金",
+      "dialDescription": "白色啞光",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-310-5-18-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.5.19.7",
+      "reference": "L4.310.5.19.7",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 29.00 mm, 精鋼及18K玫瑰金",
+      "dialDescription": "白色啞光",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-310-5-19-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.5.79.7",
+      "reference": "L4.310.5.79.7",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 29.00 mm, 精鋼及18K玫瑰金",
+      "dialDescription": "Striped Silver",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-310-5-79-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.5.80.7",
+      "reference": "L4.310.5.80.7",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 29.00 mm, 精鋼及18K玫瑰金",
+      "dialDescription": "白色珍珠母貝",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-310-5-80-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.310.5.81.7",
+      "reference": "L4.310.5.81.7",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 29.00 mm, 精鋼和18K玫瑰金",
+      "dialDescription": "白色珍珠母貝",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-310-5-81-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.374.3.17.7",
+      "reference": "L4.374.3.17.7",
+      "collectionName": "浪琴軍旗系列",
+      "modelName": "浪琴軍旗系列",
+      "caseDescription": "Ø 30.00 mm, 精鋼和黃色PVD塗層",
+      "dialDescription": "白色啞光",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-flagship-classic-l4-374-3-17-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.512.1.08.7",
+      "reference": "L4.512.1.08.7",
+      "collectionName": "浪琴嘉嵐系列",
+      "modelName": "浪琴嘉嵐系列",
+      "caseDescription": "Ø 29.00 mm, 精鋼和紅色PVD塗層",
+      "dialDescription": "綠色太陽 放射線紋錶盤",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-la-grande-classique-de-longines-l4-512-1-08-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.866.1.97.7",
+      "reference": "L4.866.1.97.7",
+      "collectionName": "浪琴嘉嵐系列",
+      "modelName": "浪琴嘉嵐系列",
+      "caseDescription": "Ø 38.00 mm, 精鋼和紅色PVD塗層",
+      "dialDescription": "白色珍珠母貝",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-la-grande-classique-de-longines-l4-866-1-97-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.18.6",
+      "reference": "L4.910.4.18.6",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 39.00 mm, 精鋼",
+      "dialDescription": "白色啞光",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-910-4-18-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.19.6",
+      "reference": "L4.910.4.19.6",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 39.00 mm, 精鋼",
+      "dialDescription": "白色啞光",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-910-4-19-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.59.6",
+      "reference": "L4.910.4.59.6",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 39.00 mm, 精鋼",
+      "dialDescription": "黑色太陽飾紋",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-910-4-59-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.70.6",
+      "reference": "L4.910.4.70.6",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 39.00 mm, 精鋼",
+      "dialDescription": "灰色太陽放射線紋裝飾",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-910-4-70-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.79.6",
+      "reference": "L4.910.4.79.6",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 39.00 mm, 精鋼",
+      "dialDescription": "Striped Silver",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-910-4-79-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.90.6",
+      "reference": "L4.910.4.90.6",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 39.00 mm, 精鋼",
+      "dialDescription": "藍色太陽飾紋",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-910-4-90-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.910.4.99.6",
+      "reference": "L4.910.4.99.6",
+      "collectionName": "浪琴博雅系列",
+      "modelName": "浪琴博雅系列",
+      "caseDescription": "Ø 39.00 mm, 精鋼",
+      "dialDescription": "藍色太陽飾紋",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-elegant-collection-l4-910-4-99-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.984.4.02.6",
+      "reference": "L4.984.4.02.6",
+      "collectionName": "浪琴軍旗系列",
+      "modelName": "浪琴軍旗系列",
+      "caseDescription": "Ø 40.00 mm, 精鋼",
+      "dialDescription": "綠色太陽 放射線紋錶盤",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-flagship-classic-l4-984-4-02-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L4.984.4.98.6",
+      "reference": "L4.984.4.98.6",
+      "collectionName": "浪琴軍旗系列",
+      "modelName": "浪琴軍旗系列",
+      "caseDescription": "Ø 40.00 mm, 精鋼",
+      "dialDescription": "藍色太陽飾紋",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-flagship-classic-l4-984-4-98-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L5.255.5.70.7",
+      "reference": "L5.255.5.70.7",
+      "collectionName": "浪琴黛綽維納系列",
+      "modelName": "浪琴黛綽維納系列",
+      "caseDescription": "20.80 X 32.00 mm, 不鏽鋼錶殼配18K黃金錶冠",
+      "dialDescription": "銀色\"flinqué\"飾紋",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-dolcevita-l5-255-5-70-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L5.255.5.78.7",
+      "reference": "L5.255.5.78.7",
+      "collectionName": "浪琴黛綽維納系列",
+      "modelName": "浪琴黛綽維納系列",
+      "caseDescription": "20.80 X 32.00 mm, 不鏽鋼錶殼配18K黃金錶冠",
+      "dialDescription": "銀色\"flinqué\"飾紋",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-dolcevita-l5-255-5-78-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L5.512.5.70.7",
+      "reference": "L5.512.5.70.7",
+      "collectionName": "浪琴黛綽維納系列",
+      "modelName": "浪琴黛綽維納系列",
+      "caseDescription": "23.30 X 37.00 mm, 不鏽鋼錶殼配18K黃金錶冠",
+      "dialDescription": "銀色\"flinqué\"飾紋",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-dolcevita-l5-512-5-70-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L5.512.5.78.7",
+      "reference": "L5.512.5.78.7",
+      "collectionName": "浪琴黛綽維納系列",
+      "modelName": "浪琴黛綽維納系列",
+      "caseDescription": "23.30 X 37.00 mm, 不鏽鋼錶殼配18K黃金錶冠",
+      "dialDescription": "銀色\"flinqué\"飾紋",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-dolcevita-l5-512-5-78-7",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L8.120.4.71.6",
+      "reference": "L8.120.4.71.6",
+      "collectionName": "浪琴心月系列",
+      "modelName": "浪琴心月系列",
+      "caseDescription": "Ø 26.50 mm, 精鋼",
+      "dialDescription": "銀色",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-primaluna-l8-120-4-71-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L8.123.4.67.6",
+      "reference": "L8.123.4.67.6",
+      "collectionName": "浪琴心月系列",
+      "modelName": "浪琴心月系列",
+      "caseDescription": "Ø 30.00 mm, 精鋼",
+      "dialDescription": "酒紅色",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-primaluna-l8-123-4-67-6",
       "localNicknames": {
         "names": [],
         "sources": []

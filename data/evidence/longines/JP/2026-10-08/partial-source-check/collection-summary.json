@@ -1,0 +1,79 @@
+{
+  "brandId": "longines",
+  "marketCode": "JP",
+  "locale": "ja-JP",
+  "entryUrl": "https://www.longines.com/jp/watches",
+  "checkpointRecordedAt": "2026-10-08T13:11:10.000Z",
+  "status": "PARTIAL — no formal market/history update",
+  "attempts": [
+    {
+      "method": "Chrome DevTools MCP new_page with isolatedContext=longines-jp-price-refresh",
+      "scope": "Open a dedicated rendered page and inspect live network requests",
+      "result": "FAIL",
+      "error": "The browser profile was already running for /Users/andylien/.cache/chrome-devtools-mcp/chrome-profile; the tool requested --isolated or a different userDataDir, which the exposed new_page call cannot configure."
+    },
+    {
+      "method": "Playwright MCP browser_tabs new",
+      "scope": "Fallback dedicated browser tab for rendered page and network inspection",
+      "result": "FAIL",
+      "error": "The browser was already in use for /Users/andylien/Library/Caches/ms-playwright-mcp/mcp-chrome-e3a8b11 and requested --isolated. No assigned-market browser tab was created."
+    },
+    {
+      "method": "Official rendered-page snapshot through web browsing tool",
+      "scope": "https://www.longines.com/jp/watches, first page only",
+      "result": "PARTIAL",
+      "detail": "Japanese official Longines page snapshot labelled Crawled: today displayed 658 results, 24 per page, first-page JPY prices with the ￥ symbol, and the 結果をさらに表示 control. No later page or network request/response was available."
+    },
+    {
+      "method": "Open three linked official product-page snapshots",
+      "scope": "L3.809.4.93.9, L2.960.4.78.2, L2.962.4.73.2",
+      "result": "PARTIAL",
+      "detail": "Snapshots displayed ￥386,100, ￥562,100, and ￥614,900, and each matched its corresponding visible listing card. Crawl labels were 3 days ago, yesterday, and 4 days ago. These are historical/indexed snapshots, not live current-price checks."
+    },
+    {
+      "method": "curl -I https://www.longines.com/jp/watches",
+      "scope": "Direct network fallback",
+      "result": "FAIL",
+      "error": "curl exit code 6: Could not resolve host: www.longines.com"
+    },
+    {
+      "method": "Open documented official ProductList GraphQL endpoint via web browsing tool",
+      "scope": "https://www.longines.com/api/graphql?operationName=ProductList",
+      "result": "FAIL",
+      "error": "The browsing tool returned: URL is not accessible via this tool. No current GraphQL response was obtained."
+    }
+  ],
+  "networkDiscovery": {
+    "required": true,
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "NOT RUN / capability unavailable because isolated browser creation failed",
+    "toolsAttempted": [
+      "Chrome DevTools MCP new_page",
+      "Playwright MCP browser_tabs new",
+      "curl DNS fallback",
+      "web browsing tool opening documented GraphQL endpoint"
+    ],
+    "detail": "No assigned-market page session was available for list_network_requests/get_network_request. The web tool provided rendered/indexed page snapshots only. No cookies, tokens, session values, or authorization headers were saved."
+  },
+  "pagination": {
+    "pageSize": 24,
+    "officialResultCountLabel": 658,
+    "pagesOpened": 1,
+    "visibleItemCount": 24,
+    "stopEvidence": null,
+    "complete": false
+  },
+  "reconciliation": {
+    "priorMarketWatchCount": 612,
+    "currentSnapshotResultCountLabel": 658,
+    "difference": 46,
+    "interpretation": "Unreconciled snapshot discrepancy only. No inference of added or removed configurations or not-listed status is made. The listing is a web index snapshot; product pages have crawl ages from one to four days."
+  },
+  "formalUpdate": {
+    "marketFileChanged": false,
+    "historyFileChanged": false,
+    "runIdCreated": null,
+    "reason": "A current live catalog, complete pagination and stop evidence could not be verified. No partial snapshot is treated as current formal price data."
+  }
+}

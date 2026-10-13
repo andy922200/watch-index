@@ -1,0 +1,158 @@
+{
+  "brandId": "longines",
+  "marketCode": "TW",
+  "task": "price-update",
+  "status": "listing-source-count-matched",
+  "locale": "zh-TW",
+  "entryUrl": "https://www.longines.com/zh-tw/watches",
+  "observedOn": "2026-10-12",
+  "collectionMethod": "official ProductList request observed on the rendered Taiwan list; pages 1–23, pageSize 24",
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "available",
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "PASS",
+    "notes": "Browser/Chrome DevTools inspected the official rendered listing and pagination."
+  },
+  "sourceReportedTotal": 542,
+  "rawItemsReturned": 542,
+  "uniqueReferences": 542,
+  "duplicatesRemoved": 0,
+  "sourcePagination": [
+    {
+      "page": 1,
+      "itemCount": 24
+    },
+    {
+      "page": 2,
+      "itemCount": 24
+    },
+    {
+      "page": 3,
+      "itemCount": 24
+    },
+    {
+      "page": 4,
+      "itemCount": 24
+    },
+    {
+      "page": 5,
+      "itemCount": 24
+    },
+    {
+      "page": 6,
+      "itemCount": 24
+    },
+    {
+      "page": 7,
+      "itemCount": 24
+    },
+    {
+      "page": 8,
+      "itemCount": 24
+    },
+    {
+      "page": 9,
+      "itemCount": 24
+    },
+    {
+      "page": 10,
+      "itemCount": 24
+    },
+    {
+      "page": 11,
+      "itemCount": 24
+    },
+    {
+      "page": 12,
+      "itemCount": 24
+    },
+    {
+      "page": 13,
+      "itemCount": 24
+    },
+    {
+      "page": 14,
+      "itemCount": 24
+    },
+    {
+      "page": 15,
+      "itemCount": 24
+    },
+    {
+      "page": 16,
+      "itemCount": 24
+    },
+    {
+      "page": 17,
+      "itemCount": 24
+    },
+    {
+      "page": 18,
+      "itemCount": 24
+    },
+    {
+      "page": 19,
+      "itemCount": 24
+    },
+    {
+      "page": 20,
+      "itemCount": 24
+    },
+    {
+      "page": 21,
+      "itemCount": 24
+    },
+    {
+      "page": 22,
+      "itemCount": 24
+    },
+    {
+      "page": 23,
+      "itemCount": 14
+    }
+  ],
+  "attempts": [
+    {
+      "method": "official parent-series SSR pagination",
+      "result": "Five parent routes collected through their last page."
+    }
+  ],
+  "completeness": "Deduplicated reference count matches the official all-watches total.",
+  "limitations": [
+    "Existing product-page CTA audit attempted all 542 references through 2026-10-13: 538 exact product pages were confirmed at least once, 4 could not reach an exact product page after retries, and 0 confirmed pages had unresolved purchase CTA. Full attempts are in observations.json supplementalEvidence.",
+    "Independent product-page spot checks have not yet been performed.",
+    "Broad independent 19–21 representative sample of unchanged listings was not performed.",
+    "Evidence stores date precision only; exact request timestamps were not retained."
+  ],
+  "newCandidateProductPageChecks": {
+    "checkedCount": 1,
+    "failures": [],
+    "skuMismatches": [],
+    "priceOrCurrencyMismatches": [],
+    "ctaClassCounts": {
+      "direct-purchase": 1
+    },
+    "status": "PASS"
+  },
+  "openStatusMappingQuestion": "Items whose official main CTA is “Notify me when available” have a public price but no add-to-cart path; user direction is pending before writing listingStatus.",
+  "formalChangesApplied": true,
+  "listingStatusMapping": {
+    "direct-purchase": "listed",
+    "notify-me": "listed per user instruction",
+    "find-retailer-only": "retailer-only"
+  },
+  "existingProductPageCtaRecheck": {
+    "status": "PARTIAL",
+    "expectedReferences": 542,
+    "attemptedReferences": 542,
+    "exactProductPagesConfirmedAtLeastOnce": 538,
+    "noExactProductPageAfterRetries": 4,
+    "verifiedPagesWithUnresolvedPurchaseCta": 0,
+    "entriesWithRetryAttempts": 4,
+    "individualRetryAttempts": 4,
+    "completedThrough": "2026-10-13",
+    "evidencePath": "data/evidence/longines/TW/2026-10-12/observations.json#/supplementalEvidence/existingProductPageCtaChecks"
+  }
+}

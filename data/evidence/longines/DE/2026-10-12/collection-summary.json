@@ -1,0 +1,317 @@
+{
+  "brandId": "longines",
+  "marketCode": "DE",
+  "task": "price-update",
+  "status": "listing-source-count-matched",
+  "locale": "de-DE",
+  "entryUrl": "https://www.longines.com/de/watches",
+  "observedOn": "2026-10-12",
+  "collectionMethod": "Official all-watches ProductList GraphQL pagination observed through the rendered German all-watches UI; clicked 34 pages and stopped when 804/804 records were loaded and Mehr Ergebnisse anzeigen disappeared.",
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "available",
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "PASS",
+    "notes": "Chrome DevTools inspected the official rendered All Watches page and ProductList GraphQL request (page 2 response reported total_count=804, page_size=24). The rendered page was advanced through page 34; 804 unique product URLs/references matched the official total and the load-more control disappeared."
+  },
+  "sourceReportedTotal": 804,
+  "rawItemsReturned": 804,
+  "uniqueReferences": 804,
+  "duplicatesRemoved": 0,
+  "sourcePagination": [
+    {
+      "page": 1,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 2,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 3,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 4,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 5,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 6,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 7,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 8,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 9,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 10,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 11,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 12,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 13,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 14,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 15,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 16,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 17,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 18,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 19,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 20,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 21,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 22,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 23,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 24,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 25,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 26,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 27,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 28,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 29,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 30,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 31,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 32,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 33,
+      "itemCount": 24,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": false
+    },
+    {
+      "page": 34,
+      "itemCount": 12,
+      "pageSize": 24,
+      "totalCount": 804,
+      "terminal": true
+    }
+  ],
+  "attempts": [
+    {
+      "method": "official parent-series SSR pagination",
+      "result": "Five parent routes collected through their last page."
+    },
+    {
+      "method": "official all-watches ProductList UI pagination",
+      "result": "In a fresh isolated DE browser context, pages 1–34 were loaded from the rendered official page. The official progress total was 804; 804 unique product reference URLs were accumulated and the load-more control disappeared after page 34. The item absent from the parent-series union was L4.523.0.50.2."
+    }
+  ],
+  "completeness": "Rendered official all-watches total and unique reference count both equal 804; terminal load-more control absent at page 34.",
+  "limitations": [
+    "Existing product-page CTA audit attempted all 804 references through 2026-10-13: 799 exact product pages were confirmed at least once, 5 could not reach an exact product page after retries, and 3 confirmed pages had unresolved purchase CTA. Full attempts are in observations.json supplementalEvidence.",
+    "The broad independent 19–21 item sample of unchanged listings was not conducted.",
+    "Observation time is date-only; per-request timestamps were not retained.",
+    "Nickname research was not in scope for this price-only update."
+  ],
+  "newCandidateProductPageChecks": {
+    "checkedCount": 4,
+    "failures": [],
+    "skuMismatches": [],
+    "priceOrCurrencyMismatches": [],
+    "ctaClassCounts": {
+      "direct-purchase": 4
+    },
+    "status": "PASS"
+  },
+  "formalChangesApplied": true,
+  "listingStatusMapping": {
+    "direct-purchase": "listed",
+    "notify-me": "listed per user instruction",
+    "find-retailer-only": "retailer-only"
+  },
+  "productPageChecksPath": "data/evidence/longines/DE/2026-10-12/observations.json#/supplementalEvidence/newCandidateProductPageChecks",
+  "sourceReconciliationAgainstRenderedAllWatches": {
+    "status": "PASS",
+    "renderedUiUniqueReferences": 804,
+    "observationUniqueReferences": 804,
+    "uiOnlyReferences": [],
+    "observationOnlyReferences": [],
+    "terminalPage": 34,
+    "loadMoreControlAtTerminalPage": false
+  },
+  "existingProductPageCtaRecheck": {
+    "status": "PARTIAL",
+    "expectedReferences": 804,
+    "attemptedReferences": 804,
+    "exactProductPagesConfirmedAtLeastOnce": 799,
+    "noExactProductPageAfterRetries": 5,
+    "verifiedPagesWithUnresolvedPurchaseCta": 3,
+    "entriesWithRetryAttempts": 10,
+    "individualRetryAttempts": 11,
+    "completedThrough": "2026-10-13",
+    "evidencePath": "data/evidence/longines/DE/2026-10-12/observations.json#/supplementalEvidence/existingProductPageCtaChecks"
+  }
+}

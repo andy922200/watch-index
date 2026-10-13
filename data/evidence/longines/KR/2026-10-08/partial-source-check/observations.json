@@ -1,0 +1,36 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "KR",
+  "locale": "ko-KR",
+  "observedOn": "2026-10-08 (UTC; exact time not recorded)",
+  "entryUrl": "https://www.longines.com/kr/watches",
+  "observationType": "official crawler snapshot capability check; not live price evidence",
+  "snapshotMetadata": {
+    "pageTitle": "모든 론진 시계 | 럭셔리 스위스 타임피스 | LONGINES KR",
+    "freshnessLabel": "Crawled: today",
+    "exactCrawlTime": null,
+    "visibleCardCount": 24,
+    "verbatimFooterNumbers": [
+      24,
+      461
+    ],
+    "footerText": "페이지:",
+    "samplePrices": [
+      {
+        "displayName": "LONGINES SPIRIT PILOT 39 mm",
+        "rawPrice": "₩3,900,000",
+        "currentPriceEligible": false,
+        "reason": "Crawler snapshot, not live browser/network evidence; no complete reference observed."
+      },
+      {
+        "displayName": "LONGINES MASTER COLLECTION 34 mm",
+        "rawPrice": "₩6,600,000",
+        "currentPriceEligible": false,
+        "reason": "Crawler snapshot, not live browser/network evidence; no complete reference observed."
+      }
+    ]
+  },
+  "observations": [],
+  "note": "The snapshot samples document only what the official page snapshot exposed. No current product observation was admitted; the snapshot cannot establish current prices or complete listing coverage."
+}

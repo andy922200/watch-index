@@ -1,0 +1,45 @@
+{
+  "brandId": "longines",
+  "marketCode": "TH",
+  "validatedAt": "2026-10-08T15:09:25Z",
+  "status": "partial",
+  "checks": {
+    "strictJson": {
+      "status": "PASS",
+      "detail": "Strict JSON parsing passed for all three new checkpoint files; duplicate keys and NaN/Infinity were rejected."
+    },
+    "schema": {
+      "status": "NOT RUN",
+      "detail": "No formal market/history update was made; evidence is outside formal schemas."
+    },
+    "crossFileWatchRelations": {
+      "status": "NOT RUN",
+      "detail": "No current full configuration observations were collected."
+    },
+    "officialSourceTraceability": {
+      "status": "NOT RUN",
+      "detail": "Only a prior-day official page snapshot was available; not accepted as current price evidence."
+    },
+    "fullListingStopEvidence": {
+      "status": "NOT RUN",
+      "detail": "No complete listing or terminal signal was captured."
+    },
+    "networkInspection": {
+      "status": "NOT RUN",
+      "detail": "No live browser pageId was available."
+    },
+    "independentSpotCheck": {
+      "status": "NOT RUN",
+      "detail": "No current product page was inspected in a live browser."
+    },
+    "appendOnlyAndProtectedScope": {
+      "status": "PASS",
+      "detail": "Post-write SHA-256 hashes of Longines TH market and history match pre-write hashes; no formal market/history/catalog data changed."
+    }
+  },
+  "limitations": [
+    "Crawler snapshot metadata says prior-day crawl and provides no exact time; it is not a live browser/network observation.",
+    "The snapshot text is incomplete; full configuration references, list total, and termination were unavailable.",
+    "Live network inspection and current PDP spot checks were not run."
+  ]
+}

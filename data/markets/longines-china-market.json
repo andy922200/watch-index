@@ -2,7 +2,7 @@
   "$schema": "../schemas/watch-market.schema.json",
   "schemaVersion": 4,
   "brandId": "longines",
-  "collectedAt": "2026-10-03T00:15:50.585Z",
+  "collectedAt": "2026-10-12T00:00:00.000Z",
   "salesRegion": "China",
   "marketCode": "CN",
   "locale": "zh-Hans-CN",

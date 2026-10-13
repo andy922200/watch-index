@@ -20,7 +20,7 @@
     "CN",
     "TH"
   ],
-  "watchCount": 1049,
+  "watchCount": 1050,
   "watches": [
     {
       "watchId": "longines:L1.648.4.52.2",
@@ -8367,6 +8367,15 @@
       "collectionId": "hydroconquest",
       "reference": "L3.369.3.88.7",
       "imageUrl": "https://www.longines.cn/media/catalog/product/cache/4f37995be23b51bf3078ada81ae92cd1/d/a/dam_soldat_small-image-design_l3.369.3.88.7.png",
+      "dialColors": [
+        "white"
+      ]
+    },
+    {
+      "watchId": "longines:L3.369.3.87.7",
+      "collectionId": "hydroconquest",
+      "reference": "L3.369.3.87.7",
+      "imageUrl": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-hydroconquest-l3-369-3-87-7-35f568-hero.png",
       "dialColors": [
         "white"
       ]

@@ -2,7 +2,7 @@
   "$schema": "../schemas/watch-market.schema.json",
   "schemaVersion": 4,
   "brandId": "longines",
-  "collectedAt": "2026-10-02T23:55:35.793Z",
+  "collectedAt": "2026-10-12T00:00:00.000Z",
   "salesRegion": "Thailand",
   "marketCode": "TH",
   "locale": "th-TH",

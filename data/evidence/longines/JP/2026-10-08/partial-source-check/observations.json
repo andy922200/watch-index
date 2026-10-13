@@ -1,0 +1,82 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "JP",
+  "locale": "ja-JP",
+  "observedAt": "2026-10-08T13:11:10.000Z",
+  "observationTimestampMeaning": "Checkpoint capture timestamp; the web snapshot tool did not provide an exact origin-fetch timestamp. The source crawl-age labels are retained for each page.",
+  "entryUrl": "https://www.longines.com/jp/watches",
+  "collectionMethod": "Official Longines Japan rendered listing and linked official product page snapshots were opened using the web browsing tool. The listing snapshot was labelled Crawled: today; product pages had relative crawl ages between yesterday and 4 days ago. The live browser/network session could not be created, so all values below are snapshot observations only and are not treated as current prices for formal history.",
+  "marketContext": {
+    "currencyCode": "JPY",
+    "currencyCodeBasis": "JPY is the existing JP market history currency and the official Japanese page displays prices with the yen symbol ￥. Current official store configuration was not fetched in this run."
+  },
+  "listingSnapshot": {
+    "sourceUrl": "https://www.longines.com/jp/watches",
+    "snapshotCrawlAge": "Crawled: today",
+    "officialResultCountLabel": 658,
+    "pageSizeShown": 24,
+    "visibleProductCards": 24,
+    "rawFirstCardText": "ロンジン スピリット パイロット39 mm - 自動巻 ウォッチ - ステンレススティール; ￥386,100; 店舗検索",
+    "nextPageControlText": "結果をさらに表示",
+    "nextPageLoaded": false,
+    "currencySymbolObserved": "￥",
+    "useForFormalCurrentPriceUpdate": false
+  },
+  "productPageSnapshots": [
+    {
+      "reference": "L3.809.4.93.9",
+      "productName": "ロンジン スピリット パイロット",
+      "listingUrl": "https://www.longines.com/jp/watches",
+      "productUrl": "https://www.longines.com/jp/p/watch-longines-spirit-pilot-l3-809-4-93-9",
+      "productPageSnapshotCrawlAge": "Crawled: 3 days ago",
+      "rawPriceText": "￥386,100",
+      "parsedPrice": 386100,
+      "currencySymbolObserved": "￥",
+      "rawAvailabilityText": "店舗検索",
+      "rawPriceTypeText": "メーカー希望小売価格 - 参考価格であり、販売価格は各正規販売店により異なります。",
+      "rawNewModelText": "新作",
+      "isNewModel": true,
+      "snapshotStatusInterpretation": "retailer-only",
+      "listingProductSnapshotPriceMatch": true,
+      "useForFormalCurrentPriceUpdate": false
+    },
+    {
+      "reference": "L2.960.4.78.2",
+      "productName": "ロンジン マスターコレクション クロノ モノプッシャー",
+      "listingUrl": "https://www.longines.com/jp/watches",
+      "productUrl": "https://www.longines.com/jp/p/watch-the-longines-master-collection-chrono-monopusher-l2-960-4-78-2",
+      "productPageSnapshotCrawlAge": "Crawled: yesterday",
+      "rawPriceText": "￥562,100",
+      "parsedPrice": 562100,
+      "currencySymbolObserved": "￥",
+      "rawAvailabilityText": "店舗検索",
+      "rawPriceTypeText": "メーカー希望小売価格 - 参考価格であり、販売価格は各正規販売店により異なります。",
+      "rawNewModelText": "新作",
+      "isNewModel": true,
+      "snapshotStatusInterpretation": "retailer-only",
+      "listingProductSnapshotPriceMatch": true,
+      "useForFormalCurrentPriceUpdate": false
+    },
+    {
+      "reference": "L2.962.4.73.2",
+      "productName": "THE LONGINES MASTER COLLECTION CHRONO MOONPHASE",
+      "listingUrl": "https://www.longines.com/jp/watches",
+      "productUrl": "https://www.longines.com/jp/p/watch-the-longines-master-collection-chronograph-l2-962-4-73-2",
+      "productPageSnapshotCrawlAge": "Crawled: 4 days ago",
+      "rawPriceText": "￥614,900",
+      "parsedPrice": 614900,
+      "currencySymbolObserved": "￥",
+      "rawAvailabilityText": "店舗検索",
+      "rawPriceTypeText": "メーカー希望小売価格 - 参考価格であり、販売価格は各正規販売店により異なります。",
+      "rawNewModelText": "新作",
+      "isNewModel": true,
+      "snapshotStatusInterpretation": "retailer-only",
+      "listingProductSnapshotPriceMatch": true,
+      "useForFormalCurrentPriceUpdate": false
+    }
+  ],
+  "nicknameResearch": {
+    "status": "NOT RUN (out of scope)"
+  }
+}

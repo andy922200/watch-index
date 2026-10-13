@@ -1,0 +1,57 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "AT",
+  "task": "pure-price-update",
+  "status": "partial; stopped because browser access unavailable",
+  "locale": "de-AT",
+  "salesRegion": "Austria",
+  "entryPoint": "https://www.longines.com/de-at/watches",
+  "attempts": [
+    {
+      "attempt": 1,
+      "time": "2026-10-08T15:03:59Z",
+      "method": "mcp__chrome_devtools__new_page with isolatedContext longines-at-20261008",
+      "url": "https://www.longines.com/de-at/watches",
+      "result": "FAILED before page creation",
+      "error": "The browser is already running for /Users/andylien/.cache/chrome-devtools-mcp/chrome-profile. Use --isolated to run multiple browser instances. Cause: The browser is already running for /Users/andylien/.cache/chrome-devtools-mcp/chrome-profile. Use a different userDataDir or stop the running browser first."
+    }
+  ],
+  "networkDiscovery": {
+    "required": true,
+    "toolConfigured": true,
+    "toolAttempted": false,
+    "status": "NOT RUN / capability unavailable for this attempt",
+    "reason": "new_page failed and returned no pageId; list_network_requests and get_network_request require a pageId. No existing page was reused."
+  },
+  "targetCondition": {
+    "intendedLocale": "de-AT",
+    "intendedRegion": "Austria",
+    "currentPageLocaleVerified": false,
+    "currentPageCurrencyVerified": false,
+    "note": "The entry URL is the Austria source recorded in the existing market file; it was not rendered or independently verified in this run."
+  },
+  "checkpoint": {
+    "completedScope": "No current-run product observations collected.",
+    "lastSuccessfulPosition": null,
+    "uniqueConfigurationsObserved": 0,
+    "officialTotalCount": null,
+    "stopSignal": null,
+    "observationsPath": "data/evidence/longines/AT/2026-10-08/partial-source-check/observations.json",
+    "incompleteScope": "Full official listing, prices, listing states, pagination/cursor termination, and independent product-page spot checks.",
+    "suggestedResume": "Retry when an isolated Chrome DevTools browser instance can be created; reopen the official Austria watches page, verify locale/currency, inspect live network responses and UI stop signal, then resume full collection."
+  },
+  "baseline": {
+    "marketPath": "data/markets/longines-austria-market.json",
+    "marketSha256Before": "e3d714f6b69a051653e63d748a19fae5051bb842efa3ca54ce2aa8b272d02b12",
+    "historyPath": "data/history/AT/longines-price-history.json",
+    "historySha256Before": "c2db940f21bfa850dbc23943ff89575cccdff4bbb886023d32ffd654a2f77d68",
+    "lastHistoryRunId": 1,
+    "lastHistoryCollectedAt": "2026-10-02T23:51:14.265Z"
+  },
+  "formalDataChanges": {
+    "market": "none",
+    "history": "none; no run appended",
+    "catalog": "none"
+  }
+}

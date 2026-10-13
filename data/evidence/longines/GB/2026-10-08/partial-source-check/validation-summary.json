@@ -1,0 +1,45 @@
+{
+  "brandId": "longines",
+  "marketCode": "GB",
+  "validatedAt": "2026-10-08T15:10:02Z",
+  "status": "partial",
+  "checks": {
+    "strictJson": {
+      "status": "PASS",
+      "detail": "Strict JSON parsing passed for all three new checkpoint files; duplicate keys and NaN/Infinity were rejected."
+    },
+    "schema": {
+      "status": "NOT RUN",
+      "detail": "No formal market/history update was made; evidence is outside formal schemas."
+    },
+    "crossFileWatchRelations": {
+      "status": "NOT RUN",
+      "detail": "No current full configuration observations were collected."
+    },
+    "officialSourceTraceability": {
+      "status": "NOT RUN",
+      "detail": "The crawler snapshot was not live-verified and was not accepted as current price evidence."
+    },
+    "fullListingStopEvidence": {
+      "status": "NOT RUN",
+      "detail": "Snapshot contains a show-more control and no verifiable stop signal."
+    },
+    "networkInspection": {
+      "status": "NOT RUN",
+      "detail": "No live browser pageId was available."
+    },
+    "independentSpotCheck": {
+      "status": "NOT RUN",
+      "detail": "No current product page was inspected in a live browser."
+    },
+    "appendOnlyAndProtectedScope": {
+      "status": "PASS",
+      "detail": "Post-write SHA-256 hashes of Longines GB market and history match pre-write hashes; no formal market/history/catalog data changed."
+    }
+  },
+  "limitations": [
+    "Crawler metadata labels the snapshot 'today' but provides no exact crawl time; it is not a live browser/network capture.",
+    "Only the first 24 cards were returned; complete references and terminal proof are unavailable.",
+    "Live network inspection and current product-page spot checks were not run."
+  ]
+}

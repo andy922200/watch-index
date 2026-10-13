@@ -1,0 +1,51 @@
+{
+  "brandId": "longines",
+  "marketCode": "TW",
+  "validatedAt": "2026-10-08T13:02:16Z",
+  "runId": null,
+  "formalDataUpdated": false,
+  "checks": {
+    "strictJson": {
+      "status": "PASS",
+      "detail": "本目錄下 observations.json、collection-summary.json、validation-summary.json 均以 Python 標準 JSON parser 嚴格解析（含重複 key 檢查）。"
+    },
+    "jsonSchema": {
+      "status": "NOT RUN",
+      "detail": "環境沒有安裝 jsonschema、Ajv 或 check-jsonschema；依專案規則未安裝依賴。"
+    },
+    "watchCountIdentityAndRelations": {
+      "status": "PASS",
+      "detail": "以標準程式檢查 catalog watchCount/唯一 watchId、台灣 market watchCount/唯一 watchId、TW history 價格序列鍵與 market ID 集合一致，且 market ID 均存在於 Longines catalog；history runId 與各價格點引用一致。"
+    },
+    "listingStatusPriceCombination": {
+      "status": "PASS for existing formal data; partial evidence only",
+      "detail": "唯一能完整核對的 L3.809.4.93.9 官方頁列價 TWD 82,000 並提供新增至購物車 CTA；與本地既有 runId 1 價格相同，因此依 append-only 規則不重複加入價格點；全市場收集不完整，沒有新增 collectionRun。"
+    },
+    "sourceReconciliation": {
+      "status": "PASS for 1 item; NOT RUN for complete market",
+      "detail": "官方目錄卡片與官方商品頁的型號及價格相符；只核對一件商品，不能代表全市場。"
+    },
+    "fullSourceStopEvidenceAndIndependentSpotCheck": {
+      "status": "NOT RUN",
+      "detail": "未取得 network response、分頁／cursor 結束條件或全量來源對帳；不宣稱完整收集。"
+    },
+    "appendOnlyHistoryAndChangeSafety": {
+      "status": "PASS",
+      "detail": "Catalog、market、history 三份正式檔案 SHA-256 與開始收集時記錄值一致；唯一官方核對樣本與歷史價格相同，沒有追加重複點；本輪未修改正式資料或舊 evidence。"
+    },
+    "readmeLongTermDescription": {
+      "status": "NOT REQUIRED",
+      "detail": "單次局部來源查核未改變長期涵蓋範圍。"
+    }
+  },
+  "limitations": [
+    "瀏覽器 profile 和本市場可用 network 工具不可用，僅能取得官方頁面局部渲染資料，完整價格更新未完成。",
+    "history 最後 runId 仍為 1；本輪未新增 runId 或價格點。",
+    "官網目錄頁標示 542；既有 TW market/history 為 544。差額未經全量查核，不得作為 2 筆 not-listed 或刪除資料的依據。",
+    "JSON Schema validator 未安裝且未安裝依賴，故 Schema 驗證為 NOT RUN。"
+  ],
+  "nicknameResearch": {
+    "status": "NOT RUN (out of scope)",
+    "scope": "price-only"
+  }
+}

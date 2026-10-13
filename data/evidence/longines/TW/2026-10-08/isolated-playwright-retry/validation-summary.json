@@ -1,0 +1,37 @@
+{
+  "brandId": "longines",
+  "marketCode": "TW",
+  "validatedAt": "2026-10-08T15:24:53Z",
+  "status": "partial",
+  "checks": {
+    "strictJson": {
+      "status": "PASS",
+      "detail": "Strict JSON parsing passed for all three new retry evidence files; duplicate keys and NaN/Infinity were rejected."
+    },
+    "fullCurrentSource": {
+      "status": "NOT RUN",
+      "detail": "Browser code did not execute, so no current official page data was available."
+    },
+    "networkInspection": {
+      "status": "NOT RUN",
+      "detail": "No page or pageId was created."
+    },
+    "stopEvidence": {
+      "status": "NOT RUN",
+      "detail": "No current listing response or terminal condition was observed."
+    },
+    "schemaAndCrossFile": {
+      "status": "NOT RUN",
+      "detail": "No formal data was produced."
+    },
+    "appendOnlyAndProtectedScope": {
+      "status": "PASS",
+      "detail": "Post-write SHA-256 hashes of Longines TW market and history match pre-write hashes; no formal data changed."
+    }
+  },
+  "limitations": [
+    "mcp__playwright__browser_run_code_unsafe reported the shared Playwright browser profile busy before the user code could execute.",
+    "The requested isolated context was therefore not created, despite using browser().newContext() in the supplied code.",
+    "No Chrome DevTools or user browser was accessed in this retry."
+  ]
+}

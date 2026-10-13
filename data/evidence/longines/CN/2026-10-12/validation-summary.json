@@ -1,0 +1,128 @@
+{
+  "brandId": "longines",
+  "marketCode": "CN",
+  "task": "price-update",
+  "validatedAt": "2026-10-12T00:00:00Z",
+  "overallStatus": "PARTIAL",
+  "sourceListingReconciliation": {
+    "status": "PASS",
+    "officialTotal": 666,
+    "uniqueReferences": 666,
+    "rawRows": 666,
+    "duplicates": 0,
+    "newToMarket": [],
+    "previouslyInMarketButAbsent": []
+  },
+  "priceParseAndCurrency": {
+    "status": "PASS",
+    "currencyCodes": [
+      "CNY"
+    ],
+    "invalidOrMissingPrices": []
+  },
+  "historyPriceComparison": {
+    "status": "PASS",
+    "existingMarketItemsCompared": 666,
+    "missingHistorySeries": [],
+    "priceDifferences": [],
+    "newReferencePricesPendingInitialHistory": []
+  },
+  "catalogCrossCheck": {
+    "status": "PASS",
+    "sourceRefsMissingFromCatalog": [],
+    "catalogReferencesAddedThisRun": []
+  },
+  "productPageCtaAndListingStatus": {
+    "status": "PARTIAL",
+    "detail": "Every new-to-market reference in this complete source was opened on its exact official product page. Direct purchase and notify-me map to listed per user instruction; find-retailer-only maps to retailer-only. Existing rows were not individually reopened, so their historical listingStatus values were preserved. Follow-up: No existing exact product page CTA check was completed for this market. Per-reference listing signals are separately recorded in data/evidence/longines/CN/2026-10-12/observations.json#/supplementalEvidence/existingCtaRecheck and are not represented as direct product-page CTA checks. Follow-up completed through 2026-10-13: attempted 666 references, confirmed 666 exact product pages at least once, could not reach 0 exact pages after retries, and left 0 confirmed-page CTA(s) unresolved. Full records: observations.json#/supplementalEvidence/existingProductPageCtaChecks.",
+    "checkedNewCandidates": 0,
+    "newCandidateStatusCounts": {},
+    "existingRowsCtaAudit": "NOT RUN",
+    "existingProductPageCtaFollowUp": {
+      "status": "PASS",
+      "expectedReferences": 666,
+      "attemptedReferences": 666,
+      "exactProductPagesConfirmedAtLeastOnce": 666,
+      "noExactProductPageAfterRetries": 0,
+      "verifiedPagesWithUnresolvedPurchaseCta": 0,
+      "entriesWithRetryAttempts": 61,
+      "individualRetryAttempts": 62,
+      "completedThrough": "2026-10-13",
+      "evidencePath": "data/evidence/longines/CN/2026-10-12/observations.json#/supplementalEvidence/existingProductPageCtaChecks"
+    }
+  },
+  "independentOfficialSpotCheck": {
+    "status": "PARTIAL",
+    "detail": "Exact official product pages were checked for all new candidates. The required broad 19–21 representative sample of unchanged listings was not conducted. Follow-up: the absent-old-reference representative sample was not applicable to this market.",
+    "newCandidateCount": 0,
+    "unchangedListingSample": "NOT RUN"
+  },
+  "strictJsonAndSchema": {
+    "status": "PASS",
+    "strictJsonFileCount": 644,
+    "schemaValidatedFormalFileCount": 89,
+    "detail": "Strict JSON parsing rejected duplicate keys and invalid constants. Catalog/market/history instances validated against local schemas using the repository-pinned Ajv 6.15 compiler; the Draft 2020-12 metaschema URI was removed because this engine does not implement that metaschema, while local constraints, formats, references, and conditional rules compiled and passed."
+  },
+  "formalWriteValidation": {
+    "status": "PASS",
+    "detail": "Cross-brand validator passed all 43 market files. Official source refs and new prices reconcile; old market row objects were preserved; all old price series remain prefixes; only evidence-backed additions and status points were appended; protected markets and schemas were unchanged."
+  },
+  "limitations": [
+    "The broad independent 19–21 item sample of unchanged products was not run.",
+    "Germany source total and unique-reference count differ by one; its formal market/history remain unchanged pending resolution.",
+    "Evidence records observation date only; exact per-request timestamps were not retained."
+  ],
+  "newCandidateProductPageVerification": {
+    "status": "PASS",
+    "checkedCount": 0,
+    "failedPages": [],
+    "referenceMismatches": [],
+    "priceOrCurrencyMismatches": [],
+    "ctaClassCounts": {}
+  },
+  "nicknameResearch": {
+    "status": "NOT RUN",
+    "scope": "price-only",
+    "languages": [],
+    "queries": [],
+    "sourcesReviewed": 0,
+    "candidateCount": 0,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [],
+    "notes": "本次為價格更新與市場列出狀態同步；俗稱研究不在範圍內，新列 localNicknames 保持空白，不代表已確認查無俗稱。"
+  },
+  "readmeUpdate": {
+    "status": "NOT REQUIRED",
+    "updated": false,
+    "sections": [],
+    "reason": "README 記錄的 Longines 市場覆蓋與網站選單未改變，文件未列配置總數。"
+  },
+  "existingCtaListingSignalRecheck": {
+    "status": "NOT RUN",
+    "existingFormalReferenceCount": 666,
+    "currentOfficialListingOverlapCount": 666,
+    "listingSignalCount": 666,
+    "missingListingSignalCount": 0,
+    "directProductPageCtaChecks": 0,
+    "detail": "666 existing references: 666 also occur in this run's complete current source; 666 have informative listing-level purchase signals; 0 lack informative signal fields. Direct exact product-page CTA checks in this follow-up: 0. Listing signals do not substitute for individual product-page CTA checks.",
+    "listingSignalComparisonCandidates": {
+      "inferredMatch": 0,
+      "possibleDifference": 0,
+      "ambiguous": 666,
+      "absentFromCurrentSource": 0
+    }
+  },
+  "existingProductPageCtaRecheck": {
+    "status": "PASS",
+    "expectedReferences": 666,
+    "attemptedReferences": 666,
+    "exactProductPagesConfirmedAtLeastOnce": 666,
+    "noExactProductPageAfterRetries": 0,
+    "verifiedPagesWithUnresolvedPurchaseCta": 0,
+    "entriesWithRetryAttempts": 61,
+    "individualRetryAttempts": 62,
+    "completedThrough": "2026-10-13",
+    "evidencePath": "data/evidence/longines/CN/2026-10-12/observations.json#/supplementalEvidence/existingProductPageCtaChecks"
+  }
+}

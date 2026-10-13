@@ -1,0 +1,73 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "CH",
+  "task": "pure-price-update",
+  "status": "partial; no history update because the available snapshot is incomplete and not live-verified",
+  "locale": "de-CH",
+  "salesRegion": "Switzerland",
+  "entryPoint": "https://www.longines.com/de-ch/watches",
+  "sourceAttempts": [
+    {
+      "attempt": 1,
+      "observedOn": "2026-10-08 (UTC; exact time not recorded)",
+      "method": "web__run open official URL",
+      "url": "https://www.longines.com/de-ch/watches",
+      "result": "Official-page text snapshot returned; crawler metadata says 'Crawled: today' with no exact crawl timestamp.",
+      "pageTitle": "Longines Uhren | Schweizer Uhren | LONGINES CH",
+      "visiblePageFacts": {
+        "visibleProductCards": 24,
+        "loadMoreControl": "Mehr Ergebnisse anzeigen",
+        "snapshotFooterNumbers": [
+          24,
+          805
+        ],
+        "currencyExample": "CHF",
+        "freshness": "today per crawler metadata"
+      },
+      "limitation": "Although the crawler labels the snapshot as today, it is not a live rendered browser/network capture. It contains only the first 24 visible cards, no complete references, and no terminal evidence. Footer numbers 24 and 805 are preserved verbatim and are not interpreted as total count or a stop condition."
+    },
+    {
+      "attempt": 2,
+      "observedOn": "2026-10-08 (UTC; exact time not recorded)",
+      "method": "Shared-profile browser tools",
+      "result": "Not retried, per task instruction to avoid another shared Chrome profile attempt.",
+      "limitation": "No live browser pageId; Chrome DevTools network requests could not be inspected in this work unit."
+    }
+  ],
+  "networkDiscovery": {
+    "required": true,
+    "toolConfigured": true,
+    "toolAttempted": false,
+    "status": "NOT RUN / live browser capability unavailable in this work unit",
+    "reason": "No live browser page was created or available. The web snapshot does not expose network requests or responses; shared-profile retry was explicitly avoided."
+  },
+  "targetCondition": {
+    "pathAndLanguageSignal": "The official URL uses /de-ch/watches; snapshot page title identifies LONGINES CH and German content; visible prices are CHF-formatted.",
+    "liveMarketConditionVerified": false,
+    "priorMarketSourceEvidence": "Existing 2026-09-25 CH collection evidence documents de-CH as the representative Switzerland store view. It was not reused as current prices."
+  },
+  "checkpoint": {
+    "completedScope": "Inspected official page snapshot metadata, CH/de-CH page title, CHF-formatted examples, 24 visible cards, and load-more control.",
+    "lastSuccessfulPosition": "First 24 visible cards in the crawler snapshot; not a live collection cursor.",
+    "uniqueConfigurationsObserved": 0,
+    "officialTotalCount": null,
+    "stopSignal": null,
+    "observationsPath": "data/evidence/longines/CH/2026-10-08/partial-source-check/observations.json",
+    "incompleteScope": "Current full listing, complete references, current prices and listing states, pagination/cursor termination, live network response, and independent current PDP checks.",
+    "suggestedResume": "Resume when a dedicated live browser context is available; verify the de-CH store view, inspect ProductList network responses and the terminal signal, then spot-check current product pages. Do not use this snapshot for formal price updates."
+  },
+  "baseline": {
+    "marketPath": "data/markets/longines-switzerland-market.json",
+    "marketSha256Before": "d20b7f14c5f355f0a081231149a3ccaf009a8bf3f4dc55b6afbff74df9b72256",
+    "historyPath": "data/history/CH/longines-price-history.json",
+    "historySha256Before": "1730301cef2f65fba93d510678126644999f236a536b34e9dfba28607caac896",
+    "lastHistoryRunId": 1,
+    "lastHistoryCollectedAt": "2026-09-25T14:05:44.000Z"
+  },
+  "formalDataChanges": {
+    "market": "none",
+    "history": "none; no run appended",
+    "catalog": "none"
+  }
+}

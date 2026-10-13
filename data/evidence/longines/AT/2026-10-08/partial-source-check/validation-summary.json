@@ -1,0 +1,41 @@
+{
+  "brandId": "longines",
+  "marketCode": "AT",
+  "validatedAt": "2026-10-08T15:03:59Z",
+  "status": "partial",
+  "checks": {
+    "strictJson": {
+      "status": "PASS",
+      "detail": "嚴格 JSON 解析通過本次新建的 collection-summary.json、observations.json 與 validation-summary.json；拒絕重複 key 與 NaN/Infinity。"
+    },
+    "schema": {
+      "status": "NOT RUN",
+      "detail": "No formal market/history update was made; evidence is outside the formal schemas."
+    },
+    "crossFileWatchRelations": {
+      "status": "NOT RUN",
+      "detail": "No formal records were generated from this partial attempt."
+    },
+    "officialSourceTraceability": {
+      "status": "NOT RUN",
+      "detail": "No current source data was obtained."
+    },
+    "fullListingStopEvidence": {
+      "status": "NOT RUN",
+      "detail": "No rendered page or live network response; no stop signal."
+    },
+    "independentSpotCheck": {
+      "status": "NOT RUN",
+      "detail": "No product page was accessible in this attempt."
+    },
+    "appendOnlyAndProtectedScope": {
+      "status": "PASS",
+      "detail": "寫入後重新計算 Longines AT market 與 history SHA-256，分別與寫入前相同；未變更正式 market、history 或 catalog。"
+    }
+  },
+  "limitations": [
+    "Chrome DevTools browser profile was already running and new isolated page creation failed.",
+    "Network inspection could not be invoked without a pageId.",
+    "No current prices or listing states were collected; history was intentionally not updated."
+  ]
+}

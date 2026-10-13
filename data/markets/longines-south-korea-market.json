@@ -2,11 +2,11 @@
   "$schema": "../schemas/watch-market.schema.json",
   "schemaVersion": 4,
   "brandId": "longines",
-  "collectedAt": "2026-09-25T09:30:00.000Z",
+  "collectedAt": "2026-10-12T00:00:00.000Z",
   "salesRegion": "South Korea",
   "marketCode": "KR",
   "locale": "ko-KR",
-  "watchCount": 456,
+  "watchCount": 457,
   "source": {
     "name": "LONGINES South Korea Official Website",
     "url": "https://www.longines.com/kr/watches"
@@ -6520,6 +6520,20 @@
       "dialDescription": "민트 블루 선레이",
       "isNewModel": false,
       "productUrl": "https://www.longines.com/kr/p/watch-longines-primaluna-l8-142-4-97-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.860.3.52.7",
+      "reference": "L3.860.3.52.7",
+      "collectionName": "CONQUEST",
+      "modelName": "CONQUEST",
+      "caseDescription": "Ø 41.00 mm, 스테인리스 스틸 및 옐로우 PVD 코팅",
+      "dialDescription": "블랙 선블라스트",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/kr/p/watch-conquest-l3-860-3-52-7",
       "localNicknames": {
         "names": [],
         "sources": []

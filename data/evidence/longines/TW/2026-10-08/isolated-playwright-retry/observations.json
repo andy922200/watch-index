@@ -1,0 +1,11 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "TW",
+  "locale": "zh-Hant-TW",
+  "observedAt": "2026-10-08T15:24:53Z",
+  "entryUrl": "https://www.longines.com/zh-tw/watches",
+  "observationType": "browser capability retry; no page-level source observations",
+  "observations": [],
+  "note": "The Playwright request failed before the supplied code executed. No rendered page, current price, listing status, network request, or stop signal was observed."
+}

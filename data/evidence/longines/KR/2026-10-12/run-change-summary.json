@@ -1,0 +1,60 @@
+{
+  "brandId": "longines",
+  "marketCode": "KR",
+  "runDate": "2026-10-12",
+  "sourceTotal": 457,
+  "sourceCount": 457,
+  "existingMarketCountBeforeRun": 456,
+  "newToMarketReferences": [
+    "L3.860.3.52.7"
+  ],
+  "oldMarketReferencesAbsentFromCurrentSource": [],
+  "newToMarketCount": 1,
+  "oldReferencesAbsentCount": 0,
+  "existingPriceComparison": {
+    "status": "PASS",
+    "comparedCount": 456,
+    "priceDifferenceCount": 0,
+    "differences": []
+  },
+  "productPageChecks": {
+    "checkedNewCandidateCount": 1,
+    "path": "data/evidence/longines/KR/2026-10-12/observations.json#/supplementalEvidence/newCandidateProductPageChecks"
+  },
+  "formalChangesApplied": true,
+  "reason": "Formal market and price-history updates were applied after the user confirmed notify-me CTAs map to listed. Existing rows were retained; complete current-source absences received not-listed points. Existing product-page CTAs were only partly rechecked in the follow-up; per-reference listing signals were audited separately.",
+  "formalChangeSummary": {
+    "marketRowsAdded": 1,
+    "newPriceSeriesAdded": 1,
+    "notListedPointsAppended": 0,
+    "existingPriceDifferences": 0,
+    "listingStatusMapping": {
+      "notify-me": "listed",
+      "direct-purchase": "listed",
+      "retailer-only": "retailer-only"
+    },
+    "addedMarketReferences": [
+      "L3.860.3.52.7"
+    ],
+    "notListedReferences": []
+  },
+  "existingCtaRecheck": {
+    "status": "NOT RUN",
+    "directProductPageCtaCount": 0,
+    "evidencePath": "data/evidence/longines/KR/2026-10-12/observations.json#/supplementalEvidence/existingCtaRecheck",
+    "listingSignalCoverage": 457,
+    "listingSignalsAreNotDirectProductPageCta": true
+  },
+  "existingProductPageCtaRecheck": {
+    "status": "PARTIAL",
+    "expectedReferences": 457,
+    "attemptedReferences": 457,
+    "exactProductPagesConfirmedAtLeastOnce": 454,
+    "noExactProductPageAfterRetries": 3,
+    "verifiedPagesWithUnresolvedPurchaseCta": 0,
+    "entriesWithRetryAttempts": 3,
+    "individualRetryAttempts": 3,
+    "completedThrough": "2026-10-13",
+    "evidencePath": "data/evidence/longines/KR/2026-10-12/observations.json#/supplementalEvidence/existingProductPageCtaChecks"
+  }
+}

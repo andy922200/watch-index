@@ -1,0 +1,54 @@
+{
+  "brandId": "longines",
+  "marketCode": "JP",
+  "validatedAt": "2026-10-08T13:11:10.000Z",
+  "validationScope": "Partial source checkpoint only; no formal market or history changes were made.",
+  "checks": {
+    "strictJsonParseAndDuplicateKeyCheck": {
+      "status": "PASS",
+      "detail": "All new evidence files are checked after writing with duplicate-key rejection and invalid JSON constant rejection."
+    },
+    "marketAndHistorySchema": {
+      "status": "NOT RUN",
+      "detail": "No market/history changes were made; no new formal records require schema validation."
+    },
+    "marketHistoryCrossFileRelations": {
+      "status": "NOT RUN",
+      "detail": "No new run or price point was appended."
+    },
+    "sourceReconciliation": {
+      "status": "PARTIAL",
+      "detail": "Three official product-page snapshots show prices and retailer-only CTAs matching corresponding cards in the first-page listing snapshot. Their crawl ages range from yesterday to 4 days ago; the snapshots are not treated as current live prices."
+    },
+    "completenessAndStopEvidence": {
+      "status": "NOT RUN",
+      "detail": "One page showed 24 of a 658-result label; no later page or official beyond-last-page response was obtained. Prior formal market count is 612; difference of 46 remains unexplained."
+    },
+    "changeSafety": {
+      "status": "PASS",
+      "detail": "Only new Longines JP checkpoint evidence is added. The JP market/history files are left unchanged; no catalog, traveler policy, or other-market files are read or changed."
+    },
+    "nicknameResearch": {
+      "status": "NOT RUN (out of scope)"
+    },
+    "readmeSynchronization": {
+      "status": "NOT RUN",
+      "detail": "Partial indexed snapshots do not establish any lasting change to README descriptions."
+    }
+  },
+  "baseline": {
+    "marketFile": "data/markets/longines-japan-market.json",
+    "marketSha256Before": "73f43e094cb93af523a4bcec0e6d4a6825fc09e8e3f31bf70dc860ba450234b3",
+    "historyFile": "data/history/JP/longines-price-history.json",
+    "historySha256Before": "bd7f51fde3330e524a28f8c7c316600a0cf3180d361ca13f98d7e9075e9ad392",
+    "lastRunId": 1,
+    "watchCount": 612
+  },
+  "limitations": [
+    "Chrome DevTools and Playwright shared profiles were already running and could not start an isolated browser through the exposed interfaces.",
+    "The web tool returned indexed snapshots with relative crawl-age labels and did not provide live network responses.",
+    "Direct shell network access failed DNS resolution for www.longines.com.",
+    "The official listing snapshot count 658 differs from the previous market count 612 by 46; this is unreconciled and not evidence of additions or removals.",
+    "The JP listing displays the yen symbol; current StoreConfig was not retrievable through a live request."
+  ]
+}

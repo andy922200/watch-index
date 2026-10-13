@@ -1,0 +1,46 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "TW",
+  "locale": "zh-Hant-TW",
+  "observedAt": "2026-10-08T13:02:16Z",
+  "entryUrl": "https://www.longines.com/zh-tw/watches",
+  "collectionMethod": "透過 web connector 讀取 LONGINES 台灣官方腕錶目錄與其官方商品頁的渲染內容。Chrome DevTools MCP、Playwright MCP、CUA iab 及 shell HTTP 的嘗試均未能建立可用的獨立瀏覽器／network session；本次沒有觀察或重放 GraphQL network request。",
+  "marketConfirmation": {
+    "entryUrl": "https://www.longines.com/zh-tw/watches",
+    "locale": "zh-Hant-TW",
+    "signals": ["官方網域 www.longines.com", "zh-tw 路徑", "繁體中文頁面", "商品價格使用 TWD 樣式（$）"],
+    "renderedListingLabel": {
+      "currentPageItemCount": 24,
+      "displayedTotalCount": 542,
+      "pageUrl": "https://www.longines.com/zh-tw/watches",
+      "observedAt": "2026-10-08T13:02:16Z",
+      "limitation": "頁面抽取結果顯示目錄總數標籤與 24 個卡片，但沒有以瀏覽器操作頁面或 network response 驗證分頁／cursor 的全量停止條件。"
+    }
+  },
+  "observations": [
+    {
+      "reference": "L3.809.4.93.9",
+      "watchId": "longines:L3.809.4.93.9",
+      "sourceUrls": [
+        "https://www.longines.com/zh-tw/watches",
+        "https://www.longines.com/zh-tw/p/watch-longines-spirit-pilot-l3-809-4-93-9"
+      ],
+      "observedAt": "2026-10-08T13:02:16Z",
+      "officialView": "官方目錄卡片與官方商品頁渲染內容（web connector）",
+      "raw": {
+        "listingTitle": "LONGINES SPIRIT PILOT 39 mm - 自動上鏈機械機芯腕錶 - 不鏽鋼",
+        "listingPrice": "$82,000.00",
+        "productPageTitle": "LONGINES SPIRIT PILOT | Ø 39.00 mm, 藍色啞光 | L3.809.4.93.9 | LONGINES TW",
+        "productPagePrice": "$82,000.00",
+        "productPagePurchaseCta": "新增至購物車"
+      },
+      "parsed": {
+        "currencyCode": "TWD",
+        "listingStatus": "listed",
+        "price": 82000
+      },
+      "consistency": "目錄卡片與商品頁顯示價格一致；商品頁直接提供新增至購物車 CTA。此為單筆可核對資料，不代表全市場完整收集。"
+    }
+  ]
+}

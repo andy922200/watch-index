@@ -1,0 +1,32 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "DE",
+  "locale": "de-DE",
+  "observedAt": "2026-10-08 (UTC; exact time not recorded)",
+  "entryUrl": "https://www.longines.com/de/watches",
+  "observationType": "official crawler snapshot capability check; not live price evidence",
+  "snapshotMetadata": {
+    "pageTitle": "Longines Uhren | Schweizer Uhren | LONGINES DE",
+    "freshnessLabel": "Crawled: yesterday",
+    "exactCrawlTime": null,
+    "visibleCardCount": 24,
+    "visibleLoadMoreText": "Mehr Ergebnisse anzeigen",
+    "visiblePrices": [
+      {
+        "displayName": "THE LONGINES MASTER COLLECTION 34 mm",
+        "rawPrice": "2.850,00 €",
+        "currentPriceEligible": false,
+        "reason": "prior-day crawler snapshot; complete reference not exposed"
+      },
+      {
+        "displayName": "LONGINES SPIRIT PILOT 39 mm",
+        "rawPrice": "2.550,00 €",
+        "currentPriceEligible": false,
+        "reason": "prior-day crawler snapshot; complete reference not exposed"
+      }
+    ]
+  },
+  "observations": [],
+  "note": "No product observations were admitted as current data. Browser page creation failed; this snapshot cannot establish current price, full listing, or termination."
+}

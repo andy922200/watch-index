@@ -1,0 +1,75 @@
+{
+  "brandId": "longines",
+  "marketCode": "US",
+  "observedAt": "2026-10-08T13:20:00.000Z",
+  "observations": [
+    {
+      "sourceUrl": "https://www.longines.com/en-us/watches",
+      "sourceType": "Official Longines US collection page as returned by web index snapshot",
+      "snapshotCrawlLabel": "Crawled: today",
+      "snapshotPageTitle": "Watches collection | Swiss watches | LONGINES US",
+      "snapshotDisplayedEntries": 24,
+      "snapshotDisplayedTotal": 807,
+      "paginationControlText": "Show more results",
+      "priceValuesStored": false,
+      "interpretation": "Capability evidence only. Snapshot freshness has no exact timestamp, and it does not establish the current live listing, price, availability, or terminal page."
+    },
+    {
+      "tool": "Chrome DevTools MCP",
+      "method": "new_page with isolatedContext longines-us-20261008; list_pages; exact isolatedContext retries after Rolex SG and Rolex JP browser tasks completed",
+      "result": "FAIL",
+      "error": "Browser profile already running on all attempts, including retries after Rolex SG and Rolex JP tasks completed. The final attempt created no pageId; active pages and network request data were not accessible."
+    },
+    {
+      "tool": "Playwright MCP browser_run_code_unsafe",
+      "method": "Create a new page in the received page context, navigate to the official Longines US watches page, and read title/body text",
+      "result": "FAIL",
+      "error": "MCP reported its browser profile was already in use and the code was not run; no new page or DOM/network observation was produced."
+    },
+    {
+      "tool": "Chrome DevTools MCP new_page",
+      "method": "Retry after the Rolex brand's final browser task completed, with isolatedContext longines-us-20261008",
+      "result": "FAIL",
+      "error": "Chrome profile still reported already running; no pageId, list UI, or Network data. Stopped as instructed."
+    }
+  ],
+  "uiFirstPageObservation": {
+    "sourceUrl": "https://www.longines.com/en-us/watches",
+    "observedAt": "2026-10-08T13:35:00.000Z",
+    "method": "CUA native Chrome rendered accessibility tree",
+    "marketSelector": "United States",
+    "geolocationHint": "It seems that you are in Taiwan",
+    "displayedCount": 24,
+    "displayedTotal": 807,
+    "paginationControl": "Show more results",
+    "items": [
+      {"position":1,"name":"LONGINES SPIRIT PILOT 39 mm - Automatic watch - Stainless steel","priceText":"$2,700.00","actionLabel":"Shop now","addToCartButton":true,"reference":null},
+      {"position":2,"name":"LONGINES SPIRIT PILOT 39 mm - Automatic watch - Stainless steel","priceText":"$3,100.00","actionLabel":"Shop now","addToCartButton":true,"reference":null},
+      {"position":3,"name":"LONGINES SPIRIT PILOT FLYBACK 39.50 mm - Manual winding watch - Stainless steel and ceramic bezel","priceText":"$5,250.00","actionLabel":"Shop now","addToCartButton":true,"reference":null},
+      {"position":4,"name":"LONGINES SPIRIT PILOT FLYBACK 39.50 mm - Manual winding watch - Stainless steel and ceramic bezel","priceText":"$5,550.00","actionLabel":"Shop now","addToCartButton":true,"reference":null},
+      {"position":5,"name":"HYDROCONQUEST 30 mm - Quartz watch - Stainless steel","priceText":"$1,950.00","actionLabel":"Notify me when available","addToCartButton":false,"reference":null},
+      {"position":6,"name":"THE LONGINES MASTER COLLECTION 34 mm - Automatic watch - Stainless steel","priceText":"$3,000.00","actionLabel":"Shop now","addToCartButton":true,"reference":null},
+      {"position":7,"name":"HYDROCONQUEST 30 mm - Quartz watch - Stainless steel","priceText":"$1,550.00","actionLabel":"Shop now","addToCartButton":true,"reference":null},
+      {"position":8,"name":"FLAGSHIP HERITAGE 38.50 mm - Automatic watch - Stainless steel","priceText":"$2,150.00","actionLabel":"Shop now","addToCartButton":true,"reference":null},
+      {"position":9,"name":"HYDROCONQUEST 30 mm - Quartz watch - Stainless steel","priceText":"$1,550.00","actionLabel":"Notify me when available","addToCartButton":false,"reference":null},
+      {"position":10,"name":"LONGINES DOLCEVITA 20.80 x 32 mm - Quartz watch - Stainless steel with 18 karat yellow gold crown","priceText":"$2,400.00","actionLabel":"Notify me when available","addToCartButton":false,"reference":null},
+      {"position":11,"name":"HYDROCONQUEST 30 mm - Quartz watch - Stainless steel and red PVD coating","priceText":"$2,200.00","actionLabel":"Notify me when available","addToCartButton":false,"reference":null},
+      {"position":12,"name":"THE LONGINES MASTER COLLECTION CHRONO MONOPUSHER 41 mm - Manual winding watch - Stainless steel","priceText":"$3,900.00","actionLabel":"Notify me when available","addToCartButton":false,"reference":null},
+      {"position":13,"name":"HYDROCONQUEST 30 mm - Quartz watch - Stainless steel and yellow PVD coating","priceText":"$2,200.00","actionLabel":"Notify me when available","addToCartButton":false,"reference":null},
+      {"position":14,"name":"THE LONGINES MASTER COLLECTION 34 mm - Automatic watch - Stainless steel and 18 karat yellow gold cap 200","priceText":"$4,700.00","actionLabel":"Shop now","addToCartButton":true,"reference":null},
+      {"position":15,"name":"HYDROCONQUEST 30 mm - Quartz watch - Stainless steel and red PVD coating","priceText":"$1,750.00","actionLabel":"Notify me when available","addToCartButton":false,"reference":null},
+      {"position":16,"name":"THE LONGINES MASTER COLLECTION CHRONO MOONPHASE 41 mm - Automatic watch - Stainless steel","priceText":"$4,250.00","actionLabel":"Notify me when available","addToCartButton":false,"reference":null},
+      {"position":17,"name":"HYDROCONQUEST 30 mm - Quartz watch - Stainless steel and yellow PVD coating","priceText":"$1,750.00","actionLabel":"Notify me when available","addToCartButton":false,"reference":null},
+      {"position":18,"name":"HYDROCONQUEST 39 mm - Automatic watch - Stainless steel and ceramic bezel","priceText":"$2,200.00","actionLabel":"Notify me when available","addToCartButton":false,"reference":null},
+      {"position":19,"name":"LONGINES DOLCEVITA 20.80 x 32 mm - Quartz watch - Stainless steel","priceText":"$1,650.00","actionLabel":"Shop now","addToCartButton":true,"reference":null},
+      {"position":20,"name":"THE LONGINES MASTER COLLECTION CHRONO MOONPHASE 41 mm - Automatic watch - Stainless steel","priceText":"$4,250.00","actionLabel":"Shop now","addToCartButton":true,"reference":null},
+      {"position":21,"name":"LONGINES MINI DOLCEVITA 21.50 x 29 mm - Quartz watch - Stainless steel","priceText":"$1,850.00","actionLabel":"Notify me when available","addToCartButton":false,"reference":null},
+      {"position":22,"name":"THE LONGINES MASTER COLLECTION 39 mm - Automatic watch - Stainless steel","priceText":"$2,650.00","actionLabel":"Shop now","addToCartButton":true,"reference":null},
+      {"position":23,"name":"FLAGSHIP HERITAGE MOONPHASE 38.50 mm - Automatic watch - Stainless steel","priceText":"$3,450.00","actionLabel":"Shop now","addToCartButton":true,"reference":null},
+      {"position":24,"name":"THE LONGINES MASTER COLLECTION CHRONO MONOPUSHER 41 mm - Manual winding watch - Stainless steel","priceText":"$3,900.00","actionLabel":"Notify me when available","addToCartButton":false,"reference":null}
+    ],
+    "referenceLimitation": "Accessibility links expose truncated product URLs, so no complete reference/SKU was captured. This partial UI sample cannot be reconciled to official history series and is not appended to price history."
+  },
+  "prices": [],
+  "notes": "uiFirstPageObservation contains live rendered first-page prices only. They are retained as partial evidence, not as a complete market collection; no prices were inferred from the web index snapshot and no formal history points were written."
+}

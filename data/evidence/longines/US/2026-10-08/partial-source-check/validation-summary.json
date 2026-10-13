@@ -1,0 +1,82 @@
+{
+  "brandId": "longines",
+  "marketCode": "US",
+  "validatedAt": "2026-10-08T13:20:00.000Z",
+  "runId": null,
+  "result": "PARTIAL",
+  "schemasUsed": [
+    "data/schemas/market.schema.json",
+    "data/schemas/price-history.schema.json"
+  ],
+  "layer1_jsonAndSchema": {
+    "status": "NOT RUN",
+    "notes": "新 evidence JSON 嚴格解析結果另列於 evidenceJsonStrictParsing；正式 market/history Schema 驗證未執行，因正式資料未改動。"
+  },
+  "evidenceJsonStrictParsing": {
+    "status": "PASS",
+    "files": [
+      "data/evidence/longines/US/2026-10-08/partial-source-check/collection-summary.json",
+      "data/evidence/longines/US/2026-10-08/partial-source-check/observations.json",
+      "data/evidence/longines/US/2026-10-08/partial-source-check/validation-summary.json"
+    ],
+    "notes": "落盤後使用 Python json parser、object_pairs_hook 重複 key 檢查及 invalid_constant 檢查。"
+  },
+  "layer2_crossFileRelations": {
+    "status": "NOT RUN",
+    "notes": "未新增或修改正式 market/history 關聯。"
+  },
+  "layer3_sourceReconciliation": {
+    "status": "NOT RUN",
+    "notes": "官方頁僅能由 web index snapshot 讀取；未取得即時全量清單、network response 或分頁停止證據。"
+  },
+  "layer4_completenessAndSpotCheck": {
+    "status": "NOT RUN",
+    "notes": "沒有本輪可採信的價格資料，未進行完整性對帳或商品頁抽查。"
+  },
+  "layer5_changeSafety": {
+    "status": "PASS",
+    "notes": "收集前後目標 market/history 檔案 SHA-256 相同；沒有新增價格點或修改既有 run。"
+  },
+  "baseline": {
+    "marketFile": "data/markets/longines-united-states-market.json",
+    "marketSha256": "2787f1af7179434222b400349617da47720164c655473baeea05694b7f6eee15",
+    "watchCount": 802,
+    "historyFile": "data/history/US/longines-price-history.json",
+    "historySha256": "8d63203ced97e31ef17bc5edbb04e95d005c920e3da53ee57679980aaf23bb1c",
+    "historySeriesCount": 802,
+    "lastRun": {
+      "runId": 1,
+      "collectedAt": "2026-09-25T15:10:00.000Z",
+      "recordCount": 802
+    }
+  },
+  "priceStatistics": null,
+  "independentSpotCheck": {
+    "status": "NOT RUN",
+    "reason": "未取得可採信的本輪價格資料。"
+  },
+  "travelerRefundPolicyCheck": {
+    "status": "NOT REQUIRED",
+    "reason": "純價格更新未修改或重新考證市場政策，本工作單位依指示不讀寫 policy 檔。"
+  },
+  "nicknameResearch": {
+    "status": "NOT RUN",
+    "scope": "price-only",
+    "notes": "本次為純價格更新；沒有新增 market records。"
+  },
+  "readmeUpdate": {
+    "status": "NOT REQUIRED",
+    "updated": false,
+    "sections": [],
+    "reason": "未確認任何長期市場或資料契約變更。"
+  },
+  "limitations": [
+    "Chrome DevTools MCP 連續回報 browser profile already running；Rolex SG 與 Rolex JP 結束後追加重試仍失敗，無法建立獨立頁面，也無法查看活躍頁面或取得 network requests。依統籌指示停止重試。",
+    "Rolex 品牌最後一個 browser 任務結束後，Chrome DevTools MCP 仍 profile-lock；此為最後一次重試，依指示不再繼續。",
+    "Playwright MCP 依指定新 page 程式呼叫時，server 在執行 code 前回報 browser profile already in use；未建立頁面、未取得新 DOM 或 network evidence。",
+    "CUA 原生 Chrome 成功渲染 Longines US 首批 24 項，但獨立 Chrome session 建立失敗，且原生 Chrome 視窗焦點切換到既有 Gmail／WordPress 分頁，無法穩定點擊 Show more results。",
+    "AX 顯示 US locale/selector 與 807 total，同時出現 Taiwan geolocation hint；此次不推定 geo-specific pricing equivalence。",
+    "官方 web snapshot 顯示 24 項與總數 807，但僅作來源能力證據，不當作本輪即時價格或完整性證據。",
+    "AX 商品連結的 reference URL 被截斷，首批 24 價格無法與 market/history reference series 對帳；沒有本輪 runId，也未更新正式 market/history。"
+  ]
+}

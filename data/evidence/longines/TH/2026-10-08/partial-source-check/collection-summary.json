@@ -1,0 +1,70 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "TH",
+  "task": "pure-price-update",
+  "status": "partial; no history update because only an incomplete prior-day crawler snapshot was available",
+  "locale": "th-TH",
+  "salesRegion": "Thailand",
+  "entryPoint": "https://www.longines.com/th/watches",
+  "sourceAttempts": [
+    {
+      "attempt": 1,
+      "observedOn": "2026-10-08 (UTC; exact time not recorded)",
+      "method": "web__run open official URL",
+      "url": "https://www.longines.com/th/watches",
+      "result": "Official-page text snapshot returned; crawler metadata says 'Crawled: yesterday' with no exact crawl timestamp.",
+      "pageTitle": "นาฬิกาทั้งหมดของ Longines | นาฬิกาสวิสสุดหรู | p1 | LONGINES TH",
+      "visiblePageFacts": {
+        "visibleCardCount": null,
+        "currencyExample": "THB",
+        "purchaseCtaExample": "ค้นหาร้านค้าปลีก",
+        "paginationHint": "p1 in page title",
+        "freshness": "prior day per crawler metadata"
+      },
+      "limitation": "The returned page text is an incomplete snapshot, not a live browser/network capture. Complete reference numbers, full listing coverage, and a terminal signal were unavailable; the page title's p1 is not interpreted as a completeness signal."
+    },
+    {
+      "attempt": 2,
+      "observedOn": "2026-10-08 (UTC; exact time not recorded)",
+      "method": "Shared Chrome profile browser tools",
+      "result": "Not retried, per task instruction.",
+      "limitation": "No live browser pageId; network requests could not be inspected in this work unit."
+    }
+  ],
+  "networkDiscovery": {
+    "required": true,
+    "toolConfigured": true,
+    "toolAttempted": false,
+    "status": "NOT RUN / live browser capability unavailable in this work unit",
+    "reason": "No live browser page was created or available. The crawler snapshot does not expose current network requests/responses; shared Chrome profile retries were explicitly disallowed."
+  },
+  "targetCondition": {
+    "pathAndLanguageSignal": "Official URL uses /th/watches; page title and text are Thai; visible price examples use THB.",
+    "liveMarketConditionVerified": false,
+    "priorMarketSourceEvidence": "Existing 2026-10-03 TH collection evidence is baseline context only and was not reused as current prices."
+  },
+  "checkpoint": {
+    "completedScope": "Inspected official snapshot metadata, Thai page title, THB price examples, and retailer-finder CTA examples.",
+    "lastSuccessfulPosition": "Partial page-one crawler snapshot only; not a live collection cursor.",
+    "uniqueConfigurationsObserved": 0,
+    "officialTotalCount": null,
+    "stopSignal": null,
+    "observationsPath": "data/evidence/longines/TH/2026-10-08/partial-source-check/observations.json",
+    "incompleteScope": "Current full listing, full references, current prices and listing states, pagination/cursor termination, current network response, and independent current product-page checks.",
+    "suggestedResume": "Resume with an available dedicated live browser context; verify TH market and THB, inspect official ProductList responses and stop condition, then independently inspect current product pages. Do not use the prior-day snapshot as a current price source."
+  },
+  "baseline": {
+    "marketPath": "data/markets/longines-thailand-market.json",
+    "marketSha256Before": "32f2f90531c8ada27a180dcb7822c894b3701902469baa748563d25ca21c8e87",
+    "historyPath": "data/history/TH/longines-price-history.json",
+    "historySha256Before": "82fefad9fc5f788b7d031282d2b0321ede85d02fe223b80949b83b11576c881d",
+    "lastHistoryRunId": 1,
+    "lastHistoryCollectedAt": "2026-10-02T23:55:35.793Z"
+  },
+  "formalDataChanges": {
+    "market": "none",
+    "history": "none; no run appended",
+    "catalog": "none"
+  }
+}

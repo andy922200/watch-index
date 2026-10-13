@@ -1,0 +1,158 @@
+{
+  "brandId": "longines",
+  "marketCode": "US",
+  "task": "price-update",
+  "validatedAt": "2026-10-12T00:00:00Z",
+  "overallStatus": "PARTIAL",
+  "sourceListingReconciliation": {
+    "status": "PASS",
+    "officialTotal": 807,
+    "uniqueReferences": 807,
+    "rawRows": 807,
+    "duplicates": 0,
+    "newToMarket": [
+      "L3.369.3.12.7",
+      "L3.369.3.18.7",
+      "L3.369.3.87.7",
+      "L3.369.3.88.7",
+      "L3.369.4.09.6",
+      "L3.369.4.12.6",
+      "L3.369.4.87.6"
+    ],
+    "previouslyInMarketButAbsent": [
+      "L8.115.5.31.7",
+      "L8.115.5.61.7"
+    ]
+  },
+  "priceParseAndCurrency": {
+    "status": "PASS",
+    "currencyCodes": [
+      "USD"
+    ],
+    "invalidOrMissingPrices": []
+  },
+  "historyPriceComparison": {
+    "status": "PASS",
+    "existingMarketItemsCompared": 800,
+    "missingHistorySeries": [],
+    "priceDifferences": [],
+    "newReferencePricesPendingInitialHistory": []
+  },
+  "catalogCrossCheck": {
+    "status": "PASS",
+    "sourceRefsMissingFromCatalog": [],
+    "catalogReferencesAddedThisRun": [
+      "L3.369.3.87.7"
+    ]
+  },
+  "productPageCtaAndListingStatus": {
+    "status": "PARTIAL",
+    "detail": "Every new-to-market reference in this complete source was opened on its exact official product page. Direct purchase and notify-me map to listed per user instruction; find-retailer-only maps to retailer-only. Existing rows were not individually reopened, so their historical listingStatus values were preserved. Follow-up: 1 existing exact product page CTA check(s) were recorded. Per-reference listing signals are separately recorded in data/evidence/longines/US/2026-10-12/observations.json#/supplementalEvidence/existingCtaRecheck and are not represented as direct product-page CTA checks. Follow-up completed through 2026-10-13: attempted 807 references, confirmed 803 exact product pages at least once, could not reach 4 exact pages after retries, and left 0 confirmed-page CTA(s) unresolved. Full records: observations.json#/supplementalEvidence/existingProductPageCtaChecks.",
+    "checkedNewCandidates": 7,
+    "newCandidateStatusCounts": {
+      "listed": 7
+    },
+    "existingRowsCtaAudit": "NOT RUN",
+    "existingProductPageCtaFollowUp": {
+      "status": "PARTIAL",
+      "expectedReferences": 807,
+      "attemptedReferences": 807,
+      "exactProductPagesConfirmedAtLeastOnce": 803,
+      "noExactProductPageAfterRetries": 4,
+      "verifiedPagesWithUnresolvedPurchaseCta": 0,
+      "entriesWithRetryAttempts": 4,
+      "individualRetryAttempts": 4,
+      "completedThrough": "2026-10-13",
+      "evidencePath": "data/evidence/longines/US/2026-10-12/observations.json#/supplementalEvidence/existingProductPageCtaChecks"
+    }
+  },
+  "independentOfficialSpotCheck": {
+    "status": "PARTIAL",
+    "detail": "Exact official product pages were checked for all new candidates. The required broad 19–21 representative sample of unchanged listings was not conducted. Follow-up: 2 absent-old-reference URLs were attempted; 2 redirected to market home, so no product-page CTA was inspected.",
+    "newCandidateCount": 7,
+    "unchangedListingSample": "NOT RUN"
+  },
+  "strictJsonAndSchema": {
+    "status": "PASS",
+    "strictJsonFileCount": 644,
+    "schemaValidatedFormalFileCount": 89,
+    "detail": "Strict JSON parsing rejected duplicate keys and invalid constants. Catalog/market/history instances validated against local schemas using the repository-pinned Ajv 6.15 compiler; the Draft 2020-12 metaschema URI was removed because this engine does not implement that metaschema, while local constraints, formats, references, and conditional rules compiled and passed."
+  },
+  "formalWriteValidation": {
+    "status": "PASS",
+    "detail": "Cross-brand validator passed all 43 market files. Official source refs and new prices reconcile; old market row objects were preserved; all old price series remain prefixes; only evidence-backed additions and status points were appended; protected markets and schemas were unchanged."
+  },
+  "limitations": [
+    "The broad independent 19–21 item sample of unchanged products was not run.",
+    "Germany source total and unique-reference count differ by one; its formal market/history remain unchanged pending resolution.",
+    "Evidence records observation date only; exact per-request timestamps were not retained.",
+    "One previously uncatalogued official US reference was added to the Longines catalog from its directly checked product page.",
+    "Existing product-page CTA audit attempted all 807 references through 2026-10-13: 803 exact product pages were confirmed at least once, 4 could not reach an exact product page after retries, and 0 confirmed pages had unresolved purchase CTA. Full attempts are in observations.json supplementalEvidence.",
+    "2 representative absent-old-reference URLs redirect to the localized market home; together with absence from the complete market listing this supports market-specific not-listed, not global discontinuation."
+  ],
+  "newCandidateProductPageVerification": {
+    "status": "PASS",
+    "checkedCount": 7,
+    "failedPages": [],
+    "referenceMismatches": [],
+    "priceOrCurrencyMismatches": [],
+    "ctaClassCounts": {
+      "listed": 7
+    }
+  },
+  "nicknameResearch": {
+    "status": "NOT RUN",
+    "scope": "price-only",
+    "languages": [],
+    "queries": [],
+    "sourcesReviewed": 0,
+    "candidateCount": 0,
+    "acceptedCollectionAliasCount": 0,
+    "acceptedLocalNicknameCount": 0,
+    "rejectedCandidates": [],
+    "notes": "本次為價格更新與市場列出狀態同步；俗稱研究不在範圍內，新列 localNicknames 保持空白，不代表已確認查無俗稱。"
+  },
+  "readmeUpdate": {
+    "status": "NOT REQUIRED",
+    "updated": false,
+    "sections": [],
+    "reason": "README 記錄的 Longines 市場覆蓋與網站選單未改變，文件未列配置總數。"
+  },
+  "notListedOldReferenceRepresentativeCheck": {
+    "status": "PASS",
+    "requestedSampleRange": "19–21",
+    "attemptedCount": 2,
+    "productPagesLoaded": 0,
+    "redirectedToMarketHomeCount": 2,
+    "marketNotListedConclusionCount": 2,
+    "evidencePath": "data/evidence/longines/US/2026-10-12/observations.json#/supplementalEvidence/notListedRepresentativeSampleChecks",
+    "detail": "每款均未列於本市場完整官方清單，且在地官方商品網址導回本市場首頁；合併判為該市場 not-listed。這不表示全球停產。"
+  },
+  "existingCtaListingSignalRecheck": {
+    "status": "PARTIAL",
+    "existingFormalReferenceCount": 809,
+    "currentOfficialListingOverlapCount": 807,
+    "listingSignalCount": 807,
+    "missingListingSignalCount": 0,
+    "directProductPageCtaChecks": 1,
+    "detail": "809 existing references: 807 also occur in this run's complete current source; 807 have informative listing-level purchase signals; 0 lack informative signal fields. Direct exact product-page CTA checks in this follow-up: 1. Listing signals do not substitute for individual product-page CTA checks.",
+    "listingSignalComparisonCandidates": {
+      "inferredMatch": 807,
+      "possibleDifference": 0,
+      "ambiguous": 0,
+      "absentFromCurrentSource": 2
+    }
+  },
+  "existingProductPageCtaRecheck": {
+    "status": "PARTIAL",
+    "expectedReferences": 807,
+    "attemptedReferences": 807,
+    "exactProductPagesConfirmedAtLeastOnce": 803,
+    "noExactProductPageAfterRetries": 4,
+    "verifiedPagesWithUnresolvedPurchaseCta": 0,
+    "entriesWithRetryAttempts": 4,
+    "individualRetryAttempts": 4,
+    "completedThrough": "2026-10-13",
+    "evidencePath": "data/evidence/longines/US/2026-10-12/observations.json#/supplementalEvidence/existingProductPageCtaChecks"
+  }
+}

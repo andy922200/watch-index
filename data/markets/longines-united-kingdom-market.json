@@ -2,11 +2,11 @@
   "$schema": "../schemas/watch-market.schema.json",
   "schemaVersion": 4,
   "brandId": "longines",
-  "collectedAt": "2026-09-25T14:20:00.000Z",
+  "collectedAt": "2026-10-12T00:00:00.000Z",
   "salesRegion": "United Kingdom",
   "marketCode": "GB",
   "locale": "en-GB",
-  "watchCount": 806,
+  "watchCount": 810,
   "source": {
     "name": "LONGINES United Kingdom Official Website",
     "url": "https://www.longines.com/en-gb/watches"
@@ -11417,6 +11417,62 @@
       "dialDescription": "Mint Blue sunray",
       "isNewModel": false,
       "productUrl": "https://www.longines.com/en-gb/p/watch-longines-primaluna-l8-142-4-97-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.369.4.09.6",
+      "reference": "L3.369.4.09.6",
+      "collectionName": "HYDROCONQUEST",
+      "modelName": "HYDROCONQUEST",
+      "caseDescription": "Ø 30.00 mm, Stainless steel",
+      "dialDescription": "Sunray green",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-gb/p/watch-hydroconquest-l3-369-4-09-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.369.4.12.6",
+      "reference": "L3.369.4.12.6",
+      "collectionName": "HYDROCONQUEST",
+      "modelName": "HYDROCONQUEST",
+      "caseDescription": "Ø 30.00 mm, Stainless steel",
+      "dialDescription": "White matt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-gb/p/watch-hydroconquest-l3-369-4-12-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.369.4.87.6",
+      "reference": "L3.369.4.87.6",
+      "collectionName": "HYDROCONQUEST",
+      "modelName": "HYDROCONQUEST",
+      "caseDescription": "Ø 30.00 mm, Stainless steel",
+      "dialDescription": "White mother-of-pearl",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-gb/p/watch-hydroconquest-l3-369-4-87-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L8.123.4.67.6",
+      "reference": "L8.123.4.67.6",
+      "collectionName": "LONGINES PRIMALUNA",
+      "modelName": "LONGINES PRIMALUNA",
+      "caseDescription": "Ø 30.00 mm, Stainless steel",
+      "dialDescription": "Bordeaux",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/en-gb/p/watch-longines-primaluna-l8-123-4-67-6",
       "localNicknames": {
         "names": [],
         "sources": []

@@ -2,11 +2,11 @@
   "$schema": "../schemas/watch-market.schema.json",
   "schemaVersion": 4,
   "brandId": "longines",
-  "collectedAt": "2026-09-27T15:04:58.000Z",
+  "collectedAt": "2026-10-12T00:00:00.000Z",
   "salesRegion": "Germany",
   "marketCode": "DE",
   "locale": "de-DE",
-  "watchCount": 804,
+  "watchCount": 807,
   "source": {
     "name": "LONGINES Germany Official Website",
     "url": "https://www.longines.com/de/watches"
@@ -11389,6 +11389,48 @@
       "dialDescription": "Mintfarben mit Sonnenstrahl-Dekor",
       "isNewModel": false,
       "productUrl": "https://www.longines.com/de/p/watch-longines-primaluna-l8-142-4-97-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.369.4.09.6",
+      "reference": "L3.369.4.09.6",
+      "collectionName": "HYDROCONQUEST",
+      "modelName": "HYDROCONQUEST",
+      "caseDescription": "Ø 30.00 mm, Edelstahl",
+      "dialDescription": "Grün mit Sonnenschliff",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/de/p/watch-hydroconquest-l3-369-4-09-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.369.4.12.6",
+      "reference": "L3.369.4.12.6",
+      "collectionName": "HYDROCONQUEST",
+      "modelName": "HYDROCONQUEST",
+      "caseDescription": "Ø 30.00 mm, Edelstahl",
+      "dialDescription": "Mattweiß",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/de/p/watch-hydroconquest-l3-369-4-12-6",
+      "localNicknames": {
+        "names": [],
+        "sources": []
+      }
+    },
+    {
+      "watchId": "longines:L3.369.4.87.6",
+      "reference": "L3.369.4.87.6",
+      "collectionName": "HYDROCONQUEST",
+      "modelName": "HYDROCONQUEST",
+      "caseDescription": "Ø 30.00 mm, Edelstahl",
+      "dialDescription": "Weißes Perlmutt",
+      "isNewModel": true,
+      "productUrl": "https://www.longines.com/de/p/watch-hydroconquest-l3-369-4-87-6",
       "localNicknames": {
         "names": [],
         "sources": []

@@ -1,0 +1,99 @@
+{
+  "brandId": "longines",
+  "marketCode": "TW",
+  "locale": "zh-Hant-TW",
+  "collectedAt": "2026-10-08T13:02:16Z",
+  "entryUrl": "https://www.longines.com/zh-tw/watches",
+  "attempts": [
+    {
+      "attempt": 1,
+      "method": "Chrome DevTools MCP",
+      "scope": "建立 Longines TW 獨立頁並檢查 network request",
+      "result": "FAIL",
+      "error": "new_page 與 list_pages 回報 Chrome profile 已有執行中的 browser，需 --isolated 或不同 userDataDir；此工具介面無法為本次請求建立隔離實例。",
+      "timeNote": "工具未提供單次呼叫時間戳；嘗試順序依序記錄於同一收集輪次，總觀察時間為 2026-10-08T13:02:16Z。"
+    },
+    {
+      "attempt": 2,
+      "method": "Playwright MCP browser_tabs",
+      "scope": "建立 Longines TW 獨立分頁",
+      "result": "FAIL",
+      "error": "回報 browser profile 已被使用，需 isolated instance。",
+      "timeNote": "工具未提供單次呼叫時間戳；嘗試順序依序記錄於同一收集輪次，總觀察時間為 2026-10-08T13:02:16Z。"
+    },
+    {
+      "attempt": 3,
+      "method": "CUA browser inventory / iab",
+      "scope": "使用獨立 in-app browser 分頁開啟官方入口",
+      "result": "FAIL",
+      "error": "browser inventory 為空，iab 回報 Browser is not available。另嘗試原生 Chrome 新無痕視窗，但未能建立可讀取 network 的本次專用頁面 session。",
+      "timeNote": "工具未提供單次呼叫時間戳；嘗試順序依序記錄於同一收集輪次，總觀察時間為 2026-10-08T13:02:16Z。"
+    },
+    {
+      "attempt": 4,
+      "method": "curl --http1.1",
+      "scope": "官方台灣入口 https://www.longines.com/zh-tw/watches",
+      "result": "FAIL",
+      "error": "curl 無法解析 www.longines.com 主機名稱（curl exit 6；HTTP status 000；0 bytes）。",
+      "timeNote": "工具未提供單次呼叫時間戳；嘗試順序依序記錄於同一收集輪次，總觀察時間為 2026-10-08T13:02:16Z。"
+    },
+    {
+      "attempt": 5,
+      "method": "web connector rendered page open/click",
+      "scope": "官方腕錶目錄及首件商品頁",
+      "result": "PARTIAL",
+      "error": null,
+      "resultSummary": "讀取到目錄頁首 24 筆卡片、頁面標示總數 542，以及 L3.809.4.93.9 商品頁上的 TWD 82,000 與新增至購物車 CTA；未取得可檢查的 network response 或其他頁面。",
+      "timeNote": "工具未提供單次呼叫時間戳；嘗試順序依序記錄於同一收集輪次，總觀察時間為 2026-10-08T13:02:16Z。"
+    }
+  ],
+  "sourceDiscovery": {
+    "officialSource": "https://www.longines.com/zh-tw/watches",
+    "sourceType": "官方台灣腕錶目錄（渲染頁）及商品頁",
+    "browserNetworkDiscoveryRequired": true,
+    "networkDiscoveryResult": "FAIL / capability unavailable in this shared browser session",
+    "knownEndpoint": "既有 TW evidence 記錄 2026-09-24 瀏覽器實際觀察到 /api/graphql ProductList；本次未能重新觀察或驗證，故沒有用舊 evidence 代替本輪來源事實，也未呼叫該 endpoint。"
+  },
+  "pagination": {
+    "visiblePageSize": 24,
+    "renderedOfficialTotalLabel": 542,
+    "pagesRequested": 1,
+    "stopEvidence": null,
+    "status": "INCOMPLETE",
+    "explanation": "只讀取官方渲染頁抽取到的首屏卡片；未操作「顯示更多結果」或讀取本輪 network response，未驗證完整頁數、cursor 或停止條件。官方頁面標示總數 542，不能據此將與舊 544 筆基準的差額判定為下架。"
+  },
+  "counts": {
+    "renderedListingItemsObserved": 24,
+    "completeUniqueReferenceCount": null,
+    "fullyObservedProductPriceCount": 1,
+    "duplicateReferenceCount": null,
+    "updatedFormalRecords": 0,
+    "confirmedPriceChangeCount": 0,
+    "historyPointsAppended": 0,
+    "reasonNoPricePoint": "L3.809.4.93.9 官方觀察價 TWD 82,000 與本地既有 runId 1 價格相同；指南禁止相鄰狀態／價格完全相同時重複追加。因全市場收集未完成，不新增 collectionRun。"
+  },
+  "limitations": [
+    "Chrome DevTools 與 Playwright 瀏覽器 profile 正由其他程序使用，無法建立本市場獨立分頁；CUA iab 不可用。",
+    "shell 直接 HTTP 請求因 DNS 解析失敗未取得內容。",
+    "web connector 可見頁面是部分渲染抽取，沒有提供可驗證的 network request/response，也沒有可操作的分頁停止證據。",
+    "雖然官方入口頁目前顯示 542 款，仍不能確認是否同一篩選集合或完成官方分頁對帳；沒有為缺少的 2 筆設定 not-listed。",
+    "沒有追加 history collectionRun，也沒有修改 market/history/catalog。"
+  ],
+  "attemptTimePrecision": "individual tool-call timestamps unavailable; the run timestamp is collectedAt",
+  "networkDiscovery": {
+    "required": true,
+    "builtInBrowserStatus": "configured but shared profile unavailable",
+    "networkToolConfigured": true,
+    "networkToolAttempted": true,
+    "networkToolResult": "FAIL",
+    "toolsAttempted": [
+      "Chrome DevTools MCP",
+      "Playwright MCP",
+      "CUA iab",
+      "curl",
+      "web connector rendered-page fallback"
+    ],
+    "fallbackTool": "web connector rendered-page open/click",
+    "notes": "web connector 能讀取官方渲染頁局部內容，但不是本次瀏覽器 network inspector；沒有宣稱觀察到 API 請求或完整回應。"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "IT",
+  "task": "pure-price-update",
+  "status": "partial; no history update because only an incomplete prior-day crawler snapshot was available",
+  "locale": "it-IT",
+  "salesRegion": "Italy",
+  "entryPoint": "https://www.longines.com/it/watches",
+  "sourceAttempts": [
+    {
+      "attempt": 1,
+      "observedOn": "2026-10-08 (UTC; exact time not recorded)",
+      "method": "web__run open official URL",
+      "url": "https://www.longines.com/it/watches",
+      "result": "Official-page text snapshot returned; crawler metadata says 'Crawled: yesterday' with no exact crawl timestamp.",
+      "pageTitle": "Orologi Longines | Orologi Svizzeri | LONGINES IT",
+      "visiblePageFacts": {
+        "visibleProductCards": 24,
+        "loadMoreControl": "Mostra più risultati",
+        "snapshotFooterNumbers": [
+          24,
+          805
+        ],
+        "currencyExample": "EUR",
+        "freshness": "prior day per crawler metadata"
+      },
+      "limitation": "Snapshot shows only the first 24 visible cards, exposes no complete reference numbers for sample cards, and provides no current network response or terminal evidence. Footer numbers 24 and 805 are recorded verbatim and not interpreted as total count or a stop condition."
+    },
+    {
+      "attempt": 2,
+      "observedOn": "2026-10-08 (UTC; exact time not recorded)",
+      "method": "Shared-profile browser tools",
+      "result": "Not retried, per task instruction to avoid shared-profile retries.",
+      "limitation": "No live browser pageId; therefore Chrome DevTools network request tools could not be used in this work unit."
+    }
+  ],
+  "networkDiscovery": {
+    "required": true,
+    "toolConfigured": true,
+    "toolAttempted": false,
+    "status": "NOT RUN / capability unavailable in this work unit",
+    "reason": "No live browser page was created or available. The web snapshot does not expose requests or responses. Shared-profile retries were prohibited by assignment."
+  },
+  "targetCondition": {
+    "pathAndLanguageSignal": "The official URL uses /it/watches; snapshot page title and content are Italian; visible price examples are EUR-formatted.",
+    "liveMarketConditionVerified": false,
+    "priorMarketSourceEvidence": "Existing 2026-09-29 IT collection evidence documents the official Italy route and store request; that earlier evidence was not reused as current prices."
+  },
+  "checkpoint": {
+    "completedScope": "Inspected official page snapshot metadata, Italian market page title, 24 visible cards, EUR-format examples, and load-more control.",
+    "lastSuccessfulPosition": "First 24 visible cards in prior-day crawler snapshot; not a live collection cursor.",
+    "uniqueConfigurationsObserved": 0,
+    "officialTotalCount": null,
+    "stopSignal": null,
+    "observationsPath": "data/evidence/longines/IT/2026-10-08/partial-source-check/observations.json",
+    "incompleteScope": "Current full listing, full references, current prices and listing states, pagination/cursor termination, live network response, and independent current product-page checks.",
+    "suggestedResume": "Resume when a dedicated live browser context is available; confirm IT/EUR on the rendered official site, inspect ProductList network responses and terminal evidence, then independently spot-check current product pages. Do not use this prior-day snapshot as a current price source."
+  },
+  "baseline": {
+    "marketPath": "data/markets/longines-italy-market.json",
+    "marketSha256Before": "7bb7781603ec2221146b0905531c9f401bfa0ebbefc07091e88f61ae79e3147b",
+    "historyPath": "data/history/IT/longines-price-history.json",
+    "historySha256Before": "b732a11dc6e6f2fedde91e67fddbb6eb47a17a2d1540ad89b8d5bae78d461849",
+    "lastHistoryRunId": 1,
+    "lastHistoryCollectedAt": "2026-09-29T11:05:55.000Z"
+  },
+  "formalDataChanges": {
+    "market": "none",
+    "history": "none; no run appended",
+    "catalog": "none"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "brandId": "longines",
+  "marketCode": "ES",
+  "validatedAt": "2026-10-08T15:07:35Z",
+  "status": "partial",
+  "checks": {
+    "strictJson": {
+      "status": "PASS",
+      "detail": "Strict JSON parsing passed for all three new checkpoint files; duplicate keys and NaN/Infinity were rejected."
+    },
+    "schema": {
+      "status": "NOT RUN",
+      "detail": "No formal market/history update was made; evidence is outside formal data schemas."
+    },
+    "crossFileWatchRelations": {
+      "status": "NOT RUN",
+      "detail": "No current full configuration observations were collected."
+    },
+    "officialSourceTraceability": {
+      "status": "NOT RUN",
+      "detail": "Only a prior-day official page snapshot was available; not accepted as current price evidence."
+    },
+    "fullListingStopEvidence": {
+      "status": "NOT RUN",
+      "detail": "Snapshot exposes a load-more control and does not prove listing termination."
+    },
+    "networkInspection": {
+      "status": "NOT RUN",
+      "detail": "No live browser pageId was available."
+    },
+    "independentSpotCheck": {
+      "status": "NOT RUN",
+      "detail": "No current product page was inspected in a live browser."
+    },
+    "appendOnlyAndProtectedScope": {
+      "status": "PASS",
+      "detail": "Post-write SHA-256 hashes of Longines ES market and history match pre-write hashes; no formal market/history/catalog data changed."
+    }
+  },
+  "limitations": [
+    "Official web snapshot metadata says it was crawled the prior day and provides no exact crawl time.",
+    "Only 24 visible product cards were returned; no complete list or terminal signal was available.",
+    "Sample cards did not expose complete reference numbers, so their prices cannot be reconciled to formal watch IDs.",
+    "Live browser/network inspection and current product-page checks were not run."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "CH",
+  "locale": "de-CH",
+  "observedOn": "2026-10-08 (UTC; exact time not recorded)",
+  "entryUrl": "https://www.longines.com/de-ch/watches",
+  "observationType": "official crawler snapshot capability check; not live price evidence",
+  "snapshotMetadata": {
+    "pageTitle": "Longines Uhren | Schweizer Uhren | LONGINES CH",
+    "freshnessLabel": "Crawled: today",
+    "exactCrawlTime": null,
+    "visibleCardCount": 24,
+    "loadMoreText": "Mehr Ergebnisse anzeigen",
+    "verbatimFooterNumbers": [
+      24,
+      805
+    ],
+    "samplePrices": [
+      {
+        "displayName": "THE LONGINES MASTER COLLECTION CHRONO MOONPHASE 41 mm",
+        "rawPrice": "CHF 3’500.00",
+        "currentPriceEligible": false,
+        "reason": "Crawler snapshot, not a live browser/network observation; no full reference observed."
+      },
+      {
+        "displayName": "CONQUEST 41 mm",
+        "rawPrice": "CHF 1’950.00",
+        "currentPriceEligible": false,
+        "reason": "Crawler snapshot, not a live browser/network observation; no full reference observed."
+      }
+    ]
+  },
+  "observations": [],
+  "note": "Snapshot examples only document what the official snapshot exposed. No current product observations were admitted; the snapshot cannot prove current prices or complete listing coverage."
+}

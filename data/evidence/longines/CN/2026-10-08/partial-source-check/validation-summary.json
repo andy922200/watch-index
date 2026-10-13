@@ -1,0 +1,34 @@
+{
+  "brandId": "longines",
+  "marketCode": "CN",
+  "validatedAt": "2026-10-08T13:16:23.000Z",
+  "validationScope": "Partial homepage snapshot checkpoint only; no market/history writes.",
+  "checks": {
+    "strictJsonParseAndDuplicateKeyCheck": {"status":"PASS","detail":"New evidence files are strictly parsed after writing with duplicate-key and invalid-constant rejection."},
+    "marketAndHistorySchema": {"status":"NOT RUN","detail":"No formal market/history data changed."},
+    "marketHistoryCrossFileRelations": {"status":"NOT RUN","detail":"No collectionRun or price point was added."},
+    "sourceReconciliation": {"status":"PARTIAL","detail":"Fifteen CNY homepage-card snapshot observations record exact displayed reference, name, raw price, and visible selection badges/CTAs; product URLs and live product-page responses were unavailable."},
+    "completenessAndStopEvidence": {"status":"NOT RUN","detail":"The full official watches list could not be retrieved; no total count or pagination stop signal was observed. Previous formal market count is 666 and is not compared to the 15-card homepage selection."},
+    "changeSafety": {"status":"PASS","detail":"Only new Longines CN checkpoint evidence was added. CN market/history files remain at baseline hashes; catalog, traveler policy, and other markets were not read or changed."},
+    "nicknameResearch": {"status":"NOT RUN (out of scope)"},
+    "readmeSynchronization": {"status":"NOT RUN","detail":"A homepage curated snapshot does not establish a lasting change to the project’s market description."}
+  },
+  "baseline": {
+    "marketFile":"data/markets/longines-china-market.json",
+    "marketSha256Before":"00e4467235cc5cfe2fe73e4c70dd6276e2b3eb800f8c0d896543298955d8517c",
+    "historyFile":"data/history/CN/longines-price-history.json",
+    "historySha256Before":"95070341ca8bccad1756438c6ef7ce46db67f7e1393b9fcaa001272ceff5d31f",
+    "lastRunId":1,
+    "recordCount":666,
+    "currencyCode":"CNY",
+    "priceType":"tax-include",
+    "taxRatePercent":13
+  },
+  "limitations": [
+    "Chrome DevTools and Playwright browser profiles remained running/in use on the final retry, including after the coordinator reported Rolex HK had released Chrome DevTools; no isolated startup option was available.",
+    "CUA reported no available browser surfaces; Chrome and in-app browser creation were unavailable.",
+    "The web tool timed out fetching the full CN watches listing; its fallback official-homepage search snapshot says Crawled: today but gives no exact origin timestamp.",
+    "Direct HTTP failed DNS resolution for www.longines.cn.",
+    "The available source was a curated homepage carousel, not a current full market listing; it cannot establish a present-day price change or delisting."
+  ]
+}

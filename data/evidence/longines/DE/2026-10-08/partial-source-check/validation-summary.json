@@ -1,0 +1,46 @@
+{
+  "brandId": "longines",
+  "marketCode": "DE",
+  "validatedAt": "2026-10-08T15:05:19Z",
+  "status": "partial",
+  "checks": {
+    "strictJson": {
+      "status": "PASS",
+      "detail": "Strict JSON parsing passed for the three new checkpoint files, rejecting duplicate keys and NaN/Infinity."
+    },
+    "schema": {
+      "status": "NOT RUN",
+      "detail": "No formal market/history change was made; evidence is outside formal schemas."
+    },
+    "crossFileWatchRelations": {
+      "status": "NOT RUN",
+      "detail": "No current official configuration observations were collected."
+    },
+    "officialSourceTraceability": {
+      "status": "NOT RUN",
+      "detail": "Only a crawler snapshot with prior-day freshness was accessible; it was not used as current price evidence."
+    },
+    "fullListingStopEvidence": {
+      "status": "NOT RUN",
+      "detail": "The snapshot has a load-more control and does not expose a verifiable full-list terminal signal."
+    },
+    "networkInspection": {
+      "status": "NOT RUN",
+      "detail": "No pageId was available after browser creation errors."
+    },
+    "independentSpotCheck": {
+      "status": "NOT RUN",
+      "detail": "No current product page was available in a live browser."
+    },
+    "appendOnlyAndProtectedScope": {
+      "status": "PASS",
+      "detail": "Post-write hashes of Longines DE market and history match their pre-write hashes; no market/history/catalog data was changed."
+    }
+  },
+  "limitations": [
+    "Playwright browser profile was already in use; new tab creation failed.",
+    "The CUA in-app browser provider was unavailable.",
+    "web__run returned an official-page snapshot crawled the prior day, without exact crawl time; it was not suitable as current price evidence.",
+    "Full listing and pagination terminal evidence were not available; no history update was made."
+  ]
+}

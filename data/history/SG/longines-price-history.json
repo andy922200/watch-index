@@ -11,6 +11,11 @@
       "runId": 1,
       "collectedAt": "2026-09-27T00:00:00.000Z",
       "recordCount": 755
+    },
+    {
+      "runId": 2,
+      "collectedAt": "2026-10-12T00:00:00.000Z",
+      "recordCount": 803
     }
   ],
   "priceSeries": {
@@ -5059,6 +5064,11 @@
         "runId": 1,
         "listingStatus": "retailer-only",
         "price": 5550
+      },
+      {
+        "runId": 2,
+        "listingStatus": "not-listed",
+        "price": null
       }
     ],
     "longines:L8.115.5.61.7": [
@@ -5066,6 +5076,11 @@
         "runId": 1,
         "listingStatus": "retailer-only",
         "price": 5550
+      },
+      {
+        "runId": 2,
+        "listingStatus": "not-listed",
+        "price": null
       }
     ],
     "longines:L8.116.4.71.6": [
@@ -5297,6 +5312,356 @@
         "runId": 1,
         "listingStatus": "retailer-only",
         "price": 2450
+      }
+    ],
+    "longines:L1.649.4.52.0": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 4200
+      }
+    ],
+    "longines:L2.409.8.87.2": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 17070
+      }
+    ],
+    "longines:L3.320.5.80.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 5100
+      }
+    ],
+    "longines:L3.350.4.92.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 1850
+      }
+    ],
+    "longines:L3.369.4.09.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 1850
+      }
+    ],
+    "longines:L3.369.4.12.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 1850
+      }
+    ],
+    "longines:L3.430.5.87.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 5000
+      }
+    ],
+    "longines:L3.721.4.93.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 7140
+      }
+    ],
+    "longines:L3.721.4.93.9": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 6600
+      }
+    ],
+    "longines:L3.750.3.52.7": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 2200
+      }
+    ],
+    "longines:L3.809.4.93.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 3880
+      }
+    ],
+    "longines:L3.809.4.93.9": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 3450
+      }
+    ],
+    "longines:L3.860.4.12.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 1850
+      }
+    ],
+    "longines:L4.309.0.80.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 6430
+      }
+    ],
+    "longines:L4.309.4.18.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 2680
+      }
+    ],
+    "longines:L4.309.4.19.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 2680
+      }
+    ],
+    "longines:L4.309.4.79.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 3310
+      }
+    ],
+    "longines:L4.309.4.80.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 3340
+      }
+    ],
+    "longines:L4.309.4.90.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 3310
+      }
+    ],
+    "longines:L4.309.5.18.7": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 3600
+      }
+    ],
+    "longines:L4.309.5.19.7": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 3600
+      }
+    ],
+    "longines:L4.309.5.79.7": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 4260
+      }
+    ],
+    "longines:L4.310.0.80.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 7180
+      }
+    ],
+    "longines:L4.310.4.18.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 2690
+      }
+    ],
+    "longines:L4.310.4.80.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 3340
+      }
+    ],
+    "longines:L4.310.4.90.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 3310
+      }
+    ],
+    "longines:L4.310.5.18.7": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 3980
+      }
+    ],
+    "longines:L4.310.5.19.7": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 3980
+      }
+    ],
+    "longines:L4.310.5.79.7": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 4640
+      }
+    ],
+    "longines:L4.310.5.80.7": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 4830
+      }
+    ],
+    "longines:L4.310.5.81.7": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 8050
+      }
+    ],
+    "longines:L4.374.3.17.7": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 2950
+      }
+    ],
+    "longines:L4.512.1.08.7": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 2530
+      }
+    ],
+    "longines:L4.866.1.97.7": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 2900
+      }
+    ],
+    "longines:L4.910.4.18.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 2880
+      }
+    ],
+    "longines:L4.910.4.19.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 2880
+      }
+    ],
+    "longines:L4.910.4.59.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 3500
+      }
+    ],
+    "longines:L4.910.4.70.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 2880
+      }
+    ],
+    "longines:L4.910.4.79.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 3500
+      }
+    ],
+    "longines:L4.910.4.90.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 2880
+      }
+    ],
+    "longines:L4.910.4.99.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 3500
+      }
+    ],
+    "longines:L4.984.4.02.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 2550
+      }
+    ],
+    "longines:L4.984.4.70.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 2550
+      }
+    ],
+    "longines:L4.984.4.98.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 2550
+      }
+    ],
+    "longines:L5.255.5.70.7": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 3060
+      }
+    ],
+    "longines:L5.255.5.78.7": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 6000
+      }
+    ],
+    "longines:L5.512.5.70.7": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 3200
+      }
+    ],
+    "longines:L5.512.5.78.7": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 7250
+      }
+    ],
+    "longines:L8.120.4.71.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 1810
+      }
+    ],
+    "longines:L8.123.4.67.6": [
+      {
+        "runId": 2,
+        "listingStatus": "retailer-only",
+        "price": 3700
       }
     ]
   }

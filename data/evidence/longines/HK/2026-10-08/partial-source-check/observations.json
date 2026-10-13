@@ -1,0 +1,50 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "HK",
+  "locale": "zh-Hant-HK",
+  "observedAt": "2026-10-08T13:06:33.000Z",
+  "observationWindow": {
+    "listingRenderedAt": "2026-10-08T13:06:33.000Z",
+    "productPageOpenedAt": "2026-10-08T13:06:33.000Z"
+  },
+  "entryUrl": "https://www.longines.com/hk/watches",
+  "collectionMethod": "Official Longines Hong Kong listing and one linked product page were opened through the web browsing tool. The tool returned a rendered zh-Hant-HK page and the product page, but indicated the product content was crawled 4 days before retrieval. This is a limited, potentially stale source observation; no complete list or current network response was obtained. No market/history values were inferred or changed.",
+  "coverage": {
+    "status": "PARTIAL",
+    "listingCardCountObserved": 24,
+    "officialListingTotalLabelObserved": 538,
+    "previousMarketWatchCount": 493,
+    "paginationCompleted": false,
+    "notListedStatusesAssigned": false,
+    "completeConfigurationsCollected": false
+  },
+  "sourceObservations": [
+    {
+      "sourceUrl": "https://www.longines.com/hk/watches",
+      "sourceType": "official rendered listing page",
+      "retrievedAt": "2026-10-08T13:06:33.000Z",
+      "toolCrawlAgeText": "Crawled today",
+      "rawText": "香港繁體中文 LONGINES HK listing displayed 538 results and the first page of 24 product cards. The visible prices use HK$ formatting and cards show the retailer call to action 尋找零售商. The listing includes a 顯示更多結果 control; no subsequent page was loaded.",
+      "price": null,
+      "parsedPrice": null,
+      "currency": "HKD"
+    },
+    {
+      "reference": "L3.809.4.93.9",
+      "productUrl": "https://www.longines.com/hk/p/watch-longines-spirit-pilot-l3-809-4-93-9",
+      "sourceType": "official rendered product page linked from the listing",
+      "retrievedAt": "2026-10-08T13:06:33.000Z",
+      "toolCrawlAgeText": "Crawled 4 days ago",
+      "productName": "LONGINES SPIRIT PILOT - L3.809.4.93.9",
+      "rawPriceText": "HK$19,000.00",
+      "parsedPrice": 19000,
+      "currency": "HKD",
+      "rawAvailabilityText": "尋找零售商",
+      "availabilityInterpretation": "The page presents a recommended retail price and a find-a-retailer call to action; no online purchase status inferred."
+    }
+  ],
+  "nicknameResearch": {
+    "status": "NOT RUN (out of scope)"
+  }
+}

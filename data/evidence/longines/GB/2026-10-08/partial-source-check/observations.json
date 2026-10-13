@@ -1,0 +1,36 @@
+{
+  "evidenceFormatVersion": 1,
+  "brandId": "longines",
+  "marketCode": "GB",
+  "locale": "en-GB",
+  "observedOn": "2026-10-08 (UTC; exact time not recorded)",
+  "entryUrl": "https://www.longines.com/en-gb/watches",
+  "observationType": "official crawler snapshot capability check; not live price evidence",
+  "snapshotMetadata": {
+    "pageTitle": "Watches collection | Swiss watches | LONGINES GB",
+    "freshnessLabel": "Crawled: today",
+    "exactCrawlTime": null,
+    "visibleCardCount": 24,
+    "loadMoreText": "Show more results",
+    "verbatimFooterNumbers": [
+      24,
+      807
+    ],
+    "samplePrices": [
+      {
+        "displayName": "LONGINES SPIRIT PILOT 39 mm",
+        "rawPrice": "£2,600.00",
+        "currentPriceEligible": false,
+        "reason": "Crawler snapshot, not live browser/network evidence; no complete reference observed."
+      },
+      {
+        "displayName": "FLAGSHIP CLASSIC 40 mm",
+        "rawPrice": "£1,800.00",
+        "currentPriceEligible": false,
+        "reason": "Crawler snapshot, not live browser/network evidence; no complete reference observed."
+      }
+    ]
+  },
+  "observations": [],
+  "note": "Snapshot examples only document what the official page snapshot exposed. No current product observation was admitted; the snapshot cannot prove current prices or complete listing coverage."
+}
