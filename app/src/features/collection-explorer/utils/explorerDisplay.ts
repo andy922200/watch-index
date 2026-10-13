@@ -30,8 +30,13 @@ export const getCollectionLabel = (
  */
 export const getExplorerPriceText = (
   item: ExplorerWatch,
-  { locale, unavailableLabel }: { locale: string; unavailableLabel: string },
+  {
+    locale,
+    notListedLabel,
+    unavailableLabel,
+  }: { locale: string; notListedLabel: string; unavailableLabel: string },
 ): string => {
+  if (item.watch.priceStatus === 'not-listed') return notListedLabel
   if (!hasPublicPrice(item.watch.priceStatus) || item.watch.price === null) return unavailableLabel
   return formatCurrency({
     amount: item.watch.price,

@@ -4,12 +4,18 @@ import { ref } from 'vue'
 import { useCrossBrandCatalogs } from '@/features/collection-explorer/composables/useCrossBrandCatalogs'
 import { brands } from '@/lib/brands'
 import type { MarketCode } from '@/lib/markets'
-import type { BaseWatch, WatchCatalog } from '@/types/watch-data'
+import type { BaseWatch, WatchCatalog, WatchPriceComparisonPayload } from '@/types/watch-data'
 
-const { useWatchCatalogMock } = vi.hoisted(() => ({
+const { getWatchDataFileMock, getWatchDataManifestMock, useWatchCatalogMock } = vi.hoisted(() => ({
   useWatchCatalogMock: vi.fn<(options: { brandId: string }) => unknown>(),
+  getWatchDataManifestMock: vi.fn<(brandId: string) => Promise<unknown>>(),
+  getWatchDataFileMock: vi.fn<(brandId: string, fileName: string) => Promise<unknown>>(),
 }))
 
+vi.mock('@/api/watchDataApi', () => ({
+  getWatchDataFile: getWatchDataFileMock,
+  getWatchDataManifest: getWatchDataManifestMock,
+}))
 vi.mock('@/composables/useWatchCatalog', () => ({ useWatchCatalog: useWatchCatalogMock }))
 
 const makeCatalog = (
@@ -27,9 +33,37 @@ const makeCatalog = (
   watchesById: {},
 })
 
+const makeComparison = (brandId: string): WatchPriceComparisonPayload => ({
+  schemaVersion: 1,
+  brandId,
+  watchCount: 0,
+  marketsByCode: {
+    TW: {
+      code: 'TW',
+      currencyCode: 'TWD',
+      priceType: 'tax-include',
+      taxRatePercent: 5,
+      priceUpdatedAt: '2026-09-28T00:00:00.000Z',
+      travelerRefundPolicy: null,
+    },
+  },
+  pricesByWatchId: {},
+})
+
 describe('useCrossBrandCatalogs', () => {
   beforeEach(() => {
     useWatchCatalogMock.mockReset()
+    getWatchDataManifestMock.mockReset().mockResolvedValue({
+      comparisonCatalog: 'comparison-catalog.json',
+      comparison: 'comparison.json',
+    })
+    getWatchDataFileMock
+      .mockReset()
+      .mockImplementation(async (brandId, fileName) =>
+        fileName === 'comparison-catalog.json'
+          ? makeCatalog(brandId, 'TW', 'TWD')
+          : makeComparison(brandId),
+      )
   })
 
   it('reports the failed brand instead of presenting partial results as complete', async () => {

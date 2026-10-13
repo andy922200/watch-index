@@ -23,6 +23,7 @@ import {
   getMarketBrands,
 } from '@/lib/commonMarkets'
 import {
+  buildExplorerCatalog,
   buildExplorerCollectionOptions,
   type ExplorerFilterOptions,
   type ExplorerWatch,
@@ -32,6 +33,7 @@ import {
 } from '@/lib/explorerFilters'
 import { getMarketOptions, MarketCode } from '@/lib/markets'
 import { buildCompareSearch, parseCompareSelection } from '@/lib/watchCompareUrl'
+import type { BaseWatch, WatchCatalog, WatchPriceComparisonPayload } from '@/types/watch-data'
 
 const makeItem = (
   brandId: string,
@@ -198,6 +200,93 @@ describe('explorer filters', () => {
   })
 })
 
+describe('historical explorer catalog', () => {
+  it('includes the historical catalog regardless of current market listing status', () => {
+    const localWatch = makeItem('omega', 'LOCAL', 100, 'listed').watch
+    const availableElsewhere = makeItem('omega', 'OTHER', null, 'not-listed').watch
+    const unavailableElsewhere = makeItem('omega', 'UNAVAILABLE', null, 'not-listed').watch
+    const notListedAnywhere = makeItem('omega', 'RETIRED', null, 'not-listed').watch
+    const makeCatalog = (
+      watches: BaseWatch[],
+      marketCode: MarketCode,
+    ): WatchCatalog<BaseWatch> => ({
+      schemaVersion: 5,
+      brandId: 'omega',
+      collectedAt: '2026-10-12T00:00:00.000Z',
+      watchCount: watches.length,
+      collections: [{ id: 'heritage', watchCount: watches.length }],
+      priceMarket: {
+        code: marketCode,
+        currencyCode: marketCode === MarketCode.Taiwan ? 'TWD' : 'JPY',
+        priceType: 'tax-include',
+        taxRatePercent: null,
+      },
+      priceUpdatedAt: '2026-10-12T00:00:00.000Z',
+      watchesById: Object.fromEntries(watches.map((watch) => [watch.watchId, watch])),
+    })
+    const comparison: WatchPriceComparisonPayload = {
+      schemaVersion: 1,
+      brandId: 'omega',
+      watchCount: 4,
+      marketsByCode: {
+        TW: {
+          code: 'TW',
+          currencyCode: 'TWD',
+          priceType: 'tax-include',
+          taxRatePercent: 5,
+          priceUpdatedAt: '2026-10-12T00:00:00.000Z',
+          travelerRefundPolicy: null,
+        },
+        JP: {
+          code: 'JP',
+          currencyCode: 'JPY',
+          priceType: 'tax-include',
+          taxRatePercent: 10,
+          priceUpdatedAt: '2026-10-12T00:00:00.000Z',
+          travelerRefundPolicy: null,
+        },
+      },
+      pricesByWatchId: {
+        [localWatch.watchId]: {
+          TW: { price: 100, priceStatus: 'listed' },
+          JP: { price: 1000, priceStatus: 'listed' },
+        },
+        [availableElsewhere.watchId]: {
+          TW: { price: null, priceStatus: 'not-listed' },
+          JP: { price: 2000, priceStatus: 'listed' },
+        },
+        [unavailableElsewhere.watchId]: {
+          TW: { price: null, priceStatus: 'not-listed' },
+          JP: { price: null, priceStatus: 'price-unavailable' },
+        },
+        [notListedAnywhere.watchId]: {
+          TW: { price: null, priceStatus: 'not-listed' },
+          JP: { price: null, priceStatus: 'not-listed' },
+        },
+      },
+    }
+    const catalog = buildExplorerCatalog({
+      marketCatalog: makeCatalog([localWatch], MarketCode.Taiwan),
+      comparisonCatalog: makeCatalog(
+        [localWatch, availableElsewhere, unavailableElsewhere, notListedAnywhere],
+        MarketCode.Japan,
+      ),
+      comparison,
+      marketCode: MarketCode.Taiwan,
+    })
+
+    expect(Object.keys(catalog.watchesById)).toEqual([
+      localWatch.watchId,
+      availableElsewhere.watchId,
+      unavailableElsewhere.watchId,
+      notListedAnywhere.watchId,
+    ])
+    expect(catalog.watchesById[availableElsewhere.watchId]?.priceStatus).toBe('not-listed')
+    expect(catalog.watchesById[notListedAnywhere.watchId]?.priceStatus).toBe('not-listed')
+    expect(catalog.watchCount).toBe(4)
+  })
+})
+
 describe('explorer display', () => {
   const t = (key: string): string => `t:${key}`
 
@@ -215,14 +304,26 @@ describe('explorer display', () => {
   it('formats the price, or shows the fallback label without a public price', () => {
     const item = makeItem('rolex', 'A', 1000, 'listed')
     expect(
-      getExplorerPriceText(item, { locale: 'zh-TW', unavailableLabel: 'unavailable' }),
+      getExplorerPriceText(item, {
+        locale: 'zh-TW',
+        notListedLabel: '此產品在德國市場未列出',
+        unavailableLabel: 'unavailable',
+      }),
     ).toContain('1,000')
     expect(
       getExplorerPriceText(makeItem('rolex', 'B', null, 'price-unavailable'), {
         locale: 'zh-TW',
+        notListedLabel: '此產品在德國市場未列出',
         unavailableLabel: 'unavailable',
       }),
     ).toBe('unavailable')
+    expect(
+      getExplorerPriceText(makeItem('rolex', 'C', null, 'not-listed'), {
+        locale: 'zh-TW',
+        notListedLabel: '此產品在德國市場未列出',
+        unavailableLabel: 'unavailable',
+      }),
+    ).toBe('此產品在德國市場未列出')
   })
 
   it('links to the price-compare page only when a market is selected', () => {

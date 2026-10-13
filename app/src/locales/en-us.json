@@ -78,6 +78,7 @@
       "noCommonMarket": "No market is shared by all three brands.",
       "missingGuard": "Catalog validation is not configured for: {brands}.",
       "currencyMismatch": "Catalog currencies differ in this market. Cross-brand price filters and sorting are disabled.",
+      "notListedInMarket": "This product is not listed in {market}",
       "priceUnavailable": "Official price unavailable",
       "retailerOnly": "Contact an authorized retailer",
       "updated": "Price updated: {date}",

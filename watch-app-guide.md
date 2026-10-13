@@ -8,7 +8,7 @@
 
 - **站台首頁**：品牌目錄，列出已上線與即將推出的品牌。
 - **品牌頁**：每個品牌各自一組頁面。使用者可在該品牌已整合的市場之間切換，以系列名稱、型號、完整配置碼與俗稱搜尋腕錶（輸入會短暫延遲，並提供系列與錶款建議），查看圖片、型號、當地建議零售價與俗稱，開啟詳細視窗讀取錶殼與面盤描述，以及進入該品牌的單錶跨市場行情比較頁。
-- **跨品牌功能頁**：Collection Explorer 依所選市場跨品牌探索錶款，支援品牌、系列、錶盤顏色與官方價格範圍篩選、搜尋與排序，並能挑選錶款（有數量上限）進入錶款比較頁（`watch-compare`）。
+- **跨品牌功能頁**：Collection Explorer 依所選市場跨品牌探索曾經上架的錶款，包含目前已從所有市場下架的款式。市場選擇只影響價格與狀態；未列於所選市場的產品標示「此產品在所選市場未列出」，其他沒有公開價格的狀態顯示「官方價格未公開」。頁面支援品牌、系列、錶盤顏色與官方價格範圍篩選、搜尋與排序，並能挑選錶款（有數量上限）進入錶款比較頁（`watch-compare`）。
 
 所有頁面皆可切換繁體中文／英文與明暗色模式。
 
@@ -44,12 +44,12 @@ data/catalog + data/markets + data/history + data/traveler-refund-policies.json
                     ↓ 建置時轉換
 app/public/watch-data/<brandId>/ 或 app/dist/watch-data/<brandId>/
                     ↓ 瀏覽器先讀取 <brandId>/manifest.json
-市場專用 catalog.<hash>.json + comparison.<hash>.json
+市場專用 catalog.<hash>.json + comparison-catalog.<hash>.json + comparison.<hash>.json
                     ↓ 驗證格式後
 Vue 頁面、搜尋、清單、詳細視窗與單錶跨市場比較
 ```
 
-`scripts/generate-watch-data.mjs` 會以 `watchId` 將共用配置、單一市場的在地文字與該市場最後一個價格狀態合併成前端資料。來源資料與畫面皆以跨品牌官方參考號 `reference` 顯示及搜尋；每個品牌輸出到自己的 `watch-data/<brandId>/`，並在其中以 `watchesById` 索引腕錶、產生只含最新市場價格、稅別、更新時間與可選旅客政策摘要的 `comparison.<hash>.json`。前端也依品牌讀取對應 manifest，避免不同品牌共用資料快取或檔名命名空間。
+`scripts/generate-watch-data.mjs` 會以 `watchId` 將共用配置、單一市場的在地文字與該市場最後一個價格狀態合併成前端資料。來源資料與畫面皆以跨品牌官方參考號 `reference` 顯示及搜尋；每個品牌輸出到自己的 `watch-data/<brandId>/`，並以 `watchesById` 索引腕錶。Collection Explorer 使用跨市場歷史型錄聯集確保曾經上架的款式不因目前供應狀態而消失，再從 `comparison.<hash>.json` 讀取所選市場的最新價格與狀態；各品牌單一市場目錄仍以自身最新狀態為準。比較檔也保存市場稅別、更新時間與可選旅客政策摘要。前端依品牌讀取對應 manifest，避免不同品牌共用資料快取或檔名命名空間。
 
 資料載入前會檢查 manifest 與 catalog 的必要欄位。若市場資料缺少任一配置、價格歷史或必要文字，產生流程會失敗，而不是發布部分資料。
 

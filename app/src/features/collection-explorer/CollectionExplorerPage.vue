@@ -34,6 +34,7 @@ import {
 import { formatMediumDate, getIntlLocale } from '@/lib/formatters'
 import {
   getMarketFromQuery,
+  getMarketLabelKey,
   isMarketInOptions,
   type MarketCode,
   replaceMarketQuery,
@@ -180,11 +181,17 @@ const visibleBrandOptions = computed(() =>
 )
 
 /* 工具函式包裝 Start */
-const getPriceText = (item: ExplorerWatch): string =>
-  getExplorerPriceText(item, {
+const getPriceText = (item: ExplorerWatch): string => {
+  const marketLabelKey = selectedMarket.value ? getMarketLabelKey(selectedMarket.value) : null
+
+  return getExplorerPriceText(item, {
     locale: intlLocale.value,
+    notListedLabel: marketLabelKey
+      ? t('site.explorer.notListedInMarket', { market: t(marketLabelKey) })
+      : t('site.explorer.priceUnavailable'),
     unavailableLabel: t('site.explorer.priceUnavailable'),
   })
+}
 const getSingleCompareHref = (item: ExplorerWatch): string =>
   getSingleWatchCompareHref(item, { market: selectedMarket.value, language: pageLanguage.value })
 

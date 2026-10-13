@@ -5,6 +5,7 @@
  * context 被單元測試涵蓋。
  */
 import { formatCurrency, formatMediumDate } from '@/lib/formatters'
+import { getMarketLabelKey } from '@/lib/markets'
 import { hasPublicPrice, PriceTypeLabelKeys } from '@/lib/watchPriceComparison'
 import type { BaseWatch, WatchCatalog } from '@/types/watch-data'
 
@@ -65,6 +66,12 @@ export const getPriceText = (
   { t, intlLocale }: { t: TranslateFn; intlLocale: string },
 ): string => {
   if (!column.watch || !column.catalog) return t('site.explorer.missingLocal')
+  if (column.watch.priceStatus === 'not-listed') {
+    const marketLabelKey = getMarketLabelKey(column.catalog.priceMarket.code)
+    if (marketLabelKey) {
+      return t('site.explorer.notListedInMarket', { market: t(marketLabelKey) })
+    }
+  }
   if (!hasPublicPrice(column.watch.priceStatus) || column.watch.price === null)
     return t('site.explorer.priceUnavailable')
   return formatCurrency({

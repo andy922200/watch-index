@@ -78,6 +78,7 @@
       "noCommonMarket": "目前沒有三個品牌共同支援的市場。",
       "missingGuard": "品牌資料驗證設定不完整：{brands}。",
       "currencyMismatch": "品牌資料的市場幣別不一致，已停用跨品牌價格篩選與排序。",
+      "notListedInMarket": "此產品在 {market} 市場未列出",
       "priceUnavailable": "官方價格未公開",
       "retailerOnly": "需洽授權經銷商",
       "updated": "價格更新：{date}",

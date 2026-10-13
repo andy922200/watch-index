@@ -93,8 +93,17 @@ describe('getPriceText', () => {
     )
   })
 
-  it('reports price-unavailable when there is no public price', () => {
+  it('reports the market-specific listing status for not-listed watches', () => {
     const column = makeColumn({ watch: makeWatch({ priceStatus: 'not-listed', price: null }) })
+    expect(getPriceText(column, { t, intlLocale: 'zh-TW' })).toBe(
+      'site.explorer.notListedInMarket:{"market":"site.market.taiwan"}',
+    )
+  })
+
+  it('reports price-unavailable when a listed watch has no public price', () => {
+    const column = makeColumn({
+      watch: makeWatch({ priceStatus: 'price-unavailable', price: null }),
+    })
     expect(getPriceText(column, { t, intlLocale: 'zh-TW' })).toBe('site.explorer.priceUnavailable')
   })
 

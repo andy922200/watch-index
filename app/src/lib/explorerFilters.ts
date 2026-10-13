@@ -1,7 +1,13 @@
 import type { DialColor } from '@/lib/dialColors'
+import type { MarketCode } from '@/lib/markets'
 import { includesSearchText, normalizeSearchText } from '@/lib/searchText'
 import { hasPublicPrice } from '@/lib/watchPriceComparison'
-import type { BaseWatch, PriceType } from '@/types/watch-data'
+import type {
+  BaseWatch,
+  PriceType,
+  WatchCatalog,
+  WatchPriceComparisonPayload,
+} from '@/types/watch-data'
 
 export interface ExplorerWatch {
   brandId: string
@@ -38,9 +44,59 @@ export interface PriceDomain {
   currencyCode: string
 }
 
+export interface BuildExplorerCatalogOptions {
+  marketCatalog: WatchCatalog<BaseWatch>
+  comparisonCatalog: WatchCatalog<BaseWatch>
+  comparison: WatchPriceComparisonPayload
+  marketCode: MarketCode
+}
+
 /** 組出跨品牌唯一的系列複合鍵，避免不同品牌剛好有同名系列 ID 而互相衝突。 */
 export const getCollectionKey = (brandId: string, collectionId: string): string =>
   `${brandId}:${collectionId}`
+
+/**
+ * 以歷史型錄聯集建立探索清單，並使用所選市場的最新價格與狀態。
+ */
+export const buildExplorerCatalog = ({
+  marketCatalog,
+  comparisonCatalog,
+  comparison,
+  marketCode,
+}: BuildExplorerCatalogOptions): WatchCatalog<BaseWatch> => {
+  const watchesById = Object.fromEntries(
+    Object.entries(comparisonCatalog.watchesById).flatMap(([watchId, unionWatch]) => {
+      const selectedMarketPrice = comparison.pricesByWatchId[watchId]?.[marketCode]
+      if (!selectedMarketPrice) return []
+
+      return [
+        [
+          watchId,
+          {
+            ...unionWatch,
+            ...(marketCatalog.watchesById[watchId] ?? {}),
+            price: selectedMarketPrice.price,
+            priceStatus: selectedMarketPrice.priceStatus,
+          },
+        ],
+      ]
+    }),
+  )
+
+  const collectionCounts = new Map<string, number>()
+  for (const watch of Object.values(watchesById)) {
+    collectionCounts.set(watch.collectionId, (collectionCounts.get(watch.collectionId) ?? 0) + 1)
+  }
+
+  return {
+    ...marketCatalog,
+    watchCount: Object.keys(watchesById).length,
+    collections: [...collectionCounts]
+      .map(([id, watchCount]) => ({ id, watchCount }))
+      .sort((left, right) => left.id.localeCompare(right.id)),
+    watchesById,
+  }
+}
 
 /** 取得可用於價格篩選／排序的公開價格；沒有公開價格時回傳 `null`。 */
 const getPublicPrice = (item: ExplorerWatch): number | null =>
